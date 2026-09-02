@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+*.txt
+full_real_amali.html
+live_amali.html
+scrape_amali.py
+check_popups.py
+analyze_bundle.py
+full_clone.py
+sync_real_amali.py
+patch_popup_links.py
+prepare_offline_clone.py
+downloaded_assets/
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.agent/

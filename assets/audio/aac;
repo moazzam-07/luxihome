@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+
+<head>
+	<!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="0bdea807-4fbf-4bbf-954a-a97b3affe162" data-blockingmode="auto" type="text/javascript"></script> -->
+			<!-- Google Tag Manager -->
+		<!-- <script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js'
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-5X422FK6');
+		</script> -->
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H59TXCJF2P"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-H59TXCJF2P');
+		</script>
+		<!-- End Google Tag Manager -->
+	
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- SETUP AND AUTHENTICATE WITH TWK CLIENTS USER http://google.com/webmasters -->
+	<meta name="google-site-verification" content="">
+
+	<!-- GENERATE FAVICON USING https://realfavicongenerator.net/ -->
+	<link rel="apple-touch-icon" sizes="180x180" href="https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/img/favicon/safari-pinned-tab.svg" color="#000000">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- TEMP emoji favicon -->
+	<!-- <link rel="icon" href="https://fav.farm/🏝️" /> -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<link rel="pingback" href="https://amaliproperties.com/xmlrpc.php" />
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.1.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Exclusive Preview - Amali Properties</title>
+	<meta name="description" content="Amali Residences offers contemporary, heritage-inspired apartments, podium villas, duplexes &amp; penthouses on Dubai Canal." />
+	<link rel="canonical" href="https://amaliproperties.com/residences/residences-teaser/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Exclusive Preview - Amali Properties" />
+	<meta property="og:description" content="Amali Residences offers contemporary, heritage-inspired apartments, podium villas, duplexes &amp; penthouses on Dubai Canal." />
+	<meta property="og:url" content="https://amaliproperties.com/residences/residences-teaser/" />
+	<meta property="og:site_name" content="Amali Properties" />
+	<meta property="article:modified_time" content="2026-03-12T10:51:07+00:00" />
+	<meta property="og:image" content="https://amaliproperties.com/wp-content/uploads/2026/03/View-8_Penthouse-2.jpg" />
+	<meta property="og:image:width" content="912" />
+	<meta property="og:image:height" content="558" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://amaliproperties.com/residences/residences-teaser/","url":"https://amaliproperties.com/residences/residences-teaser/","name":"Exclusive Preview - Amali Properties","isPartOf":{"@id":"https://amaliproperties.com/#website"},"datePublished":"2025-04-02T15:49:37+00:00","dateModified":"2026-03-12T10:51:07+00:00","description":"Amali Residences offers contemporary, heritage-inspired apartments, podium villas, duplexes & penthouses on Dubai Canal.","breadcrumb":{"@id":"https://amaliproperties.com/residences/residences-teaser/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://amaliproperties.com/residences/residences-teaser/"]}]},{"@type":"BreadcrumbList","@id":"https://amaliproperties.com/residences/residences-teaser/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://amaliproperties.com/"},{"@type":"ListItem","position":2,"name":"Residences","item":"https://amaliproperties.com/residences/"},{"@type":"ListItem","position":3,"name":"Exclusive Preview"}]},{"@type":"WebSite","@id":"https://amaliproperties.com/#website","url":"https://amaliproperties.com/","name":"Amali Properties","description":"Redefining luxury, one dream at a time.","publisher":{"@id":"https://amaliproperties.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://amaliproperties.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"},{"@type":"Organization","@id":"https://amaliproperties.com/#organization","name":"Amali Island","url":"https://amaliproperties.com/","logo":{"@type":"ImageObject","inLanguage":"en-GB","@id":"https://amaliproperties.com/#/schema/logo/image/","url":"https://amaliproperties.com/wp-content/uploads/2025/11/Amali-brandmark.jpg","contentUrl":"https://amaliproperties.com/wp-content/uploads/2025/11/Amali-brandmark.jpg","width":224,"height":224,"caption":"Amali Island"},"image":{"@id":"https://amaliproperties.com/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://amaliproperties.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Famaliproperties.com%2Fresidences%2Fresidences-teaser%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://amaliproperties.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Famaliproperties.com%2Fresidences%2Fresidences-teaser%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="wp-block-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the block styles printed at wp_footer." }
+/*# sourceURL=wp-block-styles-placeholder-inline-css */
+</style>
+<style id="wp-global-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer." }
+/*# sourceURL=wp-global-styles-placeholder-inline-css */
+</style>
+<link rel='stylesheet' id='gp-advanced-phone-field-css' href='https://amaliproperties.com/wp-content/plugins/gp-advanced-phone-field/styles/frontend.min.css?ver=1.1.10' media='all' />
+<link rel='stylesheet' id='gform_basic-css' href='https://amaliproperties.com/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=2.10.5' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://amaliproperties.com/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://amaliproperties.com/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5' media='all' />
+<link rel='stylesheet' id='screen-css-css' href='https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/css/styles.css?ver=1774457248' media='all' />
+<script id="jquery-js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script id="gform_json-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
+<script id="gform_gravityforms-js-extra">
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"EUR"},"base_url":"https://amaliproperties.com/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://amaliproperties.com/wp-content/plugins/gravityforms/images/spinner.svg","version_hash":"f46a103829bd84082ba60ea82d947f6d","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = {"1":""};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://amaliproperties.com/wp-content/plugins/gravityforms/images"}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js-before">
+
+//# sourceURL=gform_gravityforms-js-before
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.10.5"></script>
+<script id="gform_conditional_logic-js-extra">
+var gf_legacy = {"is_legacy":""};
+//# sourceURL=gform_conditional_logic-js-extra
+</script>
+<script id="gform_conditional_logic-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.10.5"></script>
+<script id="gform_recaptcha-js" defer='defer' src="https://www.google.com/recaptcha/api.js?hl=en&#038;ver=87cac644b1080d98869be99d3616df3a#038;render=explicit"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=3f278756f0a3032bed328ff6a9f6c01d"></script>
+<link rel="https://api.w.org/" href="https://amaliproperties.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://amaliproperties.com/wp-json/wp/v2/pages/1820" /><link rel='shortlink' href='https://amaliproperties.com/?p=1820' />
+<style id="wp-custom-css">
+/* Location Heading */
+.home #island[data-name="island-banner"] p.font-script{text-transform:capitalize;}
+/* HOME - Content Popup */
+@media (min-width: 992px) and (max-width: 1366px) {
+	.home #block-1.block, .home #block-2.block, .home #block-2.block{
+		display: grid;
+	}
+	.home .content-popup p.lg\:text-44 {
+   	font-size: 30px;
+  }
+	.home .content-popup p.lg\:leading-48 {
+		line-height: 38px;
+	}
+	
+	/* HOME - Island horizontal */
+	.home .lg\:text-52{
+		font-size: 40px;
+	}
+	.home .lg\:leading-56{
+		line-height: 48px;
+	}
+	
+	.home .leading-36{
+   	line-height: 30px;
+	}
+	.home .content-popup [data-target="banner-content"] .leading-36{
+   	line-height: 42px;
+	}
+.home .content-popup [data-target="banner-content"] .container.mt-100{
+   	margin-top: 70px;
+	}
+.home #island .sm\:text-86 {
+        font-size: 52px;
+    }
+	/* FOOTER */
+	.site-footer .lg\:text-26 {
+  	font-size: 23px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1291px) {
+	.home .text-32 {
+    font-size: 24px;
+	}
+}
+
+@media (min-width: 992px) {
+    .home .block--three-images-text .lg\:px-90 {
+        padding-left: 98px;
+        padding-right: 98px;
+    }
+	.home #block-1[data-block="title-text"] .col-span-10.col-start-2.font-body.text-20{
+		padding-right:85px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1067px) {
+	/*.home #island .lg\:text-52{
+		font-size: 40px;
+	}
+	.home #island .lg\:leading-56{
+		line-height: 48px;
+	}
+	.home #island .text-32 {
+    font-size: 26px;
+	}
+	.home #island .leading-36{
+   	line-height: 30px;
+	}*/
+	
+}
+
+@media (min-width: 992px) and (max-width: 1291px) {
+	
+}
+</style>
+</head>
+
+<body class="wp-singular page-template page-template-templates page-template-canal-teaser-new page-template-templatescanal-teaser-new-php page page-id-1820 page-child parent-pageid-2114 wp-theme-AmaliProperties" data-barba="wrapper">
+
+			<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X422FK6"
+				height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	
+	
+	
+	
+	
+<div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
+<nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
+    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20" data-nav-fixed>
+        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto " data-target="menu-wrapper" data-active="false" data-theme="light">
+            <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] group-data-[theme=light]/wrapper:bg-white/20 group-data-[theme=dark]/wrapper:bg-black/20 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-white/30 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
+            <div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10" data-target="menu-trigger">
+                <div class="w-16 h-auto transition-opacity duration-300 ease-linear" data-target="hamburger-lottie"></div>
+                <!-- <div class="absolute top-10 w-16 h-auto transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=dark]/wrapper:opacity-100" data-target="hamburger-lottie-dark"></div> -->
+            </div>
+
+            
+                <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-sand text-12 leading-none tracking-1.2 uppercase text-dark-blue lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-dark-blue after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
+                    <span class="hidden lg:block relative text-dark-blue z-10 transition-colors duration-200 group-hover/button:text-white">Enquire</span>
+                    <div class="flex lg:hidden justify-center items-center w-full h-full"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3971_69)">
+<mask id="path-1-inside-1_3971_69" fill="white">
+<path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z"/>
+</mask>
+<path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#1A2026" stroke="#DAD0C1" stroke-width="0.765957" mask="url(#path-1-inside-1_3971_69)"/>
+</g>
+<defs>
+<clipPath id="clip0_3971_69">
+<rect width="15.3191" height="15.3191" fill="white" transform="translate(0.976562 0.703125)"/>
+</clipPath>
+</defs>
+</svg>
+</div>
+                </a>
+
+            
+            <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
+                <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
+                    <div>
+                        <!-- <p class="font-normal text-16 leading-none tracking-0.42 text-white/20 mb-20" data-target="menu-title">Developments</p> -->
+                        <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
+
+                                                            
+                                <li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap overflow-hidden" data-target="menu-item-parent" data-state="open">
+                                    <a href="https://amaliproperties.com/canal/" class="no-barba flex justify-between items-center gap-50 transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ">
+                                        <span>Residences</span>
+                                        <div class="relative aspect-square w-25">
+                                            <div class="absolute top-1/2 left-1/2 w-full h-1 bg-white -translate-x-1/2 -translate-y-1/2"></div>
+                                            <div class="absolute top-1/2 left-1/2 w-1 h-full bg-white -translate-x-1/2 -translate-y-1/2 transition-transform duration-[0.4s] ease-in-out group-data-[state=open]/li:rotate-90"></div>
+                                        </div>
+                                    </a>
+                                    <div class="h-0 opacity-0 invisible" data-target="sub-menu" data-state="open">
+                                        <div class="pt-25 pb-15">
+                                            <ul class="flex flex-col gap-y-10">
+
+                                                                                                    
+                                                    <li class="font-normal text-16 leading-none tracking-0.42">
+                                                        <a href="https://amaliproperties.com/residences/residences-teaser/" class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100 after:opacity-100">Exclusive preview</a>
+                                                    </li>
+
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                                            
+                                <li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap overflow-hidden" data-target="menu-item-parent" data-state="closed">
+                                    <a href="https://amaliproperties.com/island/" class="no-barba flex justify-between items-center gap-50 transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ">
+                                        <span>Island</span>
+                                        <div class="relative aspect-square w-25">
+                                            <div class="absolute top-1/2 left-1/2 w-full h-1 bg-white -translate-x-1/2 -translate-y-1/2"></div>
+                                            <div class="absolute top-1/2 left-1/2 w-1 h-full bg-white -translate-x-1/2 -translate-y-1/2 transition-transform duration-[0.4s] ease-in-out group-data-[state=open]/li:rotate-90"></div>
+                                        </div>
+                                    </a>
+                                    <div class="h-0 opacity-0 invisible" data-target="sub-menu" data-state="closed">
+                                        <div class="pt-25 pb-15">
+                                            <ul class="flex flex-col gap-y-10">
+
+                                                                                                    
+                                                    <li class="font-normal text-16 leading-none tracking-0.42">
+                                                        <a href="https://amaliproperties.com/island/amali-island-welcome/" class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100 ">Welcome to Amali Island</a>
+                                                    </li>
+
+                                                                                                    
+                                                    <li class="font-normal text-16 leading-none tracking-0.42">
+                                                        <a href="https://amaliproperties.com/island/island-villas/" class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100 ">The Villas</a>
+                                                    </li>
+
+                                                                                                    
+                                                    <li class="font-normal text-16 leading-none tracking-0.42">
+                                                        <a href="https://amaliproperties.com/island/clubhouse/" class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100 ">Clubhouse</a>
+                                                    </li>
+
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                                            
+                                <li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap overflow-hidden" data-target="menu-item-parent" data-state="closed">
+                                    <a href="https://amaliproperties.com/the-villas/" class="no-barba flex justify-between items-center gap-50 transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ">
+                                        <span>Villas</span>
+                                        <div class="relative aspect-square w-25">
+                                            <div class="absolute top-1/2 left-1/2 w-full h-1 bg-white -translate-x-1/2 -translate-y-1/2"></div>
+                                            <div class="absolute top-1/2 left-1/2 w-1 h-full bg-white -translate-x-1/2 -translate-y-1/2 transition-transform duration-[0.4s] ease-in-out group-data-[state=open]/li:rotate-90"></div>
+                                        </div>
+                                    </a>
+                                    <div class="h-0 opacity-0 invisible" data-target="sub-menu" data-state="closed">
+                                        <div class="pt-25 pb-15">
+                                            <ul class="flex flex-col gap-y-10">
+
+                                                                                                    
+                                                    <li class="font-normal text-16 leading-none tracking-0.42">
+                                                        <a href="https://amaliproperties.com/the-villas/" class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100 ">Welcome to Amali Villas</a>
+                                                    </li>
+
+                                                                                                    
+                                                    <li class="font-normal text-16 leading-none tracking-0.42">
+                                                        <a href="https://amaliproperties.com/bespoke-villa/villa-elaine/" class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100 ">Villa Elaine</a>
+                                                    </li>
+
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            
+                            <div class="w-full h-1 bg-white/20 my-15" data-target="menu-divider"></div>
+
+                            
+                                <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                    <a href="https://amaliproperties.com/" class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">Home</a>
+                                    <div data-target="sub-menu"></div>
+                                </li>
+
+                            
+                                <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                    <a href="https://amaliproperties.com/about-amali/" class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">About</a>
+                                    <div data-target="sub-menu"></div>
+                                </li>
+
+                            
+                                <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                    <a href="https://amaliproperties.com/locations/" class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">Locations</a>
+                                    <div data-target="sub-menu"></div>
+                                </li>
+
+                            
+                                <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                    <a href="https://amaliproperties.com/contact/" class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">Contact</a>
+                                    <div data-target="sub-menu"></div>
+                                </li>
+
+                            
+                        </ul>
+                    </div>
+                    <div class="" data-target="menu-bottom">
+                        <a href="https://www.instagram.com/amaliproperties/" class="flex items-center gap-12 pb-20">
+                            <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white"> 
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Media" transform="translate(-307.000000, -513.000000)">
+            <g id="Instagram_outline-White" transform="translate(307.000000, 513.000000)">
+                <circle id="Stoke" stroke="#FFFFFF" cx="20" cy="20" r="19.5"></circle>
+                <path d="M16.2826865,11.1104542 C14.8175922,11.1765596 13.5477244,11.5347797 12.5223374,12.5558408 C11.4933684,13.5822618 11.1396323,14.857025 11.0733627,16.3068782 C11.0321681,17.2118081 10.7912694,24.0483617 11.4897862,25.8412486 C11.9608374,27.0507996 12.888611,27.9807424 14.1092245,28.453307 C14.6787844,28.6748496 15.3289424,28.8249268 16.2826865,28.8686993 C24.2574207,29.2295993 27.2135799,29.0330696 28.4601638,25.8412486 C28.6813608,25.2730991 28.8336017,24.6236578 28.8756918,23.6722754 C29.2401743,15.6770898 28.8165865,13.9440552 27.4267171,12.5558408 C26.3243142,11.4561678 25.0275803,10.7075683 16.2826865,11.1104542 M16.3561204,27.260729 C15.4829743,27.2214231 15.0092366,27.0758125 14.6931129,26.953428 C13.8978783,26.6443404 13.3005569,26.0493914 12.9933886,25.258806 C12.4614411,23.8964979 12.6378614,17.4262041 12.6853247,16.3792368 C12.7318925,15.3537091 12.9396565,14.4166198 13.6632483,13.6930331 C14.5587828,12.7997163 15.7158132,12.3619911 23.5938297,12.7175312 C24.6219032,12.7639836 25.5613188,12.9712331 26.2867017,13.6930331 C27.1822362,14.58635 27.6264213,15.7521284 27.2646253,23.5999167 C27.2252218,24.4709006 27.0792497,24.9434652 26.9565615,25.258806 C26.1461028,27.3357676 24.2816001,27.624309 16.3561204,27.260729 M23.6806965,15.2206049 C23.6806965,15.8119806 24.1615985,16.2925851 24.7553379,16.2925851 C25.3490772,16.2925851 25.8308747,15.8119806 25.8308747,15.2206049 C25.8308747,14.6292292 25.3490772,14.1486247 24.7553379,14.1486247 C24.1615985,14.1486247 23.6806965,14.6292292 23.6806965,15.2206049 M15.3764057,19.9891301 C15.3764057,22.5225766 17.4352394,24.576312 19.974975,24.576312 C22.5147107,24.576312 24.5735444,22.5225766 24.5735444,19.9891301 C24.5735444,17.4556836 22.5147107,15.4028415 19.974975,15.4028415 C17.4352394,15.4028415 15.3764057,17.4556836 15.3764057,19.9891301 M16.9901588,19.9891301 C16.9901588,18.3454271 18.3262961,17.0117051 19.974975,17.0117051 C21.6236539,17.0117051 22.9597913,18.3454271 22.9597913,19.9891301 C22.9597913,21.6337264 21.6236539,22.9674484 19.974975,22.9674484 C18.3262961,22.9674484 16.9901588,21.6337264 16.9901588,19.9891301" id="instagram" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg></div>
+                            <span class="font-sans font-normal text-15 leading-none tracking-0.4">Amali Properties</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="order-2 flex sm:justify-center items-center absolute left-40 top-30 lg:left-1/2 lg:top-20 lg:-translate-x-1/2" data-target="header-menu">
+        <a href="https://amaliproperties.com" class="group pointer-events-auto block w-fit h-fit" title="Amali Properties" data-target="menu-logo" data-theme="light">
+            <!-- <h1 title="Amali Island"> -->
+            <!-- <img class="relative w-[190px] h-auto max-h-[70px] -left-8 " src="/assets/img/logos/" alt="Amali Island Logo" data-target="menu-logo" /> -->
+            <div class="relative w-[130px] sm:w-[190px] h-auto [&_svg]:min-h-[50px] -left-4 sm:-left-8 transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=light]:opacity-100 group-data-[theme=light]:visible will-change-[opacity]" data-target="logo-lottie" data-played="false" title="Amali Properties"></div>
+            <div class="absolute w-[130px] sm:w-[190px] h-auto [&_svg]:min-h-[50px] top-0 -left-4 sm:-left-8 transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=dark]:opacity-100 group-data-[theme=dark]:visible will-change-[opacity]" data-target="logo-lottie-dark" data-played="false" title="Amali Properties"></div>
+            <!-- </h1> -->
+        </a>
+    </div>
+    <div class="order-1 lg:order-3 flex lg:justify-end items-center gap-10 fixed right-40 top-20">
+        <div class="flex items-center gap-30 fixed lg:relative bottom-25 left-1/2 lg:inset-auto bg-white text-dark-blue px-[23px] py-[12px] rounded-40 cursor-pointer -translate-x-1/2 lg:translate-x-0 z-50 pointer-events-auto opacity-0 invisible transition-colors hover:bg-dark-blue hover:text-white [&:hover_path]:stroke-white" data-target="popup-close">
+            <p class="font-sans font-light text-16 leading-none tracking-1.6 uppercase">Close</p>
+            <div class="[&_path]:transition-all"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 465">
+<path id="Line 12" d="M1 12.832L12.8339 0.998152" stroke="#1A2026" stroke-width="1.33308" stroke-linecap="round"/>
+<path id="Line 13" d="M1 1.39844L12.8339 13.2323" stroke="#1A2026" stroke-width="1.33308" stroke-linecap="round"/>
+</g>
+</svg>
+</div>
+        </div>
+        <div data-target="audio" data-triggered="false" data-theme="light" class="group hidden lg:block pointer-events-auto cursor-pointer z-50 data-[triggered=true]:pointer-events-none ">
+            <div data-target="audio-wrapper" class="flex items-center gap-[18px] rounded-[53px] transition-colors duration-200 ease-linear group-data-[triggered=true]:border-transparent">
+                <div data-target="audio-icon" class="flex justify-center items-center size-40 border rounded-full transition-colors duration-1000 ease-linear group-data-[triggered=true]:pointer-events-auto group-data-[theme=light]:border-white group-data-[theme=dark]:border-dark-blue">
+                    <div class="flex gap-6">
+                        <div data-target="bar" class="w-[2.5px] h-[12px] group-data-[theme=light]:bg-white group-data-[theme=dark]:bg-dark-blue rounded-[1px] origin-bottom scale-y-[.33] transition-colors duration-1000 ease-linear"></div>
+                        <div data-target="bar" class="w-[2.5px] h-[12px] group-data-[theme=light]:bg-white group-data-[theme=dark]:bg-dark-blue rounded-[1px] origin-bottom scale-y-[1] transition-colors duration-1000 ease-linear"></div>
+                        <div data-target="bar" class="w-[2.5px] h-[12px] group-data-[theme=light]:bg-white group-data-[theme=dark]:bg-dark-blue rounded-[1px] origin-bottom scale-y-[.66] transition-colors duration-1000 ease-linear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+	<div class="fixed h-dvh w-full inset-0 bg-sand translate-y-[100dvh] hidden z-50 pointer-events-none" data-target="default-transition-cover"></div>
+
+	<div id="page-wrap" data-barba="container" data-barba-namespace="canal-teaser-new.php">
+		<a class="skip-link sr-only" href="#content-wrap">Skip to content</a>
+
+		<div id="content-wrap">
+
+    
+    
+        <svg class="distort absolute h-0 w-0 -left-[9999px] pointer-events-none" data-target="svg-water-filter">
+            <defs>
+                <filter id="distortionFilter">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="1" result="warpper" />
+                    <feColorMatrix in="warpper" type="hueRotate">
+                        <!-- <animate attributeType="XML" attributeName="values" values="0;110;150;210;360" dur="5s" repeatCount="indefinite"/> -->
+                    </feColorMatrix>
+                    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="25" in="SourceGraphic" />
+                </filter>
+            </defs>
+        </svg>
+
+        <main id="main" class="relative bg-dark-blue h-svh max-h-svh overflow-hidden">
+            <section class="relative h-full z-20 overflow-hidden" data-name="video-section">
+                <div class="fill-image">
+                                            <picture loading="eager" role="presentation" class="fill-image object-cover max-lg:hidden">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/poster.jpg.webp 1920w, https://amaliproperties.com/wp-content/uploads/2026/03/poster-640x360.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2026/03/poster-400x225.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2026/03/poster-1280x720.jpg.webp 1280w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img loading="eager" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2026/03/poster.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/poster.jpg 1920w, https://amaliproperties.com/wp-content/uploads/2026/03/poster-640x360.jpg 640w, https://amaliproperties.com/wp-content/uploads/2026/03/poster-400x225.jpg 400w, https://amaliproperties.com/wp-content/uploads/2026/03/poster-1280x720.jpg 1280w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+                                                                <picture loading="eager" role="presentation" class="fill-image object-cover lg:hidden">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile.jpg.webp 1080w, https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile-640x1138.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile-400x711.jpg.webp 400w" sizes="(max-width: 1080px) 100vw, 1080px"/>
+<img loading="eager" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile.jpg 1080w, https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile-640x1138.jpg 640w, https://amaliproperties.com/wp-content/uploads/2026/03/poster_mobile-400x711.jpg 400w" sizes="(max-width: 1080px) 100vw, 1080px"/>
+</picture>
+                                        <video muted playsinline preload="auto" class="opacity-0 fill-image object-cover hidden lg:block" data-target="video" loading="preload"  poster="https://amaliproperties.com/wp-content/uploads/2026/03/poster.jpg">
+                        <source src="https://amaliproperties.com/wp-content/uploads/2026/03/desktop_output.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline class="opacity-0 fill-image object-cover lg:hidden" data-target="video-mobile" loading="eager"  poster="https://amaliproperties.com/wp-content/uploads/2026/03/poster.jpg">
+                        <source src="https://amaliproperties.com/wp-content/uploads/2026/03/mobile_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="absolute right-0 bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="flex max-md:flex-col max-md:pt-60 max-md:gap-30 items-center absolute top-0 right-0 left-0 w-full h-svh z-10 opacity-0 will-change-[opacity]"
+                    data-target="scroll-content-1">
+                    <div class="container" data-name="where-title">
+                        <div class="grid grid-cols-12 justify-center gap-x-12">
+                            <div class="col-span-12 md:col-span-10 md:col-start-2">
+                                <div class="text-center md:px-40 max-sm:pt-120">
+                                    <h1 class="font-sans font-light text-52 leading-40 lg:text-72 lg:leading-64 tracking-2.16 uppercase text-white" data-filter-text-animation>Where water mirrors the sky</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative sm:absolute sm:bottom-0 lg:left-0 md:max-w-[450px] md:py-70 lg:py-50 px-30 md:px-50 max-md:text-center opacity-0"
+                        data-target="text-content-1">
+                        <p class=" font-body md:font-sans font-normal text-20 leading-[24px] md:text-16 md:leading-[20px] tracking-1.6 md:uppercase text-white">Contemporary, heritage-inspired apartments, podium villas, duplexes & penthouses on Dubai Canal.</p>
+                    </div>
+
+                    <div class="max-md:right-[unset] pointer-events-auto opacity-0 absolute bottom-55 right-50" data-target="scroll-button">
+                        <a href="#contact-form-popup" class="magnific-inline-popup group inline-flex justify-between items-center gap-20 bg-white/10 py-10 pr-10 pl-35 text-nowrap rounded-60 max-h-50 overflow-hidden backdrop-blur-24 cursor-pointer">
+                            <span class="relative font-sans font-normal md:text-16 leading-none tracking-1.6 text-white z-10 transition-colors duration-200 group-hover:text-dark-blue">Register interest</span>
+                            <div class="flex justify-center items-center relative w-35 h-35 rounded-full [&_path]:stroke-dark-blue before:absolute before:size-full before:bg-white before:rounded-full before:transition-transform before:duration-500 group-hover:before:scale-[20] children:z-10"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 209">
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>
+</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section data-name="images" class="flex items-center fixed inset-0 overflow-hidden z-0 pointer-events-none bg-white opacity-0" data-target="section-2">
+                <div class="absolute h-full w-full inset-0 bg-white" data-name="mirror-curtain">
+                    <div id="grainedBG" class="h-full"></div>
+                </div>
+                <div class="absolute h-full w-full flex justify-center items-center text-center text-black-text z-40" data-name="mirror-title">
+                    <div>
+                        <div data-target="filter-text-animation">
+                            <div class="uppercase text-[32px] sm:text-[46px] md:text-[74px] tracking-normal leading-none font-sans font-light">Amali</div>
+                            <div class="uppercase text-[32px] sm:text-[46px] md:text-[74px] tracking-normal leading-none font-sans font-regular">Residences</div>
+                        </div>
+                        <div data-name="register-interest-dark" class="flex lg:inline-block justify-center absolute lg:relative right-0 lg:right-auto top-[calc(100dvh-180px)] lg:top-auto lg:bottom-auto left-0 lg:left-auto lg:mt-50 pointer-events-auto">
+                            <a href="#contact-form-popup" class="group self-start inline-flex items-center gap-20 bg-slate py-9 pr-12 pl-35 rounded-60 backdrop-blur-24 overflow-hidden magnific-inline-popup">
+                                <span class="font-sans font-normal text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 z-10 group-hover:text-white">Register Interest</span>
+                                <div class="flex justify-center items-center relative w-35 h-35 rounded-full before:absolute before:size-full before:bg-dark-blue before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 209">
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div data-name="explore-amali-link" class="flex lg:inline-block mt-20 lg:mt-0 lg:ml-10 justify-center absolute lg:relative right-0 lg:right-auto top-[calc(100dvh-120px)] lg:top-auto lg:bottom-auto left-0 lg:left-auto pointer-events-auto">
+                            <a href="/" class="group self-start inline-flex items-center gap-20 bg-dark-blue py-9 pr-12 pl-35 rounded-60 backdrop-blur-24 overflow-hidden">
+                                <span class="font-sans font-normal text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 z-10 group-hover:text-white">Explore Amali</span>
+                                <div class="flex justify-center items-center relative w-35 h-35 rounded-full before:absolute before:size-full before:bg-slate before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 209">
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                
+                <div data-name="moodboard" class="absolute h-full w-full inset-0">
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z-30" data-layer="0">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: blue; width: 13vw; left: 61vw;"
+                                data-stagger="0"
+                                data-duration="12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1-640x320.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1-400x200.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1.jpg.webp 700w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1-640x320.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1-640x320.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1-400x200.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Cigar-Lounge_-V5-1.jpg 700w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">0 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: blue; width: 13vw; left: 22vw;"
+                                data-stagger="5"
+                                data-duration="12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D-640x292.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D-400x183.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D.jpg.webp 767w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D-640x292.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D-640x292.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D-400x183.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Gym_V3D.jpg 767w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">0 | 1</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: blue; width: 13vw; left: 92vw;"
+                                data-stagger="20"
+                                data-duration="12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website3-LOBBY-CGIs-Medium-landscape-1380px-X-1130px-01.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website3-LOBBY-CGIs-Medium-landscape-1380px-X-1130px-01-400x327.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website3-LOBBY-CGIs-Medium-landscape-1380px-X-1130px-01.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website3-LOBBY-CGIs-Medium-landscape-1380px-X-1130px-01.jpg 622w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website3-LOBBY-CGIs-Medium-landscape-1380px-X-1130px-01-400x327.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">0 | 2</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: blue; width: 13vw; left: 67vw;"
+                                data-stagger="40"
+                                data-duration="12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-LOBBY-CGIs-Small-portrait-420px-X-546px-05.jpg.webp 420w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-LOBBY-CGIs-Small-portrait-420px-X-546px-05-400x520.jpg.webp 400w" sizes="(max-width: 420px) 100vw, 420px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-LOBBY-CGIs-Small-portrait-420px-X-546px-05.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-LOBBY-CGIs-Small-portrait-420px-X-546px-05.jpg 420w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-LOBBY-CGIs-Small-portrait-420px-X-546px-05-400x520.jpg 400w" sizes="(max-width: 420px) 100vw, 420px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">0 | 3</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: blue; width: 13vw; left: -5vw;"
+                                data-stagger="60"
+                                data-duration="12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-01.jpg.webp 420w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-01-400x520.jpg.webp 400w" sizes="(max-width: 420px) 100vw, 420px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-01.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-01.jpg 420w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-01-400x520.jpg 400w" sizes="(max-width: 420px) 100vw, 420px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">0 | 4</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: blue; width: 13vw; left: 63vw;"
+                                data-stagger="75"
+                                data-duration="12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-02.jpg.webp 420w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-02-400x520.jpg.webp 400w" sizes="(max-width: 420px) 100vw, 420px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-02.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-02.jpg 420w, https://amaliproperties.com/wp-content/uploads/2026/03/Amali-Website5-POOL-CGIs-Small-portrait-420px-X-546px-02-400x520.jpg 400w" sizes="(max-width: 420px) 100vw, 420px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">0 | 5</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z-20" data-layer="1">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 89vw;"
+                                data-stagger="0"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A-640x338.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A-400x211.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A.jpg.webp 662w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A-640x338.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A-640x338.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A-400x211.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Private-Dining_V4A.jpg 662w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 55vw;"
+                                data-stagger="5"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-4A_4BR-A1_Living.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-4A_4BR-A1_Living-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-4A_4BR-A1_Living.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-4A_4BR-A1_Living.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-4A_4BR-A1_Living-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 1</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 5vw;"
+                                data-stagger="7"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-4B_4BR-A_Living.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-4B_4BR-A_Living-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-4B_4BR-A_Living.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-4B_4BR-A_Living.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-4B_4BR-A_Living-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 2</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 35vw;"
+                                data-stagger="20"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-44_5BR-Villa_Foyer.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-44_5BR-Villa_Foyer-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-44_5BR-Villa_Foyer.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-44_5BR-Villa_Foyer.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-44_5BR-Villa_Foyer-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 3</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 45vw;"
+                                data-stagger="35"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-45_5BR-Villa_Terrace.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-45_5BR-Villa_Terrace-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-45_5BR-Villa_Terrace.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-45_5BR-Villa_Terrace.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-45_5BR-Villa_Terrace-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 4</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 0vw;"
+                                data-stagger="40"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-46_5BR-Villa_Master-Bedroom.jpg.webp 447w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-46_5BR-Villa_Master-Bedroom-400x313.jpg.webp 400w" sizes="(max-width: 447px) 100vw, 447px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-46_5BR-Villa_Master-Bedroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-46_5BR-Villa_Master-Bedroom.jpg 447w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-46_5BR-Villa_Master-Bedroom-400x313.jpg 400w" sizes="(max-width: 447px) 100vw, 447px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 5</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 48vw;"
+                                data-stagger="60"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-47_5BR-Villa_Master-Ensuite.jpg.webp 560w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-47_5BR-Villa_Master-Ensuite-400x250.jpg.webp 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-47_5BR-Villa_Master-Ensuite.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-47_5BR-Villa_Master-Ensuite.jpg 560w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-47_5BR-Villa_Master-Ensuite-400x250.jpg 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 6</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 70vw;"
+                                data-stagger="62"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-54_PH-B1_Master-Bedroom.jpg.webp 472w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-54_PH-B1_Master-Bedroom-400x297.jpg.webp 400w" sizes="(max-width: 472px) 100vw, 472px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Render-54_PH-B1_Master-Bedroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Render-54_PH-B1_Master-Bedroom.jpg 472w, https://amaliproperties.com/wp-content/uploads/2025/12/Render-54_PH-B1_Master-Bedroom-400x297.jpg 400w" sizes="(max-width: 472px) 100vw, 472px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 7</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 91vw;"
+                                data-stagger="80"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E-640x291.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E-400x182.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E.jpg.webp 769w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E-640x291.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E-640x291.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E-400x182.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Bar_V1E.jpg 769w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 8</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z-20" data-layer="1">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 0vw;"
+                                data-stagger="90"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1-640x260.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1-400x163.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1.jpg.webp 860w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1-640x260.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1-640x260.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1-400x163.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-1.jpg 860w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 9</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: red; width: 7vw; left: 50vw;"
+                                data-stagger="100"
+                                data-duration="10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-640x260.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-400x163.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A.jpg.webp 860w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-640x260.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-640x260.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A-400x163.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/Residents-lounge_Entertainment-Rooms_V1A.jpg 860w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">1 | 10</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z-10" data-layer="2">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 65vw;"
+                                data-stagger="0"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Screening-Room_V9.jpg.webp 595w, https://amaliproperties.com/wp-content/uploads/2025/12/Screening-Room_V9-400x235.jpg.webp 400w" sizes="(max-width: 595px) 100vw, 595px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Screening-Room_V9.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Screening-Room_V9.jpg 595w, https://amaliproperties.com/wp-content/uploads/2025/12/Screening-Room_V9-400x235.jpg 400w" sizes="(max-width: 595px) 100vw, 595px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 13vw;"
+                                data-stagger="0"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v05.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v05-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/v05.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v05.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v05-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 1</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 87vw;"
+                                data-stagger="2"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v07-640x286.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/v07-400x179.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/v07.jpg.webp 782w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/v07-640x286.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v07-640x286.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/v07-400x179.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/v07.jpg 782w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 2</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 37vw;"
+                                data-stagger="10"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v08.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v08-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/v08.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v08.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v08-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 3</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 93vw;"
+                                data-stagger="20"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v11.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v11-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/v11.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v11.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v11-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 4</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 49vw;"
+                                data-stagger="30"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v15.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v15-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/v15.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/v15.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/v15-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 5</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 23vw;"
+                                data-stagger="40"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace-640x256.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace-400x160.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace.jpg.webp 875w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace-640x256.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace-640x256.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace-400x160.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/View-5A_4BR-A1_Terrace.jpg 875w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 6</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 3vw;"
+                                data-stagger="50"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-6_PH-A_Master-Bedroom.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-6_PH-A_Master-Bedroom-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-6_PH-A_Master-Bedroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-6_PH-A_Master-Bedroom.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-6_PH-A_Master-Bedroom-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 7</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 28vw;"
+                                data-stagger="60"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-6A_PH-A_Master-Bedroom-Vignette.jpg.webp" sizes="(max-width: 350px) 100vw, 350px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-6A_PH-A_Master-Bedroom-Vignette.jpg" alt="" srcset="" sizes="(max-width: 350px) 100vw, 350px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 8</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z-10" data-layer="2">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 74vw;"
+                                data-stagger="80"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-7A_Mid-Level-Apartment-Sea-View.jpg.webp 560w, https://amaliproperties.com/wp-content/uploads/2025/12/View-7A_Mid-Level-Apartment-Sea-View-400x250.jpg.webp 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-7A_Mid-Level-Apartment-Sea-View.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-7A_Mid-Level-Apartment-Sea-View.jpg 560w, https://amaliproperties.com/wp-content/uploads/2025/12/View-7A_Mid-Level-Apartment-Sea-View-400x250.jpg 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 9</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 40vw;"
+                                data-stagger="78"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-8_Penthouse.jpg.webp 560w, https://amaliproperties.com/wp-content/uploads/2025/12/View-8_Penthouse-400x250.jpg.webp 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-8_Penthouse.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-8_Penthouse.jpg 560w, https://amaliproperties.com/wp-content/uploads/2025/12/View-8_Penthouse-400x250.jpg 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 10</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 36vw;"
+                                data-stagger="93"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-16_PH-A_Living-Dining.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-16_PH-A_Living-Dining-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-16_PH-A_Living-Dining.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-16_PH-A_Living-Dining.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-16_PH-A_Living-Dining-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 11</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                        
+                            <div
+                                data-name="moodboard-item"
+                                class=" z-10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[5/7]"
+                                style="-background: pink; width: 4vw; left: 15vw;"
+                                data-stagger="100"
+                                data-duration="8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-17_PH-A_Indoor-Pool-Gym.jpg.webp 623w, https://amaliproperties.com/wp-content/uploads/2025/12/View-17_PH-A_Indoor-Pool-Gym-400x225.jpg.webp 400w" sizes="(max-width: 623px) 100vw, 623px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-17_PH-A_Indoor-Pool-Gym.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-17_PH-A_Indoor-Pool-Gym.jpg 623w, https://amaliproperties.com/wp-content/uploads/2025/12/View-17_PH-A_Indoor-Pool-Gym-400x225.jpg 400w" sizes="(max-width: 623px) 100vw, 623px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">2 | 12</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z-0" data-layer="3">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z-0 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="6">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-18_Mid-Level-Apartment.jpg.webp 560w, https://amaliproperties.com/wp-content/uploads/2025/12/View-18_Mid-Level-Apartment-400x250.jpg.webp 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-18_Mid-Level-Apartment.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-18_Mid-Level-Apartment.jpg 560w, https://amaliproperties.com/wp-content/uploads/2025/12/View-18_Mid-Level-Apartment-400x250.jpg 400w" sizes="(max-width: 560px) 100vw, 560px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">3 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--10" data-layer="4">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--10 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="4">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath-640x291.jpg.webp 640w, https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath-400x182.jpg.webp 400w, https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath.jpg.webp 769w" sizes="(max-width: 640px) 100vw, 640px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath-640x291.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath-640x291.jpg 640w, https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath-400x182.jpg 400w, https://amaliproperties.com/wp-content/uploads/2025/12/View-27_PH-A_Master-Bath.jpg 769w" sizes="(max-width: 640px) 100vw, 640px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">4 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--20" data-layer="5">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--20 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="2">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-28_PH-A_Living-Area.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-28_PH-A_Living-Area-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-28_PH-A_Living-Area.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-28_PH-A_Living-Area.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-28_PH-A_Living-Area-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">5 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--30" data-layer="6">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--30 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="0">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-33_3BR_A_Master-Bathroom.jpg.webp 490w, https://amaliproperties.com/wp-content/uploads/2025/12/View-33_3BR_A_Master-Bathroom-400x286.jpg.webp 400w" sizes="(max-width: 490px) 100vw, 490px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-33_3BR_A_Master-Bathroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-33_3BR_A_Master-Bathroom.jpg 490w, https://amaliproperties.com/wp-content/uploads/2025/12/View-33_3BR_A_Master-Bathroom-400x286.jpg 400w" sizes="(max-width: 490px) 100vw, 490px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">6 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--40" data-layer="7">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--40 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-2">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-35_PH-A_Master-Bedroom.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-35_PH-A_Master-Bedroom-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-35_PH-A_Master-Bedroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-35_PH-A_Master-Bedroom.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-35_PH-A_Master-Bedroom-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">7 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--50" data-layer="8">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--50 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-4">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-36_PH-A_Junior-Master-Bedroom.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-36_PH-A_Junior-Master-Bedroom-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-36_PH-A_Junior-Master-Bedroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-36_PH-A_Junior-Master-Bedroom.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-36_PH-A_Junior-Master-Bedroom-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">8 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--60" data-layer="9">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--60 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-6">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-bathroom.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-bathroom-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-bathroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-bathroom.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-bathroom-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">9 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--70" data-layer="10">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--70 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-8">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-37_PH-A_Junior-Master-Bedroom-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">10 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--80" data-layer="11">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--80 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-10">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-40_3BR-B1_Living.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-40_3BR-B1_Living-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-40_3BR-B1_Living.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-40_3BR-B1_Living.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/View-40_3BR-B1_Living-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">11 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--90" data-layer="12">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--90 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-12">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-48_5BR-Villa_Family-Area.jpg.webp" sizes="(max-width: 350px) 100vw, 350px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-48_5BR-Villa_Family-Area.jpg" alt="" srcset="" sizes="(max-width: 350px) 100vw, 350px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">12 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--100" data-layer="13">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--100 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-14">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-51_PH-B1_Office.jpg.webp 467w, https://amaliproperties.com/wp-content/uploads/2025/12/View-51_PH-B1_Office-400x300.jpg.webp 400w" sizes="(max-width: 467px) 100vw, 467px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/View-51_PH-B1_Office.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/View-51_PH-B1_Office.jpg 467w, https://amaliproperties.com/wp-content/uploads/2025/12/View-51_PH-B1_Office-400x300.jpg 400w" sizes="(max-width: 467px) 100vw, 467px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">13 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                        
+                            <div data-name="moodboard-move" class="absolute inset-0 h-full w-full z--110" data-layer="14">
+
+                            
+                            <div
+                                data-name="moodboard-item"
+                                class="hidden xl:block z--110 absolute overflow-hidden skew-y-6 top-[calc(100%+12px)] aspect-[]"
+                                style="-background: ; width: ; left: ;"
+                                data-stagger=""
+                                data-duration="-16">
+
+                                <picture loading="false" role="presentation" class="children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
+<source type="image/webp" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Yoga-Room_V15.jpg.webp 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Yoga-Room_V15-400x225.jpg.webp 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+<img loading="false" role="presentation" src="https://amaliproperties.com/wp-content/uploads/2025/12/Yoga-Room_V15.jpg" alt="" srcset="https://amaliproperties.com/wp-content/uploads/2025/12/Yoga-Room_V15.jpg 622w, https://amaliproperties.com/wp-content/uploads/2025/12/Yoga-Room_V15-400x225.jpg 400w" sizes="(max-width: 622px) 100vw, 622px"/>
+</picture>
+
+                                <!-- <div class="absolute top-0 left-0 text-[16px] lg:text-[30px]">14 | 0</div> -->
+
+                                <div class="absolute inset-0 w-full h-full bg-white opacity-0" data-name="moodboard-opacity"></div>
+                            </div>
+
+                            
+                            </div>
+
+                    
+                    
+                </div>
+            </section>
+        </main>
+
+    
+
+<div id="contact-form-popup" class="contact-form-popup mfp-hide h-[90dvh] overflow-auto" data-lenis-prevent>
+    <div class="bg-white rounded-20 p-40 sm:p-60 max-w-[900px] flex flex-col items-center justify-center mx-auto relative">
+        <button type="button" class="mfp-close absolute top-20 right-20 text-30 text-gray-500 hover:text-gray-700 transition-colors">
+            ×
+        </button>
+
+        <div class="text-center mb-40">
+            <h2 class="font-sans font-light text-32 sm:text-42 leading-none tracking-1.7 uppercase text-dark-blue mb-15">
+                Register Interest
+            </h2>
+            <p class="font-body font-light text-18 leading-26 text-gray-600">
+                We'd love to hear from you
+            </p>
+        </div>
+
+        <div class="contact-form-content">
+            
+                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_2' ><div id='gf_2' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <p class='gform_description'></p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_2' id='gform_2'  action='/residences/residences-teaser/#gf_2' data-formid='2' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_2_1" class="gfield gfield--type-email gfield--input-type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_1'>Your email address<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_2_1' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_2_2" class="gfield gfield--type-captcha gfield--input-type-captcha gfield--width-full field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_2'>CAPTCHA</label><div id='input_2_2' class='ginput_container ginput_recaptcha' data-sitekey='6Ld1xI4sAAAAAD7jxpR9xhe3-nUjaaomvADkBQEc'  data-theme='light' data-tabindex='-1' data-size='invisible' data-badge='bottomright'></div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> 
+        <button class='button rounded-full group self-start inline-flex items-center gap-20 bg-dark-blue py-9 pl-35 pr-12 overflow-hidden max-lg:mt-20' id='gform_submit_button_2' aria-label='Form submit button'>
+            <span class='font-sans font-normal text-14 leading-none tracking-1.6 uppercase *:text-12 *:font-extralight text-white z-10'>Register your interest</span>
+            <div class='flex  justify-center items-center w-[42px] h-[42px] rounded-full rotate-0 before:absolute before:size-full before:bg-slate before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20] [&_path]:stroke-white'>
+    
+<div class="flex  justify-center items-center w-[42px] h-[42px] rounded-full rotate-0 before:absolute before:size-full before:bg-slate before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20] [&amp;_path]:stroke-white">
+    
+        <svg class="w-10 h-auto width=" 6"="" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="Group 209">
+                <path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1" stroke-linecap="round"></path>
+                <path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1" stroke-linecap="round"></path>
+            </g>
+        </svg>
+    
+            </div>
+    
+            </div>
+        </button>
+     <input type='hidden' name='gform_ajax' value='form_id=2&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=805d94c8e5e1b4647406d4b4ba712723' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_2' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_2' id='gform_theme_2' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_2' id='gform_style_settings_2' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='EUR' value='pHSVHTKbLu7a2Rrp63ECSjbIFoXc4APCzEnpc2sSaCOVhLFqsT0b0qnR2Zn5EC+m24jkrdAEtLerECVoWN+8+iLFra9ujI7aE06uZ3ZI68M0tnk=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsImVmZGQwZmNkM2YxZDJkMWYwNDBlNGE5ZWM2Y2YzZGE2Il0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_2' id='gform_ajax_frame_2' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 2, 'https://amaliproperties.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_2').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'https://amaliproperties.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_2').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_2').text());}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 2, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<!-- END DIV MAIN CONTENT -->
+
+
+</div>
+<!-- JS ARE LOADED HERE WITH FUNCTION.PHP -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/AmaliProperties/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-dom-ready-js" src="https://amaliproperties.com/wp-includes/js/dist/dom-ready.min.js?ver=a06281ae5cf5500e9317"></script>
+<script id="wp-hooks-js" src="https://amaliproperties.com/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d"></script>
+<script id="wp-i18n-js" src="https://amaliproperties.com/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-12-15 12:18:56+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+//# sourceURL=wp-a11y-js-translations
+</script>
+<script id="wp-a11y-js" src="https://amaliproperties.com/wp-includes/js/dist/a11y.min.js?ver=af934e5259bc51b8718e"></script>
+<script id="gform_placeholder-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.10.5"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=7c651d0ba638ce98b9c65141edddd567"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"f46a103829bd84082ba60ea82d947f6d"},"ajax":{"ajaxurl":"https://amaliproperties.com/wp-admin/admin-ajax.php","ajax_submission_nonce":"aef4078edf","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://amaliproperties.com/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"47a8ce5429"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=301fdc9aa6144168f3b854c4c2c8f6d3"></script>
+<script id="gp-advanced-phone-field-js-extra">
+var GPAPF = {"pluginUrl":"https://amaliproperties.com/wp-content/plugins/gp-advanced-phone-field","localizedCountries":null};
+//# sourceURL=gp-advanced-phone-field-js-extra
+</script>
+<script id="gp-advanced-phone-field-js" defer='defer' src="https://amaliproperties.com/wp-content/plugins/gp-advanced-phone-field/js/built/gp-advanced-phone-field.js?ver=1.1.10"></script>
+<script id="script-js-js-extra">
+var php_vars = {"themeDirUrl":"https://amaliproperties.com/wp-content/themes/AmaliProperties","homeUrl":"https://amaliproperties.com","ajaxUrl":"https://amaliproperties.com/wp-admin/admin-ajax.php"};
+//# sourceURL=script-js-js-extra
+</script>
+<script id="script-js-js" src="https://amaliproperties.com/wp-content/themes/AmaliProperties/assets/js/bundle.js?ver=1774457287"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://amaliproperties.com/wp-includes/js/wp-emoji-release.min.js?ver=87cac644b1080d98869be99d3616df3a"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://amaliproperties.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 2) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 2, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+
+</body>
+
+</html>
