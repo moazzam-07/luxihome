@@ -321,3 +321,172 @@ header nav a:hover, header a[href="index.html"]:hover, header a[href="/"]:hover,
 .honey-lightbox-close:hover {
   background: rgba(255,255,255,0.3);
 }
+
+/* =========================================================
+   LENIS SMOOTH INERTIAL SCROLLING
+   ========================================================= */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* =========================================================
+   ANIMATED HONEYBEE CURSOR
+   ========================================================= */
+.honey-bee-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 9999999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, scale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.honey-bee-cursor.active {
+  opacity: 1;
+}
+
+.honey-bee-cursor.hovering {
+  scale: 1.25;
+}
+
+.honey-bee-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.honey-bee-canvas {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.honey-bee-svg {
+  width: 38px;
+  height: 38px;
+  overflow: visible;
+}
+
+.honey-bee-wing-left {
+  transform-origin: 18px 16px;
+  animation: bee-wing-flutter-left 0.1s ease-in-out infinite alternate;
+}
+
+.honey-bee-wing-right {
+  transform-origin: 22px 16px;
+  animation: bee-wing-flutter-right 0.1s ease-in-out infinite alternate;
+}
+
+@keyframes bee-wing-flutter-left {
+  0% { transform: rotate(-20deg) scaleY(1); }
+  100% { transform: rotate(40deg) scaleY(0.65); }
+}
+
+@keyframes bee-wing-flutter-right {
+  0% { transform: rotate(20deg) scaleY(1); }
+  100% { transform: rotate(-40deg) scaleY(0.65); }
+}
+
+/* =========================================================
+   SCROLL-DRIVEN & CONTINUOUS HORIZONTAL MARQUEES
+   ========================================================= */
+.marquee-infinite {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+.marquee-infinite-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-infinite-track span {
+  display: inline-block;
+  padding: 0 0.35em;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+/* =========================================================
+   SLOW STAGGERED EDITORIAL TEXT & SECTION ENTRANCES
+   ========================================================= */
+[data-reveal], .honey-reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 1.35s cubic-bezier(0.16, 1, 0.3, 1), transform 1.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].revealed, .honey-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1), transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0.06s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.46s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.56s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(7) { transition-delay: 0.66s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(8) { transition-delay: 0.76s; opacity: 1; transform: translateY(0); }
+
+/* Slow Image Reveal with Smooth Zoom Out */
+.honey-reveal-img {
+  overflow: hidden;
+}
+
+.honey-reveal-img img {
+  transform: scale(1.08);
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.honey-reveal-img.revealed img {
+  transform: scale(1);
+}
+

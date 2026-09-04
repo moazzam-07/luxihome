@@ -17,5 +17,7 @@ downloaded_assets/
 .DS_Store
 Thumbs.db
 .agent/
+honey_js_chunks/
 
 .vercel
+

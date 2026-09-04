@@ -1,225 +1,507 @@
 /**
  * House of Honey Interactive Engine
- * Parallax Scrolling, Seasonal Themes, Fullscreen Drawer, Infinite Marquee, Image Lightbox
+ * 1. Lenis Inertial Momentum Smooth Scrolling
+ * 2. Animated Floating Honeybee Cursor with Spring Damping & Physics
+ * 3. Scroll-Driven Continuous Horizontal Script Marquees
+ * 4. Slow Staggered Editorial Text Entrance & Parallax Reveals
+ * 5. Seasonal Color Theme System (Neutral, Spring, Summer, Fall, Winter)
+ * 6. Fullscreen Navigation Drawer & Lightbox Modal
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Seasonal Theme System
-  const themes = ['neutral', 'spring', 'summer', 'fall', 'winter'];
-  let currentThemeIndex = 0;
-  
-  const savedTheme = localStorage.getItem('honey-theme');
-  if (savedTheme && themes.includes(savedTheme)) {
-    currentThemeIndex = themes.indexOf(savedTheme);
-  }
-  
-  function applyTheme(themeName) {
-    document.documentElement.setAttribute('data-theme', themeName);
-    document.body.setAttribute('data-theme', themeName);
-    localStorage.setItem('honey-theme', themeName);
-    
-    const pill = document.querySelector('.theme-switch-pill .theme-name');
-    if (pill) {
-      pill.textContent = 'Theme: ' + themeName.charAt(0).toUpperCase() + themeName.slice(1);
+(function () {
+  'use strict';
+
+  // =========================================================
+  // 1. LENIS INERTIAL SMOOTH SCROLLING ENGINE
+  // =========================================================
+  let lenisInstance = null;
+  function initSmoothScroll() {
+    if (typeof Lenis !== 'undefined') {
+      try {
+        lenisInstance = new Lenis({
+          duration: 1.35,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 0.85,
+          touchMultiplier: 1.5,
+          infinite: false
+        });
+        window.honeyLenis = lenisInstance;
+
+        function raf(time) {
+          lenisInstance.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      } catch (err) {
+        console.warn('Lenis smooth scroll initialization skipped:', err);
+      }
     }
   }
 
-  applyTheme(themes[currentThemeIndex]);
+  // =========================================================
+  // 2. ANIMATED HONEYBEE CURSOR ENGINE (SPRING PHYSICS + FLIGHT)
+  // =========================================================
+  function initHoneybeeCursor() {
+    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches;
+    if (isTouch) return; // Touch screens do not use custom mouse cursor
 
-  // Floating Theme Toggle Widget
-  let themePill = document.querySelector('.theme-switch-pill');
-  if (!themePill) {
-    themePill = document.createElement('button');
-    themePill.className = 'theme-switch-pill';
-    themePill.setAttribute('aria-label', 'Change seasonal color theme');
-    themePill.innerHTML = `
-      <span class="theme-dot"></span>
-      <span class="theme-name">Theme: ${themes[currentThemeIndex].charAt(0).toUpperCase() + themes[currentThemeIndex].slice(1)}</span>
-    `;
-    themePill.addEventListener('click', () => {
-      currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-      applyTheme(themes[currentThemeIndex]);
+    let cursorEl = document.querySelector('.honey-bee-cursor');
+    if (!cursorEl) {
+      cursorEl = document.createElement('div');
+      cursorEl.className = 'honey-bee-cursor';
+      cursorEl.setAttribute('aria-hidden', 'true');
+      cursorEl.innerHTML = `
+        <div class="honey-bee-wrapper">
+          <canvas class="honey-bee-canvas" width="44" height="44" style="display:none;"></canvas>
+          <svg class="honey-bee-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left Wing -->
+            <g class="honey-bee-wing-left">
+              <ellipse cx="14" cy="11" rx="8" ry="4.5" transform="rotate(-35 14 11)" fill="rgba(255, 255, 255, 0.82)" stroke="rgba(220, 235, 255, 0.9)" stroke-width="0.8"/>
+              <path d="M12 12C14 9 17 8 19 11" stroke="rgba(200, 220, 255, 0.6)" stroke-width="0.5"/>
+            </g>
+            <!-- Right Wing -->
+            <g class="honey-bee-wing-right">
+              <ellipse cx="26" cy="11" rx="8" ry="4.5" transform="rotate(35 26 11)" fill="rgba(255, 255, 255, 0.82)" stroke="rgba(220, 235, 255, 0.9)" stroke-width="0.8"/>
+              <path d="M28 12C26 9 23 8 21 11" stroke="rgba(200, 220, 255, 0.6)" stroke-width="0.5"/>
+            </g>
+            <!-- Bee Body Shadow & Glow -->
+            <ellipse cx="20" cy="22" rx="10" ry="12" fill="#2B1700" />
+            <!-- Bee Golden Stripes -->
+            <ellipse cx="20" cy="22" rx="9.5" ry="11.5" fill="#EDBC00" />
+            <path d="M11 18C13 16.5 27 16.5 29 18C29 19.5 28 20.5 28 20.5C26 19 14 19 12 20.5C12 20.5 11 19.5 11 18Z" fill="#261309" />
+            <path d="M10.8 23.5C13 22 27 22 29.2 23.5C29 25 27.5 26 27.5 26C25 24.5 15 24.5 12.5 26C12.5 26 11 25 10.8 23.5Z" fill="#261309" />
+            <path d="M13 29C15 28 25 28 27 29C26 30.5 24 31.8 20 33C16 31.8 14 30.5 13 29Z" fill="#261309" />
+            <!-- Head -->
+            <circle cx="20" cy="13" r="5.5" fill="#2B1700" />
+            <!-- Cute Eyes -->
+            <circle cx="18" cy="12" r="1.3" fill="#FFF8EF" />
+            <circle cx="22" cy="12" r="1.3" fill="#FFF8EF" />
+            <circle cx="18.3" cy="11.8" r="0.6" fill="#000" />
+            <circle cx="22.3" cy="11.8" r="0.6" fill="#000" />
+            <!-- Antennae -->
+            <path d="M18 9C17 6 15 5 13 6" stroke="#2B1700" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="13" cy="6" r="1" fill="#EDBC00" />
+            <path d="M22 9C23 6 25 5 27 6" stroke="#2B1700" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="27" cy="6" r="1" fill="#EDBC00" />
+            <!-- Stinger -->
+            <path d="M19.3 33.5L20 36L20.7 33.5Z" fill="#2B1700"/>
+          </svg>
+        </div>
+      `;
+      document.body.appendChild(cursorEl);
+    }
+
+    // Try loading native Rive bee animation if available
+    const canvas = cursorEl.querySelector('.honey-bee-canvas');
+    const svgBee = cursorEl.querySelector('.honey-bee-svg');
+    if (typeof rive !== 'undefined' && canvas) {
+      try {
+        const r = new rive.Rive({
+          src: './assets/bee.riv',
+          canvas: canvas,
+          autoplay: true,
+          onLoad: () => {
+            canvas.style.display = 'block';
+            if (svgBee) svgBee.style.display = 'none';
+          },
+          onError: () => {
+            // Fallback cleanly to beautiful SVG bee
+            canvas.style.display = 'none';
+            if (svgBee) svgBee.style.display = 'block';
+          }
+        });
+      } catch (e) {
+        canvas.style.display = 'none';
+      }
+    }
+
+    // Spring Physics Engine
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currX = mouseX;
+    let currY = mouseY;
+    let prevX = currX;
+    let isVisible = false;
+    let isHovering = false;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX + 28;
+      mouseY = e.clientY + 28;
+      if (!isVisible) {
+        isVisible = true;
+        cursorEl.classList.add('active');
+        currX = mouseX;
+        currY = mouseY;
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      isVisible = false;
+      cursorEl.classList.remove('active');
     });
-    document.body.appendChild(themePill);
-  }
 
-  // 2. Fullscreen Navigation Menu Overlay
-  const menuButtons = document.querySelectorAll('button[aria-label="Open menu"], button[aria-label="Close menu"], [data-menu-toggle]');
-  const menuOverlay = document.getElementById('mobile-menu-overlay');
-
-  function updateMenuState(isOpen) {
-    if (!menuOverlay) return;
-    if (isOpen) {
-      menuOverlay.setAttribute('data-state', 'open');
-      menuOverlay.style.display = 'flex';
-      setTimeout(() => {
-        menuOverlay.style.opacity = '1';
-      }, 10);
-      document.body.style.overflow = 'hidden';
-    } else {
-      menuOverlay.setAttribute('data-state', 'closed');
-      menuOverlay.style.opacity = '0';
-      setTimeout(() => {
-        menuOverlay.style.display = 'none';
-      }, 500);
-      document.body.style.overflow = '';
-    }
-  }
-
-  menuButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = menuOverlay && menuOverlay.getAttribute('data-state') === 'open';
-      updateMenuState(!isOpen);
+    document.addEventListener('mouseenter', () => {
+      isVisible = true;
+      cursorEl.classList.add('active');
     });
-  });
 
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menuOverlay && menuOverlay.getAttribute('data-state') === 'open') {
-      updateMenuState(false);
-    }
-  });
-
-  // 3. Page-Specific Infinite Marquee Setup
-  const pagePath = window.location.pathname.toLowerCase();
-  document.querySelectorAll('.font-canora.text-theme-accent.text-title-100, [data-marquee]').forEach(el => {
-    let marqueeText = el.getAttribute('data-marquee');
-    if (!marqueeText) {
-      if (pagePath.includes('studio')) {
-        marqueeText = 'About Us';
-      } else if (pagePath.includes('spaces')) {
-        marqueeText = 'Our Spaces';
-      } else if (pagePath.includes('the-buzz')) {
-        marqueeText = 'The Buzz';
-      } else if (pagePath.includes('dear-honey')) {
-        marqueeText = 'Dear Honey';
-      } else if (pagePath.includes('press')) {
-        marqueeText = 'Press Room';
-      } else if (pagePath.includes('contact')) {
-        marqueeText = 'Tell us your story';
+    // Detect clickable hover elements
+    const interactiveSelector = 'a, button, input, textarea, select, [role="button"], .cursor-pointer, [data-menu-toggle]';
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest(interactiveSelector)) {
+        if (!isHovering) {
+          isHovering = true;
+          cursorEl.classList.add('hovering');
+        }
       } else {
-        const parentSec = el.closest('#about') || el.closest('[data-page-builder-section]');
-        if (parentSec && parentSec.id === 'about') {
-          marqueeText = 'House of Honey';
-        } else if (parentSec && parentSec.innerText && parentSec.innerText.includes('Dear HONEY')) {
-          marqueeText = 'Dear Honey';
-        } else {
-          marqueeText = 'Spaces with story';
+        if (isHovering) {
+          isHovering = false;
+          cursorEl.classList.remove('hovering');
         }
+      }
+    }, { passive: true });
+
+    // Smooth Spring physics RAF loop
+    function updateBeePhysics() {
+      if (isVisible) {
+        // Spring lerp towards cursor offset
+        currX += (mouseX - currX) * 0.14;
+        currY += (mouseY - currY) * 0.14;
+
+        const vx = currX - prevX;
+        prevX = currX;
+
+        // Subtle tilt angle based on velocity
+        const tilt = Math.max(-28, Math.min(28, vx * 2.2));
+        // Idle floating sine wave bobbing
+        const hoverBob = Math.sin(Date.now() * 0.005) * 3;
+
+        cursorEl.style.transform = `translate3d(${currX}px, ${currY + hoverBob}px, 0) rotate(${tilt}deg)`;
+      }
+      requestAnimationFrame(updateBeePhysics);
+    }
+    requestAnimationFrame(updateBeePhysics);
+  }
+
+  // =========================================================
+  // 3. SCROLL-DRIVEN & CONTINUOUS HORIZONTAL MARQUEES
+  // =========================================================
+  function initMarquees() {
+    const pagePath = window.location.pathname.toLowerCase();
+    const marqueeElements = document.querySelectorAll('.font-canora.text-theme-accent.text-title-100, [data-marquee]');
+
+    const marqueeInstances = [];
+
+    marqueeElements.forEach((el, index) => {
+      let marqueeText = el.getAttribute('data-marquee');
+      if (!marqueeText) {
+        if (pagePath.includes('studio')) {
+          marqueeText = 'About Us';
+        } else if (pagePath.includes('spaces')) {
+          marqueeText = 'Our Spaces';
+        } else if (pagePath.includes('the-buzz')) {
+          marqueeText = 'The Buzz';
+        } else if (pagePath.includes('dear-honey')) {
+          marqueeText = 'Dear Honey';
+        } else if (pagePath.includes('press')) {
+          marqueeText = 'Press Room';
+        } else if (pagePath.includes('contact')) {
+          marqueeText = 'Tell us your story';
+        } else {
+          const parentSec = el.closest('#about') || el.closest('[data-page-builder-section]');
+          if (parentSec && parentSec.id === 'about') {
+            marqueeText = 'House of Honey';
+          } else if (parentSec && parentSec.innerText && parentSec.innerText.includes('Dear HONEY')) {
+            marqueeText = 'Dear Honey';
+          } else {
+            marqueeText = 'Spaces with story';
+          }
+        }
+      }
+
+      el.innerHTML = `
+        <div class="marquee-infinite">
+          <div class="marquee-infinite-track" data-track="1">
+            <span>${marqueeText}</span>
+            <span>${marqueeText}</span>
+            <span>${marqueeText}</span>
+            <span>${marqueeText}</span>
+          </div>
+          <div class="marquee-infinite-track" data-track="2" aria-hidden="true">
+            <span>${marqueeText}</span>
+            <span>${marqueeText}</span>
+            <span>${marqueeText}</span>
+            <span>${marqueeText}</span>
+          </div>
+        </div>
+      `;
+      el.style.opacity = '1';
+
+      const tracks = el.querySelectorAll('.marquee-infinite-track');
+      const direction = (index % 2 === 0) ? -1 : 1; // Alternating subtle directions
+      const scrollFactor = 0.38 * direction;
+
+      marqueeInstances.push({
+        element: el,
+        tracks: tracks,
+        ambientOffset: 0,
+        direction: direction,
+        scrollFactor: scrollFactor,
+        speed: 0.75
+      });
+    });
+
+    // Scroll & Ambient Drift Loop
+    function updateMarquees() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      marqueeInstances.forEach(instance => {
+        // Advance ambient continuous movement
+        instance.ambientOffset += instance.speed * instance.direction;
+
+        // Combine ambient offset with scroll translation
+        const scrollDelta = scrollY * instance.scrollFactor;
+        const totalTranslation = instance.ambientOffset + scrollDelta;
+
+        const firstTrack = instance.tracks[0];
+        if (firstTrack) {
+          const trackWidth = firstTrack.offsetWidth || 1200;
+          const normalized = ((totalTranslation % trackWidth) - trackWidth) % trackWidth;
+
+          instance.tracks.forEach(track => {
+            track.style.transform = `translate3d(${normalized}px, 0, 0)`;
+          });
+        }
+      });
+
+      requestAnimationFrame(updateMarquees);
+    }
+    requestAnimationFrame(updateMarquees);
+  }
+
+  // =========================================================
+  // 4. SLOW STAGGERED EDITORIAL TEXT ENTRANCES & PARALLAX
+  // =========================================================
+  function initSlowEditorialReveals() {
+    // Collect all major editorial headlines, paragraphs, and project cards
+    const targets = document.querySelectorAll(
+      '[data-reveal], .honey-reveal, ' +
+      'section h1, section h2, section h3, ' +
+      '.text-title-60, .text-title-40, .text-title-20, ' +
+      '[data-page-builder-section] .grid > a, ' +
+      '[data-page-builder-section] .grid > div, ' +
+      '.honey-reveal-img'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          // Unobserve once revealed for performance
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    targets.forEach((el, i) => {
+      if (!el.classList.contains('revealed') && !el.closest('header') && !el.closest('#mobile-menu-overlay')) {
+        el.classList.add('honey-reveal');
+        // Add subtle delay to children of grids
+        if (el.parentElement && el.parentElement.classList.contains('grid')) {
+          const childIdx = Array.from(el.parentElement.children).indexOf(el);
+          el.style.transitionDelay = `${(childIdx % 4) * 0.12}s`;
+        }
+        observer.observe(el);
+      }
+    });
+
+    // Parallax Scroll Physics on Overflow Images
+    const parallaxContainers = document.querySelectorAll('[style*="--parallax-overflow"]');
+    function handleParallax() {
+      const windowH = window.innerHeight;
+      parallaxContainers.forEach(container => {
+        const rect = container.getBoundingClientRect();
+        if (rect.top < windowH && rect.bottom > 0) {
+          const progress = (windowH - rect.top) / (windowH + rect.height);
+          const yOffset = (progress - 0.5) * 65;
+          const innerImg = container.querySelector('img');
+          if (innerImg) {
+            innerImg.style.transform = `translate3d(0, ${yOffset}px, 0) scale(1.05)`;
+          }
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleParallax, { passive: true });
+    handleParallax();
+  }
+
+  // =========================================================
+  // 5. SEASONAL THEME SYSTEM
+  // =========================================================
+  function initSeasonalThemes() {
+    const themes = ['neutral', 'spring', 'summer', 'fall', 'winter'];
+    let currentThemeIndex = 0;
+
+    const savedTheme = localStorage.getItem('honey-theme');
+    if (savedTheme && themes.includes(savedTheme)) {
+      currentThemeIndex = themes.indexOf(savedTheme);
+    }
+
+    function applyTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      document.body.setAttribute('data-theme', themeName);
+      localStorage.setItem('honey-theme', themeName);
+
+      const pill = document.querySelector('.theme-switch-pill .theme-name');
+      if (pill) {
+        pill.textContent = 'Theme: ' + themeName.charAt(0).toUpperCase() + themeName.slice(1);
       }
     }
-    
-    el.innerHTML = `
-      <div class="marquee-infinite">
-        <div class="marquee-infinite-track">
-          <span>${marqueeText}</span>
-          <span>${marqueeText}</span>
-          <span>${marqueeText}</span>
-          <span>${marqueeText}</span>
-        </div>
-        <div class="marquee-infinite-track" aria-hidden="true">
-          <span>${marqueeText}</span>
-          <span>${marqueeText}</span>
-          <span>${marqueeText}</span>
-          <span>${marqueeText}</span>
-        </div>
-      </div>
-    `;
-    el.style.opacity = '1';
-  });
 
-  // 4. Parallax Scroll Physics on Images
-  const parallaxContainers = document.querySelectorAll('[style*="--parallax-overflow"]');
-  function handleParallax() {
-    const scrollY = window.pageYOffset;
-    const windowH = window.innerHeight;
+    applyTheme(themes[currentThemeIndex]);
 
-    parallaxContainers.forEach(container => {
-      const rect = container.getBoundingClientRect();
-      if (rect.top < windowH && rect.bottom > 0) {
-        // Calculate offset percentage
-        const progress = (windowH - rect.top) / (windowH + rect.height);
-        const yOffset = (progress - 0.5) * 60; // 60px smooth parallax travel
-        const innerImg = container.querySelector('img');
-        if (innerImg) {
-          innerImg.style.transform = `translate3d(0, ${yOffset}px, 0) scale(1.04)`;
-        }
-      }
-    });
+    let themePill = document.querySelector('.theme-switch-pill');
+    if (!themePill) {
+      themePill = document.createElement('button');
+      themePill.className = 'theme-switch-pill';
+      themePill.setAttribute('aria-label', 'Change seasonal color theme');
+      themePill.innerHTML = `
+        <span class="theme-dot"></span>
+        <span class="theme-name">Theme: ${themes[currentThemeIndex].charAt(0).toUpperCase() + themes[currentThemeIndex].slice(1)}</span>
+      `;
+      themePill.addEventListener('click', () => {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        applyTheme(themes[currentThemeIndex]);
+      });
+      document.body.appendChild(themePill);
+    }
   }
 
-  window.addEventListener('scroll', handleParallax, { passive: true });
-  handleParallax();
+  // =========================================================
+  // 6. FULLSCREEN NAVIGATION MENU DRAWER
+  // =========================================================
+  function initFullscreenMenu() {
+    const menuButtons = document.querySelectorAll('button[aria-label="Open menu"], button[aria-label="Close menu"], [data-menu-toggle]');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
 
-  // 5. Lightbox Modal
-  let lightbox = document.querySelector('.honey-lightbox');
-  if (!lightbox) {
-    lightbox = document.createElement('div');
-    lightbox.className = 'honey-lightbox';
-    lightbox.innerHTML = `
-      <div class="honey-lightbox-close" aria-label="Close Lightbox">&times;</div>
-      <img src="" alt="House of Honey Photo" />
-    `;
-    document.body.appendChild(lightbox);
-    
-    lightbox.querySelector('.honey-lightbox-close').addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-    
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-      }
-    });
-  }
-
-  document.querySelectorAll('img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', (e) => {
-      const src = img.getAttribute('src');
-      if (src && !img.closest('header') && !img.closest('.theme-switch-pill') && !img.closest('#mobile-menu-overlay')) {
-        const lbImg = lightbox.querySelector('img');
-        lbImg.src = src;
-        lbImg.alt = img.alt || 'House of Honey';
-        lightbox.classList.add('active');
-      }
-    });
-  });
-
-  // 6. Interactive Form Interception
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
-      if (submitBtn) {
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Message Sent ✓';
-        submitBtn.style.backgroundColor = 'var(--color-theme-accent)';
-        submitBtn.style.color = 'var(--color-theme-text-secondary)';
+    function updateMenuState(isOpen) {
+      if (!menuOverlay) return;
+      if (isOpen) {
+        menuOverlay.setAttribute('data-state', 'open');
+        menuOverlay.style.display = 'flex';
         setTimeout(() => {
-          submitBtn.textContent = originalText;
-          submitBtn.style.backgroundColor = '';
-          submitBtn.style.color = '';
-          form.reset();
-        }, 4000);
+          menuOverlay.style.opacity = '1';
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      } else {
+        menuOverlay.setAttribute('data-state', 'closed');
+        menuOverlay.style.opacity = '0';
+        setTimeout(() => {
+          menuOverlay.style.display = 'none';
+        }, 500);
+        document.body.style.overflow = '';
+      }
+    }
+
+    menuButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menuOverlay && menuOverlay.getAttribute('data-state') === 'open';
+        updateMenuState(!isOpen);
+      });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay && menuOverlay.getAttribute('data-state') === 'open') {
+        updateMenuState(false);
       }
     });
-  });
+  }
 
-  // 7. Scroll reveal animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+  // =========================================================
+  // 7. LIGHTBOX MODAL & FORM INTERCEPTION
+  // =========================================================
+  function initLightboxAndForms() {
+    let lightbox = document.querySelector('.honey-lightbox');
+    if (!lightbox) {
+      lightbox = document.createElement('div');
+      lightbox.className = 'honey-lightbox';
+      lightbox.innerHTML = `
+        <div class="honey-lightbox-close" aria-label="Close Lightbox">&times;</div>
+        <img src="" alt="House of Honey Photo" />
+      `;
+      document.body.appendChild(lightbox);
+
+      lightbox.querySelector('.honey-lightbox-close').addEventListener('click', () => {
+        lightbox.classList.remove('active');
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+        }
+      });
+    }
+
+    document.querySelectorAll('img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', (e) => {
+        const src = img.getAttribute('src');
+        if (src && !img.closest('header') && !img.closest('.theme-switch-pill') && !img.closest('#mobile-menu-overlay') && !img.closest('.honey-bee-cursor')) {
+          const lbImg = lightbox.querySelector('img');
+          lbImg.src = src;
+          lbImg.alt = img.alt || 'House of Honey';
+          lightbox.classList.add('active');
+        }
+      });
     });
-  }, { threshold: 0.08 });
 
-  document.querySelectorAll('[data-reveal]').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
-    observer.observe(el);
-  });
-});
+    // Form Interception
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+        if (submitBtn) {
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Message Sent ✓';
+          submitBtn.style.backgroundColor = 'var(--color-theme-accent)';
+          submitBtn.style.color = 'var(--color-theme-text-secondary)';
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.style.color = '';
+            form.reset();
+          }, 4000);
+        }
+      });
+    });
+  }
+
+  // =========================================================
+  // INITIALIZE ON DOM READY
+  // =========================================================
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', onReady);
+  } else {
+    onReady();
+  }
+
+  function onReady() {
+    initSmoothScroll();
+    initHoneybeeCursor();
+    initMarquees();
+    initSlowEditorialReveals();
+    initSeasonalThemes();
+    initFullscreenMenu();
+    initLightboxAndForms();
+  }
+})();
