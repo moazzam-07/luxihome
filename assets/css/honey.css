@@ -131,3 +131,193 @@ html {
 .honey-lightbox-close:hover {
   background: rgba(255,255,255,0.3);
 }
+
+
+/* House of Honey - Exact Animation & Hover Fidelity */
+html {
+  scroll-behavior: smooth;
+}
+
+[data-theme] {
+  transition: background-color 0.6s cubic-bezier(0.65, 0.05, 0.36, 1),
+              color 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* Button Curtain Slide & Text Shift Animation */
+a:hover > [data-curtain="true"],
+button:hover > [data-curtain="true"],
+a:hover > span[data-curtain="true"],
+button:hover > span[data-curtain="true"] {
+  transform: translateY(0%) !important;
+  transition: transform 0.45s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+}
+
+[data-curtain="true"] {
+  transform: translateY(-100%);
+  transition: transform 0.45s cubic-bezier(0.65, 0.05, 0.36, 1);
+  pointer-events: none;
+}
+
+a:hover [data-content="true"],
+button:hover [data-content="true"] {
+  transform: translateX(8px);
+  transition: transform 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+a:hover [data-icon-right="true"],
+button:hover [data-icon-right="true"] {
+  transform: translateX(-8px);
+  transition: transform 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* Header Nav Pill Morphing on Hover */
+header nav a, header a[href="index.html"], header a[href="/"], header a[href="contact.html"] {
+  transition: border-radius 0.4s cubic-bezier(0.65, 0.05, 0.36, 1),
+              background-color 0.4s cubic-bezier(0.65, 0.05, 0.36, 1),
+              color 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+}
+
+header nav a:hover, header a[href="index.html"]:hover, header a[href="/"]:hover, header a[href="contact.html"]:hover {
+  border-radius: 25px !important;
+  background-color: var(--color-theme-accent) !important;
+  color: var(--color-theme-text-secondary) !important;
+}
+
+/* Project Card Image Hover Zoom */
+.group\/item {
+  cursor: pointer;
+}
+
+.group\/item img {
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.75s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.group\/item:hover img {
+  transform: scale(1.05) !important;
+}
+
+/* Infinite Marquee Loop */
+.marquee-infinite {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 3rem;
+  width: 100%;
+}
+
+.marquee-infinite-track {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 3rem;
+  animation: scroll-marquee 28s linear infinite;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 3rem)); }
+}
+
+/* Mobile & Desktop Menu Overlay */
+#mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  opacity: 0;
+  background-color: var(--color-theme-bg-primary);
+  color: var(--color-theme-text-primary);
+  transition: opacity 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+#mobile-menu-overlay[data-state="open"] {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Theme Switcher Widget */
+.theme-switch-pill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-theme-bg-secondary);
+  color: var(--color-theme-text-secondary);
+  border: 1px solid var(--color-theme-transparency-primary);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-family: var(--font-neue-haas-grotesk);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.theme-switch-pill:hover {
+  background: var(--color-theme-accent);
+  color: var(--color-theme-text-secondary);
+  transform: scale(1.05);
+}
+
+.theme-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-theme-text-secondary);
+}
+
+/* Lightbox Modal */
+.honey-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(14, 14, 14, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.honey-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.honey-lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+
+.honey-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.honey-lightbox-close:hover {
+  background: rgba(255,255,255,0.3);
+}

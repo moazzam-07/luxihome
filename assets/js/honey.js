@@ -1,6 +1,6 @@
 /**
  * House of Honey Interactive Engine
- * Handles themes, animations, smooth marquee, mobile navigation drawer, lightbox, and form submissions
+ * Parallax Scrolling, Seasonal Themes, Fullscreen Drawer, Infinite Marquee, Image Lightbox
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyTheme(themes[currentThemeIndex]);
 
-  // Create floating theme toggle button
+  // Floating Theme Toggle Widget
   let themePill = document.querySelector('.theme-switch-pill');
   if (!themePill) {
     themePill = document.createElement('button');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(themePill);
   }
 
-  // 2. Navigation Menu Toggle (Mobile & Desktop Overlay)
+  // 2. Fullscreen Navigation Menu Overlay
   const menuButtons = document.querySelectorAll('button[aria-label="Open menu"], button[aria-label="Close menu"], [data-menu-toggle]');
   const menuOverlay = document.getElementById('mobile-menu-overlay');
 
@@ -52,16 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isOpen) {
       menuOverlay.setAttribute('data-state', 'open');
       menuOverlay.style.display = 'flex';
-      menuOverlay.style.opacity = '1';
-      menuOverlay.style.visibility = 'visible';
-      menuOverlay.style.pointerEvents = 'auto';
+      setTimeout(() => {
+        menuOverlay.style.opacity = '1';
+      }, 10);
       document.body.style.overflow = 'hidden';
     } else {
       menuOverlay.setAttribute('data-state', 'closed');
-      menuOverlay.style.display = 'none';
       menuOverlay.style.opacity = '0';
-      menuOverlay.style.visibility = 'hidden';
-      menuOverlay.style.pointerEvents = 'none';
+      setTimeout(() => {
+        menuOverlay.style.display = 'none';
+      }, 500);
       document.body.style.overflow = '';
     }
   }
@@ -74,62 +74,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close menu on ESC key
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuOverlay && menuOverlay.getAttribute('data-state') === 'open') {
       updateMenuState(false);
     }
   });
 
-  // 3. Hero Carousel Slideshow
-  const heroSlides = document.querySelectorAll('.hero-slide');
-  if (heroSlides.length > 1) {
-    let currentSlide = 0;
-    setInterval(() => {
-      heroSlides[currentSlide].style.clipPath = 'inset(0 0 0 100%)';
-      heroSlides[currentSlide].style.opacity = '0';
-      heroSlides[currentSlide].style.zIndex = '0';
-      
-      currentSlide = (currentSlide + 1) % heroSlides.length;
-      
-      heroSlides[currentSlide].style.clipPath = 'inset(0 0 0 0%)';
-      heroSlides[currentSlide].style.opacity = '1';
-      heroSlides[currentSlide].style.zIndex = '2';
-    }, 6000);
-  }
-
-  // 4. Infinite Marquee Animation
-  document.querySelectorAll('[data-marquee]').forEach(el => {
-    const text = el.getAttribute('data-marquee') || el.textContent.trim();
-    if (!text) return;
+  // 3. Page-Specific Infinite Marquee Setup
+  const pagePath = window.location.pathname.toLowerCase();
+  document.querySelectorAll('.font-canora.text-theme-accent.text-title-100, [data-marquee]').forEach(el => {
+    let marqueeText = el.getAttribute('data-marquee');
+    if (!marqueeText) {
+      if (pagePath.includes('studio')) {
+        marqueeText = 'About Us';
+      } else if (pagePath.includes('spaces')) {
+        marqueeText = 'Our Spaces';
+      } else if (pagePath.includes('the-buzz')) {
+        marqueeText = 'The Buzz';
+      } else if (pagePath.includes('dear-honey')) {
+        marqueeText = 'Dear Honey';
+      } else if (pagePath.includes('press')) {
+        marqueeText = 'Press Room';
+      } else if (pagePath.includes('contact')) {
+        marqueeText = 'Tell us your story';
+      } else {
+        const parentSec = el.closest('#about') || el.closest('[data-page-builder-section]');
+        if (parentSec && parentSec.id === 'about') {
+          marqueeText = 'House of Honey';
+        } else if (parentSec && parentSec.innerText && parentSec.innerText.includes('Dear HONEY')) {
+          marqueeText = 'Dear Honey';
+        } else {
+          marqueeText = 'Spaces with story';
+        }
+      }
+    }
     
     el.innerHTML = `
       <div class="marquee-infinite">
         <div class="marquee-infinite-track">
-          <span>${text}</span>
-          <span>${text}</span>
-          <span>${text}</span>
-          <span>${text}</span>
+          <span>${marqueeText}</span>
+          <span>${marqueeText}</span>
+          <span>${marqueeText}</span>
+          <span>${marqueeText}</span>
         </div>
         <div class="marquee-infinite-track" aria-hidden="true">
-          <span>${text}</span>
-          <span>${text}</span>
-          <span>${text}</span>
-          <span>${text}</span>
+          <span>${marqueeText}</span>
+          <span>${marqueeText}</span>
+          <span>${marqueeText}</span>
+          <span>${marqueeText}</span>
         </div>
       </div>
     `;
     el.style.opacity = '1';
   });
 
-  // 5. Lightbox for Project Imagery
+  // 4. Parallax Scroll Physics on Images
+  const parallaxContainers = document.querySelectorAll('[style*="--parallax-overflow"]');
+  function handleParallax() {
+    const scrollY = window.pageYOffset;
+    const windowH = window.innerHeight;
+
+    parallaxContainers.forEach(container => {
+      const rect = container.getBoundingClientRect();
+      if (rect.top < windowH && rect.bottom > 0) {
+        // Calculate offset percentage
+        const progress = (windowH - rect.top) / (windowH + rect.height);
+        const yOffset = (progress - 0.5) * 60; // 60px smooth parallax travel
+        const innerImg = container.querySelector('img');
+        if (innerImg) {
+          innerImg.style.transform = `translate3d(0, ${yOffset}px, 0) scale(1.04)`;
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleParallax, { passive: true });
+  handleParallax();
+
+  // 5. Lightbox Modal
   let lightbox = document.querySelector('.honey-lightbox');
   if (!lightbox) {
     lightbox = document.createElement('div');
     lightbox.className = 'honey-lightbox';
     lightbox.innerHTML = `
       <div class="honey-lightbox-close" aria-label="Close Lightbox">&times;</div>
-      <img src="" alt="Project Photo" />
+      <img src="" alt="House of Honey Photo" />
     `;
     document.body.appendChild(lightbox);
     
@@ -157,31 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Project Category Filtering on Spaces Page
-  const filterButtons = document.querySelectorAll('[data-filter]');
-  const projectItems = document.querySelectorAll('[data-category]');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.getAttribute('data-filter');
-      filterButtons.forEach(b => b.classList.remove('active', 'bg-theme-accent'));
-      btn.classList.add('active', 'bg-theme-accent');
-
-      projectItems.forEach(item => {
-        const itemCat = item.getAttribute('data-category');
-        if (cat === 'all' || itemCat === cat) {
-          item.style.display = 'block';
-          setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
-        } else {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(10px)';
-          setTimeout(() => { item.style.display = 'none'; }, 300);
-        }
-      });
-    });
-  });
-
-  // 7. Contact Form Handling
+  // 6. Interactive Form Interception
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -201,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 8. Scroll reveal animations
+  // 7. Scroll reveal animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -209,12 +214,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
   document.querySelectorAll('[data-reveal]').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
     observer.observe(el);
   });
 });
