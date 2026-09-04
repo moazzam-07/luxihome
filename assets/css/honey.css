@@ -450,8 +450,8 @@ html.lenis, html.lenis body {
    ========================================================= */
 [data-reveal], .honey-reveal {
   opacity: 0;
-  transform: translateY(38px);
-  transition: opacity 1.35s cubic-bezier(0.16, 1, 0.3, 1), transform 1.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 1.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: opacity, transform;
 }
 
@@ -462,18 +462,18 @@ html.lenis, html.lenis body {
 
 .stagger-children > * {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1), transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 1.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.stagger-children.revealed > *:nth-child(1) { transition-delay: 0.06s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.46s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.56s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(7) { transition-delay: 0.66s; opacity: 1; transform: translateY(0); }
-.stagger-children.revealed > *:nth-child(8) { transition-delay: 0.76s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.22s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.50s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.64s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.78s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(7) { transition-delay: 0.92s; opacity: 1; transform: translateY(0); }
+.stagger-children.revealed > *:nth-child(8) { transition-delay: 1.06s; opacity: 1; transform: translateY(0); }
 
 /* Slow Image Reveal with Smooth Zoom Out */
 .honey-reveal-img {
@@ -481,12 +481,13 @@ html.lenis, html.lenis body {
 }
 
 .honey-reveal-img img {
-  transform: scale(1.08);
-  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.06);
+  transition: transform 2.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 1.6s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: transform;
 }
 
 .honey-reveal-img.revealed img {
   transform: scale(1);
 }
+
 

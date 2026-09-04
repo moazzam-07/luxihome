@@ -1,9 +1,11 @@
 /**
  * House of Honey Interactive Engine
- * 1. Lenis Inertial Momentum Smooth Scrolling
- * 2. Animated Floating Honeybee Cursor with Spring Damping & Physics
- * 3. Scroll-Driven Continuous Horizontal Script Marquees
- * 4. Slow Staggered Editorial Text Entrance & Parallax Reveals
+ * Viscous "Liquid Honey" Physics & Motion Architecture
+ * 
+ * 1. Ultra-Slow Viscous Lenis Inertial Scrolling (2.2s duration, exponential damping)
+ * 2. Gentle Floating Honeybee Cursor with soft spring lag & flight tilt
+ * 3. Viscous Fluid Marquee Engine (inertial lag + velvety ambient drift)
+ * 4. Slow Editorial Text Entrances & Parallax Reveals (1.8s soft ease)
  * 5. Seasonal Color Theme System (Neutral, Spring, Summer, Fall, Winter)
  * 6. Fullscreen Navigation Drawer & Lightbox Modal
  */
@@ -12,20 +14,20 @@
   'use strict';
 
   // =========================================================
-  // 1. LENIS INERTIAL SMOOTH SCROLLING ENGINE
+  // 1. VISCOUS LENIS INERTIAL SMOOTH SCROLLING ENGINE
   // =========================================================
   let lenisInstance = null;
   function initSmoothScroll() {
     if (typeof Lenis !== 'undefined') {
       try {
         lenisInstance = new Lenis({
-          duration: 1.35,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          duration: 2.2, // Ultra-luxurious viscous momentum
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -7 * t)), // Soft liquid dissipation
           orientation: 'vertical',
           gestureOrientation: 'vertical',
           smoothWheel: true,
-          wheelMultiplier: 0.85,
-          touchMultiplier: 1.5,
+          wheelMultiplier: 0.65, // Gentle wheel input
+          touchMultiplier: 1.2,
           infinite: false
         });
         window.honeyLenis = lenisInstance;
@@ -42,11 +44,11 @@
   }
 
   // =========================================================
-  // 2. ANIMATED HONEYBEE CURSOR ENGINE (SPRING PHYSICS + FLIGHT)
+  // 2. GENTLE FLOATING HONEYBEE CURSOR (SOFT SPRING PHYSICS)
   // =========================================================
   function initHoneybeeCursor() {
     const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches;
-    if (isTouch) return; // Touch screens do not use custom mouse cursor
+    if (isTouch) return; // Touch screens do not use mouse cursor
 
     let cursorEl = document.querySelector('.honey-bee-cursor');
     if (!cursorEl) {
@@ -108,7 +110,6 @@
             if (svgBee) svgBee.style.display = 'none';
           },
           onError: () => {
-            // Fallback cleanly to beautiful SVG bee
             canvas.style.display = 'none';
             if (svgBee) svgBee.style.display = 'block';
           }
@@ -118,7 +119,7 @@
       }
     }
 
-    // Spring Physics Engine
+    // Soft Spring Physics Engine
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let currX = mouseX;
@@ -164,20 +165,20 @@
       }
     }, { passive: true });
 
-    // Smooth Spring physics RAF loop
+    // Smooth gentle spring physics RAF loop
     function updateBeePhysics() {
       if (isVisible) {
-        // Spring lerp towards cursor offset
-        currX += (mouseX - currX) * 0.14;
-        currY += (mouseY - currY) * 0.14;
+        // Soft viscous trailing (warm summer air feel)
+        currX += (mouseX - currX) * 0.085;
+        currY += (mouseY - currY) * 0.085;
 
         const vx = currX - prevX;
         prevX = currX;
 
-        // Subtle tilt angle based on velocity
-        const tilt = Math.max(-28, Math.min(28, vx * 2.2));
-        // Idle floating sine wave bobbing
-        const hoverBob = Math.sin(Date.now() * 0.005) * 3;
+        // Gentle tilt angle based on velocity
+        const tilt = Math.max(-18, Math.min(18, vx * 1.5));
+        // Soft floating sine wave bobbing
+        const hoverBob = Math.sin(Date.now() * 0.0028) * 3.5;
 
         cursorEl.style.transform = `translate3d(${currX}px, ${currY + hoverBob}px, 0) rotate(${tilt}deg)`;
       }
@@ -187,7 +188,7 @@
   }
 
   // =========================================================
-  // 3. SCROLL-DRIVEN & CONTINUOUS HORIZONTAL MARQUEES
+  // 3. VISCOUS SCROLL-DRIVEN & AMBIENT HORIZONTAL MARQUEES
   // =========================================================
   function initMarquees() {
     const pagePath = window.location.pathname.toLowerCase();
@@ -241,30 +242,32 @@
       el.style.opacity = '1';
 
       const tracks = el.querySelectorAll('.marquee-infinite-track');
-      const direction = (index % 2 === 0) ? -1 : 1; // Alternating subtle directions
-      const scrollFactor = 0.38 * direction;
+      const direction = (index % 2 === 0) ? -1 : 1; // Alternating soft directions
 
       marqueeInstances.push({
         element: el,
         tracks: tracks,
         ambientOffset: 0,
+        currentScrollShift: 0,
         direction: direction,
-        scrollFactor: scrollFactor,
-        speed: 0.75
+        scrollRate: 0.075, // Very gentle scroll contribution (honey viscosity)
+        speed: 0.16 // Tranquil, velvety slow ambient glide
       });
     });
 
-    // Scroll & Ambient Drift Loop
+    // Viscous Scroll & Ambient Drift Loop
     function updateMarquees() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
       marqueeInstances.forEach(instance => {
-        // Advance ambient continuous movement
+        // Continuous tranquil ambient drift
         instance.ambientOffset += instance.speed * instance.direction;
 
-        // Combine ambient offset with scroll translation
-        const scrollDelta = scrollY * instance.scrollFactor;
-        const totalTranslation = instance.ambientOffset + scrollDelta;
+        // Dampened fluid scroll lag (honey flowing effect)
+        const targetScrollShift = scrollY * instance.scrollRate * instance.direction;
+        instance.currentScrollShift += (targetScrollShift - instance.currentScrollShift) * 0.045;
+
+        const totalTranslation = instance.ambientOffset + instance.currentScrollShift;
 
         const firstTrack = instance.tracks[0];
         if (firstTrack) {
@@ -283,10 +286,9 @@
   }
 
   // =========================================================
-  // 4. SLOW STAGGERED EDITORIAL TEXT ENTRANCES & PARALLAX
+  // 4. SLOW EDITORIAL TEXT ENTRANCES & PARALLAX REVEALS
   // =========================================================
   function initSlowEditorialReveals() {
-    // Collect all major editorial headlines, paragraphs, and project cards
     const targets = document.querySelectorAll(
       '[data-reveal], .honey-reveal, ' +
       'section h1, section h2, section h3, ' +
@@ -302,22 +304,20 @@
           entry.target.classList.add('revealed');
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
-          // Unobserve once revealed for performance
           observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.06,
+      rootMargin: '0px 0px -30px 0px'
     });
 
-    targets.forEach((el, i) => {
+    targets.forEach((el) => {
       if (!el.classList.contains('revealed') && !el.closest('header') && !el.closest('#mobile-menu-overlay')) {
         el.classList.add('honey-reveal');
-        // Add subtle delay to children of grids
         if (el.parentElement && el.parentElement.classList.contains('grid')) {
           const childIdx = Array.from(el.parentElement.children).indexOf(el);
-          el.style.transitionDelay = `${(childIdx % 4) * 0.12}s`;
+          el.style.transitionDelay = `${(childIdx % 4) * 0.16}s`;
         }
         observer.observe(el);
       }
@@ -331,10 +331,10 @@
         const rect = container.getBoundingClientRect();
         if (rect.top < windowH && rect.bottom > 0) {
           const progress = (windowH - rect.top) / (windowH + rect.height);
-          const yOffset = (progress - 0.5) * 65;
+          const yOffset = (progress - 0.5) * 45; // Gentle dampened parallax
           const innerImg = container.querySelector('img');
           if (innerImg) {
-            innerImg.style.transform = `translate3d(0, ${yOffset}px, 0) scale(1.05)`;
+            innerImg.style.transform = `translate3d(0, ${yOffset}px, 0) scale(1.04)`;
           }
         }
       });
@@ -345,7 +345,7 @@
   }
 
   // =========================================================
-  // 5. SEASONAL THEME SYSTEM
+  // 5. SEASONAL COLOR THEME SYSTEM
   // =========================================================
   function initSeasonalThemes() {
     const themes = ['neutral', 'spring', 'summer', 'fall', 'winter'];
