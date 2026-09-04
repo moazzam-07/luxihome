@@ -1,6 +1,6 @@
 /**
  * House of Honey Interactive Engine
- * Handles themes, animations, smooth marquee, mobile navigation drawer, and lightbox
+ * Handles themes, animations, smooth marquee, mobile navigation drawer, lightbox, and form submissions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -181,7 +181,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Scroll reveal animations
+  // 7. Contact Form Handling
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+      if (submitBtn) {
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Message Sent ✓';
+        submitBtn.style.backgroundColor = 'var(--color-theme-accent)';
+        submitBtn.style.color = 'var(--color-theme-text-secondary)';
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+          submitBtn.style.color = '';
+          form.reset();
+        }, 4000);
+      }
+    });
+  });
+
+  // 8. Scroll reveal animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
