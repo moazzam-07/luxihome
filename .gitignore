@@ -20,5 +20,13 @@ Thumbs.db
 honey_js_chunks/
 telha_assets/
 
+# Scratch / Temp
+scratch/
+test_t_*.png
+index.html.backup
+live_island_welcome.html
+live_welcome.html
+
 .vercel
+
 

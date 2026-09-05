@@ -4264,15 +4264,15 @@ function banner() {
         logoLottie.animation.goToAndPlay(75, true);
         logoLottieWrapper.dataset.played = 'true';
       }
-    }, 'start').addLabel('image', '+=3').fromTo(menuLogo, {
+    }, 'start').addLabel('image', '+=1.0').fromTo(menuLogo, {
       top: '50vh',
       yPercent: -50,
-      y: -40,
-      x: _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.sm ? 0 : "".concat(window.innerWidth / 2 - menuLogo.offsetWidth / 2 - 40, "px"),
-      scale: 1.8
+      y: 0,
+      x: window.innerWidth >= 1024 ? 0 : (window.innerWidth / 2 - (menuLogo ? menuLogo.offsetWidth / 2 : 55) - 40) + 'px',
+      scale: window.innerWidth >= 1024 ? 2.8 : (window.innerWidth >= 640 ? 2.1 : 1.7)
     }, {
       scale: 1,
-      top: 'auto',
+      top: '0px',
       yPercent: 0,
       y: 0,
       x: 0,
