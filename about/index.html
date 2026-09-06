@@ -11,376 +11,389 @@
     <link rel="stylesheet" href="/wp-content/themes/AmaliProperties/assets/css/styles.css">
     <script src="/assets/js/jquery.min.js"></script>
 
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
     <style>
+        /* Smooth, robust animations that never hide content if JS is slow */
         [data-about-reveal] {
-            opacity: 0;
-            transform: translateY(28px);
             transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
-        [data-about-reveal].is-visible {
+        .js [data-about-reveal] {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        .js [data-about-reveal].is-visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
 
-<body class="bg-[#080D12] text-white antialiased selection:bg-white selection:text-[#080D12]">
+<body class="wp-singular page-template page-template-about bg-[#080D12] text-white antialiased selection:bg-white selection:text-[#080D12]" data-barba="wrapper">
 
-    <!-- MINIMALIST FIXED HEADER -->
-    <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-20 sm:px-40 lg:px-60 py-20 bg-[#080D12]/80 backdrop-blur-md border-b border-white/10">
-        <a href="/" class="flex items-center transition-transform duration-300 hover:scale-105" title="LUXiHOME Home">
-            <img src="/assets/img/logos/luxihome-wordmark-light.svg" alt="LUXiHOME" class="w-130 sm:w-160 h-auto">
-        </a>
-        <div class="flex items-center gap-15 sm:gap-25">
-            <a href="/" class="font-mono text-11 sm:text-12 uppercase tracking-widest text-white/70 hover:text-white transition-colors">
-                ← Home
-            </a>
-            <a href="https://wa.me/918217013908" target="_blank" rel="noopener noreferrer" class="px-18 sm:px-24 py-10 rounded-full border border-white/20 hover:border-white font-mono text-11 sm:text-12 uppercase tracking-widest text-white hover:bg-white hover:text-[#080D12] transition-all duration-300">
-                Enquire
-            </a>
-        </div>
-    </header>
+    <!-- BARBA CONTAINER WRAPPER -->
+    <div id="page-wrap" data-barba="container" data-barba-namespace="about">
 
-    <main class="pt-100 sm:pt-120">
-        <!-- Reusable About Content Container -->
-        <section class="relative w-full py-40 sm:py-60 lg:py-80 overflow-hidden">
-            <!-- Atmospheric Glow -->
-            <div class="absolute inset-0 pointer-events-none opacity-20">
-                <div class="absolute top-[10%] left-[5%] w-[60vw] h-[60vw] rounded-full bg-radial from-[#1E3348] via-transparent to-transparent blur-3xl"></div>
+        <!-- MINIMALIST FIXED HEADER -->
+        <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-20 sm:px-40 lg:px-60 py-20 bg-[#080D12]/90 backdrop-blur-md border-b border-white/10">
+            <a href="/" data-barba-prevent="self" class="flex items-center transition-transform duration-300 hover:scale-105" title="LUXiHOME Home">
+                <img src="/assets/img/logos/luxihome-wordmark-light.svg" alt="LUXiHOME" class="w-130 sm:w-160 h-auto">
+            </a>
+            <div class="flex items-center gap-15 sm:gap-25">
+                <a href="/" data-barba-prevent="self" class="font-mono text-11 sm:text-12 uppercase tracking-widest text-white/70 hover:text-white transition-colors">
+                    ← Home
+                </a>
+                <a href="https://wa.me/918217013908" target="_blank" rel="noopener noreferrer" class="px-18 sm:px-24 py-10 rounded-full border border-white/20 hover:border-white font-mono text-11 sm:text-12 uppercase tracking-widest text-white hover:bg-white hover:text-[#080D12] transition-all duration-300">
+                    Enquire
+                </a>
             </div>
+        </header>
 
-            <div class="container relative z-10 px-20 sm:px-40 lg:px-60 mx-auto">
-                
-                <!-- 1. HERO MANIFESTO -->
-                <div class="grid grid-cols-12 gap-y-40 lg:gap-x-40 items-start mb-80 lg:mb-120">
-                    <div class="col-span-12 lg:col-span-6" data-about-reveal>
-                        <div class="flex items-center gap-12 mb-20">
-                            <span class="size-6 rounded-full bg-white animate-pulse"></span>
-                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/50">01 // The Architecture of Luxury</span>
-                        </div>
-                        <h1 class="font-sans font-light text-42 sm:text-56 lg:text-72 leading-[1.05] tracking-tight uppercase mb-20">
-                            Shaping Spaces, <br>
-                            <span class="font-serif italic font-normal text-[#E2D5C4] lowercase">defining luxury.</span>
-                        </h1>
-                        <p class="font-mono text-12 text-[#E2D5C4] uppercase tracking-widest">
-                            Kolkata • Turnkey Residential Architecture
-                        </p>
-                    </div>
-                    <div class="col-span-12 lg:col-span-6 lg:pt-40" data-about-reveal style="transition-delay: 150ms;">
-                        <p class="font-sans font-light text-16 sm:text-18 lg:text-20 text-white/80 leading-relaxed mb-25">
-                            At <strong class="text-white font-medium">LUXiHOME</strong>, we redefine interiors with an unwavering commitment to architectural precision, material innovation, and bespoke craftsmanship. We specialize in turnkey residential transformations—orchestrating every phase from spatial choreography and custom 3D visualization to flawless procurement, custom joinery, and white-glove handover.
-                        </p>
-                        <p class="font-sans font-light text-14 sm:text-16 text-white/50 leading-relaxed mb-35">
-                            Crafting sanctuaries across Kolkata’s most prestigious addresses—from private villas in Salt Lake and duplexes in New Town to high-rise residences in Park Street and Rajarhat. We ensure that every square inch balances uncompromising opulence with effortless daily living.
-                        </p>
-                        <div class="flex flex-wrap gap-12 sm:gap-20">
-                            <a href="https://wa.me/918217013908" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-12 px-24 py-14 rounded-full border border-white/25 hover:border-white text-13 tracking-widest uppercase text-white hover:bg-white hover:text-[#080D12] transition-all duration-300">
-                                <span>Initiate Dialogue</span>
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="transition-transform duration-300 group-hover:translate-x-3 group-hover:-translate-y-3">
-                                    <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <a href="tel:+918217013908" class="inline-flex items-center gap-12 px-24 py-14 rounded-full bg-white/5 hover:bg-white/10 text-13 tracking-widest uppercase text-white/70 hover:text-white transition-all duration-300">
-                                <span>Direct Studio Line</span>
-                            </a>
-                        </div>
-                    </div>
+        <main class="pt-100 sm:pt-120">
+            <section class="relative w-full py-40 sm:py-60 lg:py-80 overflow-hidden">
+                <!-- Atmospheric Background Glow -->
+                <div class="absolute inset-0 pointer-events-none opacity-20">
+                    <div class="absolute top-[10%] left-[5%] w-[60vw] h-[60vw] rounded-full bg-radial from-[#1E3348] via-transparent to-transparent blur-3xl"></div>
                 </div>
 
-                <!-- 2. THREE CORE VALUES -->
-                <div class="mb-100 lg:mb-140">
-                    <div class="border-b border-white/10 pb-20 mb-40 flex items-center justify-between" data-about-reveal>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Our Foundational Pillars</span>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">[ 03 PRINCIPLES ]</span>
+                <div class="container relative z-10 px-20 sm:px-40 lg:px-60 mx-auto">
+                    
+                    <!-- 1. HERO MANIFESTO -->
+                    <div class="grid grid-cols-12 gap-y-40 lg:gap-x-40 items-start mb-80 lg:mb-120">
+                        <div class="col-span-12 lg:col-span-6" data-about-reveal>
+                            <div class="flex items-center gap-12 mb-20">
+                                <span class="size-6 rounded-full bg-white animate-pulse"></span>
+                                <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/50">01 // The Architecture of Luxury</span>
+                            </div>
+                            <h1 class="font-sans font-light text-42 sm:text-56 lg:text-72 leading-[1.05] tracking-tight uppercase mb-20">
+                                Shaping Spaces, <br>
+                                <span class="font-serif italic font-normal text-[#E2D5C4] lowercase">defining luxury.</span>
+                            </h1>
+                            <p class="font-mono text-12 text-[#E2D5C4] uppercase tracking-widest">
+                                Kolkata • Turnkey Residential Architecture
+                            </p>
+                        </div>
+                        <div class="col-span-12 lg:col-span-6 lg:pt-40" data-about-reveal style="transition-delay: 150ms;">
+                            <p class="font-sans font-light text-16 sm:text-18 lg:text-20 text-white/80 leading-relaxed mb-25">
+                                At <strong class="text-white font-medium">LUXiHOME</strong>, we redefine interiors with an unwavering commitment to architectural precision, material innovation, and bespoke craftsmanship. We specialize in turnkey residential transformations—orchestrating every phase from spatial choreography and custom 3D visualization to flawless procurement, custom joinery, and white-glove handover.
+                            </p>
+                            <p class="font-sans font-light text-14 sm:text-16 text-white/50 leading-relaxed mb-35">
+                                Crafting sanctuaries across Kolkata’s most prestigious addresses—from private villas in Salt Lake and duplexes in New Town to high-rise residences in Park Street and Rajarhat. We ensure that every square inch balances uncompromising opulence with effortless daily living.
+                            </p>
+                            <div class="flex flex-wrap gap-12 sm:gap-20">
+                                <a href="https://wa.me/918217013908" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-12 px-24 py-14 rounded-full border border-white/25 hover:border-white text-13 tracking-widest uppercase text-white hover:bg-white hover:text-[#080D12] transition-all duration-300">
+                                    <span>Initiate Dialogue</span>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="transition-transform duration-300 group-hover:translate-x-3 group-hover:-translate-y-3">
+                                        <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <a href="tel:+918217013908" class="inline-flex items-center gap-12 px-24 py-14 rounded-full bg-white/5 hover:bg-white/10 text-13 tracking-widest uppercase text-white/70 hover:text-white transition-all duration-300">
+                                    <span>Direct Studio Line</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-25 lg:gap-35">
-                        <div class="p-30 sm:p-40 rounded-16 bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300" data-about-reveal style="transition-delay: 100ms;">
-                            <span class="font-mono text-12 text-[#E2D5C4] tracking-widest block mb-15">01 // PRINCIPLE</span>
-                            <h3 class="font-sans font-light text-22 sm:text-26 tracking-tight uppercase text-white mb-15">Absolute Integrity</h3>
-                            <p class="font-sans font-light text-14 sm:text-15 text-white/60 leading-relaxed">
-                                Uncompromising ethical standards, transparent financial stewardship, and verified milestone scheduling. Trust is the foundation upon which your sanctuary is built.
-                            </p>
-                        </div>
-                        <div class="p-30 sm:p-40 rounded-16 bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300" data-about-reveal style="transition-delay: 200ms;">
-                            <span class="font-mono text-12 text-[#E2D5C4] tracking-widest block mb-15">02 // PRINCIPLE</span>
-                            <h3 class="font-sans font-light text-22 sm:text-26 tracking-tight uppercase text-white mb-15">Design Innovation</h3>
-                            <p class="font-sans font-light text-14 sm:text-15 text-white/60 leading-relaxed">
-                                Pushing spatial boundaries through avant-garde lighting architecture, rare material selections, ergonomic circulation, and intelligent residential engineering.
-                            </p>
-                        </div>
-                        <div class="p-30 sm:p-40 rounded-16 bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300" data-about-reveal style="transition-delay: 300ms;">
-                            <span class="font-mono text-12 text-[#E2D5C4] tracking-widest block mb-15">03 // PRINCIPLE</span>
-                            <h3 class="font-sans font-light text-22 sm:text-26 tracking-tight uppercase text-white mb-15">White-Glove Delivery</h3>
-                            <p class="font-sans font-light text-14 sm:text-15 text-white/60 leading-relaxed">
-                                Single-point accountability from the first conceptual sketch to the final styling detail. Tailored specifically to exceed expectations through enduring quality.
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 3. CURATED SPACES SHOWCASE -->
-                <div class="mb-100 lg:mb-140">
-                    <div class="border-b border-white/10 pb-20 mb-30 flex items-center justify-between" data-about-reveal>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Portfolio Archive</span>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Bespoke Executions</span>
+                    <!-- 2. THREE CORE VALUES -->
+                    <div class="mb-100 lg:mb-140">
+                        <div class="border-b border-white/10 pb-20 mb-40 flex items-center justify-between" data-about-reveal>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Our Foundational Pillars</span>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">[ 03 PRINCIPLES ]</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-25 lg:gap-35">
+                            <div class="p-30 sm:p-40 rounded-16 bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300" data-about-reveal style="transition-delay: 100ms;">
+                                <span class="font-mono text-12 text-[#E2D5C4] tracking-widest block mb-15">01 // PRINCIPLE</span>
+                                <h3 class="font-sans font-light text-22 sm:text-26 tracking-tight uppercase text-white mb-15">Absolute Integrity</h3>
+                                <p class="font-sans font-light text-14 sm:text-15 text-white/60 leading-relaxed">
+                                    Uncompromising ethical standards, transparent financial stewardship, and verified milestone scheduling. Trust is the foundation upon which your sanctuary is built.
+                                </p>
+                            </div>
+                            <div class="p-30 sm:p-40 rounded-16 bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300" data-about-reveal style="transition-delay: 200ms;">
+                                <span class="font-mono text-12 text-[#E2D5C4] tracking-widest block mb-15">02 // PRINCIPLE</span>
+                                <h3 class="font-sans font-light text-22 sm:text-26 tracking-tight uppercase text-white mb-15">Design Innovation</h3>
+                                <p class="font-sans font-light text-14 sm:text-15 text-white/60 leading-relaxed">
+                                    Pushing spatial boundaries through avant-garde lighting architecture, rare material selections, ergonomic circulation, and intelligent residential engineering.
+                                </p>
+                            </div>
+                            <div class="p-30 sm:p-40 rounded-16 bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300" data-about-reveal style="transition-delay: 300ms;">
+                                <span class="font-mono text-12 text-[#E2D5C4] tracking-widest block mb-15">03 // PRINCIPLE</span>
+                                <h3 class="font-sans font-light text-22 sm:text-26 tracking-tight uppercase text-white mb-15">White-Glove Delivery</h3>
+                                <p class="font-sans font-light text-14 sm:text-15 text-white/60 leading-relaxed">
+                                    Single-point accountability from the first conceptual sketch to the final styling detail. Tailored specifically to exceed expectations through enduring quality.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-end justify-between mb-40" data-about-reveal>
-                        <div>
-                            <h2 class="font-sans font-light text-30 sm:text-42 leading-none tracking-tight uppercase">
-                                Realized <span class="font-serif italic text-[#E2D5C4] lowercase">sanctuaries</span>
+
+                    <!-- 3. CURATED SPACES SHOWCASE -->
+                    <div class="mb-100 lg:mb-140">
+                        <div class="border-b border-white/10 pb-20 mb-30 flex items-center justify-between" data-about-reveal>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Portfolio Archive</span>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Bespoke Executions</span>
+                        </div>
+                        <div class="flex items-end justify-between mb-40" data-about-reveal>
+                            <div>
+                                <h2 class="font-sans font-light text-30 sm:text-42 leading-none tracking-tight uppercase">
+                                    Realized <span class="font-serif italic text-[#E2D5C4] lowercase">sanctuaries</span>
+                                </h2>
+                            </div>
+                            <p class="hidden sm:block font-mono text-12 text-white/40 uppercase tracking-widest">
+                                Swipe / Explore Living, Dining &amp; Suites
+                            </p>
+                        </div>
+
+                        <div class="flex overflow-x-auto pb-20 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-20 sm:gap-25 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-20 px-20 sm:mx-0 sm:px-0">
+                            <!-- Card 1 -->
+                            <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal>
+                                <div class="aspect-[4/5] overflow-hidden">
+                                    <img src="/assets/img/about/architectural-villa-facade.jpg" alt="Salt Lake Villa Facade by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-25">
+                                    <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">SALT LAKE // PRIVATE ESTATE</span>
+                                    <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Modern Cantilevered Villa</h4>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 100ms;">
+                                <div class="aspect-[4/5] overflow-hidden">
+                                    <img src="/assets/img/about/king-bedroom.jpg" alt="Master King Bedroom Suite by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-25">
+                                    <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">RESIDENTIAL // SUITE</span>
+                                    <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Cove-Lit King Bedroom</h4>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 200ms;">
+                                <div class="aspect-[4/5] overflow-hidden">
+                                    <img src="/assets/img/about/designer-kitchen.jpg" alt="Modern Modular Kitchen by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-25">
+                                    <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">RAJARHAT // CULINARY</span>
+                                    <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Seamless Modular Kitchen</h4>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal>
+                                <div class="aspect-[4/5] overflow-hidden">
+                                    <img src="/assets/img/about/luxury-living-lounge.jpg" alt="Curved Velvet Living Room by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-25">
+                                    <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">RESIDENTIAL // SALON</span>
+                                    <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Curved Velvet Grand Lounge</h4>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 100ms;">
+                                <div class="aspect-[4/5] overflow-hidden">
+                                    <img src="/assets/img/about/grand-duplex-lobby.jpg" alt="Duplex Lobby and Glass Lift by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-25">
+                                    <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">NEW TOWN // DUPLEX</span>
+                                    <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Private Mezzanine &amp; Lift</h4>
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 200ms;">
+                                <div class="aspect-[4/5] overflow-hidden">
+                                    <img src="/assets/img/about/fluted-marble-hallway.jpg" alt="Fluted Marble Hallway by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-25">
+                                    <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">PARK STREET // GALLERY</span>
+                                    <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Fluted Architectural Gallery</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. LEADERSHIP & VISIONARIES -->
+                    <div class="mb-100 lg:mb-140">
+                        <div class="border-b border-white/10 pb-20 mb-40 flex items-center justify-between" data-about-reveal>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Leadership</span>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">[ 03 VISIONARIES ]</span>
+                        </div>
+                        <div class="max-w-2xl mb-50" data-about-reveal>
+                            <h2 class="font-sans font-light text-30 sm:text-42 leading-none tracking-tight uppercase mb-15">
+                                The Minds Behind <span class="font-serif italic text-[#E2D5C4] lowercase">LUXiHOME</span>
                             </h2>
-                        </div>
-                        <p class="hidden sm:block font-mono text-12 text-white/40 uppercase tracking-widest">
-                            Swipe / Explore Living, Dining &amp; Suites
-                        </p>
-                    </div>
-
-                    <div class="flex overflow-x-auto pb-20 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-20 sm:gap-25 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-20 px-20 sm:mx-0 sm:px-0">
-                        <!-- Card 1 -->
-                        <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal>
-                            <div class="aspect-[4/5] overflow-hidden">
-                                <img src="/assets/img/about/architectural-villa-facade.jpg" alt="Salt Lake Villa Facade by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-25">
-                                <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">SALT LAKE // PRIVATE ESTATE</span>
-                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Modern Cantilevered Villa</h4>
-                            </div>
+                            <p class="font-sans font-light text-15 text-white/60 leading-relaxed">
+                                Our leadership unites strategic design foresight, architectural execution, and personalized client stewardship to establish an enduring benchmark in bespoke luxury.
+                            </p>
                         </div>
 
-                        <!-- Card 2 -->
-                        <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 100ms;">
-                            <div class="aspect-[4/5] overflow-hidden">
-                                <img src="/assets/img/about/king-bedroom.jpg" alt="Master King Bedroom Suite by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-25">
-                                <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">RESIDENTIAL // SUITE</span>
-                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Cove-Lit King Bedroom</h4>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 200ms;">
-                            <div class="aspect-[4/5] overflow-hidden">
-                                <img src="/assets/img/about/designer-kitchen.jpg" alt="Modern Modular Kitchen by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-25">
-                                <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">RAJARHAT // CULINARY</span>
-                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Seamless Modular Kitchen</h4>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal>
-                            <div class="aspect-[4/5] overflow-hidden">
-                                <img src="/assets/img/about/luxury-living-lounge.jpg" alt="Curved Velvet Living Room by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-25">
-                                <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">RESIDENTIAL // SALON</span>
-                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Curved Velvet Grand Lounge</h4>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 100ms;">
-                            <div class="aspect-[4/5] overflow-hidden">
-                                <img src="/assets/img/about/grand-duplex-lobby.jpg" alt="Duplex Lobby and Glass Lift by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-25">
-                                <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">NEW TOWN // DUPLEX</span>
-                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Private Mezzanine &amp; Lift</h4>
-                            </div>
-                        </div>
-
-                        <!-- Card 6 -->
-                        <div class="min-w-[82vw] sm:min-w-0 snap-center group relative overflow-hidden rounded-16 bg-white/5 border border-white/10" data-about-reveal style="transition-delay: 200ms;">
-                            <div class="aspect-[4/5] overflow-hidden">
-                                <img src="/assets/img/about/fluted-marble-hallway.jpg" alt="Fluted Marble Hallway by LUXiHOME" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080D12] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-25">
-                                <span class="font-mono text-10 uppercase tracking-[0.2em] text-[#E2D5C4] block mb-5">PARK STREET // GALLERY</span>
-                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white">Fluted Architectural Gallery</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. LEADERSHIP & VISIONARIES -->
-                <div class="mb-100 lg:mb-140">
-                    <div class="border-b border-white/10 pb-20 mb-40 flex items-center justify-between" data-about-reveal>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Leadership</span>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">[ 03 VISIONARIES ]</span>
-                    </div>
-                    <div class="max-w-2xl mb-50" data-about-reveal>
-                        <h2 class="font-sans font-light text-30 sm:text-42 leading-none tracking-tight uppercase mb-15">
-                            The Minds Behind <span class="font-serif italic text-[#E2D5C4] lowercase">LUXiHOME</span>
-                        </h2>
-                        <p class="font-sans font-light text-15 text-white/60 leading-relaxed">
-                            Our leadership unites strategic design foresight, architectural execution, and personalized client stewardship to establish an enduring benchmark in bespoke luxury.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-30 lg:gap-40">
-                        <!-- Founder 1: Sj. Alam (Badshu) -->
-                        <div class="group flex flex-col" data-about-reveal style="transition-delay: 100ms;">
-                            <div class="aspect-[3/4] rounded-16 border border-dashed border-white/20 bg-white/[0.02] mb-20 flex flex-col items-center justify-center p-30 relative overflow-hidden transition-all duration-300 group-hover:border-white/40">
-                                <div class="size-60 rounded-full border border-white/20 flex items-center justify-center font-mono text-14 text-[#E2D5C4] mb-15">
-                                    SA
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-30 lg:gap-40">
+                            <!-- Founder 1: Sj. Alam (Badshu) -->
+                            <div class="group flex flex-col" data-about-reveal style="transition-delay: 100ms;">
+                                <div class="aspect-[3/4] rounded-16 border border-dashed border-white/20 bg-white/[0.02] mb-20 flex flex-col items-center justify-center p-30 relative overflow-hidden transition-all duration-300 group-hover:border-white/40">
+                                    <div class="size-60 rounded-full border border-white/20 flex items-center justify-center font-mono text-14 text-[#E2D5C4] mb-15">
+                                        SA
+                                    </div>
+                                    <span class="font-mono text-11 uppercase tracking-[0.2em] text-white/40 text-center">Portrait Archive</span>
+                                    <span class="font-mono text-9 uppercase tracking-[0.15em] text-white/20 mt-5">Sj. Alam (Badshu)</span>
                                 </div>
-                                <span class="font-mono text-11 uppercase tracking-[0.2em] text-white/40 text-center">Portrait Archive</span>
-                                <span class="font-mono text-9 uppercase tracking-[0.15em] text-white/20 mt-5">Sj. Alam (Badshu)</span>
+                                <h3 class="font-sans font-light text-22 uppercase tracking-wide text-white">Sj. Alam (Badshu)</h3>
+                                <p class="font-mono text-11 uppercase tracking-widest text-[#E2D5C4] mt-4 mb-10">Co-Founder &amp; Director</p>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Oversees high-level design vision, execution strategy, and operational precision across LUXiHOME, ensuring rigorous quality across every build.
+                                </p>
                             </div>
-                            <h3 class="font-sans font-light text-22 uppercase tracking-wide text-white">Sj. Alam (Badshu)</h3>
-                            <p class="font-mono text-11 uppercase tracking-widest text-[#E2D5C4] mt-4 mb-10">Co-Founder &amp; Director</p>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Oversees high-level design vision, execution strategy, and operational precision across LUXiHOME, ensuring rigorous quality across every build.
-                            </p>
-                        </div>
 
-                        <!-- Founder 2: Jammy Sheikh -->
-                        <div class="group flex flex-col" data-about-reveal style="transition-delay: 200ms;">
-                            <div class="aspect-[3/4] rounded-16 overflow-hidden bg-white/5 border border-white/10 mb-20 relative transition-all duration-300 group-hover:border-white/30">
-                                <img src="/assets/img/about/founder-jammy-sheikh.jpg" alt="Jammy Sheikh - Co-Founder & Lead Interior Designer at LUXiHOME" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#080D12]/70 via-transparent to-transparent pointer-events-none"></div>
-                            </div>
-                            <h3 class="font-sans font-light text-22 uppercase tracking-wide text-white">Jammy Sheikh</h3>
-                            <p class="font-mono text-11 uppercase tracking-widest text-[#E2D5C4] mt-4 mb-10">Co-Founder &amp; Lead Interior Designer</p>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Leads creative concept development, architectural space planning, and bespoke material innovation, bringing timeless elegance into modern living.
-                            </p>
-                        </div>
-
-                        <!-- Founder 3: Larika Yasmin (Marry) -->
-                        <div class="group flex flex-col" data-about-reveal style="transition-delay: 300ms;">
-                            <div class="aspect-[3/4] rounded-16 border border-dashed border-white/20 bg-white/[0.02] mb-20 flex flex-col items-center justify-center p-30 relative overflow-hidden transition-all duration-300 group-hover:border-white/40">
-                                <div class="size-60 rounded-full border border-white/20 flex items-center justify-center font-mono text-14 text-[#E2D5C4] mb-15">
-                                    LY
+                            <!-- Founder 2: Jammy Sheikh -->
+                            <div class="group flex flex-col" data-about-reveal style="transition-delay: 200ms;">
+                                <div class="aspect-[3/4] rounded-16 overflow-hidden bg-white/5 border border-white/10 mb-20 relative transition-all duration-300 group-hover:border-white/30">
+                                    <img src="/assets/img/about/founder-jammy-sheikh.jpg" alt="Jammy Sheikh - Co-Founder & Lead Interior Designer at LUXiHOME" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#080D12]/70 via-transparent to-transparent pointer-events-none"></div>
                                 </div>
-                                <span class="font-mono text-11 uppercase tracking-[0.2em] text-white/40 text-center">Portrait Archive</span>
-                                <span class="font-mono text-9 uppercase tracking-[0.15em] text-white/20 mt-5">Larika Yasmin (Marry)</span>
+                                <h3 class="font-sans font-light text-22 uppercase tracking-wide text-white">Jammy Sheikh</h3>
+                                <p class="font-mono text-11 uppercase tracking-widest text-[#E2D5C4] mt-4 mb-10">Co-Founder &amp; Lead Interior Designer</p>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Leads creative concept development, architectural space planning, and bespoke material innovation, bringing timeless elegance into modern living.
+                                </p>
                             </div>
-                            <h3 class="font-sans font-light text-22 uppercase tracking-wide text-white">Larika Yasmin (Marry)</h3>
-                            <p class="font-mono text-11 uppercase tracking-widest text-[#E2D5C4] mt-4 mb-10">Co-Founder &amp; Consultant</p>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Directs client advisory, tailored curation, and project coordination, ensuring an effortless, personalized, and white-glove design journey.
-                            </p>
+
+                            <!-- Founder 3: Larika Yasmin (Marry) -->
+                            <div class="group flex flex-col" data-about-reveal style="transition-delay: 300ms;">
+                                <div class="aspect-[3/4] rounded-16 border border-dashed border-white/20 bg-white/[0.02] mb-20 flex flex-col items-center justify-center p-30 relative overflow-hidden transition-all duration-300 group-hover:border-white/40">
+                                    <div class="size-60 rounded-full border border-white/20 flex items-center justify-center font-mono text-14 text-[#E2D5C4] mb-15">
+                                        LY
+                                    </div>
+                                    <span class="font-mono text-11 uppercase tracking-[0.2em] text-white/40 text-center">Portrait Archive</span>
+                                    <span class="font-mono text-9 uppercase tracking-[0.15em] text-white/20 mt-5">Larika Yasmin (Marry)</span>
+                                </div>
+                                <h3 class="font-sans font-light text-22 uppercase tracking-wide text-white">Larika Yasmin (Marry)</h3>
+                                <p class="font-mono text-11 uppercase tracking-widest text-[#E2D5C4] mt-4 mb-10">Co-Founder &amp; Consultant</p>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Directs client advisory, tailored curation, and project coordination, ensuring an effortless, personalized, and white-glove design journey.
+                                </p>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- 5. COMPREHENSIVE TURNKEY OFFERINGS -->
+                    <div class="mb-100 lg:mb-140">
+                        <div class="border-b border-white/10 pb-20 mb-40 flex items-center justify-between" data-about-reveal>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Capabilities</span>
+                            <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">[ FULL SPECTRUM ]</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+                            
+                            <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 50ms;">
+                                <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">01 // DISCOVERY</span>
+                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Interior Design Consultation</h4>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    In-depth architectural analysis, lifestyle discovery, and spatial visioning to lay a solid foundation for your bespoke residence.
+                                </p>
+                            </div>
+
+                            <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 100ms;">
+                                <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">02 // VISUALIZATION</span>
+                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Concept &amp; 3D Photorealism</h4>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Precision space planning and photorealistic 3D rendering to allow you to experience every volume, texture, and light angle before execution.
+                                </p>
+                            </div>
+
+                            <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 150ms;">
+                                <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">03 // CURATION</span>
+                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Palette &amp; Material Selection</h4>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Direct sourcing of imported Italian marble, architectural veneers, brass elements, fluted panels, and sustainable luxury textiles.
+                                </p>
+                            </div>
+
+                            <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 200ms;">
+                                <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">04 // BESPOKE JOINERY</span>
+                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Custom FF&amp;E &amp; Furniture</h4>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Made-to-order furniture, curated designer luminaires, bespoke headboards, and signature statement pieces crafted exclusively for your space.
+                                </p>
+                            </div>
+
+                            <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 250ms;">
+                                <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">05 // STEWARDSHIP</span>
+                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Turnkey Project Management</h4>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    End-to-end execution, civil coordination, procurement oversight, and rigorous on-site quality assurance with zero client burden.
+                                </p>
+                            </div>
+
+                            <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 300ms;">
+                                <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">06 // ENDURANCE</span>
+                                <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Post-Handover Support</h4>
+                                <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
+                                    Dedicated post-installation maintenance advice, finish preservation protocols, and lifelong white-glove client support.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 6. STUDIO CONTACT & CONVERSION CALLOUT -->
+                    <div class="p-40 sm:p-60 lg:p-80 rounded-24 bg-gradient-to-br from-[#0F1D2B] to-[#0A121A] border border-white/15 relative overflow-hidden" data-about-reveal>
+                        <div class="max-w-3xl relative z-10">
+                            <span class="font-mono text-11 sm:text-12 uppercase tracking-[0.25em] text-[#E2D5C4] block mb-15">Kolkata Design Studio</span>
+                            <h2 class="font-sans font-light text-28 sm:text-42 lg:text-54 leading-[1.1] uppercase text-white mb-20">
+                                Ready to architect your <br class="hidden sm:block">
+                                <span class="font-serif italic text-[#E2D5C4] lowercase">bespoke residence?</span>
+                            </h2>
+                            <p class="font-sans font-light text-14 sm:text-16 text-white/70 leading-relaxed mb-35">
+                                33, Black Burn Lane, Poddar Court, Tiretti, Kolkata, West Bengal 700012, India. <br>
+                                By appointment for private villa and luxury apartment commissions.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-15 sm:gap-20">
+                                <a href="https://wa.me/918217013908" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-12 px-30 py-16 rounded-full bg-white text-[#080D12] hover:bg-[#E2D5C4] font-medium text-13 tracking-widest uppercase transition-colors duration-300">
+                                    <span>Connect on WhatsApp</span>
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:theluxihome@gmail.com" class="inline-flex justify-center items-center gap-12 px-30 py-16 rounded-full border border-white/20 hover:border-white text-13 tracking-widest uppercase text-white hover:bg-white/5 transition-all duration-300">
+                                    <span>theluxihome@gmail.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+            </section>
+        </main>
 
-                <!-- 5. COMPREHENSIVE TURNKEY OFFERINGS -->
-                <div class="mb-100 lg:mb-140">
-                    <div class="border-b border-white/10 pb-20 mb-40 flex items-center justify-between" data-about-reveal>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">Capabilities</span>
-                        <span class="font-mono text-11 sm:text-12 tracking-[0.25em] uppercase text-white/40">[ FULL SPECTRUM ]</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-                        
-                        <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 50ms;">
-                            <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">01 // DISCOVERY</span>
-                            <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Interior Design Consultation</h4>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                In-depth architectural analysis, lifestyle discovery, and spatial visioning to lay a solid foundation for your bespoke residence.
-                            </p>
-                        </div>
-
-                        <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 100ms;">
-                            <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">02 // VISUALIZATION</span>
-                            <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Concept &amp; 3D Photorealism</h4>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Precision space planning and photorealistic 3D rendering to allow you to experience every volume, texture, and light angle before execution.
-                            </p>
-                        </div>
-
-                        <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 150ms;">
-                            <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">03 // CURATION</span>
-                            <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Palette &amp; Material Selection</h4>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Direct sourcing of imported Italian marble, architectural veneers, brass elements, fluted panels, and sustainable luxury textiles.
-                            </p>
-                        </div>
-
-                        <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 200ms;">
-                            <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">04 // BESPOKE JOINERY</span>
-                            <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Custom FF&amp;E &amp; Furniture</h4>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Made-to-order furniture, curated designer luminaires, bespoke headboards, and signature statement pieces crafted exclusively for your space.
-                            </p>
-                        </div>
-
-                        <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 250ms;">
-                            <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">05 // STEWARDSHIP</span>
-                            <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Turnkey Project Management</h4>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                End-to-end execution, civil coordination, procurement oversight, and rigorous on-site quality assurance with zero client burden.
-                            </p>
-                        </div>
-
-                        <div class="p-30 rounded-16 bg-white/[0.02] border border-white/10 hover:border-white/25 transition-all duration-300" data-about-reveal style="transition-delay: 300ms;">
-                            <span class="font-mono text-11 text-[#E2D5C4] uppercase tracking-widest block mb-12">06 // ENDURANCE</span>
-                            <h4 class="font-sans font-light text-18 uppercase tracking-wide text-white mb-10">Post-Handover Support</h4>
-                            <p class="font-sans font-light text-13 text-white/50 leading-relaxed">
-                                Dedicated post-installation maintenance advice, finish preservation protocols, and lifelong white-glove client support.
-                            </p>
-                        </div>
-
-                    </div>
+        <!-- MINIMALIST FOOTER -->
+        <footer class="bg-[#05080B] text-white py-40 border-t border-white/10 px-20 sm:px-40 lg:px-60">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-20">
+                <div class="flex items-center gap-15">
+                    <img src="/assets/img/logos/luxihome-wordmark-light.svg" alt="LUXiHOME" class="w-110 h-auto">
+                    <span class="font-mono text-11 text-white/40">© 2026 LUXiHOME PVT. LTD.</span>
                 </div>
-
-                <!-- 6. STUDIO CONTACT & CONVERSION CALLOUT -->
-                <div class="p-40 sm:p-60 lg:p-80 rounded-24 bg-gradient-to-br from-[#0F1D2B] to-[#0A121A] border border-white/15 relative overflow-hidden" data-about-reveal>
-                    <div class="max-w-3xl relative z-10">
-                        <span class="font-mono text-11 sm:text-12 uppercase tracking-[0.25em] text-[#E2D5C4] block mb-15">Kolkata Design Studio</span>
-                        <h2 class="font-sans font-light text-28 sm:text-42 lg:text-54 leading-[1.1] uppercase text-white mb-20">
-                            Ready to architect your <br class="hidden sm:block">
-                            <span class="font-serif italic text-[#E2D5C4] lowercase">bespoke residence?</span>
-                        </h2>
-                        <p class="font-sans font-light text-14 sm:text-16 text-white/70 leading-relaxed mb-35">
-                            33, Black Burn Lane, Poddar Court, Tiretti, Kolkata, West Bengal 700012, India. <br>
-                            By appointment for private villa and luxury apartment commissions.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-15 sm:gap-20">
-                            <a href="https://wa.me/918217013908" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-12 px-30 py-16 rounded-full bg-white text-[#080D12] hover:bg-[#E2D5C4] font-medium text-13 tracking-widest uppercase transition-colors duration-300">
-                                <span>Connect on WhatsApp</span>
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                    <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:theluxihome@gmail.com" class="inline-flex justify-center items-center gap-12 px-30 py-16 rounded-full border border-white/20 hover:border-white text-13 tracking-widest uppercase text-white hover:bg-white/5 transition-all duration-300">
-                                <span>theluxihome@gmail.com</span>
-                            </a>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap gap-20 font-mono text-11 text-white/50 uppercase tracking-widest">
+                    <a href="https://instagram.com/the_luxihome" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="tel:+918217013908" class="hover:text-white transition-colors">+91 8217013908</a>
+                    <a href="mailto:theluxihome@gmail.com" class="hover:text-white transition-colors">theluxihome@gmail.com</a>
                 </div>
+            </div>
+        </footer>
 
-            </div>
-        </section>
-    </main>
-
-    <!-- MINIMALIST FOOTER -->
-    <footer class="bg-[#05080B] text-white py-40 border-t border-white/10 px-20 sm:px-40 lg:px-60">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-20">
-            <div class="flex items-center gap-15">
-                <img src="/assets/img/logos/luxihome-wordmark-light.svg" alt="LUXiHOME" class="w-110 h-auto">
-                <span class="font-mono text-11 text-white/40">© 2026 LUXiHOME PVT. LTD.</span>
-            </div>
-            <div class="flex flex-wrap gap-20 font-mono text-11 text-white/50 uppercase tracking-widest">
-                <a href="https://instagram.com/the_luxihome" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
-                <a href="tel:+918217013908" class="hover:text-white transition-colors">+91 8217013908</a>
-                <a href="mailto:theluxihome@gmail.com" class="hover:text-white transition-colors">theluxihome@gmail.com</a>
-            </div>
-        </div>
-    </footer>
+    </div>
+    <!-- END BARBA CONTAINER -->
 
     <script>
     (function() {
-        function initAboutAnimations() {
+        function triggerReveals() {
             var items = document.querySelectorAll('[data-about-reveal]');
             if (!items.length) return;
             if ('IntersectionObserver' in window) {
@@ -391,16 +404,16 @@
                             obs.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+                }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
                 items.forEach(function(el) { obs.observe(el); });
             } else {
                 items.forEach(function(el) { el.classList.add('is-visible'); });
             }
         }
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initAboutAnimations);
+            document.addEventListener('DOMContentLoaded', triggerReveals);
         } else {
-            initAboutAnimations();
+            triggerReveals();
         }
     })();
     </script>
