@@ -29,3 +29,7 @@ live_welcome.html
 
 .vercel
 backup_original_*/
+live_*.html
+live_bundle.js
+*.bak
+*.landing_backup
