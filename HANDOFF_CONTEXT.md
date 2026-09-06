@@ -351,3 +351,120 @@ Update the navigation and project portfolio sections to feature the prime reside
 - **Master Vertical Outpaint Created**: Built a 3988 x 7510 px calibrated canvas based on the user's architectural villa (ssets/img/hero/luxihome-header-v3.jpg and .webp, plus mobile equivalents).
 - **GSAP 700% Parallax Preserved**: Calibrated the canvas so that the upper 45% is open sky for the LUXiHOME logo & typography, and the yPercent: -50 descent glides down to center the architectural A-frame villa, its cantilevers, pine trees, and lakefront.
 - **Hero Headline Updated**: Updated to LUXiHOME's signature copy: SHAPING SPACES, DEFINING LUXURY.
+
+
+### 8. Live Production Deployment
+- **Pushed to GitHub**: origin/main commit 2d5449e
+- **Live Vercel Production URL**: [https://luxihome-delta.vercel.app](https://luxihome-delta.vercel.app)
+- **Deployment URL**: [https://luxihome-6bz0z13u3-moazzam-masoods-projects.vercel.app](https://luxihome-6bz0z13u3-moazzam-masoods-projects.vercel.app)
+
+
+---
+
+### Update: Hero Video Integration & "The Alam's Pentagon"
+1. **Hero Section Video Integration**:
+   - Replaced static hero banner pictures with 3D architectural walkthrough video (`assets/video/luxihome-hero-video.mp4` and `.webm`, with `luxihome-hero-video-poster.jpg`).
+   - Kept the exact preloader and logo entry animation intact: LUXiHOME logo scales down from center to header dock while `bannerBlur` dissolves from `backdrop-blur-30` to `blur(0px)`.
+   - Updated `bannerImage` animation in `bundle.js` from `yPercent: -50` to gentle `scale: 1.06` -> `1.0` so video stays perfectly framed.
+2. **"The Alam's Pentagon" Showcase**:
+   - Replaced former "Grande / Minima" section with "The Alam's Pentagon".
+   - Image 1: Master front facade panorama (`assets/img/hero/luxihome-header-v3.jpg`).
+   - Image 2: Lakeside sunset infinity pool terrace perspective (`assets/img/residences/alams-pentagon-lakeside.jpg`).
+   - Scrub words updated from "Grande" / "Minima" to "The Alam's" / "Pentagon".
+   - All GSAP scrub, pin, and crossfade animations fully preserved.
+3. **Local Dev Server**:
+   - Active on `http://localhost:3000/`. Strictly local, no pushes to Vercel/GitHub.
+
+
+
+### Update: Hero Video Integration with 100% Animation Preservation (Completed)
+1. **Video Transcoding & Head/Tail Trimming**:
+   - Source: `C:\Users\MOAZZAM\Downloads\20220524_214419_@r07qxo - R⤓Download.MP4`
+   - Trimmed from 1.2s to 27.0s to remove lead-in and lead-out black frames, guaranteeing seamless looping without black flicker.
+   - Encoded `assets/video/luxihome-hero-video.mp4` (`+faststart`, H.264/AAC) and `assets/video/luxihome-hero-video.webm` (VP9).
+   - Extracted `assets/video/luxihome-hero-video-poster.jpg` (and `.webp`) at 0.0s for pixel-matched zero-flicker first paint.
+2. **Animation Architecture Preserved**:
+   - Opening preloader center reveal of LUXiHOME logo (`scale: 2.8` desktop, `2.1` tablet, `1.7` mobile at `50vh`).
+   - Smooth 2.5s Bézier curve (`imageEase`) gliding logo into docked header position.
+   - Frosted glass blur (`backdrop-blur-20`) dissolving cleanly to `blur(0px)`.
+   - Subtle cinematic camera push (`scale: 1.08` -> `1.0`) synchronized with `imageEase`.
+   - Scroll scrub timeline: hero video blurs back to `blur(15px)` as the next section dissolves in.
+   - Audio button (`[data-target="audio"]`) toggles video soundtrack and updates equalizer animation.
+3. **Script Safety & Bug Fix**:
+   - Added guard in `_imageLazyLoading` so that swapping the hero picture for `<video>` never throws a null exception on `firstImage.complete`.
+   - Both `/wp-content/themes/AmaliProperties/assets/js/bundle.js` and `/assets/js/bundle.js` updated and synchronized.
+4. **Environment & Verification**:
+   - Verified on `http://localhost:3000/` via Playwright automated tests.
+   - All tests passing with zero JS exceptions.
+   - Strictly local development (no git push / no Vercel deploy).
+
+---
+
+### Update: Official LUX(i)HOME Wordmark Logo Integration (Completed)
+1. **New Logo Source & Processing**:
+   - Source SVG: `C:\Users\MOAZZAM\Downloads\Screenshot 2026-09-06 121122.svg`.
+   - Vector Identity: Official horizontal wordmark `LUX(i)HOME PVT. LTD.` with illuminated circular dot suspended over the double-line stylized `X`.
+   - Extracted clean 19 vector paths, stripped C2PA metadata manifests, and calibrated bounding box: `viewBox="105 40 1010 325"` (aspect ratio ~3.11 : 1).
+   - Generated production vector assets:
+     - `assets/img/logos/luxihome-wordmark-light.svg` (white `#FFFFFF`)
+     - `assets/img/logos/luxihome-wordmark-dark.svg` (dark blue `#13212E`)
+     - Updated footer logos for consistent identity across the site.
+2. **HTML & CSS Responsive Layout**:
+   - Embedded inline SVGs in `[data-target="logo-lottie"]` (light) and `[data-target="logo-lottie-dark"]` (dark) inside `index.html`.
+   - Responsive sizing in `<style id="wp-custom-css">`:
+     - Mobile (< 640px): `145px` width (~46px height) — perfectly proportioned with clean clearance from the floating phone + hamburger menu pill.
+     - Tablet (640px - 1023px): `210px` width (~67px height).
+     - Desktop (>= 1024px): `260px` width (~84px height).
+   - Hero headline (`[data-target="banner-text-1"]`) top offsets calibrated: `105px` mobile, `155px` tablet, `180px` desktop to balance open sky and villa roofline.
+   - Preserved navigation drawer occlusion: docked logo hides cleanly when menu drawer opens.
+3. **GSAP Animation Fidelity**:
+   - Opening preloader center reveal preserved: scales up to `2.8x` desktop (`728px` wide) and `1.7x` mobile (`246px` wide) at `50vh`.
+   - 2.5s Bézier curve (`imageEase`) glides logo smoothly into docked header position.
+   - Glassmorphism blur (`backdrop-blur-20`) dissolves seamlessly down to `blur(0px)`.
+   - 3D walkthrough video, audio toggle, and scroll scrub remain 100% functional.
+4. **Verification**:
+   - Verified via Playwright automated headless tests (`scratch/verify_hero_video.py`).
+   - Clean visual layout verified across mobile (390x844) and desktop (1920x1080).
+   - Strictly local on `http://localhost:3000/`. No pushes to GitHub or Vercel.
+
+---
+
+### Update: Complete Grande & Minima Architecture Photo Integration (Completed)
+1. **User Assets Provided**:
+   - **Grande Desktop**: `C:\Users\MOAZZAM\Downloads\GRANDE_PC.png` (1360 × 1157 px, lawn & infinity pool setting)
+   - **Grande Mobile**: `C:\Users\MOAZZAM\Downloads\GRANDE_mobile.png` (1060 × 1484 px portrait)
+   - **Minima Desktop**: `C:\Users\MOAZZAM\Downloads\PC_MINIMA.png` (1360 × 1157 px, illuminated cabanas & sand dune foreground)
+   - **Minima Mobile**: `C:\Users\MOAZZAM\Downloads\MINIMA_MOBILE.png` (1071 × 1469 px portrait)
+2. **Processing & Optimization**:
+   - Original assets safely backed up to `wp-content/uploads/2024/04/backup_original_grande/` and `backup_original_minima/`.
+   - Production assets generated in `wp-content/uploads/2024/04/`:
+     - `Grande-Home-2-1.jpg.webp` (152 KB, WebP Q92) & `Grande-Home-2-1.jpg` (316 KB, JPEG Q95)
+     - `Grande-Home-Mobile-2.jpg` (294 KB, JPEG Q95) & `Grande-Home-Mobile-2-640x896.jpg` (78 KB thumbnail)
+     - `Minima-Home-large.png` (432 KB, WebP Q95)
+     - `Minima-Home-Mobile-14.jpg` (451 KB, JPEG Q95) & `Minima-Home-Mobile-14-640x878.jpg` (129 KB thumbnail)
+3. **HTML & Cache Busting**:
+   - Added `?v=3` cache-busting query parameter across all Grande and Minima picture and img tags in `index.html`.
+   - Calibrated container positioning classes (`flex items-end absolute top-[600px] sm:top-[1150px]`) ensuring Minima's villa and pool align seamlessly with Grande before dissolving into the sandy dune.
+4. **Verification**:
+   - Verified on both Desktop (1707 × 772) and Mobile (390 × 844) viewports.
+   - Tested scrub sequence: Grande reveal -> GSAP crossfade scrub -> Minima reveal.
+   - Strictly local on `http://localhost:3000/`. No pushes to GitHub or Vercel.
+
+---
+
+### Update: Urbana / Architect Section Customization (Completed)
+1. **User Assets Provided**:
+   - **PC**: `C:\Users\MOAZZAM\Downloads\ChatGPT Image Sep 6, 2026, 01_20_55 PM.png` (1121 × 1403 px, sunlit modern high-rise Urbana residential towers with palm planters and water features)
+   - **Mobile**: `C:\Users\MOAZZAM\Downloads\mobile_urbana.jpg` (1000 × 1500 px, high-rise Urbana tower behind vine-covered gazebo park setting)
+2. **Processing & Optimization**:
+   - Original assets safely backed up to `wp-content/uploads/2024/04/backup_original_architect/`.
+   - Production assets generated in `wp-content/uploads/2024/04/`:
+     - `Architect-section.jpg` (552 KB, JPEG Q95) & `Architect-section.jpg.webp` (348 KB, WebP Q92)
+     - `Architect-section-Ipad-2.jpg` (552 KB) & `Architect-section-Ipad-2.jpg.webp` (348 KB)
+     - `Architect-section-Mobile-3.jpg` & variants (400x600, 640x960, 1280x1920) in JPG and WebP
+3. **HTML Layout & Styling**:
+   - Updated `<picture>` and `<img>` tags in `section[data-name="popup-links"]` with `w-full h-full object-cover` to span the full viewport width seamlessly without side gutters on wide monitors.
+   - Added `?v=2` cache-busting query strings.
+4. **Verification**:
+   - Verified on Desktop (1707 × 772) and Mobile (390 × 844) viewports.
+   - Preserved interactive popup buttons ("The architects" & "The concept") and GSAP pinning/blur animations.

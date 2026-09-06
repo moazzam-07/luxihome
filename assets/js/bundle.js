@@ -4161,16 +4161,25 @@ function _imageLazyLoading() {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          firstImage = document.querySelector('[data-target="banner-image"] img');
+          firstImage = document.querySelector('[data-target="banner-image"] img, [data-target="banner-image"] video');
           allImages = document.querySelectorAll('img[data-src]'); // wait for first image to load, then load all others
           _context.next = 4;
           return new Promise(function (resolve, reject) {
-            if (firstImage.complete) {
+            if (!firstImage || firstImage.complete || firstImage.readyState >= 2) {
               console.log('first image loaded');
               loadImages(allImages, resolve, reject);
             } else {
               firstImage.onload = function () {
                 console.log('first image loaded');
+                loadImages(allImages, resolve, reject);
+              };
+              if (firstImage.tagName === 'VIDEO') {
+                firstImage.onloadeddata = function () {
+                  loadImages(allImages, resolve, reject);
+                };
+              }
+              firstImage.onerror = function () {
+                console.log('first image load fallback');
                 loadImages(allImages, resolve, reject);
               };
             }
@@ -4264,22 +4273,26 @@ function banner() {
         logoLottie.animation.goToAndPlay(75, true);
         logoLottieWrapper.dataset.played = 'true';
       }
-    }, 'start').addLabel('image', '+=3').fromTo(menuLogo, {
+    }, 'start').addLabel('image', '+=1.0').fromTo(menuLogo, {
       top: '50vh',
       yPercent: -50,
-      y: -40,
-      x: _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.sm ? 0 : "".concat(window.innerWidth / 2 - menuLogo.offsetWidth / 2 - 40, "px"),
-      scale: 1.8
+      y: 0,
+      x: 0,
+      scale: window.innerWidth >= 1024 ? 2.8 : (window.innerWidth >= 640 ? 2.1 : 1.7)
     }, {
       scale: 1,
-      top: 'auto',
+      top: '0px',
       yPercent: 0,
       y: 0,
       x: 0,
       duration: imageDuration,
       ease: 'imageEase'
-    }, 'image').to(bannerImage, {
-      yPercent: -50,
+    }, 'image').fromTo(bannerImage, {
+      scale: 1.08,
+      yPercent: 0
+    }, {
+      scale: 1.0,
+      yPercent: 0,
       duration: imageDuration,
       ease: 'imageEase'
     }, 'image').to(bannerBlur, {
@@ -4299,7 +4312,8 @@ function banner() {
         logoLottieWrapper.dataset.played = 'true';
       }
     }, 'start').to(bannerImage, {
-      yPercent: -50,
+      scale: 1.0,
+      yPercent: 0,
       duration: 0,
       ease: 'none'
     }, 'start').to(bannerBlur, {
@@ -4311,6 +4325,21 @@ function banner() {
       duration: 0.5,
       ease: 'none'
     }, 'start');
+  }
+
+  // Ensure hero video plays seamlessly
+  var heroVideoEl = document.getElementById('luxihome-hero-video');
+  if (heroVideoEl) {
+    heroVideoEl.play()["catch"](function () {});
+  }
+
+  // Audio toggle interaction
+  if (audioIcon && heroVideoEl) {
+    audioIcon.addEventListener('click', function () {
+      heroVideoEl.muted = !heroVideoEl.muted;
+      var isPlaying = !heroVideoEl.muted;
+      audioIcon.setAttribute('data-triggered', isPlaying.toString());
+    });
   }
 
   // banner scroll
