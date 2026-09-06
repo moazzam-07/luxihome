@@ -218,82 +218,6 @@ var gf_legacy = {"is_legacy":""};
 </style>
 
 <style id="custom-saltlake-animations">
-/* Robust Hardware-Accelerated Hero Entrance */
-@keyframes heroReveal {
-    0% {
-        clip-path: inset(50% 0 50% 0);
-        -webkit-clip-path: inset(50% 0 50% 0);
-        transform: scale(1.12);
-        opacity: 0.3;
-    }
-    100% {
-        clip-path: inset(0% 0% 0% 0%);
-        -webkit-clip-path: inset(0% 0% 0% 0%);
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Minimalist Apple-Style Centered Title Entrance */
-@keyframes titleReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(14px) scale(0.98);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes contentReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-[data-target="banner-image"] {
-    will-change: clip-path, transform, opacity;
-    animation-fill-mode: forwards !important;
-}
-
-[data-target="banner-image"][data-order="1"] {
-    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s forwards;
-}
-[data-target="banner-image"][data-order="2"] {
-    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.35s forwards;
-}
-[data-target="banner-image"][data-order="3"] {
-    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s forwards;
-}
-
-/* Hero Title: Refined Single-Line Golden Signature (Never Wraps or Clashes) */
-.saltlake-hero-title {
-    font-size: clamp(1.85rem, 6.8vw, 4.8rem) !important;
-    line-height: 1.1 !important;
-    letter-spacing: 0.02em !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    display: inline-block !important;
-    max-width: 96vw !important;
-    width: auto !important;
-    white-space: nowrap !important;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.12);
-}
-
-[data-target="banner-title"] {
-    animation: titleReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both !important;
-}
-
-[data-target="banner-content"] {
-    animation: contentReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s both !important;
-}
-
 /* Minimalist Apple Mindset Scroll Reveals */
 .reveal-on-scroll {
     opacity: 0;
@@ -725,39 +649,32 @@ var gf_legacy = {"is_legacy":""};
                         <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
                     </div>
 
-                    <!-- Top Hero Gallery: 3-Photo Focus on Mobile, 5-Photo Panoramic on Desktop -->
-                    <div class="flex justify-center items-center gap-12 sm:gap-30 md:gap-40 mb-30 sm:mb-40 px-10">
-                        <!-- Card 1 (Far Left - Hidden on mobile, visible on sm+) -->
-                        <div class="hidden sm:block flex-shrink-0 relative aspect-[305/395] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none" data-target="banner-image" data-order="3">
+                    <div class="flex justify-center gap-30 sm:gap-45 mb-30">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.jpg" alt="Formal Dining Salon" class="fill-image object-cover"/>
                             </picture>
                         </div>
-                        <!-- Card 2 (Left of Center: Living Salon) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[26vw] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none opacity-80 sm:opacity-100 transition-opacity" data-target="banner-image" data-order="2">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg" alt="Formal Living Room" class="fill-image object-cover"/>
                             </picture>
                         </div>
-                        <!-- Card 3 (CENTER: THE VILLA EXTERIOR FACADE - Prominent Star on Mobile & Desktop) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[64vw] sm:w-[38vw] md:w-[28vw] lg:w-[21vw] overflow-hidden rounded-16 sm:rounded-none shadow-2xl sm:shadow-none border border-gold/30 sm:border-0 z-10" data-target="banner-image" data-order="1">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="1">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.jpg" alt="The Salt Lake Manor Exterior" class="fill-image object-cover"/>
                             </picture>
-                            <div class="sm:hidden absolute top-10 left-10 bg-black/60 backdrop-blur-md px-10 py-4 rounded-full text-[9px] uppercase tracking-wider text-gold font-sans font-medium">Villa Facade</div>
                         </div>
-                        <!-- Card 4 (Right of Center: Grand Foyer) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[26vw] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none opacity-80 sm:opacity-100 transition-opacity" data-target="banner-image" data-order="2">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.jpg" alt="Grand Foyer &amp; Floating Staircase" class="fill-image object-cover"/>
                             </picture>
                         </div>
-                        <!-- Card 5 (Far Right: Master Suite - Hidden on mobile, visible on sm+) -->
-                        <div class="hidden sm:block flex-shrink-0 relative aspect-[305/395] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none" data-target="banner-image" data-order="3">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.jpg" alt="Primary Master Suite" class="fill-image object-cover"/>
@@ -766,11 +683,9 @@ var gf_legacy = {"is_legacy":""};
                     </div>
 
                     <div class="container relative z-10 px-15 sm:px-20 md:px-40">
-                        <div class="grid grid-cols-12 gap-x-12 mb-40 sm:mb-90 min-[1116px]:mb-120">
-                            <div class="col-span-12 text-center flex flex-col justify-center items-center">
-                                <span class="font-sans text-10 sm:text-12 uppercase tracking-3 text-brown font-medium mb-8">Bespoke Private Residence</span>
-                                <h1 class="font-script font-normal text-gold opacity-0 saltlake-hero-title" data-target="banner-title">The Salt Lake Manor</h1>
-                                <p class="font-sans font-light text-11 sm:text-13 tracking-2 uppercase text-brown/90 mt-8 sm:mt-12">Sector I, Salt Lake • Kolkata</p>
+                        <div class="grid grid-cols-12 gap-x-12 mb-50 sm:mb-90 min-[1116px]:mb-120">
+                            <div class="col-span-12 text-center">
+                                <h1 class="font-script font-normal text-34 sm:text-52 lg:text-86 xl:text-102 leading-none tracking-0.9 lg:tracking-3.6 text-gold whitespace-nowrap opacity-0" data-target="banner-title">The Salt Lake Manor</h1>
                             </div>
                         </div>
                         <div class="grid grid-cols-12 gap-x-12 mb-25 opacity-0" data-target="banner-content">
@@ -948,12 +863,13 @@ var gf_legacy = {"is_legacy":""};
                 <section id="reel" class="relative w-screen z-20 py-60 md:py-90 bg-[#f7f5f0] overflow-hidden">
                     <div class="container mx-auto px-15 sm:px-20 text-center mb-35 md:mb-50 max-w-[820px]">
                         <span class="font-sans text-10 sm:text-12 uppercase tracking-3 text-brown font-medium block mb-10">Architectural Chronicle</span>
-                        <h3 class="font-sans font-light text-22 sm:text-32 md:text-42 uppercase tracking-1 text-dark-blue leading-tight mb-8">
+                        <h3 class="font-sans font-light text-24 sm:text-34 md:text-44 uppercase tracking-1.5 text-dark-blue leading-tight mb-12">
                             The Visual Anthology
                         </h3>
-                        <p class="font-script text-26 sm:text-34 md:text-42 text-gold mb-12 leading-tight">
+                        <p class="font-sans font-normal text-11 sm:text-13 uppercase tracking-2 text-gold mb-16">
                             All 15 Curated Perspectives
                         </p>
+                        <div class="w-40 h-[1px] bg-brown/30 mx-auto mb-16"></div>
                         <p class="font-body text-13 sm:text-15 md:text-16 text-charcoal/75 max-w-[580px] mx-auto leading-relaxed">
                             Continuous architectural reel showcasing the exterior facade, bespoke suites, handcrafted joinery, and private sky decks of The Salt Lake Manor.
                         </p>
@@ -1466,13 +1382,22 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 
 <script id="saltlake-interactive-js">
 document.addEventListener('DOMContentLoaded', function() {
-    // Safety fallback: Ensure banner title & content are never stuck hidden
+    // Safety fallback: Ensure banner title, content & images are never stuck hidden
     setTimeout(function() {
         const title = document.querySelector('[data-target="banner-title"]');
         if (title) title.classList.remove('opacity-0');
         const contents = document.querySelectorAll('[data-target="banner-content"]');
         contents.forEach(function(el) { el.classList.remove('opacity-0'); });
-    }, 600);
+        const images = document.querySelectorAll('[data-target="banner-image"]');
+        images.forEach(function(el) {
+            el.style.clipPath = 'inset(0% 0% 0% 0%)';
+            el.style.webkitClipPath = 'inset(0% 0% 0% 0%)';
+        });
+        const imgPics = document.querySelectorAll('[data-target="banner-image"] picture');
+        imgPics.forEach(function(el) {
+            el.style.transform = 'scale(1)';
+        });
+    }, 800);
 
     // 1. Continuous Auto-Scroll Reel with Touch & Mouse pause support
     const track = document.getElementById('marqueeTrack');
