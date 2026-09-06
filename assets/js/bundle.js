@@ -70607,12 +70607,12 @@ function init() {
   if (!home) {
     var logoLottieWrapper = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_24__.$qs)('[data-target="logo-lottie"]');
     var logoLottieDarkWrapper = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_24__.$qs)('[data-target="logo-lottie-dark"]');
-    var logoLottie = new _js_utils_lottie__WEBPACK_IMPORTED_MODULE_6__["default"]('logo', '[data-target="logo-lottie"]');
-    var logoLottieDark = new _js_utils_lottie__WEBPACK_IMPORTED_MODULE_6__["default"]('logo-dark', '[data-target="logo-lottie-dark"]');
-    logoLottie.animation.goToAndPlay(75, true);
-    logoLottieDark.animation.goToAndPlay(75, true);
-    logoLottieWrapper.dataset.played = 'true';
-    logoLottieDarkWrapper.dataset.played = 'true';
+    if (logoLottieWrapper) {
+      logoLottieWrapper.dataset.played = 'true';
+    }
+    if (logoLottieDarkWrapper) {
+      logoLottieDarkWrapper.dataset.played = 'true';
+    }
   }
 }
 init();
