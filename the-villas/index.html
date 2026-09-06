@@ -223,7 +223,7 @@ var gf_legacy = {"is_legacy":""};
     0% {
         clip-path: inset(50% 0 50% 0);
         -webkit-clip-path: inset(50% 0 50% 0);
-        transform: scale(1.18);
+        transform: scale(1.12);
         opacity: 0.3;
     }
     100% {
@@ -234,11 +234,11 @@ var gf_legacy = {"is_legacy":""};
     }
 }
 
-/* Centered & Smooth Title Entrance - No horizontal translation offsets */
+/* Minimalist Apple-Style Centered Title Entrance */
 @keyframes titleReveal {
     0% {
         opacity: 0;
-        transform: translateY(22px) scale(0.96);
+        transform: translateY(14px) scale(0.98);
     }
     100% {
         opacity: 1;
@@ -249,7 +249,7 @@ var gf_legacy = {"is_legacy":""};
 @keyframes contentReveal {
     0% {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(16px);
     }
     100% {
         opacity: 1;
@@ -263,42 +263,42 @@ var gf_legacy = {"is_legacy":""};
 }
 
 [data-target="banner-image"][data-order="1"] {
-    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s forwards;
 }
 [data-target="banner-image"][data-order="2"] {
-    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.35s forwards;
 }
 [data-target="banner-image"][data-order="3"] {
-    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s forwards;
 }
 
-/* Hero Title Styling: Perfectly Centered, Responsive Fluid Clamp, Never Cut Off */
+/* Hero Title: Refined Single-Line Golden Signature (Never Wraps or Clashes) */
 .saltlake-hero-title {
-    font-size: clamp(2.2rem, 6vw, 5.2rem) !important;
-    line-height: 1.15 !important;
+    font-size: clamp(1.85rem, 6.8vw, 4.8rem) !important;
+    line-height: 1.1 !important;
     letter-spacing: 0.02em !important;
     text-align: center !important;
     margin: 0 auto !important;
     display: inline-block !important;
-    max-width: 95vw !important;
-    width: 100% !important;
-    white-space: normal !important;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    max-width: 96vw !important;
+    width: auto !important;
+    white-space: nowrap !important;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
 [data-target="banner-title"] {
-    animation: titleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards !important;
+    animation: titleReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both !important;
 }
 
 [data-target="banner-content"] {
-    animation: contentReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards !important;
+    animation: contentReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s both !important;
 }
 
-/* Scroll reveal for rooms */
+/* Minimalist Apple Mindset Scroll Reveals */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(14px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: opacity, transform;
 }
 .reveal-on-scroll.is-visible {
@@ -315,7 +315,7 @@ var gf_legacy = {"is_legacy":""};
     overflow: hidden !important;
     background-color: #e5e0d8 !important;
     border: 8px solid #ffffff !important;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
 }
 @media (min-width: 768px) {
     .saltlake-walkthrough-frame {
@@ -348,7 +348,7 @@ var gf_legacy = {"is_legacy":""};
 }
 .marquee-track {
     display: flex !important;
-    gap: 22px !important;
+    gap: 20px !important;
     width: max-content !important;
     will-change: transform !important;
     animation: continuousScroll 50s linear infinite !important;
@@ -367,24 +367,24 @@ var gf_legacy = {"is_legacy":""};
 }
 .saltlake-reel-card {
     position: relative !important;
-    width: 270px !important;
+    width: 260px !important;
     height: 360px !important;
     flex-shrink: 0 !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
     overflow: hidden !important;
     background-color: #1a2026 !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.14) !important;
 }
 @media (min-width: 640px) {
     .saltlake-reel-card {
-        width: 320px !important;
+        width: 310px !important;
         height: 420px !important;
     }
 }
 @media (min-width: 1024px) {
     .saltlake-reel-card {
-        width: 360px !important;
-        height: 480px !important;
+        width: 350px !important;
+        height: 470px !important;
     }
 }
 .saltlake-reel-card img {
@@ -394,10 +394,66 @@ var gf_legacy = {"is_legacy":""};
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
 }
 .saltlake-reel-card:hover img {
-    transform: scale(1.06) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Glassmorphic Apple-mindset structured caption badge (Never bleeds outside card) */
+.saltlake-reel-overlay {
+    position: absolute !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+    padding: 10px 14px !important;
+    border-radius: 12px !important;
+    background: rgba(14, 18, 22, 0.82) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    pointer-events: none !important;
+    z-index: 10 !important;
+}
+.saltlake-reel-tag {
+    font-size: 10px !important;
+    font-family: inherit !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.14em !important;
+    color: #c7a97e !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+}
+.saltlake-reel-name {
+    font-size: 13px !important;
+    font-family: inherit !important;
+    color: #ffffff !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+}
+@media (min-width: 640px) {
+    .saltlake-reel-overlay {
+        bottom: 14px !important;
+        left: 14px !important;
+        right: 14px !important;
+        padding: 12px 16px !important;
+    }
+    .saltlake-reel-tag {
+        font-size: 11px !important;
+    }
+    .saltlake-reel-name {
+        font-size: 14px !important;
+    }
 }
 
 /* Dossier Feature Frame */
@@ -669,38 +725,39 @@ var gf_legacy = {"is_legacy":""};
                         <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
                     </div>
 
-                    <!-- 5 Column Hero Gallery (Exterior Villa in Center data-order=1) -->
-                    <div class="flex justify-center gap-20 sm:gap-35 md:gap-45 mb-30">
-                        <!-- Card 1 (Far Left) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="3">
+                    <!-- Top Hero Gallery: 3-Photo Focus on Mobile, 5-Photo Panoramic on Desktop -->
+                    <div class="flex justify-center items-center gap-12 sm:gap-30 md:gap-40 mb-30 sm:mb-40 px-10">
+                        <!-- Card 1 (Far Left - Hidden on mobile, visible on sm+) -->
+                        <div class="hidden sm:block flex-shrink-0 relative aspect-[305/395] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none" data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.jpg" alt="Formal Dining Salon" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <!-- Card 2 (Left of Center: Living Salon) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="2">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[26vw] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none opacity-80 sm:opacity-100 transition-opacity" data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg" alt="Formal Living Room" class="fill-image object-cover"/>
                             </picture>
                         </div>
-                        <!-- Card 3 (CENTER: THE VILLA EXTERIOR FACADE) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="1">
+                        <!-- Card 3 (CENTER: THE VILLA EXTERIOR FACADE - Prominent Star on Mobile & Desktop) -->
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[64vw] sm:w-[38vw] md:w-[28vw] lg:w-[21vw] overflow-hidden rounded-16 sm:rounded-none shadow-2xl sm:shadow-none border border-gold/30 sm:border-0 z-10" data-target="banner-image" data-order="1">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.jpg" alt="The Salt Lake Manor Exterior" class="fill-image object-cover"/>
                             </picture>
+                            <div class="sm:hidden absolute top-10 left-10 bg-black/60 backdrop-blur-md px-10 py-4 rounded-full text-[9px] uppercase tracking-wider text-gold font-sans font-medium">Villa Facade</div>
                         </div>
                         <!-- Card 4 (Right of Center: Grand Foyer) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="2">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[26vw] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none opacity-80 sm:opacity-100 transition-opacity" data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.jpg" alt="Grand Foyer &amp; Floating Staircase" class="fill-image object-cover"/>
                             </picture>
                         </div>
-                        <!-- Card 5 (Far Right: Master Suite) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="3">
+                        <!-- Card 5 (Far Right: Master Suite - Hidden on mobile, visible on sm+) -->
+                        <div class="hidden sm:block flex-shrink-0 relative aspect-[305/395] sm:w-[36vw] md:w-[26vw] lg:w-[19vw] overflow-hidden rounded-12 sm:rounded-none" data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.jpg" alt="Primary Master Suite" class="fill-image object-cover"/>
@@ -708,10 +765,12 @@ var gf_legacy = {"is_legacy":""};
                         </div>
                     </div>
 
-                    <div class="container relative z-10 px-20 md:px-40">
-                        <div class="grid grid-cols-12 gap-x-12 mb-70 sm:mb-110 min-[1116px]:mb-150">
-                            <div class="col-span-12 text-center flex justify-center items-center">
+                    <div class="container relative z-10 px-15 sm:px-20 md:px-40">
+                        <div class="grid grid-cols-12 gap-x-12 mb-40 sm:mb-90 min-[1116px]:mb-120">
+                            <div class="col-span-12 text-center flex flex-col justify-center items-center">
+                                <span class="font-sans text-10 sm:text-12 uppercase tracking-3 text-brown font-medium mb-8">Bespoke Private Residence</span>
                                 <h1 class="font-script font-normal text-gold opacity-0 saltlake-hero-title" data-target="banner-title">The Salt Lake Manor</h1>
+                                <p class="font-sans font-light text-11 sm:text-13 tracking-2 uppercase text-brown/90 mt-8 sm:mt-12">Sector I, Salt Lake • Kolkata</p>
                             </div>
                         </div>
                         <div class="grid grid-cols-12 gap-x-12 mb-25 opacity-0" data-target="banner-content">
@@ -887,286 +946,260 @@ var gf_legacy = {"is_legacy":""};
 
                 <!-- Curated Project Suites & Architectural Gallery -->
                 <section id="reel" class="relative w-screen z-20 py-60 md:py-90 bg-[#f7f5f0] overflow-hidden">
-                    <div class="container mx-auto px-20 text-center mb-35 md:mb-50">
-                        <p class="font-script font-normal text-30 sm:text-46 md:text-56 text-gold mb-8">The Visual Anthology</p>
-                        <h3 class="font-sans font-light text-20 sm:text-28 md:text-36 uppercase tracking-2 text-dark-blue">All 15 Curated Perspectives</h3>
-                        <p class="font-body text-13 sm:text-15 md:text-17 text-charcoal/75 max-w-[620px] mx-auto mt-8">
-                            Continuous architectural reel showcasing the facade, suites, bespoke joinery, and private sky lounges of The Salt Lake Manor.
+                    <div class="container mx-auto px-15 sm:px-20 text-center mb-35 md:mb-50 max-w-[820px]">
+                        <span class="font-sans text-10 sm:text-12 uppercase tracking-3 text-brown font-medium block mb-10">Architectural Chronicle</span>
+                        <h3 class="font-sans font-light text-22 sm:text-32 md:text-42 uppercase tracking-1 text-dark-blue leading-tight mb-8">
+                            The Visual Anthology
+                        </h3>
+                        <p class="font-script text-26 sm:text-34 md:text-42 text-gold mb-12 leading-tight">
+                            All 15 Curated Perspectives
+                        </p>
+                        <p class="font-body text-13 sm:text-15 md:text-16 text-charcoal/75 max-w-[580px] mx-auto leading-relaxed">
+                            Continuous architectural reel showcasing the exterior facade, bespoke suites, handcrafted joinery, and private sky decks of The Salt Lake Manor.
                         </p>
                     </div>
-
 
                     <div id="marqueeContainer" class="marquee-track-wrap py-10">
                         <div id="marqueeTrack" class="marquee-track">
                             <!-- 15 Cards (Set 1) -->
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp" alt="Villa Exterior Facade" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">01 / Exterior</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Travertine Villa Facade</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp" alt="Villa Exterior Facade" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">01 • Exterior</span>
+                                    <h4 class="saltlake-reel-name">Travertine Villa Facade</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp" alt="Grand Foyer &amp; Floating Staircase" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">02 / Foyer</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Double-Height Stairs &amp; Chandelier</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp" alt="Grand Foyer &amp; Floating Staircase" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">02 • Foyer</span>
+                                    <h4 class="saltlake-reel-name">Double-Height Stairs</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp" alt="Formal Living Salon" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">03 / Living</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Smoked Oak Parquet &amp; Halo Rings</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp" alt="Formal Living Salon" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">03 • Living</span>
+                                    <h4 class="saltlake-reel-name">Smoked Oak Formal Salon</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp" alt="Formal Dining Salon" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">04 / Dining</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">High-Gloss 8-Seater Table</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp" alt="Formal Dining Salon" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">04 • Dining</span>
+                                    <h4 class="saltlake-reel-name">High-Gloss Dining Salon</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-06-kitchen.webp" alt="Culinary Atelier" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">05 / Kitchen</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Smoked Glass Vitrines &amp; Quartz</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-06-kitchen.webp" alt="Culinary Atelier" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">05 • Kitchen</span>
+                                    <h4 class="saltlake-reel-name">Smoked Glass Atelier</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-10-atrium-view.webp" alt="Atrium Gallery Mezzanine" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">06 / Mezzanine</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Upper Gallery Cascading View</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-10-atrium-view.webp" alt="Atrium Gallery Mezzanine" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">06 • Mezzanine</span>
+                                    <h4 class="saltlake-reel-name">Upper Gallery Cascading View</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp" alt="Primary Master Suite" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">07 / Master Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Silk Satin Bedding &amp; Wood Walls</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp" alt="Primary Master Suite" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">07 • Master Suite</span>
+                                    <h4 class="saltlake-reel-name">Silk Satin Bedding Suite</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-14-master-symmetry.webp" alt="Master Suite Symmetry" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">08 / Master Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Bronze Mirror &amp; Reading Lounge</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-14-master-symmetry.webp" alt="Master Suite Symmetry" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">08 • Master Suite</span>
+                                    <h4 class="saltlake-reel-name">Bronze Mirror &amp; Lounge</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-03-master-bath.webp" alt="Master Spa Bath Double Vanity" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">09 / Spa Bath</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Double Vanity &amp; Bronze Mirror</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-03-master-bath.webp" alt="Master Spa Bath Double Vanity" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">09 • Spa Bath</span>
+                                    <h4 class="saltlake-reel-name">Double Vanity Ensuite</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-15-master-bath-wide.webp" alt="Master Spa Bath Wide View" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">10 / Spa Bath</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Monolithic Black Granite Counter</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-15-master-bath-wide.webp" alt="Master Spa Bath Wide View" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">10 • Spa Bath</span>
+                                    <h4 class="saltlake-reel-name">Monolithic Granite Counter</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-04-guest-bed-1.webp" alt="Guest Bedroom Suite 01" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">11 / Guest Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Tufted Headboard &amp; Pendant Light</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-04-guest-bed-1.webp" alt="Guest Bedroom Suite 01" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">11 • Guest Suite</span>
+                                    <h4 class="saltlake-reel-name">Tufted Headboard Suite 01</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-05-guest-bath-1.webp" alt="Grey Marble Ensuite" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">12 / Ensuite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Grey Marble &amp; Fluted Pendants</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-05-guest-bath-1.webp" alt="Grey Marble Ensuite" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">12 • Ensuite</span>
+                                    <h4 class="saltlake-reel-name">Grey Marble Bathroom</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-11-guest-bed-2.webp" alt="Guest Bedroom Suite 02" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">13 / Guest Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Warm Walnut Backlit Paneling</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-11-guest-bed-2.webp" alt="Guest Bedroom Suite 02" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">13 • Guest Suite</span>
+                                    <h4 class="saltlake-reel-name">Walnut Backlit Suite 02</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-12-guest-bath-2.webp" alt="Limestone Ensuite" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">14 / Ensuite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Beige Limestone &amp; Matt Black</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-12-guest-bath-2.webp" alt="Limestone Ensuite" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">14 • Ensuite</span>
+                                    <h4 class="saltlake-reel-name">Beige Limestone Bathroom</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-13-sky-terrace.webp" alt="Rooftop Sky Terrace Deck" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">15 / Terrace</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Laser-Cut Canopy &amp; Rattan Lounge</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-13-sky-terrace.webp" alt="Rooftop Sky Terrace Deck" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">15 • Sky Terrace</span>
+                                    <h4 class="saltlake-reel-name">Rooftop Pergola Lounge</h4>
                                 </div>
                             </div>
 
                             <!-- Set 2 (Duplicate for Seamless Infinite Marquee Loop) -->
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp" alt="Villa Exterior Facade" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">01 / Exterior</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Travertine Villa Facade</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp" alt="Villa Exterior Facade" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">01 • Exterior</span>
+                                    <h4 class="saltlake-reel-name">Travertine Villa Facade</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp" alt="Grand Foyer &amp; Floating Staircase" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">02 / Foyer</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Double-Height Stairs &amp; Chandelier</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp" alt="Grand Foyer &amp; Floating Staircase" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">02 • Foyer</span>
+                                    <h4 class="saltlake-reel-name">Double-Height Stairs</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp" alt="Formal Living Salon" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">03 / Living</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Smoked Oak Parquet &amp; Halo Rings</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp" alt="Formal Living Salon" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">03 • Living</span>
+                                    <h4 class="saltlake-reel-name">Smoked Oak Formal Salon</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp" alt="Formal Dining Salon" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">04 / Dining</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">High-Gloss 8-Seater Table</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp" alt="Formal Dining Salon" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">04 • Dining</span>
+                                    <h4 class="saltlake-reel-name">High-Gloss Dining Salon</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-06-kitchen.webp" alt="Culinary Atelier" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">05 / Kitchen</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Smoked Glass Vitrines &amp; Quartz</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-06-kitchen.webp" alt="Culinary Atelier" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">05 • Kitchen</span>
+                                    <h4 class="saltlake-reel-name">Smoked Glass Atelier</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-10-atrium-view.webp" alt="Atrium Gallery Mezzanine" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">06 / Mezzanine</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Upper Gallery Cascading View</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-10-atrium-view.webp" alt="Atrium Gallery Mezzanine" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">06 • Mezzanine</span>
+                                    <h4 class="saltlake-reel-name">Upper Gallery Cascading View</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp" alt="Primary Master Suite" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">07 / Master Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Silk Satin Bedding &amp; Wood Walls</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp" alt="Primary Master Suite" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">07 • Master Suite</span>
+                                    <h4 class="saltlake-reel-name">Silk Satin Bedding Suite</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-14-master-symmetry.webp" alt="Master Suite Symmetry" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">08 / Master Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Bronze Mirror &amp; Reading Lounge</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-14-master-symmetry.webp" alt="Master Suite Symmetry" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">08 • Master Suite</span>
+                                    <h4 class="saltlake-reel-name">Bronze Mirror &amp; Lounge</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-03-master-bath.webp" alt="Master Spa Bath Double Vanity" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">09 / Spa Bath</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Double Vanity &amp; Bronze Mirror</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-03-master-bath.webp" alt="Master Spa Bath Double Vanity" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">09 • Spa Bath</span>
+                                    <h4 class="saltlake-reel-name">Double Vanity Ensuite</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-15-master-bath-wide.webp" alt="Master Spa Bath Wide View" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">10 / Spa Bath</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Monolithic Black Granite Counter</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-15-master-bath-wide.webp" alt="Master Spa Bath Wide View" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">10 • Spa Bath</span>
+                                    <h4 class="saltlake-reel-name">Monolithic Granite Counter</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-04-guest-bed-1.webp" alt="Guest Bedroom Suite 01" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">11 / Guest Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Tufted Headboard &amp; Pendant Light</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-04-guest-bed-1.webp" alt="Guest Bedroom Suite 01" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">11 • Guest Suite</span>
+                                    <h4 class="saltlake-reel-name">Tufted Headboard Suite 01</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-05-guest-bath-1.webp" alt="Grey Marble Ensuite" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">12 / Ensuite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Grey Marble &amp; Fluted Pendants</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-05-guest-bath-1.webp" alt="Grey Marble Ensuite" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">12 • Ensuite</span>
+                                    <h4 class="saltlake-reel-name">Grey Marble Bathroom</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-11-guest-bed-2.webp" alt="Guest Bedroom Suite 02" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">13 / Guest Suite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Warm Walnut Backlit Paneling</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-11-guest-bed-2.webp" alt="Guest Bedroom Suite 02" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">13 • Guest Suite</span>
+                                    <h4 class="saltlake-reel-name">Walnut Backlit Suite 02</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-12-guest-bath-2.webp" alt="Limestone Ensuite" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">14 / Ensuite</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Beige Limestone &amp; Matt Black</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-12-guest-bath-2.webp" alt="Limestone Ensuite" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">14 • Ensuite</span>
+                                    <h4 class="saltlake-reel-name">Beige Limestone Bathroom</h4>
                                 </div>
                             </div>
 
                             <div class="saltlake-reel-card group" aria-hidden="true">
-                                <img src="/wp-content/uploads/salt-lake/salt-lake-13-sky-terrace.webp" alt="Rooftop Sky Terrace Deck" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-16 sm:p-20 text-white">
-                                    <span class="text-10 sm:text-11 uppercase tracking-2 text-gold block">15 / Terrace</span>
-                                    <h4 class="font-sans font-light text-16 sm:text-18 uppercase tracking-1">Laser-Cut Canopy &amp; Rattan Lounge</h4>
+                                <img src="/wp-content/uploads/salt-lake/salt-lake-13-sky-terrace.webp" alt="Rooftop Sky Terrace Deck" loading="lazy"/>
+                                <div class="saltlake-reel-overlay">
+                                    <span class="saltlake-reel-tag">15 • Sky Terrace</span>
+                                    <h4 class="saltlake-reel-name">Rooftop Pergola Lounge</h4>
                                 </div>
                             </div>
                         </div>
@@ -1433,6 +1466,14 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 
 <script id="saltlake-interactive-js">
 document.addEventListener('DOMContentLoaded', function() {
+    // Safety fallback: Ensure banner title & content are never stuck hidden
+    setTimeout(function() {
+        const title = document.querySelector('[data-target="banner-title"]');
+        if (title) title.classList.remove('opacity-0');
+        const contents = document.querySelectorAll('[data-target="banner-content"]');
+        contents.forEach(function(el) { el.classList.remove('opacity-0'); });
+    }, 600);
+
     // 1. Continuous Auto-Scroll Reel with Touch & Mouse pause support
     const track = document.getElementById('marqueeTrack');
     const container = document.getElementById('marqueeContainer');
