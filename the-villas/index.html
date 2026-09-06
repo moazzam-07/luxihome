@@ -216,6 +216,99 @@ var gf_legacy = {"is_legacy":""};
 	
 }
 </style>
+
+<style id="custom-saltlake-animations">
+/* Robust Hardware-Accelerated Hero Entrance */
+@keyframes heroReveal {
+    0% {
+        clip-path: inset(50% 0 50% 0);
+        -webkit-clip-path: inset(50% 0 50% 0);
+        transform: scale(1.18);
+        opacity: 0.3;
+    }
+    100% {
+        clip-path: inset(0% 0% 0% 0%);
+        -webkit-clip-path: inset(0% 0% 0% 0%);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes titleReveal {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes contentReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-target="banner-image"] {
+    will-change: clip-path, transform, opacity;
+    animation-fill-mode: forwards !important;
+}
+
+[data-target="banner-image"][data-order="1"] {
+    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+[data-target="banner-image"][data-order="2"] {
+    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+[data-target="banner-image"][data-order="3"] {
+    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+[data-target="banner-title"] {
+    animation: titleReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards !important;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+[data-target="banner-content"] {
+    animation: contentReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards !important;
+}
+
+/* Scroll reveal for rooms */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Auto-scroller track */
+.marquee-track-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+</style>
+
 </head>
 
 <body class="wp-singular page-template page-template-templates page-template-villas-2025 page-template-templatesvillas-2025-php page page-id-485 wp-theme-AmaliProperties" data-barba="wrapper">
@@ -459,35 +552,35 @@ var gf_legacy = {"is_legacy":""};
                     <!-- 5 Column Hero Gallery (Exterior Villa in Center data-order=1) -->
                     <div class="flex justify-center gap-20 sm:gap-35 md:gap-45 mb-30">
                         <!-- Card 1 (Far Left) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden [clip-path:inset(51%_0_50%_0)]" data-target="banner-image" data-order="3">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.jpg" alt="Formal Dining Salon" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <!-- Card 2 (Left of Center: Living Salon) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden [clip-path:inset(51%_0_50%_0)]" data-target="banner-image" data-order="2">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg" alt="Formal Living Room" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <!-- Card 3 (CENTER: THE VILLA EXTERIOR FACADE) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden [clip-path:inset(51%_0_50%_0)]" data-target="banner-image" data-order="1">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="1">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.jpg" alt="The Salt Lake Manor Exterior" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <!-- Card 4 (Right of Center: Grand Foyer) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden [clip-path:inset(51%_0_50%_0)]" data-target="banner-image" data-order="2">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-07-foyer-stairs.jpg" alt="Grand Foyer &amp; Floating Staircase" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <!-- Card 5 (Far Right: Master Suite) -->
-                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden [clip-path:inset(51%_0_50%_0)]" data-target="banner-image" data-order="3">
+                        <div class="flex-shrink-0 relative aspect-[305/395] w-[65vw] sm:w-[40vw] md:w-[28vw] lg:w-[19vw] overflow-hidden " data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
                                 <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp"/>
                                 <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.jpg" alt="Primary Master Suite" class="fill-image object-cover"/>
@@ -706,8 +799,8 @@ var gf_legacy = {"is_legacy":""};
                         }
                     </style>
 
-                    <div class="marquee-track-wrap py-10">
-                        <div class="marquee-track">
+                    <div id="marqueeContainer" class="marquee-track-wrap py-10">
+                        <div id="marqueeTrack" class="marquee-track">
                             <!-- 15 Cards (Set 1) -->
                             <div class="w-[270px] sm:w-[330px] md:w-[380px] flex-shrink-0 aspect-[3/4] relative rounded-16 overflow-hidden shadow-md group">
                                 <img src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp" alt="Villa Exterior Facade" class="fill-image object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
@@ -1239,6 +1332,65 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
+
+
+<script id="saltlake-interactive-js">
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Continuous Auto-Scroll Reel with Touch & Mouse support
+    const track = document.getElementById('marqueeTrack');
+    const container = document.getElementById('marqueeContainer');
+    
+    if (track && container) {
+        let pos = 0;
+        let speed = 0.75; // gentle, luxurious gliding speed
+        let isPaused = false;
+        let resumeTimeout = null;
+
+        container.addEventListener('mouseenter', () => isPaused = true);
+        container.addEventListener('mouseleave', () => isPaused = false);
+        container.addEventListener('touchstart', () => {
+            isPaused = true;
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+        }, { passive: true });
+        container.addEventListener('touchend', () => {
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+            resumeTimeout = setTimeout(() => { isPaused = false; }, 2000);
+        }, { passive: true });
+
+        function animateMarquee() {
+            if (!isPaused) {
+                pos += speed;
+                const halfWidth = track.scrollWidth / 2;
+                if (pos >= halfWidth) {
+                    pos = 0;
+                }
+                track.style.transform = 'translate3d(-' + pos + 'px, 0, 0)';
+            }
+            requestAnimationFrame(animateMarquee);
+        }
+        requestAnimationFrame(animateMarquee);
+    }
+
+    // 2. Room sections scroll reveal observer
+    const zones = document.querySelectorAll('[data-name="projects"] > div');
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        zones.forEach(zone => {
+            zone.classList.add('reveal-on-scroll');
+            observer.observe(zone);
+        });
+    } else {
+        zones.forEach(zone => zone.classList.add('is-visible'));
+    }
+});
+</script>
 
 </body>
 
