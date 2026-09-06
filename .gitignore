@@ -29,3 +29,4 @@ live_welcome.html
 
 .vercel
 backup_original_*/
+.env*
