@@ -1420,6 +1420,18 @@ function magnificPopupInline() {
       }
     }
   });
+  $('.popup-3-link').magnificPopup({
+    type: 'inline',
+    closeBtnInside: true,
+    callbacks: {
+      beforeOpen: function beforeOpen() {
+        document.body.style.overflow = 'hidden';
+      },
+      afterClose: function afterClose() {
+        document.body.style.overflow = '';
+      }
+    }
+  });
 }
 
 // GALLERY SINGLE IMAGE
