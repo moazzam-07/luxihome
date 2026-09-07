@@ -34,4 +34,5 @@ live_bundle.js
 *.bak
 *.landing_backup
 .env*
+server.js
 
