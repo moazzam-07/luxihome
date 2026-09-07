@@ -8464,6 +8464,10 @@ var Menu = /*#__PURE__*/function () {
           target = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)(href).closest('div');
           offset = _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg ? window.innerHeight * 3 : 0;
           break;
+        case '#contact':
+          target = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('#contact') || (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="site-footer"]');
+          offset = 0;
+          break;
         default:
           target = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)(href);
           offset = 0;
@@ -8487,11 +8491,13 @@ var Menu = /*#__PURE__*/function () {
         ease: 'slow_lamar'
       }).call(function () {
         var _window;
-        (_window = window) === null || _window === void 0 || (_window = _window.lenis) === null || _window === void 0 || _window.scrollTo(target, {
-          immediate: true,
-          lock: true,
-          offset: offset
-        });
+        if (target) {
+          (_window = window) === null || _window === void 0 || (_window = _window.lenis) === null || _window === void 0 || _window.scrollTo(target, {
+            immediate: true,
+            lock: true,
+            offset: offset
+          });
+        }
       }).to(this.cover, {
         y: "-".concat(window.innerHeight, "px"),
         duration: 1.5,
