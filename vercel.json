@@ -1,0 +1,77 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/projects/park%20street/:match*",
+      "destination": "/projects/park-street/"
+    },
+    {
+      "source": "/projects/park%20street",
+      "destination": "/projects/park-street/"
+    },
+    {
+      "source": "/projects/park%20street/",
+      "destination": "/projects/park-street/"
+    },
+    {
+      "source": "/projects/park+street/:match*",
+      "destination": "/projects/park-street/"
+    },
+    {
+      "source": "/projects/park+street",
+      "destination": "/projects/park-street/"
+    },
+    {
+      "source": "/projects/salt%20lake/:match*",
+      "destination": "/projects/salt-lake/"
+    },
+    {
+      "source": "/projects/salt%20lake",
+      "destination": "/projects/salt-lake/"
+    },
+    {
+      "source": "/projects/new%20town/:match*",
+      "destination": "/projects/newtown/"
+    },
+    {
+      "source": "/projects/new%20town",
+      "destination": "/projects/newtown/"
+    },
+    {
+      "source": "/projects/park-street-kolkata/:match*",
+      "destination": "/projects/park-street-kolkata/"
+    },
+    {
+      "source": "/projects/park-street-kolkata",
+      "destination": "/projects/park-street-kolkata/"
+    },
+    {
+      "source": "/projects/newtown-kolkata/:match*",
+      "destination": "/projects/newtown-kolkata/"
+    },
+    {
+      "source": "/projects/newtown-kolkata",
+      "destination": "/projects/newtown-kolkata/"
+    },
+    {
+      "source": "/projects/salt-lake-kolkata/:match*",
+      "destination": "/projects/salt-lake-kolkata/"
+    },
+    {
+      "source": "/projects/salt-lake-kolkata",
+      "destination": "/projects/salt-lake-kolkata/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ]
+}
