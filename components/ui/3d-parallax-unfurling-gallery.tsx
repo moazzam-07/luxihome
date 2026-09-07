@@ -45,16 +45,16 @@ interface ImageCardProps {
 
 const ImageCard = ({ src, onLoad, title }: ImageCardProps) => {
   return (
-    <div className="w-full h-[220px] sm:h-[300px] md:h-[400px] flex-shrink-0 bg-[#0B1118] border border-white/10 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] cursor-pointer relative will-change-transform backface-hidden preserve-3d group">
+    <div className="w-full h-[200px] sm:h-[280px] md:h-[380px] flex-shrink-0 bg-white border border-[#1A2026]/10 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] cursor-pointer relative will-change-transform backface-hidden preserve-3d shadow-md hover:shadow-xl group">
       <img
         src={src}
         alt={title || "LUXiHOME Interior Asset"}
         loading="lazy"
         onLoad={onLoad}
-        className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-        <span className="text-xs uppercase tracking-widest text-[#DAD0C1] font-medium font-sans">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1A2026]/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-[#FFFFFF] bg-[#1A2026]/80 backdrop-blur-md px-3 py-1 rounded-full font-['DIN',sans-serif]">
           LUXiHOME Interior Archive
         </span>
       </div>
@@ -70,8 +70,8 @@ interface ParallaxGalleryProps {
 
 export default function Component({
   images = LUXIHOME_INTERIOR_IMAGES,
-  title = "THE INTERIOR VISION",
-  subtitle = "Bespoke Artisanal Craftsmanship Across Kolkata",
+  title = "THE INTERIOR ARCHIVE",
+  subtitle = "Over 70+ Handcrafted Sanctuaries Across Kolkata's Premier Enclaves",
 }: ParallaxGalleryProps) {
   const scrollWrapperRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -102,7 +102,7 @@ export default function Component({
     };
   }, [images]);
 
-  // LINKED SCROLL: Now tells Framer Motion exactly which div is doing the scrolling
+  // LINKED SCROLL: Tells Framer Motion exactly which div is doing the scrolling
   const { scrollYProgress } = useScroll({
     target: containerRef,
     container: scrollWrapperRef,
@@ -115,11 +115,10 @@ export default function Component({
     mass: 0.5,
   });
 
-  // Banner animations
+  // Banner animations (Pure white, zero yellow border)
   const bannerWidth = useTransform(smoothProgress, [0, 0.15], ["92vw", "100vw"]);
   const bannerHeight = useTransform(smoothProgress, [0, 0.15], ["85vh", "100vh"]);
   const bannerRadius = useTransform(smoothProgress, [0, 0.15], ["32px", "0px"]);
-  const bannerBorderWidth = useTransform(smoothProgress, [0, 0.15], ["2px", "0px"]);
 
   // 3D Matrix animations (Mobile tuned angles for natural perspective)
   const rotateY = useTransform(smoothProgress, [0.15, 1], [-35, -5]);
@@ -136,11 +135,11 @@ export default function Component({
   return (
     <div 
       ref={scrollWrapperRef}
-      className="w-full h-screen overflow-y-auto overflow-x-hidden bg-[#070B0E] touch-pan-y"
+      className="w-full h-screen overflow-y-auto overflow-x-hidden bg-white touch-pan-y"
     >
       <section
         ref={containerRef}
-        className="relative w-full h-[500vh] sm:h-[600vh] bg-[#070B0E] text-white font-sans selection:bg-[#C5A880] selection:text-black"
+        className="relative w-full h-[500vh] sm:h-[600vh] bg-white text-[#1A2026] font-['DIN',sans-serif] selection:bg-[#1A2026] selection:text-white"
       >
         <div className="sticky top-0 h-screen w-full flex justify-center items-center overflow-hidden">
           <motion.div
@@ -148,20 +147,18 @@ export default function Component({
               width: bannerWidth,
               height: bannerHeight,
               borderRadius: bannerRadius,
-              borderWidth: bannerBorderWidth,
-              borderColor: "rgba(197, 168, 128, 0.25)",
             }}
-            className="relative bg-[#070B0E] overflow-hidden flex items-center justify-center max-w-[1920px] mx-auto will-change-transform backface-hidden preserve-3d shadow-2xl"
+            className="relative bg-white overflow-hidden flex items-center justify-center max-w-[1920px] mx-auto will-change-transform backface-hidden preserve-3d shadow-xl"
           >
-            {/* Header Overlay */}
-            <div className="absolute top-8 sm:top-12 left-0 right-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-              <span className="text-[10px] sm:text-[11px] tracking-[0.35em] uppercase text-[#C5A880] font-semibold mb-2">
-                LUXiHOME Bespoke Portfolio
+            {/* Header Overlay (Amali Design System Theme) */}
+            <div className="absolute top-6 sm:top-10 left-0 right-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+              <span className="text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-[#726152] font-normal mb-2 font-['DIN',sans-serif]">
+                Bespoke Interior Craftsmanship
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-light tracking-[0.18em] uppercase text-white font-serif">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-light tracking-[0.22em] uppercase text-[#1A2026] font-['aviano-sans',sans-serif]">
                 {title}
               </h2>
-              <p className="text-xs sm:text-sm text-[#DAD0C1]/75 tracking-wider mt-2 max-w-md">
+              <p className="text-xs sm:text-sm text-[#3D4854] tracking-wider mt-2 max-w-md font-['DIN',sans-serif]">
                 {subtitle}
               </p>
             </div>
@@ -170,9 +167,9 @@ export default function Component({
               className="absolute inset-0 flex justify-center items-center pointer-events-none"
               style={{ perspective: "1000px" }}
             >
-              {/* Ambient Shadow Box Masking */}
-              <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_0_100px_150px_-50px_rgba(7,11,14,1),inset_0_-100px_150px_-50px_rgba(7,11,14,1)]" />
-              <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_120px_0_120px_-50px_rgba(7,11,14,1),inset_-120px_0_120px_-50px_rgba(7,11,14,1)]" />
+              {/* Ambient White Vignette Masking */}
+              <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_0_110px_140px_-40px_rgba(255,255,255,1),inset_0_-110px_140px_-40px_rgba(255,255,255,1)]" />
+              <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_110px_0_130px_-40px_rgba(255,255,255,1),inset_-110px_0_130px_-40px_rgba(255,255,255,1)]" />
 
               {/* Parallax Image Grid Matrix */}
               <motion.div

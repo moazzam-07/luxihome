@@ -1032,19 +1032,460 @@ shore and sea</p>
                     <script>
                     (function() {
                         var heroBtn = document.getElementById('btn-hero-explore-collection');
-                        var projectsSection = document.getElementById('signature-projects');
-                        if (heroBtn && projectsSection) {
+                        var gallerySection = document.getElementById('lux-unfurling-gallery') || document.getElementById('signature-projects');
+                        if (heroBtn && gallerySection) {
                             heroBtn.addEventListener('click', function(e) {
                                 e.preventDefault();
                                 if (window.lenis) {
-                                    window.lenis.scrollTo(projectsSection, { duration: 1.2 });
+                                    window.lenis.scrollTo(gallerySection, { duration: 1.2 });
                                 } else {
-                                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                                    gallerySection.scrollIntoView({ behavior: 'smooth' });
                                 }
                             });
                         }
                     })();
                     </script>
+            </section>
+
+            <!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR ARCHIVE (Amali Design System Theme) -->
+            <section id="lux-unfurling-gallery" class="relative w-screen bg-[#FFFFFF] text-[#1A2026] z-[35] pointer-events-auto select-none" data-name="interiors-unfurling-gallery">
+                <style>
+                    #lux-unfurling-gallery {
+                        position: relative;
+                        width: 100vw;
+                        height: 360vh;
+                        background: #FFFFFF;
+                        font-family: 'DIN', -apple-system, BlinkMacSystemFont, sans-serif;
+                    }
+                    @media (max-width: 767px) {
+                        #lux-unfurling-gallery {
+                            height: 280vh;
+                        }
+                    }
+                    .lux-unfurl-stage {
+                        position: sticky;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        height: 100dvh;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #FFFFFF;
+                    }
+                    .lux-unfurl-banner {
+                        position: relative;
+                        background: #FFFFFF;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        max-width: 1920px;
+                        margin: 0 auto;
+                        will-change: width, height, border-radius, transform;
+                        backface-visibility: hidden;
+                        box-shadow: 0 25px 70px -15px rgba(26, 32, 38, 0.08);
+                        border: none;
+                    }
+                    .lux-unfurl-header {
+                        position: absolute;
+                        top: 24px;
+                        left: 0;
+                        right: 0;
+                        z-index: 35;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        padding: 0 20px;
+                        pointer-events: none;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-unfurl-header {
+                            top: 36px;
+                        }
+                    }
+                    .lux-unfurl-kicker {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 11px;
+                        letter-spacing: 0.28em;
+                        text-transform: uppercase;
+                        color: #726152;
+                        font-weight: 400;
+                        margin-bottom: 6px;
+                    }
+                    .lux-unfurl-title {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: clamp(22px, 5.2vw, 42px);
+                        font-weight: 300;
+                        letter-spacing: 0.22em;
+                        text-transform: uppercase;
+                        color: #1A2026;
+                        margin: 0;
+                        line-height: 1.15;
+                    }
+                    .lux-unfurl-sub {
+                        font-family: 'DIN', sans-serif;
+                        font-size: clamp(11px, 2.7vw, 14px);
+                        font-weight: 300;
+                        color: #3D4854;
+                        letter-spacing: 0.08em;
+                        margin-top: 6px;
+                        max-width: 500px;
+                        line-height: 1.45;
+                    }
+                    .lux-matrix-viewport {
+                        position: absolute;
+                        inset: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        perspective: 1000px;
+                        pointer-events: none;
+                    }
+                    .lux-ambient-mask-v {
+                        position: absolute;
+                        inset: 0;
+                        z-index: 25;
+                        pointer-events: none;
+                        box-shadow: inset 0 110px 140px -40px #FFFFFF, inset 0 -110px 140px -40px #FFFFFF;
+                    }
+                    .lux-ambient-mask-h {
+                        position: absolute;
+                        inset: 0;
+                        z-index: 25;
+                        pointer-events: none;
+                        box-shadow: inset 110px 0 130px -40px #FFFFFF, inset -110px 0 130px -40px #FFFFFF;
+                    }
+                    .lux-matrix-grid {
+                        display: flex;
+                        gap: 14px;
+                        justify-content: center;
+                        align-items: center;
+                        width: 140vw;
+                        height: 160vh;
+                        transform-origin: center center;
+                        transform-style: preserve-3d;
+                        will-change: transform;
+                        backface-visibility: hidden;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-matrix-grid {
+                            gap: 24px;
+                            width: 120vw;
+                            height: 150vh;
+                        }
+                    }
+                    .lux-matrix-col {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 14px;
+                        width: 32vw;
+                        min-width: 150px;
+                        pointer-events: auto;
+                        will-change: transform;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-matrix-col {
+                            gap: 24px;
+                            width: 22vw;
+                            min-width: 220px;
+                        }
+                    }
+                    .lux-photo-card {
+                        width: 100%;
+                        height: 195px;
+                        flex-shrink: 0;
+                        background: #FFFFFF;
+                        border: 1px solid rgba(26, 32, 38, 0.08);
+                        border-radius: 10px;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                        box-shadow: 0 10px 28px -6px rgba(26, 32, 38, 0.07);
+                        transition: transform 0.35s ease, box-shadow 0.35s ease;
+                        will-change: transform;
+                    }
+                    @media (min-width: 640px) {
+                        .lux-photo-card {
+                            height: 275px;
+                            border-radius: 12px;
+                        }
+                    }
+                    @media (min-width: 1024px) {
+                        .lux-photo-card {
+                            height: 380px;
+                            border-radius: 14px;
+                        }
+                    }
+                    .lux-photo-card:hover {
+                        transform: scale(1.03);
+                        box-shadow: 0 20px 45px -10px rgba(26, 32, 38, 0.16);
+                    }
+                    .lux-photo-card img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0.92;
+                        transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .lux-photo-card:hover img {
+                        opacity: 1;
+                        transform: scale(1.06);
+                    }
+                    .lux-photo-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to top, rgba(26, 32, 38, 0.75) 0%, transparent 55%);
+                        opacity: 0;
+                        display: flex;
+                        align-items: flex-end;
+                        padding: 14px;
+                        transition: opacity 0.3s ease;
+                    }
+                    .lux-photo-card:hover .lux-photo-overlay {
+                        opacity: 1;
+                    }
+                    .lux-photo-tag {
+                        background: rgba(255, 255, 255, 0.92);
+                        backdrop-filter: blur(14px);
+                        color: #1A2026;
+                        font-family: 'DIN', sans-serif;
+                        font-size: 10px;
+                        font-weight: 500;
+                        letter-spacing: 0.2em;
+                        text-transform: uppercase;
+                        border: 1px solid rgba(26, 32, 38, 0.12);
+                        border-radius: 40px;
+                        padding: 5px 12px;
+                    }
+                </style>
+
+                <div class="lux-unfurl-stage">
+                    <div class="lux-unfurl-banner" id="lux-unfurl-banner" style="width: 92vw; height: 85vh; border-radius: 32px;">
+                        <!-- Header Overlay -->
+                        <div class="lux-unfurl-header">
+                            <span class="lux-unfurl-kicker">Bespoke Interior Craftsmanship</span>
+                            <h2 class="lux-unfurl-title">THE INTERIOR ARCHIVE</h2>
+                            <p class="lux-unfurl-sub">Over 70+ Handcrafted Sanctuaries Across Kolkata's Premier Enclaves</p>
+                        </div>
+
+                        <!-- Perspective 3D Viewport -->
+                        <div class="lux-matrix-viewport">
+                            <!-- Vignette ambient shadows (Pure White) -->
+                            <div class="lux-ambient-mask-v"></div>
+                            <div class="lux-ambient-mask-h"></div>
+
+                            <!-- 3D Matrix Container -->
+                            <div class="lux-matrix-grid" id="lux-matrix-grid">
+                                <!-- Column 1 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-1">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_1_2026-09-06_14-27-28.jpg" alt="LUXiHOME Drawing Lounge" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Drawing Lounge</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_4_2026-09-06_14-27-28.jpg" alt="LUXiHOME Master Suite" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Master Suite</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_7_2026-09-06_14-27-28.jpg" alt="LUXiHOME Fluted Wall Design" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Fluted Wall Feature</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_10_2026-09-06_14-27-28.jpg" alt="LUXiHOME Dining Room" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Dining</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_1_2026-09-04_15-01-37.jpg" alt="Salt Lake Architectural Villa" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Salt Lake Villa</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg" alt="Salt Lake Sky Terrace" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Terrace</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-2">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_2_2026-09-06_14-27-28.jpg" alt="Designer TV Lounge" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Media Lounge</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_12_2026-09-06_14-27-28.jpg" alt="Luxury Modular Kitchen" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Modular Kitchen</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_15_2026-09-06_14-27-28.jpg" alt="Spa Bathroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Spa Bathroom</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_18_2026-09-06_14-27-28.jpg" alt="Italian Marble Dressing" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Marble Dressing Suite</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_2_2026-09-04_15-01-37.jpg" alt="Salt Lake Bedroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Guest Bedroom</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_9_2026-09-04_15-01-37.jpg" alt="Salt Lake Double Height" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Atrium View</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 3 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-3">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_22_2026-09-06_14-27-28.jpg" alt="Acoustic Ceiling Lounge" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Executive Suite</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_25_2026-09-06_14-27-28.jpg" alt="Walk-in Wardrobe" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Couture Wardrobe</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_28_2026-09-06_14-27-28.jpg" alt="Warm Teak Hall" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Teak Foyer</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_32_2026-09-06_14-27-28.jpg" alt="Backlit Onyx Bar" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Backlit Onyx Lounge</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_1_2026-09-04_15-17-45.jpg" alt="Turnkey Villa Project" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Turnkey Interior</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_8_2026-09-04_15-17-45.jpg" alt="Private Courtyard" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Courtyard Verandah</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 4 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-4">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_36_2026-09-06_14-27-28.jpg" alt="Penthouse View" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Sanctuary</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_40_2026-09-06_14-27-28.jpg" alt="Bespoke Study" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Private Library</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_45_2026-09-06_14-27-28.jpg" alt="Bronze Mirror Corridor" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Mirrored Gallery</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_50_2026-09-06_14-27-28.jpg" alt="Minimalist Bedroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Zen Sanctuary</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg" alt="Artisanal Joinery" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Joinery</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_14_2026-09-04_15-17-45.jpg" alt="Marble Bathroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Statuary Marble</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Unfurling & Parallax Physics Engine -->
+                <script>
+                (function() {
+                    var section = document.getElementById('lux-unfurling-gallery');
+                    if (!section) return;
+
+                    var banner = document.getElementById('lux-unfurl-banner');
+                    var matrix = document.getElementById('lux-matrix-grid');
+                    var col1 = document.getElementById('lux-matrix-col-1');
+                    var col2 = document.getElementById('lux-matrix-col-2');
+                    var col3 = document.getElementById('lux-matrix-col-3');
+                    var col4 = document.getElementById('lux-matrix-col-4');
+
+                    var isTicking = false;
+
+                    function updateParallax() {
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = rect.height - window.innerHeight;
+                        if (scrollDistance <= 0) return;
+
+                        // Normalized progress: 0.0 to 1.0
+                        var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
+
+                        // Phase 1: Unfurling stage (0 to 0.15)
+                        var unfurlPhase = Math.min(1, progress / 0.15);
+                        var isMobile = window.innerWidth < 768;
+
+                        if (banner) {
+                            var width = 92 + (unfurlPhase * 8); // 92vw -> 100vw
+                            var height = 85 + (unfurlPhase * 15); // 85vh -> 100vh
+                            var radius = (1 - unfurlPhase) * 32; // 32px -> 0px
+                            banner.style.width = width + 'vw';
+                            banner.style.height = height + 'vh';
+                            banner.style.borderRadius = radius + 'px';
+                        }
+
+                        // Phase 2: 3D Matrix Parallax (0.15 to 1.0)
+                        var matrixPhase = Math.max(0, (progress - 0.15) / 0.85);
+
+                        // Responsive rotation angles: gentler on mobile to keep images perfectly framed
+                        var rotXMax = isMobile ? 12 : 20;
+                        var rotYMax = isMobile ? -22 : -35;
+                        var rotZMax = isMobile ? 6 : 10;
+                        var transZMin = isMobile ? -350 : -600;
+
+                        var rotX = rotXMax - (matrixPhase * (rotXMax - 2));
+                        var rotY = rotYMax - (matrixPhase * (rotYMax - (-5)));
+                        var rotZ = rotZMax - (matrixPhase * (rotZMax - 1));
+                        var transZ = transZMin + (matrixPhase * (-transZMin));
+
+                        if (matrix) {
+                            matrix.style.transform = 'rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) rotateZ(' + rotZ.toFixed(2) + 'deg) translateZ(' + transZ.toFixed(1) + 'px)';
+                        }
+
+                        // Columns parallax translation
+                        if (col1) {
+                            var y1 = -matrixPhase * 35; // 0% -> -35%
+                            col1.style.transform = 'translate3d(0, ' + y1.toFixed(2) + '%, 0)';
+                        }
+                        if (col2) {
+                            var y2 = -35 + (matrixPhase * 43); // -35% -> +8%
+                            col2.style.transform = 'translate3d(0, ' + y2.toFixed(2) + '%, 0)';
+                        }
+                        if (col3) {
+                            var y3 = -matrixPhase * 35; // 0% -> -35%
+                            col3.style.transform = 'translate3d(0, ' + y3.toFixed(2) + '%, 0)';
+                        }
+                        if (col4) {
+                            var y4 = -25 + (matrixPhase * 40); // -25% -> +15%
+                            col4.style.transform = 'translate3d(0, ' + y4.toFixed(2) + '%, 0)';
+                        }
+
+                        isTicking = false;
+                    }
+
+                    function onScroll() {
+                        if (!isTicking) {
+                            requestAnimationFrame(updateParallax);
+                            isTicking = true;
+                        }
+                    }
+
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    window.addEventListener('resize', onScroll, { passive: true });
+                    if (window.lenis) {
+                        window.lenis.on('scroll', onScroll);
+                    }
+                    updateParallax();
+                })();
+                </script>
             </section>
 
             <!-- LUXiHOME SIGNATURE RESIDENCES (Morgan Sizzey Stacking Cards Showcase) -->
@@ -1630,439 +2071,7 @@ shore and sea</p>
                         }, { passive: true });
                     }
                 })();
-                </script>
-        <!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR GALLERY (Wizspace/Morgan Sizzey Inspired) -->
-<section id="lux-unfurling-gallery" class="relative w-screen bg-[#070B0E] text-[#F5F3EF] z-[42] pointer-events-auto select-none" data-name="interiors-unfurling-gallery">
-    <style>
-        #lux-unfurling-gallery {
-            position: relative;
-            width: 100vw;
-            height: 380vh;
-            background: #070B0E;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        @media (max-width: 767px) {
-            #lux-unfurling-gallery {
-                height: 300vh;
-            }
-        }
-        .lux-unfurl-stage {
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #070B0E;
-        }
-        .lux-unfurl-banner {
-            position: relative;
-            background: #070B0E;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1920px;
-            margin: 0 auto;
-            will-change: width, height, border-radius, transform;
-            backface-visibility: hidden;
-            box-shadow: 0 35px 80px -15px rgba(0,0,0,0.9);
-            border: 2px solid rgba(197, 168, 128, 0.25);
-            transition: border-color 0.3s ease;
-        }
-        .lux-unfurl-header {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            z-index: 35;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            pointer-events: none;
-        }
-        @media (min-width: 768px) {
-            .lux-unfurl-header {
-                top: 32px;
-            }
-        }
-        .lux-unfurl-kicker {
-            font-size: 10px;
-            letter-spacing: 3.5px;
-            text-transform: uppercase;
-            color: #C5A880;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .lux-unfurl-title {
-            font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-            font-size: clamp(22px, 5.5vw, 42px);
-            font-weight: 300;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #FFFFFF;
-            margin: 0;
-            line-height: 1.15;
-        }
-        .lux-unfurl-sub {
-            font-size: clamp(10px, 2.6vw, 13px);
-            color: rgba(218, 208, 193, 0.75);
-            letter-spacing: 1px;
-            margin-top: 4px;
-            max-width: 480px;
-        }
-        .lux-matrix-viewport {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            pointer-events: none;
-        }
-        .lux-ambient-mask-v {
-            position: absolute;
-            inset: 0;
-            z-index: 25;
-            pointer-events: none;
-            box-shadow: inset 0 100px 140px -40px #070B0E, inset 0 -100px 140px -40px #070B0E;
-        }
-        .lux-ambient-mask-h {
-            position: absolute;
-            inset: 0;
-            z-index: 25;
-            pointer-events: none;
-            box-shadow: inset 100px 0 120px -40px #070B0E, inset -100px 0 120px -40px #070B0E;
-        }
-        .lux-matrix-grid {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-            width: 140vw;
-            height: 160vh;
-            transform-origin: center center;
-            transform-style: preserve-3d;
-            will-change: transform;
-            backface-visibility: hidden;
-        }
-        @media (min-width: 768px) {
-            .lux-matrix-grid {
-                gap: 20px;
-                width: 120vw;
-                height: 150vh;
-            }
-        }
-        .lux-matrix-col {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 32vw;
-            min-width: 150px;
-            pointer-events: auto;
-            will-change: transform;
-        }
-        @media (min-width: 768px) {
-            .lux-matrix-col {
-                gap: 20px;
-                width: 22vw;
-                min-width: 220px;
-            }
-        }
-        .lux-photo-card {
-            width: 100%;
-            height: 190px;
-            flex-shrink: 0;
-            background: #0B1118;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.35s ease, border-color 0.35s ease;
-            will-change: transform;
-        }
-        @media (min-width: 640px) {
-            .lux-photo-card {
-                height: 270px;
-                border-radius: 10px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .lux-photo-card {
-                height: 380px;
-                border-radius: 12px;
-            }
-        }
-        .lux-photo-card:hover {
-            transform: scale(1.03);
-            border-color: rgba(197, 168, 128, 0.5);
-        }
-        .lux-photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
-            transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lux-photo-card:hover img {
-            opacity: 1;
-            transform: scale(1.06);
-        }
-        .lux-photo-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(7,11,14,0.85) 0%, transparent 55%);
-            opacity: 0;
-            display: flex;
-            align-items: flex-end;
-            padding: 14px;
-            transition: opacity 0.3s ease;
-        }
-        .lux-photo-card:hover .lux-photo-overlay {
-            opacity: 1;
-        }
-        .lux-photo-tag {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #DAD0C1;
-            font-weight: 500;
-        }
-    </style>
-
-    <div class="lux-unfurl-stage">
-        <div class="lux-unfurl-banner" id="lux-unfurl-banner" style="width: 92vw; height: 85vh; border-radius: 32px;">
-            <!-- Header Overlay -->
-            <div class="lux-unfurl-header">
-                <span class="lux-unfurl-kicker">Bespoke Interior Craftsmanship</span>
-                <h2 class="lux-unfurl-title">THE INTERIOR ARCHIVE</h2>
-                <p class="lux-unfurl-sub">Over 70+ Handcrafted Sanctuaries Across Kolkata's Premier Enclaves</p>
-            </div>
-
-            <!-- Perspective 3D Viewport -->
-            <div class="lux-matrix-viewport">
-                <!-- Vignette ambient shadows -->
-                <div class="lux-ambient-mask-v"></div>
-                <div class="lux-ambient-mask-h"></div>
-
-                <!-- 3D Matrix Container -->
-                <div class="lux-matrix-grid" id="lux-matrix-grid">
-                    <!-- Column 1 -->
-                    <div class="lux-matrix-col" id="lux-matrix-col-1">
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_1_2026-09-06_14-27-28.jpg" alt="LUXiHOME Drawing Lounge" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Drawing Lounge</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_4_2026-09-06_14-27-28.jpg" alt="LUXiHOME Master Suite" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Master Suite</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_7_2026-09-06_14-27-28.jpg" alt="LUXiHOME Fluted Wall Design" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Fluted Wall Feature</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_10_2026-09-06_14-27-28.jpg" alt="LUXiHOME Dining Room" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Dining</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work/photo_1_2026-09-04_15-01-37.jpg" alt="Salt Lake Architectural Villa" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Salt Lake Villa</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg" alt="Salt Lake Sky Terrace" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Terrace</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Column 2 -->
-                    <div class="lux-matrix-col" id="lux-matrix-col-2">
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_2_2026-09-06_14-27-28.jpg" alt="Designer TV Lounge" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Media Lounge</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_12_2026-09-06_14-27-28.jpg" alt="Luxury Modular Kitchen" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Modular Kitchen</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_15_2026-09-06_14-27-28.jpg" alt="Spa Bathroom" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Spa Bathroom</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_18_2026-09-06_14-27-28.jpg" alt="Italian Marble Dressing" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Marble Dressing Suite</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work/photo_2_2026-09-04_15-01-37.jpg" alt="Salt Lake Bedroom" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Guest Bedroom</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work/photo_9_2026-09-04_15-01-37.jpg" alt="Salt Lake Double Height" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Atrium View</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Column 3 -->
-                    <div class="lux-matrix-col" id="lux-matrix-col-3">
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_22_2026-09-06_14-27-28.jpg" alt="Acoustic Ceiling Lounge" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Executive Suite</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_25_2026-09-06_14-27-28.jpg" alt="Walk-in Wardrobe" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Couture Wardrobe</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_28_2026-09-06_14-27-28.jpg" alt="Warm Teak Hall" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Teak Foyer</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_32_2026-09-06_14-27-28.jpg" alt="Backlit Onyx Bar" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Backlit Onyx Lounge</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work2/photo_1_2026-09-04_15-17-45.jpg" alt="Turnkey Villa Project" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Turnkey Interior</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work2/photo_8_2026-09-04_15-17-45.jpg" alt="Private Courtyard" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Courtyard Verandah</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Column 4 -->
-                    <div class="lux-matrix-col" id="lux-matrix-col-4">
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_36_2026-09-06_14-27-28.jpg" alt="Penthouse View" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Sanctuary</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_40_2026-09-06_14-27-28.jpg" alt="Bespoke Study" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Private Library</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_45_2026-09-06_14-27-28.jpg" alt="Bronze Mirror Corridor" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Mirrored Gallery</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/residential.pic/photo_50_2026-09-06_14-27-28.jpg" alt="Minimalist Bedroom" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Zen Sanctuary</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg" alt="Artisanal Joinery" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Joinery</span></div>
-                        </div>
-                        <div class="lux-photo-card">
-                            <img src="/pictures.testimonals/salt.lake.work2/photo_14_2026-09-04_15-17-45.jpg" alt="Marble Bathroom" loading="lazy" />
-                            <div class="lux-photo-overlay"><span class="lux-photo-tag">Statuary Marble</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3D Unfurling & Parallax Physics Engine -->
-    <script>
-    (function() {
-        var section = document.getElementById('lux-unfurling-gallery');
-        if (!section) return;
-
-        var banner = document.getElementById('lux-unfurl-banner');
-        var matrix = document.getElementById('lux-matrix-grid');
-        var col1 = document.getElementById('lux-matrix-col-1');
-        var col2 = document.getElementById('lux-matrix-col-2');
-        var col3 = document.getElementById('lux-matrix-col-3');
-        var col4 = document.getElementById('lux-matrix-col-4');
-
-        var isTicking = false;
-
-        function updateParallax() {
-            var rect = section.getBoundingClientRect();
-            var scrollDistance = rect.height - window.innerHeight;
-            if (scrollDistance <= 0) return;
-
-            // Normalized progress: 0.0 to 1.0
-            var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
-
-            // Phase 1: Unfurling stage (0 to 0.15)
-            var unfurlPhase = Math.min(1, progress / 0.15);
-            var isMobile = window.innerWidth < 768;
-
-            if (banner) {
-                var width = 92 + (unfurlPhase * 8); // 92vw -> 100vw
-                var height = 85 + (unfurlPhase * 15); // 85vh -> 100vh
-                var radius = (1 - unfurlPhase) * 32; // 32px -> 0px
-                banner.style.width = width + 'vw';
-                banner.style.height = height + 'vh';
-                banner.style.borderRadius = radius + 'px';
-                banner.style.borderColor = 'rgba(197, 168, 128, ' + ((1 - unfurlPhase) * 0.25) + ')';
-            }
-
-            // Phase 2: 3D Matrix Parallax (0.15 to 1.0)
-            var matrixPhase = Math.max(0, (progress - 0.15) / 0.85);
-
-            // Responsive rotation angles: gentler on mobile to keep images perfectly framed
-            var rotXMax = isMobile ? 12 : 20;
-            var rotYMax = isMobile ? -22 : -35;
-            var rotZMax = isMobile ? 6 : 10;
-            var transZMin = isMobile ? -350 : -600;
-
-            var rotX = rotXMax - (matrixPhase * (rotXMax - 2));
-            var rotY = rotYMax - (matrixPhase * (rotYMax - (-5)));
-            var rotZ = rotZMax - (matrixPhase * (rotZMax - 1));
-            var transZ = transZMin + (matrixPhase * (-transZMin));
-
-            if (matrix) {
-                matrix.style.transform = 'rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) rotateZ(' + rotZ.toFixed(2) + 'deg) translateZ(' + transZ.toFixed(1) + 'px)';
-            }
-
-            // Columns parallax translation
-            if (col1) {
-                var y1 = -matrixPhase * 35; // 0% -> -35%
-                col1.style.transform = 'translate3d(0, ' + y1.toFixed(2) + '%, 0)';
-            }
-            if (col2) {
-                var y2 = -35 + (matrixPhase * 43); // -35% -> +8%
-                col2.style.transform = 'translate3d(0, ' + y2.toFixed(2) + '%, 0)';
-            }
-            if (col3) {
-                var y3 = -matrixPhase * 35; // 0% -> -35%
-                col3.style.transform = 'translate3d(0, ' + y3.toFixed(2) + '%, 0)';
-            }
-            if (col4) {
-                var y4 = -25 + (matrixPhase * 40); // -25% -> +15%
-                col4.style.transform = 'translate3d(0, ' + y4.toFixed(2) + '%, 0)';
-            }
-
-            isTicking = false;
-        }
-
-        function onScroll() {
-            if (!isTicking) {
-                requestAnimationFrame(updateParallax);
-                isTicking = true;
-            }
-        }
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll, { passive: true });
-        if (window.lenis) {
-            window.lenis.on('scroll', onScroll);
-        }
-        updateParallax();
-    })();
-    </script>
-</section>
-</div>
+            </section>
 <section class="relative w-screen lg:h-dvh bg-sand py-40 sm:pt-40 sm:pb-0 lg:py-0 lg:rounded-b-none z-[40] sm:overflow-hidden lg:overflow-auto" data-name="interiors-growing-image">
 <div class="hidden sm:block relative w-full sm:h-[50vh] lg:h-full lg:[clip-path:inset(12%_8%_0%_8%)]" data-image-switch="" data-target="interiors-growing-image">
 <picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
