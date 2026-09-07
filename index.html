@@ -52,6 +52,10 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <!-- <link rel="pingback" href="/xmlrpc.php" /> -->
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<!-- Luxury Editorial Typography (LUXiHOME Master Design) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <!-- This site is optimized with the Yoast SEO plugin v27.1.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
 <title>LUXiHOME | Shaping Spaces, Defining Luxury</title>
 <meta content="Architecture and luxury interior design studio dedicated to exceptional craftsmanship, bespoke spaces, and timeless aesthetic quality." name="description">
@@ -113,7 +117,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5" id="gform_theme_components-css" media="all" rel="stylesheet"/>
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5" id="gform_theme-css" media="all" rel="stylesheet"/>
 <link href="/wp-content/themes/AmaliProperties/assets/css/styles.css" id="screen-css-css" media="all" rel="stylesheet"/>
-<link as="video" href="/assets/video/luxihome-hero-video.mp4" rel="preload" type="video/mp4"/>
+<link href="/assets/video/luxihome-hero-video.mp4" rel="prefetch" type="video/mp4"/>
 <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 <script defer="defer" id="gform_json-js" src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
 <script id="gform_gravityforms-js-extra">
@@ -614,7 +618,7 @@ shore and sea</p>
                     }
                     .hero-center-box {
                         position: absolute;
-                        top: 45%;
+                        top: 48%;
                         left: 50%;
                         transform: translate(-50%, -50%);
                         text-align: center;
@@ -623,36 +627,101 @@ shore and sea</p>
                         padding: 0 20px;
                         z-index: 10;
                     }
-                    .hero-script-title {
-                        font-family: 'Romantically', cursive, sans-serif;
-                        font-size: clamp(60px, 8.5vw, 130px);
-                        line-height: 0.95;
-                        letter-spacing: clamp(4px, 0.6vw, 8px);
-                        color: #FFFFFF;
-                        text-shadow: 0 15px 40px rgba(0, 0, 0, 0.85);
+                    .hero-editorial-brand {
+                        display: inline-flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
                     }
-                    .hero-script-sub {
-                        display: block;
-                        font-family: inherit;
-                        font-weight: 200;
-                        font-size: clamp(12px, 1.2vw, 18px);
-                        letter-spacing: 4.5px;
+                    .hero-editorial-kicker {
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                        font-size: clamp(10px, 1.1vw, 14px);
+                        font-weight: 500;
+                        letter-spacing: clamp(4px, 0.6vw, 8px);
                         text-transform: uppercase;
-                        color: rgba(255, 255, 255, 0.85);
+                        color: #D4AF37;
                         margin-bottom: 12px;
+                        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+                    }
+                    .hero-editorial-main {
+                        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+                        font-size: clamp(48px, 9vw, 128px);
+                        font-weight: 400;
+                        line-height: 0.92;
+                        letter-spacing: clamp(6px, 1.4vw, 20px);
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.8);
+                        margin: 0 0 14px 0;
+                    }
+                    .hero-editorial-rule {
+                        width: 50px;
+                        height: 1px;
+                        background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+                        margin: 0 auto 12px auto;
+                    }
+                    .hero-editorial-sub {
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                        font-size: clamp(11px, 1.1vw, 14px);
+                        font-weight: 300;
+                        letter-spacing: clamp(2px, 0.3vw, 4px);
+                        text-transform: uppercase;
+                        color: rgba(255, 255, 255, 0.9);
+                        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+                        margin: 0;
                     }
                     @media (max-width: 767px) {
+                        #residences-hero {
+                            min-height: 100vh;
+                            min-height: 100dvh;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            padding: 95px 24px 36px;
+                            box-sizing: border-box;
+                        }
                         .hero-center-box {
-                            top: 42%;
+                            position: relative;
+                            top: auto;
+                            left: auto;
+                            transform: none;
+                            margin: auto 0;
+                            padding: 0;
+                            width: 100%;
+                            text-align: center;
+                            z-index: 10;
                         }
-                        .hero-script-title {
-                            font-size: 54px;
+                        .hero-editorial-kicker {
+                            font-size: 10px;
                             letter-spacing: 3px;
-                        }
-                        .hero-script-sub {
-                            font-size: 11px;
-                            letter-spacing: 3.5px;
                             margin-bottom: 8px;
+                        }
+                        .hero-editorial-main {
+                            font-size: clamp(36px, 11vw, 54px);
+                            letter-spacing: 5px;
+                            margin-bottom: 8px;
+                        }
+                        .hero-editorial-rule {
+                            width: 36px;
+                            margin-bottom: 8px;
+                        }
+                        .hero-editorial-sub {
+                            font-size: 10.5px;
+                            letter-spacing: 2px;
+                            line-height: 1.4;
+                        }
+                        .hero-bottom-bar {
+                            position: relative;
+                            bottom: auto;
+                            left: auto;
+                            right: auto;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 16px;
+                            z-index: 15;
+                            text-align: center;
                         }
                     }
                     .hero-bottom-bar {
@@ -666,15 +735,6 @@ shore and sea</p>
                         justify-content: space-between;
                         gap: 30px;
                         z-index: 15;
-                    }
-                    @media (max-width: 767px) {
-                        .hero-bottom-bar {
-                            bottom: 30px;
-                            padding: 0 24px;
-                            flex-direction: column-reverse;
-                            align-items: flex-start;
-                            gap: 18px;
-                        }
                     }
                     .hero-poetic-blurb {
                         max-width: 480px;
@@ -915,16 +975,18 @@ shore and sea</p>
                 <div id="residences-hero" class="relative w-screen h-screen overflow-hidden pointer-events-auto" data-target="banner-loading-screen">
                     <div class="absolute inset-0 bg-black">
                         <img src="/assets/img/projects/kolkata-residences-hero.jpg" alt="Signature Residences Kolkata" class="w-full h-full object-cover object-center opacity-90 scale-100 transition-transform duration-1000 ease-out" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-black/20 to-black/40"></div>
-                        <div class="absolute inset-0 bg-black/15"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118] via-[#0B1118]/50 to-black/60"></div>
+                        <div class="absolute inset-0 bg-black/30"></div>
                     </div>
 
-                    <!-- Centered Luxury Script Title (Villa Elaine Blueprint) -->
+                    <!-- Centered Luxury Editorial Title Lockup -->
                     <div class="hero-center-box">
-                        <h2 class="hero-script-title">
-                            <span class="hero-script-sub">Signature Residences</span>
-                            Kolkata
-                        </h2>
+                        <div class="hero-editorial-brand">
+                            <span class="hero-editorial-kicker">Signature Architectural Sanctuaries</span>
+                            <h1 class="hero-editorial-main">KOLKATA</h1>
+                            <div class="hero-editorial-rule"></div>
+                            <p class="hero-editorial-sub">Bespoke Residences &amp; Turnkey Interiors</p>
+                        </div>
                     </div>
 
                     <!-- Bottom Action Bar (Villa Elaine Q1 Layout) -->
@@ -950,529 +1012,1800 @@ shore and sea</p>
                     </div>
                 </div>
 
-                <!-- QUARTER 2: THE MULTI-SLIDE ARCHITECTURAL SHOWCASE (Screen 2: 100vh) -->
-                <div id="residences-slider-section" class="relative w-screen h-screen overflow-hidden bg-[#0B1118] pointer-events-auto" data-target="banner-slides">
+                    <!-- Script: Hero CTA smooth-scroll to Stacking Deck -->
+                    <script>
+                    (function() {
+                        var heroBtn = document.getElementById('btn-hero-explore-collection');
+                        var gallerySection = document.getElementById('lux-unfurling-gallery') || document.getElementById('lux-circular-gallery') || document.getElementById('signature-projects');
+                        if (heroBtn && gallerySection) {
+                            heroBtn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                if (window.lenis) {
+                                    window.lenis.scrollTo(gallerySection, { duration: 1.2 });
+                                } else {
+                                    gallerySection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            });
+                        }
+                    })();
+                    </script>
+            </section>
 
-                    <!-- Top Bar: Navigation Tabs (Desktop only) -->
-                    <nav class="showcase-nav-bar" aria-label="Residences Enclaves">
-                        <button type="button" id="btn-back-to-hero" class="showcase-overview-btn" title="Return to Overview">
-                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg" class="transform rotate-180">
-                                <path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                <path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                            </svg>
-                            <span>Overview</span>
-                        </button>
-                        <span class="showcase-divider"></span>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab active" data-tab-index="0">
-                            01 · Park Street
-                        </button>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab" data-tab-index="1">
-                            02 · Salt Lake
-                        </button>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab" data-tab-index="2">
-                            03 · New Town
-                        </button>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab" data-tab-index="3">
-                            04 · Rajarhat
-                        </button>
-                    </nav>
+            <!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR ARCHIVE (Amali Design System Theme) -->
+            <section id="lux-unfurling-gallery" class="relative w-screen bg-[#FFFFFF] text-[#1A2026] z-[35] pointer-events-auto select-none" data-name="interiors-unfurling-gallery">
+                <style>
+                    #lux-unfurling-gallery {
+                        position: relative;
+                        width: 100vw;
+                        height: 360vh;
+                        background: #FFFFFF;
+                        font-family: 'DIN', -apple-system, BlinkMacSystemFont, sans-serif;
+                    }
+                    @media (max-width: 767px) {
+                        #lux-unfurling-gallery {
+                            height: 280vh;
+                        }
+                    }
+                    .lux-unfurl-stage {
+                        position: sticky;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        height: 100dvh;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #FFFFFF;
+                    }
+                    .lux-unfurl-banner {
+                        position: relative;
+                        background: #FFFFFF;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        max-width: 1920px;
+                        margin: 0 auto;
+                        will-change: width, height, border-radius, transform;
+                        backface-visibility: hidden;
+                        box-shadow: 0 25px 70px -15px rgba(26, 32, 38, 0.08);
+                        border: none;
+                    }
+                    .lux-unfurl-header {
+                        position: absolute;
+                        top: 16px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 35;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        width: calc(100% - 28px);
+                        max-width: 500px;
+                        padding: 12px 18px 14px;
+                        background: rgba(255, 255, 255, 0.94);
+                        backdrop-filter: blur(24px);
+                        -webkit-backdrop-filter: blur(24px);
+                        border-radius: 16px;
+                        border: 1px solid rgba(26, 32, 38, 0.08);
+                        box-shadow: 0 8px 25px rgba(26, 32, 38, 0.06);
+                        pointer-events: none;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-unfurl-header {
+                            top: 24px;
+                            padding: 16px 28px 18px;
+                        }
+                    }
+                    .lux-unfurl-kicker {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 10px;
+                        letter-spacing: 0.28em;
+                        text-transform: uppercase;
+                        color: #726152;
+                        font-weight: 500;
+                        margin-bottom: 4px;
+                    }
+                    .lux-unfurl-title {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: clamp(20px, 4.8vw, 38px);
+                        font-weight: 300;
+                        letter-spacing: 0.2em;
+                        text-transform: uppercase;
+                        color: #1A2026;
+                        margin: 0;
+                        line-height: 1.15;
+                    }
+                    .lux-unfurl-sub {
+                        font-family: 'DIN', sans-serif;
+                        font-size: clamp(11px, 2.5vw, 13px);
+                        font-weight: 300;
+                        color: #3D4854;
+                        letter-spacing: 0.06em;
+                        margin-top: 4px;
+                        max-width: 460px;
+                        line-height: 1.4;
+                    }
+                    .lux-matrix-viewport {
+                        position: absolute;
+                        inset: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        perspective: 1000px;
+                        pointer-events: none;
+                    }
+                    /* White fog masks removed completely for 100% crystal clear visibility */
+                    .lux-ambient-mask-v,
+                    .lux-ambient-mask-h {
+                        display: none !important;
+                    }
+                    .lux-matrix-grid {
+                        display: flex;
+                        gap: 14px;
+                        justify-content: center;
+                        align-items: center;
+                        width: 140vw;
+                        height: 160vh;
+                        transform-origin: center center;
+                        transform-style: preserve-3d;
+                        will-change: transform;
+                        backface-visibility: hidden;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-matrix-grid {
+                            gap: 24px;
+                            width: 120vw;
+                            height: 150vh;
+                        }
+                    }
+                    .lux-matrix-col {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 14px;
+                        width: 32vw;
+                        min-width: 150px;
+                        pointer-events: auto;
+                        will-change: transform;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-matrix-col {
+                            gap: 24px;
+                            width: 22vw;
+                            min-width: 220px;
+                        }
+                    }
+                    .lux-photo-card {
+                        width: 100%;
+                        height: 195px;
+                        flex-shrink: 0;
+                        background: #FFFFFF;
+                        border: 1px solid rgba(26, 32, 38, 0.12);
+                        border-radius: 10px;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                        box-shadow: 0 10px 25px -4px rgba(26, 32, 38, 0.12);
+                        transition: transform 0.35s ease, box-shadow 0.35s ease;
+                        will-change: transform;
+                    }
+                    @media (min-width: 640px) {
+                        .lux-photo-card {
+                            height: 275px;
+                            border-radius: 12px;
+                        }
+                    }
+                    @media (min-width: 1024px) {
+                        .lux-photo-card {
+                            height: 380px;
+                            border-radius: 14px;
+                        }
+                    }
+                    .lux-photo-card:hover {
+                        transform: scale(1.03);
+                        box-shadow: 0 20px 45px -8px rgba(26, 32, 38, 0.22);
+                    }
+                    .lux-photo-card img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 1 !important;
+                        filter: none !important;
+                        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .lux-photo-card:hover img {
+                        transform: scale(1.06);
+                    }
+                    .lux-photo-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to top, rgba(26, 32, 38, 0.8) 0%, transparent 50%);
+                        opacity: 0;
+                        display: flex;
+                        align-items: flex-end;
+                        padding: 14px;
+                        transition: opacity 0.3s ease;
+                    }
+                    .lux-photo-card:hover .lux-photo-overlay {
+                        opacity: 1;
+                    }
+                    .lux-photo-tag {
+                        background: rgba(255, 255, 255, 0.95);
+                        backdrop-filter: blur(14px);
+                        color: #1A2026;
+                        font-family: 'DIN', sans-serif;
+                        font-size: 10px;
+                        font-weight: 500;
+                        letter-spacing: 0.2em;
+                        text-transform: uppercase;
+                        border: 1px solid rgba(26, 32, 38, 0.15);
+                        border-radius: 40px;
+                        padding: 5px 12px;
+                    }
+                </style>
 
-                    <!-- Slide 1: Park Street -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 pointer-events-auto z-10" data-slide-index="0" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/park-street-hero.jpg" alt="Park Street Luxury Residence" class="w-full h-full object-cover object-center scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/25 to-black/40"></div>
+                <div class="lux-unfurl-stage">
+                    <div class="lux-unfurl-banner" id="lux-unfurl-banner" style="width: 92vw; height: 85vh; border-radius: 32px;">
+                        <!-- Header Overlay with clean frosted glass backing -->
+                        <div class="lux-unfurl-header">
+                            <span class="lux-unfurl-kicker">Bespoke Interior Craftsmanship</span>
+                            <h2 class="lux-unfurl-title">THE INTERIOR ARCHIVE</h2>
+                            <p class="lux-unfurl-sub">Over 70+ Handcrafted Sanctuaries Across Kolkata's Premier Enclaves</p>
                         </div>
-                    </div>
 
-                    <!-- Slide 2: Salt Lake -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none z-0" data-slide-index="1" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/salt-lake-2/photo_1_2026-09-04_15-17-45.jpg" alt="Salt Lake Luxury Villa" class="w-full h-full object-cover object-[center_30%] scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/30 to-black/50"></div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3: New Town -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none z-0" data-slide-index="2" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/new-town/photo_10_2026-09-04_15-49-33.jpg" alt="New Town Modern Pavilion" class="w-full h-full object-cover object-[center_35%] scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/30 to-black/50"></div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4: Rajarhat -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none z-0" data-slide-index="3" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/rajarhat/photo_6_2026-09-04_15-33-26.jpg" alt="Rajarhat Contemporary Residence" class="w-full h-full object-cover object-[center_35%] scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/30 to-black/50"></div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Glassmorphic Card (Villa Elaine Masterpiece Blueprint) -->
-                    <div class="showcase-glass-card" data-target="banner-slide-content">
-                        <!-- Location Badge -->
-                        <div class="showcase-tag">
-                            <span class="gold-dot"></span>
-                            <span id="slide-enclave-tag">ENCLAVE 01 · PARK STREET</span>
-                        </div>
-
-                        <!-- Poetic Architectural Statement -->
-                        <p id="slide-poetic-quote" class="showcase-quote">
-                            Fluted teak, Calacatta marble, and soaring portals defining Kolkata's most prestigious heritage boulevard.
-                        </p>
-
-                        <!-- Action Row -->
-                        <div class="showcase-actions">
-                            <!-- Project CTA Button -->
-                            <a id="slide-project-link" href="/projects/park-street/" class="amali-pill-btn" style="padding: 8px 12px 8px 22px;">
-                                <span style="font-size: 12px;">Explore Project</span>
-                                <div class="btn-arrow-circle" style="width: 32px; height: 32px;">
-                                    <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                        <path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                    </svg>
+                        <!-- Perspective 3D Viewport -->
+                        <div class="lux-matrix-viewport">
+                            <!-- 3D Matrix Container -->
+                            <div class="lux-matrix-grid" id="lux-matrix-grid">
+                                <!-- Column 1 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-1">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_1_2026-09-06_14-27-28.jpg" alt="LUXiHOME Drawing Lounge" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Drawing Lounge</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_4_2026-09-06_14-27-28.jpg" alt="LUXiHOME Master Suite" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Master Suite</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_7_2026-09-06_14-27-28.jpg" alt="LUXiHOME Fluted Wall Design" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Fluted Wall Feature</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_10_2026-09-06_14-27-28.jpg" alt="LUXiHOME Dining Room" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Dining</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_1_2026-09-04_15-01-37.jpg" alt="Salt Lake Architectural Villa" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Salt Lake Villa</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg" alt="Salt Lake Sky Terrace" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Terrace</span></div>
+                                    </div>
                                 </div>
-                            </a>
 
-                            <!-- Slide Navigation Controls -->
-                            <div class="showcase-controls">
-                                <button type="button" id="btn-next-residence" class="showcase-next-btn" title="Next Residence">
-                                    <span>Next</span>
-                                    <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                        <path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                    </svg>
-                                </button>
+                                <!-- Column 2 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-2">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_2_2026-09-06_14-27-28.jpg" alt="Designer TV Lounge" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Media Lounge</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_12_2026-09-06_14-27-28.jpg" alt="Luxury Modular Kitchen" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Modular Kitchen</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_15_2026-09-06_14-27-28.jpg" alt="Spa Bathroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Spa Bathroom</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_18_2026-09-06_14-27-28.jpg" alt="Italian Marble Dressing" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Marble Dressing Suite</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_2_2026-09-04_15-01-37.jpg" alt="Salt Lake Bedroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Guest Bedroom</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work/photo_9_2026-09-04_15-01-37.jpg" alt="Salt Lake Double Height" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Atrium View</span></div>
+                                    </div>
+                                </div>
 
-                                <!-- Circular Progress Indicator -->
-                                <div id="progress-circle-trigger" class="showcase-progress-wheel" title="Click to advance residence">
-                                    <svg class="absolute inset-0 size-full transform -rotate-90" viewBox="0 0 60 60">
-                                        <circle cx="30" cy="30" fill="none" r="25" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5"></circle>
-                                        <circle id="progress-stroke-circle" cx="30" cy="30" fill="none" r="25" stroke="white" stroke-dasharray="157" stroke-dashoffset="117.75" stroke-width="2" style="transition: stroke-dashoffset 0.7s ease;"></circle>
-                                    </svg>
-                                    <span id="progress-text-display" style="position: relative; z-index: 10; font-size: 13px; font-weight: 500; color: #FFFFFF; transition: transform 0.3s ease;">
-                                        1/4
-                                    </span>
+                                <!-- Column 3 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-3">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_22_2026-09-06_14-27-28.jpg" alt="Acoustic Ceiling Lounge" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Executive Suite</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_25_2026-09-06_14-27-28.jpg" alt="Walk-in Wardrobe" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Couture Wardrobe</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_28_2026-09-06_14-27-28.jpg" alt="Warm Teak Hall" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Teak Foyer</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_32_2026-09-06_14-27-28.jpg" alt="Backlit Onyx Bar" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Backlit Onyx Lounge</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_1_2026-09-04_15-17-45.jpg" alt="Turnkey Villa Project" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Turnkey Interior</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_8_2026-09-04_15-17-45.jpg" alt="Private Courtyard" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Courtyard Verandah</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 4 -->
+                                <div class="lux-matrix-col" id="lux-matrix-col-4">
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_36_2026-09-06_14-27-28.jpg" alt="Penthouse View" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Sanctuary</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_40_2026-09-06_14-27-28.jpg" alt="Bespoke Study" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Private Library</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_45_2026-09-06_14-27-28.jpg" alt="Bronze Mirror Corridor" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Mirrored Gallery</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/residential.pic/photo_50_2026-09-06_14-27-28.jpg" alt="Minimalist Bedroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Zen Sanctuary</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg" alt="Artisanal Joinery" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Joinery</span></div>
+                                    </div>
+                                    <div class="lux-photo-card">
+                                        <img src="/pictures.testimonals/salt.lake.work2/photo_14_2026-09-04_15-17-45.jpg" alt="Marble Bathroom" loading="lazy" />
+                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Statuary Marble</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Unfurling & Parallax Physics Engine -->
+                <script>
+                (function() {
+                    var section = document.getElementById('lux-unfurling-gallery');
+                    if (!section) return;
+
+                    var banner = document.getElementById('lux-unfurl-banner');
+                    var matrix = document.getElementById('lux-matrix-grid');
+                    var col1 = document.getElementById('lux-matrix-col-1');
+                    var col2 = document.getElementById('lux-matrix-col-2');
+                    var col3 = document.getElementById('lux-matrix-col-3');
+                    var col4 = document.getElementById('lux-matrix-col-4');
+
+                    var isTicking = false;
+
+                    function updateParallax() {
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = rect.height - window.innerHeight;
+                        if (scrollDistance <= 0) return;
+
+                        // Normalized progress: 0.0 to 1.0
+                        var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
+
+                        // Phase 1: Unfurling stage (0 to 0.15)
+                        var unfurlPhase = Math.min(1, progress / 0.15);
+                        var isMobile = window.innerWidth < 768;
+
+                        if (banner) {
+                            var width = 92 + (unfurlPhase * 8); // 92vw -> 100vw
+                            var height = 85 + (unfurlPhase * 15); // 85vh -> 100vh
+                            var radius = (1 - unfurlPhase) * 32; // 32px -> 0px
+                            banner.style.width = width + 'vw';
+                            banner.style.height = height + 'vh';
+                            banner.style.borderRadius = radius + 'px';
+                        }
+
+                        // Phase 2: 3D Matrix Parallax (0.15 to 1.0)
+                        var matrixPhase = Math.max(0, (progress - 0.15) / 0.85);
+
+                        // Responsive rotation angles: gentler on mobile to keep images perfectly framed
+                        var rotXMax = isMobile ? 12 : 20;
+                        var rotYMax = isMobile ? -22 : -35;
+                        var rotZMax = isMobile ? 6 : 10;
+                        var transZMin = isMobile ? -350 : -600;
+
+                        var rotX = rotXMax - (matrixPhase * (rotXMax - 2));
+                        var rotY = rotYMax - (matrixPhase * (rotYMax - (-5)));
+                        var rotZ = rotZMax - (matrixPhase * (rotZMax - 1));
+                        var transZ = transZMin + (matrixPhase * (-transZMin));
+
+                        if (matrix) {
+                            matrix.style.transform = 'rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) rotateZ(' + rotZ.toFixed(2) + 'deg) translateZ(' + transZ.toFixed(1) + 'px)';
+                        }
+
+                        // Columns parallax translation
+                        if (col1) {
+                            var y1 = -matrixPhase * 35; // 0% -> -35%
+                            col1.style.transform = 'translate3d(0, ' + y1.toFixed(2) + '%, 0)';
+                        }
+                        if (col2) {
+                            var y2 = -35 + (matrixPhase * 43); // -35% -> +8%
+                            col2.style.transform = 'translate3d(0, ' + y2.toFixed(2) + '%, 0)';
+                        }
+                        if (col3) {
+                            var y3 = -matrixPhase * 35; // 0% -> -35%
+                            col3.style.transform = 'translate3d(0, ' + y3.toFixed(2) + '%, 0)';
+                        }
+                        if (col4) {
+                            var y4 = -25 + (matrixPhase * 40); // -25% -> +15%
+                            col4.style.transform = 'translate3d(0, ' + y4.toFixed(2) + '%, 0)';
+                        }
+
+                        isTicking = false;
+                    }
+
+                    function onScroll() {
+                        if (!isTicking) {
+                            requestAnimationFrame(updateParallax);
+                            isTicking = true;
+                        }
+                    }
+
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    window.addEventListener('resize', onScroll, { passive: true });
+                    if (window.lenis) {
+                        window.lenis.on('scroll', onScroll);
+                    }
+                    updateParallax();
+                })();
+                </script>
+            </section>
+
+
+            <!-- LUXiHOME 3D CIRCULAR ARCHITECTURAL GALLERY (Amali Design System Theme & Mobile-Optimized) -->
+            <section id="lux-circular-gallery" class="relative w-screen bg-[#FFFFFF] text-[#1A2026] z-[35] pointer-events-auto select-none" data-name="circular-gallery">
+                <style>
+                    #lux-circular-gallery {
+                        position: relative;
+                        width: 100vw;
+                        height: 250vh;
+                        background: #FFFFFF;
+                        font-family: 'DIN', -apple-system, BlinkMacSystemFont, sans-serif;
+                    }
+                    @media (max-width: 767px) {
+                        #lux-circular-gallery {
+                            height: 200vh;
+                        }
+                    }
+
+                    .lux-circ-stage {
+                        position: sticky;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        height: 100dvh;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        background: #FFFFFF;
+                        user-select: none;
+                        touch-action: pan-y;
+                    }
+
+                    /* Subtle Luxury Amali Ambient Ground */
+                    .lux-circ-backdrop {
+                        position: absolute;
+                        inset: 0;
+                        pointer-events: none;
+                        background: radial-gradient(circle at 50% 48%, rgba(218, 208, 193, 0.28) 0%, rgba(255, 255, 255, 0.95) 65%, #FFFFFF 100%);
+                        z-index: 1;
+                    }
+
+                    /* Header Elements */
+                    .lux-circ-header {
+                        position: absolute;
+                        top: 24px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 25;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        width: 90%;
+                        max-width: 720px;
+                        pointer-events: auto;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-header {
+                            top: 14px;
+                            width: 94%;
+                        }
+                    }
+                    .lux-circ-kicker {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 10px;
+                        letter-spacing: 0.28em;
+                        text-transform: uppercase;
+                        color: #726152;
+                        font-weight: 500;
+                        margin-bottom: 6px;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+                    .lux-circ-kicker::before,
+                    .lux-circ-kicker::after {
+                        content: '';
+                        display: inline-block;
+                        width: 18px;
+                        height: 1px;
+                        background: #C2A26A;
+                        opacity: 0.7;
+                    }
+                    .lux-circ-title {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: clamp(20px, 3.2vw, 38px);
+                        font-weight: 300;
+                        letter-spacing: 0.12em;
+                        color: #1A2026;
+                        text-transform: uppercase;
+                        line-height: 1.15;
+                        margin: 0 0 6px 0;
+                    }
+                    .lux-circ-sub {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 12px;
+                        letter-spacing: 0.08em;
+                        color: #5C7A92;
+                        margin: 0;
+                        font-weight: 400;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-sub {
+                            display: none;
+                        }
+                    }
+
+                    /* 3D Cylindrical Arena */
+                    .lux-circ-viewport {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        perspective: 1800px;
+                        perspective-origin: 50% 50%;
+                        z-index: 10;
+                        cursor: grab;
+                    }
+                    .lux-circ-viewport.is-grabbing {
+                        cursor: grabbing;
+                    }
+                    @media (max-width: 1023px) {
+                        .lux-circ-viewport {
+                            perspective: 1300px;
+                        }
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-viewport {
+                            perspective: 950px;
+                        }
+                    }
+
+                    .lux-circ-cylinder {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        transform-style: preserve-3d;
+                        will-change: transform;
+                    }
+
+                    /* Architectural 3D Cards */
+                    .lux-circ-card {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: 290px;
+                        height: 400px;
+                        margin-left: -145px;
+                        margin-top: -195px;
+                        border-radius: 18px;
+                        overflow: hidden;
+                        background: #1A2026;
+                        box-shadow: 0 25px 50px -12px rgba(11, 17, 24, 0.28), 0 0 0 1px rgba(26, 32, 38, 0.08);
+                        transform-style: preserve-3d;
+                        backface-visibility: hidden;
+                        cursor: pointer;
+                        transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), filter 0.28s ease, transform 0.2s ease;
+                        will-change: transform, opacity, filter;
+                    }
+                    @media (max-width: 1023px) {
+                        .lux-circ-card {
+                            width: 245px;
+                            height: 340px;
+                            margin-left: -122px;
+                            margin-top: -165px;
+                            border-radius: 16px;
+                        }
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-card {
+                            width: 205px;
+                            height: 290px;
+                            margin-left: -102px;
+                            margin-top: -140px;
+                            border-radius: 14px;
+                        }
+                    }
+
+                    .lux-circ-card:hover {
+                        box-shadow: 0 32px 65px -10px rgba(11, 17, 24, 0.38), 0 0 0 1px rgba(194, 162, 106, 0.4);
+                    }
+
+                    .lux-circ-img {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        transform: scale(1.02);
+                        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+                    }
+                    .lux-circ-card:hover .lux-circ-img {
+                        transform: scale(1.08);
+                    }
+
+                    .lux-circ-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to top, rgba(11, 17, 24, 0.92) 0%, rgba(11, 17, 24, 0.45) 45%, rgba(11, 17, 24, 0.05) 80%, transparent 100%);
+                        z-index: 2;
+                        pointer-events: none;
+                    }
+
+                    .lux-circ-badge {
+                        position: absolute;
+                        top: 14px;
+                        left: 14px;
+                        z-index: 3;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        padding: 5px 12px;
+                        border-radius: 40px;
+                        background: rgba(11, 17, 24, 0.65);
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                        border: 1px solid rgba(255, 255, 255, 0.15);
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 9px;
+                        letter-spacing: 0.18em;
+                        color: #C2A26A;
+                        text-transform: uppercase;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-badge {
+                            top: 10px;
+                            left: 10px;
+                            padding: 4px 10px;
+                            font-size: 8px;
+                        }
+                    }
+
+                    .lux-circ-info {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 20px;
+                        z-index: 3;
+                        color: #FFFFFF;
+                        pointer-events: none;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-info {
+                            padding: 14px;
+                        }
+                    }
+
+                    .lux-circ-item-kicker {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 9px;
+                        letter-spacing: 0.22em;
+                        color: #DAD0C1;
+                        text-transform: uppercase;
+                        margin-bottom: 4px;
+                        display: block;
+                    }
+                    .lux-circ-item-title {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        letter-spacing: 0.08em;
+                        color: #FFFFFF;
+                        line-height: 1.25;
+                        margin: 0 0 6px 0;
+                        text-transform: uppercase;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-item-title {
+                            font-size: 13px;
+                            margin-bottom: 4px;
+                        }
+                    }
+                    .lux-circ-item-spec {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 11px;
+                        color: rgba(255, 255, 255, 0.72);
+                        letter-spacing: 0.04em;
+                        margin: 0;
+                        line-height: 1.4;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-item-spec {
+                            font-size: 10px;
+                        }
+                    }
+
+                    /* Bottom Controller & Navigation Bar */
+                    .lux-circ-nav {
+                        position: absolute;
+                        bottom: 24px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 25;
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        padding: 8px 18px;
+                        border-radius: 50px;
+                        background: rgba(255, 255, 255, 0.88);
+                        backdrop-filter: blur(20px);
+                        -webkit-backdrop-filter: blur(20px);
+                        box-shadow: 0 15px 35px -8px rgba(26, 32, 38, 0.15), 0 0 0 1px rgba(26, 32, 38, 0.06);
+                        pointer-events: auto;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-nav {
+                            bottom: 14px;
+                            gap: 12px;
+                            padding: 6px 14px;
+                        }
+                    }
+
+                    .lux-circ-btn {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        border: 1px solid rgba(26, 32, 38, 0.12);
+                        background: #FFFFFF;
+                        color: #1A2026;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    }
+                    .lux-circ-btn:hover {
+                        background: #1A2026;
+                        color: #FFFFFF;
+                        border-color: #1A2026;
+                        transform: scale(1.06);
+                    }
+                    .lux-circ-btn svg {
+                        width: 14px;
+                        height: 14px;
+                        stroke: currentColor;
+                        fill: none;
+                        stroke-width: 2;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                    }
+
+                    .lux-circ-indicator {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .lux-circ-ring-box {
+                        position: relative;
+                        width: 32px;
+                        height: 32px;
+                    }
+                    .lux-circ-ring-svg {
+                        transform: rotate(-90deg);
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .lux-circ-ring-bg {
+                        fill: none;
+                        stroke: rgba(26, 32, 38, 0.12);
+                        stroke-width: 2.5;
+                    }
+                    .lux-circ-ring-progress {
+                        fill: none;
+                        stroke: #C2A26A;
+                        stroke-width: 2.5;
+                        stroke-linecap: round;
+                        stroke-dasharray: 87.96;
+                        stroke-dashoffset: 87.96;
+                        transition: stroke-dashoffset 0.25s ease;
+                    }
+
+                    .lux-circ-counter {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 11px;
+                        font-weight: 500;
+                        letter-spacing: 0.15em;
+                        color: #1A2026;
+                        white-space: nowrap;
+                    }
+
+                    .lux-circ-swipe-hint {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 11px;
+                        letter-spacing: 0.08em;
+                        color: #726152;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-swipe-hint {
+                            display: none;
+                        }
+                    }
+                </style>
+
+                <!-- Stage with 100dvh safe height -->
+                <div class="lux-circ-stage" id="lux-circ-stage">
+                    <div class="lux-circ-backdrop"></div>
+
+                    <!-- Amali Header -->
+                    <div class="lux-circ-header">
+                        <span class="lux-circ-kicker">Curated Sanctuaries</span>
+                        <h2 class="lux-circ-title">The Circular Gallery</h2>
+                        <p class="lux-circ-sub">A 360° cylindrical perspective across Kolkata & Dubai's most visionary private enclaves</p>
+                    </div>
+
+                    <!-- 3D Cylindrical Viewport -->
+                    <div class="lux-circ-viewport" id="lux-circ-viewport" aria-label="3D Circular Architectural Gallery">
+                        <div class="lux-circ-cylinder" id="lux-circ-cylinder">
+                            <!-- 8 Curated Architectural Sanctuaries -->
+                            <div class="lux-circ-card" data-idx="0" data-project="Amali Island Beachfront">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/GF-Entrance-View-1-6.jpg" alt="Amali Island Sanctuary Dubai" loading="eager"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Dubai • 01</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">The World Islands</span>
+                                    <h3 class="lux-circ-item-title">Amali Island Sanctuary</h3>
+                                    <p class="lux-circ-item-spec">Ultra-luxury beachfront villa • 14,200 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="1" data-project="The New Town Residence">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1.jpg" alt="The New Town Residence Kolkata" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Kolkata • 02</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Action Area II</span>
+                                    <h3 class="lux-circ-item-title">New Town Residence</h3>
+                                    <p class="lux-circ-item-spec">Contemporary courtyard sanctuary • 9,800 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="2" data-project="Terra Signature Estate">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/03/Terra-1.jpg" alt="Terra Signature Estate" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Signature • 03</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Waterfront Shoreline</span>
+                                    <h3 class="lux-circ-item-title">Terra Signature Estate</h3>
+                                    <p class="lux-circ-item-spec">Monolithic travertine haven • 11,500 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="3" data-project="The Salt Lake Villa">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/1-1.jpg" alt="Salt Lake Villa Kolkata" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Kolkata • 04</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Sector V Enclave</span>
+                                    <h3 class="lux-circ-item-title">The Salt Lake Manor</h3>
+                                    <p class="lux-circ-item-spec">Modernist architectural manor • 8,600 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="4" data-project="The Courtyard Pavilion">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/2-1.jpg" alt="The Courtyard Pavilion Alipore" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Alipore • 05</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Alipore Heritage Enclave</span>
+                                    <h3 class="lux-circ-item-title">Courtyard Pavilion</h3>
+                                    <p class="lux-circ-item-spec">Double-height atrium living • 10,400 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="5" data-project="The Azure Coastline Haven">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/03/Terra-3.jpg" alt="Azure Coastline Haven" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Dubai • 06</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Island Shoreline</span>
+                                    <h3 class="lux-circ-item-title">Azure Coastline Haven</h3>
+                                    <p class="lux-circ-item-spec">Private deepwater berth • 13,000 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="6" data-project="The Park Street Penthouse">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/3-4-2.jpg" alt="Park Street Penthouse Kolkata" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Kolkata • 07</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Park Street Corridor</span>
+                                    <h3 class="lux-circ-item-title">Skyline Observatory</h3>
+                                    <p class="lux-circ-item-spec">Triplex glass sky mansion • 7,900 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="7" data-project="The Island Clubhouse">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/GF-Entrance-View-1-5.jpg" alt="The Island Clubhouse" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Members • 08</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Private Island Living</span>
+                                    <h3 class="lux-circ-item-title">The Grand Clubhouse</h3>
+                                    <p class="lux-circ-item-spec">Curated wellness sanctuary • 16,000 SQ.FT.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Bottom Nav & Indicator Bar -->
+                    <div class="lux-circ-nav">
+                        <button type="button" class="lux-circ-btn" id="lux-circ-prev" aria-label="Previous sanctuary">
+                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+
+                        <div class="lux-circ-indicator">
+                            <div class="lux-circ-ring-box">
+                                <svg class="lux-circ-ring-svg" viewBox="0 0 32 32">
+                                    <circle class="lux-circ-ring-bg" cx="16" cy="16" r="14"></circle>
+                                    <circle class="lux-circ-ring-progress" id="lux-circ-progress" cx="16" cy="16" r="14"></circle>
+                                </svg>
+                            </div>
+                            <span class="lux-circ-counter" id="lux-circ-counter">01 / 08</span>
+                        </div>
+
+                        <button type="button" class="lux-circ-btn" id="lux-circ-next" aria-label="Next sanctuary">
+                            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+
+                        <span class="lux-circ-swipe-hint">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            Drag or Scroll to Rotate
+                        </span>
+                    </div>
                 </div>
 
-                <!-- Interactive Controller Script for Residences Showcase -->
+                <!-- Circular Gallery Engine (Mobile-First Touch + Scroll + Auto-Rotation) -->
                 <script>
                 (function() {
-                    var projects = [
-                        {
-                            name: "Park Street",
-                            tag: "ENCLAVE 01 · PARK STREET",
-                            quote: "Fluted teak, Calacatta marble, and soaring portals defining Kolkata's most prestigious heritage boulevard.",
-                            slug: "park-street"
-                        },
-                        {
-                            name: "Salt Lake",
-                            tag: "ENCLAVE 02 · SALT LAKE",
-                            quote: "Monolithic travertine facades and tranquil reflecting pools immersed in an aura of pure serenity.",
-                            slug: "salt-lake"
-                        },
-                        {
-                            name: "New Town",
-                            tag: "ENCLAVE 03 · NEW TOWN",
-                            quote: "Minimalist geometric glass pavilions bathed in daylight, framed by lush botanical sanctuaries.",
-                            slug: "new-town"
-                        },
-                        {
-                            name: "Rajarhat",
-                            tag: "ENCLAVE 04 · RAJARHAT",
-                            quote: "Warm natural timber, bespoke Italian craftsmanship, and seamless indoor-outdoor living.",
-                            slug: "rajarhat"
+                    var section = document.getElementById('lux-circular-gallery');
+                    var stage = document.getElementById('lux-circ-stage');
+                    var viewport = document.getElementById('lux-circ-viewport');
+                    var cylinder = document.getElementById('lux-circ-cylinder');
+                    var counterEl = document.getElementById('lux-circ-counter');
+                    var progressRing = document.getElementById('lux-circ-progress');
+                    var prevBtn = document.getElementById('lux-circ-prev');
+                    var nextBtn = document.getElementById('lux-circ-next');
+
+                    if (!section || !cylinder) return;
+
+                    var cards = Array.from(cylinder.querySelectorAll('.lux-circ-card'));
+                    var totalItems = cards.length;
+                    var anglePerItem = 360 / totalItems;
+
+                    // State
+                    var currentRotation = 0;
+                    var targetRotation = 0;
+                    var radius = 520;
+                    var isDragging = false;
+                    var startX = 0;
+                    var lastX = 0;
+                    var velocity = 0;
+                    var lastUserInteractTime = Date.now();
+                    var autoRotateSpeed = 0.022; // subtle ambient rotation
+                    var ringCircumference = 2 * Math.PI * 14; // ~87.96
+
+                    // Calculate radius and layout dynamically according to viewport size
+                    function updateDimensions() {
+                        var w = window.innerWidth;
+                        if (w < 480) {
+                            radius = Math.max(210, Math.min(240, w * 0.56));
+                        } else if (w < 768) {
+                            radius = Math.max(270, Math.min(340, w * 0.48));
+                        } else if (w < 1024) {
+                            radius = Math.max(360, Math.min(440, w * 0.42));
+                        } else {
+                            radius = Math.max(480, Math.min(620, w * 0.36));
                         }
-                    ];
 
-                    var currentIndex = 0;
-                    var total = projects.length;
-                    var slides = document.querySelectorAll('.residence-slide');
-                    var tabs = document.querySelectorAll('.enclave-nav-tab');
-                    var tagEl = document.getElementById('slide-enclave-tag');
-                    var quoteEl = document.getElementById('slide-poetic-quote');
-                    var linkEl = document.getElementById('slide-project-link');
-                    var progressStroke = document.getElementById('progress-stroke-circle');
-                    var progressText = document.getElementById('progress-text-display');
-                    var nextBtn = document.getElementById('btn-next-residence');
-                    var circleTrigger = document.getElementById('progress-circle-trigger');
-                    var heroBtn = document.getElementById('btn-hero-explore-collection');
-                    var sliderSection = document.getElementById('residences-slider-section');
-                    var heroSection = document.getElementById('residences-hero');
-                    var backBtn = document.getElementById('btn-back-to-hero');
+                        // Position each card on the cylinder
+                        cards.forEach(function(card, i) {
+                            var itemAngle = i * anglePerItem;
+                            card.style.transform = 'rotateY(' + itemAngle + 'deg) translateZ(' + radius + 'px)';
+                        });
+                    }
 
-                    function goToSlide(index) {
-                        if (index < 0) index = total - 1;
-                        if (index >= total) index = 0;
-                        currentIndex = index;
+                    updateDimensions();
+                    window.addEventListener('resize', updateDimensions, { passive: true });
 
-                        // Update slides opacity
-                        slides.forEach(function(s, idx) {
-                            if (idx === currentIndex) {
-                                s.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
-                                s.classList.add('opacity-100', 'pointer-events-auto', 'z-10');
+                    // Position cards initially
+                    cards.forEach(function(card, i) {
+                        card.addEventListener('click', function() {
+                            // Rotate tapped card to center front
+                            lastUserInteractTime = Date.now();
+                            var itemAngle = i * anglePerItem;
+                            var currentMod = ((targetRotation % 360) + 360) % 360;
+                            var targetAngle = -itemAngle;
+                            var diff = (targetAngle - targetRotation) % 360;
+                            if (diff > 180) diff -= 360;
+                            if (diff < -180) diff += 360;
+                            targetRotation += diff;
+                        });
+                    });
+
+                    // Update visual opacity and depth of each card
+                    function renderCards() {
+                        cylinder.style.transform = 'rotateY(' + currentRotation + 'deg)';
+
+                        // Identify active front card
+                        var normRot = ((-currentRotation % 360) + 360) % 360;
+                        var activeIndex = Math.round(normRot / anglePerItem) % totalItems;
+
+                        cards.forEach(function(card, i) {
+                            var itemAngle = i * anglePerItem;
+                            var totalAngle = (itemAngle + currentRotation) % 360;
+                            var rel = ((totalAngle % 360) + 360) % 360;
+                            var norm = Math.abs(rel > 180 ? 360 - rel : rel);
+
+                            // Opacity based on angular distance from viewer
+                            var opacity = Math.max(0.22, 1 - Math.pow(norm / 180, 1.4));
+                            card.style.opacity = opacity.toFixed(2);
+
+                            // Disable pointer-events for cards at the back
+                            if (norm > 70) {
+                                card.style.pointerEvents = 'none';
+                                card.style.filter = 'brightness(0.7)';
                             } else {
-                                s.classList.remove('opacity-100', 'pointer-events-auto', 'z-10');
-                                s.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                                card.style.pointerEvents = 'auto';
+                                card.style.filter = 'brightness(1)';
                             }
                         });
 
-                        // Update nav tabs
-                        tabs.forEach(function(t, idx) {
-                            if (idx === currentIndex) {
-                                t.classList.add('active');
-                            } else {
-                                t.classList.remove('active');
-                            }
-                        });
-
-                        // Update text and link with subtle transition
-                        if (quoteEl) {
-                            quoteEl.style.opacity = '0';
-                            setTimeout(function() {
-                                var p = projects[currentIndex];
-                                if (tagEl) tagEl.textContent = p.tag;
-                                quoteEl.textContent = p.quote;
-                                if (linkEl) linkEl.setAttribute('href', '/projects/' + p.slug + '/');
-                                quoteEl.style.opacity = '1';
-                            }, 200);
+                        // Update Counter
+                        if (counterEl) {
+                            var pad = (activeIndex + 1) < 10 ? '0' + (activeIndex + 1) : (activeIndex + 1);
+                            counterEl.textContent = pad + ' / 08';
                         }
 
-                        // Update circular SVG progress (circumference = 157)
-                        if (progressStroke) {
-                            var offset = 157 - (157 * (currentIndex + 1) / total);
-                            progressStroke.style.strokeDashoffset = offset;
-                        }
-                        if (progressText) {
-                            progressText.textContent = (currentIndex + 1) + '/' + total;
+                        // Update Circular Progress Ring
+                        if (progressRing) {
+                            var progressFraction = (activeIndex) / (totalItems - 1);
+                            var offset = ringCircumference * (1 - progressFraction);
+                            progressRing.style.strokeDashoffset = offset.toFixed(1);
                         }
                     }
 
+                    // Main Animation Loop
+                    function animate() {
+                        var now = Date.now();
+
+                        // Ambient auto-rotation when idle
+                        if (!isDragging && (now - lastUserInteractTime > 1200)) {
+                            targetRotation += autoRotateSpeed;
+                        }
+
+                        // Inertia damping after drag release
+                        if (!isDragging && Math.abs(velocity) > 0.05) {
+                            targetRotation += velocity;
+                            velocity *= 0.92;
+                        }
+
+                        // Smooth interpolation (lerp)
+                        currentRotation += (targetRotation - currentRotation) * 0.12;
+
+                        renderCards();
+                        requestAnimationFrame(animate);
+                    }
+                    requestAnimationFrame(animate);
+
+                    // Touch / Pointer Drag Gestures (Mobile-First)
+                    function onPointerDown(e) {
+                        isDragging = true;
+                        lastUserInteractTime = Date.now();
+                        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                        lastX = startX;
+                        velocity = 0;
+                        if (viewport) viewport.classList.add('is-grabbing');
+                    }
+
+                    function onPointerMove(e) {
+                        if (!isDragging) return;
+                        lastUserInteractTime = Date.now();
+                        var clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                        var deltaX = clientX - lastX;
+                        lastX = clientX;
+
+                        // Sensitivity scaled for mobile touch vs desktop pointer
+                        var sensitivity = window.innerWidth < 640 ? 0.38 : 0.28;
+                        targetRotation += deltaX * sensitivity;
+                        velocity = deltaX * sensitivity;
+                    }
+
+                    function onPointerUp() {
+                        if (!isDragging) return;
+                        isDragging = false;
+                        lastUserInteractTime = Date.now();
+                        if (viewport) viewport.classList.remove('is-grabbing');
+                    }
+
+                    // Attach Drag Listeners
+                    if (viewport) {
+                        viewport.addEventListener('mousedown', onPointerDown);
+                        window.addEventListener('mousemove', onPointerMove);
+                        window.addEventListener('mouseup', onPointerUp);
+
+                        // Mobile Touch Listeners (passive touchstart/touchmove for fluid gestures)
+                        viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+                        window.addEventListener('touchmove', onPointerMove, { passive: true });
+                        window.addEventListener('touchend', onPointerUp, { passive: true });
+                        window.addEventListener('touchcancel', onPointerUp, { passive: true });
+                    }
+
+                    // Navigation Buttons
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            lastUserInteractTime = Date.now();
+                            targetRotation += anglePerItem;
+                        });
+                    }
                     if (nextBtn) {
                         nextBtn.addEventListener('click', function(e) {
                             e.preventDefault();
-                            goToSlide(currentIndex + 1);
+                            lastUserInteractTime = Date.now();
+                            targetRotation -= anglePerItem;
                         });
                     }
 
-                    if (circleTrigger) {
-                        circleTrigger.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            goToSlide(currentIndex + 1);
-                        });
-                    }
+                    // Scroll-Linked Rotation (Lenis + Native Window Scroll)
+                    function onScroll() {
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = rect.height - window.innerHeight;
+                        if (scrollDistance <= 0) return;
 
-                    tabs.forEach(function(tab) {
-                        tab.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            var idx = parseInt(this.getAttribute('data-tab-index'), 10);
-                            if (!isNaN(idx)) goToSlide(idx);
-                        });
-                    });
-
-                    // Explore Collection smooth-scrolls to slider section
-                    if (heroBtn && sliderSection) {
-                        heroBtn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            if (window.lenis) {
-                                window.lenis.scrollTo(sliderSection, { duration: 1.2 });
-                            } else {
-                                sliderSection.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        });
-                    }
-
-                    // Back to Overview smooth-scrolls back to hero
-                    if (backBtn && heroSection) {
-                        backBtn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            if (window.lenis) {
-                                window.lenis.scrollTo(heroSection, { duration: 1.2 });
-                            } else {
-                                heroSection.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        });
-                    }
-
-                    // Keyboard navigation
-                    window.addEventListener('keydown', function(e) {
-                        var slider = document.getElementById('residences-slider-section');
-                        var rect = slider ? slider.getBoundingClientRect() : null;
-                        if (rect && rect.top < window.innerHeight && rect.bottom > 0) {
-                            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                                goToSlide(currentIndex + 1);
-                            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                                goToSlide(currentIndex - 1);
+                        var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
+                        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                            // Link scroll progress to full 360 degree rotation
+                            if (!isDragging) {
+                                var scrollTarget = progress * 360;
+                                targetRotation = (targetRotation * 0.1) + (scrollTarget * 0.9);
+                                lastUserInteractTime = Date.now();
                             }
                         }
-                    });
+                    }
 
-                    // Initial state
-                    goToSlide(0);
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    if (window.lenis) {
+                        window.lenis.on('scroll', onScroll);
+                    }
                 })();
                 </script>
             </section>
-            <!-- island -->
-<section class="relative w-screen z-[41] lg:opacity-0 lg:invisible pointer-events-auto max-lg:overflow-hidden" data-name="island-banner" data-section-indicator-trigger="3" id="island">
-<div class="relative">
-<div class="flex flex-row flex-nowrap w-screen lg:w-fit lg:h-screen" data-target="island-horizontal-scroll-container">
-<picture class="hidden lg:block relative w-auto max-w-none h-full children:relative children:-top-[100vh] children:w-auto children:max-w-none children:h-[200vh]">
-<source srcset="/wp-content/uploads/2024/04/Horizontal-scroll-2-1.jpg.webp" type="image/webp"/>
-<img src="/wp-content/uploads/2024/04/Horizontal-scroll-2-1.jpg"/>
-</picture>
-<div class="lg:hidden absolute inset-0" data-target="island-mobile-image">
-<img alt="" class="lg:hidden relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover" loading="eager" role="presentation" sizes="(max-width: 3556px) 100vw, 3556px" src="/wp-content/uploads/2024/04/Horizontal-scroll-Mobile-9.jpg" srcset="/wp-content/uploads/2024/04/Horizontal-scroll-Mobile-9.jpg 3556w, /wp-content/uploads/2024/04/Horizontal-scroll-Mobile-9-640x882.jpg 640w"/> <img alt="" class="hidden sm:block lg:hidden relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover" loading="eager" role="presentation" sizes="(max-width: 3556px) 100vw, 3556px" src="/wp-content/uploads/2024/04/Horizontal-scroll-ipad-2.jpg" srcset="/wp-content/uploads/2024/04/Horizontal-scroll-ipad-2.jpg 3556w, /wp-content/uploads/2024/04/Horizontal-scroll-ipad-2-640x1147.jpg 640w"/>
-</div>
-<div class="hidden lg:flex absolute inset-0 w-full h-full" data-target="island-horizontal-scroll-content">
-<div class="relative w-screen pt-185 pr-60 lg:pr-0 pl-60 lg:pl-170 mr-[50vw] lg:mr-[5vw]">
-<p class="font-sans font-light text-30 sm:text-36 lg:text-52 leading-30 sm:leading-36 lg:leading-56 tracking-1.5 lg:tracking-1.04 uppercase text-white mb-20">An address without equal: <br/>
-The World Islands, Dubai, <br/>
-minutes from the mainland</p>
-<div class="inline-flex"><div class="flex-row group flex items-center gap-20 bg-white/10 py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35" data-animation="world-island" data-href="/the-world-islands/" data-target="popup-button"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/50 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
-<svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.75781 1.74609L8.75781 15.7813" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-<path d="M15.7812 8.76562L1.74608 8.76562" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-</svg>
-</div><span class="font-sans font-normal letter:text-14 letter:tracking-1.2 text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 group-hover:text-dark-blue">The World Islands</span></div></div>
-<div class="absolute bottom-0 right-100">
-<p class="font-script text-86 leading-none tracking-2.58 text-white opacity-10">The Island</p>
-</div>
-</div>
-<div class="hidden lg:block absolute" style="left:22.75%;bottom:30%;">
-<div class="absolute right-0 max-w-[265px]">
-<div class="flex flex-row-reverse gap-70 mb-10">
-<div class="flex-grow-0 flex-shrink-0 relative w-50 h-50 border border-white rounded-full after:absolute after:top-1/2 after:left-1/2 after:w-30 after:h-30 after:bg-white after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2"></div>
-<p class="text-19 leading-none tracking-1.9 text-left text-white pt-20">Clubhouse</p>
-</div>
-<svg class="w-full h-auto" fill="none" height="2" viewbox="0 0 188 2" width="188" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L187 1.00002" stroke="white" stroke-dasharray="10 3" stroke-linecap="round"></path>
-</svg>
-</div>
-</div>
-<div class="pt-190">
-<p class="font-sans font-light text-32 leading-36 tracking-0.64 uppercase text-white">Set across two separate <br/>
-islands, engineered into <br/>
-a harmonious whole</p>
-</div>
-<div class="flex-grow flex flex-col justify-end items-end pb-140 pr-320">
-<div class="absolute bottom-[29%] right-[5.5%] flex flex-col text-white mb-140">
-<div class="flex flex-col pr-24">
-<p class="font-sans font-regular text-19 leading-none tracking-1.9 uppercase mb-10">Explore the <br/>
-clubhouse and <br/>
-facilities</p>
-<svg fill="none" height="1" viewbox="0 0 316 1" width="316" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 0.5L315 0.500027" stroke="white" stroke-dasharray="10 3" stroke-linecap="round"></path>
-</svg>
-<div class="self-end">
-<svg fill="none" height="158" viewbox="0 0 1 158" width="1" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.5 1L0.499993 157" stroke="white" stroke-dasharray="10 3" stroke-linecap="round"></path>
-</svg>
-</div>
-</div>
-<div class="self-end flex justify-center items-center relative -top-4 size-[48px] bg-white/50 rounded-full cursor-pointer" data-animation="public-realms" data-href="/the-public-realms/" data-target="popup-button">
-<svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.75781 1.74609L8.75781 15.7813" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-<path d="M15.7812 8.76562L1.74608 8.76562" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-</svg>
-</div>
-</div>
-<p class="font-sans font-light text-32 leading-36 tracking-0.64 uppercase text-white">The island’s public realm offers <br/>
-myriad possibilities for pleasure in<br/>
-intelligently-designed spaces</p>
-</div>
-</div>
-<div class="lg:hidden absolute top-0 right-0 left-0 w-screen h-screen pt-120 z-10" data-target="island-mobile-floating-content">
-<div class="container">
-<div class="text-white">
-<p class="font-sans font-light text-30 sm:text-42 leading-none tracking-1.5 sm:tracking-1.7 uppercase mb-25 [&amp;_br]:hidden">An address without equal: <br/>
-The World Islands, Dubai, <br/>
-minutes from the mainland</p>
-<div class="flex sm:inline-flex"><div class="flex-row group flex items-center gap-20 bg-white/10 py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35" data-animation="world-island" data-href="/the-world-islands/" data-target="popup-button"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/50 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
-<svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.75781 1.74609L8.75781 15.7813" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-<path d="M15.7812 8.76562L1.74608 8.76562" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-</svg>
-</div><span class="font-sans font-normal letter:text-14 letter:tracking-1.2 text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 group-hover:text-dark-blue">The World Islands</span></div></div>
-</div>
-</div>
-<div class="absolute bottom-75 left-50">
-<p class="font-script text-38 sm:text-86 leading-none tracking-2.58 text-white opacity-10 whitespace-nowrap">The Island</p>
-</div>
-</div>
-<div class="lg:hidden relative w-full pt-350 sm:pt-[570px] pb-70 sm:pb-90 opacity-0 invisible" data-target="island-mobile-content">
-<div class="container">
-<div class="text-white px-0 sm:px-40 mb-50 sm:mb-100">
-<p class="font-sans font-light text-30 sm:text-42 leading-none tracking-1.5 uppercase [&amp;_br]:hidden">Set across two separate <br/>
-islands, engineered into <br/>
-a harmonious whole</p>
-</div>
-</div>
-<div class="pl-30 sm:pl-105 mb-50 sm:mb-100">
-<div class="relative w-full aspect-[350/270]">
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source sizes="(max-width: 1044px) 100vw, 1044px" srcset="/wp-content/uploads/2024/04/5.jpg.webp 1044w, /wp-content/uploads/2024/04/5-640x497.jpg.webp 640w, /wp-content/uploads/2024/04/5-400x310.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 1044px) 100vw, 1044px" src="/wp-content/uploads/2024/04/5.jpg" srcset="/wp-content/uploads/2024/04/5.jpg 1044w, /wp-content/uploads/2024/04/5-640x497.jpg 640w, /wp-content/uploads/2024/04/5-400x310.jpg 400w"/>
-</picture>
-</div>
-</div>
-<div class="container">
-<div class="text-white px-0 sm:pl-40 sm:pr-70">
-<p class="font-sans font-light text-30 sm:text-42 leading-none tracking-1.5 uppercase mb-30 [&amp;_br]:hidden">The island’s public realm offers <br/>
-myriad possibilities for pleasure in<br/>
-intelligently-designed spaces</p>
-<div class="flex sm:inline-flex"><div class="flex-row-reverse group flex items-center gap-20 bg-white/10 py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-35 pr-12" data-animation="public-realms" data-href="/the-public-realms/" data-target="popup-button"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/50 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
-<svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.75781 1.74609L8.75781 15.7813" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-<path d="M15.7812 8.76562L1.74608 8.76562" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
-</svg>
-</div><span class="font-sans font-normal letter:text-14 letter:tracking-1.2 text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 group-hover:text-dark-blue">Explore public realm facilities</span></div></div>
-</div>
-</div>
-</div>
-<div class="absolute inset-0 backdrop-blur-0 pointer-events-none" data-target="island-blur"></div>
-</div>
-</div>
-<div class="lg:flex lg:items-end relative lg:absolute lg:inset-0 w-full lg:h-full lg:pb-95 lg:opacity-0 lg:invisible lg:pointer-events-none" data-target="island-overlay-content">
-<div class="lg:hidden w-full h-auto">
-<picture class="sm:hidden relative w-full h-auto children:relative children:w-full children:h-auto" loading="eager" role="presentation">
-<source sizes="(max-width: 1763px) 100vw, 1763px" srcset="/wp-content/uploads/2024/04/Location-Mobile-1.jpg.webp 1763w, /wp-content/uploads/2024/04/Location-Mobile-1-640x1483.jpg.webp 640w, /wp-content/uploads/2024/04/Location-Mobile-1-400x927.jpg.webp 400w, /wp-content/uploads/2024/04/Location-Mobile-1-1280x2966.jpg.webp 1280w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 1763px) 100vw, 1763px" src="/wp-content/uploads/2024/04/Location-Mobile-1.jpg" srcset="/wp-content/uploads/2024/04/Location-Mobile-1.jpg 1763w, /wp-content/uploads/2024/04/Location-Mobile-1-640x1483.jpg 640w, /wp-content/uploads/2024/04/Location-Mobile-1-400x927.jpg 400w, /wp-content/uploads/2024/04/Location-Mobile-1-1280x2966.jpg 1280w"/>
-</picture>
-<picture class="hidden sm:block lg:hidden relative w-full h-auto children:relative children:w-full children:h-auto" loading="eager" role="presentation">
-<source sizes="(max-width: 1763px) 100vw, 1763px" srcset="/wp-content/uploads/2024/04/Location-1.jpg.webp 1763w, /wp-content/uploads/2024/04/Location-1-640x776.jpg.webp 640w, /wp-content/uploads/2024/04/Location-1-400x485.jpg.webp 400w, /wp-content/uploads/2024/04/Location-1-1280x1552.jpg.webp 1280w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 1763px) 100vw, 1763px" src="/wp-content/uploads/2024/04/Location-1.jpg" srcset="/wp-content/uploads/2024/04/Location-1.jpg 1763w, /wp-content/uploads/2024/04/Location-1-640x776.jpg 640w, /wp-content/uploads/2024/04/Location-1-400x485.jpg 400w, /wp-content/uploads/2024/04/Location-1-1280x1552.jpg 1280w"/>
-</picture>
-</div>
-<div class="absolute top-130 sm:top-170 lg:top-200 left-1/2 lg:left-75 -translate-x-1/2 lg:translate-x-0">
-<p class="font-script text-38 sm:text-86 leading-none tracking-2.4 sm:tracking-2.58 text-white whitespace-nowrap">The location</p>
-</div>
-<div class="2xl:container absolute lg:relative right-0 lg:right-auto bottom-70 left-0 lg:left-auto lg:bottom-auto w-full px-40 2xl:px-0">
-<div class="grid grid-cols-12 md:grid-cols-3 xl:grid-cols-5 gap-x-12 gap-y-10">
-<div class="max-sm:col-span-12 max-md:col-span-6">
-<div class="relative flex items-center gap-15 w-full bg-black/10 pr-20 pl-14 py-12 rounded-[90px] backdrop-blur-[32px]">
-<div class="flex justify-center items-center w-55 h-55 bg-white/70 rounded-full">
-<?xml version="1.0" encoding="UTF-8"?> <svg fill="none" height="27" viewbox="0 0 30 27" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M16.4826 18.4289C16.4826 19.1589 16.4826 19.8689 16.4826 20.5689C16.4826 21.9689 16.5026 23.3689 16.5026 24.7689C16.5026 24.9889 16.4726 25.2189 16.4426 25.4389C16.3926 25.8089 16.1726 26.0789 15.8426 26.2489C15.1126 26.6489 14.3826 26.6389 13.6526 26.2489C13.1126 25.9589 13.0126 25.4489 13.0126 24.9089C13.0126 23.1389 13.0326 21.3689 13.0526 19.5989C13.0526 19.2089 13.0526 18.8289 13.0526 18.4389C12.8426 18.4389 12.6426 18.4389 12.4426 18.4389C12.2226 18.4389 12.0526 18.3389 12.0026 18.1189C11.9026 17.6489 11.7026 17.2489 11.2926 16.9589C11.2726 16.9489 11.2526 16.9189 11.2426 16.8889C11.2326 16.8589 11.2326 16.8289 11.2126 16.7489C11.3726 16.7189 11.5326 16.6789 11.6826 16.6689C11.9626 16.6589 12.2526 16.6789 12.5326 16.6489C12.6326 16.6389 12.7826 16.5189 12.8026 16.4289C12.9126 15.9089 13.2426 15.5889 13.6626 15.3089C13.8426 15.1889 13.9626 14.9989 14.1126 14.8389C14.1926 14.7489 14.2826 14.6589 14.3526 14.5589C14.4026 14.4889 14.4426 14.4089 14.5226 14.2689C13.4026 14.5289 12.5326 15.0489 11.7226 15.7089C10.8126 16.4489 10.0326 17.3089 9.34258 18.2589C9.28258 18.3489 9.22258 18.4389 9.15258 18.5189C8.96258 18.7689 8.73258 18.8389 8.53258 18.6989C8.33258 18.5589 8.30258 18.3089 8.48258 18.0589C8.74258 17.6989 9.00258 17.3289 9.28258 16.9889C10.2526 15.8389 11.3226 14.7989 12.6726 14.0889C12.9726 13.9389 13.2826 13.7989 13.5826 13.6589C13.5826 13.6289 13.5626 13.6089 13.5626 13.5789C12.9026 13.7689 12.2326 13.9189 11.5926 14.1489C9.90258 14.7589 8.44258 15.7289 7.21258 17.0489C6.89258 17.3889 6.69258 17.4389 6.48258 17.2389C6.27258 17.0389 6.30258 16.8089 6.61258 16.4889C8.56258 14.4189 10.9426 13.1789 13.7526 12.7689C13.8826 12.7489 14.0226 12.7389 14.1526 12.7189C14.1626 12.7189 14.1726 12.6889 14.1926 12.6589C13.2126 12.5289 12.2526 12.5189 11.2826 12.6589C8.99258 12.9789 6.97258 13.8989 5.19258 15.3689C4.96258 15.5589 4.72258 15.5589 4.56258 15.3889C4.40258 15.2089 4.42258 14.9489 4.65258 14.7489C5.81258 13.7489 7.12258 12.9989 8.56258 12.4789C10.2926 11.8489 12.0826 11.6089 13.9226 11.8089C14.0326 11.8189 14.1526 11.8189 14.2626 11.8089C13.5026 11.4789 12.7126 11.2789 11.8926 11.1889C9.09258 10.8689 6.54258 11.5889 4.18258 13.0589C4.14258 13.0889 4.10258 13.1089 4.06258 13.1389C3.84258 13.2589 3.64258 13.2389 3.50258 13.0289C3.35258 12.8089 3.42258 12.6089 3.62258 12.4689C3.87258 12.2889 4.13258 12.1189 4.40258 11.9689C6.61258 10.7289 8.98258 10.1189 11.5326 10.3189C11.7826 10.3389 12.0326 10.3689 12.2826 10.4089C12.5326 10.4489 12.7726 10.4989 13.0126 10.5489C13.0126 10.5289 13.0226 10.4989 13.0326 10.4789C12.3926 10.2589 11.7626 10.0289 11.1126 9.82888C9.82258 9.43888 8.51258 9.18888 7.16258 9.20888C6.34258 9.21888 5.54258 9.32888 4.75258 9.56888C4.68258 9.58888 4.60258 9.61888 4.53258 9.63888C4.25258 9.70888 4.05258 9.60888 3.98258 9.35888C3.92258 9.13888 4.03258 8.93888 4.31258 8.85888C4.77258 8.72888 5.22258 8.58888 5.69258 8.50888C7.51258 8.20888 9.30258 8.40888 11.0426 8.94888C12.0526 9.25888 13.0226 9.66888 14.0126 10.0389C14.0826 10.0689 14.1526 10.0989 14.2526 10.0789C13.8626 9.76888 13.4826 9.44888 13.0726 9.16888C11.6626 8.18888 10.1326 7.46888 8.42258 7.19888C7.87258 7.10888 7.32258 7.10888 6.76258 7.06888C6.52258 7.04888 6.38258 6.91888 6.38258 6.67888C6.38258 6.43888 6.52258 6.29888 6.76258 6.27888C6.84258 6.27888 6.91258 6.27888 6.99258 6.27888C7.94258 6.27888 8.87258 6.40888 9.78258 6.67888C11.1826 7.07888 12.4726 7.73888 13.6526 8.57888C13.7326 8.63888 13.8126 8.68888 13.9326 8.70888C13.7626 8.46888 13.6126 8.21888 13.4326 7.98888C12.5226 6.80888 11.4526 5.82888 10.0226 5.30888C9.75258 5.20888 9.65258 4.98888 9.73258 4.75888C9.81258 4.53888 10.0426 4.45888 10.3226 4.55888C11.6526 5.02888 12.7126 5.86888 13.6226 6.92888C13.6826 6.99888 13.7326 7.05888 13.7926 7.12888C13.8026 7.13888 13.8226 7.14888 13.9026 7.12888C13.6726 6.68888 13.4826 6.22888 13.2026 5.82888C12.9726 5.47888 12.6526 5.17888 12.3526 4.88888C12.1726 4.71888 12.1026 4.53888 12.2226 4.31888C12.3326 4.11888 12.6026 4.03888 12.8026 4.20888C13.1526 4.51888 13.4926 4.85888 13.7826 5.21888C14.0326 5.53888 14.2126 5.92888 14.4226 6.28888C14.5626 5.56888 14.2326 4.79888 14.7326 4.12888C15.2326 4.78888 14.9126 5.54888 15.0526 6.26888C15.2726 5.89888 15.4426 5.52888 15.6926 5.20888C15.9826 4.83888 16.3226 4.50888 16.6826 4.19888C16.8626 4.03888 17.0926 4.07888 17.2426 4.29888C17.3826 4.49888 17.3526 4.69888 17.1526 4.83888C16.3226 5.40888 16.0026 6.31888 15.6426 7.01888C16.0026 6.68888 16.4526 6.25888 16.9226 5.84888C17.5926 5.26888 18.3426 4.82888 19.1726 4.53888C19.4326 4.44888 19.6626 4.53888 19.7426 4.76888C19.8126 4.97888 19.7126 5.19888 19.4526 5.29888C17.7326 5.93888 16.5326 7.17888 15.5626 8.67888C15.5526 8.68888 15.5526 8.70888 15.5426 8.72888C16.1126 8.37888 16.6726 7.99888 17.2626 7.66888C18.8826 6.78888 20.6026 6.26888 22.4626 6.26888C22.5426 6.26888 22.6226 6.26888 22.6926 6.26888C22.9326 6.29888 23.0926 6.42888 23.0826 6.68888C23.0726 6.92888 22.9226 7.04888 22.6826 7.06888C22.2226 7.09888 21.7726 7.10888 21.3126 7.16888C19.8226 7.34888 18.4526 7.87888 17.1826 8.65888C16.4926 9.08888 15.8526 9.57888 15.2226 10.0989C15.9626 9.80888 16.6926 9.49888 17.4326 9.23888C19.1826 8.62888 20.9826 8.25888 22.8326 8.40888C23.6226 8.46888 24.3926 8.68888 25.1626 8.85888C25.4326 8.91888 25.5326 9.13888 25.4626 9.36888C25.3926 9.59888 25.1926 9.70888 24.9226 9.61888C23.8826 9.27888 22.8226 9.14888 21.7326 9.19888C19.9026 9.28888 18.1526 9.76888 16.4726 10.4689C16.4526 10.4689 16.4326 10.4989 16.4426 10.4889C17.0626 10.4189 17.7226 10.3189 18.3726 10.2889C20.4226 10.1789 22.3626 10.6389 24.2026 11.5289C24.7326 11.7889 25.2326 12.1089 25.7526 12.3989C25.9526 12.5189 26.0726 12.6889 25.9826 12.9389C25.8826 13.2189 25.6126 13.2589 25.2826 13.0789C24.5926 12.7089 23.9126 12.3089 23.1926 11.9989C21.5426 11.2889 19.8026 11.0089 18.0126 11.1289C17.0626 11.1989 16.1326 11.3989 15.2426 11.7489C15.2226 11.7589 15.2026 11.7789 15.1426 11.8189C15.6226 11.7989 16.0726 11.7589 16.5126 11.7489C19.6126 11.6989 22.3126 12.7489 24.7026 14.6789C24.7426 14.7189 24.7926 14.7489 24.8326 14.7989C25.0226 14.9989 25.0326 15.2289 24.8626 15.3989C24.6826 15.5789 24.4726 15.5589 24.2826 15.4089C23.9326 15.1489 23.5926 14.8689 23.2326 14.6289C21.0326 13.1589 18.6126 12.4489 15.9626 12.5889C15.7326 12.5989 15.5026 12.6389 15.1926 12.6689C15.3126 12.7089 15.3626 12.7389 15.4226 12.7489C17.7026 12.9889 19.7426 13.8489 21.5226 15.2889C22.0226 15.6889 22.4626 16.1589 22.9226 16.6089C23.1526 16.8389 23.1426 17.0889 22.9726 17.2489C22.7726 17.4289 22.5526 17.3989 22.3126 17.1389C20.7026 15.3889 18.7326 14.2489 16.4026 13.7189C16.2526 13.6889 16.1026 13.6589 15.9426 13.6289C15.9126 13.6289 15.8826 13.6289 15.8326 13.6289C16.2026 13.8089 16.5726 13.9589 16.9226 14.1589C18.6126 15.1289 19.9026 16.5089 20.9926 18.0989C21.1526 18.3289 21.1026 18.5589 20.9126 18.6889C20.7126 18.8189 20.5126 18.7789 20.3326 18.5489C19.9026 18.0089 19.5026 17.4489 19.0426 16.9389C18.2426 16.0389 17.3426 15.2489 16.2526 14.7189C15.8726 14.5389 15.4626 14.3989 15.0326 14.2289C15.0326 14.3489 15.0126 14.4489 15.0326 14.4689C15.4026 14.7089 15.4926 15.1889 15.9226 15.3889C16.3226 15.5789 16.5826 15.9589 16.6526 16.4189C16.6826 16.6089 16.8026 16.6489 16.9626 16.6489C17.2926 16.6489 17.6226 16.6489 17.9526 16.6689C18.0526 16.6689 18.1326 16.7489 18.2326 16.7889C18.1826 16.8789 18.1426 16.9989 18.0726 17.0489C17.7526 17.2689 17.6026 17.5589 17.5226 17.9389C17.4326 18.3489 17.1926 18.4789 16.7326 18.4289C16.6326 18.4189 16.5226 18.4089 16.4426 18.3989" fill="#1A2026"></path><path d="M0 11.3299C0.04 10.5099 0.16 9.73995 0.39 8.99995C1.05 6.85995 2.31 5.13995 4.02 3.72995C6.19 1.92995 8.69 0.869946 11.43 0.339946C13.06 0.0299465 14.71 -0.0800535 16.36 0.0599465C19.62 0.329946 22.64 1.28995 25.28 3.25995C27.23 4.70995 28.7 6.52995 29.45 8.86995C29.7 9.64995 29.84 10.4499 29.88 11.3099C29.44 11.2599 29.02 11.2099 28.6 11.1599C28.37 11.1299 28.14 11.0799 27.91 11.0699C27.7 11.0699 27.63 10.9799 27.61 10.7799C27.41 9.03995 26.69 7.52995 25.56 6.19995C24.11 4.48995 22.27 3.34995 20.17 2.60995C17.91 1.81995 15.58 1.56995 13.2 1.82995C11.1 2.04995 9.11 2.64995 7.29 3.72995C5.19 4.96995 3.55 6.62995 2.7 8.95995C2.49 9.52995 2.4 10.1399 2.28 10.7399C2.24 10.9499 2.2 11.0499 1.95 11.0799C1.31 11.1299 0.68 11.2299 0 11.3199" fill="#1A2026"></path><path d="M27.6469 12.4006C28.3869 12.4906 29.0969 12.5806 29.7969 12.6706C30.0169 15.3206 26.5769 19.9506 23.3869 21.2706C23.3869 20.7906 23.4269 20.3306 23.3769 19.8706C23.3169 19.3006 23.5369 18.9806 23.9869 18.6306C25.8769 17.1606 27.1669 15.3006 27.5769 12.9006C27.5869 12.8206 27.5969 12.7506 27.6069 12.6706C27.6069 12.5906 27.6269 12.5206 27.6469 12.3906" fill="#1A2026"></path><path d="M6.50031 21.2784C2.84031 19.3784 0.360312 16.0384 0.0703125 12.6584C0.790313 12.5684 1.50031 12.4784 2.21031 12.3984C2.33031 12.9284 2.41031 13.4384 2.56031 13.9284C3.17031 15.9484 4.41031 17.5184 6.07031 18.7684C6.39031 19.0084 6.55031 19.2384 6.51031 19.6484C6.47031 20.1784 6.50031 20.7084 6.50031 21.2784Z" fill="#1A2026"></path></svg>
-</div>
-<div class="text-white">
-<p class="font-sans font-light text-17 leading-none tracking-0.34 uppercase mb-3">5 mins</p>
-<p class="font-body text-16 leading-none">Palm Jumeirah</p>
-</div>
-</div>
-</div>
-<div class="max-sm:col-span-12 max-md:col-span-6">
-<div class="relative flex items-center gap-15 w-full bg-black/10 pr-20 pl-14 py-12 rounded-[90px] backdrop-blur-[32px]">
-<div class="flex justify-center items-center w-55 h-55 bg-white/70 rounded-full">
-<?xml version="1.0" encoding="UTF-8"?> <svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M19.265 0.769874C19.1875 1.00969 19.0887 1.39057 18.9406 1.74324C18.4398 2.90706 17.671 3.89453 16.8175 4.81148C16.1686 5.50271 15.4774 6.15162 14.8073 6.8217C12.7477 8.88129 10.6952 10.9479 8.62145 12.9864C8.14888 13.4519 7.59871 13.8469 7.06971 14.256C6.9498 14.3477 6.92864 14.4323 6.9498 14.5593C7.15435 15.8501 7.34479 17.1408 7.55639 18.4316C7.59166 18.6432 7.54228 18.7561 7.35184 18.8337C7.19667 18.8901 7.0556 18.9677 6.90748 19.0311C6.52659 19.2004 6.51249 19.1934 6.31499 18.8407C5.64492 17.6487 4.97484 16.4496 4.29772 15.2576C4.22718 15.1306 4.10727 15.0107 3.98031 14.9402C2.75302 14.2348 1.51162 13.5365 0.277275 12.8312C-0.0330751 12.6549 -0.0471819 12.5984 0.171474 12.3092C0.249061 12.2034 0.347809 12.1118 0.404236 11.9989C0.559411 11.7168 0.771013 11.6744 1.07431 11.7238C2.28044 11.9284 3.49363 12.1118 4.69976 12.2881C4.77735 12.3022 4.89726 12.2387 4.95368 12.1752C5.2993 11.7802 5.6026 11.35 5.96937 10.9832C8.12772 8.8037 10.3002 6.64536 12.4726 4.47291C13.2908 3.65472 14.0878 2.80126 14.9272 2.00422C15.7101 1.27067 16.5636 0.614699 17.5722 0.219708C17.9108 0.0927471 18.2776 0.022213 18.6373 -0.00600061C18.9829 -0.0342142 19.2509 0.269082 19.258 0.762821" fill="#1A2026"></path><path d="M12.2639 4.1754C11.9888 4.43638 11.756 4.64798 11.5303 4.87369C10.7051 5.69188 9.88687 6.51008 9.06868 7.34238C8.94877 7.46229 8.87118 7.47639 8.716 7.39881C6.48713 6.17151 4.2512 4.95128 2.01527 3.72398C1.63438 3.51238 1.44394 3.15971 1.51448 2.79999C1.59912 2.37678 1.93768 2.03822 2.37499 2.02411C2.63597 2.01706 2.91105 2.06643 3.17203 2.12286C6.14856 2.78588 9.1251 3.46301 12.0946 4.13308C12.1228 4.13308 12.151 4.15424 12.2568 4.18245" fill="#1A2026"></path><path d="M15.1326 7.07422C15.2595 7.63144 15.3795 8.1816 15.4994 8.72472C16.0707 11.2922 16.642 13.8666 17.2133 16.4411C17.3191 16.9278 17.0934 17.3792 16.6632 17.5415C16.24 17.6967 15.8238 17.5274 15.577 17.083C14.3567 14.9035 13.1365 12.724 11.9162 10.5445C11.8598 10.4387 11.8175 10.3611 11.9303 10.2483C12.9742 9.2114 14.0181 8.1675 15.055 7.13065C15.0691 7.11654 15.0973 7.10243 15.1396 7.07422" fill="#1A2026"></path><path d="M4.10938 1.91736C4.50437 1.52237 4.86409 1.17675 5.20971 0.824084C5.35077 0.690069 5.46363 0.725336 5.58354 0.845244C5.90094 1.16265 6.21834 1.473 6.52869 1.80451C6.59217 1.87504 6.6486 2.04432 6.60628 2.0937C6.50753 2.22066 6.33825 2.40405 6.23245 2.38289C5.54122 2.25593 4.85704 2.08664 4.10938 1.91736Z" fill="#1A2026"></path><path d="M17.3127 15.044C17.1504 14.3104 16.9882 13.6333 16.8613 12.9421C16.8401 12.8363 17.0023 12.674 17.1081 12.5753C17.1504 12.54 17.3127 12.5823 17.3762 12.6458C17.7147 12.9632 18.0392 13.3018 18.3707 13.6262C18.4835 13.7391 18.5047 13.8449 18.3848 13.9648C18.0392 14.3104 17.6936 14.656 17.3127 15.0369" fill="#1A2026"></path><path d="M8.38987 2.88608C8.7637 2.5193 9.09521 2.19485 9.41966 1.86334C9.54662 1.73638 9.65948 1.75754 9.77233 1.87744C10.0968 2.20895 10.4354 2.53341 10.7528 2.87197C10.8092 2.93545 10.8515 3.09063 10.8162 3.14C10.7457 3.23875 10.5976 3.37982 10.5129 3.35866C9.82171 3.22464 9.13047 3.05536 8.38281 2.88608" fill="#1A2026"></path><path d="M16.3505 10.7429C16.1813 10.0023 16.0261 9.32519 15.8921 8.63396C15.878 8.55637 15.9697 8.42236 16.0543 8.37298C16.1107 8.33771 16.2588 8.35887 16.3082 8.40825C16.6609 8.73976 16.9924 9.08538 17.338 9.42394C17.4438 9.52974 17.4438 9.64259 17.338 9.7484C17.0206 10.0658 16.7032 10.3832 16.3505 10.7429Z" fill="#1A2026"></path></svg>
-</div>
-<div class="text-white">
-<p class="font-sans font-light text-17 leading-none tracking-0.34 uppercase mb-3">18 mins</p>
-<p class="font-body text-16 leading-none">Dubai International Airport</p>
-</div>
-</div>
-</div>
-<div class="max-sm:col-span-12 max-md:col-span-6">
-<div class="relative flex items-center gap-15 w-full bg-black/10 pr-20 pl-14 py-12 rounded-[90px] backdrop-blur-[32px]">
-<div class="flex justify-center items-center w-55 h-55 bg-white/70 rounded-full">
-<?xml version="1.0" encoding="UTF-8"?> <svg fill="none" height="23" viewbox="0 0 28 23" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M9.32405 21.8771C8.72275 22.1264 8.03346 21.8404 7.78414 21.2465L1.76383 6.82999C1.51451 6.2287 1.8005 5.53941 2.40179 5.29009L10.7613 1.7923C11.3626 1.54298 12.0519 1.82896 12.3012 2.42293L13.9291 6.31669L14.2444 5.12876L12.9978 2.13694C12.5872 1.15433 11.4579 0.692362 10.4753 1.103L2.11581 4.59346C1.1332 5.0041 0.663899 6.1407 1.07454 7.11598L7.08751 21.5251C7.49816 22.5077 8.62742 22.9697 9.61003 22.5591L12.8072 21.2245C12.4919 21.1218 12.1985 20.9678 11.9492 20.7698L9.32405 21.8698V21.8771Z" fill="#1A2026"></path><path d="M11.8905 13.5986L11.9272 13.4666C11.9272 13.4666 11.3112 13.5032 10.8566 13.0853C10.6659 12.9093 10.4973 12.6453 10.3579 12.3593C10.6366 12.6819 11.1426 12.7993 11.5532 12.6233C12.0445 12.418 12.2792 11.8533 12.0738 11.362C11.8685 10.8707 11.3039 10.6361 10.8126 10.8414C10.4166 11.0027 10.1453 11.4207 10.1599 11.8313C10.1159 11.692 10.0866 11.5673 10.072 11.4427C10.4533 11.1787 10.5853 10.6214 10.4093 10.1888C10.2039 9.69746 9.63931 9.46281 9.14801 9.66813C8.6567 9.87345 8.42205 10.4381 8.62737 10.9294C8.81069 11.3694 9.30933 11.6627 9.76397 11.5747C9.8373 11.67 9.91063 11.7873 9.97662 11.912C9.69064 11.6113 9.20667 11.5087 8.81069 11.6773C8.31939 11.8827 8.09207 12.4473 8.29006 12.9386C8.49538 13.4299 9.06001 13.6646 9.55132 13.4592C9.95462 13.2906 10.2333 12.8506 10.2039 12.4326C10.3066 12.7186 10.3726 13.0193 10.3653 13.2906C10.3653 13.9065 9.88863 14.3245 9.88863 14.3245L9.98396 14.3978C11.0252 13.4592 11.8905 13.6059 11.8905 13.6059" fill="#1A2026"></path><path d="M4.15097 7.06531C4.41496 6.95531 4.53962 6.64733 4.42962 6.38335C4.31963 6.11936 4.01165 5.9947 3.74766 6.1047C3.53501 6.19269 3.38835 6.41268 3.39568 6.64C3.37368 6.56667 3.35902 6.49334 3.35169 6.43468C3.55701 6.29535 3.63034 5.9947 3.52768 5.76005C3.41768 5.49607 3.1097 5.37141 2.84572 5.4814C2.58173 5.59139 2.45707 5.89938 2.56707 6.16336C2.66973 6.39801 2.93371 6.55934 3.1757 6.50801C3.21236 6.55934 3.25636 6.62533 3.29302 6.69133C3.13903 6.53 2.87505 6.47867 2.66239 6.56667C2.39841 6.67666 2.27375 6.98464 2.38374 7.24863C2.49374 7.51261 2.80172 7.63727 3.0657 7.52728C3.28569 7.43928 3.43235 7.20463 3.41768 6.96998C3.46901 7.12397 3.50568 7.28529 3.50568 7.43195C3.50568 7.76193 3.24903 7.98925 3.24903 7.98925L3.30036 8.02591C3.86499 7.51995 4.32696 7.59327 4.32696 7.59327L4.34896 7.52728C4.34896 7.52728 4.01898 7.54194 3.76966 7.32196C3.667 7.22663 3.57167 7.0873 3.49834 6.93331C3.645 7.1093 3.92365 7.16797 4.14364 7.07997" fill="#1A2026"></path><path d="M23.3357 20.2788C23.3137 20.4915 23.2257 20.6675 23.057 20.8068C22.8444 20.9755 22.6097 21.1148 22.3677 21.2248C22.2284 21.2908 22.0744 21.3421 21.9351 21.4081C21.9204 21.4081 21.9058 21.4154 21.8911 21.4008C21.6564 21.1294 21.4438 20.8435 21.2898 20.5135C21.2605 20.4475 21.2311 20.3815 21.2018 20.3082C21.1285 20.1322 21.1358 19.9635 21.1871 19.7875C21.2091 19.7215 21.2385 19.6555 21.2825 19.6042C21.4511 19.4136 21.6711 19.2962 21.9718 19.3989C22.1331 19.4502 22.2431 19.5602 22.3164 19.7142C22.3164 19.6042 22.3017 19.5015 22.2724 19.4136C22.1624 19.0762 21.9204 18.8636 21.9204 18.8636L21.9791 18.8196C21.9791 18.8196 22.3237 19.1862 23.1304 19.1202L23.145 19.1862C23.145 19.1862 22.8224 19.2449 22.5657 19.4942C22.4997 19.5602 22.4337 19.6335 22.3824 19.7289C22.4337 19.6995 22.4851 19.6775 22.5364 19.6555C22.9397 19.5089 23.387 19.8535 23.3357 20.2862M19.9845 13.5619C20.1825 14.1999 20.6518 14.5958 20.6518 14.5958L20.5345 14.6838C20.5345 14.6838 19.8892 13.9872 18.3713 14.1119L18.3346 13.9872C18.3346 13.9872 18.9359 13.8699 19.4272 13.4152C19.5592 13.2979 19.6766 13.1513 19.7719 12.9826C19.6766 13.0339 19.5812 13.0853 19.4859 13.1219C18.7233 13.4006 17.8873 12.748 17.9827 11.934C18.0267 11.538 18.1953 11.2007 18.5106 10.9441C18.9066 10.6214 19.3466 10.3648 19.8159 10.1594C20.0799 10.0348 20.3585 9.93212 20.6298 9.82213C20.6592 9.80746 20.6812 9.80746 20.7105 9.83679C21.1505 10.3501 21.5464 10.8927 21.8398 11.5014C21.8984 11.626 21.9498 11.7507 22.0084 11.8827C22.1477 12.2053 22.1331 12.5353 22.0304 12.8653C21.9938 12.9973 21.9351 13.1146 21.8471 13.2099C21.5318 13.5619 21.1211 13.7892 20.5492 13.5912C20.2559 13.4886 20.0432 13.2833 19.9039 13.0046C19.9039 13.2099 19.9405 13.3932 19.9919 13.5692M16.8167 3.93381C16.8387 3.72116 16.9267 3.54517 17.0954 3.40584C17.308 3.23719 17.5427 3.09786 17.7847 2.98787C17.924 2.92187 18.078 2.87054 18.2173 2.80454C18.232 2.80454 18.2466 2.79721 18.2613 2.81188C18.496 3.08319 18.7086 3.36918 18.8626 3.69916C18.8919 3.76515 18.9213 3.83115 18.9506 3.89715C19.0239 4.07314 19.0166 4.24179 18.9653 4.41778C18.9433 4.48378 18.9139 4.54977 18.8699 4.6011C18.7013 4.79176 18.4813 4.90909 18.1806 4.80643C18.0193 4.7551 17.9093 4.6451 17.836 4.49111C17.836 4.6011 17.8507 4.70376 17.88 4.79176C17.9827 5.12907 18.232 5.34173 18.232 5.34173L18.1733 5.38572C18.1733 5.38572 17.8287 5.01908 17.0221 5.08508L17.0074 5.01908C17.0074 5.01908 17.33 4.96042 17.5867 4.7111C17.6527 4.6451 17.7187 4.57177 17.77 4.47645C17.7187 4.50578 17.6673 4.52778 17.616 4.54977C17.2054 4.69643 16.7654 4.35179 16.8167 3.91914M26.8481 4.19779L18.0853 1.88793C17.2567 1.66795 16.4061 2.16658 16.1861 2.9952L15.0935 7.13829L14.7782 8.32622L12.2043 18.0936C11.9844 18.9222 12.483 19.7729 13.3116 19.9929L13.6343 20.0808L14.8222 20.3962L22.0744 22.31C22.903 22.53 23.7536 22.0314 23.9736 21.2028L27.9554 6.10435C28.1754 5.27573 27.6767 4.42511 26.8481 4.20513" fill="#1A2026"></path></svg>
-</div>
-<div class="text-white">
-<p class="font-sans font-light text-17 leading-none tracking-0.34 uppercase mb-3">5 mins</p>
-<p class="font-body text-16 leading-none">Vegas-inspired island</p>
-</div>
-</div>
-</div>
-<div class="max-sm:col-span-12 max-md:col-span-6">
-<div class="relative flex items-center gap-15 w-full bg-black/10 pr-20 pl-14 py-12 rounded-[90px] backdrop-blur-[32px]">
-<div class="flex justify-center items-center w-55 h-55 bg-white/70 rounded-full">
-<?xml version="1.0" encoding="UTF-8"?> <svg fill="none" height="16" viewbox="0 0 25 16" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M24.8121 1.38789C24.3746 1.04087 23.3637 0.459992 22.5791 0.414729C22.0133 0.384553 21.4475 0.505255 20.927 0.731571L5.52245 7.40034C5.31877 7.49087 5.07737 7.46069 4.89631 7.3249L2.52 5.54455C2.32386 5.40122 2.07491 5.35596 1.84859 5.42385C1.84859 5.42385 1.41105 5.5521 1.26772 5.59736C0.98105 5.68034 0.845261 5.99719 0.965962 6.26876C1.49403 7.38526 2.79912 9.99543 3.76473 10.5386C4.73035 11.0893 6.25421 10.5084 6.72193 10.2972C6.72193 10.2972 9.77719 8.9242 13.4586 7.2721L12.1158 14.8084C12.0554 15.1403 12.4326 15.3817 12.7118 15.1781L13.6698 14.484C14.1074 14.1672 14.4468 13.7372 14.6656 13.2468L18.1433 5.18999C21.2816 3.77929 22.9714 3.00982 24.714 2.22526C25.0535 2.07438 25.1063 1.6142 24.8196 1.38789" fill="#1A2026"></path><path d="M5.95148 2.01494L10.4703 4.83634L14.2045 3.26722L8.43341 1.35108C7.90534 1.17757 7.33201 1.16248 6.79639 1.3209L6.01183 1.54722C5.8006 1.60757 5.76288 1.89423 5.94393 2.00739" fill="#1A2026"></path></svg>
-</div>
-<div class="text-white">
-<p class="font-sans font-light text-17 leading-none tracking-0.34 uppercase mb-3">20 mins</p>
-<p class="font-body text-16 leading-none">JETEX Private Terminal</p>
-</div>
-</div>
-</div>
-<div class="max-sm:col-span-12 max-md:col-span-6">
-<div class="relative flex items-center gap-15 w-full bg-black/10 pr-20 pl-14 py-12 rounded-[90px] backdrop-blur-[32px]">
-<div class="flex justify-center items-center w-55 h-55 bg-white/70 rounded-full">
-<?xml version="1.0" encoding="UTF-8"?> <svg fill="none" height="30" viewbox="0 0 31 30" width="31" xmlns="http://www.w3.org/2000/svg"><path d="M1.50698 16.6426C1.55271 16.4811 1.58161 16.3792 1.6232 16.2327C1.82351 16.4473 1.99683 16.633 2.19049 16.8406C2.33319 16.7291 2.46824 16.6235 2.65083 16.4808C2.75355 16.741 2.85315 16.9748 2.93855 17.2137C3.04288 17.5059 3.12083 17.8083 3.23674 18.0955C3.37492 18.4379 3.63937 18.644 4.01109 18.6924C4.84334 18.8004 5.60096 18.6761 6.19887 18.0126C6.34963 17.8453 6.52808 17.6916 6.72023 17.5755C7.13243 17.3267 7.54161 17.4499 7.81463 17.8517C7.86569 17.9269 8.02118 18.0124 8.08352 17.9862C8.78042 17.6935 9.52555 17.8858 10.236 17.7535C11.1899 17.5759 12.1429 17.5217 13.1134 17.6521C13.8327 17.7488 14.2791 17.4471 14.5194 16.8659C14.7449 16.8659 14.9498 16.8759 15.1531 16.8625C15.2962 16.8532 15.4431 16.8284 15.5778 16.7809C15.7218 16.7304 15.9386 16.6717 15.9707 16.5689C16.0178 16.4177 15.9818 16.1833 15.8854 16.0588C15.7522 15.887 15.5313 15.7823 15.3452 15.6529C15.1068 15.4873 14.8626 15.3276 14.8774 14.9597C15.1514 14.9136 15.3396 15.0563 15.5262 15.2011C15.7387 15.3661 15.9373 15.553 16.1651 15.6926C16.3548 15.8088 16.5393 15.8382 16.6206 15.5218C16.7183 15.1416 17.0198 14.9616 17.3963 14.9196C17.4391 14.6123 17.2936 14.4052 17.0815 14.2665C16.7795 14.0689 16.4472 13.9182 16.1388 13.7295C16.0387 13.6683 15.8881 13.5134 15.9088 13.4659C15.959 13.3508 16.0817 13.2274 16.2012 13.1901C16.5571 13.0788 16.8739 13.2093 17.1536 13.4333C17.3397 13.5824 17.5042 13.7626 17.7034 13.8896C17.8952 14.0118 18.1192 14.0834 18.3289 14.1771C18.3536 14.1455 18.3782 14.1138 18.4029 14.0822C18.1314 13.6535 17.8598 13.2247 17.5811 12.7847C17.8351 12.8005 18.0619 12.8351 18.2865 12.8242C18.7155 12.8034 18.9518 12.5194 18.8897 12.0957C18.857 11.872 18.7733 11.6559 18.7136 11.4362C18.5556 10.8536 18.7412 10.4698 19.2995 10.2406C19.4429 10.1817 19.5912 10.1204 19.7429 10.0988C20.6564 9.96785 21.2611 9.39795 21.7952 8.70507C22.4068 7.9117 22.7734 7.0012 23.1118 6.07378C23.1578 5.94759 23.2025 5.81586 23.2771 5.7069C23.3301 5.62955 23.4338 5.54033 23.5126 5.54244C23.5738 5.54405 23.6583 5.66964 23.6862 5.75514C23.7856 6.05938 23.8653 6.37006 23.9673 6.73059C24.808 5.92282 25.1984 4.95562 25.2847 3.83967C25.5773 3.78217 25.8629 3.74209 26.1397 3.66847C27.0384 3.42949 27.3709 2.95425 27.2923 2.03146C27.2685 1.7527 27.2136 1.47656 27.1899 1.1979C27.1737 1.00766 27.1868 0.814806 27.1868 0.625375C27.2607 0.625375 27.271 0.624468 27.281 0.625475C27.7134 0.669988 27.8946 0.911587 27.9571 1.34262C28.0492 1.97728 28.2013 2.60459 28.3524 3.22898C28.4524 3.64208 28.4489 4.02669 28.2172 4.39598C28.1685 4.47343 28.1375 4.56608 28.1162 4.65591C28.0316 5.01231 28.2325 5.28684 28.5903 5.22179C28.993 5.14857 29.3836 4.99711 29.7719 4.85863C30.133 4.72983 30.1746 4.73295 30.3319 5.08714C30.4767 5.41313 30.4981 5.74839 30.3738 6.08687C30.3274 6.21336 30.2675 6.33511 30.225 6.46281C30.0959 6.85064 30.1588 6.99324 30.5436 7.1154C30.8023 7.19748 30.8967 7.38006 30.9317 7.62267C31.1142 8.88363 30.9577 10.0694 30.1297 11.0926C29.7529 11.5581 29.3476 12.0005 28.9993 12.4027C28.7758 12.1495 28.5829 11.9212 28.3788 11.7035C28.2586 11.5753 28.1117 11.4721 27.9924 11.3433C27.7622 11.095 27.7218 10.8152 27.8938 10.5152C27.9556 10.4072 28.0178 10.2993 28.0846 10.1943C28.3095 9.84146 28.305 9.48304 28.0795 9.14094C27.8437 8.78332 27.5167 8.56348 27.0664 8.58352C26.8973 8.59107 26.8107 8.63891 26.7665 8.84647C26.7012 9.15282 26.6005 9.48737 26.4093 9.72494C25.6274 10.6966 25.7074 11.6553 26.332 12.6567C26.5336 12.9799 26.6919 13.3349 26.8333 13.6899C27.0153 14.147 26.9854 14.6039 26.7289 15.0362C26.6549 15.161 26.5861 15.289 26.5198 15.4181C26.2807 15.8833 26.3055 16.037 26.6733 16.4032C26.9418 16.6706 26.937 16.9369 26.6257 17.1578C26.4368 17.2917 26.2121 17.3749 25.9235 17.5216C26.2958 17.6506 26.6188 17.7691 26.9465 17.8722C27.0532 17.9058 27.1725 17.8985 27.2859 17.9111C27.8547 17.9743 27.8399 17.977 27.9312 18.5279C27.9727 18.7783 28.0864 19.0166 28.1763 19.2873C28.0011 19.4102 27.804 19.3968 27.5981 19.2866C27.0614 18.9991 27.0005 19.0013 26.6225 19.4369C26.4118 19.6799 26.1907 19.6942 25.9351 19.5404C25.7134 19.407 25.5056 19.2455 25.2731 19.1357C24.8312 18.9271 24.4433 19.0845 24.1807 19.548C23.9214 20.0056 23.9891 20.3654 24.3906 20.6615C24.8497 21.0002 24.9195 21.1869 24.6487 21.613C24.2473 22.2446 24.2731 22.8197 24.8085 23.3793C24.2416 23.7299 24.0007 24.2844 23.7851 24.8657C23.5981 25.3698 23.4021 25.8749 23.1564 26.3517C22.8443 26.9574 22.6663 27.5783 22.7015 28.2622C22.7233 28.6871 22.6433 29.0881 22.3376 29.4163C21.877 29.9108 21.3173 30.0182 20.6871 29.842C18.9002 29.3421 17.11 28.8532 15.3287 28.3339C13.2981 27.7418 11.2507 27.2229 9.18556 26.7635C8.40316 26.5895 7.64423 26.2829 6.89919 25.9769C6.26272 25.7155 5.77861 25.2496 5.43097 24.6391C3.87624 21.9091 2.3063 19.1879 0.759932 16.4532C0.62589 16.2163 0.60605 15.9073 0.570803 15.627C0.561336 15.552 0.69135 15.4596 0.757314 15.3752C0.824486 15.4411 0.912303 15.4958 0.955306 15.5749C1.13678 15.9079 1.30486 16.2482 1.50678 16.6423L1.50698 16.6426Z" fill="#1A2026"></path></svg>
-</div>
-<div class="text-white">
-<p class="font-sans font-light text-17 leading-none tracking-0.34 uppercase mb-3">6 mins</p>
-<p class="font-body text-16 leading-none">from Mainland Dubai</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- interiors -->
-<div class="relative">
-<section class="relative w-dvh lg:min-h-[60vw] bg-sand lg:-mt-[200vh] pt-40 lg:pt-0 z-[41] lg:opacity-0 lg:invisible lg:pointer-events-auto after:absolute after:top-0 after:right-0 after:left-0 after:w-full after:h-screen after:bg-sand after:pointer-events-none after:-z-10" data-name="interiors-banner" data-section-indicator-trigger="4" id="interiors">
-<div class="relative w-full h-full">
-<div class="relative lg:absolute lg:top-[10.5vw] lg:left-[8vw] lg:w-[44.5vw] lg:max-w-[720px] bg-brown text-white py-50 pr-80 lg:py-50 lg:pr-45 pl-40 lg:pl-60 mr-40 sm:mr-150 lg:mr-0 z-10" data-target="banner-text">
-<p class="font-sans font-light text-26 sm:text-32 leading-30 sm:leading-32 tracking-1.3 sm:tracking-0.64 uppercase">Embrace the luxury of choice with two interior aesthetics: Terra &amp; Ultra</p>
-</div>
-<div class="relative lg:absolute lg:top-[13.2vw] lg:left-1/2 aspect-[445/520] lg:w-[30.9vw] -mt-60 mlgd:mt-0 mb-40 lg:mb-0 ml-40 sm:ml-150 lg:ml-0 lg:-translate-x-1/2 lg:scale-[3.25]" data-image-switch="" data-target="banner-image-centre">
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source sizes="(max-width: 3400px) 100vw, 3400px" srcset="/wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02.jpg.webp 3400w, /wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02-640x753.jpg.webp 640w, /wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02-400x471.jpg.webp 400w, /wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02-1280x1506.jpg.webp 1280w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 3400px) 100vw, 3400px" src="/wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02.jpg" srcset="/wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02.jpg 3400w, /wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02-640x753.jpg 640w, /wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02-400x471.jpg 400w, /wp-content/uploads/2024/03/VO_GF-Living-Room-View-2-Vignettes-EXT02-1280x1506.jpg 1280w"/>
-</picture>
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover opacity-0 invisible" loading="eager" role="presentation">
-<source sizes="(max-width: 3500px) 100vw, 3500px" srcset="/wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1.jpg.webp 3500w, /wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1-640x753.jpg.webp 640w, /wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1-400x471.jpg.webp 400w, /wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1-1280x1506.jpg.webp 1280w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 3500px) 100vw, 3500px" src="/wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1.jpg" srcset="/wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1.jpg 3500w, /wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1-640x753.jpg 640w, /wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1-400x471.jpg 400w, /wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1-1280x1506.jpg 1280w"/>
-</picture>
-</div>
-<div class="hidden lg:block absolute top-[33.7vw] left-0 aspect-[395/330] w-[27.4vw]" data-image-switch="" data-target="banner-image-left">
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source sizes="(max-width: 962px) 100vw, 962px" srcset="/wp-content/uploads/2024/03/Ultra-1.jpg.webp 962w, /wp-content/uploads/2024/03/Ultra-1-640x440.jpg.webp 640w, /wp-content/uploads/2024/03/Ultra-1-400x275.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 962px) 100vw, 962px" src="/wp-content/uploads/2024/03/Ultra-1.jpg" srcset="/wp-content/uploads/2024/03/Ultra-1.jpg 962w, /wp-content/uploads/2024/03/Ultra-1-640x440.jpg 640w, /wp-content/uploads/2024/03/Ultra-1-400x275.jpg 400w"/>
-</picture>
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover opacity-0 invisible" loading="eager" role="presentation">
-<source sizes="(max-width: 962px) 100vw, 962px" srcset="/wp-content/uploads/2024/03/Terra-1.jpg.webp 962w, /wp-content/uploads/2024/03/Terra-1-640x440.jpg.webp 640w, /wp-content/uploads/2024/03/Terra-1-400x275.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 962px) 100vw, 962px" src="/wp-content/uploads/2024/03/Terra-1.jpg" srcset="/wp-content/uploads/2024/03/Terra-1.jpg 962w, /wp-content/uploads/2024/03/Terra-1-640x440.jpg 640w, /wp-content/uploads/2024/03/Terra-1-400x275.jpg 400w"/>
-</picture>
-</div>
-<div class="flex sm:grid lg:block items-start sm:grid-cols-[1fr_1fr] lg:grid-cols-none gap-40 lg:gap-0 sm:px-40 lg:px-0">
-<div class="relative lg:absolute lg:top-[38vw] lg:right-0 aspect-[400/275] w-[50vw] sm:w-[60vw] lg:w-[27.8vw] h-[65vw] lg:h-auto" data-image-switch="" data-target="banner-image-right-2">
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source sizes="(max-width: 800px) 100vw, 800px" srcset="/wp-content/uploads/2024/03/Ultra-4.jpg.webp 800w, /wp-content/uploads/2024/03/Ultra-4-640x441.jpg.webp 640w, /wp-content/uploads/2024/03/Ultra-4-400x276.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 800px) 100vw, 800px" src="/wp-content/uploads/2024/03/Ultra-4.jpg" srcset="/wp-content/uploads/2024/03/Ultra-4.jpg 800w, /wp-content/uploads/2024/03/Ultra-4-640x441.jpg 640w, /wp-content/uploads/2024/03/Ultra-4-400x276.jpg 400w"/>
-</picture>
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover opacity-0 invisible" loading="eager" role="presentation">
-<source sizes="(max-width: 800px) 100vw, 800px" srcset="/wp-content/uploads/2024/03/Terra-4.jpg.webp 800w, /wp-content/uploads/2024/03/Terra-4-640x441.jpg.webp 640w, /wp-content/uploads/2024/03/Terra-4-400x276.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 800px) 100vw, 800px" src="/wp-content/uploads/2024/03/Terra-4.jpg" srcset="/wp-content/uploads/2024/03/Terra-4.jpg 800w, /wp-content/uploads/2024/03/Terra-4-640x441.jpg 640w, /wp-content/uploads/2024/03/Terra-4-400x276.jpg 400w"/>
-</picture>
-</div>
-<div class="relative lg:absolute sm:top-100 lg:top-[1.6vw] lg:right-0 aspect-[280/425] w-[25vw] sm:w-full lg:w-[19.5vw]" data-image-switch="" data-target="banner-image-right-1">
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source sizes="(max-width: 614px) 100vw, 614px" srcset="/wp-content/uploads/2024/03/Ultra-3.jpg.webp 614w, /wp-content/uploads/2024/03/Ultra-3-400x556.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 614px) 100vw, 614px" src="/wp-content/uploads/2024/03/Ultra-3.jpg" srcset="/wp-content/uploads/2024/03/Ultra-3.jpg 614w, /wp-content/uploads/2024/03/Ultra-3-400x556.jpg 400w"/>
-</picture>
-<picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover opacity-0 invisible" loading="eager" role="presentation">
-<source sizes="(max-width: 614px) 100vw, 614px" srcset="/wp-content/uploads/2024/03/Terra-3.jpg.webp 614w, /wp-content/uploads/2024/03/Terra-3-400x556.jpg.webp 400w" type="image/webp"/>
-<img alt="" loading="eager" role="presentation" sizes="(max-width: 614px) 100vw, 614px" src="/wp-content/uploads/2024/03/Terra-3.jpg" srcset="/wp-content/uploads/2024/03/Terra-3.jpg 614w, /wp-content/uploads/2024/03/Terra-3-400x556.jpg 400w"/>
-</picture>
-</div>
-</div>
-</div>
-<div class="flex items-center absolute lg:top-[calc(100vh_-_90px)] bottom-[30%] sm:bottom-[40%] lg:bottom-auto left-1/2 bg-black/10 backdrop-blur-27 px-10 py-8 rounded-[53px] -translate-x-1/2 z-[41] pointer-events-auto" data-target="interiors-image-switches">
-<div class="absolute top-8 bottom-8 left-0 w-1/2 bg-white/70 rounded-[53px] backdrop-blur-27" data-target="interiors-image-switches-background"></div>
-<div class="relative px-[28px] py-[14px] cursor-pointer" data-target="interiors-image-switch">
-<p class="font-sans font-regular text-16 leading-none tracking-1.6 uppercase text-dark-blue">Ultra</p>
-</div>
-<div class="relative px-[28px] py-[14px] cursor-pointer" data-target="interiors-image-switch">
-<p class="font-sans font-regular text-16 leading-none tracking-1.6 uppercase text-dark-blue">Terra</p>
-</div>
-</div>
-</section>
+
+            <!-- LUXiHOME SIGNATURE RESIDENCES (Morgan Sizzey Stacking Cards Showcase) -->
+            <section id="signature-projects" class="relative w-screen bg-[#0B1118] text-[#F5F3EF] z-[41] pointer-events-auto select-none" data-name="signature-projects" data-section-indicator-trigger="3">
+                <style>
+                    /* Scoped Morgan Sizzey Stacking Card Deck */
+                    #signature-projects {
+                        position: relative;
+                        width: 100vw;
+                        height: 380vh;
+                        background: #0B1118;
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                    }
+                    .lux-deck-stage {
+                        position: sticky;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100vh;
+                        height: 100dvh;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 20px 18px 20px;
+                        box-sizing: border-box;
+                        background: radial-gradient(circle at 50% 25%, #151D26 0%, #0B1118 75%);
+                    }
+                    @media (min-width: 768px) {
+                        .lux-deck-stage {
+                            padding: 36px 48px 32px;
+                        }
+                    }
+
+                    /* Top Stage Header */
+                    .lux-deck-header {
+                        width: 100%;
+                        max-width: 1040px;
+                        margin: 0 auto;
+                        text-align: center;
+                        z-index: 50;
+                        flex-shrink: 0;
+                    }
+                    .lux-deck-kicker {
+                        font-size: 10px;
+                        font-weight: 500;
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+                        color: #C5A880;
+                        margin-bottom: 4px;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+                    .lux-deck-kicker::before {
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background: #C5A880;
+                        box-shadow: 0 0 8px rgba(197, 168, 128, 0.8);
+                    }
+                    .lux-deck-heading {
+                        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+                        font-size: clamp(22px, 3.2vw, 42px);
+                        font-weight: 400;
+                        letter-spacing: clamp(2px, 0.3vw, 5px);
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                        margin: 0 0 10px 0;
+                        line-height: 1.05;
+                    }
+
+                    /* Interactive Deck Navigation Pills */
+                    .lux-deck-tabs {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                        padding: 4px 6px;
+                        background: rgba(255, 255, 255, 0.06);
+                        border: 1px solid rgba(255, 255, 255, 0.12);
+                        border-radius: 40px;
+                        backdrop-filter: blur(16px);
+                        -webkit-backdrop-filter: blur(16px);
+                        max-width: 100%;
+                        overflow-x: auto;
+                    }
+                    .lux-deck-tab {
+                        padding: 5px 12px;
+                        border-radius: 30px;
+                        font-size: 10.5px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        color: rgba(255, 255, 255, 0.6);
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        white-space: nowrap;
+                    }
+                    .lux-deck-tab.active {
+                        background: #FFFFFF;
+                        color: #0B1118;
+                        box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+                    }
+                    @media (min-width: 768px) {
+                        .lux-deck-tab {
+                            padding: 6px 16px;
+                            font-size: 11.5px;
+                        }
+                    }
+
+                    /* Deck Arena */
+                    .lux-deck-arena {
+                        position: relative;
+                        width: 100%;
+                        max-width: 980px;
+                        height: 100%;
+                        margin: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    @media (max-width: 767px) {
+                        .lux-deck-arena {
+                            max-height: calc(100dvh - 160px);
+                            min-height: 380px;
+                        }
+                    }
+
+                    /* Individual Stacking Card */
+                    .lux-deck-card {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 20px;
+                        overflow: hidden;
+                        background: #11161D;
+                        border: 1px solid rgba(197, 168, 128, 0.28);
+                        box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.88);
+                        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease;
+                        transform-origin: center bottom;
+                        will-change: transform, opacity, filter;
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-deck-card {
+                            display: grid;
+                            grid-template-columns: 1.15fr 1fr;
+                            height: 480px;
+                            border-radius: 24px;
+                        }
+                    }
+
+                    /* Card Media Area */
+                    .lux-card-visual {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        background: #080D12;
+                    }
+                    @media (max-width: 767px) {
+                        .lux-card-visual {
+                            flex: 1;
+                            margin: 10px 10px 0;
+                            border-radius: 14px;
+                            min-height: 160px;
+                        }
+                    }
+                    .lux-card-visual img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .lux-deck-card:hover .lux-card-visual img {
+                        transform: scale(1.04);
+                    }
+                    .lux-card-visual-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(180deg, rgba(14, 19, 24, 0.05) 0%, rgba(14, 19, 24, 0.3) 60%, rgba(14, 19, 24, 0.85) 100%);
+                        pointer-events: none;
+                    }
+
+                    /* Card Content Area */
+                    .lux-card-details {
+                        padding: 14px 18px 18px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        background: #11161D;
+                        box-sizing: border-box;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-card-details {
+                            padding: 36px 40px;
+                        }
+                    }
+
+                    /* Card Meta */
+                    .lux-card-badge-row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding-bottom: 10px;
+                        margin-bottom: 10px;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                    }
+                    @media (min-width: 768px) {
+                        .lux-card-badge-row {
+                            padding-bottom: 16px;
+                            margin-bottom: 22px;
+                        }
+                    }
+                    .lux-card-badge {
+                        font-size: 10.5px;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: #C5A880;
+                    }
+                    .lux-card-index {
+                        font-family: 'Cormorant Garamond', Georgia, serif;
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: rgba(255, 255, 255, 0.45);
+                    }
+
+                    /* Title & Subtitle */
+                    .lux-card-project-title {
+                        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+                        font-size: clamp(20px, 2.3vw, 34px);
+                        font-weight: 400;
+                        letter-spacing: clamp(1.5px, 0.25vw, 3px);
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                        line-height: 1.12;
+                        margin: 0 0 6px 0;
+                    }
+                    .lux-card-project-sub {
+                        font-size: 11.5px;
+                        font-weight: 300;
+                        letter-spacing: 0.8px;
+                        color: rgba(245, 243, 239, 0.72);
+                        line-height: 1.45;
+                        margin: 0 0 14px 0;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-card-project-sub {
+                            font-size: 13.5px;
+                            line-height: 1.55;
+                            margin-bottom: 28px;
+                        }
+                    }
+
+                    /* Action Button */
+                    .lux-card-action-row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: auto;
+                    }
+                    .lux-deck-explore-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 8px 14px 8px 18px;
+                        border-radius: 40px;
+                        background: rgba(255, 255, 255, 0.08);
+                        border: 1px solid rgba(197, 168, 128, 0.35);
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                        color: #FFFFFF;
+                        font-size: 11.5px;
+                        font-weight: 500;
+                        letter-spacing: 1.5px;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        cursor: pointer;
+                    }
+                    .lux-deck-explore-btn:hover {
+                        background: #FFFFFF;
+                        color: #0B1118;
+                        border-color: #FFFFFF;
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+                    }
+                    .lux-deck-explore-btn .btn-arrow-disc {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 26px;
+                        height: 26px;
+                        border-radius: 50%;
+                        background: #FFFFFF;
+                        color: #0B1118;
+                        transition: transform 0.3s ease;
+                    }
+                    .lux-deck-explore-btn:hover .btn-arrow-disc {
+                        background: #0B1118;
+                        color: #FFFFFF;
+                        transform: translateX(2px);
+                    }
+                </style>
+
+                <!-- Sticky 100vh Viewport Stage -->
+                <div class="lux-deck-stage">
+                    <!-- Top Stage Header -->
+                    <div class="lux-deck-header">
+                        <div class="lux-deck-kicker">Signature Portfolio · 2024 — 2026</div>
+                        <h2 class="lux-deck-heading">CURATED RESIDENCES</h2>
+                        <!-- Navigation Tabs -->
+                        <div class="lux-deck-tabs" role="tablist" aria-label="Residences Selection">
+                            <button type="button" class="lux-deck-tab active" data-card-target="0">01 · New Town</button>
+                            <button type="button" class="lux-deck-tab" data-card-target="1">02 · Salt Lake</button>
+                            <button type="button" class="lux-deck-tab" data-card-target="2">03 · Park Street</button>
+                            <button type="button" class="lux-deck-tab" data-card-target="3">04 · Rajarhat</button>
+                        </div>
+                    </div>
+
+                    <!-- Stacking Cards Arena -->
+                    <div class="lux-deck-arena" id="lux-deck-arena">
+                        <!-- Card 01: New Town -->
+                        <article class="lux-deck-card" data-card-index="0" style="z-index: 10;">
+                            <div class="lux-card-visual">
+                                <img src="/assets/img/projects/new-town-featured.jpg" alt="The New Town Residence" loading="eager" />
+                                <div class="lux-card-visual-overlay"></div>
+                            </div>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Action Area II · New Town</span>
+                                        <span class="lux-card-index">01 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE NEW TOWN RESIDENCE</h3>
+                                    <p class="lux-card-project-sub">
+                                        Bespoke contemporary sanctuary featuring architectural fluted wood paneling, designer cove lighting, and private courtyard suites.
+                                    </p>
+                                </div>
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/new-town/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 02: Salt Lake -->
+                        <article class="lux-deck-card" data-card-index="1" style="z-index: 20; transform: translate3d(0, 110%, 0);">
+                            <div class="lux-card-visual">
+                                <img src="/assets/img/projects/salt-lake-featured.jpg" alt="The Salt Lake Manor" loading="lazy" />
+                                <div class="lux-card-visual-overlay"></div>
+                            </div>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Sector V · Salt Lake</span>
+                                        <span class="lux-card-index">02 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE SALT LAKE MANOR</h3>
+                                    <p class="lux-card-project-sub">
+                                        Turnkey architectural grandeur appointed with monolithic travertine stone, bespoke brass joinery, and private entertaining salons.
+                                    </p>
+                                </div>
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/salt-lake/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 03: Park Street -->
+                        <article class="lux-deck-card" data-card-index="2" style="z-index: 30; transform: translate3d(0, 110%, 0);">
+                            <div class="lux-card-visual">
+                                <img src="/assets/img/projects/park-street-featured.jpg" alt="The Park Street Residence" loading="lazy" />
+                                <div class="lux-card-visual-overlay"></div>
+                            </div>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Park Street · Kolkata</span>
+                                        <span class="lux-card-index">03 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE PARK STREET RESIDENCE</h3>
+                                    <p class="lux-card-project-sub">
+                                        Colonial heritage elevated to modern quiet luxury — bespoke ceiling reliefs, chevron hardwood, and curated private lounges.
+                                    </p>
+                                </div>
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/park-street/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 04: Rajarhat -->
+                        <article class="lux-deck-card" data-card-index="3" style="z-index: 40; transform: translate3d(0, 110%, 0);">
+                            <div class="lux-card-visual">
+                                <img src="/assets/img/projects/rajarhat-featured.jpg" alt="The Rajarhat Estate" loading="lazy" />
+                                <div class="lux-card-visual-overlay"></div>
+                            </div>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Expressway · Rajarhat</span>
+                                        <span class="lux-card-index">04 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE RAJARHAT ESTATE</h3>
+                                    <p class="lux-card-project-sub">
+                                        Minimalist executive villa compound enveloped in architectural greenery, private plunge pools, and seamless indoor-outdoor flow.
+                                    </p>
+                                </div>
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/rajarhat/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Interactive Stacking Engine (Scroll & Touch) -->
+                <script>
+                (function() {
+                    var section = document.getElementById('signature-projects');
+                    if (!section) return;
+
+                    var cards = section.querySelectorAll('.lux-deck-card');
+                    var navTabs = section.querySelectorAll('.lux-deck-tab');
+                    var totalCards = cards.length;
+                    if (totalCards === 0) return;
+
+                    var isTicking = false;
+                    var activeIndex = 0;
+
+                    function updateDeck() {
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = rect.height - window.innerHeight;
+                        if (scrollDistance <= 0) return;
+
+                        // Normalized progress through section: 0.0 to 1.0
+                        var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
+                        var activeStep = progress * (totalCards - 1);
+                        activeIndex = Math.min(totalCards - 1, Math.floor(activeStep));
+
+                        cards.forEach(function(card, i) {
+                            if (i < activeIndex) {
+                                // Previous cards recede into background (Morgan Sizzey layered deck)
+                                var depth = activeIndex - i;
+                                var scale = Math.max(0.78, 1 - (depth * 0.06));
+                                var translateY = -depth * 14;
+                                var opacity = Math.max(0.2, 1 - (depth * 0.35));
+                                var brightness = Math.max(0.4, 1 - (depth * 0.22));
+
+                                card.style.transform = 'translate3d(0, ' + translateY + 'px, 0) scale(' + scale + ')';
+                                card.style.opacity = opacity;
+                                card.style.filter = 'brightness(' + brightness + ')';
+                                card.style.pointerEvents = 'none';
+                            } else if (i === activeIndex) {
+                                // Current active card in foreground
+                                var stepProgress = activeStep - i; // 0 to 1 as next card enters
+                                var scale = 1 - (stepProgress * 0.06);
+                                var translateY = -stepProgress * 14;
+                                var opacity = 1 - (stepProgress * 0.35);
+                                var brightness = 1 - (stepProgress * 0.22);
+
+                                card.style.transform = 'translate3d(0, ' + translateY + 'px, 0) scale(' + scale + ')';
+                                card.style.opacity = opacity;
+                                card.style.filter = 'brightness(' + brightness + ')';
+                                card.style.pointerEvents = stepProgress < 0.5 ? 'auto' : 'none';
+                            } else if (i === activeIndex + 1) {
+                                // Next card sliding up from bottom
+                                var stepProgress = activeStep - activeIndex; // 0 to 1
+                                var translateY = (1 - stepProgress) * 110;
+
+                                card.style.transform = 'translate3d(0, ' + translateY + '%, 0) scale(1)';
+                                card.style.opacity = 1;
+                                card.style.filter = 'brightness(1)';
+                                card.style.pointerEvents = stepProgress >= 0.5 ? 'auto' : 'none';
+                            } else {
+                                // Future cards waiting below
+                                card.style.transform = 'translate3d(0, 110%, 0) scale(1)';
+                                card.style.opacity = 0;
+                                card.style.filter = 'brightness(1)';
+                                card.style.pointerEvents = 'none';
+                            }
+                        });
+
+                        // Update tabs
+                        var currentTab = Math.min(totalCards - 1, Math.round(activeStep));
+                        navTabs.forEach(function(tab, idx) {
+                            if (idx === currentTab) {
+                                tab.classList.add('active');
+                            } else {
+                                tab.classList.remove('active');
+                            }
+                        });
+
+                        isTicking = false;
+                    }
+
+                    function onScroll() {
+                        if (!isTicking) {
+                            requestAnimationFrame(updateDeck);
+                            isTicking = true;
+                        }
+                    }
+
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    window.addEventListener('resize', onScroll, { passive: true });
+                    if (window.lenis) {
+                        window.lenis.on('scroll', onScroll);
+                    }
+                    updateDeck();
+
+                    // Smooth Jump on Tab Click
+                    function jumpToCard(targetIdx) {
+                        var targetProgress = targetIdx / (totalCards - 1);
+                        var sectionTop = section.offsetTop;
+                        var scrollDistance = section.offsetHeight - window.innerHeight;
+                        var targetScroll = sectionTop + (targetProgress * scrollDistance);
+                        if (window.lenis) {
+                            window.lenis.scrollTo(targetScroll, { duration: 0.9 });
+                        } else {
+                            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                        }
+                    }
+
+                    navTabs.forEach(function(tab, idx) {
+                        tab.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            jumpToCard(idx);
+                        });
+                    });
+
+                    // Mobile Touch Swipe Gesture Support
+                    var touchStartY = 0;
+                    var arena = document.getElementById('lux-deck-arena');
+                    if (arena) {
+                        arena.addEventListener('touchstart', function(e) {
+                            touchStartY = e.touches[0].clientY;
+                        }, { passive: true });
+
+                        arena.addEventListener('touchend', function(e) {
+                            var touchEndY = e.changedTouches[0].clientY;
+                            var diffY = touchStartY - touchEndY;
+                            if (Math.abs(diffY) > 45) {
+                                var nextIdx = diffY > 0 ? activeIndex + 1 : activeIndex - 1;
+                                if (nextIdx >= 0 && nextIdx < totalCards) {
+                                    jumpToCard(nextIdx);
+                                }
+                            }
+                        }, { passive: true });
+                    }
+                })();
+                </script>
+            </section>
 <section class="relative w-screen lg:h-dvh bg-sand py-40 sm:pt-40 sm:pb-0 lg:py-0 lg:rounded-b-none z-[40] sm:overflow-hidden lg:overflow-auto" data-name="interiors-growing-image">
 <div class="hidden sm:block relative w-full sm:h-[50vh] lg:h-full lg:[clip-path:inset(12%_8%_0%_8%)]" data-image-switch="" data-target="interiors-growing-image">
 <picture class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
