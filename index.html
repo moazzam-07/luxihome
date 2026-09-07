@@ -687,8 +687,25 @@ shore and sea</p>
                         margin: 0;
                     }
                     @media (max-width: 767px) {
+                        #residences-hero {
+                            min-height: 100vh;
+                            min-height: 100dvh;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            padding: 95px 24px 36px;
+                            box-sizing: border-box;
+                        }
                         .hero-center-box {
-                            top: 44%;
+                            position: relative;
+                            top: auto;
+                            left: auto;
+                            transform: none;
+                            margin: auto 0;
+                            padding: 0;
+                            width: 100%;
+                            text-align: center;
+                            z-index: 10;
                         }
                         .hero-editorial-kicker {
                             font-size: 10px;
@@ -696,18 +713,31 @@ shore and sea</p>
                             margin-bottom: 8px;
                         }
                         .hero-editorial-main {
-                            font-size: clamp(44px, 12.5vw, 68px);
-                            letter-spacing: 6px;
-                            margin-bottom: 10px;
+                            font-size: clamp(36px, 11vw, 54px);
+                            letter-spacing: 5px;
+                            margin-bottom: 8px;
                         }
                         .hero-editorial-rule {
                             width: 36px;
-                            margin-bottom: 10px;
+                            margin-bottom: 8px;
                         }
                         .hero-editorial-sub {
                             font-size: 10.5px;
                             letter-spacing: 2px;
-                            line-height: 1.45;
+                            line-height: 1.4;
+                        }
+                        .hero-bottom-bar {
+                            position: relative;
+                            bottom: auto;
+                            left: auto;
+                            right: auto;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 16px;
+                            z-index: 15;
+                            text-align: center;
                         }
                     }
                     .hero-bottom-bar {
@@ -721,15 +751,6 @@ shore and sea</p>
                         justify-content: space-between;
                         gap: 30px;
                         z-index: 15;
-                    }
-                    @media (max-width: 767px) {
-                        .hero-bottom-bar {
-                            bottom: 30px;
-                            padding: 0 24px;
-                            flex-direction: column-reverse;
-                            align-items: flex-start;
-                            gap: 18px;
-                        }
                     }
                     .hero-poetic-blurb {
                         max-width: 480px;
@@ -1007,531 +1028,374 @@ shore and sea</p>
                     </div>
                 </div>
 
-                <!-- QUARTER 2: THE MULTI-SLIDE ARCHITECTURAL SHOWCASE (Screen 2: 100vh) -->
-                <div id="residences-slider-section" class="relative w-screen h-screen overflow-hidden bg-[#0B1118] pointer-events-auto" data-target="banner-slides">
-
-                    <!-- Top Bar: Navigation Tabs (Desktop only) -->
-                    <nav class="showcase-nav-bar" aria-label="Residences Enclaves">
-                        <button type="button" id="btn-back-to-hero" class="showcase-overview-btn" title="Return to Overview">
-                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg" class="transform rotate-180">
-                                <path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                <path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                            </svg>
-                            <span>Overview</span>
-                        </button>
-                        <span class="showcase-divider"></span>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab active" data-tab-index="0">
-                            01 · Park Street
-                        </button>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab" data-tab-index="1">
-                            02 · Salt Lake
-                        </button>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab" data-tab-index="2">
-                            03 · New Town
-                        </button>
-                        <button type="button" class="showcase-nav-btn enclave-nav-tab" data-tab-index="3">
-                            04 · Rajarhat
-                        </button>
-                    </nav>
-
-                    <!-- Slide 1: Park Street -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 pointer-events-auto z-10" data-slide-index="0" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/park-street-hero.jpg" alt="Park Street Luxury Residence" class="w-full h-full object-cover object-center scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/25 to-black/40"></div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: Salt Lake -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none z-0" data-slide-index="1" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/salt-lake-2/photo_1_2026-09-04_15-17-45.jpg" alt="Salt Lake Luxury Villa" class="w-full h-full object-cover object-[center_30%] scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/30 to-black/50"></div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3: New Town -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none z-0" data-slide-index="2" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/new-town-featured.jpg" alt="New Town Modern Pavilion" class="w-full h-full object-cover object-[center_35%] scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/30 to-black/50"></div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4: Rajarhat -->
-                    <div class="residence-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none z-0" data-slide-index="3" data-target="banner-slide">
-                        <div class="relative w-full h-full overflow-hidden">
-                            <img src="/assets/img/projects/rajarhat/photo_6_2026-09-04_15-33-26.jpg" alt="Rajarhat Contemporary Residence" class="w-full h-full object-cover object-[center_35%] scale-100 transition-transform duration-1000 ease-out" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1118]/95 via-[#0B1118]/30 to-black/50"></div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Glassmorphic Card (Villa Elaine Masterpiece Blueprint) -->
-                    <div class="showcase-glass-card" data-target="banner-slide-content">
-                        <!-- Location Badge -->
-                        <div class="showcase-tag">
-                            <span class="gold-dot"></span>
-                            <span id="slide-enclave-tag">ENCLAVE 01 · PARK STREET</span>
-                        </div>
-
-                        <!-- Poetic Architectural Statement -->
-                        <p id="slide-poetic-quote" class="showcase-quote">
-                            Fluted teak, Calacatta marble, and soaring portals defining Kolkata's most prestigious heritage boulevard.
-                        </p>
-
-                        <!-- Action Row -->
-                        <div class="showcase-actions">
-                            <!-- Project CTA Button -->
-                            <a id="slide-project-link" href="/projects/park-street/" class="amali-pill-btn" style="padding: 8px 12px 8px 22px;">
-                                <span style="font-size: 12px;">Explore Project</span>
-                                <div class="btn-arrow-circle" style="width: 32px; height: 32px;">
-                                    <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                        <path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Slide Navigation Controls -->
-                            <div class="showcase-controls">
-                                <button type="button" id="btn-next-residence" class="showcase-next-btn" title="Next Residence">
-                                    <span>Next</span>
-                                    <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                        <path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                                    </svg>
-                                </button>
-
-                                <!-- Circular Progress Indicator -->
-                                <div id="progress-circle-trigger" class="showcase-progress-wheel" title="Click to advance residence">
-                                    <svg class="absolute inset-0 size-full transform -rotate-90" viewBox="0 0 60 60">
-                                        <circle cx="30" cy="30" fill="none" r="25" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5"></circle>
-                                        <circle id="progress-stroke-circle" cx="30" cy="30" fill="none" r="25" stroke="white" stroke-dasharray="157" stroke-dashoffset="117.75" stroke-width="2" style="transition: stroke-dashoffset 0.7s ease;"></circle>
-                                    </svg>
-                                    <span id="progress-text-display" style="position: relative; z-index: 10; font-size: 13px; font-weight: 500; color: #FFFFFF; transition: transform 0.3s ease;">
-                                        1/4
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Interactive Controller Script for Residences Showcase -->
-                <script>
-                (function() {
-                    var projects = [
-                        {
-                            name: "Park Street",
-                            tag: "ENCLAVE 01 · PARK STREET",
-                            quote: "Fluted teak, Calacatta marble, and soaring portals defining Kolkata's most prestigious heritage boulevard.",
-                            slug: "park-street"
-                        },
-                        {
-                            name: "Salt Lake",
-                            tag: "ENCLAVE 02 · SALT LAKE",
-                            quote: "Monolithic travertine facades and tranquil reflecting pools immersed in an aura of pure serenity.",
-                            slug: "salt-lake"
-                        },
-                        {
-                            name: "New Town",
-                            tag: "ENCLAVE 03 · NEW TOWN",
-                            quote: "Minimalist geometric glass pavilions bathed in daylight, framed by lush botanical sanctuaries.",
-                            slug: "new-town"
-                        },
-                        {
-                            name: "Rajarhat",
-                            tag: "ENCLAVE 04 · RAJARHAT",
-                            quote: "Warm natural timber, bespoke Italian craftsmanship, and seamless indoor-outdoor living.",
-                            slug: "rajarhat"
+                    <!-- Script: Hero CTA smooth-scroll to Stacking Deck -->
+                    <script>
+                    (function() {
+                        var heroBtn = document.getElementById('btn-hero-explore-collection');
+                        var projectsSection = document.getElementById('signature-projects');
+                        if (heroBtn && projectsSection) {
+                            heroBtn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                if (window.lenis) {
+                                    window.lenis.scrollTo(projectsSection, { duration: 1.2 });
+                                } else {
+                                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            });
                         }
-                    ];
-
-                    var currentIndex = 0;
-                    var total = projects.length;
-                    var slides = document.querySelectorAll('.residence-slide');
-                    var tabs = document.querySelectorAll('.enclave-nav-tab');
-                    var tagEl = document.getElementById('slide-enclave-tag');
-                    var quoteEl = document.getElementById('slide-poetic-quote');
-                    var linkEl = document.getElementById('slide-project-link');
-                    var progressStroke = document.getElementById('progress-stroke-circle');
-                    var progressText = document.getElementById('progress-text-display');
-                    var nextBtn = document.getElementById('btn-next-residence');
-                    var circleTrigger = document.getElementById('progress-circle-trigger');
-                    var heroBtn = document.getElementById('btn-hero-explore-collection');
-                    var sliderSection = document.getElementById('residences-slider-section');
-                    var heroSection = document.getElementById('residences-hero');
-                    var backBtn = document.getElementById('btn-back-to-hero');
-
-                    function goToSlide(index) {
-                        if (index < 0) index = total - 1;
-                        if (index >= total) index = 0;
-                        currentIndex = index;
-
-                        // Update slides opacity
-                        slides.forEach(function(s, idx) {
-                            if (idx === currentIndex) {
-                                s.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
-                                s.classList.add('opacity-100', 'pointer-events-auto', 'z-10');
-                            } else {
-                                s.classList.remove('opacity-100', 'pointer-events-auto', 'z-10');
-                                s.classList.add('opacity-0', 'pointer-events-none', 'z-0');
-                            }
-                        });
-
-                        // Update nav tabs
-                        tabs.forEach(function(t, idx) {
-                            if (idx === currentIndex) {
-                                t.classList.add('active');
-                            } else {
-                                t.classList.remove('active');
-                            }
-                        });
-
-                        // Update text and link with subtle transition
-                        if (quoteEl) {
-                            quoteEl.style.opacity = '0';
-                            setTimeout(function() {
-                                var p = projects[currentIndex];
-                                if (tagEl) tagEl.textContent = p.tag;
-                                quoteEl.textContent = p.quote;
-                                if (linkEl) linkEl.setAttribute('href', '/projects/' + p.slug + '/');
-                                quoteEl.style.opacity = '1';
-                            }, 200);
-                        }
-
-                        // Update circular SVG progress (circumference = 157)
-                        if (progressStroke) {
-                            var offset = 157 - (157 * (currentIndex + 1) / total);
-                            progressStroke.style.strokeDashoffset = offset;
-                        }
-                        if (progressText) {
-                            progressText.textContent = (currentIndex + 1) + '/' + total;
-                        }
-                    }
-
-                    if (nextBtn) {
-                        nextBtn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            goToSlide(currentIndex + 1);
-                        });
-                    }
-
-                    if (circleTrigger) {
-                        circleTrigger.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            goToSlide(currentIndex + 1);
-                        });
-                    }
-
-                    tabs.forEach(function(tab) {
-                        tab.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            var idx = parseInt(this.getAttribute('data-tab-index'), 10);
-                            if (!isNaN(idx)) goToSlide(idx);
-                        });
-                    });
-
-                    // Explore Collection smooth-scrolls to slider section
-                    if (heroBtn && sliderSection) {
-                        heroBtn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            if (window.lenis) {
-                                window.lenis.scrollTo(sliderSection, { duration: 1.2 });
-                            } else {
-                                sliderSection.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        });
-                    }
-
-                    // Back to Overview smooth-scrolls back to hero
-                    if (backBtn && heroSection) {
-                        backBtn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            if (window.lenis) {
-                                window.lenis.scrollTo(heroSection, { duration: 1.2 });
-                            } else {
-                                heroSection.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        });
-                    }
-
-                    // Keyboard navigation
-                    window.addEventListener('keydown', function(e) {
-                        var slider = document.getElementById('residences-slider-section');
-                        var rect = slider ? slider.getBoundingClientRect() : null;
-                        if (rect && rect.top < window.innerHeight && rect.bottom > 0) {
-                            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                                goToSlide(currentIndex + 1);
-                            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                                goToSlide(currentIndex - 1);
-                            }
-                        }
-                    });
-                    // Initial state
-                    goToSlide(0);
-                })();
-                </script>
-                </div>
+                    })();
+                    </script>
             </section>
 
-            <!-- LUXiHOME SIGNATURE RESIDENCES (Wizspace-Inspired Editorial Portfolio) -->
-            <section id="signature-projects" class="relative w-screen bg-[#0E1318] text-[#F5F3EF] py-80 sm:py-120 z-[41] pointer-events-auto" data-name="signature-projects" data-section-indicator-trigger="3">
+            <!-- LUXiHOME SIGNATURE RESIDENCES (Morgan Sizzey Stacking Cards Showcase) -->
+            <section id="signature-projects" class="relative w-screen bg-[#0B1118] text-[#F5F3EF] z-[41] pointer-events-auto select-none" data-name="signature-projects" data-section-indicator-trigger="3">
                 <style>
-                    /* Scoped Wizspace-Inspired Editorial Project Showcase */
-                    .lux-projects-container {
+                    /* Scoped Morgan Sizzey Stacking Card Deck */
+                    #signature-projects {
+                        position: relative;
+                        width: 100vw;
+                        height: 380vh;
+                        background: #0B1118;
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                    }
+                    .lux-deck-stage {
+                        position: sticky;
+                        top: 0;
+                        left: 0;
                         width: 100%;
-                        max-width: 1280px;
-                        margin: 0 auto;
-                        padding: 0 24px;
+                        height: 100vh;
+                        height: 100dvh;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 20px 18px 20px;
+                        box-sizing: border-box;
+                        background: radial-gradient(circle at 50% 25%, #151D26 0%, #0B1118 75%);
                     }
                     @media (min-width: 768px) {
-                        .lux-projects-container {
-                            padding: 0 48px;
+                        .lux-deck-stage {
+                            padding: 36px 48px 32px;
                         }
                     }
-                    @media (min-width: 1200px) {
-                        .lux-projects-container {
-                            padding: 0 64px;
-                        }
+
+                    /* Top Stage Header */
+                    .lux-deck-header {
+                        width: 100%;
+                        max-width: 1040px;
+                        margin: 0 auto;
+                        text-align: center;
+                        z-index: 50;
+                        flex-shrink: 0;
                     }
-                    .lux-projects-header {
-                        margin-bottom: 48px;
-                        max-width: 760px;
-                    }
-                    @media (max-width: 767px) {
-                        .lux-projects-header {
-                            margin-bottom: 32px;
-                        }
-                    }
-                    .lux-kicker {
-                        font-family: 'Inter', -apple-system, sans-serif;
-                        font-size: 11px;
+                    .lux-deck-kicker {
+                        font-size: 10px;
                         font-weight: 500;
                         letter-spacing: 3px;
                         text-transform: uppercase;
                         color: #C5A880;
-                        margin-bottom: 12px;
+                        margin-bottom: 4px;
                         display: inline-flex;
                         align-items: center;
                         gap: 8px;
                     }
-                    .lux-kicker::before {
+                    .lux-deck-kicker::before {
                         content: '';
-                        display: inline-block;
-                        width: 6px;
-                        height: 6px;
+                        width: 5px;
+                        height: 5px;
                         border-radius: 50%;
                         background: #C5A880;
-                        box-shadow: 0 0 8px rgba(197, 168, 128, 0.6);
+                        box-shadow: 0 0 8px rgba(197, 168, 128, 0.8);
                     }
-                    .lux-section-title {
+                    .lux-deck-heading {
                         font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-                        font-size: clamp(34px, 5.2vw, 68px);
+                        font-size: clamp(22px, 3.2vw, 42px);
                         font-weight: 400;
-                        line-height: 1.05;
-                        letter-spacing: clamp(2px, 0.4vw, 5px);
+                        letter-spacing: clamp(2px, 0.3vw, 5px);
                         text-transform: uppercase;
                         color: #FFFFFF;
-                        margin-bottom: 16px;
-                    }
-                    .lux-section-desc {
-                        font-family: 'Inter', -apple-system, sans-serif;
-                        font-size: clamp(14px, 1.2vw, 17px);
-                        font-weight: 300;
-                        line-height: 1.6;
-                        color: rgba(245, 243, 239, 0.72);
-                        max-width: 620px;
-                        margin: 0;
+                        margin: 0 0 10px 0;
+                        line-height: 1.05;
                     }
 
-                    /* Project Cards Flow (Wizspace Stacking / Grid Flow) */
-                    .lux-projects-grid {
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        gap: 45px;
+                    /* Interactive Deck Navigation Pills */
+                    .lux-deck-tabs {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                        padding: 4px 6px;
+                        background: rgba(255, 255, 255, 0.06);
+                        border: 1px solid rgba(255, 255, 255, 0.12);
+                        border-radius: 40px;
+                        backdrop-filter: blur(16px);
+                        -webkit-backdrop-filter: blur(16px);
+                        max-width: 100%;
+                        overflow-x: auto;
                     }
-                    @media (min-width: 900px) {
-                        .lux-projects-grid {
-                            gap: 65px;
+                    .lux-deck-tab {
+                        padding: 5px 12px;
+                        border-radius: 30px;
+                        font-size: 10.5px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        color: rgba(255, 255, 255, 0.6);
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        white-space: nowrap;
+                    }
+                    .lux-deck-tab.active {
+                        background: #FFFFFF;
+                        color: #0B1118;
+                        box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+                    }
+                    @media (min-width: 768px) {
+                        .lux-deck-tab {
+                            padding: 6px 16px;
+                            font-size: 11.5px;
                         }
                     }
-                    .lux-project-card {
-                        position: relative;
-                        background: #131920;
-                        border: 1px solid rgba(255, 255, 255, 0.08);
-                        border-radius: 18px;
-                        overflow: hidden;
-                        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
-                    }
-                    .lux-project-card:hover {
-                        border-color: rgba(197, 168, 128, 0.35);
-                        box-shadow: 0 30px 65px rgba(0, 0, 0, 0.65);
-                        transform: translateY(-4px);
-                    }
-                    .lux-card-media {
+
+                    /* Deck Arena */
+                    .lux-deck-arena {
                         position: relative;
                         width: 100%;
-                        aspect-ratio: 16 / 10;
-                        overflow: hidden;
-                        background: #0B1118;
+                        max-width: 980px;
+                        height: 100%;
+                        margin: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
                     @media (max-width: 767px) {
-                        .lux-card-media {
-                            aspect-ratio: 4 / 3;
+                        .lux-deck-arena {
+                            max-height: calc(100dvh - 160px);
+                            min-height: 380px;
                         }
                     }
-                    .lux-card-media img {
+
+                    /* Individual Stacking Card */
+                    .lux-deck-card {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 20px;
+                        overflow: hidden;
+                        background: #11161D;
+                        border: 1px solid rgba(197, 168, 128, 0.28);
+                        box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.88);
+                        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease;
+                        transform-origin: center bottom;
+                        will-change: transform, opacity, filter;
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-deck-card {
+                            display: grid;
+                            grid-template-columns: 1.15fr 1fr;
+                            height: 480px;
+                            border-radius: 24px;
+                        }
+                    }
+
+                    /* Card Media Area */
+                    .lux-card-visual {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        background: #080D12;
+                    }
+                    @media (max-width: 767px) {
+                        .lux-card-visual {
+                            flex: 1;
+                            margin: 10px 10px 0;
+                            border-radius: 14px;
+                            min-height: 160px;
+                        }
+                    }
+                    .lux-card-visual img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                         object-position: center;
-                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+                        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
                     }
-                    .lux-project-card:hover .lux-card-media img {
+                    .lux-deck-card:hover .lux-card-visual img {
                         transform: scale(1.04);
                     }
-                    .lux-card-media-overlay {
+                    .lux-card-visual-overlay {
                         position: absolute;
                         inset: 0;
-                        background: linear-gradient(180deg, rgba(14, 19, 24, 0.05) 0%, rgba(14, 19, 24, 0.25) 60%, rgba(14, 19, 24, 0.8) 100%);
+                        background: linear-gradient(180deg, rgba(14, 19, 24, 0.05) 0%, rgba(14, 19, 24, 0.3) 60%, rgba(14, 19, 24, 0.85) 100%);
                         pointer-events: none;
                     }
 
-                    /* Card Content & Metadata */
-                    .lux-card-content {
-                        padding: 24px 24px 28px;
-                        background: #131920;
+                    /* Card Content Area */
+                    .lux-card-details {
+                        padding: 14px 18px 18px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        background: #11161D;
+                        box-sizing: border-box;
                     }
                     @media (min-width: 768px) {
-                        .lux-card-content {
-                            padding: 30px 36px 36px;
+                        .lux-card-details {
+                            padding: 36px 40px;
                         }
                     }
-                    .lux-card-meta {
+
+                    /* Card Meta */
+                    .lux-card-badge-row {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        gap: 14px;
-                        margin-bottom: 16px;
-                        padding-bottom: 14px;
+                        padding-bottom: 10px;
+                        margin-bottom: 10px;
                         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
                     }
-                    .lux-card-year {
-                        font-family: 'Inter', -apple-system, sans-serif;
-                        font-size: 13px;
-                        font-weight: 500;
-                        letter-spacing: 1.5px;
-                        color: rgba(255, 255, 255, 0.5);
+                    @media (min-width: 768px) {
+                        .lux-card-badge-row {
+                            padding-bottom: 16px;
+                            margin-bottom: 22px;
+                        }
                     }
-                    .lux-card-location {
-                        font-family: 'Inter', -apple-system, sans-serif;
-                        font-size: 13px;
-                        font-weight: 400;
-                        letter-spacing: 1.5px;
+                    .lux-card-badge {
+                        font-size: 10.5px;
+                        font-weight: 600;
+                        letter-spacing: 2px;
                         text-transform: uppercase;
                         color: #C5A880;
                     }
-                    .lux-card-num {
+                    .lux-card-index {
                         font-family: 'Cormorant Garamond', Georgia, serif;
                         font-size: 18px;
                         font-weight: 400;
-                        color: rgba(255, 255, 255, 0.4);
+                        color: rgba(255, 255, 255, 0.45);
                     }
-                    .lux-card-title-row {
+
+                    /* Title & Subtitle */
+                    .lux-card-project-title {
+                        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+                        font-size: clamp(20px, 2.3vw, 34px);
+                        font-weight: 400;
+                        letter-spacing: clamp(1.5px, 0.25vw, 3px);
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                        line-height: 1.12;
+                        margin: 0 0 6px 0;
+                    }
+                    .lux-card-project-sub {
+                        font-size: 11.5px;
+                        font-weight: 300;
+                        letter-spacing: 0.8px;
+                        color: rgba(245, 243, 239, 0.72);
+                        line-height: 1.45;
+                        margin: 0 0 14px 0;
+                    }
+                    @media (min-width: 768px) {
+                        .lux-card-project-sub {
+                            font-size: 13.5px;
+                            line-height: 1.55;
+                            margin-bottom: 28px;
+                        }
+                    }
+
+                    /* Action Button */
+                    .lux-card-action-row {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        gap: 20px;
-                        flex-wrap: wrap;
+                        margin-top: auto;
                     }
-                    .lux-card-title {
-                        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-                        font-size: clamp(22px, 2.6vw, 36px);
-                        font-weight: 400;
-                        letter-spacing: clamp(2px, 0.25vw, 4px);
-                        text-transform: uppercase;
-                        color: #FFFFFF;
-                        margin: 0;
-                        line-height: 1.15;
-                    }
-                    .lux-card-btn {
+                    .lux-deck-explore-btn {
                         display: inline-flex;
                         align-items: center;
                         gap: 12px;
-                        padding: 8px 16px 8px 22px;
-                        border-radius: 60px;
+                        padding: 8px 14px 8px 18px;
+                        border-radius: 40px;
                         background: rgba(255, 255, 255, 0.08);
-                        border: 1px solid rgba(255, 255, 255, 0.16);
+                        border: 1px solid rgba(197, 168, 128, 0.35);
                         backdrop-filter: blur(12px);
                         -webkit-backdrop-filter: blur(12px);
                         color: #FFFFFF;
-                        font-family: 'Inter', -apple-system, sans-serif;
-                        font-size: 12px;
+                        font-size: 11.5px;
                         font-weight: 500;
                         letter-spacing: 1.5px;
                         text-transform: uppercase;
                         text-decoration: none;
-                        transition: all 0.3s ease;
-                        white-space: nowrap;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        cursor: pointer;
                     }
-                    .lux-card-btn:hover {
+                    .lux-deck-explore-btn:hover {
                         background: #FFFFFF;
-                        color: #0E1318;
+                        color: #0B1118;
                         border-color: #FFFFFF;
-                        transform: translateY(-1px);
-                        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
                     }
-                    .lux-card-btn-arrow {
+                    .lux-deck-explore-btn .btn-arrow-disc {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        width: 28px;
-                        height: 28px;
+                        width: 26px;
+                        height: 26px;
                         border-radius: 50%;
                         background: #FFFFFF;
-                        color: #0E1318;
+                        color: #0B1118;
                         transition: transform 0.3s ease;
                     }
-                    .lux-card-btn:hover .lux-card-btn-arrow {
-                        background: #0E1318;
+                    .lux-deck-explore-btn:hover .btn-arrow-disc {
+                        background: #0B1118;
                         color: #FFFFFF;
                         transform: translateX(2px);
                     }
                 </style>
 
-                <div class="lux-projects-container">
-                    <!-- Section Header -->
-                    <div class="lux-projects-header">
-                        <div class="lux-kicker">Signature Portfolio · 2024 — 2026</div>
-                        <h2 class="lux-section-title">CURATED RESIDENCES</h2>
-                        <p class="lux-section-desc">
-                            Quiet luxury tailored to your lifestyle. Step inside bespoke architectural residences and turnkey interiors crafted across Kolkata's most distinguished enclaves.
-                        </p>
+                <!-- Sticky 100vh Viewport Stage -->
+                <div class="lux-deck-stage">
+                    <!-- Top Stage Header -->
+                    <div class="lux-deck-header">
+                        <div class="lux-deck-kicker">Signature Portfolio · 2024 — 2026</div>
+                        <h2 class="lux-deck-heading">CURATED RESIDENCES</h2>
+                        <!-- Navigation Tabs -->
+                        <div class="lux-deck-tabs" role="tablist" aria-label="Residences Selection">
+                            <button type="button" class="lux-deck-tab active" data-card-target="0">01 · New Town</button>
+                            <button type="button" class="lux-deck-tab" data-card-target="1">02 · Salt Lake</button>
+                            <button type="button" class="lux-deck-tab" data-card-target="2">03 · Park Street</button>
+                            <button type="button" class="lux-deck-tab" data-card-target="3">04 · Rajarhat</button>
+                        </div>
                     </div>
 
-                    <!-- Projects Flow -->
-                    <div class="lux-projects-grid">
-                        <!-- Project 01: New Town -->
-                        <article class="lux-project-card">
-                            <div class="lux-card-media">
-                                <img src="/assets/img/projects/new-town-featured.jpg" alt="The New Town Residence" loading="lazy" />
-                                <div class="lux-card-media-overlay"></div>
+                    <!-- Stacking Cards Arena -->
+                    <div class="lux-deck-arena" id="lux-deck-arena">
+                        <!-- Card 01: New Town -->
+                        <article class="lux-deck-card" data-card-index="0" style="z-index: 10;">
+                            <div class="lux-card-visual">
+                                <img src="/assets/img/projects/new-town-featured.jpg" alt="The New Town Residence" loading="eager" />
+                                <div class="lux-card-visual-overlay"></div>
                             </div>
-                            <div class="lux-card-content">
-                                <div class="lux-card-meta">
-                                    <span class="lux-card-year">2024</span>
-                                    <span class="lux-card-location">Action Area II, New Town</span>
-                                    <span class="lux-card-num">01</span>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Action Area II · New Town</span>
+                                        <span class="lux-card-index">01 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE NEW TOWN RESIDENCE</h3>
+                                    <p class="lux-card-project-sub">
+                                        Bespoke contemporary sanctuary featuring architectural fluted wood paneling, designer cove lighting, and private courtyard suites.
+                                    </p>
                                 </div>
-                                <div class="lux-card-title-row">
-                                    <h3 class="lux-card-title">THE NEW TOWN RESIDENCE</h3>
-                                    <a href="/projects/new-town/" class="lux-card-btn">
-                                        <span>Explore</span>
-                                        <div class="lux-card-btn-arrow">
-                                            <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/new-town/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
                                             </svg>
                                         </div>
@@ -1540,24 +1404,28 @@ shore and sea</p>
                             </div>
                         </article>
 
-                        <!-- Project 02: Salt Lake -->
-                        <article class="lux-project-card">
-                            <div class="lux-card-media">
+                        <!-- Card 02: Salt Lake -->
+                        <article class="lux-deck-card" data-card-index="1" style="z-index: 20; transform: translate3d(0, 110%, 0);">
+                            <div class="lux-card-visual">
                                 <img src="/assets/img/projects/salt-lake-featured.jpg" alt="The Salt Lake Manor" loading="lazy" />
-                                <div class="lux-card-media-overlay"></div>
+                                <div class="lux-card-visual-overlay"></div>
                             </div>
-                            <div class="lux-card-content">
-                                <div class="lux-card-meta">
-                                    <span class="lux-card-year">2024</span>
-                                    <span class="lux-card-location">Sector V, Salt Lake</span>
-                                    <span class="lux-card-num">02</span>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Sector V · Salt Lake</span>
+                                        <span class="lux-card-index">02 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE SALT LAKE MANOR</h3>
+                                    <p class="lux-card-project-sub">
+                                        Turnkey architectural grandeur appointed with monolithic travertine stone, bespoke brass joinery, and private entertaining salons.
+                                    </p>
                                 </div>
-                                <div class="lux-card-title-row">
-                                    <h3 class="lux-card-title">THE SALT LAKE MANOR</h3>
-                                    <a href="/projects/salt-lake/" class="lux-card-btn">
-                                        <span>Explore</span>
-                                        <div class="lux-card-btn-arrow">
-                                            <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/salt-lake/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
                                             </svg>
                                         </div>
@@ -1566,24 +1434,28 @@ shore and sea</p>
                             </div>
                         </article>
 
-                        <!-- Project 03: Park Street -->
-                        <article class="lux-project-card">
-                            <div class="lux-card-media">
+                        <!-- Card 03: Park Street -->
+                        <article class="lux-deck-card" data-card-index="2" style="z-index: 30; transform: translate3d(0, 110%, 0);">
+                            <div class="lux-card-visual">
                                 <img src="/assets/img/projects/park-street-featured.jpg" alt="The Park Street Residence" loading="lazy" />
-                                <div class="lux-card-media-overlay"></div>
+                                <div class="lux-card-visual-overlay"></div>
                             </div>
-                            <div class="lux-card-content">
-                                <div class="lux-card-meta">
-                                    <span class="lux-card-year">2024</span>
-                                    <span class="lux-card-location">Park Street, Kolkata</span>
-                                    <span class="lux-card-num">03</span>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Park Street · Kolkata</span>
+                                        <span class="lux-card-index">03 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE PARK STREET RESIDENCE</h3>
+                                    <p class="lux-card-project-sub">
+                                        Colonial heritage elevated to modern quiet luxury — bespoke ceiling reliefs, chevron hardwood, and curated private lounges.
+                                    </p>
                                 </div>
-                                <div class="lux-card-title-row">
-                                    <h3 class="lux-card-title">THE PARK STREET RESIDENCE</h3>
-                                    <a href="/projects/park-street/" class="lux-card-btn">
-                                        <span>Explore</span>
-                                        <div class="lux-card-btn-arrow">
-                                            <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/park-street/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
                                             </svg>
                                         </div>
@@ -1592,24 +1464,28 @@ shore and sea</p>
                             </div>
                         </article>
 
-                        <!-- Project 04: Rajarhat -->
-                        <article class="lux-project-card">
-                            <div class="lux-card-media">
+                        <!-- Card 04: Rajarhat -->
+                        <article class="lux-deck-card" data-card-index="3" style="z-index: 40; transform: translate3d(0, 110%, 0);">
+                            <div class="lux-card-visual">
                                 <img src="/assets/img/projects/rajarhat-featured.jpg" alt="The Rajarhat Estate" loading="lazy" />
-                                <div class="lux-card-media-overlay"></div>
+                                <div class="lux-card-visual-overlay"></div>
                             </div>
-                            <div class="lux-card-content">
-                                <div class="lux-card-meta">
-                                    <span class="lux-card-year">2024</span>
-                                    <span class="lux-card-location">Rajarhat, Kolkata</span>
-                                    <span class="lux-card-num">04</span>
+                            <div class="lux-card-details">
+                                <div>
+                                    <div class="lux-card-badge-row">
+                                        <span class="lux-card-badge">Expressway · Rajarhat</span>
+                                        <span class="lux-card-index">04 / 04</span>
+                                    </div>
+                                    <h3 class="lux-card-project-title">THE RAJARHAT ESTATE</h3>
+                                    <p class="lux-card-project-sub">
+                                        Minimalist executive villa compound enveloped in architectural greenery, private plunge pools, and seamless indoor-outdoor flow.
+                                    </p>
                                 </div>
-                                <div class="lux-card-title-row">
-                                    <h3 class="lux-card-title">THE RAJARHAT ESTATE</h3>
-                                    <a href="/projects/rajarhat/" class="lux-card-btn">
-                                        <span>Explore</span>
-                                        <div class="lux-card-btn-arrow">
-                                            <svg fill="none" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                <div class="lux-card-action-row">
+                                    <a href="/projects/rajarhat/" class="lux-deck-explore-btn">
+                                        <span>Explore Project</span>
+                                        <div class="btn-arrow-disc">
+                                            <svg fill="none" height="9" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 1L4.9264 4.9264L1 8.8528" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
                                             </svg>
                                         </div>
@@ -1619,6 +1495,142 @@ shore and sea</p>
                         </article>
                     </div>
                 </div>
+
+                <!-- Interactive Stacking Engine (Scroll & Touch) -->
+                <script>
+                (function() {
+                    var section = document.getElementById('signature-projects');
+                    if (!section) return;
+
+                    var cards = section.querySelectorAll('.lux-deck-card');
+                    var navTabs = section.querySelectorAll('.lux-deck-tab');
+                    var totalCards = cards.length;
+                    if (totalCards === 0) return;
+
+                    var isTicking = false;
+                    var activeIndex = 0;
+
+                    function updateDeck() {
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = rect.height - window.innerHeight;
+                        if (scrollDistance <= 0) return;
+
+                        // Normalized progress through section: 0.0 to 1.0
+                        var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
+                        var activeStep = progress * (totalCards - 1);
+                        activeIndex = Math.min(totalCards - 1, Math.floor(activeStep));
+
+                        cards.forEach(function(card, i) {
+                            if (i < activeIndex) {
+                                // Previous cards recede into background (Morgan Sizzey layered deck)
+                                var depth = activeIndex - i;
+                                var scale = Math.max(0.78, 1 - (depth * 0.06));
+                                var translateY = -depth * 14;
+                                var opacity = Math.max(0.2, 1 - (depth * 0.35));
+                                var brightness = Math.max(0.4, 1 - (depth * 0.22));
+
+                                card.style.transform = 'translate3d(0, ' + translateY + 'px, 0) scale(' + scale + ')';
+                                card.style.opacity = opacity;
+                                card.style.filter = 'brightness(' + brightness + ')';
+                                card.style.pointerEvents = 'none';
+                            } else if (i === activeIndex) {
+                                // Current active card in foreground
+                                var stepProgress = activeStep - i; // 0 to 1 as next card enters
+                                var scale = 1 - (stepProgress * 0.06);
+                                var translateY = -stepProgress * 14;
+                                var opacity = 1 - (stepProgress * 0.35);
+                                var brightness = 1 - (stepProgress * 0.22);
+
+                                card.style.transform = 'translate3d(0, ' + translateY + 'px, 0) scale(' + scale + ')';
+                                card.style.opacity = opacity;
+                                card.style.filter = 'brightness(' + brightness + ')';
+                                card.style.pointerEvents = stepProgress < 0.5 ? 'auto' : 'none';
+                            } else if (i === activeIndex + 1) {
+                                // Next card sliding up from bottom
+                                var stepProgress = activeStep - activeIndex; // 0 to 1
+                                var translateY = (1 - stepProgress) * 110;
+
+                                card.style.transform = 'translate3d(0, ' + translateY + '%, 0) scale(1)';
+                                card.style.opacity = 1;
+                                card.style.filter = 'brightness(1)';
+                                card.style.pointerEvents = stepProgress >= 0.5 ? 'auto' : 'none';
+                            } else {
+                                // Future cards waiting below
+                                card.style.transform = 'translate3d(0, 110%, 0) scale(1)';
+                                card.style.opacity = 0;
+                                card.style.filter = 'brightness(1)';
+                                card.style.pointerEvents = 'none';
+                            }
+                        });
+
+                        // Update tabs
+                        var currentTab = Math.min(totalCards - 1, Math.round(activeStep));
+                        navTabs.forEach(function(tab, idx) {
+                            if (idx === currentTab) {
+                                tab.classList.add('active');
+                            } else {
+                                tab.classList.remove('active');
+                            }
+                        });
+
+                        isTicking = false;
+                    }
+
+                    function onScroll() {
+                        if (!isTicking) {
+                            requestAnimationFrame(updateDeck);
+                            isTicking = true;
+                        }
+                    }
+
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    window.addEventListener('resize', onScroll, { passive: true });
+                    if (window.lenis) {
+                        window.lenis.on('scroll', onScroll);
+                    }
+                    updateDeck();
+
+                    // Smooth Jump on Tab Click
+                    function jumpToCard(targetIdx) {
+                        var targetProgress = targetIdx / (totalCards - 1);
+                        var sectionTop = section.offsetTop;
+                        var scrollDistance = section.offsetHeight - window.innerHeight;
+                        var targetScroll = sectionTop + (targetProgress * scrollDistance);
+                        if (window.lenis) {
+                            window.lenis.scrollTo(targetScroll, { duration: 0.9 });
+                        } else {
+                            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                        }
+                    }
+
+                    navTabs.forEach(function(tab, idx) {
+                        tab.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            jumpToCard(idx);
+                        });
+                    });
+
+                    // Mobile Touch Swipe Gesture Support
+                    var touchStartY = 0;
+                    var arena = document.getElementById('lux-deck-arena');
+                    if (arena) {
+                        arena.addEventListener('touchstart', function(e) {
+                            touchStartY = e.touches[0].clientY;
+                        }, { passive: true });
+
+                        arena.addEventListener('touchend', function(e) {
+                            var touchEndY = e.changedTouches[0].clientY;
+                            var diffY = touchStartY - touchEndY;
+                            if (Math.abs(diffY) > 45) {
+                                var nextIdx = diffY > 0 ? activeIndex + 1 : activeIndex - 1;
+                                if (nextIdx >= 0 && nextIdx < totalCards) {
+                                    jumpToCard(nextIdx);
+                                }
+                            }
+                        }, { passive: true });
+                    }
+                })();
+                </script>
             </section>
 <!-- interiors -->
 <div class="relative">
