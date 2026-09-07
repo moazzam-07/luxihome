@@ -663,12 +663,13 @@ gsap__WEBPACK_IMPORTED_MODULE_2__["default"].registerPlugin(gsap_CustomEase__WEB
 function footerReveal() {
   var footer = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="site-footer"]');
   var headerMenu = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="header-menu"]');
+  if (!footer) return;
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["default"].create({
     id: 'footer-reveal',
     trigger: footer,
     start: _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.sm ? 'bottom bottom' : 'top top',
     end: function end() {
-      return "+=".concat(footer.offsetHeight, "px");
+      return "+=".concat(footer.offsetHeight || 0, "px");
     },
     scrub: true,
     pin: true,
@@ -687,13 +688,16 @@ function footerReveal() {
       // markers: true,
     }
   });
-  timeline.to(headerMenu, {
-    autoAlpha: 0,
-    duration: 0.75,
-    ease: 'none'
-  });
+  if (headerMenu) {
+    timeline.to(headerMenu, {
+      autoAlpha: 0,
+      duration: 0.75,
+      ease: 'none'
+    });
+  }
   setTimeout(function () {
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["default"].getById('footer-reveal').refresh();
+    var trigger = gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["default"].getById('footer-reveal');
+    if (trigger) trigger.refresh();
   }, 1000);
 }
 function Footer() {
@@ -4355,19 +4359,26 @@ function banner() {
   }
 
   // banner scroll
-  bannerScroll.addEventListener('click', function () {
-    var _window2;
-    var href = bannerScroll.getAttribute('href');
-    (_window2 = window) === null || _window2 === void 0 || (_window2 = _window2.lenis) === null || _window2 === void 0 || _window2.scrollTo((0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)(href).closest('div'), {
-      duration: 2,
-      offset: window.innerHeight
+  if (bannerScroll) {
+    bannerScroll.addEventListener('click', function () {
+      var _window2;
+      var href = bannerScroll.getAttribute('href');
+      var target = href ? (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)(href) : null;
+      var targetDiv = target ? (target.closest('div') || target) : null;
+      if (targetDiv) {
+        (_window2 = window) === null || _window2 === void 0 || (_window2 = _window2.lenis) === null || _window2 === void 0 || _window2.scrollTo(targetDiv, {
+          duration: 2,
+          offset: window.innerHeight
+        });
+      }
     });
-  });
+  }
 }
 function horizontalScroll() {
   var section = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="horizontal-scroll"]');
   var container = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-container"]');
   var textContainer = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-text-container"]');
+  if (!section || !container || !textContainer) return;
   var image1 = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-image-1"]');
   var image2 = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-image-2"]');
   var word1 = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-word-1"]');
@@ -4481,6 +4492,7 @@ function horizontalScroll() {
 function popupLinksText() {
   var popupLinks = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="popup-links"]');
   var popupLinksText = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="popup-links-text"]');
+  if (!popupLinks || !popupLinksText) return;
   var scrollTimeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
     scrollTrigger: {
       trigger: popupLinks,
@@ -4503,7 +4515,7 @@ function popupLinksText() {
 function transitionAnimation() {
   var popupLinks = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="popup-links"]');
   var lifestyleBanner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="lifestyle-banner"]');
-  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
+  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg || !popupLinks || !lifestyleBanner) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
     scrollTrigger: {
       trigger: lifestyleBanner,
@@ -4563,9 +4575,10 @@ function sectionIndicator() {
   if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.xl) return;
   var sectionTriggers = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qsa)('[data-section-indicator-trigger]');
   var banner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="home-banner"]');
+  var indicator = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator"]');
+  if (!banner || !indicator || !sectionTriggers || !sectionTriggers.length) return;
 
   // fade in indicator
-  var indicator = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator"]');
   var indicatorTimeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
     scrollTrigger: {
       trigger: banner,
@@ -4585,9 +4598,6 @@ function sectionIndicator() {
     var index = trigger.dataset.sectionIndicatorTrigger;
     var start;
     switch (index) {
-      // case '4':
-      //     start = 'top+=10px top';
-      //     break;
       default:
         start = 'top top';
         break;
@@ -4602,6 +4612,7 @@ function sectionIndicator() {
         var currentNumber = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator-number"][data-active="true"]');
         var matchingText = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)("[data-target=\"section-indicator-text\"][data-index=\"".concat(index, "\"]"));
         var matchingNumber = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)("[data-target=\"section-indicator-number\"][data-index=\"".concat(index, "\"]"));
+        if (!currentText || !currentNumber || !matchingText || !matchingNumber) return;
         currentText.dataset.active = 'false';
         matchingText.dataset.active = 'true';
         currentNumber.dataset.active = 'false';
@@ -4642,6 +4653,7 @@ function sectionIndicator() {
         var currentNumber = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator-number"][data-active="true"]');
         var matchingText = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)("[data-target=\"section-indicator-text\"][data-index=\"".concat(parseInt(index) - 1, "\"]"));
         var matchingNumber = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)("[data-target=\"section-indicator-number\"][data-index=\"".concat(parseInt(index) - 1, "\"]"));
+        if (!currentText || !currentNumber || !matchingText || !matchingNumber) return;
         currentText.dataset.active = 'false';
         matchingText.dataset.active = 'true';
         currentNumber.dataset.active = 'false';
@@ -4677,9 +4689,11 @@ function sectionIndicator() {
         }, 'start');
       }
     });
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__["default"].getById('section-indicator-trigger').refresh();
+    var sit = gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__["default"].getById('section-indicator-trigger');
+    if (sit) sit.refresh();
     window.addEventListener('load', function () {
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__["default"].getById('section-indicator-trigger').refresh();
+      var sitLoad = gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__["default"].getById('section-indicator-trigger');
+      if (sitLoad) sitLoad.refresh();
     });
   });
 }
@@ -4803,6 +4817,7 @@ function bannerImages() {
 function growingImage() {
   var section = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="interiors-growing-image"]');
   var growingImage = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="interiors-growing-image"]');
+  if (!section || !growingImage) return;
   var popupButtons = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qsa)('a[data-target="popup-button"]', section);
   if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
@@ -4815,23 +4830,7 @@ function growingImage() {
       },
       scrub: true,
       pin: true
-      // markers: true,
-      // onEnterBack: () => {
-      //     gsap.to(section, {
-      //         borderRadius: '0px',
-      //         duration: 0.1,
-      //         ease: 'none'
-      //     });
-      // }
     }
-    // onComplete: () => {
-    //     gsap.to(section, {
-    //         borderRadius: '30px',
-    //         overflow: 'hidden',
-    //         duration: 0.1,
-    //         ease: 'none'
-    //     });
-    // }
   });
   timeline.addLabel('start').fromTo(growingImage, {
     clipPath: 'inset(12% 8% 0% 8%)'
@@ -4850,13 +4849,14 @@ function footerReveal() {
   var headerMenu = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="header-menu"]');
   var sectionIndicator = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator"]');
   var teasers = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="teasers"]');
+  if (!footer) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
     scrollTrigger: {
       id: 'footer-reveal',
       trigger: footer,
       start: 'bottom bottom',
       end: function end() {
-        return "+=".concat(footer.offsetHeight, "px");
+        return "+=".concat((footer ? footer.offsetHeight : 200), "px");
       },
       scrub: true,
       pin: true,
@@ -4868,23 +4868,25 @@ function footerReveal() {
     duration: 0.75,
     ease: 'none'
   }, 'start');
-  var timeline2 = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
-    scrollTrigger: {
-      id: 'footer-reveal-2',
-      trigger: teasers,
-      start: 'top bottom',
-      end: function end() {
-        return "+=100px";
-      },
-      scrub: true,
-      invalidateOnRefresh: true
-    }
-  });
-  timeline2.addLabel('start').to(sectionIndicator, {
-    autoAlpha: 0,
-    duration: 0.05,
-    ease: 'none'
-  }, 'start');
+  if (teasers) {
+    var timeline2 = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
+      scrollTrigger: {
+        id: 'footer-reveal-2',
+        trigger: teasers,
+        start: 'top bottom',
+        end: function end() {
+          return "+=100px";
+        },
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    });
+    timeline2.addLabel('start').to(sectionIndicator, {
+      autoAlpha: 0,
+      duration: 0.05,
+      ease: 'none'
+    }, 'start');
+  }
 }
 function imagesSwitch() {
   var switchesContainer = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="interiors-image-switches"]');
@@ -4892,6 +4894,7 @@ function imagesSwitch() {
   var switches = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qsa)('[data-target="interiors-image-switch"]');
   var growingImagesSection = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="interiors-growing-image"]');
   var imagesToSwitch = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qsa)('[data-image-switch]');
+  if (!switchesContainer || !switchesBackground || !switches || !switches.length) return;
   var firstSwitch = switches[0];
 
   // set background to width of first switch
@@ -4930,32 +4933,37 @@ function imagesSwitch() {
   });
 
   // pin switches container
-  if (_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) {
+  if (_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg && growingImagesSection) {
     gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].create({
       trigger: growingImagesSection,
       start: function start() {
-        return gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].getById('interiors-banner').end;
+        var b = gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].getById('interiors-banner');
+        return b ? b.end : 0;
       },
-      // end: () => `+=${growingImagesSection.offsetHeight + (window.innerHeight / 2)}px`,
       end: function end() {
-        return gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].getById('interiors-growing-image').end;
+        var g = gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].getById('interiors-growing-image');
+        return g ? g.end : 0;
       },
       pin: switchesContainer,
       pinSpacing: false,
       pinReparent: true
-      // markers: true
     });
   }
 }
 function Interiors() {
-  var body = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('body.page-template-home');
-  if (!body) return;
-  body.style.backgroundColor = '#DAD0C1';
-  console.log('interiors js');
-  bannerImages();
-  growingImage();
-  footerReveal();
-  imagesSwitch();
+  try {
+    var body = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('body.page-template-home');
+    if (!body) return;
+    if (document.querySelector('[data-name="interiors-banner"]')) {
+      console.log('interiors js');
+      bannerImages();
+      growingImage();
+      footerReveal();
+      imagesSwitch();
+    }
+  } catch (e) {
+    console.warn('Interiors safely bypassed:', e);
+  }
 }
 /* harmony default export */ __webpack_exports__["default"] = (Interiors);
 
@@ -5002,7 +5010,7 @@ function _horizontalScroll() {
           horizontalScrollContent = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="island-horizontal-scroll-content"]');
           image = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('img', horizontalScrollContainer);
           overlayContent = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="island-overlay-content"]');
-          if (_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) {
+          if (_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg && islandBanner && horizontalScrollContainer && horizontalScrollContent && image && overlayContent) {
             _context.next = 7;
             break;
           }
@@ -5013,10 +5021,11 @@ function _horizontalScroll() {
               id: 'island-horizontal-scroll',
               trigger: islandBanner,
               start: function start() {
-                return gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].getById('lifestyle-banner').end;
+                var lb = gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].getById('lifestyle-banner');
+                return lb ? lb.end : 'top top';
               },
               end: function end() {
-                return "+=".concat(image.offsetWidth + window.innerHeight);
+                return "+=".concat((image ? image.offsetWidth : 0) + window.innerHeight);
               },
               scrub: true,
               pin: true,
@@ -5049,11 +5058,11 @@ function _horizontalScroll() {
 function transitionAnimation() {
   var islandBanner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="island-banner"]');
   var interiorsBanner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="interiors-banner"]');
-  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
+  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg || !islandBanner || !interiorsBanner) return;
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__["default"].create({
     trigger: interiorsBanner,
     start: function start(self) {
-      return self.previous().end;
+      return (self && self.previous && self.previous()) ? self.previous().end : 'top top';
     },
     end: function end() {
       return "+=".concat(window.innerHeight);
@@ -5107,12 +5116,13 @@ function mobileIslandZoom() {
   var islandMobileFloatingContent = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="island-mobile-floating-content"]');
   var islandMobileContent = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="island-mobile-content"]');
   var islandMobileImage = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="island-mobile-image"]');
+  if (!islandBanner || !islandMobileFloatingContent || !islandMobileContent || !islandMobileImage) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
     scrollTrigger: {
       trigger: islandMobileFloatingContent,
       start: 'top top',
       end: function end() {
-        return "+=".concat(islandMobileContent.offsetHeight / 2);
+        return "+=".concat((islandMobileContent && islandMobileContent.offsetHeight) ? islandMobileContent.offsetHeight / 2 : 0);
       },
       scrub: true,
       pin: islandBanner
@@ -5138,9 +5148,9 @@ function Island() {
   var body = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('body.page-template-home');
   if (!body) return;
   console.log('island js');
-  horizontalScroll();
-  transitionAnimation();
-  mobileIslandZoom();
+  try { horizontalScroll(); } catch (e) { console.warn('horizontalScroll error:', e); }
+  try { transitionAnimation(); } catch (e) { console.warn('transitionAnimation error:', e); }
+  try { mobileIslandZoom(); } catch (e) { console.warn('mobileIslandZoom error:', e); }
 }
 /* harmony default export */ __webpack_exports__["default"] = (Island);
 
@@ -5181,7 +5191,7 @@ function transitionAnimation() {
   var lifeStyleBanner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="lifestyle-banner"]');
   var islandBanner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="island-banner"]');
   var transitioned = false;
-  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
+  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg || !lifeStyleBanner || !islandBanner) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
     scrollTrigger: {
       trigger: lifeStyleBanner,
@@ -5242,6 +5252,7 @@ function boatSvgPathDrag() {
   var startCircle = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('svg #start-circle', container);
   var endCircle = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('svg #end-circle', container);
   var boatCircle = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('svg #boat-circle', container);
+  if (!movingGroup || !svg || !path || !boatCircle || typeof svg.getBBox !== 'function') return;
   var bounds = svg.getBBox();
   var clamp = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].utils.clamp(0, 1);
   var prevProgress = 0;
@@ -5330,9 +5341,9 @@ function Lifestyle() {
   var body = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('body.page-template-home');
   if (!body) return;
   console.log('lifestyle js');
-  transitionAnimation();
-  boatSvgPathDrag();
-  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__["default"].sort();
+  try { transitionAnimation(); } catch(e) { console.warn('lifestyle transition error:', e); }
+  try { boatSvgPathDrag(); } catch(e) { console.warn('lifestyle boat error:', e); }
+  try { gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__["default"].sort(); } catch(e) {}
 }
 /* harmony default export */ __webpack_exports__["default"] = (Lifestyle);
 
@@ -7934,11 +7945,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var $qs = function $qs(css) {
   var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
-  return parent.querySelector(css);
+  if (!parent || typeof parent.querySelector !== 'function') return null;
+  try { return parent.querySelector(css); } catch (e) { return null; }
 };
 var $qsa = function $qsa(css) {
   var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
-  return parent.querySelectorAll(css);
+  if (!parent || typeof parent.querySelectorAll !== 'function') return [];
+  try { return Array.from(parent.querySelectorAll(css)); } catch (e) { return []; }
 };
 
 
@@ -8014,11 +8027,15 @@ var VideoScrub = /*#__PURE__*/function () {
     key: "setup",
     value: function setup() {
       var _this3 = this;
-      window.lenis.on('scroll', function (self) {
-        if (_this3.video && _this3.video.duration) {
-          _this3.scrubVideo(self.progress);
-        }
-      });
+      if (window.lenis) {
+        window.lenis.on('scroll', function (self) {
+          try {
+            if (_this3.video && _this3.video.duration) {
+              _this3.scrubVideo(self.progress);
+            }
+          } catch(e) {}
+        });
+      }
     }
   }]);
   return VideoScrub;
@@ -69793,11 +69810,20 @@ function smoothScroll() {
 
   // requestAnimationFrame(raf)
 
-  lenis.on('scroll', gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_30__["default"].update);
+  lenis.on('scroll', function (e) {
+    try {
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_30__["default"].update(e);
+    } catch (err) {}
+  });
   gsap__WEBPACK_IMPORTED_MODULE_29__["default"].ticker.add(function (time) {
-    lenis.raf(time * 1000);
+    try {
+      lenis.raf(time * 1000);
+    } catch (err) {}
   });
   gsap__WEBPACK_IMPORTED_MODULE_29__["default"].ticker.lagSmoothing(0);
+  try {
+    gsap__WEBPACK_IMPORTED_MODULE_29__["default"].config({ nullTargetWarn: false });
+  } catch (err) {}
   window.lenis = lenis;
 }
 function barbaTransitions() {
