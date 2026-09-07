@@ -150,15 +150,15 @@ export default function Component({
             }}
             className="relative bg-white overflow-hidden flex items-center justify-center max-w-[1920px] mx-auto will-change-transform backface-hidden preserve-3d shadow-xl"
           >
-            {/* Header Overlay (Amali Design System Theme) */}
-            <div className="absolute top-6 sm:top-10 left-0 right-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-              <span className="text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-[#726152] font-normal mb-2 font-['DIN',sans-serif]">
+            {/* Header Overlay (Amali Design System Theme with frosted glass card) */}
+            <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center justify-center text-center px-5 py-3 sm:px-8 sm:py-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-[#1A2026]/10 shadow-lg pointer-events-none max-w-[90vw] sm:max-w-lg">
+              <span className="text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-[#726152] font-medium mb-1 font-['DIN',sans-serif]">
                 Bespoke Interior Craftsmanship
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-light tracking-[0.22em] uppercase text-[#1A2026] font-['aviano-sans',sans-serif]">
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-light tracking-[0.2em] uppercase text-[#1A2026] font-['aviano-sans',sans-serif]">
                 {title}
               </h2>
-              <p className="text-xs sm:text-sm text-[#3D4854] tracking-wider mt-2 max-w-md font-['DIN',sans-serif]">
+              <p className="text-[11px] sm:text-xs text-[#3D4854] tracking-wider mt-1 max-w-sm font-['DIN',sans-serif]">
                 {subtitle}
               </p>
             </div>
@@ -167,9 +167,7 @@ export default function Component({
               className="absolute inset-0 flex justify-center items-center pointer-events-none"
               style={{ perspective: "1000px" }}
             >
-              {/* Ambient White Vignette Masking */}
-              <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_0_110px_140px_-40px_rgba(255,255,255,1),inset_0_-110px_140px_-40px_rgba(255,255,255,1)]" />
-              <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_110px_0_130px_-40px_rgba(255,255,255,1),inset_-110px_0_130px_-40px_rgba(255,255,255,1)]" />
+              {/* White fog masks removed for 100% crystal clear photography visibility */}
 
               {/* Parallax Image Grid Matrix */}
               <motion.div
