@@ -17469,3 +17469,174 @@ html.lenis {
 .\[\&_svg_path\]\:stroke-dark-blue svg path {
   stroke: #1A2026;
 }
+
+/* ==========================================================================
+   LUXiHOME: Continuous Infinite Marquee Reel (Right to Left Auto-Scroll)
+   ========================================================================== */
+.marquee-track-wrap {
+  position: relative !important;
+  display: flex !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow: hidden !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  padding: 15px 0 !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%) !important;
+}
+
+.marquee-track {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: row !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  -webkit-flex-wrap: nowrap !important;
+      -ms-flex-wrap: nowrap !important;
+          flex-wrap: nowrap !important;
+  gap: 20px !important;
+  width: -webkit-max-content !important;
+  width: -moz-max-content !important;
+  width: max-content !important;
+  will-change: transform !important;
+  -webkit-animation: continuousScroll 42s linear infinite !important;
+          animation: continuousScroll 42s linear infinite !important;
+  -webkit-animation-play-state: running !important;
+          animation-play-state: running !important;
+}
+
+@-webkit-keyframes continuousScroll {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes continuousScroll {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.saltlake-reel-card {
+  position: relative !important;
+  width: 260px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
+  height: 360px !important;
+  -webkit-flex-shrink: 0 !important;
+      -ms-flex-negative: 0 !important;
+          flex-shrink: 0 !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background-color: #1a2026 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14) !important;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+}
+
+@media (min-width: 640px) {
+  .saltlake-reel-card {
+    width: 310px !important;
+    min-width: 310px !important;
+    max-width: 310px !important;
+    height: 420px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .saltlake-reel-card {
+    width: 350px !important;
+    min-width: 350px !important;
+    max-width: 350px !important;
+    height: 470px !important;
+  }
+}
+
+.saltlake-reel-card:hover {
+  -webkit-transform: translateY(-6px) !important;
+          transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22) !important;
+}
+
+.saltlake-reel-card img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.saltlake-reel-card:hover img {
+  -webkit-transform: scale(1.06) !important;
+          transform: scale(1.06) !important;
+}
+
+.saltlake-reel-overlay {
+  position: absolute !important;
+  bottom: 12px !important;
+  left: 12px !important;
+  right: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  background: rgba(26, 32, 38, 0.72) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+          backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.saltlake-reel-tag {
+  display: block !important;
+  font-size: 10px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: #c7a97e !important;
+  margin-bottom: 3px !important;
+}
+
+.saltlake-reel-name {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .saltlake-reel-overlay {
+    bottom: 14px !important;
+    left: 14px !important;
+    right: 14px !important;
+    padding: 12px 16px !important;
+  }
+  .saltlake-reel-tag {
+    font-size: 11px !important;
+  }
+  .saltlake-reel-name {
+    font-size: 14px !important;
+  }
+}

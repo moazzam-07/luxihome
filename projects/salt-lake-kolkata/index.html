@@ -271,45 +271,85 @@ var gf_legacy = {"is_legacy":""};
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
 }
 .marquee-track {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
     display: flex !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+    -webkit-flex-direction: row !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-flex-wrap: nowrap !important;
+        -ms-flex-wrap: nowrap !important;
+            flex-wrap: nowrap !important;
     gap: 20px !important;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
     width: max-content !important;
     will-change: transform !important;
-    animation: continuousScroll 50s linear infinite !important;
+    -webkit-animation: continuousScroll 38s linear infinite !important;
+            animation: continuousScroll 38s linear infinite !important;
+    -webkit-animation-play-state: running !important;
+            animation-play-state: running !important;
 }
-.marquee-track:hover,
-.marquee-track:active {
-    animation-play-state: paused !important;
+
+@-webkit-keyframes continuousScroll {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
+    }
 }
 @keyframes continuousScroll {
     0% {
-        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translate3d(-50%, 0, 0);
+        -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
     }
 }
 .saltlake-reel-card {
     position: relative !important;
     width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
     height: 360px !important;
-    flex-shrink: 0 !important;
+    -webkit-flex-shrink: 0 !important;
+        -ms-flex-negative: 0 !important;
+            flex-shrink: 0 !important;
     border-radius: 18px !important;
     overflow: hidden !important;
     background-color: #1a2026 !important;
     box-shadow: 0 10px 28px rgba(0,0,0,0.14) !important;
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
 }
 @media (min-width: 640px) {
     .saltlake-reel-card {
         width: 310px !important;
+        min-width: 310px !important;
+        max-width: 310px !important;
         height: 420px !important;
     }
 }
 @media (min-width: 1024px) {
     .saltlake-reel-card {
         width: 350px !important;
+        min-width: 350px !important;
+        max-width: 350px !important;
         height: 470px !important;
     }
+}
+.saltlake-reel-card:hover {
+    -webkit-transform: translateY(-6px) !important;
+            transform: translateY(-6px) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22) !important;
 }
 .saltlake-reel-card img {
     position: absolute !important;
@@ -318,10 +358,12 @@ var gf_legacy = {"is_legacy":""};
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .saltlake-reel-card:hover img {
-    transform: scale(1.05) !important;
+    -webkit-transform: scale(1.06) !important;
+            transform: scale(1.06) !important;
 }
 
 /* Glassmorphic Apple-mindset structured caption badge (Never bleeds outside card) */
@@ -1356,33 +1398,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 800);
 
-    // 1. Continuous Auto-Scroll Reel with Touch & Mouse pause support
+    // 1. Continuous Uninterrupted Auto-Scroll Reel (Right to Left)
     const track = document.getElementById('marqueeTrack');
-    const container = document.getElementById('marqueeContainer');
-    
-    if (track && container) {
-        let resumeTimeout = null;
-
-        const pauseMarquee = () => {
-            track.style.animationPlayState = 'paused';
-        };
-
-        const resumeMarquee = () => {
-            track.style.animationPlayState = 'running';
-        };
-
-        container.addEventListener('mouseenter', pauseMarquee);
-        container.addEventListener('mouseleave', resumeMarquee);
-        
-        container.addEventListener('touchstart', () => {
-            pauseMarquee();
-            if (resumeTimeout) clearTimeout(resumeTimeout);
-        }, { passive: true });
-
-        container.addEventListener('touchend', () => {
-            if (resumeTimeout) clearTimeout(resumeTimeout);
-            resumeTimeout = setTimeout(resumeMarquee, 1800);
-        }, { passive: true });
+    if (track) {
+        track.style.animationPlayState = 'running';
+        track.style.webkitAnimationPlayState = 'running';
     }
 
     // 2. Room sections smooth scroll reveal
