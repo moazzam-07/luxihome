@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="no-js" lang="en-GB">
 <head>
@@ -117,7 +117,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5" id="gform_theme_components-css" media="all" rel="stylesheet"/>
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5" id="gform_theme-css" media="all" rel="stylesheet"/>
 <link href="/wp-content/themes/AmaliProperties/assets/css/styles.css" id="screen-css-css" media="all" rel="stylesheet"/>
-<link as="video" href="/assets/video/luxihome-hero-video.mp4" rel="preload" type="video/mp4"/>
+<link href="/assets/video/luxihome-hero-video.mp4" rel="prefetch" type="video/mp4"/>
 <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 <script defer="defer" id="gform_json-js" src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
 <script id="gform_gravityforms-js-extra">
@@ -1032,7 +1032,7 @@ shore and sea</p>
                     <script>
                     (function() {
                         var heroBtn = document.getElementById('btn-hero-explore-collection');
-                        var gallerySection = document.getElementById('lux-unfurling-gallery') || document.getElementById('signature-projects');
+                        var gallerySection = document.getElementById('lux-circular-gallery') || document.getElementById('signature-projects');
                         if (heroBtn && gallerySection) {
                             heroBtn.addEventListener('click', function(e) {
                                 e.preventDefault();
@@ -1047,22 +1047,23 @@ shore and sea</p>
                     </script>
             </section>
 
-            <!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR ARCHIVE (Amali Design System Theme) -->
-            <section id="lux-unfurling-gallery" class="relative w-screen bg-[#FFFFFF] text-[#1A2026] z-[35] pointer-events-auto select-none" data-name="interiors-unfurling-gallery">
+            <!-- LUXiHOME 3D CIRCULAR ARCHITECTURAL GALLERY (Amali Design System Theme & Mobile-Optimized) -->
+            <section id="lux-circular-gallery" class="relative w-screen bg-[#FFFFFF] text-[#1A2026] z-[35] pointer-events-auto select-none" data-name="circular-gallery">
                 <style>
-                    #lux-unfurling-gallery {
+                    #lux-circular-gallery {
                         position: relative;
                         width: 100vw;
-                        height: 360vh;
+                        height: 250vh;
                         background: #FFFFFF;
                         font-family: 'DIN', -apple-system, BlinkMacSystemFont, sans-serif;
                     }
                     @media (max-width: 767px) {
-                        #lux-unfurling-gallery {
-                            height: 280vh;
+                        #lux-circular-gallery {
+                            height: 200vh;
                         }
                     }
-                    .lux-unfurl-stage {
+
+                    .lux-circ-stage {
                         position: sticky;
                         top: 0;
                         left: 0;
@@ -1071,415 +1072,729 @@ shore and sea</p>
                         height: 100dvh;
                         overflow: hidden;
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
                         justify-content: center;
                         background: #FFFFFF;
+                        user-select: none;
+                        touch-action: pan-y;
                     }
-                    .lux-unfurl-banner {
-                        position: relative;
-                        background: #FFFFFF;
-                        overflow: hidden;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        max-width: 1920px;
-                        margin: 0 auto;
-                        will-change: width, height, border-radius, transform;
-                        backface-visibility: hidden;
-                        box-shadow: 0 25px 70px -15px rgba(26, 32, 38, 0.08);
-                        border: none;
-                    }
-                    .lux-unfurl-header {
+
+                    /* Subtle Luxury Amali Ambient Ground */
+                    .lux-circ-backdrop {
                         position: absolute;
-                        top: 16px;
+                        inset: 0;
+                        pointer-events: none;
+                        background: radial-gradient(circle at 50% 48%, rgba(218, 208, 193, 0.28) 0%, rgba(255, 255, 255, 0.95) 65%, #FFFFFF 100%);
+                        z-index: 1;
+                    }
+
+                    /* Header Elements */
+                    .lux-circ-header {
+                        position: absolute;
+                        top: 24px;
                         left: 50%;
                         transform: translateX(-50%);
-                        z-index: 35;
+                        z-index: 25;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         text-align: center;
-                        width: calc(100% - 28px);
-                        max-width: 500px;
-                        padding: 12px 18px 14px;
-                        background: rgba(255, 255, 255, 0.94);
-                        backdrop-filter: blur(24px);
-                        -webkit-backdrop-filter: blur(24px);
-                        border-radius: 16px;
-                        border: 1px solid rgba(26, 32, 38, 0.08);
-                        box-shadow: 0 8px 25px rgba(26, 32, 38, 0.06);
-                        pointer-events: none;
+                        width: 90%;
+                        max-width: 720px;
+                        pointer-events: auto;
                     }
-                    @media (min-width: 768px) {
-                        .lux-unfurl-header {
-                            top: 24px;
-                            padding: 16px 28px 18px;
+                    @media (max-width: 640px) {
+                        .lux-circ-header {
+                            top: 14px;
+                            width: 94%;
                         }
                     }
-                    .lux-unfurl-kicker {
-                        font-family: 'DIN', sans-serif;
+                    .lux-circ-kicker {
+                        font-family: 'aviano-sans', sans-serif;
                         font-size: 10px;
                         letter-spacing: 0.28em;
                         text-transform: uppercase;
                         color: #726152;
                         font-weight: 500;
-                        margin-bottom: 4px;
+                        margin-bottom: 6px;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
                     }
-                    .lux-unfurl-title {
+                    .lux-circ-kicker::before,
+                    .lux-circ-kicker::after {
+                        content: '';
+                        display: inline-block;
+                        width: 18px;
+                        height: 1px;
+                        background: #C2A26A;
+                        opacity: 0.7;
+                    }
+                    .lux-circ-title {
                         font-family: 'aviano-sans', sans-serif;
-                        font-size: clamp(20px, 4.8vw, 38px);
+                        font-size: clamp(20px, 3.2vw, 38px);
                         font-weight: 300;
-                        letter-spacing: 0.2em;
-                        text-transform: uppercase;
+                        letter-spacing: 0.12em;
                         color: #1A2026;
-                        margin: 0;
+                        text-transform: uppercase;
                         line-height: 1.15;
+                        margin: 0 0 6px 0;
                     }
-                    .lux-unfurl-sub {
+                    .lux-circ-sub {
                         font-family: 'DIN', sans-serif;
-                        font-size: clamp(11px, 2.5vw, 13px);
-                        font-weight: 300;
-                        color: #3D4854;
-                        letter-spacing: 0.06em;
-                        margin-top: 4px;
-                        max-width: 460px;
-                        line-height: 1.4;
+                        font-size: 12px;
+                        letter-spacing: 0.08em;
+                        color: #5C7A92;
+                        margin: 0;
+                        font-weight: 400;
                     }
-                    .lux-matrix-viewport {
-                        position: absolute;
-                        inset: 0;
+                    @media (max-width: 640px) {
+                        .lux-circ-sub {
+                            display: none;
+                        }
+                    }
+
+                    /* 3D Cylindrical Arena */
+                    .lux-circ-viewport {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
                         display: flex;
-                        justify-content: center;
                         align-items: center;
-                        perspective: 1000px;
-                        pointer-events: none;
-                    }
-                    /* White fog masks removed completely for 100% crystal clear visibility */
-                    .lux-ambient-mask-v,
-                    .lux-ambient-mask-h {
-                        display: none !important;
-                    }
-                    .lux-matrix-grid {
-                        display: flex;
-                        gap: 14px;
                         justify-content: center;
-                        align-items: center;
-                        width: 140vw;
-                        height: 160vh;
-                        transform-origin: center center;
+                        perspective: 1800px;
+                        perspective-origin: 50% 50%;
+                        z-index: 10;
+                        cursor: grab;
+                    }
+                    .lux-circ-viewport.is-grabbing {
+                        cursor: grabbing;
+                    }
+                    @media (max-width: 1023px) {
+                        .lux-circ-viewport {
+                            perspective: 1300px;
+                        }
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-viewport {
+                            perspective: 950px;
+                        }
+                    }
+
+                    .lux-circ-cylinder {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
                         transform-style: preserve-3d;
                         will-change: transform;
-                        backface-visibility: hidden;
                     }
-                    @media (min-width: 768px) {
-                        .lux-matrix-grid {
-                            gap: 24px;
-                            width: 120vw;
-                            height: 150vh;
-                        }
-                    }
-                    .lux-matrix-col {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 14px;
-                        width: 32vw;
-                        min-width: 150px;
-                        pointer-events: auto;
-                        will-change: transform;
-                    }
-                    @media (min-width: 768px) {
-                        .lux-matrix-col {
-                            gap: 24px;
-                            width: 22vw;
-                            min-width: 220px;
-                        }
-                    }
-                    .lux-photo-card {
-                        width: 100%;
-                        height: 195px;
-                        flex-shrink: 0;
-                        background: #FFFFFF;
-                        border: 1px solid rgba(26, 32, 38, 0.12);
-                        border-radius: 10px;
+
+                    /* Architectural 3D Cards */
+                    .lux-circ-card {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: 290px;
+                        height: 400px;
+                        margin-left: -145px;
+                        margin-top: -195px;
+                        border-radius: 18px;
                         overflow: hidden;
-                        position: relative;
+                        background: #1A2026;
+                        box-shadow: 0 25px 50px -12px rgba(11, 17, 24, 0.28), 0 0 0 1px rgba(26, 32, 38, 0.08);
+                        transform-style: preserve-3d;
+                        backface-visibility: hidden;
                         cursor: pointer;
-                        box-shadow: 0 10px 25px -4px rgba(26, 32, 38, 0.12);
-                        transition: transform 0.35s ease, box-shadow 0.35s ease;
-                        will-change: transform;
+                        transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), filter 0.28s ease, transform 0.2s ease;
+                        will-change: transform, opacity, filter;
                     }
-                    @media (min-width: 640px) {
-                        .lux-photo-card {
-                            height: 275px;
-                            border-radius: 12px;
+                    @media (max-width: 1023px) {
+                        .lux-circ-card {
+                            width: 245px;
+                            height: 340px;
+                            margin-left: -122px;
+                            margin-top: -165px;
+                            border-radius: 16px;
                         }
                     }
-                    @media (min-width: 1024px) {
-                        .lux-photo-card {
-                            height: 380px;
+                    @media (max-width: 640px) {
+                        .lux-circ-card {
+                            width: 205px;
+                            height: 290px;
+                            margin-left: -102px;
+                            margin-top: -140px;
                             border-radius: 14px;
                         }
                     }
-                    .lux-photo-card:hover {
-                        transform: scale(1.03);
-                        box-shadow: 0 20px 45px -8px rgba(26, 32, 38, 0.22);
+
+                    .lux-circ-card:hover {
+                        box-shadow: 0 32px 65px -10px rgba(11, 17, 24, 0.38), 0 0 0 1px rgba(194, 162, 106, 0.4);
                     }
-                    .lux-photo-card img {
+
+                    .lux-circ-img {
+                        position: absolute;
+                        inset: 0;
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        opacity: 1 !important;
-                        filter: none !important;
-                        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                        object-position: center;
+                        transform: scale(1.02);
+                        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
                     }
-                    .lux-photo-card:hover img {
-                        transform: scale(1.06);
+                    .lux-circ-card:hover .lux-circ-img {
+                        transform: scale(1.08);
                     }
-                    .lux-photo-overlay {
+
+                    .lux-circ-overlay {
                         position: absolute;
                         inset: 0;
-                        background: linear-gradient(to top, rgba(26, 32, 38, 0.8) 0%, transparent 50%);
-                        opacity: 0;
-                        display: flex;
-                        align-items: flex-end;
-                        padding: 14px;
-                        transition: opacity 0.3s ease;
+                        background: linear-gradient(to top, rgba(11, 17, 24, 0.92) 0%, rgba(11, 17, 24, 0.45) 45%, rgba(11, 17, 24, 0.05) 80%, transparent 100%);
+                        z-index: 2;
+                        pointer-events: none;
                     }
-                    .lux-photo-card:hover .lux-photo-overlay {
-                        opacity: 1;
-                    }
-                    .lux-photo-tag {
-                        background: rgba(255, 255, 255, 0.95);
-                        backdrop-filter: blur(14px);
-                        color: #1A2026;
-                        font-family: 'DIN', sans-serif;
-                        font-size: 10px;
-                        font-weight: 500;
-                        letter-spacing: 0.2em;
-                        text-transform: uppercase;
-                        border: 1px solid rgba(26, 32, 38, 0.15);
-                        border-radius: 40px;
+
+                    .lux-circ-badge {
+                        position: absolute;
+                        top: 14px;
+                        left: 14px;
+                        z-index: 3;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
                         padding: 5px 12px;
+                        border-radius: 40px;
+                        background: rgba(11, 17, 24, 0.65);
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                        border: 1px solid rgba(255, 255, 255, 0.15);
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 9px;
+                        letter-spacing: 0.18em;
+                        color: #C2A26A;
+                        text-transform: uppercase;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-badge {
+                            top: 10px;
+                            left: 10px;
+                            padding: 4px 10px;
+                            font-size: 8px;
+                        }
+                    }
+
+                    .lux-circ-info {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 20px;
+                        z-index: 3;
+                        color: #FFFFFF;
+                        pointer-events: none;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-info {
+                            padding: 14px;
+                        }
+                    }
+
+                    .lux-circ-item-kicker {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 9px;
+                        letter-spacing: 0.22em;
+                        color: #DAD0C1;
+                        text-transform: uppercase;
+                        margin-bottom: 4px;
+                        display: block;
+                    }
+                    .lux-circ-item-title {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        letter-spacing: 0.08em;
+                        color: #FFFFFF;
+                        line-height: 1.25;
+                        margin: 0 0 6px 0;
+                        text-transform: uppercase;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-item-title {
+                            font-size: 13px;
+                            margin-bottom: 4px;
+                        }
+                    }
+                    .lux-circ-item-spec {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 11px;
+                        color: rgba(255, 255, 255, 0.72);
+                        letter-spacing: 0.04em;
+                        margin: 0;
+                        line-height: 1.4;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-item-spec {
+                            font-size: 10px;
+                        }
+                    }
+
+                    /* Bottom Controller & Navigation Bar */
+                    .lux-circ-nav {
+                        position: absolute;
+                        bottom: 24px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 25;
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        padding: 8px 18px;
+                        border-radius: 50px;
+                        background: rgba(255, 255, 255, 0.88);
+                        backdrop-filter: blur(20px);
+                        -webkit-backdrop-filter: blur(20px);
+                        box-shadow: 0 15px 35px -8px rgba(26, 32, 38, 0.15), 0 0 0 1px rgba(26, 32, 38, 0.06);
+                        pointer-events: auto;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-nav {
+                            bottom: 14px;
+                            gap: 12px;
+                            padding: 6px 14px;
+                        }
+                    }
+
+                    .lux-circ-btn {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        border: 1px solid rgba(26, 32, 38, 0.12);
+                        background: #FFFFFF;
+                        color: #1A2026;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    }
+                    .lux-circ-btn:hover {
+                        background: #1A2026;
+                        color: #FFFFFF;
+                        border-color: #1A2026;
+                        transform: scale(1.06);
+                    }
+                    .lux-circ-btn svg {
+                        width: 14px;
+                        height: 14px;
+                        stroke: currentColor;
+                        fill: none;
+                        stroke-width: 2;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                    }
+
+                    .lux-circ-indicator {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .lux-circ-ring-box {
+                        position: relative;
+                        width: 32px;
+                        height: 32px;
+                    }
+                    .lux-circ-ring-svg {
+                        transform: rotate(-90deg);
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .lux-circ-ring-bg {
+                        fill: none;
+                        stroke: rgba(26, 32, 38, 0.12);
+                        stroke-width: 2.5;
+                    }
+                    .lux-circ-ring-progress {
+                        fill: none;
+                        stroke: #C2A26A;
+                        stroke-width: 2.5;
+                        stroke-linecap: round;
+                        stroke-dasharray: 87.96;
+                        stroke-dashoffset: 87.96;
+                        transition: stroke-dashoffset 0.25s ease;
+                    }
+
+                    .lux-circ-counter {
+                        font-family: 'aviano-sans', sans-serif;
+                        font-size: 11px;
+                        font-weight: 500;
+                        letter-spacing: 0.15em;
+                        color: #1A2026;
+                        white-space: nowrap;
+                    }
+
+                    .lux-circ-swipe-hint {
+                        font-family: 'DIN', sans-serif;
+                        font-size: 11px;
+                        letter-spacing: 0.08em;
+                        color: #726152;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                    @media (max-width: 640px) {
+                        .lux-circ-swipe-hint {
+                            display: none;
+                        }
                     }
                 </style>
 
-                <div class="lux-unfurl-stage">
-                    <div class="lux-unfurl-banner" id="lux-unfurl-banner" style="width: 92vw; height: 85vh; border-radius: 32px;">
-                        <!-- Header Overlay with clean frosted glass backing -->
-                        <div class="lux-unfurl-header">
-                            <span class="lux-unfurl-kicker">Bespoke Interior Craftsmanship</span>
-                            <h2 class="lux-unfurl-title">THE INTERIOR ARCHIVE</h2>
-                            <p class="lux-unfurl-sub">Over 70+ Handcrafted Sanctuaries Across Kolkata's Premier Enclaves</p>
-                        </div>
+                <!-- Stage with 100dvh safe height -->
+                <div class="lux-circ-stage" id="lux-circ-stage">
+                    <div class="lux-circ-backdrop"></div>
 
-                        <!-- Perspective 3D Viewport -->
-                        <div class="lux-matrix-viewport">
-                            <!-- 3D Matrix Container -->
-                            <div class="lux-matrix-grid" id="lux-matrix-grid">
-                                <!-- Column 1 -->
-                                <div class="lux-matrix-col" id="lux-matrix-col-1">
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_1_2026-09-06_14-27-28.jpg" alt="LUXiHOME Drawing Lounge" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Drawing Lounge</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_4_2026-09-06_14-27-28.jpg" alt="LUXiHOME Master Suite" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Master Suite</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_7_2026-09-06_14-27-28.jpg" alt="LUXiHOME Fluted Wall Design" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Fluted Wall Feature</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_10_2026-09-06_14-27-28.jpg" alt="LUXiHOME Dining Room" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Dining</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work/photo_1_2026-09-04_15-01-37.jpg" alt="Salt Lake Architectural Villa" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Salt Lake Villa</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg" alt="Salt Lake Sky Terrace" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Terrace</span></div>
-                                    </div>
+                    <!-- Amali Header -->
+                    <div class="lux-circ-header">
+                        <span class="lux-circ-kicker">Curated Sanctuaries</span>
+                        <h2 class="lux-circ-title">The Circular Gallery</h2>
+                        <p class="lux-circ-sub">A 360° cylindrical perspective across Kolkata & Dubai's most visionary private enclaves</p>
+                    </div>
+
+                    <!-- 3D Cylindrical Viewport -->
+                    <div class="lux-circ-viewport" id="lux-circ-viewport" aria-label="3D Circular Architectural Gallery">
+                        <div class="lux-circ-cylinder" id="lux-circ-cylinder">
+                            <!-- 8 Curated Architectural Sanctuaries -->
+                            <div class="lux-circ-card" data-idx="0" data-project="Amali Island Beachfront">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/GF-Entrance-View-1-6.jpg" alt="Amali Island Sanctuary Dubai" loading="eager"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Dubai • 01</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">The World Islands</span>
+                                    <h3 class="lux-circ-item-title">Amali Island Sanctuary</h3>
+                                    <p class="lux-circ-item-spec">Ultra-luxury beachfront villa • 14,200 SQ.FT.</p>
                                 </div>
+                            </div>
 
-                                <!-- Column 2 -->
-                                <div class="lux-matrix-col" id="lux-matrix-col-2">
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_2_2026-09-06_14-27-28.jpg" alt="Designer TV Lounge" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Media Lounge</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_12_2026-09-06_14-27-28.jpg" alt="Luxury Modular Kitchen" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Modular Kitchen</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_15_2026-09-06_14-27-28.jpg" alt="Spa Bathroom" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Spa Bathroom</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_18_2026-09-06_14-27-28.jpg" alt="Italian Marble Dressing" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Marble Dressing Suite</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work/photo_2_2026-09-04_15-01-37.jpg" alt="Salt Lake Bedroom" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Guest Bedroom</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work/photo_9_2026-09-04_15-01-37.jpg" alt="Salt Lake Double Height" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Atrium View</span></div>
-                                    </div>
+                            <div class="lux-circ-card" data-idx="1" data-project="The New Town Residence">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/03/GF-Living-Room-View-2-EXT02-1.jpg" alt="The New Town Residence Kolkata" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Kolkata • 02</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Action Area II</span>
+                                    <h3 class="lux-circ-item-title">New Town Residence</h3>
+                                    <p class="lux-circ-item-spec">Contemporary courtyard sanctuary • 9,800 SQ.FT.</p>
                                 </div>
+                            </div>
 
-                                <!-- Column 3 -->
-                                <div class="lux-matrix-col" id="lux-matrix-col-3">
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_22_2026-09-06_14-27-28.jpg" alt="Acoustic Ceiling Lounge" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Executive Suite</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_25_2026-09-06_14-27-28.jpg" alt="Walk-in Wardrobe" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Couture Wardrobe</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_28_2026-09-06_14-27-28.jpg" alt="Warm Teak Hall" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Teak Foyer</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_32_2026-09-06_14-27-28.jpg" alt="Backlit Onyx Bar" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Backlit Onyx Lounge</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work2/photo_1_2026-09-04_15-17-45.jpg" alt="Turnkey Villa Project" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Turnkey Interior</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work2/photo_8_2026-09-04_15-17-45.jpg" alt="Private Courtyard" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Courtyard Verandah</span></div>
-                                    </div>
+                            <div class="lux-circ-card" data-idx="2" data-project="Terra Signature Estate">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/03/Terra-1.jpg" alt="Terra Signature Estate" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Signature • 03</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Waterfront Shoreline</span>
+                                    <h3 class="lux-circ-item-title">Terra Signature Estate</h3>
+                                    <p class="lux-circ-item-spec">Monolithic travertine haven • 11,500 SQ.FT.</p>
                                 </div>
+                            </div>
 
-                                <!-- Column 4 -->
-                                <div class="lux-matrix-col" id="lux-matrix-col-4">
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_36_2026-09-06_14-27-28.jpg" alt="Penthouse View" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Sky Sanctuary</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_40_2026-09-06_14-27-28.jpg" alt="Bespoke Study" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Private Library</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_45_2026-09-06_14-27-28.jpg" alt="Bronze Mirror Corridor" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Mirrored Gallery</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/residential.pic/photo_50_2026-09-06_14-27-28.jpg" alt="Minimalist Bedroom" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Zen Sanctuary</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg" alt="Artisanal Joinery" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Artisanal Joinery</span></div>
-                                    </div>
-                                    <div class="lux-photo-card">
-                                        <img src="/pictures.testimonals/salt.lake.work2/photo_14_2026-09-04_15-17-45.jpg" alt="Marble Bathroom" loading="lazy" />
-                                        <div class="lux-photo-overlay"><span class="lux-photo-tag">Statuary Marble</span></div>
-                                    </div>
+                            <div class="lux-circ-card" data-idx="3" data-project="The Salt Lake Villa">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/1-1.jpg" alt="Salt Lake Villa Kolkata" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Kolkata • 04</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Sector V Enclave</span>
+                                    <h3 class="lux-circ-item-title">The Salt Lake Manor</h3>
+                                    <p class="lux-circ-item-spec">Modernist architectural manor • 8,600 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="4" data-project="The Courtyard Pavilion">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/2-1.jpg" alt="The Courtyard Pavilion Alipore" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Alipore • 05</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Alipore Heritage Enclave</span>
+                                    <h3 class="lux-circ-item-title">Courtyard Pavilion</h3>
+                                    <p class="lux-circ-item-spec">Double-height atrium living • 10,400 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="5" data-project="The Azure Coastline Haven">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/03/Terra-3.jpg" alt="Azure Coastline Haven" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Dubai • 06</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Island Shoreline</span>
+                                    <h3 class="lux-circ-item-title">Azure Coastline Haven</h3>
+                                    <p class="lux-circ-item-spec">Private deepwater berth • 13,000 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="6" data-project="The Park Street Penthouse">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/3-4-2.jpg" alt="Park Street Penthouse Kolkata" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Kolkata • 07</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Park Street Corridor</span>
+                                    <h3 class="lux-circ-item-title">Skyline Observatory</h3>
+                                    <p class="lux-circ-item-spec">Triplex glass sky mansion • 7,900 SQ.FT.</p>
+                                </div>
+                            </div>
+
+                            <div class="lux-circ-card" data-idx="7" data-project="The Island Clubhouse">
+                                <img class="lux-circ-img" src="/wp-content/uploads/2024/04/GF-Entrance-View-1-5.jpg" alt="The Island Clubhouse" loading="lazy"/>
+                                <div class="lux-circ-overlay"></div>
+                                <span class="lux-circ-badge">Members • 08</span>
+                                <div class="lux-circ-info">
+                                    <span class="lux-circ-item-kicker">Private Island Living</span>
+                                    <h3 class="lux-circ-item-title">The Grand Clubhouse</h3>
+                                    <p class="lux-circ-item-spec">Curated wellness sanctuary • 16,000 SQ.FT.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Bottom Nav & Indicator Bar -->
+                    <div class="lux-circ-nav">
+                        <button type="button" class="lux-circ-btn" id="lux-circ-prev" aria-label="Previous sanctuary">
+                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+
+                        <div class="lux-circ-indicator">
+                            <div class="lux-circ-ring-box">
+                                <svg class="lux-circ-ring-svg" viewBox="0 0 32 32">
+                                    <circle class="lux-circ-ring-bg" cx="16" cy="16" r="14"></circle>
+                                    <circle class="lux-circ-ring-progress" id="lux-circ-progress" cx="16" cy="16" r="14"></circle>
+                                </svg>
+                            </div>
+                            <span class="lux-circ-counter" id="lux-circ-counter">01 / 08</span>
+                        </div>
+
+                        <button type="button" class="lux-circ-btn" id="lux-circ-next" aria-label="Next sanctuary">
+                            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+
+                        <span class="lux-circ-swipe-hint">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            Drag or Scroll to Rotate
+                        </span>
+                    </div>
                 </div>
 
-                <!-- 3D Unfurling & Parallax Physics Engine -->
+                <!-- Circular Gallery Engine (Mobile-First Touch + Scroll + Auto-Rotation) -->
                 <script>
                 (function() {
-                    var section = document.getElementById('lux-unfurling-gallery');
-                    if (!section) return;
+                    var section = document.getElementById('lux-circular-gallery');
+                    var stage = document.getElementById('lux-circ-stage');
+                    var viewport = document.getElementById('lux-circ-viewport');
+                    var cylinder = document.getElementById('lux-circ-cylinder');
+                    var counterEl = document.getElementById('lux-circ-counter');
+                    var progressRing = document.getElementById('lux-circ-progress');
+                    var prevBtn = document.getElementById('lux-circ-prev');
+                    var nextBtn = document.getElementById('lux-circ-next');
 
-                    var banner = document.getElementById('lux-unfurl-banner');
-                    var matrix = document.getElementById('lux-matrix-grid');
-                    var col1 = document.getElementById('lux-matrix-col-1');
-                    var col2 = document.getElementById('lux-matrix-col-2');
-                    var col3 = document.getElementById('lux-matrix-col-3');
-                    var col4 = document.getElementById('lux-matrix-col-4');
+                    if (!section || !cylinder) return;
 
-                    var isTicking = false;
+                    var cards = Array.from(cylinder.querySelectorAll('.lux-circ-card'));
+                    var totalItems = cards.length;
+                    var anglePerItem = 360 / totalItems;
 
-                    function updateParallax() {
+                    // State
+                    var currentRotation = 0;
+                    var targetRotation = 0;
+                    var radius = 520;
+                    var isDragging = false;
+                    var startX = 0;
+                    var lastX = 0;
+                    var velocity = 0;
+                    var lastUserInteractTime = Date.now();
+                    var autoRotateSpeed = 0.022; // subtle ambient rotation
+                    var ringCircumference = 2 * Math.PI * 14; // ~87.96
+
+                    // Calculate radius and layout dynamically according to viewport size
+                    function updateDimensions() {
+                        var w = window.innerWidth;
+                        if (w < 480) {
+                            radius = Math.max(210, Math.min(240, w * 0.56));
+                        } else if (w < 768) {
+                            radius = Math.max(270, Math.min(340, w * 0.48));
+                        } else if (w < 1024) {
+                            radius = Math.max(360, Math.min(440, w * 0.42));
+                        } else {
+                            radius = Math.max(480, Math.min(620, w * 0.36));
+                        }
+
+                        // Position each card on the cylinder
+                        cards.forEach(function(card, i) {
+                            var itemAngle = i * anglePerItem;
+                            card.style.transform = 'rotateY(' + itemAngle + 'deg) translateZ(' + radius + 'px)';
+                        });
+                    }
+
+                    updateDimensions();
+                    window.addEventListener('resize', updateDimensions, { passive: true });
+
+                    // Position cards initially
+                    cards.forEach(function(card, i) {
+                        card.addEventListener('click', function() {
+                            // Rotate tapped card to center front
+                            lastUserInteractTime = Date.now();
+                            var itemAngle = i * anglePerItem;
+                            var currentMod = ((targetRotation % 360) + 360) % 360;
+                            var targetAngle = -itemAngle;
+                            var diff = (targetAngle - targetRotation) % 360;
+                            if (diff > 180) diff -= 360;
+                            if (diff < -180) diff += 360;
+                            targetRotation += diff;
+                        });
+                    });
+
+                    // Update visual opacity and depth of each card
+                    function renderCards() {
+                        cylinder.style.transform = 'rotateY(' + currentRotation + 'deg)';
+
+                        // Identify active front card
+                        var normRot = ((-currentRotation % 360) + 360) % 360;
+                        var activeIndex = Math.round(normRot / anglePerItem) % totalItems;
+
+                        cards.forEach(function(card, i) {
+                            var itemAngle = i * anglePerItem;
+                            var totalAngle = (itemAngle + currentRotation) % 360;
+                            var rel = ((totalAngle % 360) + 360) % 360;
+                            var norm = Math.abs(rel > 180 ? 360 - rel : rel);
+
+                            // Opacity based on angular distance from viewer
+                            var opacity = Math.max(0.22, 1 - Math.pow(norm / 180, 1.4));
+                            card.style.opacity = opacity.toFixed(2);
+
+                            // Disable pointer-events for cards at the back
+                            if (norm > 70) {
+                                card.style.pointerEvents = 'none';
+                                card.style.filter = 'brightness(0.7)';
+                            } else {
+                                card.style.pointerEvents = 'auto';
+                                card.style.filter = 'brightness(1)';
+                            }
+                        });
+
+                        // Update Counter
+                        if (counterEl) {
+                            var pad = (activeIndex + 1) < 10 ? '0' + (activeIndex + 1) : (activeIndex + 1);
+                            counterEl.textContent = pad + ' / 08';
+                        }
+
+                        // Update Circular Progress Ring
+                        if (progressRing) {
+                            var progressFraction = (activeIndex) / (totalItems - 1);
+                            var offset = ringCircumference * (1 - progressFraction);
+                            progressRing.style.strokeDashoffset = offset.toFixed(1);
+                        }
+                    }
+
+                    // Main Animation Loop
+                    function animate() {
+                        var now = Date.now();
+
+                        // Ambient auto-rotation when idle
+                        if (!isDragging && (now - lastUserInteractTime > 1200)) {
+                            targetRotation += autoRotateSpeed;
+                        }
+
+                        // Inertia damping after drag release
+                        if (!isDragging && Math.abs(velocity) > 0.05) {
+                            targetRotation += velocity;
+                            velocity *= 0.92;
+                        }
+
+                        // Smooth interpolation (lerp)
+                        currentRotation += (targetRotation - currentRotation) * 0.12;
+
+                        renderCards();
+                        requestAnimationFrame(animate);
+                    }
+                    requestAnimationFrame(animate);
+
+                    // Touch / Pointer Drag Gestures (Mobile-First)
+                    function onPointerDown(e) {
+                        isDragging = true;
+                        lastUserInteractTime = Date.now();
+                        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                        lastX = startX;
+                        velocity = 0;
+                        if (viewport) viewport.classList.add('is-grabbing');
+                    }
+
+                    function onPointerMove(e) {
+                        if (!isDragging) return;
+                        lastUserInteractTime = Date.now();
+                        var clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                        var deltaX = clientX - lastX;
+                        lastX = clientX;
+
+                        // Sensitivity scaled for mobile touch vs desktop pointer
+                        var sensitivity = window.innerWidth < 640 ? 0.38 : 0.28;
+                        targetRotation += deltaX * sensitivity;
+                        velocity = deltaX * sensitivity;
+                    }
+
+                    function onPointerUp() {
+                        if (!isDragging) return;
+                        isDragging = false;
+                        lastUserInteractTime = Date.now();
+                        if (viewport) viewport.classList.remove('is-grabbing');
+                    }
+
+                    // Attach Drag Listeners
+                    if (viewport) {
+                        viewport.addEventListener('mousedown', onPointerDown);
+                        window.addEventListener('mousemove', onPointerMove);
+                        window.addEventListener('mouseup', onPointerUp);
+
+                        // Mobile Touch Listeners (passive touchstart/touchmove for fluid gestures)
+                        viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+                        window.addEventListener('touchmove', onPointerMove, { passive: true });
+                        window.addEventListener('touchend', onPointerUp, { passive: true });
+                        window.addEventListener('touchcancel', onPointerUp, { passive: true });
+                    }
+
+                    // Navigation Buttons
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            lastUserInteractTime = Date.now();
+                            targetRotation += anglePerItem;
+                        });
+                    }
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            lastUserInteractTime = Date.now();
+                            targetRotation -= anglePerItem;
+                        });
+                    }
+
+                    // Scroll-Linked Rotation (Lenis + Native Window Scroll)
+                    function onScroll() {
                         var rect = section.getBoundingClientRect();
                         var scrollDistance = rect.height - window.innerHeight;
                         if (scrollDistance <= 0) return;
 
-                        // Normalized progress: 0.0 to 1.0
                         var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
-
-                        // Phase 1: Unfurling stage (0 to 0.15)
-                        var unfurlPhase = Math.min(1, progress / 0.15);
-                        var isMobile = window.innerWidth < 768;
-
-                        if (banner) {
-                            var width = 92 + (unfurlPhase * 8); // 92vw -> 100vw
-                            var height = 85 + (unfurlPhase * 15); // 85vh -> 100vh
-                            var radius = (1 - unfurlPhase) * 32; // 32px -> 0px
-                            banner.style.width = width + 'vw';
-                            banner.style.height = height + 'vh';
-                            banner.style.borderRadius = radius + 'px';
-                        }
-
-                        // Phase 2: 3D Matrix Parallax (0.15 to 1.0)
-                        var matrixPhase = Math.max(0, (progress - 0.15) / 0.85);
-
-                        // Responsive rotation angles: gentler on mobile to keep images perfectly framed
-                        var rotXMax = isMobile ? 12 : 20;
-                        var rotYMax = isMobile ? -22 : -35;
-                        var rotZMax = isMobile ? 6 : 10;
-                        var transZMin = isMobile ? -350 : -600;
-
-                        var rotX = rotXMax - (matrixPhase * (rotXMax - 2));
-                        var rotY = rotYMax - (matrixPhase * (rotYMax - (-5)));
-                        var rotZ = rotZMax - (matrixPhase * (rotZMax - 1));
-                        var transZ = transZMin + (matrixPhase * (-transZMin));
-
-                        if (matrix) {
-                            matrix.style.transform = 'rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) rotateZ(' + rotZ.toFixed(2) + 'deg) translateZ(' + transZ.toFixed(1) + 'px)';
-                        }
-
-                        // Columns parallax translation
-                        if (col1) {
-                            var y1 = -matrixPhase * 35; // 0% -> -35%
-                            col1.style.transform = 'translate3d(0, ' + y1.toFixed(2) + '%, 0)';
-                        }
-                        if (col2) {
-                            var y2 = -35 + (matrixPhase * 43); // -35% -> +8%
-                            col2.style.transform = 'translate3d(0, ' + y2.toFixed(2) + '%, 0)';
-                        }
-                        if (col3) {
-                            var y3 = -matrixPhase * 35; // 0% -> -35%
-                            col3.style.transform = 'translate3d(0, ' + y3.toFixed(2) + '%, 0)';
-                        }
-                        if (col4) {
-                            var y4 = -25 + (matrixPhase * 40); // -25% -> +15%
-                            col4.style.transform = 'translate3d(0, ' + y4.toFixed(2) + '%, 0)';
-                        }
-
-                        isTicking = false;
-                    }
-
-                    function onScroll() {
-                        if (!isTicking) {
-                            requestAnimationFrame(updateParallax);
-                            isTicking = true;
+                        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                            // Link scroll progress to full 360 degree rotation
+                            if (!isDragging) {
+                                var scrollTarget = progress * 360;
+                                targetRotation = (targetRotation * 0.1) + (scrollTarget * 0.9);
+                                lastUserInteractTime = Date.now();
+                            }
                         }
                     }
 
                     window.addEventListener('scroll', onScroll, { passive: true });
-                    window.addEventListener('resize', onScroll, { passive: true });
                     if (window.lenis) {
                         window.lenis.on('scroll', onScroll);
                     }
-                    updateParallax();
                 })();
                 </script>
             </section>
@@ -2067,6 +2382,7 @@ shore and sea</p>
                         }, { passive: true });
                     }
                 })();
+                </script>
             </section>
 <section class="relative w-screen lg:h-dvh bg-sand py-40 sm:pt-40 sm:pb-0 lg:py-0 lg:rounded-b-none z-[40] sm:overflow-hidden lg:overflow-auto" data-name="interiors-growing-image">
 <div class="hidden sm:block relative w-full sm:h-[50vh] lg:h-full lg:[clip-path:inset(12%_8%_0%_8%)]" data-image-switch="" data-target="interiors-growing-image">
