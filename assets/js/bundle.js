@@ -1203,7 +1203,8 @@ function teasers() {
   var teasersContent = (0,_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="teasers-content"]', section);
   var pageTeasers = (0,_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qsa)('[data-target="page-teaser"]', section);
   console.log('teasers');
-  if (!_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.xl) return;
+  if (!_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
+  var startSpacing = window.innerWidth > 1400 ? '80px' : '50px';
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_2__["default"].timeline({
     scrollTrigger: {
       id: 'teasers',
@@ -1220,7 +1221,7 @@ function teasers() {
   });
   timeline.addLabel('start').from(teasersTitle, {
     opacity: 0.06,
-    letterSpacing: '125px',
+    letterSpacing: startSpacing,
     duration: 1,
     ease: 'none'
   }, 'start').from(teasersContent, {
@@ -4850,6 +4851,9 @@ function footerReveal() {
   var sectionIndicator = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator"]');
   var teasers = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="teasers"]');
   if (!footer) return;
+  // On phones the footer is part of the normal document flow. The desktop
+  // pin would otherwise pull an absolute footer behind the teaser section.
+  if (window.matchMedia('(max-width: 639px)').matches) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
     scrollTrigger: {
       id: 'footer-reveal',
