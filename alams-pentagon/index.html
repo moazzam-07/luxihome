@@ -191,6 +191,279 @@ var gf_legacy = {"is_legacy":""};
 	}
 }
 
+/* Pentagon page mobile layout guardrails.  The original template relies on
+   desktop-sized offsets and an overlaid footer; keep those behaviors above
+   the mobile breakpoint, but give phones a stable reading flow. */
+@media (max-width: 767px) {
+    :root {
+        --pentagon-gutter: clamp(18px, 5vw, 30px);
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    #content-wrap,
+    #content-wrap > main,
+    [data-name="banner"] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    [data-name="banner"] {
+        height: 100svh;
+        min-height: 560px;
+        max-height: 860px;
+    }
+
+    [data-name="banner"] picture img,
+    [data-name="banner"] video {
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] > div:first-child {
+        top: 36%;
+        width: 100%;
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] h1 {
+        font-size: clamp(46px, 13vw, 72px) !important;
+        letter-spacing: .08em !important;
+        white-space: nowrap;
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] h1 span {
+        padding-left: 0 !important;
+        letter-spacing: .12em !important;
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] > div:last-child {
+        padding-bottom: calc(18px + env(safe-area-inset-bottom));
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] > div:last-child > div {
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] .grid > div {
+        width: 100%;
+        text-align: left;
+    }
+
+    [data-name="banner"] [data-target="banner-loading-content"] .grid > div:last-child p {
+        margin-right: 0;
+        font-size: clamp(17px, 4.5vw, 21px);
+        line-height: 1.15;
+    }
+
+    [data-target="banner-slide-content"] {
+        padding-inline: var(--pentagon-gutter) !important;
+        padding-bottom: calc(18px + env(safe-area-inset-bottom)) !important;
+    }
+
+    [data-target="banner-slide-content"] > div {
+        width: 100%;
+        max-width: none !important;
+        padding: 20px !important;
+        border-radius: 16px 16px 0 0;
+        background-color: rgba(26, 32, 38, .92);
+    }
+
+    [data-target="banner-slide-content"] p {
+        font-size: clamp(18px, 5.4vw, 24px) !important;
+        line-height: 1.15 !important;
+    }
+
+    [data-target="banner-slide-content"] .flex {
+        margin-top: 18px !important;
+    }
+
+    [data-target="progress-circle"] {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    #block-1 .container,
+    #block-4,
+    #block-5,
+    #block-6 > .container {
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    #block-2 > div {
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    #block-2 > h2 {
+        padding-left: var(--pentagon-gutter) !important;
+        font-size: clamp(30px, 9vw, 42px) !important;
+        line-height: 1 !important;
+        white-space: normal;
+    }
+
+    #block-2 .max-h-\[350px\] {
+        max-height: none !important;
+    }
+
+    #block-3 > .container {
+        margin-top: 64px;
+    }
+
+    #block-3 [class*="w-[105vw]"] {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #block-3 [class*="w-[calc(100vw-20px)]"] {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-top: -52px;
+        padding: 28px 24px;
+    }
+
+    #block-3 [class*="w-[calc(100vw-20px)]"] p {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    #block-3 [class*="absolute right-0 top-40"] {
+        top: 28px;
+        right: 12px;
+    }
+
+    #block-4 {
+        margin-block: 48px;
+    }
+
+    #block-4 > div {
+        margin-block: 0;
+        padding-inline: 0;
+    }
+
+    #block-4 h2 {
+        font-size: clamp(26px, 7.5vw, 36px);
+        line-height: 1.08;
+    }
+
+    #block-5 {
+        margin-inline: calc(var(--pentagon-gutter) * -1);
+        padding-inline: 0;
+    }
+
+    #block-5 .swiper-image__slider {
+        width: 100%;
+        height: min(80svh, 520px) !important;
+        margin-top: 40px;
+        margin-bottom: 24px;
+    }
+
+    #block-5 .description {
+        bottom: 24px;
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    #block-5 .description h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1;
+    }
+
+    #block-5 .slider-top {
+        top: 20px;
+    }
+
+    #block-5 .swiper-button-prev svg,
+    #block-5 .swiper-button-next svg {
+        width: 44px;
+        height: 44px;
+    }
+
+    #block-6 > .container {
+        margin-block: 48px;
+        padding-block: 32px 36px;
+    }
+
+    #block-6 h2 {
+        font-size: clamp(38px, 12vw, 52px);
+        line-height: .95;
+    }
+
+    #block-6 [data-target="zoom"] {
+        display: block;
+        width: 100%;
+    }
+
+    #block-6 [data-target="zoom"] img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #form_villa {
+        width: auto;
+        margin-inline: var(--pentagon-gutter) !important;
+        margin-top: 64px;
+        margin-bottom: 48px;
+        padding: 24px 18px;
+    }
+
+    #form_villa input,
+    #form_villa select,
+    #form_villa textarea {
+        max-width: 100%;
+    }
+
+    #content-wrap > div:last-child {
+        min-height: 0 !important;
+    }
+
+    #content-wrap > div:last-child > footer.site-footer {
+        position: relative !important;
+        inset: auto !important;
+        z-index: 0 !important;
+        min-height: 0 !important;
+        padding-top: 64px !important;
+        padding-bottom: calc(36px + env(safe-area-inset-bottom)) !important;
+    }
+
+    #content-wrap > div:last-child > footer.site-footer::before {
+        display: none;
+    }
+
+    #content-wrap > div:last-child > footer.site-footer .container {
+        margin-bottom: 52px;
+    }
+
+    #content-wrap > div:last-child > footer.site-footer .grid {
+        row-gap: 44px;
+    }
+
+    #content-wrap > div:last-child > footer.site-footer .copyright {
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    #content-wrap > div:last-child > footer.site-footer .copyright > div {
+        align-items: flex-start;
+        text-align: left;
+        gap: 18px;
+    }
+
+    #content-wrap > div:last-child > footer.site-footer .copyright > div:last-child {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
+}
+
 @media (min-width: 992px) {
     .home .block--three-images-text .lg\:px-90 {
         padding-left: 98px;
@@ -1317,6 +1590,7 @@ gform.initializeOnLoaded( function() {gformInitSpinner( 3, '/wp-content/plugins/
                                 <img class="relative w-160 lg:w-200 h-auto max-h-[60px]" src="/wp-content/themes/AmaliProperties/assets/img/logos/logo-light.svg" alt="LUXiHOME" data-target="footer-logo" />
                             </a>
                         </div>
+                        <p class="mt-20 text-center font-sans font-light text-12 lg:text-14 leading-[1.35] tracking-1 uppercase text-white/60">8, Syed Ismail Ln, Esplanade, Collin Lane, Park St, Kolkata, West Bengal 700016</p>
                     </div>
                     <div class="col-span-12 lg:col-span-8">
                         <div class="relative h-full lg:pl-50 lg:pr-20 after:hidden after:lg:block after:absolute after:bottom-0 after:left-50 after:w-3/4 after:h-1 after:bg-white/10">
