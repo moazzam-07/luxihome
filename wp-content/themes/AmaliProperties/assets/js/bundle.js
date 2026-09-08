@@ -2441,7 +2441,7 @@ function createSlideTransition(currentSlide, nextSlide) {
   if (index == 0) {
     var bannerTexture = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-loading-texture"]', currentSlide);
     var bannerContent = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-loading-content"]', currentSlide);
-    var bannerLoadingImage = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-loading-image"] video', currentSlide);
+    var bannerLoadingImage = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-loading-image"] video, [data-target="banner-loading-image"] picture, [data-target="banner-loading-image"] img', currentSlide);
     timeline.addLabel('start').fromTo(bannerTexture, {
       maskImage: 'radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 75%)'
     }, {
