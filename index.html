@@ -1626,8 +1626,11 @@ shore and sea</p>
                         transform-style: preserve-3d;
                         backface-visibility: hidden;
                         cursor: pointer;
-                        transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), filter 0.28s ease, transform 0.2s ease;
-                        will-change: transform, opacity, filter;
+                        transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s ease;
+                        will-change: transform, opacity;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        text-rendering: optimizeLegibility;
                     }
                     @media (max-width: 1023px) {
                         .lux-circ-card {
@@ -1683,27 +1686,43 @@ shore and sea</p>
                         z-index: 3;
                         color: #FFFFFF;
                         pointer-events: none;
+                        transform: translateZ(20px);
+                        -webkit-transform: translateZ(20px);
+                        transform-style: flat;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        text-rendering: optimizeLegibility;
+                        backface-visibility: hidden;
+                        -webkit-backface-visibility: hidden;
                     }
                     @media (max-width: 640px) {
                         .lux-circ-info {
-                            padding: 18px 16px;
+                            padding: 20px 18px;
+                            transform: translateZ(10px);
+                            -webkit-transform: translateZ(10px);
                         }
                     }
 
                     .lux-circ-item-title {
                         font-family: 'aviano-sans', sans-serif;
                         font-size: 18px;
-                        font-weight: 400;
-                        letter-spacing: 0.08em;
+                        font-weight: 500;
+                        letter-spacing: 0.1em;
                         color: #FFFFFF;
                         line-height: 1.25;
                         margin: 0 0 8px 0;
                         text-transform: uppercase;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        text-rendering: optimizeLegibility;
+                        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
                     }
                     @media (max-width: 640px) {
                         .lux-circ-item-title {
-                            font-size: 15px;
+                            font-size: 16px;
+                            font-weight: 600;
                             margin-bottom: 6px;
+                            letter-spacing: 0.08em;
                         }
                     }
 
@@ -1712,10 +1731,15 @@ shore and sea</p>
                         align-items: center;
                         gap: 6px;
                         font-family: 'aviano-sans', sans-serif;
-                        font-size: 10px;
-                        letter-spacing: 0.16em;
+                        font-size: 11px;
+                        font-weight: 500;
+                        letter-spacing: 0.18em;
                         text-transform: uppercase;
-                        color: #DAD0C1;
+                        color: #E6DFD5;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        text-rendering: optimizeLegibility;
+                        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
                         transition: transform 0.2s ease, color 0.2s ease;
                     }
                     .lux-circ-card:hover .lux-circ-card-cta {
@@ -2018,28 +2042,29 @@ shore and sea</p>
                             var norm = Math.abs(rel > 180 ? 360 - rel : rel);
 
                             if (norm < 30) {
-                                // Active center card: 100% visible, fully interactive
+                                // Active center card: 100% visible, fully interactive, crisp vector rendering
                                 card.style.opacity = '1';
-                                card.style.filter = 'brightness(1)';
+                                card.style.filter = 'none';
                                 card.style.pointerEvents = 'auto';
                                 card.style.zIndex = '10';
                             } else if (norm < 110) {
                                 // Side cards
                                 if (isMobile) {
                                     card.style.opacity = '0.08';
-                                    card.style.filter = 'brightness(0.35)';
+                                    card.style.filter = 'none';
                                     card.style.pointerEvents = 'none';
                                     card.style.zIndex = '5';
                                 } else {
                                     var opacity = Math.max(0.25, 1 - Math.pow(norm / 180, 1.4));
                                     card.style.opacity = opacity.toFixed(2);
-                                    card.style.filter = 'brightness(0.65)';
+                                    card.style.filter = 'none';
                                     card.style.pointerEvents = 'auto';
                                     card.style.zIndex = '5';
                                 }
                             } else {
                                 // Back card
                                 card.style.opacity = '0';
+                                card.style.filter = 'none';
                                 card.style.pointerEvents = 'none';
                                 card.style.zIndex = '1';
                             }
