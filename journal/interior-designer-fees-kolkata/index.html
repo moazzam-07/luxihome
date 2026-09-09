@@ -282,6 +282,153 @@
 			.journal-footer-copyright nav { justify-content: flex-start; gap: 10px 16px; margin-top: 20px; font-size: 10px; }
 		}
 
+
+    body.journal-warm-theme {
+      --lux-dark: #1A2026;
+      --lux-sand: #DAD0C1;
+      --lux-gold: #C2A26A;
+      --lux-brown: #726152;
+      --lux-slate: #5C7A92;
+      background: var(--lux-sand) !important;
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #page-wrap,
+    body.journal-warm-theme #content-wrap,
+    body.journal-warm-theme main {
+      background: var(--lux-sand) !important;
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme [data-target="logo-lottie"] {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+    body.journal-warm-theme [data-target="logo-lottie-dark"] {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    body.journal-warm-theme [data-target="menu-background"] {
+      background: rgba(114, 97, 82, .9) !important;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 16px 34px rgba(26,32,38,.18), inset 0 1px 0 rgba(255,255,255,.18);
+    }
+    body.journal-warm-theme .journal-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(34px, 6vw, 72px) clamp(22px, 7vw, 84px);
+      border-radius: 0 0 28px 28px;
+      background: var(--lux-brown) !important;
+      color: #F7F1E8 !important;
+      box-shadow: 0 22px 45px rgba(26,32,38,.14);
+    }
+    body.journal-warm-theme .journal-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255,255,255,.11), transparent 42%, rgba(26,32,38,.12));
+    }
+    body.journal-warm-theme .journal-hero > * { position: relative; z-index: 1; }
+    body.journal-warm-theme .journal-hero h1,
+    body.journal-warm-theme .journal-hero p { color: #F7F1E8 !important; }
+    body.journal-warm-theme .journal-hero h1 span:last-child,
+    body.journal-warm-theme .text-gold { color: var(--lux-gold) !important; }
+    body.journal-warm-theme .journal-hero p { color: rgba(247,241,232,.78) !important; }
+    body.journal-warm-theme .journal-filter-btn {
+      border-color: rgba(114,97,82,.4) !important;
+      background: rgba(255,255,255,.24) !important;
+      color: var(--lux-dark) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.42), 0 8px 18px rgba(26,32,38,.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    body.journal-warm-theme .journal-filter-btn:hover,
+    body.journal-warm-theme .journal-filter-btn.active {
+      background: var(--lux-brown) !important;
+      border-color: var(--lux-brown) !important;
+      color: #F7F1E8 !important;
+      transform: translateY(-1px);
+    }
+    body.journal-warm-theme #content-wrap > main > .bg-white\/10,
+    body.journal-warm-theme .journal-cta {
+      background: linear-gradient(135deg, rgba(114,97,82,.96), rgba(92,76,63,.94)) !important;
+      border-color: rgba(255,255,255,.24) !important;
+      color: #F7F1E8 !important;
+      box-shadow: 0 22px 42px rgba(26,32,38,.14), inset 0 1px 0 rgba(255,255,255,.18);
+    }
+    body.journal-warm-theme .journal-cta h3,
+    body.journal-warm-theme .journal-cta p { color: #F7F1E8 !important; }
+    body.journal-warm-theme .journal-cta a {
+      background: rgba(255,255,255,.24) !important;
+      color: #F7F1E8 !important;
+      border: 1px solid rgba(255,255,255,.26);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 22px rgba(26,32,38,.16);
+      transition: transform .25s ease, background .25s ease;
+    }
+    body.journal-warm-theme .journal-cta a:hover {
+      background: #F7F1E8 !important;
+      color: var(--lux-dark) !important;
+      transform: translateY(-2px);
+    }
+    body.journal-warm-theme .journal-card {
+      background: rgba(255,255,255,.28) !important;
+      border-color: rgba(114,97,82,.26) !important;
+      box-shadow: 0 14px 28px rgba(26,32,38,.08), inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    body.journal-warm-theme .journal-card:hover {
+      border-color: var(--lux-brown) !important;
+      box-shadow: 0 20px 36px rgba(26,32,38,.16), inset 0 1px 0 rgba(255,255,255,.42);
+    }
+    body.journal-warm-theme .journal-card-image-wrap { background: var(--lux-brown) !important; }
+    body.journal-warm-theme .journal-card-body { background: rgba(247,241,232,.52); }
+    body.journal-warm-theme .journal-card-meta { color: rgba(26,32,38,.62) !important; }
+    body.journal-warm-theme .journal-card-title { color: var(--lux-dark) !important; }
+    body.journal-warm-theme .journal-card:hover .journal-card-title { color: var(--lux-brown) !important; }
+    body.journal-warm-theme .journal-card-link { color: var(--lux-brown) !important; }
+    body.journal-warm-theme .journal-card:hover .journal-card-link { color: var(--lux-dark) !important; }
+    body.journal-warm-theme main > .w-full.h-1 { background: rgba(114,97,82,.28) !important; }
+    body.journal-warm-theme .journal-site-footer {
+      background: var(--lux-dark) !important;
+      border-top-color: rgba(218,208,193,.22) !important;
+    }
+    body.journal-warm-theme .journal-footer-cta { background: var(--lux-slate); }
+    body.journal-warm-theme .journal-footer-links a:hover,
+    body.journal-warm-theme .journal-footer-copyright a:hover { color: var(--lux-gold); }
+
+    /* Article pages use the same palette, including tables and callouts. */
+    body.journal-warm-theme .article-content p,
+    body.journal-warm-theme main > p { color: rgba(26,32,38,.78) !important; }
+    body.journal-warm-theme .article-content h2,
+    body.journal-warm-theme main h1,
+    body.journal-warm-theme main h2,
+    body.journal-warm-theme main h3,
+    body.journal-warm-theme main h4 { color: var(--lux-dark) !important; }
+    body.journal-warm-theme .article-content a,
+    body.journal-warm-theme main a { color: var(--lux-brown); }
+    body.journal-warm-theme main .border-white\/10,
+    body.journal-warm-theme main .border-white\/15 { border-color: rgba(114,97,82,.25) !important; }
+    body.journal-warm-theme main .bg-white\/5,
+    body.journal-warm-theme main .bg-white\/10 { background: rgba(255,255,255,.3) !important; }
+    body.journal-warm-theme main .text-white\/50 { color: rgba(26,32,38,.58) !important; }
+    body.journal-warm-theme main .text-white\/70,
+    body.journal-warm-theme main .text-white\/75,
+    body.journal-warm-theme main .text-white\/80,
+    body.journal-warm-theme main .text-white\/85 { color: rgba(26,32,38,.78) !important; }
+    body.journal-warm-theme main .text-white { color: var(--lux-dark) !important; }
+    body.journal-warm-theme main .bg-gradient-to-br,
+    body.journal-warm-theme main .bg-gradient-to-r { background: linear-gradient(135deg, rgba(114,97,82,.16), rgba(255,255,255,.34)) !important; }
+    body.journal-warm-theme main table { color: var(--lux-dark); }
+    body.journal-warm-theme main thead { background: rgba(114,97,82,.15) !important; }
+    body.journal-warm-theme main tbody tr:hover { background: rgba(114,97,82,.1) !important; }
+    body.journal-warm-theme main .bg-gold { background: var(--lux-gold) !important; }
+    body.journal-warm-theme main .text-dark-blue { color: var(--lux-dark) !important; }
+    body.journal-warm-theme main .selection\:bg-gold::selection { background: var(--lux-gold); }
+    @media (max-width: 639px) {
+      body.journal-warm-theme .journal-hero { margin-inline: -18px; padding: 34px 28px 40px; border-radius: 0 0 24px 24px; }
+      body.journal-warm-theme .journal-hero h1 { font-size: clamp(25px, 7.8vw, 34px) !important; }
+      body.journal-warm-theme .journal-card-body { background: rgba(247,241,232,.64); }
+      body.journal-warm-theme .journal-cta { margin-inline: 0; }
+    }
+
 	</style>
 
 	<style id="wp-custom-css">
@@ -320,7 +467,7 @@
 	<script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 </head>
 
-<body class="wp-singular page-template wp-theme-AmaliProperties bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
+<body class="journal-warm-theme wp-singular page-template wp-theme-AmaliProperties bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
 
 
 <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
