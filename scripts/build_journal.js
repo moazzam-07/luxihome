@@ -496,6 +496,150 @@ function getJournalWarmThemeStyles() {
     body.journal-warm-theme .journal-footer-copyright a:hover { color: var(--lux-gold); }
 
     /* Article pages use the same palette, including tables and callouts. */
+    body.journal-warm-theme main {
+      max-width: 820px !important;
+    }
+    body.journal-warm-theme .journal-featured-image {
+      aspect-ratio: 16 / 9;
+      background: var(--lux-brown);
+      border-color: rgba(114,97,82,.28) !important;
+      box-shadow: 0 20px 38px rgba(26,32,38,.14) !important;
+    }
+    body.journal-warm-theme .journal-featured-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    body.journal-warm-theme main > .mb-25:first-child {
+      color: rgba(26,32,38,.58) !important;
+    }
+    body.journal-warm-theme main > .mb-25:first-child a { color: var(--lux-brown) !important; }
+    body.journal-warm-theme main > h1 {
+      max-width: 760px;
+      margin-bottom: 22px !important;
+      color: var(--lux-dark) !important;
+      font-size: clamp(27px, 4vw, 48px) !important;
+      line-height: 1.12 !important;
+      letter-spacing: .055em !important;
+    }
+    body.journal-warm-theme main > p {
+      max-width: 720px;
+      color: rgba(26,32,38,.72) !important;
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      border-bottom-color: rgba(114,97,82,.24) !important;
+    }
+    body.journal-warm-theme .article-content section {
+      margin-bottom: 42px !important;
+    }
+    body.journal-warm-theme .article-content h2 {
+      margin-bottom: 16px !important;
+      color: var(--lux-dark) !important;
+      font-size: clamp(22px, 3vw, 30px) !important;
+      line-height: 1.18 !important;
+      letter-spacing: .045em !important;
+    }
+    body.journal-warm-theme .article-content p {
+      max-width: 72ch;
+      margin-bottom: 16px !important;
+      color: rgba(26,32,38,.78) !important;
+      font-size: 16px !important;
+      line-height: 1.78 !important;
+    }
+    body.journal-warm-theme .journal-article-callout {
+      color: var(--lux-dark);
+      border: 1px solid rgba(114,97,82,.28) !important;
+      box-shadow: 0 14px 30px rgba(26,32,38,.09), inset 0 1px 0 rgba(255,255,255,.42);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    body.journal-warm-theme .journal-takeaways {
+      background: #EEE5D8 !important;
+      border-left: 4px solid var(--lux-gold) !important;
+    }
+    body.journal-warm-theme .journal-takeaways h3 {
+      color: var(--lux-brown) !important;
+      font-size: 13px !important;
+      letter-spacing: .18em !important;
+    }
+    body.journal-warm-theme .journal-takeaways ul { margin: 0; padding: 0; list-style: none; }
+    body.journal-warm-theme .journal-takeaways li {
+      align-items: flex-start;
+      color: rgba(26,32,38,.8) !important;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    body.journal-warm-theme .journal-takeaways li > span:first-child { color: var(--lux-gold) !important; }
+    body.journal-warm-theme .journal-table-section { margin-bottom: 42px !important; }
+    body.journal-warm-theme .journal-table-title {
+      color: var(--lux-dark) !important;
+      font-size: 22px !important;
+      line-height: 1.2 !important;
+      letter-spacing: .06em !important;
+    }
+    body.journal-warm-theme .journal-table-card {
+      position: relative;
+      padding: 0 !important;
+      background: #EEE5D8 !important;
+      border-color: rgba(114,97,82,.3) !important;
+      overflow-x: auto;
+      box-shadow: 0 14px 28px rgba(26,32,38,.08);
+    }
+    body.journal-warm-theme .journal-table-scroll-note {
+      display: none;
+      margin: 0;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(114,97,82,.16);
+      color: rgba(26,32,38,.58);
+      font: 600 10px/1 'DIN', sans-serif;
+      letter-spacing: .14em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    body.journal-warm-theme .journal-comparison-table {
+      min-width: 690px;
+      color: var(--lux-dark) !important;
+      font-size: 14px !important;
+      line-height: 1.35 !important;
+    }
+    body.journal-warm-theme .journal-comparison-table th,
+    body.journal-warm-theme .journal-comparison-table td {
+      min-width: 150px;
+      padding: 16px !important;
+      border-color: rgba(114,97,82,.2) !important;
+      white-space: normal !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+      vertical-align: top;
+    }
+    body.journal-warm-theme .journal-comparison-table th:first-child,
+    body.journal-warm-theme .journal-comparison-table td:first-child { min-width: 190px; }
+    body.journal-warm-theme .journal-comparison-table th {
+      background: rgba(114,97,82,.14) !important;
+      color: var(--lux-brown) !important;
+      font-size: 11px !important;
+      letter-spacing: .1em !important;
+    }
+    body.journal-warm-theme .journal-comparison-table td { color: rgba(26,32,38,.78) !important; }
+    body.journal-warm-theme .journal-comparison-table td:first-child { color: var(--lux-dark) !important; font-weight: 600; }
+    body.journal-warm-theme .journal-secret-sauce {
+      background: var(--lux-brown) !important;
+      border-color: rgba(255,255,255,.22) !important;
+      color: #F7F1E8 !important;
+    }
+    body.journal-warm-theme .journal-secret-sauce h4 { color: #F7F1E8 !important; font-size: 21px !important; line-height: 1.2 !important; }
+    body.journal-warm-theme .journal-secret-sauce p { color: rgba(247,241,232,.82) !important; }
+    body.journal-warm-theme .journal-article-cta { background: #EDE2D3 !important; }
+    body.journal-warm-theme .journal-article-cta h3 { color: var(--lux-dark) !important; }
+    body.journal-warm-theme .journal-article-cta p { color: rgba(26,32,38,.72) !important; }
+    body.journal-warm-theme .journal-related-card {
+      background: rgba(255,255,255,.34) !important;
+      border-color: rgba(114,97,82,.24) !important;
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme .journal-related-card h4 { color: var(--lux-dark) !important; }
+    body.journal-warm-theme .journal-related-card:hover { border-color: var(--lux-brown) !important; transform: translateY(-2px); }
     body.journal-warm-theme .article-content p,
     body.journal-warm-theme main > p { color: rgba(26,32,38,.78) !important; }
     body.journal-warm-theme .article-content h2,
@@ -523,11 +667,21 @@ function getJournalWarmThemeStyles() {
     body.journal-warm-theme main .bg-gold { background: var(--lux-gold) !important; }
     body.journal-warm-theme main .text-dark-blue { color: var(--lux-dark) !important; }
     body.journal-warm-theme main .selection\\:bg-gold::selection { background: var(--lux-gold); }
+    body.journal-warm-theme main .journal-takeaways { background: #EEE5D8 !important; }
+    body.journal-warm-theme main .journal-secret-sauce { background: var(--lux-brown) !important; }
+    body.journal-warm-theme main .journal-article-cta { background: #EDE2D3 !important; }
     @media (max-width: 639px) {
       body.journal-warm-theme .journal-hero { margin-inline: -18px; padding: 34px 28px 40px; border-radius: 0 0 24px 24px; }
       body.journal-warm-theme .journal-hero h1 { font-size: clamp(25px, 7.8vw, 34px) !important; }
       body.journal-warm-theme .journal-card-body { background: rgba(247,241,232,.64); }
       body.journal-warm-theme .journal-cta { margin-inline: 0; }
+      body.journal-warm-theme main { padding-top: 150px !important; }
+      body.journal-warm-theme main > h1 { font-size: clamp(27px, 7.5vw, 34px) !important; }
+      body.journal-warm-theme .journal-featured-image { aspect-ratio: 16 / 9; margin-bottom: 30px !important; }
+      body.journal-warm-theme .journal-table-scroll-note { display: block; }
+      body.journal-warm-theme .journal-comparison-table th,
+      body.journal-warm-theme .journal-comparison-table td { padding: 14px !important; }
+      body.journal-warm-theme .journal-article-callout { border-radius: 16px !important; }
     }
   `;
 }
@@ -546,12 +700,13 @@ function getScriptsHtml() {
 function generateArticleHtml(art) {
   const tableHtml = art.table ? `
 		<!-- Interactive Comparison Table -->
-		<div class="my-40">
-			<h3 class="font-sans text-15 sm:text-18 tracking-wide uppercase text-white mb-15">
+		<div class="journal-table-section my-40">
+			<h3 class="journal-table-title font-sans text-15 sm:text-18 tracking-wide uppercase text-white mb-15">
 				${art.table.title}
 			</h3>
-			<div class="overflow-x-auto rounded-[16px] border border-white/10 bg-[#0E1720]/80 p-5">
-				<table class="w-full text-left text-13 sm:text-14 border-collapse">
+			<div class="journal-table-card overflow-x-auto rounded-[16px] border border-white/10 bg-[#0E1720]/80 p-5">
+				<p class="journal-table-scroll-note" aria-hidden="true">Swipe horizontally to compare</p>
+				<table class="journal-comparison-table w-full text-left text-13 sm:text-14 border-collapse">
 					<thead>
 						<tr class="border-b border-white/15 bg-white/5 text-gold font-sans uppercase tracking-wider text-11 sm:text-12">
 							${art.table.headers.map(h => `<th class="py-14 px-16">${h}</th>`).join('')}
@@ -571,7 +726,7 @@ function generateArticleHtml(art) {
 
   const takeawaysHtml = art.takeaways ? `
 		<!-- Executive Summary Box -->
-		<div class="mb-40 p-24 sm:p-30 rounded-[20px] bg-gradient-to-br from-white/10 to-white/5 border border-gold/30 backdrop-blur-md">
+		<div class="journal-article-callout journal-takeaways mb-40 p-24 sm:p-30 rounded-[20px] bg-gradient-to-br from-white/10 to-white/5 border border-gold/30 backdrop-blur-md">
 			<div class="flex items-center gap-10 mb-15">
 				<span class="size-8 rounded-full bg-gold inline-block"></span>
 				<h3 class="font-sans text-12 sm:text-13 tracking-[0.2em] uppercase text-gold">Executive Takeaways</h3>
@@ -584,7 +739,7 @@ function generateArticleHtml(art) {
 
   const secretSauceHtml = art.secretSauce ? `
 		<!-- The Secret Sauce Callout Box -->
-		<div class="my-45 p-24 sm:p-32 rounded-[20px] bg-gradient-to-br from-[#1E293B]/90 to-[#0F172A]/90 border border-gold/40 shadow-xl">
+		<div class="journal-article-callout journal-secret-sauce my-45 p-24 sm:p-32 rounded-[20px] bg-gradient-to-br from-[#1E293B]/90 to-[#0F172A]/90 border border-gold/40 shadow-xl">
 			<div class="flex items-center gap-12 mb-15">
 				<span class="px-10 py-4 rounded-full bg-gold/20 text-gold font-sans text-10 sm:text-11 tracking-widest uppercase font-medium">Insider Trade Secret</span>
 			</div>
@@ -614,7 +769,7 @@ function generateArticleHtml(art) {
     const rel = allArticles.find(a => a.slug === slug);
     if (!rel) return '';
     return `
-			<a href="/journal/${rel.slug}/" class="journal-clean-card flex flex-col justify-between group hover:border-gold/50 transition-all p-20 rounded-[18px] bg-white/5 border border-white/10">
+			<a href="/journal/${rel.slug}/" class="journal-related-card journal-clean-card flex flex-col justify-between group hover:border-gold/50 transition-all p-20 rounded-[18px] bg-white/5 border border-white/10">
 				<span class="text-10 tracking-[0.2em] font-sans text-gold uppercase mb-8">${rel.cluster}</span>
 				<h4 class="font-sans text-14 sm:text-16 text-white group-hover:text-gold transition-colors leading-snug mb-14">${rel.title}</h4>
 				<span class="inline-flex items-center gap-6 text-11 text-gold font-sans uppercase tracking-widest">Read Guide &rarr;</span>
@@ -878,7 +1033,7 @@ function generateArticleHtml(art) {
 		</p>
 
 		<!-- Featured Image -->
-		<div class="aspect-[16/9] sm:aspect-[21/10] overflow-hidden rounded-[20px] mb-40 border border-white/10 shadow-2xl">
+		<div class="journal-featured-image overflow-hidden rounded-[20px] mb-40 border border-white/10 shadow-2xl">
 			<img src="${art.image}" alt="${art.title}" class="w-full h-full object-cover">
 		</div>
 
@@ -894,7 +1049,7 @@ function generateArticleHtml(art) {
 		${secretSauceHtml}
 
 		<!-- Soft CTA Consultation Card -->
-		<div class="my-50 p-30 sm:p-40 rounded-[24px] bg-gradient-to-r from-white/10 via-white/5 to-transparent border border-white/15 backdrop-blur-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-25">
+		<div class="journal-article-callout journal-article-cta my-50 p-30 sm:p-40 rounded-[24px] bg-gradient-to-r from-white/10 via-white/5 to-transparent border border-white/15 backdrop-blur-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-25">
 			<div>
 				<span class="text-11 font-sans text-gold uppercase tracking-[0.25em] block mb-8">Architectural Consultation</span>
 				<h3 class="font-sans text-18 sm:text-22 uppercase tracking-wide text-white mb-8">
