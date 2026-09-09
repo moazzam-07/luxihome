@@ -2478,45 +2478,6 @@ shore and sea</p>
         min-height: auto !important;
         padding-bottom: 40px;
     }
-    /* Mobile footer flow: Keep footer in natural document flow so elements (logo, address, heading, contact button) are never pushed off-screen */
-    .footer-wrapper,
-    div:has(> [data-target="site-footer"]) {
-        position: relative !important;
-        z-index: 20 !important;
-        background: #1A2026 !important;
-        min-height: auto !important;
-        height: auto !important;
-    }
-    .pin-spacer:has(> [data-target="site-footer"]),
-    .pin-spacer-footer-reveal {
-        position: relative !important;
-        inset: auto !important;
-        z-index: 20 !important;
-        width: 100% !important;
-        height: auto !important;
-        padding: 0 !important;
-    }
-    .site-footer,
-    [data-target="site-footer"] {
-        position: relative !important;
-        inset: auto !important;
-        z-index: 20 !important;
-        width: 100% !important;
-        max-width: none !important;
-        min-height: 0 !important;
-        height: auto !important;
-        padding-top: 50px !important;
-        padding-bottom: calc(40px + env(safe-area-inset-bottom)) !important;
-    }
-    .site-footer::before {
-        display: none !important;
-    }
-    .site-footer .container {
-        margin-bottom: 30px !important;
-    }
-    .site-footer .grid {
-        row-gap: 36px !important;
-    }
 }
 </style>
 <section class="relative w-full min-h-dvh mt-0 md:-mt-[26%] xl:mt-0 flex justify-between flex-col bg-sand pb-20 rounded-b-25 z-10 overflow-x-clip" data-name="teasers">
@@ -2598,74 +2559,82 @@ shore and sea</p>
 </div>
 </div>
 <!-- END DIV MAIN CONTENT -->
-<div class="relative w-full footer-wrapper" id="contact">
-<footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh absolute right-0 w-full bg-dark-blue before:bg-dark-blue text-white pt-75 pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
-<div class="container mb-40 lg:mb-115">
-<div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
-<div class="col-span-12">
-<div class="flex justify-center">
-<a class="pointer-events-auto" href="/" title="LUXiHOME">
-<img alt="LUXiHOME" class="relative w-160 lg:w-200 h-auto max-h-[60px]" data-target="footer-logo" src="/assets/img/logos/luxihome-stacked-light.svg"/>
-</a>
-</div>
-<p class="mt-20 text-center font-sans font-light text-12 lg:text-14 leading-[1.35] tracking-1 uppercase text-white/60">8, Syed Ismail Ln, Esplanade, Collin Lane, Park St, Kolkata, West Bengal 700016</p>
-</div>
-<div class="col-span-12 lg:col-span-8">
-<div class="relative h-full lg:pl-50 lg:pr-20 after:hidden after:lg:block after:absolute after:bottom-0 after:left-50 after:w-3/4 after:h-1 after:bg-white/10">
-<p class="font-sans font-light text-32 lg:text-54 leading-none tracking-2.1 lg:tracking-2.7 uppercase mb-[23px]">Register your<br/>
+    <div class="relative w-full
+        ">
+        <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh
+        absolute right-0  w-full        bg-dark-blue before:bg-dark-blue text-white pt-75        pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
+            <div class="container mb-40 lg:mb-115">
+                <div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
+                    <div class="col-span-12">
+                        <div class="flex flex-col items-center text-center max-w-[700px] mx-auto">
+                            <a href="/" class="pointer-events-auto mb-20 block" title="LUXiHOME">
+                                <img class="relative w-180 sm:w-220 lg:w-260 h-auto max-h-[65px] mx-auto block" src="/assets/img/logos/luxihome-wordmark-light.svg" alt="LUXiHOME" data-target="footer-logo" />
+                            </a>
+                            <p class="font-sans font-light text-15 sm:text-16 leading-relaxed tracking-0.4 text-white/80 max-w-[560px]">
+                                LUXiHOME is Kolkata’s premier luxury interior design atelier and bespoke architectural studio — sculpting timeless, turnkey private residences across Park Street, Salt Lake, New Town, and Rajarhat.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-8">
+                        <div class="relative h-full lg:pl-50 lg:pr-20 after:hidden after:lg:block after:absolute after:bottom-0 after:left-50 after:w-3/4 after:h-1 after:bg-white/10">
+                            <p class="font-sans font-light text-32 lg:text-54 leading-none tracking-2.1 lg:tracking-2.7 uppercase mb-[23px]">Register your<br />
 interest</p>
-<a class="group inline-flex justify-between items-center gap-20 bg-slate text-15 leading-none tracking-1.5 py-10 pr-10 pl-35 rounded-60 overflow-hidden" href="/contact/">
-<span class="relative text-white z-10 transition-colors duration-200 group-hover:text-dark-blue">Contact</span>
-<div class="flex justify-center items-center relative w-35 h-35 rounded-full [&amp;_path]:stroke-dark-blue before:absolute before:size-full before:bg-white before:rounded-full before:transition-transform before:duration-500 group-hover:before:scale-[20] children:z-10"><svg fill="none" height="10" viewbox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+
+                            
+                                <a href="/contact/" class="group inline-flex justify-between items-center gap-20 bg-slate text-15 leading-none tracking-1.5 py-10 pr-10 pl-35 rounded-60 overflow-hidden">
+                                    <span class="relative text-white z-10 transition-colors duration-200 group-hover:text-dark-blue">Contact</span>
+                                    <div class="flex justify-center items-center relative w-35 h-35 rounded-full [&_path]:stroke-dark-blue before:absolute before:size-full before:bg-white before:rounded-full before:transition-transform before:duration-500 group-hover:before:scale-[20] children:z-10"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group 209">
-<path d="M1 1L4.9264 4.9264" id="Line 35" stroke="white" stroke-linecap="round" stroke-width="1.5"></path>
-<path d="M1 8.71094L4.9264 4.78453" id="Line 36" stroke="white" stroke-linecap="round" stroke-width="1.5"></path>
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </g>
 </svg>
 </div>
-</a>
-</div>
-</div>
-<div class="col-span-12 lg:col-span-4">
-<div class="lg:pr-50">
-<h2 class="font-sans font-light text-42 lg:text-54 leading-none tracking-2.1 lg:tracking-2.7 uppercase">Where <br/> next?</h2>
-<div>
-<a class="group flex justify-between items-center gap-20 text-24 lg:text-26 leading-none tracking-1.2 lg:tracking-1.3 uppercase py-20 lg:py-25 border-b border-white" data-barba-prevent="self" href="/about/">
-<span class="transition-transform duration-300 group-hover:translate-x-15">About LUXiHOME</span>
-<div class="flex justify-center items-center w-35 h-35 rounded-full bg-white/10 [&amp;_path]:stroke-white transition-transform duration-300 group-hover:-translate-x-15"><svg fill="none" height="10" viewbox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                </a>
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-4">
+                        <div class="lg:pr-50">
+                            <h2 class="font-sans font-light text-42 lg:text-54 leading-none tracking-2.1 lg:tracking-2.7 uppercase">Where <br /> next?</h2>
+                            <div>
+                                <a href="/about/" class="group flex justify-between items-center gap-20 text-24 lg:text-26 leading-none tracking-1.2 lg:tracking-1.3 uppercase py-20 lg:py-25 border-b border-white">
+                                    <span class="transition-transform duration-300 group-hover:translate-x-15">About LUXiHOME</span>
+                                    <div class="flex justify-center items-center w-35 h-35 rounded-full bg-white/10 [&_path]:stroke-white transition-transform duration-300 group-hover:-translate-x-15"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group 209">
-<path d="M1 1L4.9264 4.9264" id="Line 35" stroke="white" stroke-linecap="round" stroke-width="1.5"></path>
-<path d="M1 8.71094L4.9264 4.78453" id="Line 36" stroke="white" stroke-linecap="round" stroke-width="1.5"></path>
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </g>
 </svg>
 </div>
-</a>
-<a class="group flex justify-between items-center gap-20 text-24 lg:text-26 leading-none tracking-1.2 lg:tracking-1.3 uppercase py-20 lg:py-25 border-b border-white" href="/contact/">
-<span class="transition-transform duration-300 group-hover:translate-x-15">Contact</span>
-<div class="flex justify-center items-center w-35 h-35 rounded-full bg-white/10 [&amp;_path]:stroke-white transition-transform duration-300 group-hover:-translate-x-15"><svg fill="none" height="10" viewbox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                                </a>
+                                <a href="/contact/" class="group flex justify-between items-center gap-20 text-24 lg:text-26 leading-none tracking-1.2 lg:tracking-1.3 uppercase py-20 lg:py-25 border-b border-white">
+                                    <span class="transition-transform duration-300 group-hover:translate-x-15">Contact</span>
+                                    <div class="flex justify-center items-center w-35 h-35 rounded-full bg-white/10 [&_path]:stroke-white transition-transform duration-300 group-hover:-translate-x-15"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group 209">
-<path d="M1 1L4.9264 4.9264" id="Line 35" stroke="white" stroke-linecap="round" stroke-width="1.5"></path>
-<path d="M1 8.71094L4.9264 4.78453" id="Line 36" stroke="white" stroke-linecap="round" stroke-width="1.5"></path>
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </g>
 </svg>
 </div>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="copyright px-30 lg:px-60 pt-35 lg:pt-0 border-t border-white/20 lg:border-t-0">
-<div class="flex flex-col lg:flex-row justify-between items-center text-13 leading-none tracking-0.64">
-<div class="flex items-center gap-15 text-color text-center lg:text-left mb-20 lg:mb-0">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright px-30 lg:px-60 pt-35 lg:pt-0 border-t border-white/20 lg:border-t-0">
+                <div class="flex flex-col lg:flex-row justify-between items-center text-13 leading-none tracking-0.64">
+                    <div class="flex items-center gap-15 text-color text-center lg:text-left mb-20 lg:mb-0">
                         © LUXiHOME 2026. All rights reserved.
                     </div>
-<div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-20">
-<a class="" href="#terms-conditions" target="_self">Terms &amp; Conditions</a><a class="" href="#payment-terms" target="_self">Payment Terms</a><a class="" href="#privacy-policy" target="_self">Privacy Policy</a><a class="" href="#cookies-policy" target="_self">Cookies Policy</a><a class="" href="#credits" target="_self">Credits</a> </div>
-</div>
-</div>
-</footer>
-</div>
+                    <div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-20">
+                        <a href="/terms-conditions/" target="_self" class="" >Terms &amp; Conditions</a><a href="/payment-terms/" target="_self" class="" >Payment Terms</a><a href="/privacy-policy/" target="_self" class="" >Privacy Policy</a><a href="/cookies-policy/" target="_self" class="" >Cookies Policy</a><a href="/credits/" target="_self" class="" >Credits</a>                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </div>
 <!-- JS ARE LOADED HERE WITH FUNCTION.PHP -->
 <script type="speculationrules">
@@ -2716,23 +2685,14 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
 
         var prev = ST.getById('footer-reveal');
         if (prev) prev.kill();
-        var prev2 = ST.getById('footer-reveal-2');
-        if (prev2) prev2.kill();
 
-        var isMobile = window.innerWidth < 640;
-        if (isMobile) {
-            // On mobile, keep footer in natural document flow so the logo, title, and contact button are not cut off
-            ST.refresh();
-            return;
-        }
-
-        // On desktop (>= 640px), enable full Amali parallax curtain reveal
+        var isSm = window.innerWidth >= 576;
         ST.create({
             id: 'footer-reveal',
             trigger: footer,
-            start: 'bottom bottom',
+            start: isSm ? 'bottom bottom' : 'top top',
             end: function() {
-                return '+=' + (footer.offsetHeight || window.innerHeight) + 'px';
+                return '+=' + (footer.offsetHeight || 0) + 'px';
             },
             scrub: true,
             pin: true,
