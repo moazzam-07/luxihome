@@ -4461,34 +4461,36 @@ function horizontalScroll() {
   //     )
 
   // scroll from banner -> horizontal scroll
-  var scrollTimeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
-    scrollTrigger: {
-      trigger: popupLinks,
-      start: _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.min(768) && _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.max(991) ? "top+=1px top" : 'top+=1px top',
-      end: "top+=".concat(window.innerHeight / 3, " top"),
-      scrub: true,
-      pin: false,
-      pinSpacing: true
-      // markers: true,
-    }
-  });
-  scrollTimeline.addLabel('start').to(popupLinks, {
-    opacity: 1,
-    duration: 1,
-    ease: 'none'
-  }, 'start').to(blur, {
-    backdropFilter: 'blur(15px)',
-    duration: 0.5,
-    ease: 'none'
-  }, 'start').to(popupLinksImageBlur, {
-    backdropFilter: 'blur(0px)',
-    duration: 0.5,
-    ease: 'none'
-  }, 'start').to(textContainer, {
-    opacity: 0,
-    duration: 0.5,
-    ease: 'none'
-  }, 'start');
+  if (popupLinks) {
+    var scrollTimeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
+      scrollTrigger: {
+        trigger: popupLinks,
+        start: _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.min(768) && _js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.max(991) ? "top+=1px top" : 'top+=1px top',
+        end: "top+=".concat(window.innerHeight / 3, " top"),
+        scrub: true,
+        pin: false,
+        pinSpacing: true
+        // markers: true,
+      }
+    });
+    scrollTimeline.addLabel('start').to(popupLinks, {
+      opacity: 1,
+      duration: 1,
+      ease: 'none'
+    }, 'start').to(blur, {
+      backdropFilter: 'blur(15px)',
+      duration: 0.5,
+      ease: 'none'
+    }, 'start').to(popupLinksImageBlur, {
+      backdropFilter: 'blur(0px)',
+      duration: 0.5,
+      ease: 'none'
+    }, 'start').to(textContainer, {
+      opacity: 0,
+      duration: 0.5,
+      ease: 'none'
+    }, 'start');
+  }
 }
 function popupLinksText() {
   var popupLinks = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="popup-links"]');
@@ -4516,7 +4518,12 @@ function popupLinksText() {
 function transitionAnimation() {
   var popupLinks = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="popup-links"]');
   var lifestyleBanner = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="lifestyle-banner"]');
-  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg || !popupLinks || !lifestyleBanner) return;
+  if (!lifestyleBanner) return;
+  if (!popupLinks) {
+    lifestyleBanner.classList.remove('lg:opacity-0', 'lg:invisible');
+    return;
+  }
+  if (!_js_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
     scrollTrigger: {
       trigger: lifestyleBanner,
