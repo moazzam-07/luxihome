@@ -2487,7 +2487,8 @@ shore and sea</p>
         position: relative !important;
         inset: auto !important;
         z-index: 0 !important;
-        min-height: 100dvh;
+        min-height: auto !important;
+        padding-bottom: 25px !important;
     }
     #contact .site-footer::before {
         display: none;
@@ -2574,7 +2575,7 @@ shore and sea</p>
 </div>
 <!-- END DIV MAIN CONTENT -->
     <div class="relative w-full" id="contact">
-        <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh
+        <footer class="site-footer max-sm:pt-80 bottom-0 left-0
         absolute right-0  w-full        bg-dark-blue before:bg-dark-blue text-white pt-75        pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
             <div class="container mb-40 lg:mb-115">
                 <div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
@@ -2695,7 +2696,7 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         if (!gsapObj || !ST) return;
 
         var prev = ST.getById('footer-reveal');
-        if (prev) prev.kill();
+        if (prev) prev.kill(true);
 
         if (window.innerWidth < 640) {
             ST.refresh();
