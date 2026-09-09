@@ -2391,65 +2391,6 @@ shore and sea</p>
                 </section>
             </div>
 
-            <!-- Standalone Toggle Script for Ultra & Terra Switcher -->
-            <script>
-            (function() {
-                function initSwitchers() {
-                    const switches = document.querySelectorAll('[data-target="interiors-image-switches"]');
-                    switches.forEach(function(sw) {
-                        const bg = sw.querySelector('[data-target="interiors-image-switches-background"]');
-                        const buttons = sw.querySelectorAll('[data-target="interiors-image-switch"]');
-                        if (buttons.length < 2) return;
-
-                        const btnUltra = buttons[0];
-                        const btnTerra = buttons[1];
-
-                        function activate(mode) {
-                            if (mode === 'ultra') {
-                                if (bg) {
-                                    bg.style.left = '0%';
-                                    bg.style.right = 'auto';
-                                }
-                                document.querySelectorAll('[data-image-switch]').forEach(function(container) {
-                                    const pics = container.querySelectorAll('picture');
-                                    if (pics.length >= 2) {
-                                        pics[0].classList.remove('opacity-0', 'invisible');
-                                        pics[1].classList.add('opacity-0', 'invisible');
-                                    }
-                                });
-                            } else {
-                                if (bg) {
-                                    bg.style.left = '50%';
-                                    bg.style.right = 'auto';
-                                }
-                                document.querySelectorAll('[data-image-switch]').forEach(function(container) {
-                                    const pics = container.querySelectorAll('picture');
-                                    if (pics.length >= 2) {
-                                        pics[0].classList.add('opacity-0', 'invisible');
-                                        pics[1].classList.remove('opacity-0', 'invisible');
-                                    }
-                                });
-                            }
-                        }
-
-                        btnUltra.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            activate('ultra');
-                        });
-                        btnTerra.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            activate('terra');
-                        });
-                    });
-                }
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initSwitchers);
-                } else {
-                    initSwitchers();
-                }
-            })();
-            </script>
-
 <section class="relative w-screen lg:h-dvh bg-sand py-40 sm:pt-40 sm:pb-0 lg:py-0 lg:rounded-b-none z-[40] sm:overflow-hidden lg:overflow-auto" data-name="interiors-growing-image">
 <div class="relative w-full h-[52vh] min-h-[320px] sm:min-h-0 sm:h-[50vh] lg:h-full lg:[clip-path:inset(12%_8%_0%_8%)] px-15 sm:px-0" data-image-switch="" data-target="interiors-growing-image" style="min-height: 320px;">
 <div class="relative w-full h-full rounded-20 sm:rounded-none overflow-hidden bg-sand">
