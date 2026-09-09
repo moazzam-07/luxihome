@@ -2478,85 +2478,19 @@ shore and sea</p>
         min-height: auto !important;
         padding-bottom: 40px;
     }
-    /* Option 1: Mobile Compact Sizing for Footer Curtain Reveal */
-    .site-footer {
-        top: 0 !important;
-        bottom: auto !important;
-        padding-top: 28px !important;
-        padding-bottom: 20px !important;
-        min-height: auto !important;
+    #contact {
+        position: relative !important;
+        z-index: 20 !important;
+        background: #1A2026;
     }
-    .site-footer::before {
-        display: none !important;
+    #contact .site-footer {
+        position: relative !important;
+        inset: auto !important;
+        z-index: 0 !important;
+        min-height: 100dvh;
     }
-    .site-footer .container {
-        margin-bottom: 16px !important;
-    }
-    .site-footer .grid {
-        row-gap: 14px !important;
-    }
-    .site-footer [data-target="footer-logo"] {
-        max-height: 38px !important;
-        width: 140px !important;
-    }
-    .site-footer a[title="LUXiHOME"] {
-        margin-bottom: 8px !important;
-    }
-    .site-footer .col-span-12 p.font-sans.font-light.leading-relaxed {
-        font-size: 11px !important;
-        line-height: 1.3 !important;
-        max-width: 290px !important;
-        margin: 0 auto !important;
-        opacity: 0.75 !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-    }
-    .site-footer p.tracking-2\.1 {
-        font-size: 22px !important;
-        line-height: 1.1 !important;
-        margin-bottom: 8px !important;
-        letter-spacing: 1.2px !important;
-    }
-    .site-footer a[href="/contact/"].rounded-60 {
-        padding: 6px 8px 6px 20px !important;
-        font-size: 13px !important;
-        gap: 12px !important;
-    }
-    .site-footer a[href="/contact/"].rounded-60 div.rounded-full {
-        width: 28px !important;
-        height: 28px !important;
-    }
-    .site-footer h2.tracking-2\.1 {
-        font-size: 22px !important;
-        line-height: 1.1 !important;
-        margin-bottom: 6px !important;
-    }
-    .site-footer div > a.border-b {
-        padding-top: 6px !important;
-        padding-bottom: 6px !important;
-        font-size: 16px !important;
-    }
-    .site-footer div > a.border-b div.rounded-full {
-        width: 26px !important;
-        height: 26px !important;
-    }
-    .site-footer .copyright {
-        padding-top: 12px !important;
-        padding-inline: 15px !important;
-    }
-    .site-footer .copyright > div {
-        font-size: 11px !important;
-        gap: 6px !important;
-    }
-    .site-footer .copyright > div > div:first-child {
-        margin-bottom: 6px !important;
-    }
-    .site-footer .copyright > div > div:last-child {
-        gap: 4px 10px !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
+    #contact .site-footer::before {
+        display: none;
     }
 }
 </style>
@@ -2639,8 +2573,7 @@ shore and sea</p>
 </div>
 </div>
 <!-- END DIV MAIN CONTENT -->
-    <div class="relative w-full
-        ">
+    <div class="relative w-full" id="contact">
         <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh
         absolute right-0  w-full        bg-dark-blue before:bg-dark-blue text-white pt-75        pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
             <div class="container mb-40 lg:mb-115">
@@ -2766,13 +2699,17 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         var prev = ST.getById('footer-reveal');
         if (prev) prev.kill();
 
-        var isSm = window.innerWidth >= 576;
+        if (window.innerWidth < 640) {
+            ST.refresh();
+            return;
+        }
+
         ST.create({
             id: 'footer-reveal',
             trigger: footer,
-            start: isSm ? 'bottom bottom' : 'top top',
+            start: 'bottom bottom',
             end: function() {
-                return '+=' + (footer.offsetHeight || 0) + 'px';
+                return '+=' + (footer.offsetHeight || window.innerHeight) + 'px';
             },
             scrub: true,
             pin: true,
