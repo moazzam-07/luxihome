@@ -2493,6 +2493,12 @@ shore and sea</p>
     #contact .site-footer::before {
         display: none;
     }
+    .pin-spacer:has([data-target="site-footer"]) {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
 }
 </style>
 <section class="relative w-full min-h-dvh mt-0 md:-mt-[26%] xl:mt-0 flex justify-between flex-col bg-sand pb-20 rounded-b-25 z-10 overflow-x-clip" data-name="teasers">
@@ -2699,6 +2705,16 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         if (prev) prev.kill(true);
 
         if (window.innerWidth < 640) {
+            var prev1 = ST.getById('footer-reveal');
+            if (prev1) prev1.kill(true);
+            var prev2 = ST.getById('footer-reveal-2');
+            if (prev2) prev2.kill(true);
+            if (footer && footer.parentElement && footer.parentElement.classList.contains('pin-spacer')) {
+                footer.parentElement.style.paddingBottom = '0px';
+                footer.parentElement.style.marginBottom = '0px';
+                footer.parentElement.style.minHeight = '0px';
+                footer.parentElement.style.height = 'auto';
+            }
             ST.refresh();
             return;
         }

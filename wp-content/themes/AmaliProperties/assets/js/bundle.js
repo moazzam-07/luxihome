@@ -663,7 +663,7 @@ gsap__WEBPACK_IMPORTED_MODULE_2__["default"].registerPlugin(gsap_CustomEase__WEB
 function footerReveal() {
   var footer = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="site-footer"]');
   var headerMenu = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="header-menu"]');
-  if (!footer) return;
+  if (!footer || window.innerWidth < 640) return;
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["default"].create({
     id: 'footer-reveal',
     trigger: footer,
@@ -4849,7 +4849,7 @@ function footerReveal() {
   var headerMenu = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="header-menu"]');
   var sectionIndicator = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator"]');
   var teasers = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="teasers"]');
-  if (!footer) return;
+  if (!footer || window.innerWidth < 640) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
     scrollTrigger: {
       id: 'footer-reveal',
