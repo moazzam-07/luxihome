@@ -2478,6 +2478,45 @@ shore and sea</p>
         min-height: auto !important;
         padding-bottom: 40px;
     }
+    /* Mobile footer flow: Keep footer in natural document flow so elements (logo, address, heading, contact button) are never pushed off-screen */
+    .footer-wrapper,
+    div:has(> [data-target="site-footer"]) {
+        position: relative !important;
+        z-index: 20 !important;
+        background: #1A2026 !important;
+        min-height: auto !important;
+        height: auto !important;
+    }
+    .pin-spacer:has(> [data-target="site-footer"]),
+    .pin-spacer-footer-reveal {
+        position: relative !important;
+        inset: auto !important;
+        z-index: 20 !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+    .site-footer,
+    [data-target="site-footer"] {
+        position: relative !important;
+        inset: auto !important;
+        z-index: 20 !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding-top: 50px !important;
+        padding-bottom: calc(40px + env(safe-area-inset-bottom)) !important;
+    }
+    .site-footer::before {
+        display: none !important;
+    }
+    .site-footer .container {
+        margin-bottom: 30px !important;
+    }
+    .site-footer .grid {
+        row-gap: 36px !important;
+    }
 }
 </style>
 <section class="relative w-full min-h-dvh mt-0 md:-mt-[26%] xl:mt-0 flex justify-between flex-col bg-sand pb-20 rounded-b-25 z-10 overflow-x-clip" data-name="teasers">
@@ -2559,7 +2598,7 @@ shore and sea</p>
 </div>
 </div>
 <!-- END DIV MAIN CONTENT -->
-<div class="relative w-full">
+<div class="relative w-full footer-wrapper" id="contact">
 <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh absolute right-0 w-full bg-dark-blue before:bg-dark-blue text-white pt-75 pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
 <div class="container mb-40 lg:mb-115">
 <div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
@@ -2677,12 +2716,21 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
 
         var prev = ST.getById('footer-reveal');
         if (prev) prev.kill();
+        var prev2 = ST.getById('footer-reveal-2');
+        if (prev2) prev2.kill();
 
         var isMobile = window.innerWidth < 640;
+        if (isMobile) {
+            // On mobile, keep footer in natural document flow so the logo, title, and contact button are not cut off
+            ST.refresh();
+            return;
+        }
+
+        // On desktop (>= 640px), enable full Amali parallax curtain reveal
         ST.create({
             id: 'footer-reveal',
             trigger: footer,
-            start: isMobile ? 'top top' : 'bottom bottom',
+            start: 'bottom bottom',
             end: function() {
                 return '+=' + (footer.offsetHeight || window.innerHeight) + 'px';
             },
@@ -2694,17 +2742,21 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         var teasersSec = document.querySelector('[data-name="teasers"]');
         if (teasersSec) {
             var cards = teasersSec.querySelectorAll('[data-target="page-teaser"]');
+            var teaserST = ST.getById('teasers-cards-st');
+            if (teaserST) teaserST.kill();
             if (cards.length > 0) {
                 gsapObj.from(cards, {
+                    id: 'teasers-cards-anim',
                     scrollTrigger: {
+                        id: 'teasers-cards-st',
                         trigger: teasersSec,
                         start: 'top 85%',
                         end: 'top 30%',
                         scrub: 1
                     },
-                    y: 50,
+                    y: 40,
                     opacity: 0.85,
-                    stagger: 0.2,
+                    stagger: 0.15,
                     ease: 'power2.out'
                 });
             }
@@ -2722,6 +2774,9 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
     }
     window.addEventListener('load', function() {
         setTimeout(initFooterCurtainReveal, 600);
+    });
+    window.addEventListener('resize', function() {
+        initFooterCurtainReveal();
     });
 })();
 </script>
