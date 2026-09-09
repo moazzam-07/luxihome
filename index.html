@@ -2480,9 +2480,14 @@ shore and sea</p>
     }
     /* Option 1: Mobile Compact Sizing for Footer Curtain Reveal */
     .site-footer {
+        top: 0 !important;
+        bottom: auto !important;
         padding-top: 28px !important;
         padding-bottom: 20px !important;
         min-height: auto !important;
+    }
+    .site-footer::before {
+        display: none !important;
     }
     .site-footer .container {
         margin-bottom: 16px !important;
@@ -2761,10 +2766,11 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         var prev = ST.getById('footer-reveal');
         if (prev) prev.kill();
 
+        var isSm = window.innerWidth >= 576;
         ST.create({
             id: 'footer-reveal',
             trigger: footer,
-            start: 'bottom bottom',
+            start: isSm ? 'bottom bottom' : 'top top',
             end: function() {
                 return '+=' + (footer.offsetHeight || 0) + 'px';
             },
