@@ -64,7 +64,7 @@
 			background-color: #13212E;
 			color: #FFFFFF;
 			font-family: 'DIN', sans-serif;
-			overflow-x: hidden;
+			overflow-x: clip;
 		}
 
 		html, body, #page-wrap, #content-wrap {
@@ -80,8 +80,8 @@
 			max-width: 100%;
 		}
 		main, #content-wrap {
-			width: 100vw;
-			max-width: 100vw;
+			width: 100%;
+			max-width: 100%;
 		}
 		h1, h2, h3, h4, p, a, span, td, th {
 			overflow-wrap: anywhere;
@@ -148,6 +148,17 @@
 				display: block;
 				max-width: 100%;
 			}
+			main {
+				padding: 160px 18px 72px !important;
+			}
+			.article-content, .article-content > *, main > * {
+				min-width: 0 !important;
+				max-width: 100% !important;
+			}
+			.article-content p { font-size: 15px !important; line-height: 1.7 !important; }
+			.article-content h2 { font-size: 22px !important; line-height: 1.2 !important; }
+			main h1 { font-size: clamp(24px, 7vw, 32px) !important; line-height: 1.18 !important; }
+			main > div > img, main .aspect-\[16\/9\] { border-radius: 16px !important; }
 		}
 
 		.font-sans {
@@ -166,6 +177,111 @@
 			backdrop-filter: blur(20px);
 			-webkit-backdrop-filter: blur(20px);
 		}
+
+
+		.journal-site-footer {
+			position: relative;
+			z-index: 10;
+			background: #13212E;
+			color: #FFFFFF;
+			border-top: 1px solid rgba(255,255,255,.14);
+			padding: 72px 24px 0;
+		}
+		.journal-footer-shell { max-width: 1440px; margin: 0 auto; }
+		.journal-footer-logo { display: block; width: 160px; margin: 0 auto; }
+		.journal-footer-logo img { display: block; width: 100%; height: auto; }
+		.journal-footer-address {
+			max-width: 620px;
+			margin: 22px auto 0;
+			color: rgba(255,255,255,.62);
+			font: 300 12px/1.45 'aviano-sans', sans-serif;
+			letter-spacing: .1em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.journal-footer-grid {
+			display: grid;
+			grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+			gap: 64px;
+			margin-top: 88px;
+			padding-bottom: 92px;
+		}
+		.journal-footer-contact { border-bottom: 1px solid rgba(255,255,255,.14); padding: 0 0 40px 32px; }
+		.journal-footer-kicker, .journal-footer-next h2 {
+			margin: 0;
+			font: 300 clamp(34px, 4vw, 58px)/.98 'aviano-sans', sans-serif;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+		}
+		.journal-footer-cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 22px;
+			margin-top: 28px;
+			padding: 10px 10px 10px 34px;
+			border-radius: 999px;
+			background: #6B879E;
+			color: #FFFFFF;
+			font: 400 14px/1 'aviano-sans', sans-serif;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+		}
+		.journal-footer-cta span:last-child, .journal-footer-links a span:last-child {
+			display: grid;
+			place-items: center;
+			flex: 0 0 auto;
+			width: 38px;
+			height: 38px;
+			border-radius: 50%;
+			background: rgba(255,255,255,.92);
+			color: #13212E;
+			font: 400 24px/1 'DIN', sans-serif;
+		}
+		.journal-footer-next h2 { margin-bottom: 24px; }
+		.journal-footer-links a {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 22px 0;
+			border-bottom: 1px solid rgba(255,255,255,.74);
+			color: #FFFFFF;
+			font: 300 clamp(20px, 2vw, 28px)/1.05 'aviano-sans', sans-serif;
+			letter-spacing: .06em;
+			text-transform: uppercase;
+		}
+		.journal-footer-links a:hover { color: #E6CA9E; }
+		.journal-footer-links a span:last-child { width: 38px; height: 38px; background: rgba(255,255,255,.1); color: #FFFFFF; font-size: 22px; }
+		.journal-footer-copyright {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			border-top: 1px solid rgba(255,255,255,.18);
+			padding: 28px 0 34px;
+			color: rgba(255,255,255,.65);
+			font: 300 12px/1.4 'DIN', sans-serif;
+			letter-spacing: .04em;
+			text-transform: uppercase;
+		}
+		.journal-footer-copyright nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; }
+		.journal-footer-copyright a:hover { color: #E6CA9E; }
+		@media (max-width: 639px) {
+			.journal-site-footer { padding: 58px 20px 0; }
+			.journal-footer-logo { width: 142px; }
+			.journal-footer-address { margin-top: 18px; font-size: 10px; letter-spacing: .08em; }
+			.journal-footer-grid { display: block; margin-top: 64px; padding-bottom: 56px; }
+			.journal-footer-contact { padding: 0 0 42px; }
+			.journal-footer-kicker { font-size: 31px; line-height: 1.06; }
+			.journal-footer-cta { margin-top: 24px; font-size: 12px; padding-left: 28px; }
+			.journal-footer-next { padding-top: 58px; }
+			.journal-footer-next h2 { font-size: 40px; line-height: .98; margin-bottom: 24px; }
+			.journal-footer-links a { padding: 21px 0; font-size: 21px; }
+			.journal-footer-copyright { display: block; padding: 26px 0 30px; font-size: 11px; }
+			.journal-footer-copyright span { display: block; max-width: 280px; }
+			.journal-footer-copyright nav { justify-content: flex-start; gap: 10px 16px; margin-top: 20px; font-size: 10px; }
+		}
+
 	</style>
 
 	<style id="wp-custom-css">
@@ -206,7 +322,7 @@
 
 <body class="wp-singular page-template wp-theme-AmaliProperties bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
 
-	
+
 <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
 <nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
     <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed style="position: fixed !important; top: 20px !important; right: 15px !important; left: auto !important; z-index: 99999 !important; display: flex !important; align-items: center !important;">
@@ -220,6 +336,7 @@
                         <rect y="10.5" width="16" height="1.5" rx="0.75" fill="#FFFFFF"/>
                     </svg>
                 </div>
+                <div class="absolute top-10 w-16 h-auto opacity-0 pointer-events-none" data-target="hamburger-lottie-dark" aria-hidden="true"></div>
             </div>
 
             <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-sand text-12 leading-none tracking-1.2 uppercase text-dark-blue lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-dark-blue after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
@@ -242,6 +359,7 @@
             </a>
 
             <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
+                <span data-target="menu-title" class="sr-only">Menu</span>
                 <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
                     <div>
                         <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
@@ -326,7 +444,7 @@
                     </div>
                     <div class="" data-target="menu-bottom">
                         <a href="https://www.instagram.com/the_luxihome" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
-                            <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white"> 
+                            <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white">
                                 <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="Social-Media" transform="translate(-307.000000, -513.000000)">
@@ -460,7 +578,7 @@
 			<img src="/pictures.testimonals/rajarhat.work/photo_6_2026-09-04_15-33-26.jpg" alt="Termite and Borer Prevention in Kolkata Flats: The Chemical Treatment Protocol" class="w-full h-full object-cover">
 		</div>
 
-		
+
 		<!-- Executive Summary Box -->
 		<div class="mb-40 p-24 sm:p-30 rounded-[20px] bg-gradient-to-br from-white/10 to-white/5 border border-gold/30 backdrop-blur-md">
 			<div class="flex items-center gap-10 mb-15">
@@ -471,44 +589,44 @@
 				<li class="flex items-start gap-10"><span class="text-gold select-none">•</span><span>New Town, Salt Lake, and lake-adjacent areas have the highest subterranean termite activity due to alluvial soil moisture.</span></li><li class="flex items-start gap-10"><span class="text-gold select-none">•</span><span>Surface brush-on chemical sprays are ineffective; pressure-impregnated factory treated plywood is mandatory.</span></li><li class="flex items-start gap-10"><span class="text-gold select-none">•</span><span>Drill-and-inject anti-termite perimeter barriers along skirting floor joints must precede modular furniture installation.</span></li><li class="flex items-start gap-10"><span class="text-gold select-none">•</span><span>Borer beetles attack through unsealed laminate edges and untreated solid wood reapers.</span></li>
 			</ul>
 		</div>
-  
+
 
 		<!-- Article Body -->
 		<div class="article-content">
-			
+
 		<section class="mb-35">
 			<h2 class="font-sans text-18 sm:text-24 leading-snug tracking-wide text-white uppercase mb-16">
 				1. The Difference Between Termites and Borers
 			</h2>
-			
+
 				<p class="font-body text-15 sm:text-17 leading-[1.8] text-white/75 mb-16">
 					Powder Post Borers leave fine talcum-like yellow dust on your floor and tiny pinholes in timber. Termites, conversely, leave zero visible external dust—they consume the soft cellulose from the inside out, leaving a paper-thin veneer shell that crumbles when touched.
 				</p>
-			
+
 				<p class="font-body text-15 sm:text-17 leading-[1.8] text-white/75 mb-16">
 					In newly constructed multi-story towers in Rajarhat, termites travel up plumbing and electrical vertical shafts, invading 15th-floor apartments with shocking ease.
 				</p>
-			
+
 		</section>
-  
+
 		<section class="mb-35">
 			<h2 class="font-sans text-18 sm:text-24 leading-snug tracking-wide text-white uppercase mb-16">
 				2. The Pre-Fitout Chemical Defense Protocol
 			</h2>
-			
+
 				<p class="font-body text-15 sm:text-17 leading-[1.8] text-white/75 mb-16">
 					Before false ceiling framing and wooden paneling start, hire a licensed pest management team to drill holes at 1-meter intervals along wall-floor joints and pump an advanced odorless non-repellent chemical (such as Premise by Bayer - Imidacloprid 30.5% SC).
 				</p>
-			
+
 				<p class="font-body text-15 sm:text-17 leading-[1.8] text-white/75 mb-16">
 					Unlike old kerosene-smelling insecticides, non-repellents allow worker termites to carry the active agent back to the subterranean colony, eradicating the queen.
 				</p>
-			
+
 		</section>
-  
+
 		</div>
 
-		
+
 		<!-- Interactive Comparison Table -->
 		<div class="my-40">
 			<h3 class="font-sans text-15 sm:text-18 tracking-wide uppercase text-white mb-15">
@@ -522,30 +640,30 @@
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-white/10 font-body text-white/80">
-						
+
 							<tr class="hover:bg-white/5 transition-colors">
 								<td class="py-14 px-16 font-medium text-white">Pre-Interior Chemical Injection</td><td class="py-14 px-16 ">₹12 – ₹18 / sq.ft</td><td class="py-14 px-16 ">Imidacloprid perimeter drill & fill</td><td class="py-14 px-16 ">5 Years</td>
 							</tr>
-						
+
 							<tr class="hover:bg-white/5 transition-colors">
 								<td class="py-14 px-16 font-medium text-white">Factory Preservative Plywood</td><td class="py-14 px-16 ">Included in IS:710 rate</td><td class="py-14 px-16 ">Vaccum pressure chemical impregnation</td><td class="py-14 px-16 ">10–20 Years</td>
 							</tr>
-						
+
 							<tr class="hover:bg-white/5 transition-colors">
 								<td class="py-14 px-16 font-medium text-white">Skirting Backside Bitumen Coat</td><td class="py-14 px-16 ">₹15 / running ft</td><td class="py-14 px-16 ">Anti-moisture anti-termite black barrier</td><td class="py-14 px-16 ">Permanent</td>
 							</tr>
-						
+
 							<tr class="hover:bg-white/5 transition-colors">
 								<td class="py-14 px-16 font-medium text-white">Topical Brush-on Chemical</td><td class="py-14 px-16 ">Negligible</td><td class="py-14 px-16 ">Only coats the outer 0.2mm surface</td><td class="py-14 px-16 ">Fails within 6 months</td>
 							</tr>
-						
+
 					</tbody>
 				</table>
 			</div>
 		</div>
-  
 
-		
+
+
 		<!-- The Secret Sauce Callout Box -->
 		<div class="my-45 p-24 sm:p-32 rounded-[20px] bg-gradient-to-br from-[#1E293B]/90 to-[#0F172A]/90 border border-gold/40 shadow-xl">
 			<div class="flex items-center gap-12 mb-15">
@@ -558,7 +676,7 @@
 				Builders in Kolkata frequently install standard untreated pine wood jambs (*choukath*) during civil construction. Termites travel inside these frames directly into your custom wardrobes. Insist on removing builder frames or having them saturated with chemical injections before mounting adjoining wardrobes.
 			</p>
 		</div>
-  
+
 
 		<!-- Soft CTA Consultation Card -->
 		<div class="my-50 p-30 sm:p-40 rounded-[24px] bg-gradient-to-r from-white/10 via-white/5 to-transparent border border-white/15 backdrop-blur-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-25">
@@ -577,50 +695,71 @@
 		</div>
 
 		<!-- Related Reading Section -->
-		
+
 		<div class="mt-60 pt-40 border-t border-white/10">
 			<h3 class="font-sans text-13 sm:text-14 tracking-[0.25em] uppercase text-gold mb-25">
 				Related Perspectives
 			</h3>
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-20">
-				
+
 			<a href="/journal/kolkata-monsoon-plywood-guide/" class="journal-clean-card flex flex-col justify-between group hover:border-gold/50 transition-all p-20 rounded-[18px] bg-white/5 border border-white/10">
 				<span class="text-10 tracking-[0.2em] font-sans text-gold uppercase mb-8">Climate & Materials</span>
 				<h4 class="font-sans text-14 sm:text-16 text-white group-hover:text-gold transition-colors leading-snug mb-14">The Monsoon Defense: Why 80% of Kolkata Plywood Warps and What to Buy Instead</h4>
 				<span class="inline-flex items-center gap-6 text-11 text-gold font-sans uppercase tracking-widest">Read Guide &rarr;</span>
 			</a>
-    
+
 			<a href="/journal/tackling-wall-dampness-nona-kolkata/" class="journal-clean-card flex flex-col justify-between group hover:border-gold/50 transition-all p-20 rounded-[18px] bg-white/5 border border-white/10">
 				<span class="text-10 tracking-[0.2em] font-sans text-gold uppercase mb-8">Climate & Materials</span>
 				<h4 class="font-sans text-14 sm:text-16 text-white group-hover:text-gold transition-colors leading-snug mb-14">Tackling Kolkata’s Wall Dampness (Nona) Before Painting: The Permanent 3-Step Fix</h4>
 				<span class="inline-flex items-center gap-6 text-11 text-gold font-sans uppercase tracking-widest">Read Guide &rarr;</span>
 			</a>
-    
+
 			</div>
 		</div>
-		
+
 
 	</main>
 
-			
-	<footer class="relative z-10 border-t border-white/10 bg-[#0E1720]/95 py-35 px-24 sm:px-40">
-		<div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-20 text-center sm:text-left">
-			<p class="font-body text-12 text-white/40">
-				© 2026 LUXiHOME (The Alam Interior ®). All rights reserved.
-			</p>
-			<div class="flex items-center gap-25 font-sans text-11 tracking-widest uppercase text-white/60">
-				<a href="/" class="hover:text-gold transition-colors">Home</a>
-				<a href="/about/" class="hover:text-gold transition-colors">About</a>
-				<a href="/journal/" class="text-gold">Journal</a>
-				<a href="/contact/" class="hover:text-gold transition-colors">Contact</a>
+
+	<footer class="journal-site-footer" data-target="site-footer">
+		<div class="journal-footer-shell">
+			<a href="/" class="journal-footer-logo" title="LUXiHOME">
+				<img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME">
+			</a>
+			<p class="journal-footer-address">8, Syed Ismail Ln, Esplanade, Collin Lane, Park St, Kolkata, West Bengal 700016</p>
+
+			<div class="journal-footer-grid">
+				<div class="journal-footer-contact">
+					<p class="journal-footer-kicker">Register your<br>interest</p>
+					<a href="/contact/" class="journal-footer-cta"><span>Contact</span><span aria-hidden="true">→</span></a>
+				</div>
+
+				<div class="journal-footer-next">
+					<h2>Where<br>next?</h2>
+					<div class="journal-footer-links">
+						<a href="/about/"><span>About LUXiHOME</span><span aria-hidden="true">→</span></a>
+						<a href="/contact/"><span>Contact</span><span aria-hidden="true">→</span></a>
+					</div>
+				</div>
 			</div>
+		</div>
+
+		<div class="journal-footer-copyright">
+			<span>© LUXiHOME 2026. All rights reserved.</span>
+			<nav aria-label="Footer links">
+				<a href="/terms-conditions/">Terms &amp; Conditions</a>
+				<a href="/payment-terms/">Payment Terms</a>
+				<a href="/privacy-policy/">Privacy Policy</a>
+				<a href="/cookies-policy/">Cookies Policy</a>
+				<a href="/credits/">Credits</a>
+			</nav>
 		</div>
 	</footer>
 
 		</div>
 	</div>
 
-	
+
 	<script id="script-js-js-extra">
 	var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
 	</script>

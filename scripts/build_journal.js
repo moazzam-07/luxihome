@@ -25,6 +25,7 @@ function getHeaderHtml(currentPath = '/journal/') {
                         <rect y="10.5" width="16" height="1.5" rx="0.75" fill="#FFFFFF"/>
                     </svg>
                 </div>
+                <div class="absolute top-10 w-16 h-auto opacity-0 pointer-events-none" data-target="hamburger-lottie-dark" aria-hidden="true"></div>
             </div>
 
             <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-sand text-12 leading-none tracking-1.2 uppercase text-dark-blue lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-dark-blue after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
@@ -47,6 +48,7 @@ function getHeaderHtml(currentPath = '/journal/') {
             </a>
 
             <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
+                <span data-target="menu-title" class="sr-only">Menu</span>
                 <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
                     <div>
                         <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
@@ -233,20 +235,148 @@ function getHeaderHtml(currentPath = '/journal/') {
 // Shared Footer HTML
 function getFooterHtml() {
   return `
-	<footer class="relative z-10 border-t border-white/10 bg-[#0E1720]/95 py-35 px-24 sm:px-40">
-		<div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-20 text-center sm:text-left">
-			<p class="font-body text-12 text-white/40">
-				© 2026 LUXiHOME (The Alam Interior ®). All rights reserved.
-			</p>
-			<div class="flex items-center gap-25 font-sans text-11 tracking-widest uppercase text-white/60">
-				<a href="/" class="hover:text-gold transition-colors">Home</a>
-				<a href="/about/" class="hover:text-gold transition-colors">About</a>
-				<a href="/journal/" class="text-gold">Journal</a>
-				<a href="/contact/" class="hover:text-gold transition-colors">Contact</a>
+	<footer class="journal-site-footer" data-target="site-footer">
+		<div class="journal-footer-shell">
+			<a href="/" class="journal-footer-logo" title="LUXiHOME">
+				<img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME">
+			</a>
+			<p class="journal-footer-address">8, Syed Ismail Ln, Esplanade, Collin Lane, Park St, Kolkata, West Bengal 700016</p>
+
+			<div class="journal-footer-grid">
+				<div class="journal-footer-contact">
+					<p class="journal-footer-kicker">Register your<br>interest</p>
+					<a href="/contact/" class="journal-footer-cta"><span>Contact</span><span aria-hidden="true">→</span></a>
+				</div>
+
+				<div class="journal-footer-next">
+					<h2>Where<br>next?</h2>
+					<div class="journal-footer-links">
+						<a href="/about/"><span>About LUXiHOME</span><span aria-hidden="true">→</span></a>
+						<a href="/contact/"><span>Contact</span><span aria-hidden="true">→</span></a>
+					</div>
+				</div>
 			</div>
+		</div>
+
+		<div class="journal-footer-copyright">
+			<span>© LUXiHOME 2026. All rights reserved.</span>
+			<nav aria-label="Footer links">
+				<a href="/terms-conditions/">Terms &amp; Conditions</a>
+				<a href="/payment-terms/">Payment Terms</a>
+				<a href="/privacy-policy/">Privacy Policy</a>
+				<a href="/cookies-policy/">Cookies Policy</a>
+				<a href="/credits/">Credits</a>
+			</nav>
 		</div>
 	</footer>
 `;
+}
+
+function getJournalFooterStyles() {
+  return `
+		.journal-site-footer {
+			position: relative;
+			z-index: 10;
+			background: #13212E;
+			color: #FFFFFF;
+			border-top: 1px solid rgba(255,255,255,.14);
+			padding: 72px 24px 0;
+		}
+		.journal-footer-shell { max-width: 1440px; margin: 0 auto; }
+		.journal-footer-logo { display: block; width: 160px; margin: 0 auto; }
+		.journal-footer-logo img { display: block; width: 100%; height: auto; }
+		.journal-footer-address {
+			max-width: 620px;
+			margin: 22px auto 0;
+			color: rgba(255,255,255,.62);
+			font: 300 12px/1.45 'aviano-sans', sans-serif;
+			letter-spacing: .1em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.journal-footer-grid {
+			display: grid;
+			grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+			gap: 64px;
+			margin-top: 88px;
+			padding-bottom: 92px;
+		}
+		.journal-footer-contact { border-bottom: 1px solid rgba(255,255,255,.14); padding: 0 0 40px 32px; }
+		.journal-footer-kicker, .journal-footer-next h2 {
+			margin: 0;
+			font: 300 clamp(34px, 4vw, 58px)/.98 'aviano-sans', sans-serif;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+		}
+		.journal-footer-cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 22px;
+			margin-top: 28px;
+			padding: 10px 10px 10px 34px;
+			border-radius: 999px;
+			background: #6B879E;
+			color: #FFFFFF;
+			font: 400 14px/1 'aviano-sans', sans-serif;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+		}
+		.journal-footer-cta span:last-child, .journal-footer-links a span:last-child {
+			display: grid;
+			place-items: center;
+			flex: 0 0 auto;
+			width: 38px;
+			height: 38px;
+			border-radius: 50%;
+			background: rgba(255,255,255,.92);
+			color: #13212E;
+			font: 400 24px/1 'DIN', sans-serif;
+		}
+		.journal-footer-next h2 { margin-bottom: 24px; }
+		.journal-footer-links a {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 22px 0;
+			border-bottom: 1px solid rgba(255,255,255,.74);
+			color: #FFFFFF;
+			font: 300 clamp(20px, 2vw, 28px)/1.05 'aviano-sans', sans-serif;
+			letter-spacing: .06em;
+			text-transform: uppercase;
+		}
+		.journal-footer-links a:hover { color: #E6CA9E; }
+		.journal-footer-links a span:last-child { width: 38px; height: 38px; background: rgba(255,255,255,.1); color: #FFFFFF; font-size: 22px; }
+		.journal-footer-copyright {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			border-top: 1px solid rgba(255,255,255,.18);
+			padding: 28px 0 34px;
+			color: rgba(255,255,255,.65);
+			font: 300 12px/1.4 'DIN', sans-serif;
+			letter-spacing: .04em;
+			text-transform: uppercase;
+		}
+		.journal-footer-copyright nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; }
+		.journal-footer-copyright a:hover { color: #E6CA9E; }
+		@media (max-width: 639px) {
+			.journal-site-footer { padding: 58px 20px 0; }
+			.journal-footer-logo { width: 142px; }
+			.journal-footer-address { margin-top: 18px; font-size: 10px; letter-spacing: .08em; }
+			.journal-footer-grid { display: block; margin-top: 64px; padding-bottom: 56px; }
+			.journal-footer-contact { padding: 0 0 42px; }
+			.journal-footer-kicker { font-size: 31px; line-height: 1.06; }
+			.journal-footer-cta { margin-top: 24px; font-size: 12px; padding-left: 28px; }
+			.journal-footer-next { padding-top: 58px; }
+			.journal-footer-next h2 { font-size: 40px; line-height: .98; margin-bottom: 24px; }
+			.journal-footer-links a { padding: 21px 0; font-size: 21px; }
+			.journal-footer-copyright { display: block; padding: 26px 0 30px; font-size: 11px; }
+			.journal-footer-copyright span { display: block; max-width: 280px; }
+			.journal-footer-copyright nav { justify-content: flex-start; gap: 10px 16px; margin-top: 20px; font-size: 10px; }
+		}
+  `;
 }
 
 // Shared Scripts HTML
@@ -405,7 +535,7 @@ function generateArticleHtml(art) {
 			background-color: #13212E;
 			color: #FFFFFF;
 			font-family: 'DIN', sans-serif;
-			overflow-x: hidden;
+			overflow-x: clip;
 		}
 
 		html, body, #page-wrap, #content-wrap {
@@ -421,8 +551,8 @@ function generateArticleHtml(art) {
 			max-width: 100%;
 		}
 		main, #content-wrap {
-			width: 100vw;
-			max-width: 100vw;
+			width: 100%;
+			max-width: 100%;
 		}
 		h1, h2, h3, h4, p, a, span, td, th {
 			overflow-wrap: anywhere;
@@ -489,6 +619,17 @@ function generateArticleHtml(art) {
 				display: block;
 				max-width: 100%;
 			}
+			main {
+				padding: 160px 18px 72px !important;
+			}
+			.article-content, .article-content > *, main > * {
+				min-width: 0 !important;
+				max-width: 100% !important;
+			}
+			.article-content p { font-size: 15px !important; line-height: 1.7 !important; }
+			.article-content h2 { font-size: 22px !important; line-height: 1.2 !important; }
+			main h1 { font-size: clamp(24px, 7vw, 32px) !important; line-height: 1.18 !important; }
+			main > div > img, main .aspect-\\[16\\/9\\] { border-radius: 16px !important; }
 		}
 
 		.font-sans {
@@ -507,6 +648,8 @@ function generateArticleHtml(art) {
 			backdrop-filter: blur(20px);
 			-webkit-backdrop-filter: blur(20px);
 		}
+
+		${getJournalFooterStyles()}
 	</style>
 
 	<style id="wp-custom-css">
@@ -731,7 +874,7 @@ function generateHubHtml() {
 			background-color: #13212E;
 			color: #FFFFFF;
 			font-family: 'DIN', sans-serif;
-			overflow-x: hidden;
+			overflow-x: clip;
 		}
 
 		/* Keep the journal hub inside the viewport on narrow screens. */
@@ -748,8 +891,8 @@ function generateHubHtml() {
 			max-width: 100%;
 		}
 		main, #content-wrap {
-			width: 100vw;
-			max-width: 100vw;
+			width: 100%;
+			max-width: 100%;
 		}
 		h1, h2, h3, h4, p, a, span {
 			overflow-wrap: anywhere;
@@ -763,6 +906,44 @@ function generateHubHtml() {
 			width: fit-content !important;
 		}
 		@media (max-width: 639px) {
+			html, body, #page-wrap, #content-wrap, main {
+				width: 100% !important;
+				max-width: 100% !important;
+				min-width: 0 !important;
+			}
+			main {
+				padding: 160px 18px 72px !important;
+			}
+			main > * { min-width: 0 !important; max-width: 100% !important; }
+			[data-nav-fixed] { inset-inline-end: 15px !important; }
+			[data-target="menu-background"] { inset-inline-end: 15px !important; }
+			[data-target="menu"] { max-width: calc(100vw - 32px) !important; }
+			main h1 { font-size: clamp(24px, 7vw, 32px) !important; line-height: 1.18 !important; }
+			.journal-hero { margin-bottom: 30px !important; }
+			.journal-hero h1 { font-size: clamp(24px, 7.4vw, 31px) !important; line-height: 1.16 !important; letter-spacing: .08em !important; }
+			.journal-hero p { max-width: 320px !important; font-size: 14px !important; line-height: 1.6 !important; }
+			.journal-filter-row {
+				width: 100% !important;
+				max-width: 100% !important;
+				display: flex !important;
+				justify-content: flex-start !important;
+				overflow-x: auto !important;
+				overflow-y: hidden !important;
+				scrollbar-width: none;
+				-webkit-overflow-scrolling: touch;
+				overscroll-behavior-inline: contain;
+			}
+			.journal-filter-row::-webkit-scrollbar { display: none; }
+			.journal-filter-row .journal-filter-btn { flex: 0 0 auto !important; padding: 8px 14px !important; font-size: 10px !important; letter-spacing: .12em !important; }
+			#articles-grid { width: 100% !important; grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; }
+			.journal-card { width: 100%; min-width: 0; border-radius: 18px; }
+			.journal-card-body { padding: 20px 20px 22px; min-height: 190px; }
+			.journal-card-meta { font-size: 10px; margin-bottom: 12px; }
+			.journal-card-title { font-size: 15px; line-height: 1.34; letter-spacing: .045em; margin-bottom: 22px; }
+			.journal-card-link { font-size: 10px; }
+			.journal-cta { margin-top: 56px !important; padding: 26px 22px !important; border-radius: 20px !important; }
+			.journal-cta h3 { font-size: 20px !important; line-height: 1.16 !important; }
+
 			[data-nav-fixed] {
 				width: 117px !important;
 				height: 50px !important;
@@ -829,6 +1010,8 @@ function generateHubHtml() {
 			backdrop-filter: blur(20px);
 			-webkit-backdrop-filter: blur(20px);
 		}
+
+		${getJournalFooterStyles()}
 
 		.journal-filter-btn.active {
 			background-color: #E6CA9E;
@@ -929,6 +1112,19 @@ function generateHubHtml() {
 			color: #FFFFFF;
 			gap: 12px;
 		}
+		.journal-filter-row {
+			width: 100%;
+			max-width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			overflow-x: auto;
+			overflow-y: hidden;
+			scrollbar-width: none;
+		}
+		.journal-filter-row::-webkit-scrollbar { display: none; }
+		@media (min-width: 1024px) {
+			.journal-filter-row { justify-content: center; }
+		}
 
 		/* Responsive Grid for Articles */
 		#articles-grid {
@@ -997,7 +1193,7 @@ function generateHubHtml() {
 			<main style="padding-top: max(180px, 24vh); padding-bottom: 120px;" class="relative z-10 px-20 sm:px-40 max-w-6xl mx-auto w-full">
 
 		<!-- Minimalist Hero Section -->
-		<section class="text-center mb-40 sm:mb-60">
+		<section class="journal-hero text-center mb-40 sm:mb-60">
 			<!-- Gold Kicker -->
 			<p class="font-sans font-normal text-11 sm:text-13 tracking-[0.35em] text-gold uppercase mb-16 sm:mb-20">
 				Journal & Perspectives
@@ -1016,7 +1212,7 @@ function generateHubHtml() {
 		</section>
 
 		<!-- Category Filter Tabs for Mobile & Desktop -->
-		<div class="mb-35 sm:mb-45 flex items-center gap-10 overflow-x-auto pb-10 scrollbar-none justify-start sm:justify-center">
+		<div class="journal-filter-row mb-35 sm:mb-45 flex items-center gap-10 overflow-x-auto pb-10 scrollbar-none justify-start sm:justify-center">
 			<button class="journal-filter-btn active px-18 py-8 rounded-full text-11 font-sans tracking-widest uppercase border border-white/20 transition-colors whitespace-nowrap" data-filter="all">All (30)</button>
 			<button class="journal-filter-btn px-18 py-8 rounded-full text-11 font-sans tracking-widest uppercase border border-white/20 text-white/70 hover:text-white transition-colors whitespace-nowrap" data-filter="cost-pricing">Costs & Pricing</button>
 			<button class="journal-filter-btn px-18 py-8 rounded-full text-11 font-sans tracking-widest uppercase border border-white/20 text-white/70 hover:text-white transition-colors whitespace-nowrap" data-filter="climate-materials">Climate & Materials</button>
@@ -1035,7 +1231,7 @@ function generateHubHtml() {
 		</section>
 
 		<!-- Bottom Soft CTA Card -->
-		<div class="mt-80 p-35 sm:p-50 rounded-[28px] bg-gradient-to-r from-white/10 via-white/5 to-transparent border border-white/15 backdrop-blur-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-30">
+		<div class="journal-cta mt-80 p-35 sm:p-50 rounded-[28px] bg-gradient-to-r from-white/10 via-white/5 to-transparent border border-white/15 backdrop-blur-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-30">
 			<div>
 				<span class="text-11 font-sans text-gold uppercase tracking-[0.25em] block mb-10">Private Design Studio</span>
 				<h3 class="font-sans text-20 sm:text-26 uppercase tracking-wide text-white mb-10">
@@ -1093,12 +1289,12 @@ allArticles.forEach((art, index) => {
   }
   const filePath = path.join(articleDir, 'index.html');
   const html = generateArticleHtml(art);
-  fs.writeFileSync(filePath, html, 'utf8');
+  fs.writeFileSync(filePath, html.replace(/[ \t]+$/gm, ''), 'utf8');
   console.log(`[${index + 1}/30] Built article: ${art.slug}`);
 });
 
 // 2. Build the main hub
 const hubPath = path.join(rootJournalDir, 'index.html');
 const hubHtml = generateHubHtml();
-fs.writeFileSync(hubPath, hubHtml, 'utf8');
+fs.writeFileSync(hubPath, hubHtml.replace(/[ \t]+$/gm, ''), 'utf8');
 console.log(`Successfully built Journal Hub at ${hubPath}`);
