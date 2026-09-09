@@ -2478,20 +2478,6 @@ shore and sea</p>
         min-height: auto !important;
         padding-bottom: 40px;
     }
-    #contact {
-        position: relative !important;
-        z-index: 20 !important;
-        background: #1A2026;
-    }
-    #contact .site-footer {
-        position: relative !important;
-        inset: auto !important;
-        z-index: 0 !important;
-        min-height: 100dvh;
-    }
-    #contact .site-footer::before {
-        display: none;
-    }
 }
 </style>
 <section class="relative w-full min-h-dvh mt-0 md:-mt-[26%] xl:mt-0 flex justify-between flex-col bg-sand pb-20 rounded-b-25 z-10 overflow-x-clip" data-name="teasers">
@@ -2573,7 +2559,7 @@ shore and sea</p>
 </div>
 </div>
 <!-- END DIV MAIN CONTENT -->
-<div class="relative w-full" id="contact">
+<div class="relative w-full">
 <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh absolute right-0 w-full bg-dark-blue before:bg-dark-blue text-white pt-75 pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
 <div class="container mb-40 lg:mb-115">
 <div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
@@ -2679,6 +2665,66 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
 //# sourceURL=script-js-js-extra
 </script>
 <script id="script-js-js" src="/wp-content/themes/AmaliProperties/assets/js/bundle.js"></script>
+<script id="footer-reveal-sync">
+(function() {
+    function initFooterCurtainReveal() {
+        var footer = document.querySelector('[data-target="site-footer"]');
+        if (!footer) return;
+        
+        var gsapObj = window.gsap || (typeof gsap !== 'undefined' ? gsap : null);
+        var ST = window.ScrollTrigger || (typeof ScrollTrigger !== 'undefined' ? ScrollTrigger : null);
+        if (!gsapObj || !ST) return;
+
+        var prev = ST.getById('footer-reveal');
+        if (prev) prev.kill();
+
+        var isMobile = window.innerWidth < 640;
+        ST.create({
+            id: 'footer-reveal',
+            trigger: footer,
+            start: isMobile ? 'top top' : 'bottom bottom',
+            end: function() {
+                return '+=' + (footer.offsetHeight || window.innerHeight) + 'px';
+            },
+            scrub: true,
+            pin: true,
+            invalidateOnRefresh: true
+        });
+
+        var teasersSec = document.querySelector('[data-name="teasers"]');
+        if (teasersSec) {
+            var cards = teasersSec.querySelectorAll('[data-target="page-teaser"]');
+            if (cards.length > 0) {
+                gsapObj.from(cards, {
+                    scrollTrigger: {
+                        trigger: teasersSec,
+                        start: 'top 85%',
+                        end: 'top 30%',
+                        scrub: 1
+                    },
+                    y: 50,
+                    opacity: 0.85,
+                    stagger: 0.2,
+                    ease: 'power2.out'
+                });
+            }
+        }
+
+        ST.refresh();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initFooterCurtainReveal, 300);
+        });
+    } else {
+        setTimeout(initFooterCurtainReveal, 300);
+    }
+    window.addEventListener('load', function() {
+        setTimeout(initFooterCurtainReveal, 600);
+    });
+})();
+</script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=87cac644b1080d98869be99d3616df3a"}}
 </script>
