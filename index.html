@@ -1942,8 +1942,8 @@ living</p>
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-center absolute lg:top-[calc(100vh_-_90px)] bottom-[30%] sm:bottom-[40%] lg:bottom-auto left-1/2 bg-black/40 backdrop-blur-27 rounded-[53px] -translate-x-1/2 z-[41] pointer-events-auto interiors-toggle-pill border border-white/15" data-target="interiors-image-switches">
-                        <div class="absolute bg-white/25 border border-white/30 rounded-[53px] backdrop-blur-27 shadow-sm pointer-events-none" data-target="interiors-image-switches-background"></div>
+                    <div class="flex items-center absolute lg:top-[calc(100vh_-_90px)] bottom-[30%] sm:bottom-[40%] lg:bottom-auto left-1/2 bg-black/25 backdrop-blur-27 rounded-[53px] -translate-x-1/2 z-[41] pointer-events-auto interiors-toggle-pill" data-target="interiors-image-switches">
+                        <div class="absolute bg-white/20 rounded-[53px] backdrop-blur-27 shadow-sm pointer-events-none" data-target="interiors-image-switches-background"></div>
                         <div class="relative cursor-pointer interiors-toggle-btn" data-target="interiors-image-switch">
                             <p class="font-sans font-medium text-11 sm:text-14 leading-none tracking-1.2 sm:tracking-1.6 uppercase text-white whitespace-nowrap">Contemporary</p>
                         </div>
@@ -2016,11 +2016,15 @@ living</p>
 .interiors-toggle-pill {
     padding: 5px !important;
     gap: 8px !important;
+    border: none !important;
+    outline: none !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 .interiors-toggle-btn {
     padding: 10px 18px !important;
     border-radius: 9999px !important;
+    border: none !important;
+    outline: none !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2028,6 +2032,8 @@ living</p>
 }
 .interiors-toggle-btn p {
     color: #FFFFFF !important;
+    border: none !important;
+    outline: none !important;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
 }
 [data-target="interiors-image-switches-background"] {
@@ -2035,6 +2041,8 @@ living</p>
     bottom: 5px !important;
     left: 0 !important;
     border-radius: 9999px !important;
+    border: none !important;
+    outline: none !important;
 }
 @media (min-width: 640px) {
     .interiors-toggle-pill {
