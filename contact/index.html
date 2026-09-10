@@ -705,8 +705,29 @@ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_r
 
             var waUrl = "https://wa.me/917063571108?text=" + encodeURIComponent(waMessage);
 
-            // Open WhatsApp
-            window.location.href = waUrl;
+            // Fail-safe Web3Forms background dispatch
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    access_key: '4f33d6a5-0aaa-4f2d-80dd-bf9661d85f29',
+                    subject: '⚡ LUXiHOME Contact Inquiry: ' + name,
+                    from_name: 'LUXiHOME Contact Page',
+                    name: name,
+                    email: email,
+                    phone: fullPhone,
+                    message: message,
+                    page_url: window.location.href,
+                    timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+                })
+            }).catch(function(err) {
+                console.warn('Web3Forms backup warning:', err);
+            });
+
+            // Launch WhatsApp
+            setTimeout(function() {
+                window.location.href = waUrl;
+            }, 600);
             return false;
         }
 
