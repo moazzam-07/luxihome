@@ -617,27 +617,18 @@ living</p>
 </div>
             <!-- ================= SECTION: THE ART (VIDEO SHOWCASE) ================= -->
             <section id="the-art" data-name="the-art" class="relative w-full bg-[#111518] text-white pointer-events-auto overflow-hidden py-40 sm:py-60 lg:py-80 select-none z-[42]">
-                <!-- Ambient Blurred Video Glow in Background -->
-                <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none opacity-20 filter blur-3xl scale-110">
-                    <video class="w-full h-full object-cover" autoplay loop muted playsinline aria-hidden="true" tabindex="-1">
-                        <source src="/assets/video/luxihome-interior-tour.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- Subtle Top and Bottom Vignette -->
-                <div class="absolute inset-0 bg-gradient-to-b from-[#111518] via-transparent to-[#111518] pointer-events-none"></div>
-
                 <div class="container relative z-10 max-w-[1400px] mx-auto px-20 sm:px-40">
-                    <!-- Clean Video Showcase (No frames, no borders) -->
+                    <!-- Clean Single Video Showcase (No background video, no borders) -->
                     <div class="relative mx-auto w-full max-w-[360px] sm:max-w-[420px] md:max-w-[460px] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl bg-black">
                         <!-- Subtle Top Scrim for text readability -->
-                        <div class="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        <div class="absolute top-0 left-0 right-0 h-52 bg-gradient-to-b from-black/70 via-black/25 to-transparent z-10 pointer-events-none"></div>
 
-                        <!-- Only 'The art' Overlaid Directly On Top of Ongoing Video -->
-                        <div class="absolute top-20 sm:top-28 left-0 right-0 text-center z-20 pointer-events-none px-20">
-                            <p class="font-script text-48 sm:text-64 lg:text-74 leading-none tracking-2 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">The art</p>
+                        <!-- Only 'The art' Overlaid Directly On Top of Ongoing Video (Big font like reference) -->
+                        <div class="absolute top-12 sm:top-20 left-0 right-0 text-center z-20 pointer-events-none px-10">
+                            <p class="font-script text-white whitespace-nowrap drop-shadow-[0_4px_18px_rgba(0,0,0,0.95)]" style="font-size: clamp(56px, 16vw, 88px); line-height: 1;">The art</p>
                         </div>
 
-                        <!-- Ongoing Video (Muted, Autoplay, Loop) -->
+                        <!-- Ongoing Video (Muted, Autoplay, Loop) - Exactly 1 single video -->
                         <video class="w-full h-auto aspect-[9/16] object-cover block"
                                autoplay loop muted playsinline
                                poster="/assets/video/luxihome-interior-tour-poster.jpg"
