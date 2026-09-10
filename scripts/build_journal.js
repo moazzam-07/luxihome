@@ -731,7 +731,7 @@ function getScriptsHtml() {
 	<script id="script-js-js-extra">
 	var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
 	</script>
-	<script id="script-js-js" src="/wp-content/themes/AmaliProperties/assets/js/bundle.js?ver=1774457287"></script>
+	<script id="script-js-js" src="/assets/js/bundle.js?ver=1774457287"></script>
 `;
 }
 
@@ -838,42 +838,42 @@ function generateArticleHtml(art) {
 	<meta property="og:image" content="${art.image}">
 
 	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/AmaliProperties/assets/img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/AmaliProperties/assets/img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/AmaliProperties/assets/img/favicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
 	<meta name="theme-color" content="#13212E">
 
 	<!-- Core Theme Stylesheet -->
-	<link rel="stylesheet" id="screen-css-css" href="/wp-content/themes/AmaliProperties/assets/css/styles.css?ver=1774457248" media="all">
+	<link rel="stylesheet" id="screen-css-css" href="/assets/css/styles.css?ver=1774457248" media="all">
 
 	<style>
 		@font-face {
 			font-family: 'aviano-sans';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/AvianoSans-Light.woff2') format('woff2');
+			src: url('/assets/fonts/AvianoSans-Light.woff2') format('woff2');
 			font-weight: 300;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'aviano-sans';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/AvianoSans-Reg.otf') format('opentype');
+			src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
 			font-weight: 400;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'aviano-sans';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/AvianoSans-Bol.otf') format('opentype');
+			src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
 			font-weight: 700;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'DIN';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/din-2014_light.woff2') format('woff2');
+			src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
 			font-weight: 300;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'DIN';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/din-2014_demi.woff2') format('woff2');
+			src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
 			font-weight: 600;
 			font-display: swap;
 		}
@@ -1036,7 +1036,7 @@ function generateArticleHtml(art) {
 	<script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 </head>
 
-<body class="journal-warm-theme wp-singular page-template wp-theme-AmaliProperties bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
+<body class="journal-warm-theme wp-singular page-template wp-theme-luxihome bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
 
 	${getHeaderHtml('/journal/' + art.slug + '/')}
 
@@ -1178,42 +1178,42 @@ function generateHubHtml() {
 	<meta property="og:site_name" content="LUXiHOME">
 
 	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/AmaliProperties/assets/img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/AmaliProperties/assets/img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/AmaliProperties/assets/img/favicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
 	<meta name="theme-color" content="#13212E">
 
 	<!-- Core Theme Stylesheet -->
-	<link rel="stylesheet" id="screen-css-css" href="/wp-content/themes/AmaliProperties/assets/css/styles.css?ver=1774457248" media="all">
+	<link rel="stylesheet" id="screen-css-css" href="/assets/css/styles.css?ver=1774457248" media="all">
 
 	<style>
 		@font-face {
 			font-family: 'aviano-sans';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/AvianoSans-Light.woff2') format('woff2');
+			src: url('/assets/fonts/AvianoSans-Light.woff2') format('woff2');
 			font-weight: 300;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'aviano-sans';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/AvianoSans-Reg.otf') format('opentype');
+			src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
 			font-weight: 400;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'aviano-sans';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/AvianoSans-Bol.otf') format('opentype');
+			src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
 			font-weight: 700;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'DIN';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/din-2014_light.woff2') format('woff2');
+			src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
 			font-weight: 300;
 			font-display: swap;
 		}
 		@font-face {
 			font-family: 'DIN';
-			src: url('/wp-content/themes/AmaliProperties/assets/fonts/din-2014_demi.woff2') format('woff2');
+			src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
 			font-weight: 600;
 			font-display: swap;
 		}
@@ -1531,7 +1531,7 @@ function generateHubHtml() {
 	<script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 </head>
 
-<body class="journal-warm-theme wp-singular page-template wp-theme-AmaliProperties bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
+<body class="journal-warm-theme wp-singular page-template wp-theme-luxihome bg-[#13212E] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black" data-barba="wrapper">
 
 	${getHeaderHtml('/journal/')}
 
