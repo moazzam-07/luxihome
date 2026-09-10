@@ -1,99 +1,98 @@
 /* ==========================================================================
-   LUXiHOME — Bespoke Project Estimate Modal & Lead Engine
-   Palette: Obsidian (#111316), Gold (#C2A26A), Sand (#DAD0C1)
+   LUXiHOME — Bespoke Free Estimate Lead Engine & Floating Action Dock
+   Theme: Signature Contact Page Styling (Cream #F8F7F4, Dark Navy #1A2026, Sand #DAD0C1)
    ========================================================================== */
 
-/* --- Floating Trigger Button --- */
-#luxi-estimate-trigger {
+/* --- Option A: Floating Action Dock (Call + Free Estimate) --- */
+#luxi-floating-dock {
     position: fixed;
-    bottom: 28px;
-    right: 28px;
+    bottom: 24px;
+    right: 24px;
     z-index: 9998;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 20px 12px 16px;
-    background: rgba(17, 19, 22, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(194, 162, 106, 0.45);
-    border-radius: 60px;
-    color: #FFFFFF;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(194, 162, 106, 0.2);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    font-family: inherit;
+    gap: 10px;
     user-select: none;
 }
 
-#luxi-estimate-trigger:hover {
-    transform: translateY(-2px) scale(1.02);
-    border-color: rgba(194, 162, 106, 0.8);
-    box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.7), 0 0 28px rgba(194, 162, 106, 0.3);
-}
-
-#luxi-estimate-trigger .luxi-trigger-icon {
+/* Call Button: Circular Sand Pill with Exact Header Phone Handset */
+.luxi-dock-call-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    background: linear-gradient(135deg, #C2A26A 0%, #9B7E48 100%);
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    color: #111316;
+    background-color: #DAD0C1;
+    color: #1A2026;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.4), 0 0 15px rgba(218, 208, 193, 0.3);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     flex-shrink: 0;
 }
 
-#luxi-estimate-trigger .luxi-trigger-icon svg {
+.luxi-dock-call-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    background-color: #E6DDD0;
+    box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.5);
+}
+
+.luxi-dock-call-btn svg {
     width: 17px;
     height: 17px;
-    fill: currentColor;
+    fill: #1A2026;
 }
 
-#luxi-estimate-trigger .luxi-trigger-text {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    line-height: 1.15;
-}
-
-#luxi-estimate-trigger .luxi-trigger-kicker {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #C2A26A;
-    font-weight: 500;
-}
-
-#luxi-estimate-trigger .luxi-trigger-title {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+/* Free Estimate Trigger Button: Dark Navy Pill matching Contact Page */
+.luxi-dock-estimate-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 48px;
+    padding: 4px 6px 4px 22px;
+    background-color: #1A2026;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 60px;
     color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#luxi-estimate-trigger .luxi-online-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #25D366;
+.luxi-dock-estimate-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    background-color: #242D36;
+    border-color: rgba(218, 208, 193, 0.4);
+    box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.6);
+}
+
+.luxi-dock-estimate-btn .luxi-arrow-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    position: relative;
-    margin-left: 2px;
+    background-color: rgba(255, 255, 255, 0.12);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
 }
 
-#luxi-estimate-trigger .luxi-online-dot::after {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    background-color: rgba(37, 211, 102, 0.4);
-    animation: luxi-pulse 2s infinite ease-out;
+.luxi-dock-estimate-btn:hover .luxi-arrow-circle {
+    background-color: rgba(255, 255, 255, 0.22);
+    transform: translateX(2px);
 }
 
-@keyframes luxi-pulse {
-    0% { transform: scale(0.8); opacity: 1; }
-    100% { transform: scale(2.2); opacity: 0; }
+.luxi-dock-estimate-btn .luxi-arrow-circle svg {
+    width: 6px;
+    height: 10px;
+    stroke: #FFFFFF;
 }
 
 /* --- Modal Overlay --- */
@@ -101,9 +100,9 @@
     position: fixed;
     inset: 0;
     z-index: 99999;
-    background: rgba(0, 0, 0, 0.78);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,260 +117,257 @@
     visibility: visible;
 }
 
-/* --- Modal Card --- */
+/* --- Modal Card: Signature Contact Theme (Light Cream) --- */
 #luxi-estimate-card {
     position: relative;
     width: 100%;
-    max-width: 480px;
-    background: #111316;
-    border: 1px solid rgba(194, 162, 106, 0.32);
-    border-radius: 20px;
-    padding: 32px 28px;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(194, 162, 106, 0.12);
-    color: #FFFFFF;
-    transform: scale(0.94) translateY(12px);
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #F8F7F4;
+    border-radius: 24px;
+    padding: 36px 32px 32px;
+    box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    color: #1A2026;
+    transform: scale(0.95) translateY(10px);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 
 #luxi-estimate-overlay.is-active #luxi-estimate-card {
     transform: scale(1) translateY(0);
 }
 
+/* Smooth custom scrollbar for modal card */
+#luxi-estimate-card::-webkit-scrollbar {
+    width: 5px;
+}
+#luxi-estimate-card::-webkit-scrollbar-thumb {
+    background: rgba(26, 32, 38, 0.15);
+    border-radius: 10px;
+}
+
 /* --- Modal Close Button --- */
 .luxi-modal-close {
     position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 36px;
-    height: 36px;
+    top: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(26, 32, 38, 0.06);
+    border: none;
     border-radius: 50%;
-    color: rgba(255, 255, 255, 0.65);
+    color: #1A2026;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
+    z-index: 10;
 }
 
 .luxi-modal-close:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #FFFFFF;
+    background: rgba(26, 32, 38, 0.12);
     transform: rotate(90deg);
 }
 
-/* --- Modal Header --- */
+/* --- Header: Clean Bold FREE ESTIMATE --- */
 .luxi-modal-header {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     text-align: left;
-    padding-right: 28px;
-}
-
-.luxi-modal-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #C2A26A;
-    margin-bottom: 8px;
-}
-
-.luxi-modal-badge::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #C2A26A;
+    padding-right: 40px;
 }
 
 .luxi-modal-title {
-    font-size: 22px;
+    font-family: inherit;
+    font-size: 26px;
     font-weight: 400;
-    letter-spacing: -0.01em;
-    color: #FFFFFF;
-    line-height: 1.25;
-    margin: 0 0 6px 0;
-}
-
-.luxi-modal-subtitle {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.62);
-    line-height: 1.45;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1A2026;
     margin: 0;
+    line-height: 1.1;
 }
 
-/* --- Form Fields --- */
-.luxi-form-group {
-    margin-bottom: 16px;
+/* --- Form Sections & Labels --- */
+.luxi-form-section {
+    margin-bottom: 20px;
     text-align: left;
 }
 
-.luxi-form-label {
+.luxi-section-label {
     display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 6px;
-    font-weight: 500;
-}
-
-.luxi-pill-group {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
-}
-
-.luxi-type-pill {
-    padding: 8px 4px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 11px;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    user-select: none;
-}
-
-.luxi-type-pill:hover {
-    border-color: rgba(194, 162, 106, 0.5);
-    color: #FFFFFF;
-}
-
-.luxi-type-pill.is-selected {
-    background: rgba(194, 162, 106, 0.18);
-    border-color: #C2A26A;
-    color: #C2A26A;
-    font-weight: 600;
-}
-
-.luxi-input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 10px;
-    transition: all 0.2s ease;
-}
-
-.luxi-input-wrapper:focus-within {
-    border-color: #C2A26A;
-    box-shadow: 0 0 0 2px rgba(194, 162, 106, 0.2);
-    background: rgba(255, 255, 255, 0.07);
-}
-
-.luxi-phone-prefix {
-    padding-left: 14px;
-    padding-right: 8px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.luxi-input {
-    width: 100%;
-    padding: 12px 14px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #FFFFFF;
-    font-size: 14px;
     font-family: inherit;
-    box-sizing: border-box;
-}
-
-.luxi-input::placeholder {
-    color: rgba(255, 255, 255, 0.32);
-    font-weight: 300;
-}
-
-.luxi-select {
-    width: 100%;
-    padding: 12px 14px;
-    background: #171a1e;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 10px;
-    outline: none;
-    color: #FFFFFF;
-    font-size: 13px;
-    font-family: inherit;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: border-color 0.2s ease;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23C2A26A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    background-size: 10px;
-}
-
-.luxi-select:focus {
-    border-color: #C2A26A;
-    box-shadow: 0 0 0 2px rgba(194, 162, 106, 0.2);
-}
-
-.luxi-select option {
-    background: #171a1e;
-    color: #FFFFFF;
-}
-
-/* --- Submit Button --- */
-.luxi-submit-btn {
-    width: 100%;
-    padding: 14px 20px;
-    margin-top: 8px;
-    background: linear-gradient(135deg, #C2A26A 0%, #A9894E 100%);
-    border: none;
-    border-radius: 12px;
-    color: #111316;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: all 0.25s ease;
+    letter-spacing: 0.14em;
+    color: #1A2026;
+    margin-bottom: 8px;
+}
+
+.luxi-required-star {
+    color: #1A2026;
+    margin-left: 2px;
+}
+
+/* --- Pill Selectors (Scope, Property Type, Move-in) --- */
+.luxi-pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.luxi-pill-item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    box-shadow: 0 8px 24px rgba(194, 162, 106, 0.25);
+    padding: 10px 14px;
+    background: rgba(26, 32, 38, 0.05);
+    border: 1px solid rgba(26, 32, 38, 0.08);
+    border-radius: 10px;
+    color: #1A2026;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    line-height: 1;
+}
+
+.luxi-pill-item:hover {
+    background: rgba(26, 32, 38, 0.09);
+    border-color: rgba(26, 32, 38, 0.15);
+}
+
+.luxi-pill-item.is-selected {
+    background: #1A2026;
+    border-color: #1A2026;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+/* --- Input Fields: Exact Contact Page Styling --- */
+.luxi-input-field {
+    width: 100%;
+    background-color: rgba(26, 32, 38, 0.05);
+    border: 1px solid rgba(26, 32, 38, 0.08);
+    border-radius: 10px;
+    padding: 14px 18px !important;
+    font-size: 14px;
+    color: #1A2026;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.luxi-input-field:focus {
+    background-color: #FFFFFF;
+    border-color: #1A2026;
+    box-shadow: 0 0 0 2px rgba(26, 32, 38, 0.1);
+}
+
+.luxi-input-field::placeholder {
+    color: rgba(26, 32, 38, 0.38);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Phone input with +91 container */
+.luxi-phone-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.luxi-phone-prefix-tag {
+    position: absolute;
+    left: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A2026;
+    pointer-events: none;
+    user-select: none;
+}
+
+.luxi-prefix-divider {
+    display: inline-block;
+    width: 1px;
+    height: 18px;
+    background-color: rgba(26, 32, 38, 0.25);
+}
+
+.luxi-phone-input {
+    padding-left: 76px !important;
+}
+
+/* --- Submit Button: Exact Contact Page Pill --- */
+.luxi-submit-row {
+    margin-top: 24px;
+    text-align: left;
+}
+
+.luxi-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #1A2026;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 60px;
+    padding: 7px 10px 7px 32px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    box-shadow: 0 8px 24px -4px rgba(26, 32, 38, 0.35);
+    transition: all 0.25s ease;
     user-select: none;
 }
 
 .luxi-submit-btn:hover {
-    background: linear-gradient(135deg, #D4B47B 0%, #B89658 100%);
+    background-color: #26313C;
     transform: translateY(-1px);
-    box-shadow: 0 12px 28px rgba(194, 162, 106, 0.35);
+    box-shadow: 0 12px 28px -4px rgba(26, 32, 38, 0.45);
 }
 
 .luxi-submit-btn:active {
     transform: translateY(0);
 }
 
-.luxi-submit-btn svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-    transition: transform 0.2s ease;
+.luxi-submit-btn .luxi-btn-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #354251;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    flex-shrink: 0;
 }
 
-.luxi-submit-btn:hover svg {
-    transform: translateX(3px);
+.luxi-submit-btn:hover .luxi-btn-arrow {
+    background-color: #455566;
+    transform: translateX(2px);
+}
+
+.luxi-submit-btn .luxi-btn-arrow svg {
+    width: 6px;
+    height: 10px;
+    stroke: #FFFFFF;
 }
 
 .luxi-submit-btn.is-loading {
@@ -379,43 +375,31 @@
     opacity: 0.85;
 }
 
-/* --- Trust & Privacy --- */
-.luxi-trust-strip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 14px;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.48);
-    letter-spacing: 0.02em;
-}
-
-.luxi-trust-strip svg {
-    width: 13px;
-    height: 13px;
-    fill: #C2A26A;
-    flex-shrink: 0;
-}
-
 /* ==========================================================================
-   Mobile Ergonomics (Bottom Sheet)
+   Mobile Optimization (Bottom Sheet)
    ========================================================================== */
 @media (max-width: 640px) {
-    #luxi-estimate-trigger {
-        bottom: 18px;
+    #luxi-floating-dock {
+        bottom: 16px;
         right: 16px;
-        padding: 10px 16px 10px 12px;
-        gap: 10px;
+        gap: 8px;
     }
 
-    #luxi-estimate-trigger .luxi-trigger-icon {
-        width: 30px;
-        height: 30px;
+    .luxi-dock-call-btn {
+        width: 44px;
+        height: 44px;
     }
 
-    #luxi-estimate-trigger .luxi-trigger-title {
-        font-size: 12px;
+    .luxi-dock-estimate-btn {
+        height: 44px;
+        padding: 3px 5px 3px 18px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+    }
+
+    .luxi-dock-estimate-btn .luxi-arrow-circle {
+        width: 34px;
+        height: 34px;
     }
 
     #luxi-estimate-overlay {
@@ -424,13 +408,9 @@
     }
 
     #luxi-estimate-card {
-        border-radius: 24px 24px 0 0;
+        border-radius: 28px 28px 0 0;
         max-height: 92vh;
-        overflow-y: auto;
-        padding: 24px 20px 32px;
-        border-bottom: none;
-        border-left: none;
-        border-right: none;
+        padding: 24px 20px 36px;
         transform: translateY(100%);
     }
 
@@ -438,31 +418,27 @@
         transform: translateY(0);
     }
 
-    .luxi-modal-drag-handle {
-        width: 36px;
+    .luxi-modal-drag-bar {
+        width: 40px;
         height: 4px;
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(26, 32, 38, 0.2);
         border-radius: 4px;
         margin: 0 auto 16px auto;
         display: block;
     }
 
     .luxi-modal-title {
-        font-size: 20px;
+        font-size: 22px;
     }
 
-    .luxi-pill-group {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .luxi-type-pill {
-        padding: 10px 6px;
-        font-size: 12px;
+    .luxi-pill-item {
+        padding: 9px 12px;
+        font-size: 11.5px;
     }
 
     .luxi-submit-btn {
-        padding: 15px 20px;
-        font-size: 13px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 7px 8px 7px 24px;
     }
 }
