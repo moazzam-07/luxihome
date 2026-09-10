@@ -615,7 +615,53 @@ living</p>
 <div class="absolute inset-0 backdrop-blur-0 pointer-events-none" data-target="popup-links-blur"></div>
 </section>
 </div>
-<!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR ARCHIVE (Amali Design System Theme) -->
+            <!-- ================= SECTION: THE ART (VIDEO SHOWCASE) ================= -->
+            <section id="the-art" data-name="the-art" class="relative w-full bg-[#111518] text-white pointer-events-auto overflow-hidden py-50 sm:py-70 lg:py-90 select-none z-[42]">
+                <!-- Ambient Blurred Video Glow in Background -->
+                <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none opacity-20 filter blur-3xl scale-110">
+                    <video class="w-full h-full object-cover" autoplay loop muted playsinline aria-hidden="true" tabindex="-1">
+                        <source src="/assets/video/luxihome-interior-tour.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!-- Subtle Top and Bottom Vignette -->
+                <div class="absolute inset-0 bg-gradient-to-b from-[#111518] via-transparent to-[#111518] pointer-events-none"></div>
+
+                <div class="container relative z-10 max-w-[1400px] mx-auto px-20 sm:px-40">
+                    <!-- Video Showcase Card (Vertical 9:16 portrait) with 'The art' Overlaid On Ongoing Video -->
+                    <div class="relative mx-auto w-full max-w-[360px] sm:max-w-[420px] md:max-w-[460px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] border border-white/15 bg-black">
+                        <!-- Top Video Scrim Gradient for Legibility -->
+                        <div class="absolute top-0 left-0 right-0 h-56 bg-gradient-to-b from-black/85 via-black/45 to-transparent z-10 pointer-events-none"></div>
+
+                        <!-- 'The art' Overlaid Directly On Top of Ongoing Video -->
+                        <div class="absolute top-20 sm:top-28 left-0 right-0 text-center z-20 pointer-events-none px-20">
+                            <p class="font-script text-44 sm:text-58 lg:text-68 leading-none tracking-2 sm:tracking-2.5 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">The art</p>
+                            <span class="inline-block font-sans font-light text-10 sm:text-11 tracking-[0.22em] uppercase text-white/85 mt-6 sm:mt-8 bg-black/40 backdrop-blur-md px-14 py-4 rounded-full border border-white/15">Living Interior Walkthrough</span>
+                        </div>
+
+                        <!-- Ongoing Video Element (Muted, Autoplay, Loop) -->
+                        <video class="w-full h-auto aspect-[9/16] object-cover block"
+                               autoplay loop muted playsinline
+                               poster="/assets/video/luxihome-interior-tour-poster.jpg"
+                               preload="metadata">
+                            <source src="/assets/video/luxihome-interior-tour.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <!-- Bottom Video Scrim Gradient & Meta Info -->
+                        <div class="absolute bottom-0 left-0 right-0 p-20 sm:p-26 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 pointer-events-none flex items-end justify-between">
+                            <div>
+                                <p class="font-sans font-normal text-13 sm:text-14 text-white tracking-0.5">Living Space Tour</p>
+                                <p class="font-sans font-light text-10 sm:text-11 text-white/70 tracking-0.5 mt-2">Bespoke Millwork & Architecture</p>
+                            </div>
+                            <div class="flex items-center gap-6 bg-white/15 backdrop-blur-md px-10 py-5 rounded-full border border-white/15">
+                                <span class="size-6 rounded-full bg-[#D4AF37] animate-pulse"></span>
+                                <span class="font-sans text-10 tracking-1 uppercase text-white/90">Curated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR ARCHIVE (Amali Design System Theme) -->
             <section id="lux-unfurling-gallery" class="relative w-screen bg-[#FFFFFF] text-[#1A2026] z-[35] pointer-events-auto select-none" data-name="interiors-unfurling-gallery">
                 <style>
                     #lux-unfurling-gallery {
