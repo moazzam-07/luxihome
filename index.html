@@ -2492,82 +2492,53 @@ living</p>
         z-index: 2;
     }
     [data-name="teasers"] {
-        min-height: auto !important;
-        padding-bottom: 40px;
-    }
-    #contact {
-        position: relative !important;
-        z-index: 20 !important;
-        background: #1A2026;
-    }
-    #contact .site-footer {
-        position: relative !important;
-        inset: auto !important;
-        z-index: 0 !important;
-        min-height: auto !important;
-        padding-bottom: 25px !important;
-    }
-    #contact .site-footer::before {
-        display: none;
-    }
-    .pin-spacer:has([data-target="site-footer"]) {
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
-        height: auto !important;
-        min-height: 0 !important;
+        min-height: auto;
     }
 }
 </style>
-<section class="relative w-full min-h-dvh mt-0 md:-mt-[26%] xl:mt-0 flex justify-between flex-col bg-sand pb-20 rounded-b-25 z-10 overflow-x-clip" data-name="teasers">
-<div class="flex justify-center text-center pt-50 md:pt-70 overflow-hidden">
-<p class="font-sans font-thin leading-none uppercase select-none whitespace-nowrap pointer-events-none" data-target="teasers-title">LUXiHOME</p>
-</div>
-<div class="container mb-60 md:mb-70 mt-30 md:-mt-40">
-<div class="grid grid-cols-12 items-center gap-x-12" data-target="teasers-content">
-<div class="col-span-12 md:col-span-7 mb-15 md:mb-0">
-<h2 class="font-sans font-thin text-30 lg:text-72 leading-26 lg:leading-64 tracking-0.9 lg:tracking-0.72 uppercase"></h2>
-</div>
-<div class="col-span-12 md:col-span-4 md:col-start-9">
-<p class="font-sans font-light text-18 lg:text-20 leading-[18px] lg:leading-[20px] tracking-0.2 uppercase mb-20"></p>
-</div>
-</div>
-</div>
-<div class="px-20 relative">
-<div class="grid grid-cols-12 items-center gap-x-20 gap-y-20 md:gap-y-0 md:rounded-b-30 overflow-hidden">
-<div class="col-span-12 md:col-span-6">
-<a class="pointer-events-auto block" href="/projects/park-street/">
-<div class="group relative w-full cursor-pointer rounded-15 md:rounded-none overflow-hidden" data-target="page-teaser">
-<div class="relative aspect-[290/200] md:aspect-[455/600] w-full overflow-hidden">
-<picture class="fill-image transition-transform duration-500 ease-[cubic-bezier(0.4, 0, 0, 1)] group-hover:scale-[1.08]" loading="lazy" role="presentation">
-<img alt="Park Street Luxury Residence Lounge" loading="lazy" role="presentation" src="/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg" class="fill-image object-cover w-full h-full" style="object-position: center 30%;"/>
-</picture>
-</div>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/75"></div>
-<div class="absolute right-0 bottom-0 left-0 w-full text-white text-center pb-25 md:pb-75">
-<p class="font-sans font-light text-13 md:text-16 leading-none tracking-1 uppercase opacity-60 mb-8">LUXiHOME RESIDENCES</p>
-<p class="font-sans font-light text-26 md:text-42 leading-none tracking-0.8 md:tracking-1.28 uppercase">Park Street</p>
-</div>
-</div>
-</a>
-</div>
-<div class="col-span-12 md:col-span-6">
-<a class="pointer-events-auto block" href="/projects/newtown/">
-<div class="group relative w-full cursor-pointer rounded-15 md:rounded-none overflow-hidden" data-target="page-teaser">
-<div class="relative aspect-[290/200] md:aspect-[455/600] w-full overflow-hidden">
-<picture class="fill-image transition-transform duration-500 ease-[cubic-bezier(0.4, 0, 0, 1)] group-hover:scale-[1.08]" loading="lazy" role="presentation">
-<img alt="New Town Modern Luxury Villa Facade" loading="lazy" role="presentation" src="/pictures.testimonals/new.town.work/photo_1_2026-09-04_15-49-33.jpg" class="fill-image object-cover w-full h-full" style="object-position: center 25%;"/>
-</picture>
-</div>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/75"></div>
-<div class="absolute right-0 bottom-0 left-0 w-full text-white text-center pb-25 md:pb-75">
-<p class="font-sans font-light text-13 md:text-16 leading-none tracking-1 uppercase opacity-60 mb-8">LUXiHOME RESIDENCES</p>
-<p class="font-sans font-light text-26 md:text-42 leading-none tracking-0.8 md:tracking-1.28 uppercase">New Town</p>
-</div>
-</div>
-</a>
-</div>
-</div>
-</div>
+<section class="relative w-full pb-60 md:pb-90 rounded-b-25 overflow-hidden bg-sand z-10" data-name="teasers">
+
+    <div class="flex justify-center relative text-center mb-50 sm:mb-70 md:mb-90 z-10 pointer-events-none pt-80 sm:pt-110 md:pt-130 px-15">
+        <p class="font-script font-normal text-32 sm:text-42 md:text-52 lg:text-64 leading-[1.4] tracking-2 md:tracking-2.7 text-gold">Explore More Projects</p>
+    </div>
+
+    <div class="px-20 mt-40 sm:mt-60 md:mt-80 pt-10 sm:pt-20">
+        <div class="grid grid-cols-12 items-center gap-20 rounded-b-30 overflow-hidden">
+
+            <!-- Project 1: Park Street -->
+            <div class="col-span-12 md:col-span-6">
+                <a class="pointer-events-auto block" href="/projects/park-street/">
+                    <div class="group relative w-full cursor-pointer rounded-15 md:rounded-none overflow-hidden" data-target="page-teaser">
+                        <div class="relative aspect-[690/600] w-full overflow-hidden">
+                            <img loading="lazy" role="presentation" src="/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg" alt="Park Street Luxury Residence Lounge" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 30%;" />
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                        <div class="absolute right-0 bottom-0 left-0 w-full text-white text-center pb-25 md:pb-75 px-15">
+                            <p class="font-sans font-light text-12 sm:text-14 md:text-16 leading-none tracking-1 uppercase opacity-60 mb-8">LUXiHOME</p>
+                            <p class="font-sans font-light text-26 sm:text-34 md:text-42 leading-none tracking-0.8 md:tracking-1.28 uppercase">Park Street</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 2: New Town -->
+            <div class="col-span-12 md:col-span-6">
+                <a class="pointer-events-auto block" href="/projects/new-town/">
+                    <div class="group relative w-full cursor-pointer rounded-15 md:rounded-none overflow-hidden" data-target="page-teaser">
+                        <div class="relative aspect-[690/600] w-full overflow-hidden">
+                            <img loading="lazy" role="presentation" src="/pictures.testimonals/new.town.work/photo_1_2026-09-04_15-49-33.jpg" alt="New Town Modern Luxury Villa Facade" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 25%;" />
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                        <div class="absolute right-0 bottom-0 left-0 w-full text-white text-center pb-25 md:pb-75 px-15">
+                            <p class="font-sans font-light text-12 sm:text-14 md:text-16 leading-none tracking-1 uppercase opacity-60 mb-8">LUXiHOME</p>
+                            <p class="font-sans font-light text-26 sm:text-34 md:text-42 leading-none tracking-0.8 md:tracking-1.28 uppercase">New Town</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
 </section>
 <!-- section indicator -->
 <div class="hidden xl:block fixed inset-0 w-screen h-screen opacity-0 invisible pointer-events-none z-[42]" data-target="section-indicator">
@@ -2598,7 +2569,7 @@ living</p>
 </div>
 <!-- END DIV MAIN CONTENT -->
     <div class="relative w-full" id="contact">
-        <footer class="site-footer max-sm:pt-80 bottom-0 left-0
+        <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh
         absolute right-0  w-full        bg-dark-blue before:bg-dark-blue text-white pt-75        pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
             <div class="container mb-40 lg:mb-115">
                 <div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
@@ -2713,33 +2684,24 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
     function initFooterCurtainReveal() {
         var footer = document.querySelector('[data-target="site-footer"]');
         if (!footer) return;
-        
+
         var gsapObj = window.gsap || (typeof gsap !== 'undefined' ? gsap : null);
         var ST = window.ScrollTrigger || (typeof ScrollTrigger !== 'undefined' ? ScrollTrigger : null);
         if (!gsapObj || !ST) return;
 
         var prev = ST.getById('footer-reveal');
         if (prev) prev.kill(true);
+        var prev2 = ST.getById('footer-reveal-2');
+        if (prev2) prev2.kill(true);
 
-        if (window.innerWidth < 640) {
-            var prev1 = ST.getById('footer-reveal');
-            if (prev1) prev1.kill(true);
-            var prev2 = ST.getById('footer-reveal-2');
-            if (prev2) prev2.kill(true);
-            if (footer && footer.parentElement && footer.parentElement.classList.contains('pin-spacer')) {
-                footer.parentElement.style.paddingBottom = '0px';
-                footer.parentElement.style.marginBottom = '0px';
-                footer.parentElement.style.minHeight = '0px';
-                footer.parentElement.style.height = 'auto';
-            }
-            ST.refresh();
-            return;
-        }
+        var isMobile = window.innerWidth < 640;
+        // Desktop reveals footer when bottom hits bottom; mobile pins when top hits top
+        var startCondition = isMobile ? 'top top' : 'bottom bottom';
 
         ST.create({
             id: 'footer-reveal',
             trigger: footer,
-            start: 'bottom bottom',
+            start: startCondition,
             end: function() {
                 return '+=' + (footer.offsetHeight || window.innerHeight) + 'px';
             },
@@ -2760,11 +2722,11 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
                         id: 'teasers-cards-st',
                         trigger: teasersSec,
                         start: 'top 85%',
-                        end: 'top 30%',
+                        end: 'top 35%',
                         scrub: 1
                     },
-                    y: 40,
-                    opacity: 0.85,
+                    y: isMobile ? 35 : 55,
+                    opacity: 0.8,
                     stagger: 0.15,
                     ease: 'power2.out'
                 });
@@ -2772,6 +2734,10 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         }
 
         ST.refresh();
+        var lenis = window.lenis || window.honeyLenis;
+        if (lenis && typeof lenis.resize === 'function') {
+            lenis.resize();
+        }
     }
 
     if (document.readyState === 'loading') {
