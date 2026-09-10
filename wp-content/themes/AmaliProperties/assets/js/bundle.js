@@ -4853,7 +4853,7 @@ function footerReveal() {
   if (!footer) return;
   // On phones the footer is part of the normal document flow. The desktop
   // pin would otherwise pull an absolute footer behind the teaser section.
-  if (window.matchMedia('(max-width: 639px)').matches) return;
+  if (window.matchMedia('(max-width: 767px)').matches) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
     scrollTrigger: {
       id: 'footer-reveal',

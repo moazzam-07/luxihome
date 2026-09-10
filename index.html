@@ -2586,8 +2586,7 @@ living</p>
 </div>
 <!-- END DIV MAIN CONTENT -->
     <div class="relative w-full" id="contact">
-        <footer class="site-footer max-sm:pt-80 bottom-0 left-0 max-sm:min-h-dvh
-        absolute right-0  w-full        bg-dark-blue before:bg-dark-blue text-white pt-75        pb-80 md:pb-50 -z-10 before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
+        <footer class="site-footer relative md:absolute md:bottom-0 md:left-0 md:right-0 w-full bg-dark-blue before:bg-dark-blue text-white pt-60 md:pt-75 pb-80 md:pb-50 z-20 md:-z-10 before:hidden md:before:block before:absolute before:right-0 before:left-0 before:bottom-full before:h-50" data-target="site-footer">
             <div class="container mb-40 lg:mb-115">
                 <div class="grid grid-cols-12 gap-x-12 gap-y-60 lg:gap-y-90">
                     <div class="col-span-12">
@@ -2708,14 +2707,28 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         var prev2 = ST.getById('footer-reveal-2');
         if (prev2) prev2.kill(true);
 
-        var isMobile = window.innerWidth < 640;
-        // Desktop reveals footer when bottom hits bottom; mobile pins when top hits top
-        var startCondition = isMobile ? 'top top' : 'bottom bottom';
+        var isMobile = window.innerWidth < 768;
 
+        if (isMobile) {
+            // On mobile/tablet screens: natural free scrolling to the footer.
+            // Kill any previous desktop footer pin triggers so mobile scroll is never blocked.
+            var prevMobile = ST.getById('footer-reveal');
+            if (prevMobile) prevMobile.kill(true);
+            var prevMobile2 = ST.getById('footer-reveal-2');
+            if (prevMobile2) prevMobile2.kill(true);
+            ST.refresh();
+            var lenisMobile = window.lenis || window.honeyLenis;
+            if (lenisMobile && typeof lenisMobile.resize === 'function') {
+                lenisMobile.resize();
+            }
+            return;
+        }
+
+        // On desktop (>= 768px): smooth curtain reveal
         ST.create({
             id: 'footer-reveal',
             trigger: footer,
-            start: startCondition,
+            start: 'bottom bottom',
             end: function() {
                 return '+=' + (footer.offsetHeight || window.innerHeight) + 'px';
             },
