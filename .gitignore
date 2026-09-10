@@ -2,8 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.log
 *.txt
+!robots.txt
 *.py
 honey_assets/
 honey_*.html
@@ -37,3 +37,6 @@ live_bundle.js
 server.js
 
 20260822_161618.mp4
+pictures.testimonals.zip
+image*.png
+9:16.living.room.png

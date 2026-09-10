@@ -1,0 +1,40 @@
+# LUXiHOME Global Search Engine Directives
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /contact/
+Allow: /journal/
+Allow: /projects/
+Allow: /alams-pentagon/
+Allow: /privacy-policy/
+Allow: /terms-conditions/
+Allow: /cookies-policy/
+
+# Disallow legacy scraped template directories & backend artifacts
+Disallow: /amali/
+Disallow: /about-amali/
+Disallow: /island/
+Disallow: /the-world-islands/
+Disallow: /the-public-realms/
+Disallow: /the-villas/
+Disallow: /private-island-living/
+Disallow: /life-on-the-water/
+Disallow: /lifestyle-clubhouse/
+Disallow: /the-architects/
+Disallow: /the-collection/
+Disallow: /the-concept/
+Disallow: /the-interior-vision/
+Disallow: /about-elastics/
+Disallow: /about-hba-residential/
+Disallow: /about-msquare/
+Disallow: /residences/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /wp-json/
+Disallow: /backups/
+Disallow: /*.bak$
+
+# Host & XML Sitemap
+Sitemap: https://luxihome-tab-web.vercel.app/sitemap.xml
+Host: https://luxihome-tab-web.vercel.app
