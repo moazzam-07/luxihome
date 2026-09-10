@@ -2710,12 +2710,105 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
         var isMobile = window.innerWidth < 768;
 
         if (isMobile) {
-            // On mobile/tablet screens: natural free scrolling to the footer.
-            // Kill any previous desktop footer pin triggers so mobile scroll is never blocked.
+            // Kill any old desktop pinned triggers
             var prevMobile = ST.getById('footer-reveal');
             if (prevMobile) prevMobile.kill(true);
             var prevMobile2 = ST.getById('footer-reveal-2');
             if (prevMobile2) prevMobile2.kill(true);
+
+            // 1. Mobile Live Scroll Animation for Teaser Cards & Watermark Title
+            var teasersSec = document.querySelector('[data-name="teasers"]');
+            if (teasersSec) {
+                var teaserTitle = teasersSec.querySelector('[data-target="teasers-title"]');
+                var teaserContent = teasersSec.querySelector('[data-target="teasers-content"]');
+                var cards = teasersSec.querySelectorAll('[data-target="page-teaser"]');
+
+                var teaserST = ST.getById('teasers-cards-st');
+                if (teaserST) teaserST.kill();
+                var teaserTitleST = ST.getById('teasers-title-st');
+                if (teaserTitleST) teaserTitleST.kill();
+                var teaserContentST = ST.getById('teasers-content-st');
+                if (teaserContentST) teaserContentST.kill();
+
+                if (teaserTitle) {
+                    gsapObj.fromTo(teaserTitle, 
+                        { x: 30, opacity: 0.05 },
+                        {
+                            x: -15,
+                            opacity: 0.18,
+                            scrollTrigger: {
+                                id: 'teasers-title-st',
+                                trigger: teasersSec,
+                                start: 'top 95%',
+                                end: 'bottom 60%',
+                                scrub: 1
+                            }
+                        }
+                    );
+                }
+
+                if (teaserContent) {
+                    gsapObj.fromTo(teaserContent,
+                        { y: 30, opacity: 0.4 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            scrollTrigger: {
+                                id: 'teasers-content-st',
+                                trigger: teasersSec,
+                                start: 'top 85%',
+                                end: 'top 40%',
+                                scrub: 1
+                            }
+                        }
+                    );
+                }
+
+                if (cards.length > 0) {
+                    gsapObj.fromTo(cards, 
+                        { y: 50, opacity: 0.5, scale: 0.96 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            scale: 1,
+                            stagger: 0.15,
+                            ease: 'none',
+                            scrollTrigger: {
+                                id: 'teasers-cards-st',
+                                trigger: teasersSec,
+                                start: 'top 75%',
+                                end: 'bottom 90%',
+                                scrub: 1
+                            }
+                        }
+                    );
+                }
+            }
+
+            // 2. Mobile Live Scroll Animation for Footer Content
+            var footerCols = footer.querySelectorAll('.grid > div');
+            var footerST = ST.getById('mobile-footer-st');
+            if (footerST) footerST.kill();
+
+            if (footerCols.length > 0) {
+                gsapObj.fromTo(footerCols,
+                    { y: 35, opacity: 0.3 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        stagger: 0.12,
+                        duration: 0.7,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            id: 'mobile-footer-st',
+                            trigger: footer,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            }
+
             ST.refresh();
             var lenisMobile = window.lenis || window.honeyLenis;
             if (lenisMobile && typeof lenisMobile.resize === 'function') {
@@ -2736,29 +2829,6 @@ var php_vars = {"themeDirUrl":"/wp-content/themes/AmaliProperties","homeUrl":"/"
             pin: true,
             invalidateOnRefresh: true
         });
-
-        var teasersSec = document.querySelector('[data-name="teasers"]');
-        if (teasersSec && isMobile) {
-            var cards = teasersSec.querySelectorAll('[data-target="page-teaser"]');
-            var teaserST = ST.getById('teasers-cards-st');
-            if (teaserST) teaserST.kill();
-            if (cards.length > 0) {
-                gsapObj.from(cards, {
-                    id: 'teasers-cards-anim',
-                    scrollTrigger: {
-                        id: 'teasers-cards-st',
-                        trigger: teasersSec,
-                        start: 'top 85%',
-                        end: 'top 35%',
-                        scrub: 1
-                    },
-                    y: isMobile ? 35 : 55,
-                    opacity: 0.8,
-                    stagger: 0.15,
-                    ease: 'power2.out'
-                });
-            }
-        }
 
         ST.refresh();
         var lenis = window.lenis || window.honeyLenis;
