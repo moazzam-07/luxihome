@@ -69761,12 +69761,12 @@ function smoothScroll() {
 }
 function barbaTransitions() {
   _barba_core__WEBPACK_IMPORTED_MODULE_4___default().init({
-    debug: true,
+    debug: false,
+    prefetchIgnore: true,
     // preventRunning: true,
     timeout: 5000,
     prevent: function prevent(_ref) {
-      var el = _ref.el;
-      return el.classList && el.classList.contains('no-barba');
+      return true;
     },
     transitions: [{
       name: 'default-transition',
@@ -70384,7 +70384,7 @@ function barbaTransitions() {
       }
     }]
   });
-  _barba_core__WEBPACK_IMPORTED_MODULE_4___default().use((_barba_prefetch__WEBPACK_IMPORTED_MODULE_5___default()));
+  // _barba_core__WEBPACK_IMPORTED_MODULE_4___default().use((_barba_prefetch__WEBPACK_IMPORTED_MODULE_5___default()));
   _barba_core__WEBPACK_IMPORTED_MODULE_4___default().hooks.leave(function (data) {
     var _$$magnificPopup;
     // close menu

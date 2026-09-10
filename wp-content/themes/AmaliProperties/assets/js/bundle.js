@@ -663,7 +663,7 @@ gsap__WEBPACK_IMPORTED_MODULE_2__["default"].registerPlugin(gsap_CustomEase__WEB
 function footerReveal() {
   var footer = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="site-footer"]');
   var headerMenu = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="header-menu"]');
-  if (!footer || window.innerWidth < 640) return;
+  if (!footer) return;
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["default"].create({
     id: 'footer-reveal',
     trigger: footer,
@@ -1203,7 +1203,8 @@ function teasers() {
   var teasersContent = (0,_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="teasers-content"]', section);
   var pageTeasers = (0,_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qsa)('[data-target="page-teaser"]', section);
   console.log('teasers');
-  if (!_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.xl) return;
+  if (!_utils_mediaQueries__WEBPACK_IMPORTED_MODULE_1__.media.lg) return;
+  var startSpacing = window.innerWidth > 1400 ? '80px' : '50px';
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_2__["default"].timeline({
     scrollTrigger: {
       id: 'teasers',
@@ -1220,7 +1221,7 @@ function teasers() {
   });
   timeline.addLabel('start').from(teasersTitle, {
     opacity: 0.06,
-    letterSpacing: '125px',
+    letterSpacing: startSpacing,
     duration: 1,
     ease: 'none'
   }, 'start').from(teasersContent, {
@@ -4849,7 +4850,10 @@ function footerReveal() {
   var headerMenu = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="header-menu"]');
   var sectionIndicator = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="section-indicator"]');
   var teasers = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="teasers"]');
-  if (!footer || window.innerWidth < 640) return;
+  if (!footer) return;
+  // On phones the footer is part of the normal document flow. The desktop
+  // pin would otherwise pull an absolute footer behind the teaser section.
+  if (window.matchMedia('(max-width: 767px)').matches) return;
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_3__["default"].timeline({
     scrollTrigger: {
       id: 'footer-reveal',
@@ -69834,12 +69838,12 @@ function smoothScroll() {
 }
 function barbaTransitions() {
   _barba_core__WEBPACK_IMPORTED_MODULE_4___default().init({
-    debug: true,
+    debug: false,
+    prefetchIgnore: true,
     // preventRunning: true,
     timeout: 5000,
     prevent: function prevent(_ref) {
-      var el = _ref.el;
-      return el.classList && el.classList.contains('no-barba');
+      return true;
     },
     transitions: [{
       name: 'default-transition',
@@ -70457,7 +70461,7 @@ function barbaTransitions() {
       }
     }]
   });
-  _barba_core__WEBPACK_IMPORTED_MODULE_4___default().use((_barba_prefetch__WEBPACK_IMPORTED_MODULE_5___default()));
+  // _barba_core__WEBPACK_IMPORTED_MODULE_4___default().use((_barba_prefetch__WEBPACK_IMPORTED_MODULE_5___default()));
   _barba_core__WEBPACK_IMPORTED_MODULE_4___default().hooks.leave(function (data) {
     var _$$magnificPopup;
     // close menu
