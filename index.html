@@ -1630,7 +1630,7 @@ living</p>
                         transform-style: preserve-3d;
                         backface-visibility: hidden;
                         cursor: pointer;
-                        transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s ease;
+                        transition: box-shadow 0.3s ease;
                         will-change: transform, opacity;
                         -webkit-font-smoothing: antialiased;
                         -moz-osx-font-smoothing: grayscale;
@@ -1834,7 +1834,7 @@ living</p>
                         stroke-linecap: round;
                         stroke-dasharray: 87.96;
                         stroke-dashoffset: 87.96;
-                        transition: stroke-dashoffset 0.25s ease;
+                        transition: none;
                     }
 
                     .lux-circ-counter {
@@ -1947,7 +1947,7 @@ living</p>
                     </div>
                 </div>
 
-                <!-- Circular Gallery Engine (Mobile-First Touch + Scroll + Auto-Rotation) -->
+                <!-- Circular Gallery Engine (Continuous 1:1 Live Scroll-Scrubbing + Touch Drag) -->
                 <script>
                 (function() {
                     var section = document.getElementById('lux-circular-gallery');
@@ -1963,16 +1963,22 @@ living</p>
                     var cards = Array.from(cylinder.querySelectorAll('.lux-circ-card'));
                     var totalItems = cards.length; // 4
                     var anglePerItem = 360 / totalItems; // 90 deg
+                    var maxRotationSpan = (totalItems - 1) * anglePerItem; // 270 deg (Card 0 at 0deg, Card 3 at -270deg)
 
-                    // Stepped State
                     var currentStep = 0;
                     var currentRotation = 0;
                     var targetRotation = 0;
                     var radius = 520;
+                    var ringCircumference = 2 * Math.PI * 14; // ~87.96
+
+                    // Touch / Pointer drag state
                     var isDragging = false;
                     var startX = 0;
+                    var startY = 0;
                     var lastX = 0;
-                    var ringCircumference = 2 * Math.PI * 14; // ~87.96
+                    var lastY = 0;
+                    var dragStartRotation = 0;
+                    var isHorizontalSwipe = false;
 
                     // Calculate radius and layout dynamically according to viewport size
                     function updateDimensions() {
@@ -1992,52 +1998,100 @@ living</p>
                             var itemAngle = i * anglePerItem;
                             card.style.transform = 'rotateY(' + itemAngle + 'deg) translateZ(' + radius + 'px)';
                         });
+
+                        // Sync initial scroll progress immediately
+                        onScroll();
                     }
 
                     updateDimensions();
                     window.addEventListener('resize', updateDimensions, { passive: true });
 
-                    // Navigation to explicit step (0, 1, 2, 3)
-                    function goToStep(stepIndex, smoothScroll) {
-                        currentStep = Math.max(0, Math.min(totalItems - 1, stepIndex));
-                        targetRotation = -currentStep * anglePerItem;
+                    // Continuous Scroll Engine: Maps sticky scroll progress 1:1 to 3D rotation
+                    function onScroll() {
+                        if (isHorizontalSwipe) return; // Prioritize active horizontal drag
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = section.offsetHeight - window.innerHeight;
+                        if (scrollDistance <= 0) return;
 
-                        if (smoothScroll) {
-                            var rect = section.getBoundingClientRect();
-                            var scrollDistance = section.offsetHeight - window.innerHeight;
-                            if (scrollDistance > 0) {
-                                var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                                var sectionTop = rect.top + currentScrollY;
-                                var targetScroll = sectionTop + (currentStep / (totalItems - 1)) * scrollDistance;
-                                var lenis = window.lenis || window.honeyLenis;
-                                if (lenis && typeof lenis.scrollTo === 'function') {
-                                    lenis.scrollTo(targetScroll, { duration: 0.8 });
-                                } else {
-                                    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
-                                }
-                            }
+                        if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+                            // Section is pinned and actively scrolling
+                            var progress = -rect.top / scrollDistance;
+                            progress = Math.max(0, Math.min(1, progress));
+                            targetRotation = -progress * maxRotationSpan;
+                        } else if (rect.top > 0) {
+                            // Above section
+                            targetRotation = 0;
+                        } else if (rect.bottom < window.innerHeight) {
+                            // Below section
+                            targetRotation = -maxRotationSpan;
                         }
                     }
 
-                    // Click interaction: active card opens link, other cards rotate into view
+                    window.addEventListener('scroll', onScroll, { passive: true });
+
+                    // Hook Lenis smooth scroll if present or once initialized
+                    function hookLenis() {
+                        var lenis = window.lenis || window.honeyLenis;
+                        if (lenis && typeof lenis.on === 'function') {
+                            lenis.on('scroll', onScroll);
+                            return true;
+                        }
+                        return false;
+                    }
+                    if (!hookLenis()) {
+                        var pollLenis = setInterval(function() {
+                            if (hookLenis()) clearInterval(pollLenis);
+                        }, 250);
+                        setTimeout(function() { clearInterval(pollLenis); }, 7000);
+                    }
+
+                    // Smooth navigation helper to jump to a specific card step
+                    function goToStep(stepIndex) {
+                        var clampedStep = Math.max(0, Math.min(totalItems - 1, stepIndex));
+                        var rect = section.getBoundingClientRect();
+                        var scrollDistance = section.offsetHeight - window.innerHeight;
+                        if (scrollDistance > 0) {
+                            var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                            var sectionTop = rect.top + currentScrollY;
+                            var targetScroll = sectionTop + (clampedStep / (totalItems - 1)) * scrollDistance;
+                            var lenis = window.lenis || window.honeyLenis;
+                            if (lenis && typeof lenis.scrollTo === 'function') {
+                                lenis.scrollTo(targetScroll, { duration: 0.8 });
+                            } else {
+                                window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                            }
+                        } else {
+                            targetRotation = -clampedStep * anglePerItem;
+                        }
+                    }
+
+                    // Click interaction: active center card opens link, side cards rotate into view
                     cards.forEach(function(card, i) {
                         card.addEventListener('click', function(e) {
-                            if (currentStep === i) {
+                            var itemAngle = i * anglePerItem;
+                            var totalAngle = (itemAngle + currentRotation) % 360;
+                            var rel = ((totalAngle % 360) + 360) % 360;
+                            var norm = Math.abs(rel > 180 ? 360 - rel : rel);
+
+                            if (norm < 30) {
                                 var href = card.getAttribute('data-href');
                                 if (href) {
                                     window.location.href = href;
                                 }
                             } else {
-                                goToStep(i, true);
+                                e.preventDefault();
+                                goToStep(i);
                             }
                         });
                     });
 
-                    // Update visual opacity, depth, counter and progress ring
+                    // Update visual opacity, depth, counter and progress ring continuously
                     function renderCards() {
-                        cylinder.style.transform = 'rotateY(' + currentRotation + 'deg)';
+                        cylinder.style.transform = 'rotateY(' + currentRotation.toFixed(2) + 'deg)';
 
                         var isMobile = window.innerWidth < 640;
+                        var activeIndex = 0;
+                        var minNorm = 9999;
 
                         cards.forEach(function(card, i) {
                             var itemAngle = i * anglePerItem;
@@ -2045,83 +2099,128 @@ living</p>
                             var rel = ((totalAngle % 360) + 360) % 360;
                             var norm = Math.abs(rel > 180 ? 360 - rel : rel);
 
-                            if (norm < 30) {
-                                // Active center card: 100% visible, fully interactive, crisp vector rendering
-                                card.style.opacity = '1';
-                                card.style.filter = 'none';
-                                card.style.pointerEvents = 'auto';
-                                card.style.zIndex = '10';
-                            } else if (norm < 110) {
-                                // Side cards
-                                if (isMobile) {
-                                    card.style.opacity = '0.08';
-                                    card.style.filter = 'none';
-                                    card.style.pointerEvents = 'none';
-                                    card.style.zIndex = '5';
-                                } else {
-                                    var opacity = Math.max(0.25, 1 - Math.pow(norm / 180, 1.4));
-                                    card.style.opacity = opacity.toFixed(2);
-                                    card.style.filter = 'none';
-                                    card.style.pointerEvents = 'auto';
-                                    card.style.zIndex = '5';
-                                }
-                            } else {
-                                // Back card
+                            if (norm < minNorm) {
+                                minNorm = norm;
+                                activeIndex = i;
+                            }
+
+                            if (norm >= 115) {
                                 card.style.opacity = '0';
-                                card.style.filter = 'none';
                                 card.style.pointerEvents = 'none';
                                 card.style.zIndex = '1';
+                            } else {
+                                // Smooth cosine falloff from front (norm = 0) to periphery (norm = 115)
+                                var rad = (norm / 115) * (Math.PI / 2);
+                                var falloff = Math.cos(rad);
+
+                                if (isMobile) {
+                                    var opMobile = Math.pow(falloff, 1.6);
+                                    card.style.opacity = opMobile.toFixed(3);
+                                    if (norm < 35) {
+                                        card.style.pointerEvents = 'auto';
+                                        card.style.zIndex = '10';
+                                    } else {
+                                        card.style.pointerEvents = 'none';
+                                        card.style.zIndex = norm < 80 ? '5' : '2';
+                                    }
+                                } else {
+                                    var opDesktop = Math.max(0.18, Math.pow(falloff, 1.2));
+                                    card.style.opacity = opDesktop.toFixed(3);
+                                    if (norm < 35) {
+                                        card.style.pointerEvents = 'auto';
+                                        card.style.zIndex = '10';
+                                    } else if (norm < 90) {
+                                        card.style.pointerEvents = 'auto';
+                                        card.style.zIndex = '5';
+                                    } else {
+                                        card.style.pointerEvents = 'none';
+                                        card.style.zIndex = '2';
+                                    }
+                                }
                             }
                         });
+
+                        currentStep = activeIndex;
+
+                        // Live Smooth Circular Progress Ring
+                        if (progressRing) {
+                            var continuousProgress = Math.max(0, Math.min(1, -currentRotation / maxRotationSpan));
+                            var offset = ringCircumference * (1 - continuousProgress);
+                            progressRing.style.strokeDashoffset = offset.toFixed(2);
+                        }
 
                         // Update Counter
                         if (counterEl) {
                             var pad = (currentStep + 1) < 10 ? '0' + (currentStep + 1) : (currentStep + 1);
                             counterEl.textContent = pad + ' / 04';
                         }
-
-                        // Update Circular Progress Ring
-                        if (progressRing) {
-                            var progressFraction = currentStep / (totalItems - 1);
-                            var offset = ringCircumference * (1 - progressFraction);
-                            progressRing.style.strokeDashoffset = offset.toFixed(1);
-                        }
                     }
 
-                    // Main Animation Loop: lerp smoothly without any idle drift
+                    // Main Animation Loop: lerp smoothly to give silky physical inertia
                     function animate() {
-                        currentRotation += (targetRotation - currentRotation) * 0.14;
+                        var diff = targetRotation - currentRotation;
+                        if (Math.abs(diff) > 0.01) {
+                            currentRotation += diff * 0.15;
+                        } else {
+                            currentRotation = targetRotation;
+                        }
                         renderCards();
                         requestAnimationFrame(animate);
                     }
                     requestAnimationFrame(animate);
 
-                    // Touch / Pointer Drag Gestures (Swipe to switch card)
+                    // Touch / Pointer Gestures (Horizontal drag / swipe)
                     function onPointerDown(e) {
                         isDragging = true;
+                        isHorizontalSwipe = false;
                         startX = (e.touches && e.touches[0].clientX) || e.clientX || 0;
+                        startY = (e.touches && e.touches[0].clientY) || e.clientY || 0;
                         lastX = startX;
+                        lastY = startY;
+                        dragStartRotation = currentRotation;
                         if (viewport) viewport.classList.add('is-grabbing');
                     }
 
                     function onPointerMove(e) {
                         if (!isDragging) return;
                         var clientX = (e.touches && e.touches[0].clientX) || e.clientX || 0;
+                        var clientY = (e.touches && e.touches[0].clientY) || e.clientY || 0;
                         lastX = clientX;
+                        lastY = clientY;
+
+                        var deltaX = lastX - startX;
+                        var deltaY = lastY - startY;
+
+                        if (!isHorizontalSwipe) {
+                            if (Math.abs(deltaX) > 12 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+                                isHorizontalSwipe = true;
+                            }
+                        }
+
+                        if (isHorizontalSwipe) {
+                            var dragSensitivity = 0.35;
+                            var dragTarget = dragStartRotation + (deltaX * dragSensitivity);
+                            targetRotation = Math.max(-maxRotationSpan, Math.min(0, dragTarget));
+                        }
                     }
 
                     function onPointerUp() {
                         if (!isDragging) return;
+                        var wasHorizontal = isHorizontalSwipe;
                         isDragging = false;
+                        isHorizontalSwipe = false;
                         if (viewport) viewport.classList.remove('is-grabbing');
 
-                        var deltaX = lastX - startX;
-                        // Swipe left -> next card, swipe right -> previous card
-                        if (Math.abs(deltaX) > 30) {
-                            if (deltaX < 0) {
-                                goToStep(currentStep + 1, true);
+                        if (wasHorizontal) {
+                            var deltaX = lastX - startX;
+                            if (Math.abs(deltaX) > 40) {
+                                if (deltaX < 0) {
+                                    goToStep(currentStep + 1);
+                                } else {
+                                    goToStep(currentStep - 1);
+                                }
                             } else {
-                                goToStep(currentStep - 1, true);
+                                goToStep(currentStep);
                             }
                         }
                     }
@@ -2142,104 +2241,14 @@ living</p>
                     if (prevBtn) {
                         prevBtn.addEventListener('click', function(e) {
                             e.preventDefault();
-                            goToStep(currentStep - 1, true);
+                            goToStep(currentStep - 1);
                         });
                     }
                     if (nextBtn) {
                         nextBtn.addEventListener('click', function(e) {
                             e.preventDefault();
-                            goToStep(currentStep + 1, true);
+                            goToStep(currentStep + 1);
                         });
-                    }
-
-                    // Direct Wheel Stepping: 1 scroll flick advances 1 card with inertia lock
-                    var isStepLocked = false;
-                    var stepCooldown = 650; // ms to absorb wheel/trackpad momentum burst
-                    var stage = document.getElementById('lux-circ-stage');
-
-                    function onWheel(e) {
-                        var rect = section.getBoundingClientRect();
-                        // Only intercept when gallery stage is pinned/active in viewport
-                        var isPinned = rect.top <= 20 && rect.bottom >= window.innerHeight - 20;
-                        if (!isPinned) return;
-
-                        var delta = e.deltaY;
-                        if (Math.abs(delta) < 18) return;
-
-                        if (delta > 0) {
-                            // Scrolling Down
-                            if (currentStep < totalItems - 1) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                if (!isStepLocked) {
-                                    isStepLocked = true;
-                                    goToStep(currentStep + 1, true);
-                                    setTimeout(function() { isStepLocked = false; }, stepCooldown);
-                                }
-                            }
-                            // At last card (04/04): natural scroll allowed down into next section
-                        } else {
-                            // Scrolling Up
-                            if (currentStep > 0) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                if (!isStepLocked) {
-                                    isStepLocked = true;
-                                    goToStep(currentStep - 1, true);
-                                    setTimeout(function() { isStepLocked = false; }, stepCooldown);
-                                }
-                            }
-                            // At first card (01/04): natural scroll allowed up into previous section
-                        }
-                    }
-
-                    if (stage) {
-                        stage.addEventListener('wheel', onWheel, { passive: false });
-                    }
-
-                    // Stepped Scroll Sync Engine (keeps page scroll and cards synchronized)
-                    function onScroll() {
-                        var rect = section.getBoundingClientRect();
-                        var scrollDistance = section.offsetHeight - window.innerHeight;
-                        if (scrollDistance <= 0) return;
-
-                        if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-                            var progress = Math.max(0, Math.min(1, -rect.top / scrollDistance));
-                            // Symmetrically map progress to 4 steps: 0, 1, 2, 3
-                            var step = Math.min(totalItems - 1, Math.round(progress * (totalItems - 1)));
-                            if (!isStepLocked && step !== currentStep) {
-                                currentStep = step;
-                                targetRotation = -currentStep * anglePerItem;
-                            }
-                        } else if (rect.top > 0) {
-                            if (!isStepLocked && currentStep !== 0) {
-                                currentStep = 0;
-                                targetRotation = 0;
-                            }
-                        } else if (rect.bottom < window.innerHeight) {
-                            if (!isStepLocked && currentStep !== totalItems - 1) {
-                                currentStep = totalItems - 1;
-                                targetRotation = -(totalItems - 1) * anglePerItem;
-                            }
-                        }
-                    }
-
-                    window.addEventListener('scroll', onScroll, { passive: true });
-
-                    // Dynamically hook Lenis scroll events if initialized later by theme bundle
-                    function hookLenis() {
-                        var lenis = window.lenis || window.honeyLenis;
-                        if (lenis && typeof lenis.on === 'function') {
-                            lenis.on('scroll', onScroll);
-                            return true;
-                        }
-                        return false;
-                    }
-                    if (!hookLenis()) {
-                        var pollLenis = setInterval(function() {
-                            if (hookLenis()) clearInterval(pollLenis);
-                        }, 250);
-                        setTimeout(function() { clearInterval(pollLenis); }, 7000);
                     }
                 })();
                 </script>
