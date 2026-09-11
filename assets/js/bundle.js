@@ -4233,13 +4233,37 @@ function banner() {
   var imageDuration = 2.5;
   // const imageEase = CustomEase.create('imageEase', 'M0,0 C0.173,0 0.226,0.054 0.306,0.148 0.385,0.241 0.415,0.439 0.468,0.578 0.512,0.694 0.538,0.786 0.644,0.878 0.717,0.942 0.869,1 1,1');
   gsap_CustomEase__WEBPACK_IMPORTED_MODULE_6__["default"].create('imageEase', 'M0,0 C0.173,0 0.217,0.107 0.283,0.213 0.359,0.335 0.403,0.455 0.456,0.594 0.5,0.71 0.509,0.79 0.608,0.891 0.675,0.959 0.737,1 1,1 ');
+
+  var isDesktop = window.innerWidth >= 1024;
+  var logoElWidth = (menuLogo && menuLogo.offsetWidth) ? menuLogo.offsetWidth : (window.innerWidth >= 640 ? 210 : 160);
+  var startX = isDesktop ? 0 : Math.round((window.innerWidth / 2) - 20 - (logoElWidth / 2));
+
+  var preventScrollHandler = function preventScrollHandler(e) {
+    if (document.documentElement.classList.contains('luxi-intro-scroll-lock')) {
+      e.preventDefault();
+    }
+  };
+
   var timeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline({
     onStart: function onStart() {
       if (window.scrollY < 10) {
-        // window?.lenis?.stop();
+        document.documentElement.classList.add('luxi-intro-scroll-lock');
+        document.body.classList.add('luxi-intro-scroll-lock');
+        window.addEventListener('touchmove', preventScrollHandler, { passive: false });
+        window.addEventListener('wheel', preventScrollHandler, { passive: false });
+        var _window;
+        (_window = window) === null || _window === void 0 || (_window = _window.lenis) === null || _window === void 0 || _window.stop();
       }
     },
     onComplete: function onComplete() {
+      document.documentElement.classList.remove('luxi-intro-scroll-lock', 'luxi-intro-pending');
+      document.body.classList.remove('luxi-intro-scroll-lock');
+      window.removeEventListener('touchmove', preventScrollHandler, { passive: false });
+      window.removeEventListener('wheel', preventScrollHandler, { passive: false });
+      if (window.__luxiPreventScroll) {
+        window.removeEventListener('touchmove', window.__luxiPreventScroll, { passive: false });
+        window.removeEventListener('wheel', window.__luxiPreventScroll, { passive: false });
+      }
       if (window.scrollY < 10) {
         var _window;
         (_window = window) === null || _window === void 0 || (_window = _window.lenis) === null || _window === void 0 || _window.start();
@@ -4284,7 +4308,22 @@ function banner() {
     }
   });
   if (window.scrollY < 10 && !window.sessionStorage.getItem('preloader_seen')) {
-    timeline.addLabel('start').add(function () {
+    gsap__WEBPACK_IMPORTED_MODULE_4__["default"].set(menuLogo, {
+      top: '50vh',
+      yPercent: -50,
+      y: 0,
+      x: startX,
+      scale: isDesktop ? 2.8 : (window.innerWidth >= 640 ? 2.1 : 1.7),
+      opacity: 0,
+      visibility: 'visible'
+    });
+    document.documentElement.classList.remove('luxi-intro-pending');
+
+    timeline.addLabel('start').to(menuLogo, {
+      opacity: 1,
+      duration: 0.35,
+      ease: 'power2.out'
+    }, 'start').add(function () {
       if (logoLottieWrapper.dataset.played == 'false') {
         var logoLottie = new _js_utils_lottie__WEBPACK_IMPORTED_MODULE_2__["default"]('logo', '[data-target="logo-lottie"]');
         logoLottie.animation.goToAndPlay(75, true);
@@ -4294,8 +4333,8 @@ function banner() {
       top: '50vh',
       yPercent: -50,
       y: 0,
-      x: 0,
-      scale: window.innerWidth >= 1024 ? 2.8 : (window.innerWidth >= 640 ? 2.1 : 1.7)
+      x: startX,
+      scale: isDesktop ? 2.8 : (window.innerWidth >= 640 ? 2.1 : 1.7)
     }, {
       scale: 1,
       top: '0px',

@@ -17719,3 +17719,39 @@ html.lenis {
 .luxi-project-list > li > a:hover {
   color: #FFFFFF !important;
 }
+
+/* LUXiHOME Mobile Header Logo Positioning: Left-aligned on mobile, Centered on desktop */
+@media (max-width: 1023px) {
+  [data-target="header-menu"].order-2,
+  .luxi-header-logo {
+    left: 20px !important;
+    right: auto !important;
+    transform: none !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+@media (min-width: 1024px) {
+  [data-target="header-menu"].order-2,
+  .luxi-header-logo {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    justify-content: center !important;
+  }
+}
+
+/* Preloader Scroll Lock & Zero-Flicker States */
+html.luxi-intro-scroll-lock,
+body.luxi-intro-scroll-lock {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+}
+
+html.luxi-intro-pending [data-target="logo-lottie"],
+html.luxi-intro-pending [data-target="logo-lottie-dark"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
