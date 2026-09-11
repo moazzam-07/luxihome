@@ -202,6 +202,18 @@ main.main-content {
     border-bottom-right-radius: 0 !important;
 }
 
+#luxi-dock-estimate-btn,
+#luxi-dock-estimate-btn span,
+.single-bespoke-villa #luxi-dock-estimate-btn span,
+body.single-bespoke-villa button#luxi-dock-estimate-btn span {
+    color: #FFFFFF !important;
+}
+
+.single-bespoke-villa #luxi-dock-estimate-btn div::before,
+body.single-bespoke-villa #luxi-dock-estimate-btn div::before {
+    background-color: transparent !important;
+}
+
 /* Pentagon page mobile layout guardrails.  The original template relies on
    desktop-sized offsets and an overlaid footer; keep those behaviors above
    the mobile breakpoint, but give phones a stable reading flow. */
@@ -454,15 +466,25 @@ main.main-content {
     #block-5 .description {
         position: absolute !important;
         z-index: 20 !important;
-        bottom: 28px !important;
+        bottom: 44px !important;
         left: 0 !important;
         width: 100% !important;
         padding-inline: var(--pentagon-gutter) !important;
+        pointer-events: none;
+    }
+
+    #block-5 .description p:first-child {
+        font-size: 12px !important;
+        letter-spacing: 0.12em !important;
+        margin-bottom: 6px !important;
+        line-height: 1.2 !important;
     }
 
     #block-5 .description h2 {
-        font-size: clamp(28px, 8.5vw, 40px) !important;
-        line-height: 1.05 !important;
+        font-size: clamp(20px, 6vw, 26px) !important;
+        line-height: 1.15 !important;
+        letter-spacing: 0.06em !important;
+        margin-bottom: 0 !important;
     }
 
     #block-5 .slider-top {
@@ -857,8 +879,8 @@ main.main-content {
                         <div class="absolute inset-0 overflow-hidden" data-target="banner-slide" data-index="1" style="z-index: 5">
                             <div class="relative w-full h-full will-change-transform" data-target="banner-slide-media">
                                 <picture loading="eager" class="fill-image">
-                                    <source type="image/webp" srcset="/assets/img/pentagon/alams-pentagon-living-lounge-640w.webp 640w, /assets/img/pentagon/alams-pentagon-living-lounge-1280w.webp 1280w, /assets/img/pentagon/alams-pentagon-living-lounge-1920w.webp 1920w" sizes="100vw"/>
-                                    <img loading="lazy" class="fill-image" src="/assets/img/pentagon/alams-pentagon-living-lounge.jpg" alt="Alam's Pentagon Living Lounge"/>
+                                    <source type="image/webp" srcset="/assets/img/pentagon/alams-pentagon-sunset-estate-640w.webp 640w, /assets/img/pentagon/alams-pentagon-sunset-estate.webp 1280w" sizes="100vw"/>
+                                    <img loading="lazy" class="fill-image" src="/assets/img/pentagon/alams-pentagon-sunset-estate.jpg" alt="Alam's Pentagon Sunset Estate &amp; Pool Sanctuary" srcset="/assets/img/pentagon/alams-pentagon-sunset-estate.jpg 1280w, /assets/img/pentagon/alams-pentagon-sunset-estate-640w.jpg 640w" sizes="100vw"/>
                                 </picture>
                             </div>
 
@@ -1224,7 +1246,7 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
     <div class="swiper-wrapper w-full h-full flex relative">
                         <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-sunset-pool.jpg" alt="Alam's Pentagon Pool Sanctuary" srcset="/assets/img/pentagon/alams-pentagon-sunset-pool.jpg 1280w, /assets/img/pentagon/alams-pentagon-sunset-pool-640w.jpg 640w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-sunset-estate.jpg" alt="Alam's Pentagon Sunset Estate &amp; Pool Sanctuary" srcset="/assets/img/pentagon/alams-pentagon-sunset-estate.jpg 1280w, /assets/img/pentagon/alams-pentagon-sunset-estate-640w.jpg 640w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
