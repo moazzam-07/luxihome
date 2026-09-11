@@ -132,7 +132,7 @@ function getHeaderHtml(currentPath = '/journal/') {
                         </ul>
                     </div>
                     <div class="" data-target="menu-bottom">
-                        <a href="https://www.instagram.com/the_luxihome" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
+                        <a href="https://www.instagram.com/luxihome_pvt._ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
                             <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white"> 
                                 <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
