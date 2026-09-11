@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LUXiHOME — Bespoke Multi-Step Free Estimate & Split Floating Dock
+   LUXiHOME — Bespoke 5-Step Free Estimate Wizard & Split Floating Dock
    Theme: Signature Contact Page Styling (Cream #F8F7F4, Dark Navy #1A2026)
    ========================================================================== */
 
@@ -53,7 +53,7 @@
     background-color: #1A2026;
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 60px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     font-family: inherit;
     font-size: 12px;
     font-weight: 500;
@@ -63,6 +63,17 @@
     box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 0, 0, 0.25);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
+}
+
+#luxi-dock-estimate-btn span,
+.single-bespoke-villa #luxi-dock-estimate-btn span,
+body.single-bespoke-villa button#luxi-dock-estimate-btn span {
+    color: #FFFFFF !important;
+}
+
+.single-bespoke-villa #luxi-dock-estimate-btn div::before,
+body.single-bespoke-villa #luxi-dock-estimate-btn div::before {
+    background-color: transparent !important;
 }
 
 #luxi-dock-estimate-btn:hover {
@@ -207,7 +218,7 @@
 
 .luxi-progress-bar {
     height: 100%;
-    width: 25%;
+    width: 20%;
     background: #1A2026;
     border-radius: 4px;
     transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -549,4 +560,26 @@
         padding: 10px 14px;
         font-size: 12px;
     }
+}
+
+/* Force white text on modal buttons across themes */
+.luxi-next-btn,
+.luxi-next-btn span,
+.luxi-submit-pill,
+.luxi-submit-pill span,
+#luxi-estimate-card button span,
+.single-bespoke-villa #luxi-estimate-card button span,
+.single-bespoke-villa .luxi-next-btn span,
+.single-bespoke-villa .luxi-submit-pill span,
+body.single-bespoke-villa #luxi-estimate-card button span,
+body.single-bespoke-villa .luxi-next-btn span,
+body.single-bespoke-villa .luxi-submit-pill span {
+    color: #FFFFFF !important;
+}
+
+.single-bespoke-villa #luxi-estimate-card button div::before,
+.single-bespoke-villa .luxi-next-btn div::before,
+.single-bespoke-villa .luxi-submit-pill div::before,
+body.single-bespoke-villa #luxi-estimate-card button div::before {
+    background-color: transparent !important;
 }
