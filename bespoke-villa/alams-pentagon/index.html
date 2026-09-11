@@ -189,6 +189,19 @@ var gf_legacy = {"is_legacy":""};
 	}
 }
 
+html,
+body,
+#smooth-wrapper,
+#viewport,
+#content-wrap {
+    background-color: #1A2026 !important;
+}
+
+main.main-content {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
 /* Pentagon page mobile layout guardrails.  The original template relies on
    desktop-sized offsets and an overlaid footer; keep those behaviors above
    the mobile breakpoint, but give phones a stable reading flow. */
@@ -799,7 +812,7 @@ var gf_legacy = {"is_legacy":""};
 
 		<div id="content-wrap">
 
-        <main class="main-content relative rounded-b-40 overflow-hidden bg-brown">
+        <main class="main-content relative rounded-b-none overflow-hidden bg-brown">
             <section data-name="banner" class="relative w-screen h-screen z-40">
                 <div class="absolute inset-0 z-10 overflow-hidden" data-target="banner-loading-screen" data-index="0">
                     <div class="absolute inset-0 bg-black" data-target="banner-loading-image">
@@ -1211,19 +1224,19 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
     <div class="swiper-wrapper w-full h-full flex relative">
                         <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="eager" role="presentation" src="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg" alt="Grand Foyer" srcset="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg 1980w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-640x275.jpg 640w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-400x172.jpg 400w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-1280x549.jpg 1280w" sizes="(max-width: 1980px) 100vw, 1980px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-sunset-pool.jpg" alt="Alam's Pentagon Pool Sanctuary" srcset="/assets/img/pentagon/alams-pentagon-sunset-pool.jpg 1280w, /assets/img/pentagon/alams-pentagon-sunset-pool-640w.jpg 640w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
                     <div class="absolute w-full h-full bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     <div class="description w-full absolute z-20 bottom-20 left-0 md:bottom-40 lg:bottom-50 xl:bottom-70 px-30 md:px-50 xl:px-85 text-white break-words">
-                        <p class="font-sans font-light text-18 leading-24 tracking-0.9 uppercase mb-10">Living spaces</p>                        <h2 class="text-4xl font-light text-36 leading-32 md:text-50 md:leading-46 tracking-2.267 mb-8 uppercase">Grand Foyer</h2>
+                        <p class="font-sans font-light text-18 leading-24 tracking-0.9 uppercase mb-10">Living spaces</p>                        <h2 class="text-4xl font-light text-36 leading-32 md:text-50 md:leading-46 tracking-2.267 mb-8 uppercase">Pool Sanctuary</h2>
                         <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
                     </div>
                 </div>
                         <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-living-lounge.jpg" alt="Alam's Pentagon Living Lounge" srcset="/assets/img/pentagon/alams-pentagon-living-lounge-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-living-lounge-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-living-lounge-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-curved-lounge.jpg" alt="Alam's Pentagon Designer Living Lounge" srcset="/assets/img/pentagon/alams-pentagon-curved-lounge.jpg 736w, /assets/img/pentagon/alams-pentagon-curved-lounge-640w.jpg 640w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
