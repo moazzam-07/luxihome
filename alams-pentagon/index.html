@@ -410,6 +410,17 @@ var gf_legacy = {"is_legacy":""};
         position: relative !important;
         display: block !important;
         overflow: hidden !important;
+        transition-property: opacity, transform !important;
+    }
+
+    #block-5 .swiper-slide.swiper-slide-active {
+        z-index: 2 !important;
+        pointer-events: auto !important;
+    }
+
+    #block-5 .swiper-slide:not(.swiper-slide-active) {
+        z-index: 1 !important;
+        pointer-events: none !important;
     }
 
     #block-5 .swiper-slide [data-target="img-parallax"] {
