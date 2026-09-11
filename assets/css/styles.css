@@ -17640,3 +17640,82 @@ html.lenis {
     font-size: 14px !important;
   }
 }
+
+/* LUXiHOME Global Hamburger Icon (3 Crisp Lines with Smooth Morph to X) */
+.luxi-hamburger-bars {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  width: 18px !important;
+  height: 13px !important;
+  cursor: pointer !important;
+  pointer-events: none !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.luxi-hamburger-bars .luxi-bar {
+  display: block !important;
+  width: 100% !important;
+  height: 1.5px !important;
+  background-color: #FFFFFF !important;
+  border-radius: 2px !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background-color 0.25s ease !important;
+  transform-origin: center !important;
+}
+
+[data-theme="dark"] .luxi-hamburger-bars .luxi-bar {
+  background-color: #1A2026 !important;
+}
+
+/* When menu is active/open, morph into an elegant centered close 'X' in white */
+[data-active="true"] .luxi-hamburger-bars .luxi-bar,
+[data-state="open"] .luxi-hamburger-bars .luxi-bar {
+  background-color: #FFFFFF !important;
+}
+
+[data-active="true"] .luxi-hamburger-bars .bar-1,
+[data-state="open"] .luxi-hamburger-bars .bar-1 {
+  transform: translateY(5.75px) rotate(45deg) !important;
+}
+
+[data-active="true"] .luxi-hamburger-bars .bar-2,
+[data-state="open"] .luxi-hamburger-bars .bar-2 {
+  opacity: 0 !important;
+  transform: scaleX(0) !important;
+}
+
+[data-active="true"] .luxi-hamburger-bars .bar-3,
+[data-state="open"] .luxi-hamburger-bars .bar-3 {
+  transform: translateY(-5.75px) rotate(-45deg) !important;
+}
+
+/* LUXiHOME Navigation Projects Submenu Spacing */
+.luxi-project-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 26px !important;
+  row-gap: 26px !important;
+  padding-left: 20px !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+  margin-top: 14px !important;
+  margin-bottom: 6px !important;
+}
+
+.luxi-project-list > li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.luxi-project-list > li > a {
+  display: inline-block !important;
+  padding: 4px 0 !important;
+  line-height: 1.35 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.2s ease !important;
+}
+
+.luxi-project-list > li > a:hover {
+  color: #FFFFFF !important;
+}
