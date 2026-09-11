@@ -333,28 +333,116 @@
       border: 1px solid rgba(255,255,255,.22);
       box-shadow: 0 16px 34px rgba(26,32,38,.18), inset 0 1px 0 rgba(255,255,255,.18);
     }
-    body.journal-warm-theme .journal-hero {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(34px, 6vw, 72px) clamp(22px, 7vw, 84px);
-      border-radius: 0 0 28px 28px;
-      background: var(--lux-brown) !important;
-      color: #F7F1E8 !important;
-      box-shadow: 0 22px 45px rgba(26,32,38,.14);
+
+    /* Responsive Header & Navigation */
+    @media (max-width: 1023px) {
+      [data-nav-fixed] {
+        position: fixed !important;
+        top: 20px !important;
+        right: 15px !important;
+        left: auto !important;
+      }
     }
-    body.journal-warm-theme .journal-hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255,255,255,.11), transparent 42%, rgba(26,32,38,.12));
+    @media (min-width: 1024px) {
+      [data-nav-fixed] {
+        position: fixed !important;
+        top: 20px !important;
+        left: 40px !important;
+        right: auto !important;
+        width: auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      [data-target="menu-wrapper"] {
+        width: auto !important;
+        height: auto !important;
+      }
+      [data-target="menu-background"] {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(114, 97, 82, .88) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+      }
     }
-    body.journal-warm-theme .journal-hero > * { position: relative; z-index: 1; }
-    body.journal-warm-theme .journal-hero h1,
-    body.journal-warm-theme .journal-hero p { color: #F7F1E8 !important; }
-    body.journal-warm-theme .journal-hero h1 span:last-child,
-    body.journal-warm-theme .text-gold { color: var(--lux-gold) !important; }
-    body.journal-warm-theme .journal-hero p { color: rgba(247,241,232,.78) !important; }
+
+    /* Mobile Hero: preserved exactly as current */
+    @media (max-width: 1023px) {
+      body.journal-warm-theme .journal-hero {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(34px, 6vw, 72px) clamp(22px, 7vw, 84px);
+        border-radius: 0 0 28px 28px;
+        background: var(--lux-brown) !important;
+        color: #F7F1E8 !important;
+        box-shadow: 0 22px 45px rgba(26,32,38,.14);
+      }
+      body.journal-warm-theme .journal-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(135deg, rgba(255,255,255,.11), transparent 42%, rgba(26,32,38,.12));
+      }
+      body.journal-warm-theme .journal-hero > * { position: relative; z-index: 1; }
+      body.journal-warm-theme .journal-hero h1,
+      body.journal-warm-theme .journal-hero p { color: #F7F1E8 !important; }
+      body.journal-warm-theme .journal-hero h1 span:last-child,
+      body.journal-warm-theme .text-gold { color: var(--lux-gold) !important; }
+      body.journal-warm-theme .journal-hero p { color: rgba(247,241,232,.78) !important; }
+    }
+
+    /* PC Desktop Hero: Architectural Masthead directly on warm sand */
+    @media (min-width: 1024px) {
+      body.journal-warm-theme .journal-hero {
+        position: relative;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 24px 0 44px 0 !important;
+        max-width: 980px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body.journal-warm-theme .journal-hero::after {
+        display: none !important;
+      }
+      body.journal-warm-theme .journal-hero p.text-gold {
+        color: var(--lux-brown) !important;
+        font-size: 13px !important;
+        letter-spacing: 0.36em !important;
+        margin-bottom: 22px !important;
+      }
+      body.journal-warm-theme .journal-hero h1 {
+        color: var(--lux-dark) !important;
+        font-size: 44px !important;
+        line-height: 1.22 !important;
+        letter-spacing: 0.12em !important;
+        margin-bottom: 24px !important;
+      }
+      body.journal-warm-theme .journal-hero h1 span {
+        color: var(--lux-dark) !important;
+      }
+      body.journal-warm-theme .journal-hero h1 span.opacity-85 {
+        color: var(--lux-dark) !important;
+        opacity: 0.92 !important;
+      }
+      body.journal-warm-theme .journal-hero h1 span.text-gold,
+      body.journal-warm-theme .journal-hero h1 span:last-child {
+        color: var(--lux-brown) !important;
+      }
+      body.journal-warm-theme .journal-hero > p:last-child {
+        color: rgba(26, 32, 38, 0.72) !important;
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        max-width: 660px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+
     body.journal-warm-theme .journal-filter-btn {
       border-color: rgba(114,97,82,.4) !important;
       background: rgba(255,255,255,.24) !important;
@@ -416,9 +504,232 @@
     body.journal-warm-theme .journal-footer-links a:hover,
     body.journal-warm-theme .journal-footer-copyright a:hover { color: var(--lux-gold); }
 
-    /* Article pages use the same palette, including tables and callouts. */
-    body.journal-warm-theme main {
-      max-width: 820px !important;
+    /* GSAP Pin-Spacer Defusal: Eliminates 744px sand gap below dark footer */
+    .pin-spacer-footer-reveal {
+      position: relative !important;
+      inset: auto !important;
+      z-index: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .pin-spacer-footer-reveal > footer,
+    .journal-site-footer {
+      position: relative !important;
+      width: 100% !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Main Editorial Containers */
+    @media (max-width: 1023px) {
+      body.journal-warm-theme main {
+        padding: 160px 18px 72px !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      body.journal-warm-theme [data-barba-namespace="journal"] main {
+        max-width: 1360px !important;
+        padding-top: 130px !important;
+        padding-bottom: 120px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] main {
+        max-width: 860px !important;
+        padding-top: 130px !important;
+        padding-bottom: 100px !important;
+      }
+
+      /* Desktop Grid Refinements */
+      body.journal-warm-theme #articles-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 36px !important;
+        max-width: 1360px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body.journal-warm-theme .journal-card {
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        border-radius: 20px !important;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+      }
+      body.journal-warm-theme .journal-card:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 24px 44px rgba(26,32,38,.14), inset 0 1px 0 rgba(255,255,255,.5) !important;
+      }
+      body.journal-warm-theme .journal-card-body {
+        padding: 26px 28px 28px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        flex-grow: 1 !important;
+      }
+      body.journal-warm-theme .journal-card-title {
+        font-size: 16px !important;
+        line-height: 1.42 !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 24px !important;
+      }
+
+      /* Desktop Filter Row */
+      .journal-filter-row {
+        justify-content: center !important;
+        gap: 12px !important;
+        margin-bottom: 48px !important;
+      }
+      body.journal-warm-theme .journal-filter-btn {
+        padding: 9px 20px !important;
+        font-size: 11px !important;
+        letter-spacing: 0.14em !important;
+      }
+
+      /* Desktop Bottom CTA */
+      body.journal-warm-theme .journal-cta {
+        margin-top: 100px !important;
+        padding: 48px 56px !important;
+        border-radius: 28px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 40px !important;
+        background: linear-gradient(135deg, rgba(114,97,82,.98), rgba(92,76,63,.95)) !important;
+        border: 1px solid rgba(255,255,255,.24) !important;
+        box-shadow: 0 24px 48px rgba(26,32,38,.15), inset 0 1px 0 rgba(255,255,255,.2) !important;
+      }
+      body.journal-warm-theme .journal-cta h3 {
+        font-size: 26px !important;
+        line-height: 1.25 !important;
+      }
+      body.journal-warm-theme .journal-cta a {
+        background: #C2A26A !important;
+        color: #13212E !important;
+        font-weight: 500 !important;
+        border: none !important;
+        padding: 16px 36px !important;
+        box-shadow: 0 10px 24px rgba(26,32,38,.2) !important;
+        transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease !important;
+      }
+      body.journal-warm-theme .journal-cta a:hover {
+        background: #FFFFFF !important;
+        color: #13212E !important;
+        transform: translateY(-2px) !important;
+      }
+
+      /* Desktop Article Reading Experience */
+      body.journal-warm-theme [data-barba-namespace="journal-article"] main > h1 {
+        font-size: 44px !important;
+        line-height: 1.18 !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 24px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] main > p {
+        font-size: 18px !important;
+        line-height: 1.75 !important;
+        margin-bottom: 36px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] .article-content h2 {
+        font-size: 28px !important;
+        line-height: 1.22 !important;
+        margin-top: 48px !important;
+        margin-bottom: 18px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] .article-content p {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        margin-bottom: 22px !important;
+      }
+    }
+
+    /* Warm Theme Search Bar & Filter Styling */
+    body.journal-warm-theme .journal-search-wrap {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body.journal-warm-theme .journal-search-input {
+      background: rgba(255, 255, 255, 0.5) !important;
+      border: 1px solid rgba(114, 97, 82, 0.3) !important;
+      color: var(--lux-dark) !important;
+      box-shadow: 0 8px 24px rgba(26, 32, 38, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      font-family: 'DIN', sans-serif !important;
+      font-size: 14px !important;
+      padding-left: 50px !important;
+      padding-right: 48px !important;
+    }
+    body.journal-warm-theme .journal-search-input::placeholder {
+      color: rgba(26, 32, 38, 0.48) !important;
+    }
+    body.journal-warm-theme .journal-search-input:hover {
+      background: rgba(255, 255, 255, 0.7) !important;
+      border-color: rgba(114, 97, 82, 0.45) !important;
+    }
+    body.journal-warm-theme .journal-search-input:focus {
+      background: #FFFFFF !important;
+      border-color: var(--lux-gold) !important;
+      box-shadow: 0 0 0 2px rgba(194, 162, 106, 0.35), 0 12px 30px rgba(26, 32, 38, 0.1) !important;
+      outline: none !important;
+    }
+    body.journal-warm-theme .journal-search-icon {
+      color: var(--lux-brown) !important;
+    }
+    body.journal-warm-theme .journal-search-clear {
+      color: rgba(26, 32, 38, 0.45) !important;
+    }
+    body.journal-warm-theme .journal-search-clear:hover {
+      color: var(--lux-dark) !important;
+      background: rgba(114, 97, 82, 0.12) !important;
+    }
+    body.journal-warm-theme .journal-search-status {
+      color: rgba(26, 32, 38, 0.68) !important;
+    }
+    body.journal-warm-theme .journal-search-status span {
+      color: rgba(26, 32, 38, 0.62) !important;
+    }
+    body.journal-warm-theme .journal-search-status kbd {
+      background: rgba(114, 97, 82, 0.12) !important;
+      border: 1px solid rgba(114, 97, 82, 0.22) !important;
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #journal-empty-state {
+      grid-column: 1 / -1 !important;
+      background: rgba(255, 255, 255, 0.45) !important;
+      border: 1px solid rgba(114, 97, 82, 0.25) !important;
+      box-shadow: 0 14px 30px rgba(26, 32, 38, 0.06);
+      width: 100% !important;
+      max-width: 640px !important;
+      margin: 20px auto !important;
+    }
+    body.journal-warm-theme .journal-empty-icon-wrap {
+      background: rgba(194, 162, 106, 0.2) !important;
+      color: var(--lux-brown) !important;
+    }
+    body.journal-warm-theme #journal-empty-state h3 {
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #journal-empty-state p {
+      color: rgba(26, 32, 38, 0.72) !important;
+    }
+    body.journal-warm-theme #journal-empty-state .quick-suggest {
+      color: var(--lux-brown) !important;
+      font-weight: 500;
+    }
+    body.journal-warm-theme #journal-empty-state .quick-suggest:hover {
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #journal-reset-search-btn {
+      background: var(--lux-brown) !important;
+      color: #F7F1E8 !important;
+      border-color: var(--lux-brown) !important;
+    }
+    body.journal-warm-theme #journal-reset-search-btn:hover {
+      background: var(--lux-dark) !important;
+      border-color: var(--lux-dark) !important;
+      color: #FFFFFF !important;
     }
     body.journal-warm-theme .journal-featured-image {
       aspect-ratio: 16 / 9;
@@ -574,10 +885,17 @@
     body.journal-warm-theme main h2,
     body.journal-warm-theme main h3,
     body.journal-warm-theme main h4 { color: var(--lux-dark) !important; }
-    /* The warm-brown hub intro is a dark surface: keep its heading light. */
-    body.journal-warm-theme main .journal-hero h1,
-    body.journal-warm-theme main .journal-hero h1 span:not(:last-child) { color: #F7F1E8 !important; }
-    body.journal-warm-theme main .journal-hero h1 span:last-child { color: var(--lux-gold) !important; }
+    /* Mobile only: The warm-brown hub intro is a dark surface: keep its heading light. */
+    @media (max-width: 1023px) {
+      body.journal-warm-theme main .journal-hero h1,
+      body.journal-warm-theme main .journal-hero h1 span:not(:last-child) { color: #F7F1E8 !important; }
+      body.journal-warm-theme main .journal-hero h1 span:last-child { color: var(--lux-gold) !important; }
+    }
+    @media (min-width: 1024px) {
+      body.journal-warm-theme main .journal-hero h1,
+      body.journal-warm-theme main .journal-hero h1 span:not(:last-child) { color: var(--lux-dark) !important; }
+      body.journal-warm-theme main .journal-hero h1 span:last-child { color: var(--lux-brown) !important; }
+    }
     body.journal-warm-theme .article-content a,
     body.journal-warm-theme main a { color: var(--lux-brown); }
     body.journal-warm-theme main .border-white\/10,
@@ -744,6 +1062,116 @@
 			color: #FFFFFF;
 			gap: 12px;
 		}
+		/* Search Bar & Quick Filter Styling */
+		.journal-search-wrap {
+			position: relative;
+			z-index: 20;
+		}
+		.journal-search-bar {
+			position: relative;
+			display: flex;
+			align-items: center;
+			width: 100%;
+		}
+		.journal-search-icon {
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			pointer-events: none;
+			z-index: 2;
+			width: 20px;
+			height: 20px;
+		}
+		.journal-search-icon svg {
+			width: 18px !important;
+			height: 18px !important;
+			display: block;
+		}
+		.journal-search-clear {
+			position: absolute;
+			right: 14px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all 0.2s ease;
+			z-index: 2;
+			padding: 0;
+			background: transparent;
+			border: none;
+		}
+		.journal-search-clear.hidden {
+			display: none !important;
+		}
+		.journal-search-clear svg {
+			width: 16px !important;
+			height: 16px !important;
+			display: block;
+		}
+		.journal-search-input {
+			transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+		.journal-search-input:focus {
+			box-shadow: 0 0 0 1px rgba(230, 202, 158, 0.5), 0 12px 36px rgba(0, 0, 0, 0.45);
+		}
+		.journal-search-status {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			margin-top: 10px;
+			padding: 0 16px;
+		}
+		.journal-search-hints {
+			display: none;
+		}
+		@media (min-width: 640px) {
+			.journal-search-hints {
+				display: inline-flex;
+				align-items: center;
+				gap: 4px;
+			}
+		}
+		#journal-empty-state {
+			grid-column: 1 / -1 !important;
+			width: 100%;
+			max-width: 640px;
+			margin: 20px auto;
+		}
+		#journal-empty-state.hidden {
+			display: none !important;
+		}
+		.journal-empty-icon-wrap {
+			width: 52px;
+			height: 52px;
+			margin: 0 auto 16px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.journal-empty-icon-wrap svg {
+			width: 24px !important;
+			height: 24px !important;
+			display: block;
+		}
+		.quick-suggest {
+			background: none;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			font: inherit;
+		}
+
 		.journal-filter-row {
 			width: 100%;
 			max-width: 100%;
@@ -819,8 +1247,8 @@
 
 <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
 <nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
-    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed style="position: fixed !important; top: 20px !important; right: 15px !important; left: auto !important; z-index: 99999 !important; display: flex !important; align-items: center !important;">
-        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light" style="display: flex !important; flex-direction: row-reverse; align-items: center; position: relative; pointer-events: auto !important;">
+    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
+        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light">
             <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] bg-white/20 group-data-[theme=light]/wrapper:bg-white/20 group-data-[theme=dark]/wrapper:bg-black/20 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-white/30 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
             <div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10" data-target="menu-trigger" style="position: relative; padding: 15px 22px; cursor: pointer; z-index: 10 !important;">
                 <div class="w-16 h-auto transition-opacity duration-300 ease-linear" data-target="hamburger-lottie" style="width: 16px !important; height: 12px !important; display: flex !important; align-items: center !important;">
@@ -1039,8 +1467,8 @@
 	<div id="page-wrap" data-barba="container" data-barba-namespace="journal">
 		<a class="skip-link sr-only" href="#content-wrap">Skip to content</a>
 		<div id="content-wrap">
-			<!-- MAIN CONTENT CONTAINER (Guaranteed 240px top space so text sits well below logo) -->
-			<main style="padding-top: max(180px, 24vh); padding-bottom: 120px;" class="relative z-10 px-20 sm:px-40 max-w-6xl mx-auto w-full">
+			<!-- MAIN CONTENT CONTAINER (Responsive padding via CSS) -->
+			<main class="relative z-10 px-20 sm:px-40 max-w-6xl mx-auto w-full">
 
 		<!-- Minimalist Hero Section -->
 		<section class="journal-hero text-center mb-40 sm:mb-60">
@@ -1061,6 +1489,49 @@
 			</p>
 		</section>
 
+		<!-- Interactive Search Bar Section -->
+		<div class="journal-search-wrap max-w-2xl mx-auto mb-30 sm:mb-40 w-full">
+			<div class="journal-search-bar">
+				<!-- Search Icon -->
+				<span class="journal-search-icon" aria-hidden="true">
+					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path>
+					</svg>
+				</span>
+
+				<!-- Search Input Field -->
+				<input
+					type="text"
+					id="journal-search-input"
+					placeholder="Search monographs, materials, costs (e.g. kitchen, false ceiling, marble)..."
+					aria-label="Search articles and design monographs"
+					autocomplete="off"
+					spellcheck="false"
+					class="journal-search-input w-full rounded-full border py-14 sm:py-16 text-13 sm:text-14 font-body backdrop-blur-md"
+				>
+
+				<!-- Clear Button -->
+				<button
+					id="journal-search-clear"
+					type="button"
+					aria-label="Clear search query"
+					class="journal-search-clear hidden focus:outline-none"
+				>
+					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Meta Result Bar -->
+			<div class="journal-search-status flex items-center justify-between mt-10 px-14 text-11 font-body tracking-wider">
+				<span id="journal-search-count">30 monographs available</span>
+				<span class="journal-search-hints hidden sm:inline">
+					Press <kbd>/</kbd> to focus, <kbd>ESC</kbd> to clear
+				</span>
+			</div>
+		</div>
+
 		<!-- Category Filter Tabs for Mobile & Desktop -->
 		<div class="journal-filter-row mb-35 sm:mb-45 flex items-center gap-10 overflow-x-auto pb-10 scrollbar-none justify-start sm:justify-center">
 			<button class="journal-filter-btn active px-18 py-8 rounded-full text-11 font-sans tracking-widest uppercase border border-white/20 transition-colors whitespace-nowrap" data-filter="all">All (30)</button>
@@ -1078,7 +1549,7 @@
 		<!-- Standalone Journal Cards Grid (30 Topics) -->
 		<section id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25 sm:gap-35">
 
-		<article class="journal-card" data-category="cost-pricing">
+		<article class="journal-card" data-category="cost-pricing" data-search="2bhk%20vs%203bhk%20full%20interior%20design%20cost%20in%20kolkata%20%20the%202026%20price%20breakdown%20cost%20%20%20pricing%202bhk%203bhk%20interior%20design%20cost%20kolkata%202bhk%20interior%20design%20cost%20kolkata%20%203bhk%20interior%20price%20sheet%20kolkata%20%20interior%20cost%20per%20sq%20ft%20new%20town%20%20modular%20kitchen%20rate%20kolkata%20detailed%202026%20interior%20design%20cost%20guide%20for%202bhk%20and%203bhk%20flats%20in%20kolkata%20%20real%20square%20foot%20rates%20%20material%20tiers%20%20and%20hidden%20contractor%20costs%20exposed%20%20whether%20you%20have%20just%20received%20the%20keys%20to%20a%20newly%20handed%20over%20high%20rise%20in%20new%20town%20action%20area%20iii%20or%20are%20planning%20a%20complete%20residential%20overhaul%20in%20south%20kolkata%20%20understanding%20actual%20interior%20design%20costs%20is%20the%20single%20most%20critical%20financial%20step%20before%20signing%20contracts%20">
 			<a href="/journal/2bhk-3bhk-interior-design-cost-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/curated/spacious_3bhk_luxury_apartment.jpeg" alt="2BHK vs 3BHK Full Interior Design Cost in Kolkata: The 2026 Price Breakdown" loading="lazy">
 			</a>
@@ -1103,7 +1574,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="cost-pricing">
+		<article class="journal-card" data-category="cost-pricing" data-search="turnkey%20interior%20package%20vs%20local%20thekedar%20in%20kolkata%20%20where%20margins%20hide%20cost%20%20%20pricing%20turnkey%20vs%20contractor%20kolkata%20turnkey%20interior%20design%20kolkata%20%20thekedar%20vs%20designer%20kolkata%20%20hidden%20interior%20costs%20%20interior%20contractor%20scam%20kolkata%20should%20you%20hire%20a%20turnkey%20design%20firm%20or%20local%20contractors%20in%20kolkata%20%20a%20transparent%20breakdown%20of%2030%20%20hidden%20costs%20%20sub%20contractor%20markups%20%20and%20timeline%20delays%20%20the%20age%20old%20dilemma%20facing%20every%20kolkata%20homeowner%20is%20choosing%20between%20the%20convenience%20of%20a%20unified%20turnkey%20design%20studio%20and%20the%20perceived%20cost%20savings%20of%20hiring%20independent%20carpenters%20%20electricians%20%20and%20painters%20">
 			<a href="/journal/turnkey-vs-contractor-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work/photo_8_2026-09-04_15-01-37.jpg" alt="Turnkey Interior Package vs Local Thekedar in Kolkata: Where Margins Hide" loading="lazy">
 			</a>
@@ -1128,7 +1599,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="cost-pricing">
+		<article class="journal-card" data-category="cost-pricing" data-search="modular%20kitchen%20cost%20in%20kolkata%20%20acrylic%20vs%20pu%20finish%20vs%20laminate%20price%20sheet%20cost%20%20%20pricing%20modular%20kitchen%20cost%20kolkata%20modular%20kitchen%20cost%20kolkata%20%20acrylic%20kitchen%20shutters%20price%20%20pu%20finish%20kitchen%20kolkata%20%20bwp%20plywood%20modular%20kitchen%20complete%20kolkata%20modular%20kitchen%20pricing%20guide%20%20comparison%20of%20bwp%20710%20marine%20ply%20carcasses%20%20acrylic%20shutters%20%20pu%20lacquer%20finishes%20%20and%20hardware%20choices%20%20the%20kitchen%20is%20the%20functional%20heart%20and%20hardest%20working%20space%20in%20any%20kolkata%20home%20%20navigating%20materials%20that%20survive%20intense%20spice%20frying%20%20high%20heat%20tadkas%20%20and%20relentless%20humidity%20requires%20uncompromised%20engineering%20">
 			<a href="/journal/modular-kitchen-cost-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/curated/modular_kitchen_island_quartz.jpeg" alt="Modular Kitchen Cost in Kolkata: Acrylic vs PU Finish vs Laminate Price Sheet" loading="lazy">
 			</a>
@@ -1153,7 +1624,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="cost-pricing">
+		<article class="journal-card" data-category="cost-pricing" data-search="false%20ceiling%20price%20per%20sq%20ft%20in%20kolkata%20%20gypsum%20vs%20pop%20vs%20pvc%20cost%20analysis%20cost%20%20%20pricing%20false%20ceiling%20cost%20kolkata%20false%20ceiling%20cost%20kolkata%20%20gypsum%20ceiling%20rate%20per%20sq%20ft%20%20pop%20false%20ceiling%20price%20kolkata%20%20cove%20lighting%20cost%20honest%20false%20ceiling%20costs%20in%20kolkata%20per%20square%20foot%20%20gypsum%20vs%20pop%20comparison%20%20channel%20gauge%20specifications%20%20and%20hidden%20cove%20lighting%20wiring%20costs%20%20a%20false%20ceiling%20does%20far%20more%20than%20look%20decorative%20%20it%20conceals%20unaligned%20structural%20beams%20%20houses%20architectural%20recessed%20lighting%20%20and%20reduces%20thermal%20radiation%20on%20top%20floor%20kolkata%20apartments%20">
 			<a href="/journal/false-ceiling-cost-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_11_2026-09-06_14-27-28.jpg" alt="False Ceiling Price per Sq Ft in Kolkata: Gypsum vs POP vs PVC Cost Analysis" loading="lazy">
 			</a>
@@ -1178,7 +1649,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="cost-pricing">
+		<article class="journal-card" data-category="cost-pricing" data-search="interior%20designer%20fees%20in%20kolkata%20%20per%20sq%20ft%20rate%20vs%20percentage%20of%20project%20cost%20%20%20pricing%20interior%20designer%20fees%20kolkata%20interior%20designer%20fee%20kolkata%20%20how%20much%20interior%20designers%20charge%20%20interior%20design%20consultation%20rate%20%20design%20fee%20vs%20turnkey%20understanding%20interior%20designer%20fee%20structures%20in%20kolkata%20%20compare%20per%20sq%20ft%20design%20fees%20%2012%2018%20%20project%20percentages%20%20and%20turnkey%20markups%20transparently%20%20before%20engaging%20an%20interior%20designer%20in%20kolkata%20%20understanding%20fee%20structures%20prevents%20misunderstandings%20and%20aligns%20expectations%20with%20deliverables%20">
 			<a href="/journal/interior-designer-fees-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/park.street.work/photo_1_2026-09-04_15-06-35.jpg" alt="Interior Designer Fees in Kolkata: Per Sq Ft Rate vs Percentage of Project" loading="lazy">
 			</a>
@@ -1203,7 +1674,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="climate-materials">
+		<article class="journal-card" data-category="climate-materials" data-search="the%20monsoon%20defense%20%20why%2080%20%20of%20kolkata%20plywood%20warps%20and%20what%20to%20buy%20instead%20climate%20%20%20materials%20kolkata%20monsoon%20plywood%20guide%20bwp%20marine%20plywood%20kolkata%20%20best%20plywood%20for%20interiors%20kolkata%20%20plywood%20warping%20monsoons%20%20is%20710%20plywood%20test%20essential%20plywood%20selection%20guide%20for%20kolkata%20s%20humid%20monsoons%20%20learn%20the%20difference%20between%20mr%20%20bwr%20%20and%20bwp%20710%20marine%20plywood%20with%20real%20lab%20testing%20tips%20%20with%20relative%20humidity%20hovering%20above%2080%20%20for%20five%20straight%20months%20%20kolkata%20s%20atmospheric%20moisture%20is%20the%20greatest%20enemy%20of%20interior%20woodwork%20%20choosing%20the%20wrong%20grade%20will%20turn%20your%20luxury%20wardrobe%20into%20a%20warped%20%20mold%20covered%20headache%20">
 			<a href="/journal/kolkata-monsoon-plywood-guide/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_27_2026-09-06_14-27-28.jpg" alt="The Monsoon Defense: Why 80% of Kolkata Plywood Warps and What to Buy Instead" loading="lazy">
 			</a>
@@ -1228,7 +1699,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="climate-materials">
+		<article class="journal-card" data-category="climate-materials" data-search="tackling%20kolkata%20s%20wall%20dampness%20%20nona%20%20before%20painting%20%20the%20permanent%203%20step%20fix%20climate%20%20%20materials%20tackling%20wall%20dampness%20nona%20kolkata%20wall%20dampness%20treatment%20kolkata%20%20nona%20treatment%20in%20walls%20%20paint%20peeling%20salt%20kolkata%20%20waterproofing%20interior%20walls%20permanent%20cure%20for%20wall%20dampness%20and%20nona%20%20salt%20efflorescence%20%20in%20kolkata%20flats%20%20learn%20why%20cheap%20putty%20fails%20and%20discover%20the%20chemical%20injection%20barrier%20method%20%20nothing%20breaks%20a%20homeowner%20s%20heart%20faster%20than%20watching%20%2050%20000%20worth%20of%20luxury%20velvet%20finish%20paint%20bubble%20%20crack%20%20and%20turn%20to%20white%20salt%20powder%20within%20three%20months%20of%20moving%20in%20%20in%20kolkata%20%20efflorescence%20locally%20known%20as%20nona%20is%20a%20structural%20epidemic%20">
 			<a href="/journal/tackling-wall-dampness-nona-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/new.town.work/photo_18_2026-09-04_15-49-33.jpg" alt="Tackling Kolkata’s Wall Dampness (Nona) Before Painting: The Permanent 3-Step Fix" loading="lazy">
 			</a>
@@ -1253,7 +1724,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="climate-materials">
+		<article class="journal-card" data-category="climate-materials" data-search="gypsum%20vs%20pop%20false%20ceilings%20in%20high%20humidity%20kolkata%20%20preventing%20mold%20%20%20joint%20cracks%20climate%20%20%20materials%20gypsum%20vs%20pop%20false%20ceiling%20kolkata%20gypsum%20vs%20pop%20ceiling%20kolkata%20%20false%20ceiling%20mold%20prevention%20%20false%20ceiling%20joint%20cracks%20%20saint%20gobain%20gypsum%20kolkata%20technical%20comparison%20of%20gypsum%20board%20vs%20plaster%20of%20paris%20false%20ceilings%20for%20kolkata%20weather%20%20prevent%20ac%20cove%20mold%20%20condensation%20sagging%20%20and%20hairline%20joint%20cracks%20%20when%20air%20conditioning%20units%20blow%2020%20c%20air%20inside%20while%20outside%20humidity%20sits%20at%2085%20%20%20false%20ceilings%20become%20condensation%20zones%20%20understanding%20gypsum%20versus%20pop%20behavior%20prevents%20mold%20spots%20and%20unsightly%20ceiling%20joint%20cracks%20">
 			<a href="/journal/gypsum-vs-pop-false-ceiling-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/new.town.work/photo_13_2026-09-04_15-49-33.jpg" alt="Gypsum vs POP False Ceilings in High-Humidity Kolkata: Preventing Mold & Joint Cracks" loading="lazy">
 			</a>
@@ -1278,7 +1749,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="climate-materials">
+		<article class="journal-card" data-category="climate-materials" data-search="best%20kitchen%20countertop%20for%20kolkata%20cooking%20%20quartz%20vs%20granite%20vs%20nano%20white%20climate%20%20%20materials%20best%20kitchen%20countertop%20kolkata%20kitchen%20countertop%20kolkata%20%20quartz%20vs%20granite%20india%20%20nano%20white%20countertop%20stains%20%20best%20kitchen%20slab%20material%20which%20kitchen%20countertop%20withstands%20mustard%20oil%20%20turmeric%20%20and%20high%20heat%20pans%20in%20kolkata%20%20real%20test%20comparison%20between%20quartz%20%20black%20granite%20%20and%20nano%20glass%20%20from%20hot%20mustard%20oil%20splatters%20to%20raw%20haldi%20and%20acidic%20tamarind%20%20bengali%20and%20indian%20culinary%20traditions%20put%20kitchen%20countertops%20through%20torture%20%20beautiful%20european%20marble%20looks%20stunning%20on%20pinterest%20%20but%20turns%20into%20a%20stained%20nightmare%20in%20an%20active%20kolkata%20kitchen%20">
 			<a href="/journal/best-kitchen-countertop-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_52_2026-09-06_14-27-28.jpg" alt="Best Kitchen Countertop for Kolkata Cooking: Quartz vs Granite vs Nano White" loading="lazy">
 			</a>
@@ -1303,7 +1774,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="climate-materials">
+		<article class="journal-card" data-category="climate-materials" data-search="termite%20and%20borer%20prevention%20in%20kolkata%20flats%20%20the%20chemical%20treatment%20protocol%20climate%20%20%20materials%20termite%20prevention%20kolkata%20flats%20termite%20control%20interior%20design%20kolkata%20%20borer%20proof%20plywood%20%20termite%20treatment%20new%20town%20salt%20lake%20%20pest%20control%20woodwork%20how%20to%20protect%20expensive%20wooden%20interiors%20from%20subterranean%20termites%20and%20borers%20in%20kolkata%20%20chemical%20drill%20treatments%20%20plywood%20testing%20%20and%20prevention%20guide%20%20subterranean%20termites%20%20%20coptotermes%20%20%20cause%20hundreds%20of%20crores%20in%20property%20damage%20across%20kolkata%20every%20year%20%20they%20enter%20through%20tiny%200%205mm%20hairline%20foundation%20cracks%20and%20hollow%20conduit%20pipes%20%20silently%20hollowing%20out%20expensive%20veneers%20and%20custom%20wardrobes%20">
 			<a href="/journal/termite-prevention-kolkata-flats/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work/photo_6_2026-09-04_15-01-37.jpg" alt="Termite and Borer Prevention in Kolkata Flats: The Chemical Treatment Protocol" loading="lazy">
 			</a>
@@ -1328,7 +1799,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="neighborhoods">
+		<article class="journal-card" data-category="neighborhoods" data-search="2bhk%203bhk%20interior%20design%20for%20high%20rise%20apartments%20in%20new%20town%20%20%20rajarhat%20neighborhood%20guides%20new%20town%20rajarhat%20apartment%20interior%20new%20town%20flat%20interior%20design%20%20rajarhat%20apartment%20interior%20designer%20%20space%20saving%20furniture%20kolkata%20%20action%20area%202%20flat%20interior%20space%20saving%20luxury%20interior%20design%20guide%20for%20modern%20new%20town%20and%20rajarhat%20high%20rises%20%20maximize%20compact%20floor%20plans%20%20galley%20kitchens%20%20and%20utility%20balconies%20%20modern%20towers%20across%20new%20town%20action%20area%20i%20%20ii%20%20iii%20and%20rajarhat%20chowmatha%20boast%20stunning%20high%20rise%20skyline%20views%20and%20expansive%20clubhouses%20%20but%20interior%20floor%20plans%20often%20suffer%20from%20narrow%20galley%20kitchens%20%20dead%20corner%20corridors%20%20and%20boxy%20bedrooms%20">
 			<a href="/journal/new-town-rajarhat-apartment-interior/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/new.town.work/photo_3_2026-09-04_15-49-33.jpg" alt="2BHK/3BHK Interior Design for High-Rise Apartments in New Town & Rajarhat" loading="lazy">
 			</a>
@@ -1353,7 +1824,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="neighborhoods">
+		<article class="journal-card" data-category="neighborhoods" data-search="heritage%20meets%20contemporary%20%20designing%20luxury%20residences%20in%20ballygunge%20%20%20alipore%20neighborhood%20guides%20ballygunge%20alipore%20luxury%20residences%20luxury%20interior%20designer%20alipore%20kolkata%20%20ballygunge%20luxury%20home%20interiors%20%20bespoke%20residences%20kolkata%20%20queens%20park%20high%20end%20interior%20interior%20architecture%20for%20sprawling%20luxury%20residences%20in%20alipore%20%20ballygunge%20%20and%20queens%20park%20%20blending%20colonial%20proportions%20%20italian%20marble%20%20and%20bespoke%20teak%20joinery%20%20in%20the%20elite%20zip%20codes%20of%20alipore%20%20ballygunge%20park%20%20and%20queens%20park%20%20luxury%20interior%20design%20is%20never%20about%20flashy%20gold%20accents%20%20it%20is%20an%20exercise%20in%20restraint%20%20grand%20ceiling%20proportions%20%20authentic%20materiality%20%20and%20master%20crafted%20detail%20">
 			<a href="/journal/ballygunge-alipore-luxury-residences/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/curated/ballygunge_alipore_luxury_living.jpeg" alt="Heritage Meets Contemporary: Designing Luxury Residences in Ballygunge & Alipore" loading="lazy">
 			</a>
@@ -1378,7 +1849,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="neighborhoods">
+		<article class="journal-card" data-category="neighborhoods" data-search="revamping%20old%20north%20%20%20central%20kolkata%20houses%20%20structural%20reinforcement%20%20%20modernization%20neighborhood%20guides%20old%20north%20kolkata%20house%20renovation%20old%20house%20renovation%20kolkata%20%20north%20kolkata%20house%20interior%20%20rajbari%20renovation%20%20red%20oxide%20floor%20restoration%20kolkata%20renovating%20century%20old%20traditional%20family%20houses%20in%20north%20and%20central%20kolkata%20%20how%20to%20upgrade%20load%20bearing%20brickwork%20%20preserve%20cast%20iron%20%20and%20install%20modern%20luxury%20bathrooms%20%20centuries%20old%20family%20homes%20in%20shyambazar%20%20bagbazar%20%20girish%20park%20%20and%20bowbazar%20hold%20irreplaceable%20soul%20%2015%20foot%20high%20ceilings%20%20green%20slatted%20louvered%20windows%20%20ornate%20cast%20iron%20balconies%20%20and%20deep%20red%20oxide%20floors%20%20modernizing%20them%20requires%20surgical%20architectural%20precision%20">
 			<a href="/journal/old-north-kolkata-house-renovation/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_9_2026-09-06_14-27-28.jpg" alt="Revamping Old North & Central Kolkata Houses: Structural Reinforcement & Modernization" loading="lazy">
 			</a>
@@ -1403,7 +1874,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="neighborhoods">
+		<article class="journal-card" data-category="neighborhoods" data-search="south%20kolkata%203bhk%20flat%20makeovers%20%20gariahat%20%20jodhpur%20park%20%20%20lake%20gardens%20neighborhood%20guides%20south%20kolkata%203bhk%20flat%20makeover%20south%20kolkata%20flat%20interior%20design%20%20renovation%20jodhpur%20park%20lake%20gardens%20%20gariahat%20apartment%20interior%20%20old%20flat%20remodel%20kolkata%20how%20to%20overhaul%2015%20to%2025%20year%20old%20apartments%20in%20south%20kolkata%20%20bathroom%20enlargements%20%20electrical%20rewiring%20%20road%20noise%20dampening%20%20and%20layout%20transformations%20%20apartments%20built%20in%20the%20late%201990s%20and%20early%202000s%20across%20gariahat%20%20southern%20avenue%20%20jodhpur%20park%20%20and%20lake%20gardens%20boast%20generous%20carpet%20footprints%20and%20prime%20connectivity%20%20but%20their%20interiors%20feel%20dated%20%20dark%20%20and%20acoustically%20compromised%20">
 			<a href="/journal/south-kolkata-3bhk-flat-makeover/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_67_2026-09-06_14-27-28.jpg" alt="South Kolkata 3BHK Flat Makeovers: Gariahat, Jodhpur Park & Lake Gardens" loading="lazy">
 			</a>
@@ -1428,7 +1899,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="neighborhoods">
+		<article class="journal-card" data-category="neighborhoods" data-search="duplex%20%20%20penthouse%20interior%20architecture%20in%20kolkata%20%20vertical%20zoning%20%20%20high%20ceilings%20neighborhood%20guides%20duplex%20penthouse%20interior%20kolkata%20duplex%20interior%20design%20kolkata%20%20penthouse%20interior%20architect%20%20urbana%20kolkata%20flat%20interior%20%20double%20height%20ceiling%20lighting%20interior%20architecture%20for%20luxury%20duplexes%20and%20penthouses%20in%20kolkata%20%20urbana%20%20south%20city%20%20trump%20tower%20%20%20double%20height%20acoustics%20%20custom%20stairs%20%20and%20terrace%20landscaping%20%20occupying%20the%20upper%20echelons%20of%20kolkata%20s%20skyline%20from%20urbana%20on%20the%20em%20bypass%20to%20trump%20tower%20and%20south%20city%20penthouses%20and%20duplex%20residences%20demand%20architectural%20mastery%20%20when%20ceiling%20heights%20scale%20to%2022%20feet%20%20standard%20interior%20rules%20no%20longer%20apply%20">
 			<a href="/journal/duplex-penthouse-interior-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work2/photo_13_2026-09-04_15-17-45.jpg" alt="Duplex & Penthouse Interior Architecture in Kolkata: Vertical Zoning & High Ceilings" loading="lazy">
 			</a>
@@ -1453,7 +1924,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="design-craft">
+		<article class="journal-card" data-category="design-craft" data-search="warm%20minimalism%20meets%20bengali%20soul%20%20blending%20cane%20%20teak%20%20%20clean%20geometry%20design%20craft%20warm%20minimalism%20bengali%20interior%20design%20warm%20minimalism%20kolkata%20%20bengali%20interior%20design%20%20modern%20colonial%20home%20decor%20%20cane%20furniture%20interior%20kolkata%20how%20to%20design%20a%20warm%20minimalist%20home%20in%20kolkata%20with%20authentic%20bengali%20soul%20%20master%20the%20balance%20of%20hand%20woven%20cane%20%20reclaimed%20teak%20%20terracotta%20%20and%20modern%20lighting%20%20too%20many%20contemporary%20kolkata%20apartments%20look%20like%20sterile%20%20clinical%20european%20showrooms%20devoid%20of%20warmth%20%20warm%20minimalism%20offers%20a%20refined%20alternative%20%20stripping%20away%20unnecessary%20visual%20clutter%20while%20celebrating%20bengal%20s%20tactile%20craft%20heritage%20">
 			<a href="/journal/warm-minimalism-bengali-interior-design/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work/photo_9_2026-09-04_15-01-37.jpg" alt="Warm Minimalism Meets Bengali Soul: Blending Cane, Teak & Clean Geometry" loading="lazy">
 			</a>
@@ -1478,7 +1949,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="design-craft">
+		<article class="journal-card" data-category="design-craft" data-search="italian%20marble%20vs%20large%20format%20vitrified%20tiles%20%20gvt%20%20in%20kolkata%20%20the%20real%20maintenance%20truth%20design%20craft%20italian%20marble%20vs%20vitrified%20tiles%20kolkata%20italian%20marble%20vs%20tiles%20kolkata%20%20gvt%20porcelain%20slab%20price%20kolkata%20%20marble%20polishing%20cost%20%20best%20flooring%20for%20flat%20kolkata%20honest%20durability%20comparison%20between%20italian%20marble%20and%20glazed%20vitrified%20porcelain%20tiles%20for%20kolkata%20residences%20%20polish%20lifespan%20%20scratch%20resistance%20%20and%20cost%20%20few%20decisions%20evoke%20as%20much%20debate%20between%20homeowners%20and%20interior%20designers%20as%20flooring%20%20italian%20marble%20conveys%20unmatched%20prestige%20and%20organic%20beauty%20%20but%20glazed%20vitrified%20porcelain%20tiles%20%20gvt%20%20offer%20practically%20indestructible%20utility%20">
 			<a href="/journal/italian-marble-vs-vitrified-tiles-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/curated/italian_marble_flooring_dining.jpeg" alt="Italian Marble vs Large-Format Vitrified Tiles (GVT) in Kolkata: The Real Maintenance Truth" loading="lazy">
 			</a>
@@ -1503,7 +1974,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="design-craft">
+		<article class="journal-card" data-category="design-craft" data-search="architectural%20lighting%20%20why%2090%20%20of%20kolkata%20homes%20ruin%20interiors%20with%20the%20wrong%20kelvin%20design%20craft%20architectural%20lighting%20kelvin%20guide%20kolkata%20architectural%20lighting%20kolkata%20%203000k%20vs%204000k%20lighting%20%20cob%20vs%20led%20strip%20interior%20%20magnetic%20track%20light%20cost%20master%20the%203%20tier%20luxury%20lighting%20formula%20for%20kolkata%20homes%20%20understand%20kelvin%20color%20temperatures%20%203000k%20vs%204000k%20vs%206500k%20%20%20cri%20ratings%20%20and%20anti%20glare%20cob%20optics%20%20you%20can%20spend%20%2025%20lakhs%20on%20italian%20marble%20and%20bespoke%20teak%20joinery%20%20but%20if%20you%20light%20the%20space%20with%206500k%20harsh%20white%20led%20tube%20lights%20or%20flood%20the%20ceiling%20with%20flat%20glare%20%20your%20home%20will%20look%20like%20a%20pharmacy%20or%20hospital%20waiting%20room%20">
 			<a href="/journal/architectural-lighting-kelvin-guide-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work/photo_10_2026-09-04_15-01-37.jpg" alt="Architectural Lighting: Why 90% of Kolkata Homes Ruin Interiors with the Wrong Kelvin" loading="lazy">
 			</a>
@@ -1528,7 +1999,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="design-craft">
+		<article class="journal-card" data-category="design-craft" data-search="luxury%20wardrobe%20engineering%20%20sliding%20vs%20openable%20doors%20%20%20internal%20storage%20planning%20design%20craft%20luxury%20wardrobe%20design%20sliding%20vs%20hinged%20wardrobe%20design%20kolkata%20%20sliding%20vs%20hinged%20wardrobe%20%20lacquered%20glass%20wardrobe%20price%20%20internal%20wardrobe%20storage%20dimensions%20detailed%20ergonomic%20guide%20to%20custom%20wardrobe%20design%20in%20kolkata%20%20compare%20sliding%20vs%20hinged%20systems%20%20lacquered%20glass%20vs%20veneer%20%20and%20saree%20suit%20internal%20dimensions%20%20a%20bespoke%20wardrobe%20is%20an%20intricate%20piece%20of%20daily%20storage%20engineering%20%20when%20designed%20properly%20%20it%20keeps%20garments%20crisp%20%20organizes%20accessories%20effortlessly%20%20and%20protects%20fabrics%20from%20seasonal%20monsoon%20dampness%20">
 			<a href="/journal/luxury-wardrobe-design-sliding-vs-hinged/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/rajarhat.work/photo_4_2026-09-04_15-33-26.jpg" alt="Luxury Wardrobe Engineering: Sliding vs Openable Doors & Internal Storage Planning" loading="lazy">
 			</a>
@@ -1553,7 +2024,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="design-craft">
+		<article class="journal-card" data-category="design-craft" data-search="acoustic%20soundproofing%20for%20busy%20kolkata%20streets%20%20soundproof%20windows%20%20%20wall%20baffling%20design%20craft%20acoustic%20soundproof%20windows%20kolkata%20soundproof%20windows%20kolkata%20%20acoustic%20glass%20upvc%20kolkata%20%20traffic%20noise%20reduction%20bedroom%20%20dgu%20glass%20soundproofing%20how%20to%20soundproof%20your%20bedroom%20from%20kolkata%20street%20traffic%20%20bus%20horns%20%20and%20tram%20noise%20%20dgu%20acoustic%20laminated%20glass%20%20upvc%20frames%20%20and%20wall%20acoustic%20treatments%20%20living%20near%20major%20kolkata%20arteries%20like%20rashbehari%20avenue%20%20vip%20road%20%20gariahat%20%20or%20diamond%20harbour%20road%20means%20enduring%2085%20decibel%20ambient%20noise%20from%20relentless%20bus%20horns%20%20motorcycle%20exhausts%20%20and%20festival%20loudspeakers%20">
 			<a href="/journal/acoustic-soundproof-windows-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg" alt="Acoustic Soundproofing for Busy Kolkata Streets: Soundproof Windows & Wall Baffling" loading="lazy">
 			</a>
@@ -1578,7 +2049,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="hiring-verification">
+		<article class="journal-card" data-category="hiring-verification" data-search="10%20critical%20questions%20to%20ask%20an%20interior%20designer%20in%20kolkata%20before%20paying%20a%20token%20hiring%20%20%20verification%2010%20questions%20to%20ask%20interior%20designer%20kolkata%20questions%20to%20ask%20interior%20designer%20kolkata%20%20how%20to%20hire%20interior%20designer%20%20interior%20contract%20checklist%20%20avoid%20interior%20scam%20kolkata%20essential%20due%20diligence%20checklist%20before%20hiring%20an%20interior%20designer%20in%20kolkata%20%20expose%20hidden%20markups%20%20verify%20subcontractor%20pedigree%20%20and%20protect%20your%20budget%20%20hiring%20an%20interior%20designer%20is%20one%20of%20the%20most%20substantial%20financial%20and%20emotional%20investments%20you%20will%20make%20in%20your%20home%20%20asking%20the%20right%20probing%20questions%20during%20the%20initial%20consultation%20separates%20true%20architectural%20craftsmen%20from%20commission%20agents%20">
 			<a href="/journal/10-questions-to-ask-interior-designer-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg" alt="10 Critical Questions to Ask an Interior Designer in Kolkata Before Paying a Token" loading="lazy">
 			</a>
@@ -1603,7 +2074,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="hiring-verification">
+		<article class="journal-card" data-category="hiring-verification" data-search="red%20flags%20%20how%20local%20kolkata%20%20package%20deal%20%20interior%20contractors%20cut%20corners%20hiring%20%20%20verification%20interior%20contractor%20red%20flags%20kolkata%20interior%20contractor%20scam%20kolkata%20%20interior%20package%20deal%20reality%20%20cheap%20interior%20designer%20warning%20%20contractor%20cheating%20tricks%20exposing%20common%20cost%20cutting%20tricks%20by%20cheap%20interior%20package%20contractors%20in%20kolkata%20%20sub%20grade%20ply%20swaps%20%20fake%20hardware%20%20and%20disappearing%20labor%20%20attractive%20newspaper%20ads%20and%20social%20media%20campaigns%20promising%20%20full%203bhk%20interior%20at%20just%20%203%2099%20lakhs%20%20are%20flooding%20kolkata%20%20homeowners%20must%20understand%20the%20hidden%20corners%20that%20get%20cut%20to%20make%20those%20impossible%20numbers%20work%20">
 			<a href="/journal/interior-contractor-red-flags-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/new.town.work/photo_9_2026-09-04_15-49-33.jpg" alt="Red Flags: How Local Kolkata "Package Deal" Interior Contractors Cut Corners" loading="lazy">
 			</a>
@@ -1628,7 +2099,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="hiring-verification">
+		<article class="journal-card" data-category="hiring-verification" data-search="the%20realistic%20timeline%20%20why%20a%20proper%203bhk%20interior%20takes%2090%20to%20120%20days%20in%20kolkata%20hiring%20%20%20verification%20realistic%20home%20interior%20timeline%20kolkata%20interior%20timeline%20kolkata%20%20how%20long%20interior%20work%20takes%20%203bhk%20interior%20project%20duration%20%20interior%20delay%20causes%20kolkata%20realistic%20interior%20design%20project%20schedule%20for%20kolkata%20flats%20%20learn%20why%2045%20day%20promises%20fail%20and%20how%20to%20plan%20civil%20%20carpentry%20%20and%20finishing%20stages%20%20unscrupulous%20contractors%20routinely%20promise%20%20%20sir%20%20give%20me%20the%20advance%20and%20i%20will%20finish%20your%203bhk%20in%2040%20days%20%20%20in%20reality%20%20rushing%20interior%20architecture%20violates%20the%20natural%20curing%20and%20drying%20laws%20of%20construction%20chemistry%20">
 			<a href="/journal/realistic-home-interior-timeline-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work2/photo_6_2026-09-04_15-17-45.jpg" alt="The Realistic Timeline: Why a Proper 3BHK Interior Takes 90 to 120 Days in Kolkata" loading="lazy">
 			</a>
@@ -1653,7 +2124,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="hiring-verification">
+		<article class="journal-card" data-category="hiring-verification" data-search="3d%20renderings%20vs%20reality%20%20how%20to%20ensure%20your%20finished%20flat%20matches%20the%203d%20model%20hiring%20%20%20verification%203d%20renderings%20vs%20reality%20interiors%203d%20interior%20design%20vs%20reality%20%203d%20render%20matching%20real%20flat%20%20interior%20design%20render%20mistakes%20%20photorealistic%20interior%20renders%20avoid%20the%203d%20render%20expectation%20gap%20in%20kolkata%20%20how%20to%20bridge%203ds%20max%20visualization%20with%20physical%20site%20realities%20%20beam%20offsets%20%20and%20material%20mood%20boards%20%20we%20have%20all%20seen%20glossy%203d%20computer%20renderings%20that%20look%20like%20five%20star%20luxury%20suites%20%20only%20to%20discover%20that%20the%20finished%20flat%20looks%20cheap%20%20cramped%20%20and%20completely%20different%20in%20color%20tone%20and%20proportions%20">
 			<a href="/journal/3d-renderings-vs-reality-interiors/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_2_2026-09-06_14-27-28.jpg" alt="3D Renderings vs Reality: How to Ensure Your Finished Flat Matches the 3D Model" loading="lazy">
 			</a>
@@ -1678,7 +2149,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="hiring-verification">
+		<article class="journal-card" data-category="hiring-verification" data-search="interior%20warranties%20in%20kolkata%20%20what%20does%20a%20%2010%20year%20warranty%20%20actually%20cover%20%20hiring%20%20%20verification%20interior%20warranty%20guide%20kolkata%20interior%20warranty%20kolkata%20%2010%20year%20interior%20guarantee%20reality%20%20modular%20kitchen%20warranty%20terms%20%20interior%20amc%20contract%20unpacking%20interior%20design%20warranty%20promises%20in%20kolkata%20%20learn%20what%2010%20year%20warranties%20really%20cover%20%20hardware%20replacement%20clauses%20%20and%20annual%20maintenance%20contracts%20%20nearly%20every%20interior%20design%20advertisement%20in%20kolkata%20boldly%20splashes%20%2010%20year%20warranty%20%20%20across%20their%20banners%20%20but%20what%20happens%20two%20years%20later%20when%20a%20kitchen%20hydraulic%20hinge%20sags%20or%20a%20drawer%20channel%20seizes%20">
 			<a href="/journal/interior-warranty-guide-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work2/photo_12_2026-09-04_15-17-45.jpg" alt="Interior Warranties in Kolkata: What Does a "10-Year Warranty" Actually Cover?" loading="lazy">
 			</a>
@@ -1703,7 +2174,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="vastu-functionality">
+		<article class="journal-card" data-category="vastu-functionality" data-search="modern%20vastu%20for%20kolkata%20apartments%20%20scientific%20energy%20alignment%20without%20ruining%20aesthetics%20vastu%20%20%20functionality%20practical%20apartment%20vastu%20kolkata%20vastu%20for%20flats%20kolkata%20%20contemporary%20vastu%20interior%20design%20%20kitchen%20vastu%20southeast%20%20north%20east%20mandir%20flat%20kolkata%20practical%20%20contemporary%20vastu%20shastra%20guide%20for%20kolkata%20flats%20%20balance%20kitchen%20fire%20zones%20%20master%20bedroom%20directions%20%20and%20mandirs%20without%20breaking%20walls%20%20over%2070%20%20of%20kolkata%20homeowners%20desire%20vastu%20alignment%20for%20peace%20%20prosperity%20%20and%20harmony%20%20however%20%20rigid%20superstitious%20advice%20that%20demands%20breaking%20structural%20concrete%20beams%20or%20demolishing%20bathrooms%20is%20neither%20practical%20nor%20architecturally%20sound%20">
 			<a href="/journal/practical-apartment-vastu-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg" alt="Modern Vastu for Kolkata Apartments: Scientific Energy Alignment Without Ruining Aesthetics" loading="lazy">
 			</a>
@@ -1728,7 +2199,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="vastu-functionality">
+		<article class="journal-card" data-category="vastu-functionality" data-search="smart%20home%20automation%20in%20kolkata%20%20what%20s%20truly%20useful%20vs%20what%20s%20a%20waste%20of%20money%20vastu%20%20%20functionality%20smart%20home%20automation%20worth%20it%20kolkata%20smart%20home%20automation%20kolkata%20%20motorized%20curtains%20price%20kolkata%20%20smart%20switches%20worth%20it%20%20zigbee%20home%20automation%20honest%20evaluation%20of%20home%20automation%20for%20kolkata%20apartments%20%20discover%20why%20retrofitted%20matter%20zigbee%20modules%20beat%20expensive%20proprietary%20control%20panels%20%20home%20automation%20salesmen%20will%20eagerly%20pitch%20%205%20lakh%20proprietary%20wall%20touch%20panels%20and%20voice%20activated%20toaster%20systems%20%20but%20what%20features%20actually%20enhance%20luxury%20living%20in%20kolkata%20%20and%20what%20ends%20up%20as%20frustrating%20technical%20baggage%20">
 			<a href="/journal/smart-home-automation-worth-it-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_1_2026-09-06_14-27-28.jpg" alt="Smart Home Automation in Kolkata: What’s Truly Useful vs What’s a Waste of Money" loading="lazy">
 			</a>
@@ -1753,7 +2224,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="vastu-functionality">
+		<article class="journal-card" data-category="vastu-functionality" data-search="designing%20the%20ultimate%20modern%20puja%20room%20%20mandir%20%20in%20contemporary%20kolkata%20flats%20vastu%20%20%20functionality%20modern%20puja%20room%20mandir%20design%20kolkata%20modern%20puja%20room%20design%20kolkata%20%20mandir%20design%20for%20flat%20%20backlit%20corian%20temple%20kolkata%20%20cnc%20jali%20mandir%20door%20how%20to%20design%20a%20sacred%20%20elegant%20puja%20mandir%20in%20modern%20apartments%20%20backlit%20corian%20%20cnc%20brass%20jalis%20%20smoke%20ventilation%20%20and%20sacred%20spatial%20geometry%20%20in%20bengali%20households%20%20the%20thakur%20ghor%20%20mandir%20%20is%20the%20spiritual%20sanctuary%20of%20the%20home%20%20modern%20compact%20high%20rise%20living%20requires%20innovative%20design%20that%20preserves%20traditional%20reverence%20while%20integrating%20seamlessly%20with%20contemporary%20aesthetics%20">
 			<a href="/journal/modern-puja-room-mandir-design-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/curated/traditional_residential_puja_mandir.jpeg" alt="Designing the Ultimate Modern Puja Room (Mandir) in Contemporary Kolkata Flats" loading="lazy">
 			</a>
@@ -1778,7 +2249,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="vastu-functionality">
+		<article class="journal-card" data-category="vastu-functionality" data-search="small%20balcony%20garden%20%20%20sit%20out%20design%20for%20kolkata%20high%20rises%20%20surviving%20heat%20%20%20monsoons%20vastu%20%20%20functionality%20highrise%20balcony%20garden%20design%20kolkata%20balcony%20garden%20design%20kolkata%20%20high%20rise%20balcony%20makeover%20%20wpc%20decking%20balcony%20price%20%20invisible%20grill%20installation%20kolkata%20transform%20compact%20high%20rise%20balconies%20in%20new%20town%20and%20rajarhat%20into%20all%20weather%20luxury%20retreats%20%20wpc%20decking%20%20drainage%20slopes%20%20invisible%20grills%20%20and%20tropical%20plants%20%20a%20private%20balcony%20is%20your%20only%20personal%20connection%20to%20the%20outdoors%20in%20high%20density%20urban%20kolkata%20%20yet%20%20exposed%20to%20scorching%2042%20c%20summer%20heat%20%20ferocious%20monsoon%20downpours%20%20and%20pigeon%20visits%20%20most%20balconies%20end%20up%20as%20neglected%20storage%20spaces%20">
 			<a href="/journal/highrise-balcony-garden-design-kolkata/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/salt.lake.work/photo_13_2026-09-04_15-01-37.jpg" alt="Small Balcony Garden & Sit-Out Design for Kolkata High-Rises: Surviving Heat & Monsoons" loading="lazy">
 			</a>
@@ -1803,7 +2274,7 @@
 			</div>
 		</article>
 
-		<article class="journal-card" data-category="vastu-functionality">
+		<article class="journal-card" data-category="vastu-functionality" data-search="color%20psychology%20for%20kolkata%20homes%20%20palettes%20that%20counter%20tropical%20heat%20%20%20monsoons%20vastu%20%20%20functionality%20tropical%20color%20psychology%20kolkata%20homes%20interior%20wall%20colors%20kolkata%20%20best%20paint%20for%20humid%20climate%20%20color%20psychology%20interior%20design%20%20cooling%20paint%20colors%20india%20architectural%20paint%20color%20selection%20for%20kolkata%20weather%20%20high%20light%20reflectance%20value%20%20lrv%20%20neutrals%20%20sage%20green%20%20and%20muted%20terracotta%20to%20keep%20rooms%20cool%20and%20bright%20%20colors%20carry%20physiological%20and%20thermal%20impact%20%20in%20a%20city%20where%20summer%20temperatures%20cross%2040%20c%20with%2085%20%20humidity%20followed%20by%20months%20of%20overcast%20monsoon%20grey%20skies%20%20choosing%20the%20wrong%20wall%20palette%20makes%20rooms%20feel%20sweltering%20%20dark%20%20and%20claustrophobic%20">
 			<a href="/journal/tropical-color-psychology-kolkata-homes/" class="journal-card-image-wrap">
 				<img src="/pictures.testimonals/real.residential.pic/photo_6_2026-09-06_14-27-28.jpg" alt="Color Psychology for Kolkata Homes: Palettes That Counter Tropical Heat & Monsoons" loading="lazy">
 			</a>
@@ -1828,6 +2299,22 @@
 			</div>
 		</article>
 
+
+			<!-- Empty Search State -->
+			<div id="journal-empty-state" class="hidden col-span-full py-50 sm:py-70 px-20 text-center rounded-[24px] my-10 w-full">
+				<div class="journal-empty-icon-wrap">
+					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path>
+					</svg>
+				</div>
+				<h3 class="font-sans text-16 sm:text-20 uppercase tracking-wider mb-8">No Monographs Found</h3>
+				<p class="font-body text-13 sm:text-15 max-w-md mx-auto mb-22 leading-relaxed">
+					No articles matched "<span id="empty-query-text" class="text-gold font-medium"></span>". Try searching for <button type="button" class="quick-suggest underline transition-colors" data-term="kitchen">kitchen</button>, <button type="button" class="quick-suggest underline transition-colors" data-term="ceiling">ceiling</button>, <button type="button" class="quick-suggest underline transition-colors" data-term="marble">marble</button>, or <button type="button" class="quick-suggest underline transition-colors" data-term="vastu">vastu</button>.
+				</p>
+				<button id="journal-reset-search-btn" class="px-24 py-10 rounded-full font-sans text-11 uppercase tracking-widest transition-all duration-300">
+					Clear Search &amp; View All
+				</button>
+			</div>
 		</section>
 
 		<!-- Bottom Soft CTA Card -->
@@ -1849,7 +2336,7 @@
 	</main>
 
 
-	<footer class="journal-site-footer" data-target="site-footer">
+	<footer class="journal-site-footer">
 		<div class="journal-footer-shell">
 			<a href="/" class="journal-footer-logo" title="LUXiHOME">
 				<img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME">
@@ -1895,22 +2382,164 @@
 
 
 	<script>
-		// Interactive Category Filter Logic
-		document.querySelectorAll('.journal-filter-btn').forEach(button => {
-			button.addEventListener('click', function() {
-				document.querySelectorAll('.journal-filter-btn').forEach(btn => btn.classList.remove('active', 'bg-gold', 'text-dark-blue'));
-				this.classList.add('active', 'bg-gold', 'text-dark-blue');
-				const filter = this.getAttribute('data-filter');
-				const cards = document.querySelectorAll('#articles-grid article');
-				cards.forEach(card => {
-					if (filter === 'all' || card.getAttribute('data-category') === filter) {
+		// Interactive Search & Category Filter Controller
+		(function() {
+			const searchInput = document.getElementById('journal-search-input');
+			const searchClear = document.getElementById('journal-search-clear');
+			const searchCount = document.getElementById('journal-search-count');
+			const emptyState = document.getElementById('journal-empty-state');
+			const emptyQueryText = document.getElementById('empty-query-text');
+			const resetBtn = document.getElementById('journal-reset-search-btn');
+			const filterBtns = document.querySelectorAll('.journal-filter-btn');
+			const allCards = Array.from(document.querySelectorAll('#articles-grid article.journal-card'));
+
+			let activeCategory = 'all';
+			let searchQuery = '';
+
+			// Pre-cache searchable text for instant responsive filtering
+			allCards.forEach(card => {
+				card._searchText = decodeURIComponent(card.getAttribute('data-search') || '');
+				card._category = card.getAttribute('data-category') || '';
+			});
+
+			function filterArticles() {
+				const query = searchQuery.trim().toLowerCase();
+				const terms = query ? query.split(/s+/).filter(Boolean) : [];
+				let visibleCount = 0;
+
+				allCards.forEach(card => {
+					// 1. Category check
+					const matchesCategory = (activeCategory === 'all' || card._category === activeCategory);
+
+					// 2. Search query check: all terms must match
+					let matchesSearch = true;
+					if (terms.length > 0) {
+						matchesSearch = terms.every(term => card._searchText.includes(term));
+					}
+
+					if (matchesCategory && matchesSearch) {
 						card.style.display = 'flex';
+						visibleCount++;
 					} else {
 						card.style.display = 'none';
 					}
 				});
+
+				// Update clear button visibility
+				if (query.length > 0) {
+					searchClear.classList.remove('hidden');
+				} else {
+					searchClear.classList.add('hidden');
+				}
+
+				// Update counter message
+				if (query.length > 0) {
+					if (visibleCount === 0) {
+						searchCount.textContent = '0 monographs found';
+					} else if (visibleCount === 1) {
+						searchCount.textContent = '1 monograph matching "' + query + '"';
+					} else {
+						searchCount.textContent = visibleCount + ' monographs matching "' + query + '"';
+					}
+				} else {
+					if (activeCategory === 'all') {
+						searchCount.textContent = visibleCount + ' monographs available';
+					} else {
+						searchCount.textContent = visibleCount + ' monographs in category';
+					}
+				}
+
+				// Empty state handling
+				if (visibleCount === 0) {
+					emptyState.classList.remove('hidden');
+					emptyQueryText.textContent = query || (activeCategory !== 'all' ? activeCategory : '');
+				} else {
+					emptyState.classList.add('hidden');
+				}
+			}
+
+			// Search input listener (instant live filtering)
+			if (searchInput) {
+				searchInput.addEventListener('input', function() {
+					searchQuery = this.value;
+					filterArticles();
+				});
+			}
+
+			// Clear button listener
+			if (searchClear) {
+				searchClear.addEventListener('click', function() {
+					if (searchInput) {
+						searchInput.value = '';
+						searchQuery = '';
+						searchInput.focus();
+					}
+					filterArticles();
+				});
+			}
+
+			// Reset button inside empty state
+			if (resetBtn) {
+				resetBtn.addEventListener('click', function() {
+					if (searchInput) searchInput.value = '';
+					searchQuery = '';
+					activeCategory = 'all';
+					filterBtns.forEach(btn => {
+						if (btn.getAttribute('data-filter') === 'all') {
+							btn.classList.add('active', 'bg-gold', 'text-dark-blue');
+						} else {
+							btn.classList.remove('active', 'bg-gold', 'text-dark-blue');
+						}
+					});
+					filterArticles();
+					if (searchInput) searchInput.focus();
+				});
+			}
+
+			// Quick suggestions in empty state
+			document.querySelectorAll('.quick-suggest').forEach(btn => {
+				btn.addEventListener('click', function() {
+					const term = this.getAttribute('data-term');
+					if (searchInput && term) {
+						searchInput.value = term;
+						searchQuery = term;
+						filterArticles();
+						searchInput.focus();
+					}
+				});
 			});
-		});
+
+			// Category filter tab listeners
+			filterBtns.forEach(button => {
+				button.addEventListener('click', function() {
+					filterBtns.forEach(btn => btn.classList.remove('active', 'bg-gold', 'text-dark-blue'));
+					this.classList.add('active', 'bg-gold', 'text-dark-blue');
+					activeCategory = this.getAttribute('data-filter') || 'all';
+					filterArticles();
+				});
+			});
+
+			// Global keyboard shortcuts: "/" to focus, "Escape" to clear
+			window.addEventListener('keydown', function(e) {
+				if (e.key === '/' && document.activeElement !== searchInput) {
+					if (['INPUT', 'TEXTAREA'].indexOf(document.activeElement.tagName) === -1) {
+						e.preventDefault();
+						if (searchInput) {
+							searchInput.focus();
+							searchInput.select();
+						}
+					}
+				} else if (e.key === 'Escape' && document.activeElement === searchInput) {
+					if (searchInput.value) {
+						searchInput.value = '';
+						searchQuery = '';
+						filterArticles();
+					} else {
+						searchInput.blur();
+					}
+				}
+			});
+		})();
 	</script>
 
 </body>

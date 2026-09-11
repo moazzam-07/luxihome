@@ -16,6 +16,8 @@ function getHeaderHtml(currentPath = '/journal/') {
 <nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
     <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed style="position: fixed !important; top: 20px !important; right: 15px !important; left: auto !important; z-index: 99999 !important; display: flex !important; align-items: center !important;">
         <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light" style="display: flex !important; flex-direction: row-reverse; align-items: center; position: relative; pointer-events: auto !important;">
+    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
+        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light">
             <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] bg-white/20 group-data-[theme=light]/wrapper:bg-white/20 group-data-[theme=dark]/wrapper:bg-black/20 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-white/30 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
             <div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10" data-target="menu-trigger" style="position: relative; padding: 15px 22px; cursor: pointer; z-index: 10 !important;">
                 <div class="w-16 h-auto transition-opacity duration-300 ease-linear" data-target="hamburger-lottie" style="width: 16px !important; height: 12px !important; display: flex !important; align-items: center !important;">
@@ -236,6 +238,7 @@ function getHeaderHtml(currentPath = '/journal/') {
 function getFooterHtml() {
   return `
 	<footer class="journal-site-footer" data-target="site-footer">
+	<footer class="journal-site-footer">
 		<div class="journal-footer-shell">
 			<a href="/" class="journal-footer-logo" title="LUXiHOME">
 				<img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME">
@@ -420,6 +423,15 @@ function getJournalWarmThemeStyles() {
       background: var(--lux-brown) !important;
       color: #F7F1E8 !important;
       box-shadow: 0 22px 45px rgba(26,32,38,.14);
+
+    /* Responsive Header & Navigation */
+    @media (max-width: 1023px) {
+      [data-nav-fixed] {
+        position: fixed !important;
+        top: 20px !important;
+        right: 15px !important;
+        left: auto !important;
+      }
     }
     body.journal-warm-theme .journal-hero::after {
       content: "";
@@ -427,6 +439,29 @@ function getJournalWarmThemeStyles() {
       inset: 0;
       pointer-events: none;
       background: linear-gradient(135deg, rgba(255,255,255,.11), transparent 42%, rgba(26,32,38,.12));
+    @media (min-width: 1024px) {
+      [data-nav-fixed] {
+        position: fixed !important;
+        top: 20px !important;
+        left: 40px !important;
+        right: auto !important;
+        width: auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      [data-target="menu-wrapper"] {
+        width: auto !important;
+        height: auto !important;
+      }
+      [data-target="menu-background"] {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(114, 97, 82, .88) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+      }
     }
     body.journal-warm-theme .journal-hero > * { position: relative; z-index: 1; }
     body.journal-warm-theme .journal-hero h1,
@@ -434,6 +469,82 @@ function getJournalWarmThemeStyles() {
     body.journal-warm-theme .journal-hero h1 span:last-child,
     body.journal-warm-theme .text-gold { color: var(--lux-gold) !important; }
     body.journal-warm-theme .journal-hero p { color: rgba(247,241,232,.78) !important; }
+
+    /* Mobile Hero: preserved exactly as current */
+    @media (max-width: 1023px) {
+      body.journal-warm-theme .journal-hero {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(34px, 6vw, 72px) clamp(22px, 7vw, 84px);
+        border-radius: 0 0 28px 28px;
+        background: var(--lux-brown) !important;
+        color: #F7F1E8 !important;
+        box-shadow: 0 22px 45px rgba(26,32,38,.14);
+      }
+      body.journal-warm-theme .journal-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(135deg, rgba(255,255,255,.11), transparent 42%, rgba(26,32,38,.12));
+      }
+      body.journal-warm-theme .journal-hero > * { position: relative; z-index: 1; }
+      body.journal-warm-theme .journal-hero h1,
+      body.journal-warm-theme .journal-hero p { color: #F7F1E8 !important; }
+      body.journal-warm-theme .journal-hero h1 span:last-child,
+      body.journal-warm-theme .text-gold { color: var(--lux-gold) !important; }
+      body.journal-warm-theme .journal-hero p { color: rgba(247,241,232,.78) !important; }
+    }
+
+    /* PC Desktop Hero: Architectural Masthead directly on warm sand */
+    @media (min-width: 1024px) {
+      body.journal-warm-theme .journal-hero {
+        position: relative;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 24px 0 44px 0 !important;
+        max-width: 980px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body.journal-warm-theme .journal-hero::after {
+        display: none !important;
+      }
+      body.journal-warm-theme .journal-hero p.text-gold {
+        color: var(--lux-brown) !important;
+        font-size: 13px !important;
+        letter-spacing: 0.36em !important;
+        margin-bottom: 22px !important;
+      }
+      body.journal-warm-theme .journal-hero h1 {
+        color: var(--lux-dark) !important;
+        font-size: 44px !important;
+        line-height: 1.22 !important;
+        letter-spacing: 0.12em !important;
+        margin-bottom: 24px !important;
+      }
+      body.journal-warm-theme .journal-hero h1 span {
+        color: var(--lux-dark) !important;
+      }
+      body.journal-warm-theme .journal-hero h1 span.opacity-85 {
+        color: var(--lux-dark) !important;
+        opacity: 0.92 !important;
+      }
+      body.journal-warm-theme .journal-hero h1 span.text-gold,
+      body.journal-warm-theme .journal-hero h1 span:last-child {
+        color: var(--lux-brown) !important;
+      }
+      body.journal-warm-theme .journal-hero > p:last-child {
+        color: rgba(26, 32, 38, 0.72) !important;
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        max-width: 660px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+
     body.journal-warm-theme .journal-filter-btn {
       border-color: rgba(114,97,82,.4) !important;
       background: rgba(255,255,255,.24) !important;
@@ -497,7 +608,237 @@ function getJournalWarmThemeStyles() {
 
     /* Article pages use the same palette, including tables and callouts. */
     body.journal-warm-theme main {
+    /* Constrain only article reading pages, while keeping journal hub at full editorial width */
+    body.journal-warm-theme [data-barba-namespace="journal-article"] main {
       max-width: 820px !important;
+    /* GSAP Pin-Spacer Defusal: Eliminates 744px sand gap below dark footer */
+    .pin-spacer-footer-reveal {
+      position: relative !important;
+      inset: auto !important;
+      z-index: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    body.journal-warm-theme [data-barba-namespace="journal"] main {
+      max-width: 1280px !important;
+    .pin-spacer-footer-reveal > footer,
+    .journal-site-footer {
+      position: relative !important;
+      width: 100% !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Main Editorial Containers */
+    @media (max-width: 1023px) {
+      body.journal-warm-theme main {
+        padding: 160px 18px 72px !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      body.journal-warm-theme [data-barba-namespace="journal"] main {
+        max-width: 1360px !important;
+        padding-top: 130px !important;
+        padding-bottom: 120px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] main {
+        max-width: 860px !important;
+        padding-top: 130px !important;
+        padding-bottom: 100px !important;
+      }
+
+      /* Desktop Grid Refinements */
+      body.journal-warm-theme #articles-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 36px !important;
+        max-width: 1360px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body.journal-warm-theme .journal-card {
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        border-radius: 20px !important;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+      }
+      body.journal-warm-theme .journal-card:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 24px 44px rgba(26,32,38,.14), inset 0 1px 0 rgba(255,255,255,.5) !important;
+      }
+      body.journal-warm-theme .journal-card-body {
+        padding: 26px 28px 28px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        flex-grow: 1 !important;
+      }
+      body.journal-warm-theme .journal-card-title {
+        font-size: 16px !important;
+        line-height: 1.42 !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 24px !important;
+      }
+
+      /* Desktop Filter Row */
+      .journal-filter-row {
+        justify-content: center !important;
+        gap: 12px !important;
+        margin-bottom: 48px !important;
+      }
+      body.journal-warm-theme .journal-filter-btn {
+        padding: 9px 20px !important;
+        font-size: 11px !important;
+        letter-spacing: 0.14em !important;
+      }
+
+      /* Desktop Bottom CTA */
+      body.journal-warm-theme .journal-cta {
+        margin-top: 100px !important;
+        padding: 48px 56px !important;
+        border-radius: 28px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 40px !important;
+        background: linear-gradient(135deg, rgba(114,97,82,.98), rgba(92,76,63,.95)) !important;
+        border: 1px solid rgba(255,255,255,.24) !important;
+        box-shadow: 0 24px 48px rgba(26,32,38,.15), inset 0 1px 0 rgba(255,255,255,.2) !important;
+      }
+      body.journal-warm-theme .journal-cta h3 {
+        font-size: 26px !important;
+        line-height: 1.25 !important;
+      }
+      body.journal-warm-theme .journal-cta a {
+        background: #C2A26A !important;
+        color: #13212E !important;
+        font-weight: 500 !important;
+        border: none !important;
+        padding: 16px 36px !important;
+        box-shadow: 0 10px 24px rgba(26,32,38,.2) !important;
+        transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease !important;
+      }
+      body.journal-warm-theme .journal-cta a:hover {
+        background: #FFFFFF !important;
+        color: #13212E !important;
+        transform: translateY(-2px) !important;
+      }
+
+      /* Desktop Article Reading Experience */
+      body.journal-warm-theme [data-barba-namespace="journal-article"] main > h1 {
+        font-size: 44px !important;
+        line-height: 1.18 !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 24px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] main > p {
+        font-size: 18px !important;
+        line-height: 1.75 !important;
+        margin-bottom: 36px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] .article-content h2 {
+        font-size: 28px !important;
+        line-height: 1.22 !important;
+        margin-top: 48px !important;
+        margin-bottom: 18px !important;
+      }
+      body.journal-warm-theme [data-barba-namespace="journal-article"] .article-content p {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        margin-bottom: 22px !important;
+      }
+    }
+
+    /* Warm Theme Search Bar & Filter Styling */
+    body.journal-warm-theme .journal-search-wrap {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body.journal-warm-theme .journal-search-input {
+      background: rgba(255, 255, 255, 0.5) !important;
+      border: 1px solid rgba(114, 97, 82, 0.3) !important;
+      color: var(--lux-dark) !important;
+      box-shadow: 0 8px 24px rgba(26, 32, 38, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      font-family: 'DIN', sans-serif !important;
+      font-size: 14px !important;
+      padding-left: 50px !important;
+      padding-right: 48px !important;
+    }
+    body.journal-warm-theme .journal-search-input::placeholder {
+      color: rgba(26, 32, 38, 0.48) !important;
+    }
+    body.journal-warm-theme .journal-search-input:hover {
+      background: rgba(255, 255, 255, 0.7) !important;
+      border-color: rgba(114, 97, 82, 0.45) !important;
+    }
+    body.journal-warm-theme .journal-search-input:focus {
+      background: #FFFFFF !important;
+      border-color: var(--lux-gold) !important;
+      box-shadow: 0 0 0 2px rgba(194, 162, 106, 0.35), 0 12px 30px rgba(26, 32, 38, 0.1) !important;
+      outline: none !important;
+    }
+    body.journal-warm-theme .journal-search-icon {
+      color: var(--lux-brown) !important;
+    }
+    body.journal-warm-theme .journal-search-clear {
+      color: rgba(26, 32, 38, 0.45) !important;
+    }
+    body.journal-warm-theme .journal-search-clear:hover {
+      color: var(--lux-dark) !important;
+      background: rgba(114, 97, 82, 0.12) !important;
+    }
+    body.journal-warm-theme .journal-search-status {
+      color: rgba(26, 32, 38, 0.68) !important;
+    }
+    body.journal-warm-theme .journal-search-status span {
+      color: rgba(26, 32, 38, 0.62) !important;
+    }
+    body.journal-warm-theme .journal-search-status kbd {
+      background: rgba(114, 97, 82, 0.12) !important;
+      border: 1px solid rgba(114, 97, 82, 0.22) !important;
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #journal-empty-state {
+      grid-column: 1 / -1 !important;
+      background: rgba(255, 255, 255, 0.45) !important;
+      border: 1px solid rgba(114, 97, 82, 0.25) !important;
+      box-shadow: 0 14px 30px rgba(26, 32, 38, 0.06);
+      width: 100% !important;
+      max-width: 640px !important;
+      margin: 20px auto !important;
+    }
+    body.journal-warm-theme .journal-empty-icon-wrap {
+      background: rgba(194, 162, 106, 0.2) !important;
+      color: var(--lux-brown) !important;
+    }
+    body.journal-warm-theme #journal-empty-state h3 {
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #journal-empty-state p {
+      color: rgba(26, 32, 38, 0.72) !important;
+    }
+    body.journal-warm-theme #journal-empty-state .quick-suggest {
+      color: var(--lux-brown) !important;
+      font-weight: 500;
+    }
+    body.journal-warm-theme #journal-empty-state .quick-suggest:hover {
+      color: var(--lux-dark) !important;
+    }
+    body.journal-warm-theme #journal-reset-search-btn {
+      background: var(--lux-brown) !important;
+      color: #F7F1E8 !important;
+      border-color: var(--lux-brown) !important;
+    }
+    body.journal-warm-theme #journal-reset-search-btn:hover {
+      background: var(--lux-dark) !important;
+      border-color: var(--lux-dark) !important;
+      color: #FFFFFF !important;
     }
     body.journal-warm-theme .journal-featured-image {
       aspect-ratio: 16 / 9;
@@ -657,6 +998,17 @@ function getJournalWarmThemeStyles() {
     body.journal-warm-theme main .journal-hero h1,
     body.journal-warm-theme main .journal-hero h1 span:not(:last-child) { color: #F7F1E8 !important; }
     body.journal-warm-theme main .journal-hero h1 span:last-child { color: var(--lux-gold) !important; }
+    /* Mobile only: The warm-brown hub intro is a dark surface: keep its heading light. */
+    @media (max-width: 1023px) {
+      body.journal-warm-theme main .journal-hero h1,
+      body.journal-warm-theme main .journal-hero h1 span:not(:last-child) { color: #F7F1E8 !important; }
+      body.journal-warm-theme main .journal-hero h1 span:last-child { color: var(--lux-gold) !important; }
+    }
+    @media (min-width: 1024px) {
+      body.journal-warm-theme main .journal-hero h1,
+      body.journal-warm-theme main .journal-hero h1 span:not(:last-child) { color: var(--lux-dark) !important; }
+      body.journal-warm-theme main .journal-hero h1 span:last-child { color: var(--lux-brown) !important; }
+    }
     body.journal-warm-theme .article-content a,
     body.journal-warm-theme main a { color: var(--lux-brown); }
     body.journal-warm-theme main .border-white\\/10,
@@ -1045,6 +1397,8 @@ function generateArticleHtml(art) {
 		<div id="content-wrap">
 			<!-- MAIN ARTICLE WRAPPER (Guaranteed 240px top space) -->
 			<main style="padding-top: max(180px, 24vh); padding-bottom: 90px;" class="relative z-10 px-24 sm:px-40 max-w-4xl mx-auto w-full">
+			<!-- MAIN ARTICLE WRAPPER (Responsive padding via CSS) -->
+			<main class="relative z-10 px-24 sm:px-40 max-w-4xl mx-auto w-full">
 
 		<!-- Breadcrumbs & Meta Tag -->
 		<div class="mb-25 flex flex-wrap items-center justify-between gap-12 text-12 text-white/50 font-sans tracking-wider uppercase">
@@ -1132,6 +1486,18 @@ function generateArticleHtml(art) {
 function generateHubHtml() {
   const cardsHtml = allArticles.map((art, idx) => `
 		<article class="journal-card" data-category="${art.categorySlug}">
+  const cardsHtml = allArticles.map((art, idx) => {
+    const searchTerms = [
+      art.title,
+      art.cluster,
+      art.slug.replace(/-/g, ' '),
+      art.keywords || '',
+      art.metaDescription || '',
+      art.lead || ''
+    ].join(' ').toLowerCase().replace(/[^\w\s]/g, ' ');
+
+    return `
+		<article class="journal-card" data-category="${art.categorySlug}" data-search="${encodeURIComponent(searchTerms)}">
 			<a href="/journal/${art.slug}/" class="journal-card-image-wrap">
 				<img src="${art.image}" alt="${art.title}" loading="lazy">
 			</a>
@@ -1156,6 +1522,8 @@ function generateHubHtml() {
 			</div>
 		</article>
   `).join('');
+    `;
+  }).join('');
 
   return `<!DOCTYPE html>
 <html class="no-js" lang="en-IN">
@@ -1461,6 +1829,116 @@ function generateHubHtml() {
 			color: #FFFFFF;
 			gap: 12px;
 		}
+		/* Search Bar & Quick Filter Styling */
+		.journal-search-wrap {
+			position: relative;
+			z-index: 20;
+		}
+		.journal-search-bar {
+			position: relative;
+			display: flex;
+			align-items: center;
+			width: 100%;
+		}
+		.journal-search-icon {
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			pointer-events: none;
+			z-index: 2;
+			width: 20px;
+			height: 20px;
+		}
+		.journal-search-icon svg {
+			width: 18px !important;
+			height: 18px !important;
+			display: block;
+		}
+		.journal-search-clear {
+			position: absolute;
+			right: 14px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all 0.2s ease;
+			z-index: 2;
+			padding: 0;
+			background: transparent;
+			border: none;
+		}
+		.journal-search-clear.hidden {
+			display: none !important;
+		}
+		.journal-search-clear svg {
+			width: 16px !important;
+			height: 16px !important;
+			display: block;
+		}
+		.journal-search-input {
+			transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+		.journal-search-input:focus {
+			box-shadow: 0 0 0 1px rgba(230, 202, 158, 0.5), 0 12px 36px rgba(0, 0, 0, 0.45);
+		}
+		.journal-search-status {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			margin-top: 10px;
+			padding: 0 16px;
+		}
+		.journal-search-hints {
+			display: none;
+		}
+		@media (min-width: 640px) {
+			.journal-search-hints {
+				display: inline-flex;
+				align-items: center;
+				gap: 4px;
+			}
+		}
+		#journal-empty-state {
+			grid-column: 1 / -1 !important;
+			width: 100%;
+			max-width: 640px;
+			margin: 20px auto;
+		}
+		#journal-empty-state.hidden {
+			display: none !important;
+		}
+		.journal-empty-icon-wrap {
+			width: 52px;
+			height: 52px;
+			margin: 0 auto 16px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.journal-empty-icon-wrap svg {
+			width: 24px !important;
+			height: 24px !important;
+			display: block;
+		}
+		.quick-suggest {
+			background: none;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			font: inherit;
+		}
+
 		.journal-filter-row {
 			width: 100%;
 			max-width: 100%;
@@ -1540,6 +2018,8 @@ function generateHubHtml() {
 		<div id="content-wrap">
 			<!-- MAIN CONTENT CONTAINER (Guaranteed 240px top space so text sits well below logo) -->
 			<main style="padding-top: max(180px, 24vh); padding-bottom: 120px;" class="relative z-10 px-20 sm:px-40 max-w-6xl mx-auto w-full">
+			<!-- MAIN CONTENT CONTAINER (Responsive padding via CSS) -->
+			<main class="relative z-10 px-20 sm:px-40 max-w-6xl mx-auto w-full">
 
 		<!-- Minimalist Hero Section -->
 		<section class="journal-hero text-center mb-40 sm:mb-60">
@@ -1560,6 +2040,49 @@ function generateHubHtml() {
 			</p>
 		</section>
 
+		<!-- Interactive Search Bar Section -->
+		<div class="journal-search-wrap max-w-2xl mx-auto mb-30 sm:mb-40 w-full">
+			<div class="journal-search-bar">
+				<!-- Search Icon -->
+				<span class="journal-search-icon" aria-hidden="true">
+					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path>
+					</svg>
+				</span>
+
+				<!-- Search Input Field -->
+				<input 
+					type="text" 
+					id="journal-search-input" 
+					placeholder="Search monographs, materials, costs (e.g. kitchen, false ceiling, marble)..." 
+					aria-label="Search articles and design monographs" 
+					autocomplete="off" 
+					spellcheck="false" 
+					class="journal-search-input w-full rounded-full border py-14 sm:py-16 text-13 sm:text-14 font-body backdrop-blur-md"
+				>
+
+				<!-- Clear Button -->
+				<button 
+					id="journal-search-clear" 
+					type="button" 
+					aria-label="Clear search query" 
+					class="journal-search-clear hidden focus:outline-none"
+				>
+					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Meta Result Bar -->
+			<div class="journal-search-status flex items-center justify-between mt-10 px-14 text-11 font-body tracking-wider">
+				<span id="journal-search-count">30 monographs available</span>
+				<span class="journal-search-hints hidden sm:inline">
+					Press <kbd>/</kbd> to focus, <kbd>ESC</kbd> to clear
+				</span>
+			</div>
+		</div>
+
 		<!-- Category Filter Tabs for Mobile & Desktop -->
 		<div class="journal-filter-row mb-35 sm:mb-45 flex items-center gap-10 overflow-x-auto pb-10 scrollbar-none justify-start sm:justify-center">
 			<button class="journal-filter-btn active px-18 py-8 rounded-full text-11 font-sans tracking-widest uppercase border border-white/20 transition-colors whitespace-nowrap" data-filter="all">All (30)</button>
@@ -1577,6 +2100,22 @@ function generateHubHtml() {
 		<!-- Standalone Journal Cards Grid (30 Topics) -->
 		<section id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25 sm:gap-35">
 			${cardsHtml}
+
+			<!-- Empty Search State -->
+			<div id="journal-empty-state" class="hidden col-span-full py-50 sm:py-70 px-20 text-center rounded-[24px] my-10 w-full">
+				<div class="journal-empty-icon-wrap">
+					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path>
+					</svg>
+				</div>
+				<h3 class="font-sans text-16 sm:text-20 uppercase tracking-wider mb-8">No Monographs Found</h3>
+				<p class="font-body text-13 sm:text-15 max-w-md mx-auto mb-22 leading-relaxed">
+					No articles matched "<span id="empty-query-text" class="text-gold font-medium"></span>". Try searching for <button type="button" class="quick-suggest underline transition-colors" data-term="kitchen">kitchen</button>, <button type="button" class="quick-suggest underline transition-colors" data-term="ceiling">ceiling</button>, <button type="button" class="quick-suggest underline transition-colors" data-term="marble">marble</button>, or <button type="button" class="quick-suggest underline transition-colors" data-term="vastu">vastu</button>.
+				</p>
+				<button id="journal-reset-search-btn" class="px-24 py-10 rounded-full font-sans text-11 uppercase tracking-widest transition-all duration-300">
+					Clear Search &amp; View All
+				</button>
+			</div>
 		</section>
 
 		<!-- Bottom Soft CTA Card -->
@@ -1613,13 +2152,165 @@ function generateHubHtml() {
 				const cards = document.querySelectorAll('#articles-grid article');
 				cards.forEach(card => {
 					if (filter === 'all' || card.getAttribute('data-category') === filter) {
+		// Interactive Search & Category Filter Controller
+		(function() {
+			const searchInput = document.getElementById('journal-search-input');
+			const searchClear = document.getElementById('journal-search-clear');
+			const searchCount = document.getElementById('journal-search-count');
+			const emptyState = document.getElementById('journal-empty-state');
+			const emptyQueryText = document.getElementById('empty-query-text');
+			const resetBtn = document.getElementById('journal-reset-search-btn');
+			const filterBtns = document.querySelectorAll('.journal-filter-btn');
+			const allCards = Array.from(document.querySelectorAll('#articles-grid article.journal-card'));
+			
+			let activeCategory = 'all';
+			let searchQuery = '';
+
+			// Pre-cache searchable text for instant responsive filtering
+			allCards.forEach(card => {
+				card._searchText = decodeURIComponent(card.getAttribute('data-search') || '');
+				card._category = card.getAttribute('data-category') || '';
+			});
+
+			function filterArticles() {
+				const query = searchQuery.trim().toLowerCase();
+				const terms = query ? query.split(/\s+/).filter(Boolean) : [];
+				let visibleCount = 0;
+
+				allCards.forEach(card => {
+					// 1. Category check
+					const matchesCategory = (activeCategory === 'all' || card._category === activeCategory);
+
+					// 2. Search query check: all terms must match
+					let matchesSearch = true;
+					if (terms.length > 0) {
+						matchesSearch = terms.every(term => card._searchText.includes(term));
+					}
+
+					if (matchesCategory && matchesSearch) {
 						card.style.display = 'flex';
+						visibleCount++;
 					} else {
 						card.style.display = 'none';
 					}
 				});
+
+				// Update clear button visibility
+				if (query.length > 0) {
+					searchClear.classList.remove('hidden');
+				} else {
+					searchClear.classList.add('hidden');
+				}
+
+				// Update counter message
+				if (query.length > 0) {
+					if (visibleCount === 0) {
+						searchCount.textContent = '0 monographs found';
+					} else if (visibleCount === 1) {
+						searchCount.textContent = '1 monograph matching "' + query + '"';
+					} else {
+						searchCount.textContent = visibleCount + ' monographs matching "' + query + '"';
+					}
+				} else {
+					if (activeCategory === 'all') {
+						searchCount.textContent = visibleCount + ' monographs available';
+					} else {
+						searchCount.textContent = visibleCount + ' monographs in category';
+					}
+				}
+
+				// Empty state handling
+				if (visibleCount === 0) {
+					emptyState.classList.remove('hidden');
+					emptyQueryText.textContent = query || (activeCategory !== 'all' ? activeCategory : '');
+				} else {
+					emptyState.classList.add('hidden');
+				}
+			}
+
+			// Search input listener (instant live filtering)
+			if (searchInput) {
+				searchInput.addEventListener('input', function() {
+					searchQuery = this.value;
+					filterArticles();
+				});
+			}
+
+			// Clear button listener
+			if (searchClear) {
+				searchClear.addEventListener('click', function() {
+					if (searchInput) {
+						searchInput.value = '';
+						searchQuery = '';
+						searchInput.focus();
+					}
+					filterArticles();
+				});
+			}
+
+			// Reset button inside empty state
+			if (resetBtn) {
+				resetBtn.addEventListener('click', function() {
+					if (searchInput) searchInput.value = '';
+					searchQuery = '';
+					activeCategory = 'all';
+					filterBtns.forEach(btn => {
+						if (btn.getAttribute('data-filter') === 'all') {
+							btn.classList.add('active', 'bg-gold', 'text-dark-blue');
+						} else {
+							btn.classList.remove('active', 'bg-gold', 'text-dark-blue');
+						}
+					});
+					filterArticles();
+					if (searchInput) searchInput.focus();
+				});
+			}
+
+			// Quick suggestions in empty state
+			document.querySelectorAll('.quick-suggest').forEach(btn => {
+				btn.addEventListener('click', function() {
+					const term = this.getAttribute('data-term');
+					if (searchInput && term) {
+						searchInput.value = term;
+						searchQuery = term;
+						filterArticles();
+						searchInput.focus();
+					}
+				});
 			});
 		});
+
+			// Category filter tab listeners
+			filterBtns.forEach(button => {
+				button.addEventListener('click', function() {
+					filterBtns.forEach(btn => btn.classList.remove('active', 'bg-gold', 'text-dark-blue'));
+					this.classList.add('active', 'bg-gold', 'text-dark-blue');
+					activeCategory = this.getAttribute('data-filter') || 'all';
+					filterArticles();
+				});
+			});
+
+			// Global keyboard shortcuts: "/" to focus, "Escape" to clear
+			window.addEventListener('keydown', function(e) {
+				if (e.key === '/' && document.activeElement !== searchInput) {
+					if (['INPUT', 'TEXTAREA'].indexOf(document.activeElement.tagName) === -1) {
+						e.preventDefault();
+						if (searchInput) {
+							searchInput.focus();
+							searchInput.select();
+						}
+					}
+				} else if (e.key === 'Escape' && document.activeElement === searchInput) {
+					if (searchInput.value) {
+						searchInput.value = '';
+						searchQuery = '';
+						filterArticles();
+					} else {
+						searchInput.blur();
+					}
+				}
+			});
+		})();
 	</script>
 
 </body>
