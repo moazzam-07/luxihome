@@ -1,115 +1,14 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en-GB">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <title>Terms &amp; Conditions | LUXiHOME - Luxury Architecture &amp; Interiors</title>
-    <meta name="description" content="Terms and Conditions governing the bespoke architectural commissions, turnkey interior execution, and atelier services of LUXiHOME Pvt. Ltd." />
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/terms-conditions/" />
-    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+// scripts/generate_legal_pages.js
+// Generates luxury atelier themed /terms-conditions/ and /privacy-policy/ pages with full navigation menu
 
-    <!-- Open Graph & Social -->
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Terms &amp; Conditions | LUXiHOME Luxury Architecture &amp; Interiors" />
-    <meta property="og:description" content="Terms and Conditions governing bespoke architectural and interior design services by LUXiHOME Pvt. Ltd." />
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/terms-conditions/" />
-    <meta property="og:site_name" content="LUXiHOME" />
-    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
+const fs = require('fs');
+const path = require('path');
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+const ROOT_DIR = path.resolve(__dirname, '..');
 
-    <!-- Fonts & Core Styles -->
-    <link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
-    
-    <style id="luxi-legal-custom-css">
-        @font-face {
-            font-family: 'aviano-sans';
-            src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
-            font-weight: 400;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'aviano-sans';
-            src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
-            font-weight: 700;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'DIN';
-            src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
-            font-weight: 300;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'DIN';
-            src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
-            font-weight: 600;
-            font-display: swap;
-        }
-
-        body {
-            background-color: #13212E;
-            color: #E2E8F0;
-            font-family: 'DIN', sans-serif;
-            overflow-x: clip;
-        }
-
-        /* Mobile Left-aligned Header Logo Parity */
-        @media (max-width: 1023px) {
-            [data-target="header-menu"].order-2,
-            .luxi-header-logo {
-                left: 20px !important;
-                right: auto !important;
-                transform: none !important;
-                justify-content: flex-start !important;
-                text-align: left !important;
-            }
-        }
-        [data-target="logo-lottie"],
-        [data-target="logo-lottie-dark"] {
-            width: 160px !important;
-            max-width: 160px !important;
-        }
-
-        .legal-kicker {
-            font-family: 'aviano-sans', sans-serif;
-            letter-spacing: 0.22em;
-        }
-        .legal-serif-heading {
-            font-family: 'aviano-sans', serif;
-            letter-spacing: 0.05em;
-        }
-        .legal-card {
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            transition: border-color 0.3s ease, background 0.3s ease;
-        }
-        .legal-card:hover {
-            border-color: rgba(194, 162, 106, 0.3);
-            background: rgba(255, 255, 255, 0.035);
-        }
-        .legal-pill {
-            background: rgba(194, 162, 106, 0.12);
-            color: #E6CA9E;
-            border: 1px solid rgba(194, 162, 106, 0.25);
-        }
-    </style>
-
-    <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
-</head>
-
-<body class="wp-singular page-template bg-[#13212E] text-white selection:bg-[#C2A26A] selection:text-[#13212E]" data-barba="wrapper">
-
-
+// Helper for shared navigation header (matching about/index.html & journal/index.html)
+function getHeaderHtml(activePage = '') {
+  return `
 <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
 <nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
     <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
@@ -246,7 +145,160 @@
         </a>
     </div>
 </nav>
+`;
+}
 
+// Shared Footer for legal pages
+function getFooterHtml() {
+  return `
+    <!-- Atelier Site Footer -->
+    <footer class="bg-[#0C151D] border-t border-white/10 pt-70 pb-50 px-24 sm:px-40 lg:px-70 text-white mt-100">
+        <div class="max-w-[1360px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-30 pb-50 border-b border-white/10">
+                <div>
+                    <a href="/" class="block w-[150px] sm:w-[180px] mb-14" title="LUXiHOME">
+                        <img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME Atelier" class="w-full h-auto" />
+                    </a>
+                    <p class="font-body text-13 text-white/50 tracking-0.4 uppercase">
+                        Bespoke Luxury Architecture & Turnkey Interiors • Kolkata & Dubai
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-20 sm:gap-30 text-13 tracking-0.8 uppercase text-white/80">
+                    <a href="/" class="hover:text-[#C2A26A] transition-colors">Home</a>
+                    <a href="/about/" class="hover:text-[#C2A26A] transition-colors">About</a>
+                    <a href="/#projects" class="hover:text-[#C2A26A] transition-colors">Projects</a>
+                    <a href="/journal/" class="hover:text-[#C2A26A] transition-colors">Journal</a>
+                    <a href="/contact/" class="hover:text-[#C2A26A] transition-colors">Contact</a>
+                </div>
+            </div>
+
+            <div class="pt-30 flex flex-col sm:flex-row justify-between items-center gap-20 text-12 tracking-0.4 text-white/40">
+                <p class="mb-0">© 2026 LUXiHOME Pvt. Ltd. All rights reserved.</p>
+                <div class="flex items-center gap-20 text-12">
+                    <a href="/terms-conditions/" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+                    <span class="text-white/20">•</span>
+                    <a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+`;
+}
+
+// Generate Terms & Conditions Page
+function generateTermsConditionsHtml() {
+  return `<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Terms &amp; Conditions | LUXiHOME - Luxury Architecture &amp; Interiors</title>
+    <meta name="description" content="Terms and Conditions governing the bespoke architectural commissions, turnkey interior execution, and atelier services of LUXiHOME Pvt. Ltd." />
+    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/terms-conditions/" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <!-- Open Graph & Social -->
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Terms &amp; Conditions | LUXiHOME Luxury Architecture &amp; Interiors" />
+    <meta property="og:description" content="Terms and Conditions governing bespoke architectural and interior design services by LUXiHOME Pvt. Ltd." />
+    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/terms-conditions/" />
+    <meta property="og:site_name" content="LUXiHOME" />
+    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+
+    <!-- Fonts & Core Styles -->
+    <link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
+    
+    <style id="luxi-legal-custom-css">
+        @font-face {
+            font-family: 'aviano-sans';
+            src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'aviano-sans';
+            src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'DIN';
+            src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'DIN';
+            src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        body {
+            background-color: #13212E;
+            color: #E2E8F0;
+            font-family: 'DIN', sans-serif;
+            overflow-x: clip;
+        }
+
+        /* Mobile Left-aligned Header Logo Parity */
+        @media (max-width: 1023px) {
+            [data-target="header-menu"].order-2,
+            .luxi-header-logo {
+                left: 20px !important;
+                right: auto !important;
+                transform: none !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+        }
+        [data-target="logo-lottie"],
+        [data-target="logo-lottie-dark"] {
+            width: 160px !important;
+            max-width: 160px !important;
+        }
+
+        .legal-kicker {
+            font-family: 'aviano-sans', sans-serif;
+            letter-spacing: 0.22em;
+        }
+        .legal-serif-heading {
+            font-family: 'aviano-sans', serif;
+            letter-spacing: 0.05em;
+        }
+        .legal-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .legal-card:hover {
+            border-color: rgba(194, 162, 106, 0.3);
+            background: rgba(255, 255, 255, 0.035);
+        }
+        .legal-pill {
+            background: rgba(194, 162, 106, 0.12);
+            color: #E6CA9E;
+            border: 1px solid rgba(194, 162, 106, 0.25);
+        }
+    </style>
+
+    <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
+</head>
+
+<body class="wp-singular page-template bg-[#13212E] text-white selection:bg-[#C2A26A] selection:text-[#13212E]" data-barba="wrapper">
+
+${getHeaderHtml('/terms-conditions/')}
 
 <div id="page-wrap" data-barba="container" data-barba-namespace="terms-conditions">
     <main id="main" class="pt-140 sm:pt-170 lg:pt-190 px-20 sm:px-30 lg:px-60 max-w-[1240px] mx-auto">
@@ -429,39 +481,7 @@
     </main>
 </div>
 
-
-    <!-- Atelier Site Footer -->
-    <footer class="bg-[#0C151D] border-t border-white/10 pt-70 pb-50 px-24 sm:px-40 lg:px-70 text-white mt-100">
-        <div class="max-w-[1360px] mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-30 pb-50 border-b border-white/10">
-                <div>
-                    <a href="/" class="block w-[150px] sm:w-[180px] mb-14" title="LUXiHOME">
-                        <img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME Atelier" class="w-full h-auto" />
-                    </a>
-                    <p class="font-body text-13 text-white/50 tracking-0.4 uppercase">
-                        Bespoke Luxury Architecture & Turnkey Interiors • Kolkata & Dubai
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-20 sm:gap-30 text-13 tracking-0.8 uppercase text-white/80">
-                    <a href="/" class="hover:text-[#C2A26A] transition-colors">Home</a>
-                    <a href="/about/" class="hover:text-[#C2A26A] transition-colors">About</a>
-                    <a href="/#projects" class="hover:text-[#C2A26A] transition-colors">Projects</a>
-                    <a href="/journal/" class="hover:text-[#C2A26A] transition-colors">Journal</a>
-                    <a href="/contact/" class="hover:text-[#C2A26A] transition-colors">Contact</a>
-                </div>
-            </div>
-
-            <div class="pt-30 flex flex-col sm:flex-row justify-between items-center gap-20 text-12 tracking-0.4 text-white/40">
-                <p class="mb-0">© 2026 LUXiHOME Pvt. Ltd. All rights reserved.</p>
-                <div class="flex items-center gap-20 text-12">
-                    <a href="/terms-conditions/" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
-                    <span class="text-white/20">•</span>
-                    <a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+${getFooterHtml()}
 
 <script id="script-js-js-extra">
 var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
@@ -470,3 +490,328 @@ var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin
 
 </body>
 </html>
+`;
+}
+
+// Generate Privacy Policy Page
+function generatePrivacyPolicyHtml() {
+  return `<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Privacy Policy | LUXiHOME - Luxury Architecture &amp; Interiors</title>
+    <meta name="description" content="Privacy Policy and client confidentiality standards for LUXiHOME Pvt. Ltd. Discover how we protect high-net-worth client spatial data, blueprints, and personal discretion." />
+    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/privacy-policy/" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <!-- Open Graph & Social -->
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Privacy Policy | LUXiHOME Luxury Architecture &amp; Interiors" />
+    <meta property="og:description" content="Discover how LUXiHOME Pvt. Ltd. safeguards client confidentiality, architectural blueprints, and estate spatial security." />
+    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/privacy-policy/" />
+    <meta property="og:site_name" content="LUXiHOME" />
+    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+
+    <!-- Fonts & Core Styles -->
+    <link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
+    
+    <style id="luxi-privacy-custom-css">
+        @font-face {
+            font-family: 'aviano-sans';
+            src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'aviano-sans';
+            src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'DIN';
+            src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'DIN';
+            src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        body {
+            background-color: #13212E;
+            color: #E2E8F0;
+            font-family: 'DIN', sans-serif;
+            overflow-x: clip;
+        }
+
+        /* Mobile Left-aligned Header Logo Parity */
+        @media (max-width: 1023px) {
+            [data-target="header-menu"].order-2,
+            .luxi-header-logo {
+                left: 20px !important;
+                right: auto !important;
+                transform: none !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+        }
+        [data-target="logo-lottie"],
+        [data-target="logo-lottie-dark"] {
+            width: 160px !important;
+            max-width: 160px !important;
+        }
+
+        .legal-kicker {
+            font-family: 'aviano-sans', sans-serif;
+            letter-spacing: 0.22em;
+        }
+        .legal-serif-heading {
+            font-family: 'aviano-sans', serif;
+            letter-spacing: 0.05em;
+        }
+        .legal-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .legal-card:hover {
+            border-color: rgba(194, 162, 106, 0.3);
+            background: rgba(255, 255, 255, 0.035);
+        }
+        .legal-pill {
+            background: rgba(194, 162, 106, 0.12);
+            color: #E6CA9E;
+            border: 1px solid rgba(194, 162, 106, 0.25);
+        }
+    </style>
+
+    <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
+</head>
+
+<body class="wp-singular page-template bg-[#13212E] text-white selection:bg-[#C2A26A] selection:text-[#13212E]" data-barba="wrapper">
+
+${getHeaderHtml('/privacy-policy/')}
+
+<div id="page-wrap" data-barba="container" data-barba-namespace="privacy-policy">
+    <main id="main" class="pt-140 sm:pt-170 lg:pt-190 px-20 sm:px-30 lg:px-60 max-w-[1240px] mx-auto">
+        
+        <!-- Header Section -->
+        <header class="mb-50 lg:mb-80 max-w-[900px]">
+            <div class="inline-flex items-center gap-10 legal-pill px-16 py-6 rounded-full text-11 tracking-1 uppercase mb-20">
+                <span class="size-6 rounded-full bg-[#C2A26A] animate-pulse"></span>
+                <span>Client Confidentiality • LUXiHOME Pvt. Ltd.</span>
+            </div>
+            <h1 class="legal-serif-heading text-36 sm:text-54 lg:text-64 font-light uppercase leading-[1.08] text-white mb-20">
+                Privacy Policy
+            </h1>
+            <p class="font-body text-16 sm:text-18 text-white/70 leading-relaxed">
+                At LUXiHOME Pvt. Ltd., discretion is not merely a legal clause—it is the foundational pillar of our atelier practice. This Privacy Policy details how we collect, protect, and safeguard the spatial blueprints, contact records, and private estate details entrusted to us.
+            </p>
+            <div class="mt-25 flex flex-wrap items-center gap-20 text-13 tracking-0.4 text-white/40">
+                <span>Effective Date: March 1, 2026</span>
+                <span>•</span>
+                <span>Zero Third-Party Data Monetization</span>
+                <span>•</span>
+                <span>Encrypted CAD Blueprints</span>
+            </div>
+        </header>
+
+        <!-- Privacy Assurance Banner -->
+        <div class="legal-card p-24 sm:p-35 mb-60 border-l-4 border-l-[#C2A26A]">
+            <h3 class="legal-kicker text-13 uppercase text-[#C2A26A] tracking-1.2 mb-10">Our Discretion Guarantee</h3>
+            <p class="font-body text-14 sm:text-15 text-white/80 leading-relaxed mb-0">
+                LUXiHOME never sells, rents, licenses, or monetizes client data, telephone records, or architectural layouts. All technical drawings, site coordinates, and private estate specifications are encrypted and accessible strictly on a need-to-know basis by verified lead architects and project engineers.
+            </p>
+        </div>
+
+        <!-- Privacy Sections List -->
+        <div class="space-y-40 sm:space-y-50">
+
+            <!-- 01. Discretion & High-Profile Privacy -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">01</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Client Discretion &amp; Estate Privacy</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        1.1. <strong class="text-white">High-Net-Worth Protection:</strong> Because our clientele includes leaders of industry, public figures, and estate owners, we apply enterprise-grade confidentiality. Every member of the LUXiHOME design team, site management division, and master artisan collective is bound by comprehensive non-disclosure agreements.
+                    </p>
+                    <p>
+                        1.2. <strong class="text-white">Spatial Anonymity:</strong> Architectural renderings, electrical schematics, and private sanctuary layouts are cataloged internally under encrypted project code names (such as "Commission-AP01") to decouple family identities from engineering files.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 02. Information We Collect -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">02</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Information We Collect</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        2.1. <strong class="text-white">Direct Inquiries:</strong> When you initiate an inquiry through our concierge or schedule a design appraisal, we collect your name, direct telephone contact, email address, property location (e.g., Ballygunge, Alipore, New Town, Salt Lake, Dubai Marina), and spatial requirements.
+                    </p>
+                    <p>
+                        2.2. <strong class="text-white">Technical Site Data:</strong> During architectural site audits, we record physical structural dimensions, ceiling heights, MEP layout points, structural column locations, and ambient daylight exposure angles required for customized false ceiling and lighting design.
+                    </p>
+                    <p>
+                        2.3. <strong class="text-white">Digital Browsing:</strong> Our website collects minimal telemetry data (browser type, screen resolution, referrers, and page interaction timing) solely to optimize luxury visual performance, typography rendering, and responsive speed.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 03. How Information Is Utilized -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">03</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">How We Utilize Project Data</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        3.1. <strong class="text-white">Atelier Execution:</strong> Collected spatial data is utilized strictly for the engineering, procurement, and physical execution of your bespoke residence.
+                    </p>
+                    <p>
+                        3.2. <strong class="text-white">Direct Communication:</strong> We utilize your provided contact details exclusively for direct project status updates, 3D presentation approvals, milestone invoicing, and post-handover warranty servicing.
+                    </p>
+                    <p>
+                        3.3. <strong class="text-white">No Unsolicited Marketing:</strong> We never broadcast promotional spam or share your contact info with third-party real estate syndicates, furniture retailers, or marketing brokers.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 04. Blueprint Security & Digital Safeguards -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">04</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Data Security &amp; Blueprint Encryption</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        4.1. <strong class="text-white">Encrypted Digital Vault:</strong> All high-resolution 3D models, structural engineering CAD files, and client agreements are stored on dedicated cloud servers protected by multi-factor authentication and AES-256 bit encryption.
+                    </p>
+                    <p>
+                        4.2. <strong class="text-white">Physical Site Security:</strong> Printed architectural blueprints deployed on construction sites are strictly serialized and returned to the site supervisor upon completion of each tradeswork phase.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 05. Photography & Portfolio Anonymity -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">05</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Architectural Photography &amp; Editorial Showcases</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        5.1. <strong class="text-white">Consent-Driven Photography:</strong> LUXiHOME showcases curated architectural achievements within our design journal and international publications exclusively with prior written authorization from the property owner.
+                    </p>
+                    <p>
+                        5.2. <strong class="text-white">Absolute Anonymity:</strong> Published projects never disclose client names, family portraits, exterior street numbers, license plates, or specific security infrastructure. Sensitive private quarters (such as dressing room safes and private master study vaults) are strictly excluded from media documentation.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 06. Cookies & Web Tracking -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">06</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Cookies &amp; Web Analytics</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        6.1. <strong class="text-white">Essential Cookies:</strong> We utilize essential performance cookies to retain your site preferences, menu interactions, and display configurations across browsing sessions.
+                    </p>
+                    <p>
+                        6.2. <strong class="text-white">Aggregated Analytics:</strong> We employ Google Analytics (via anonymized IP addresses) strictly to measure website uptime, mobile navigation responsiveness, and reading habits across our design journal. You may block cookies through standard browser preferences without impacting core portfolio accessibility.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 07. Your Rights & Archival Redaction -->
+            <article class="legal-card p-30 sm:p-45">
+                <div class="flex items-center gap-15 mb-20">
+                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">07</span>
+                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Client Rights &amp; Data Erasure</h2>
+                </div>
+                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
+                    <p>
+                        7.1. <strong class="text-white">Access &amp; Review:</strong> You maintain the unconditional right to request an audit of the personal contact records and estate specifications held on file within our client management systems.
+                    </p>
+                    <p>
+                        7.2. <strong class="text-white">Archival Redaction:</strong> Following project completion and warranty expiration, you may formally request the archival purge or complete redaction of your personal identification from our operational databases.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Privacy Concierge Contact Box -->
+        <div class="mt-70 p-35 sm:p-50 rounded-24 bg-gradient-to-r from-[#172A3A] to-[#101C27] border border-[#C2A26A]/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-30">
+            <div>
+                <p class="legal-kicker text-12 text-[#C2A26A] uppercase mb-8">Data Protection Concierge</p>
+                <h3 class="text-22 sm:text-28 font-light text-white uppercase tracking-0.8 mb-10">Private Inquiries &amp; NDA Requests</h3>
+                <p class="text-14 text-white/60 max-w-[550px] mb-0">
+                    For private estate commissions requiring bespoke non-disclosure agreements or legal counsel review, please connect directly with our confidentiality officer.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-15">
+                <a href="/contact/" class="inline-flex items-center justify-center px-30 py-14 rounded-full bg-[#C2A26A] text-[#13212E] font-medium text-13 tracking-1 uppercase hover:bg-white transition-colors duration-200">
+                    Submit Private Brief
+                </a>
+                <a href="mailto:privacy@luxihome.com" class="inline-flex items-center justify-center px-24 py-14 rounded-full border border-white/20 text-white font-normal text-13 tracking-1 uppercase hover:border-[#C2A26A] hover:text-[#C2A26A] transition-colors duration-200">
+                    privacy@luxihome.com
+                </a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+${getFooterHtml()}
+
+<script id="script-js-js-extra">
+var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
+</script>
+<script id="script-js-js" src="/assets/js/bundle.js?ver=20260911_v3"></script>
+
+</body>
+</html>
+`;
+}
+
+// Main Execution
+function run() {
+  console.log('Generating Terms & Conditions page...');
+  const termsHtml = generateTermsConditionsHtml();
+  const termsDir = path.join(ROOT_DIR, 'terms-conditions');
+  if (!fs.existsSync(termsDir)) fs.mkdirSync(termsDir, { recursive: true });
+  fs.writeFileSync(path.join(termsDir, 'index.html'), termsHtml, 'utf-8');
+  console.log('✓ terms-conditions/index.html generated successfully.');
+
+  console.log('Generating Privacy Policy page...');
+  const privacyHtml = generatePrivacyPolicyHtml();
+  const privacyDir = path.join(ROOT_DIR, 'privacy-policy');
+  if (!fs.existsSync(privacyDir)) fs.mkdirSync(privacyDir, { recursive: true });
+  fs.writeFileSync(path.join(privacyDir, 'index.html'), privacyHtml, 'utf-8');
+  console.log('✓ privacy-policy/index.html generated successfully.');
+}
+
+run();
