@@ -218,13 +218,23 @@ function getLegalStyles() {
         box-sizing: border-box;
     }
 
-    html, body {
+    html {
+        margin: 0;
+        padding: 0;
+        background-color: #13212E !important;
+        overflow-x: visible;
+        overflow-y: visible;
+        width: 100%;
+    }
+
+    body {
         margin: 0;
         padding: 0;
         background-color: #13212E !important;
         color: #E2E8F0;
         font-family: 'DIN', sans-serif;
-        overflow-x: hidden;
+        overflow-x: clip;
+        overflow-y: visible;
         width: 100%;
     }
 
