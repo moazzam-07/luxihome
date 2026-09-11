@@ -14,8 +14,6 @@ function getHeaderHtml(currentPath = '/journal/') {
   return `
 <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
 <nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
-    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed style="position: fixed !important; top: 20px !important; right: 15px !important; left: auto !important; z-index: 99999 !important; display: flex !important; align-items: center !important;">
-        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light" style="display: flex !important; flex-direction: row-reverse; align-items: center; position: relative; pointer-events: auto !important;">
     <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
         <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light">
             <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] bg-white/20 group-data-[theme=light]/wrapper:bg-white/20 group-data-[theme=dark]/wrapper:bg-black/20 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-white/30 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
@@ -152,7 +150,6 @@ function getHeaderHtml(currentPath = '/journal/') {
             </div>
         </div>
     </div>
-</div>
 <div class="order-2 flex sm:justify-center items-center absolute left-40 top-30 lg:left-1/2 lg:top-20 lg:-translate-x-1/2" data-target="header-menu">
     <a href="/" data-barba-prevent="self" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-target="menu-logo" data-theme="light">
         <div class="relative w-[160px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=light]:opacity-100 group-data-[theme=light]:visible will-change-[opacity]" data-target="logo-lottie" data-played="true" title="LUXiHOME">
@@ -237,7 +234,6 @@ function getHeaderHtml(currentPath = '/journal/') {
 // Shared Footer HTML
 function getFooterHtml() {
   return `
-	<footer class="journal-site-footer" data-target="site-footer">
 	<footer class="journal-site-footer">
 		<div class="journal-footer-shell">
 			<a href="/" class="journal-footer-logo" title="LUXiHOME">
