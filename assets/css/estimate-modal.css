@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LUXiHOME — Bespoke Multi-Step Free Estimate & Split Floating Dock
+   LUXiHOME — Bespoke 5-Step Free Estimate Wizard & Split Floating Dock
    Theme: Signature Contact Page Styling (Cream #F8F7F4, Dark Navy #1A2026)
    ========================================================================== */
 
@@ -207,7 +207,7 @@
 
 .luxi-progress-bar {
     height: 100%;
-    width: 25%;
+    width: 20%;
     background: #1A2026;
     border-radius: 4px;
     transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);

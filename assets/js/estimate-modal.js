@@ -1,11 +1,11 @@
 /**
- * LUXiHOME — Bespoke Multi-Step Free Estimate & Split Floating Dock
+ * LUXiHOME — Bespoke 5-Step Free Estimate Wizard & Split Floating Dock
  * Theme: Signature Contact Page (Cream #F8F7F4, Dark Navy #1A2026)
  * Features:
  * - Full Left Call Button: Dark Navy circle with Pure White phone icon
  * - Full Right Free Estimate Button: Dark Navy pill
- * - Multi-Step Interactive Wizard (4 Steps: Scope -> BHK -> Timeline -> Details)
- * - 10-second post-load auto-trigger
+ * - 5-Step Interactive Wizard (Scope -> Property Type -> Budget Set A -> Timeline -> Details)
+ * - 10-second post-load auto-trigger (suppressed on /contact/)
  * - Fail-safe Web3Forms email backup (4f33d6a5-0aaa-4f2d-80dd-bf9661d85f29)
  * - Instant WhatsApp redirection (+91 70635 71108) with pre-filled message
  */
@@ -22,9 +22,10 @@
 
     var state = {
         currentStep: 1,
-        totalSteps: 4,
+        totalSteps: 5,
         scope: 'Full Turnkey Interiors',
         propertyType: '3 BHK',
+        budget: '₹25L – ₹50L',
         timeline: '1 – 3 Months',
         isSubmitting: false
     };
@@ -38,7 +39,7 @@
     function injectDOM() {
         if (document.getElementById('luxi-dock-call-btn')) return;
 
-        // 1. Full Left Call Button (Dark Navy with White Handset Icon)
+        // 1. Full Left Call Button (Dark Navy Circle with Pure White Handset Icon)
         var callBtnHTML = 
             '<a href="tel:+917063571108" id="luxi-dock-call-btn" title="Call LUXiHOME Studio" aria-label="Call LUXiHOME Studio">' +
                 '<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">' +
@@ -68,10 +69,10 @@
                     '<div class="luxi-modal-header">' +
                         '<div class="luxi-modal-title-row">' +
                             '<h2 class="luxi-modal-title" id="luxi-modal-heading">Free Estimate</h2>' +
-                            '<span class="luxi-step-indicator" id="luxi-step-counter">01 / 04</span>' +
+                            '<span class="luxi-step-indicator" id="luxi-step-counter">01 / 05</span>' +
                         '</div>' +
                         '<div class="luxi-progress-track">' +
-                            '<div class="luxi-progress-bar" id="luxi-progress-fill" style="width: 25%;"></div>' +
+                            '<div class="luxi-progress-bar" id="luxi-progress-fill" style="width: 20%;"></div>' +
                         '</div>' +
                     '</div>' +
 
@@ -118,14 +119,15 @@
                             '</div>' +
                         '</div>' +
 
-                        // --- STEP 3: MOVE-IN TIMELINE ---
+                        // --- STEP 3: ESTIMATED BUDGET (Set A Starting at 10L) ---
                         '<div class="luxi-wizard-step" data-step="3">' +
-                            '<label class="luxi-step-question">Estimated Move-in / Possession</label>' +
-                            '<div class="luxi-pill-grid" data-group="timeline">' +
-                                '<div class="luxi-pill-item" data-val="Immediate">Immediate</div>' +
-                                '<div class="luxi-pill-item is-selected" data-val="1 – 3 Months">1 – 3 Months</div>' +
-                                '<div class="luxi-pill-item" data-val="3 – 6 Months">3 – 6 Months</div>' +
-                                '<div class="luxi-pill-item" data-val="Future Project (6+ Months)">Future Project</div>' +
+                            '<label class="luxi-step-question">Estimated Project Budget</label>' +
+                            '<div class="luxi-pill-grid" data-group="budget">' +
+                                '<div class="luxi-pill-item" data-val="₹10L – ₹25L">₹10L – ₹25L</div>' +
+                                '<div class="luxi-pill-item is-selected" data-val="₹25L – ₹50L">₹25L – ₹50L</div>' +
+                                '<div class="luxi-pill-item" data-val="₹50L – ₹1 Crore">₹50L – ₹1 Crore</div>' +
+                                '<div class="luxi-pill-item" data-val="₹1 Crore+">₹1 Crore+</div>' +
+                                '<div class="luxi-pill-item" data-val="Flexible / Need Guidance">Flexible / Need Guidance</div>' +
                             '</div>' +
                             '<div class="luxi-wizard-actions">' +
                                 '<button type="button" class="luxi-back-btn" data-back="2">&larr; Back</button>' +
@@ -138,8 +140,28 @@
                             '</div>' +
                         '</div>' +
 
-                        // --- STEP 4: DETAILS & SUBMIT ---
+                        // --- STEP 4: MOVE-IN TIMELINE ---
                         '<div class="luxi-wizard-step" data-step="4">' +
+                            '<label class="luxi-step-question">Estimated Move-in / Possession</label>' +
+                            '<div class="luxi-pill-grid" data-group="timeline">' +
+                                '<div class="luxi-pill-item" data-val="Immediate">Immediate</div>' +
+                                '<div class="luxi-pill-item is-selected" data-val="1 – 3 Months">1 – 3 Months</div>' +
+                                '<div class="luxi-pill-item" data-val="3 – 6 Months">3 – 6 Months</div>' +
+                                '<div class="luxi-pill-item" data-val="Future Project (6+ Months)">Future Project</div>' +
+                            '</div>' +
+                            '<div class="luxi-wizard-actions">' +
+                                '<button type="button" class="luxi-back-btn" data-back="3">&larr; Back</button>' +
+                                '<button type="button" class="luxi-next-btn" data-next="5">' +
+                                    '<span>Next</span>' +
+                                    '<div class="luxi-next-arrow">' +
+                                        '<svg viewBox="0 0 6 10" fill="none"><path d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.2" stroke-linecap="round"/><path d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>' +
+                                    '</div>' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>' +
+
+                        // --- STEP 5: DETAILS & SUBMIT ---
+                        '<div class="luxi-wizard-step" data-step="5">' +
                             '<label class="luxi-step-question">Where should we send your estimate?</label>' +
                             
                             '<div class="luxi-field-group">' +
@@ -161,7 +183,7 @@
                             '</div>' +
 
                             '<div class="luxi-wizard-actions">' +
-                                '<button type="button" class="luxi-back-btn" data-back="3">&larr; Back</button>' +
+                                '<button type="button" class="luxi-back-btn" data-back="4">&larr; Back</button>' +
                                 '<button type="submit" class="luxi-submit-pill" id="luxi-wizard-submit">' +
                                     '<span>Submit</span>' +
                                     '<div class="luxi-submit-arrow">' +
@@ -194,14 +216,14 @@
         var counter = document.getElementById('luxi-step-counter');
         var fill = document.getElementById('luxi-progress-fill');
         if (counter) {
-            counter.textContent = '0' + stepNum + ' / 04';
+            counter.textContent = '0' + stepNum + ' / 05';
         }
         if (fill) {
-            fill.style.width = (stepNum * 25) + '%';
+            fill.style.width = (stepNum * 20) + '%';
         }
 
-        // Focus first field on Step 4
-        if (stepNum === 4) {
+        // Focus first field on Step 5
+        if (stepNum === 5) {
             var nameInput = document.getElementById('luxi-input-name');
             if (nameInput && window.innerWidth > 640) {
                 setTimeout(function() { nameInput.focus(); }, 150);
@@ -227,6 +249,12 @@
     }
 
     function setupAutoTrigger() {
+        // Do not auto-pop on contact page
+        var path = window.location.pathname.toLowerCase();
+        if (path.includes('contact')) {
+            return;
+        }
+
         try {
             if (sessionStorage.getItem(CONFIG.sessionKey)) {
                 return;
@@ -310,10 +338,11 @@
                     var val = pill.getAttribute('data-val');
                     if (groupName === 'scope') state.scope = val;
                     if (groupName === 'propertyType') state.propertyType = val;
+                    if (groupName === 'budget') state.budget = val;
                     if (groupName === 'timeline') state.timeline = val;
 
                     // Smooth auto-advance to next step
-                    if (state.currentStep < 4) {
+                    if (state.currentStep < 5) {
                         setTimeout(function () {
                             setStep(state.currentStep + 1);
                         }, 220);
@@ -322,7 +351,7 @@
             });
         });
 
-        // Form Submit on Step 4
+        // Form Submit on Step 5
         var form = document.getElementById('luxi-wizard-form');
         if (form) {
             form.addEventListener('submit', handleSubmit);
@@ -375,12 +404,13 @@
         // 1. Web3Forms background dispatch for fail-safe email capture
         var payload = {
             access_key: CONFIG.web3FormsKey,
-            subject: '⚡ LUXiHOME Free Estimate: ' + name + ' — ' + state.propertyType + ' (' + location + ')',
+            subject: '⚡ LUXiHOME Lead: ' + name + ' — ' + state.propertyType + ' | ' + state.budget + ' (' + location + ')',
             from_name: 'LUXiHOME Estimate Engine',
             name: name,
             phone: '+91 ' + cleanPhone,
             requirement: state.scope,
             property_type: state.propertyType,
+            budget: state.budget,
             move_in_timeline: state.timeline,
             location: location,
             page_url: window.location.href,
@@ -406,6 +436,7 @@
             "• *Property Location:* " + location + "\n" +
             "• *Requirement:* " + state.scope + "\n" +
             "• *Property Type:* " + state.propertyType + "\n" +
+            "• *Budget Bracket:* " + state.budget + "\n" +
             "• *Move-in Timeline:* " + state.timeline + "\n\n" +
             "Hello LUXiHOME team, please share a preliminary turnkey project cost estimate.";
 
