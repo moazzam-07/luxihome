@@ -13,7 +13,7 @@ module.exports = [
     title: 'Warm Minimalism Meets Bengali Soul: Blending Cane, Teak & Clean Geometry',
     metaDescription: 'How to design a warm minimalist home in Kolkata with authentic Bengali soul. Master the balance of hand-woven cane, reclaimed teak, terracotta, and modern lighting.',
     keywords: 'warm minimalism kolkata, bengali interior design, modern colonial home decor, cane furniture interior kolkata',
-    image: '/pictures.testimonals/residential.pic/photo_17_2026-09-06_14-27-28.jpg',
+    image: '/pictures.testimonals/salt.lake.work/photo_9_2026-09-04_15-01-37.jpg',
     lead: 'Too many contemporary Kolkata apartments look like sterile, clinical European showrooms devoid of warmth. Warm minimalism offers a refined alternative: stripping away unnecessary visual clutter while celebrating Bengal’s tactile craft heritage.',
     takeaways: [
       'Warm minimalism is founded on high-texture neutrals: linen, lime wash, hand-woven cane, and natural stone.',
@@ -63,7 +63,7 @@ module.exports = [
     title: 'Italian Marble vs Large-Format Vitrified Tiles (GVT) in Kolkata: The Real Maintenance Truth',
     metaDescription: 'Honest durability comparison between Italian Marble and Glazed Vitrified Porcelain Tiles for Kolkata residences. Polish lifespan, scratch resistance, and cost.',
     keywords: 'italian marble vs tiles kolkata, gvt porcelain slab price kolkata, marble polishing cost, best flooring for flat kolkata',
-    image: '/pictures.testimonals/new.town.work/photo_15_2026-09-04_15-49-33.jpg',
+    image: '/pictures.testimonals/curated/italian_marble_flooring_dining.jpeg',
     lead: 'Few decisions evoke as much debate between homeowners and interior designers as flooring. Italian marble conveys unmatched prestige and organic beauty, but glazed vitrified porcelain tiles (GVT) offer practically indestructible utility.',
     takeaways: [
       'Italian marble is a soft metamorphic limestone (Mohs hardness 3) that stains from acids and scratches easily under street dust.',
@@ -114,7 +114,7 @@ module.exports = [
     title: 'Architectural Lighting: Why 90% of Kolkata Homes Ruin Interiors with the Wrong Kelvin',
     metaDescription: 'Master the 3-tier luxury lighting formula for Kolkata homes. Understand Kelvin color temperatures (3000K vs 4000K vs 6500K), CRI ratings, and anti-glare COB optics.',
     keywords: 'architectural lighting kolkata, 3000k vs 4000k lighting, cob vs led strip interior, magnetic track light cost',
-    image: '/pictures.testimonals/residential.pic/photo_10_2026-09-06_14-27-28.jpg',
+    image: '/pictures.testimonals/salt.lake.work/photo_10_2026-09-04_15-01-37.jpg',
     lead: 'You can spend ₹25 lakhs on Italian marble and bespoke teak joinery, but if you light the space with 6500K harsh white LED tube lights or flood the ceiling with flat glare, your home will look like a pharmacy or hospital waiting room.',
     takeaways: [
       '6500K "Cool Day Light" suppresses melatonin and washes out wood textures; residential luxury is built on 3000K Warm White.',
@@ -164,7 +164,7 @@ module.exports = [
     title: 'Luxury Wardrobe Engineering: Sliding vs Openable Doors & Internal Storage Planning',
     metaDescription: 'Detailed ergonomic guide to custom wardrobe design in Kolkata. Compare sliding vs hinged systems, lacquered glass vs veneer, and saree/suit internal dimensions.',
     keywords: 'wardrobe design kolkata, sliding vs hinged wardrobe, lacquered glass wardrobe price, internal wardrobe storage dimensions',
-    image: '/pictures.testimonals/park.street.work/photo_4_2026-09-04_15-06-35.jpg',
+    image: '/pictures.testimonals/rajarhat.work/photo_4_2026-09-04_15-33-26.jpg',
     lead: 'A bespoke wardrobe is an intricate piece of daily storage engineering. When designed properly, it keeps garments crisp, organizes accessories effortlessly, and protects fabrics from seasonal monsoon dampness.',
     takeaways: [
       'Hinged (openable) doors require 22 inches cabinet depth + 18 inches walking clearance.',
@@ -214,7 +214,7 @@ module.exports = [
     title: 'Acoustic Soundproofing for Busy Kolkata Streets: Soundproof Windows & Wall Baffling',
     metaDescription: 'How to soundproof your bedroom from Kolkata street traffic, bus horns, and tram noise. DGU acoustic laminated glass, UPVC frames, and wall acoustic treatments.',
     keywords: 'soundproof windows kolkata, acoustic glass upvc kolkata, traffic noise reduction bedroom, dgu glass soundproofing',
-    image: '/pictures.testimonals/residential.pic/photo_1_2026-09-04_15-06-35.jpg',
+    image: '/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg',
     lead: 'Living near major Kolkata arteries like Rashbehari Avenue, VIP Road, Gariahat, or Diamond Harbour Road means enduring 85-decibel ambient noise from relentless bus horns, motorcycle exhausts, and festival loudspeakers.',
     takeaways: [
       'Standard aluminum sliding windows have gaps that leak 90% of external road noise into bedrooms.',
@@ -265,7 +265,7 @@ module.exports = [
     title: '10 Critical Questions to Ask an Interior Designer in Kolkata Before Paying a Token',
     metaDescription: 'Essential due diligence checklist before hiring an interior designer in Kolkata. Expose hidden markups, verify subcontractor pedigree, and protect your budget.',
     keywords: 'questions to ask interior designer kolkata, how to hire interior designer, interior contract checklist, avoid interior scam kolkata',
-    image: '/pictures.testimonals/new.town.work/photo_16_2026-09-04_15-49-33.jpg',
+    image: '/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg',
     lead: 'Hiring an interior designer is one of the most substantial financial and emotional investments you will make in your home. Asking the right probing questions during the initial consultation separates true architectural craftsmen from commission agents.',
     takeaways: [
       'Demand an Itemized Bill of Quantities (BOQ) with explicit brand names, ply grades, and hardware model numbers.',
@@ -319,7 +319,7 @@ module.exports = [
     title: 'Red Flags: How Local Kolkata "Package Deal" Interior Contractors Cut Corners',
     metaDescription: 'Exposing common cost-cutting tricks by cheap interior package contractors in Kolkata. Sub-grade ply swaps, fake hardware, and disappearing labor.',
     keywords: 'interior contractor scam kolkata, interior package deal reality, cheap interior designer warning, contractor cheating tricks',
-    image: '/pictures.testimonals/rajarhat.work/photo_2_2026-09-04_15-33-26.jpg',
+    image: '/pictures.testimonals/new.town.work/photo_9_2026-09-04_15-49-33.jpg',
     lead: 'Attractive newspaper ads and social media campaigns promising "Full 3BHK Interior at just ₹3.99 Lakhs" are flooding Kolkata. Homeowners must understand the hidden corners that get cut to make those impossible numbers work.',
     takeaways: [
       'Package deals substitute 18mm certified plywood with cheap 15mm commercial blockboard or particle board.',
@@ -368,7 +368,7 @@ module.exports = [
     title: 'The Realistic Timeline: Why a Proper 3BHK Interior Takes 90 to 120 Days in Kolkata',
     metaDescription: 'Realistic interior design project schedule for Kolkata flats. Learn why 45-day promises fail and how to plan civil, carpentry, and finishing stages.',
     keywords: 'interior timeline kolkata, how long interior work takes, 3bhk interior project duration, interior delay causes kolkata',
-    image: '/pictures.testimonals/park.street.work/photo_2_2026-09-04_15-06-35.jpg',
+    image: '/pictures.testimonals/salt.lake.work2/photo_6_2026-09-04_15-17-45.jpg',
     lead: 'Unscrupulous contractors routinely promise: "Sir, give me the advance and I will finish your 3BHK in 40 days." In reality, rushing interior architecture violates the natural curing and drying laws of construction chemistry.',
     takeaways: [
       'A bespoke 3BHK interior executed to luxury standards takes 90 to 120 days minimum.',
@@ -422,7 +422,7 @@ module.exports = [
     title: '3D Renderings vs Reality: How to Ensure Your Finished Flat Matches the 3D Model',
     metaDescription: 'Avoid the 3D render expectation gap in Kolkata. How to bridge 3ds Max visualization with physical site realities, beam offsets, and material mood boards.',
     keywords: '3d interior design vs reality, 3d render matching real flat, interior design render mistakes, photorealistic interior renders',
-    image: '/pictures.testimonals/new.town.work/photo_8_2026-09-04_15-49-33.jpg',
+    image: '/pictures.testimonals/real.residential.pic/photo_2_2026-09-06_14-27-28.jpg',
     lead: 'We have all seen glossy 3D computer renderings that look like five-star luxury suites, only to discover that the finished flat looks cheap, cramped, and completely different in color tone and proportions.',
     takeaways: [
       '3D software often ignores real structural concrete beams, low electrical risers, and drainage drops.',
@@ -472,7 +472,7 @@ module.exports = [
     title: 'Interior Warranties in Kolkata: What Does a "10-Year Warranty" Actually Cover?',
     metaDescription: 'Unpacking interior design warranty promises in Kolkata. Learn what 10-year warranties really cover, hardware replacement clauses, and annual maintenance contracts.',
     keywords: 'interior warranty kolkata, 10 year interior guarantee reality, modular kitchen warranty terms, interior amc contract',
-    image: '/pictures.testimonals/residential.pic/photo_15_2026-09-06_14-27-28.jpg',
+    image: '/pictures.testimonals/salt.lake.work2/photo_12_2026-09-04_15-17-45.jpg',
     lead: 'Nearly every interior design advertisement in Kolkata boldly splashes "10-Year Warranty!" across their banners. But what happens two years later when a kitchen hydraulic hinge sags or a drawer channel seizes?',
     takeaways: [
       'A 10-year warranty typically only covers manufacturer structural delamination of the raw core plywood.',
@@ -524,7 +524,7 @@ module.exports = [
     title: 'Modern Vastu for Kolkata Apartments: Scientific Energy Alignment Without Ruining Aesthetics',
     metaDescription: 'Practical, contemporary Vastu Shastra guide for Kolkata flats. Balance kitchen fire zones, master bedroom directions, and mandirs without breaking walls.',
     keywords: 'vastu for flats kolkata, contemporary vastu interior design, kitchen vastu southeast, north east mandir flat kolkata',
-    image: '/pictures.testimonals/residential.pic/photo_13_2026-09-06_14-27-28.jpg',
+    image: '/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg',
     lead: 'Over 70% of Kolkata homeowners desire Vastu alignment for peace, prosperity, and harmony. However, rigid superstitious advice that demands breaking structural concrete beams or demolishing bathrooms is neither practical nor architecturally sound.',
     takeaways: [
       'Vastu in modern apartment towers is about optimizing airflow, solar trajectories, and magnetic spatial balance.',
@@ -575,7 +575,7 @@ module.exports = [
     title: 'Smart Home Automation in Kolkata: What’s Truly Useful vs What’s a Waste of Money',
     metaDescription: 'Honest evaluation of home automation for Kolkata apartments. Discover why retrofitted Matter/Zigbee modules beat expensive proprietary control panels.',
     keywords: 'smart home automation kolkata, motorized curtains price kolkata, smart switches worth it, zigbee home automation',
-    image: '/pictures.testimonals/new.town.work/photo_12_2026-09-04_15-49-33.jpg',
+    image: '/pictures.testimonals/real.residential.pic/photo_1_2026-09-06_14-27-28.jpg',
     lead: 'Home automation salesmen will eagerly pitch ₹5 lakh proprietary wall touch panels and voice-activated toaster systems. But what features actually enhance luxury living in Kolkata, and what ends up as frustrating technical baggage?',
     takeaways: [
       'Avoid locked proprietary wired systems; choose open-standard Matter and Zigbee wireless modules.',
@@ -626,7 +626,7 @@ module.exports = [
     title: 'Designing the Ultimate Modern Puja Room (Mandir) in Contemporary Kolkata Flats',
     metaDescription: 'How to design a sacred, elegant puja mandir in modern apartments. Backlit Corian, CNC brass jalis, smoke ventilation, and sacred spatial geometry.',
     keywords: 'modern puja room design kolkata, mandir design for flat, backlit corian temple kolkata, cnc jali mandir door',
-    image: '/pictures.testimonals/residential.pic/photo_13_2026-09-06_14-27-28.jpg',
+    image: '/pictures.testimonals/curated/traditional_residential_puja_mandir.jpeg',
     lead: 'In Bengali households, the Thakur Ghor (mandir) is the spiritual sanctuary of the home. Modern compact high-rise living requires innovative design that preserves traditional reverence while integrating seamlessly with contemporary aesthetics.',
     takeaways: [
       'Locate the mandir in the Northeast (*Ishanya*) quadrant, with deities positioned to face West or South so you face East while praying.',
@@ -675,7 +675,7 @@ module.exports = [
     title: 'Small Balcony Garden & Sit-Out Design for Kolkata High-Rises: Surviving Heat & Monsoons',
     metaDescription: 'Transform compact high-rise balconies in New Town and Rajarhat into all-weather luxury retreats. WPC decking, drainage slopes, invisible grills, and tropical plants.',
     keywords: 'balcony garden design kolkata, high rise balcony makeover, wpc decking balcony price, invisible grill installation kolkata',
-    image: '/pictures.testimonals/rajarhat.work/photo_1_2026-09-04_15-33-26.jpg',
+    image: '/pictures.testimonals/salt.lake.work/photo_13_2026-09-04_15-01-37.jpg',
     lead: 'A private balcony is your only personal connection to the outdoors in high-density urban Kolkata. Yet, exposed to scorching 42°C summer heat, ferocious monsoon downpours, and pigeon visits, most balconies end up as neglected storage spaces.',
     takeaways: [
       'Interlocking Wood-Plastic Composite (WPC) deck tiles over existing flooring drain rainwater instantly without water pooling.',
@@ -724,7 +724,7 @@ module.exports = [
     title: 'Color Psychology for Kolkata Homes: Palettes That Counter Tropical Heat & Monsoons',
     metaDescription: 'Architectural paint color selection for Kolkata weather. High Light Reflectance Value (LRV) neutrals, sage green, and muted terracotta to keep rooms cool and bright.',
     keywords: 'interior wall colors kolkata, best paint for humid climate, color psychology interior design, cooling paint colors india',
-    image: '/pictures.testimonals/new.town.work/photo_18_2026-09-04_15-49-33.jpg',
+    image: '/pictures.testimonals/real.residential.pic/photo_6_2026-09-06_14-27-28.jpg',
     lead: 'Colors carry physiological and thermal impact. In a city where summer temperatures cross 40°C with 85% humidity followed by months of overcast monsoon grey skies, choosing the wrong wall palette makes rooms feel sweltering, dark, and claustrophobic.',
     takeaways: [
       'Choose interior paint shades with a Light Reflectance Value (LRV) above 75 to maximize natural illumination on cloudy monsoon days.',
