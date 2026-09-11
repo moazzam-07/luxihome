@@ -30,84 +30,584 @@
     <link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
     
     <style id="luxi-privacy-custom-css">
-        @font-face {
-            font-family: 'aviano-sans';
-            src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
-            font-weight: 400;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'aviano-sans';
-            src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
-            font-weight: 700;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'DIN';
-            src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
-            font-weight: 300;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'DIN';
-            src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
-            font-weight: 600;
-            font-display: swap;
-        }
+        
+    @font-face {
+        font-family: 'aviano-sans';
+        src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'aviano-sans';
+        src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
+        font-weight: 700;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'DIN';
+        src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
+        font-weight: 300;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'DIN';
+        src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
+        font-weight: 600;
+        font-display: swap;
+    }
 
-        body {
-            background-color: #13212E;
-            color: #E2E8F0;
-            font-family: 'DIN', sans-serif;
-            overflow-x: clip;
-        }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-        /* Mobile Left-aligned Header Logo Parity */
-        @media (max-width: 1023px) {
-            [data-target="header-menu"].order-2,
-            .luxi-header-logo {
-                left: 20px !important;
-                right: auto !important;
-                transform: none !important;
-                justify-content: flex-start !important;
-                text-align: left !important;
-            }
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #13212E !important;
+        color: #E2E8F0;
+        font-family: 'DIN', sans-serif;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Mobile Header & Responsive Logo Placement */
+    @media (max-width: 1023px) {
+        [data-target="header-menu"].order-2,
+        .luxi-header-logo {
+            position: absolute !important;
+            top: 20px !important;
+            left: 18px !important;
+            right: auto !important;
+            transform: none !important;
+            justify-content: flex-start !important;
+            text-align: left !important;
+            z-index: 40 !important;
+        }
+        [data-nav-fixed] {
+            position: fixed !important;
+            top: 20px !important;
+            right: 15px !important;
+            left: auto !important;
+            z-index: 50 !important;
+            width: fit-content !important;
         }
         [data-target="logo-lottie"],
         [data-target="logo-lottie-dark"] {
-            width: 160px !important;
-            max-width: 160px !important;
+            width: 145px !important;
+            max-width: 145px !important;
         }
+    }
 
-        .legal-kicker {
-            font-family: 'aviano-sans', sans-serif;
-            letter-spacing: 0.22em;
+    /* Page Container with GUARANTEED Mobile Top Padding */
+    .legal-page-container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 125px 18px 60px 18px !important;
+    }
+    @media (min-width: 640px) {
+        .legal-page-container {
+            padding: 155px 28px 80px 28px !important;
         }
-        .legal-serif-heading {
-            font-family: 'aviano-sans', serif;
-            letter-spacing: 0.05em;
+    }
+    @media (min-width: 1024px) {
+        .legal-page-container {
+            padding: 185px 36px 100px 36px !important;
         }
+    }
+
+    /* Hero Section Card */
+    .legal-hero-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 22px;
+        padding: 24px 18px;
+        margin-bottom: 24px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    }
+    @media (min-width: 640px) {
+        .legal-hero-card {
+            padding: 38px 32px;
+            margin-bottom: 32px;
+            border-radius: 26px;
+        }
+    }
+
+    .legal-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: rgba(194, 162, 106, 0.12);
+        border: 1px solid rgba(194, 162, 106, 0.28);
+        color: #E6CA9E;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+    .legal-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #C2A26A;
+    }
+
+    .legal-hero-title {
+        font-family: 'aviano-sans', sans-serif;
+        font-size: clamp(24px, 6.8vw, 44px);
+        line-height: 1.16;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0 0 14px 0;
+        word-break: break-word;
+    }
+
+    .legal-hero-desc {
+        font-size: 14px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.72);
+        margin: 0 0 20px 0;
+    }
+    @media (min-width: 640px) {
+        .legal-hero-desc {
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+    }
+
+    /* Clean 2-column on mobile, 3-column on tablet/desktop Metadata Grid */
+    .legal-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    @media (min-width: 640px) {
+        .legal-meta-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+    }
+    .legal-meta-cell {
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+        padding: 9px 12px;
+    }
+    .legal-meta-tag {
+        display: block;
+        color: #C2A26A;
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+    }
+    .legal-meta-val {
+        display: block;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Overview Banner */
+    .legal-overview-box {
+        background: rgba(194, 162, 106, 0.07);
+        border: 1px solid rgba(194, 162, 106, 0.22);
+        border-left: 4px solid #C2A26A;
+        border-radius: 16px;
+        padding: 18px 16px;
+        margin-bottom: 24px;
+    }
+    @media (min-width: 640px) {
+        .legal-overview-box {
+            padding: 24px 28px;
+            margin-bottom: 32px;
+        }
+    }
+    .legal-overview-tag {
+        color: #E6CA9E;
+        font-family: 'aviano-sans', sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0 0 8px 0;
+        font-weight: 600;
+    }
+    .legal-overview-copy {
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+    }
+
+    /* Swipeable Quick Navigation Chips */
+    .legal-chip-scroll {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-bottom: 24px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .legal-chip-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    .legal-chip {
+        flex: 0 0 auto;
+        padding: 7px 13px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    .legal-chip:hover,
+    .legal-chip:active {
+        background: #C2A26A;
+        border-color: #C2A26A;
+        color: #13212E;
+    }
+
+    /* Clause Article Cards */
+    .legal-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 22px 18px;
+        margin-bottom: 20px;
+        transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    @media (min-width: 640px) {
         .legal-card {
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            transition: border-color 0.3s ease, background 0.3s ease;
+            padding: 34px 30px;
+            margin-bottom: 28px;
+            border-radius: 22px;
         }
-        .legal-card:hover {
-            border-color: rgba(194, 162, 106, 0.3);
-            background: rgba(255, 255, 255, 0.035);
+    }
+    .legal-card:hover {
+        border-color: rgba(194, 162, 106, 0.3);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* Stacked Clause Header: Guarantees 03 doesn't squeeze the heading into a narrow column */
+    .clause-header {
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .clause-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #C2A26A;
+        font-family: 'DIN', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+    .clause-title {
+        font-family: 'aviano-sans', sans-serif;
+        font-size: clamp(17px, 4.4vw, 22px);
+        line-height: 1.25;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0;
+    }
+
+    /* Sub-clauses */
+    .subclause {
+        margin-bottom: 16px;
+    }
+    .subclause:last-child {
+        margin-bottom: 0;
+    }
+    .subclause-tag {
+        display: inline-block;
+        font-family: 'DIN', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #E6CA9E;
+        letter-spacing: 0.02em;
+        margin-bottom: 3px;
+    }
+    .subclause-text {
+        font-family: 'DIN', sans-serif;
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.76);
+        margin: 0;
+    }
+    @media (min-width: 640px) {
+        .subclause-tag {
+            font-size: 15px;
         }
-        .legal-pill {
-            background: rgba(194, 162, 106, 0.12);
-            color: #E6CA9E;
-            border: 1px solid rgba(194, 162, 106, 0.25);
+        .subclause-text {
+            font-size: 15px;
+            line-height: 1.7;
         }
+    }
+
+    /* Structured Milestone Steps (for Terms) */
+    .milestone-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 16px 0;
+    }
+    .milestone-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+    }
+    .milestone-badge {
+        flex: 0 0 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(194, 162, 106, 0.15);
+        color: #E6CA9E;
+        font-size: 11px;
+        font-weight: 600;
+        margin-top: 1px;
+    }
+    .milestone-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin-bottom: 2px;
+    }
+    .milestone-copy {
+        font-size: 12px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0;
+    }
+
+    /* Concierge Contact Card */
+    .legal-concierge {
+        background: linear-gradient(135deg, rgba(23, 42, 58, 0.95), rgba(16, 28, 39, 0.98));
+        border: 1px solid rgba(194, 162, 106, 0.35);
+        border-radius: 22px;
+        padding: 24px 18px;
+        margin-top: 36px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+    @media (min-width: 768px) {
+        .legal-concierge {
+            padding: 34px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+    }
+    .concierge-kicker {
+        color: #C2A26A;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin: 0 0 6px 0;
+    }
+    .concierge-heading {
+        font-family: 'aviano-sans', sans-serif;
+        font-size: clamp(18px, 4.5vw, 24px);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0 0 8px 0;
+    }
+    .concierge-copy {
+        font-size: 13px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0 0 20px 0;
+        max-width: 520px;
+    }
+    @media (min-width: 768px) {
+        .concierge-copy {
+            margin-bottom: 0;
+        }
+    }
+    .concierge-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    @media (min-width: 640px) {
+        .concierge-actions {
+            flex-direction: row;
+            width: auto;
+        }
+    }
+    .btn-gold {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 22px;
+        border-radius: 999px;
+        background: #C2A26A;
+        color: #13212E;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        text-align: center;
+    }
+    .btn-gold:hover {
+        background-color: #FFFFFF;
+    }
+    .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 20px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #FFFFFF;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        text-align: center;
+    }
+    .btn-outline:hover {
+        border-color: #C2A26A;
+        color: #C2A26A;
+    }
+
+    /* Custom Mobile-Refined Legal Footer */
+    .legal-footer {
+        background-color: #0C151D;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 50px 18px 40px 18px;
+        margin-top: 60px;
+        color: #FFFFFF;
+    }
+    @media (min-width: 640px) {
+        .legal-footer {
+            padding: 65px 36px 45px 36px;
+            margin-top: 80px;
+        }
+    }
+    .legal-footer-inner {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    .legal-footer-top {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    @media (min-width: 768px) {
+        .legal-footer-top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .legal-footer-brand {
+        display: block;
+        width: 140px;
+        margin-bottom: 10px;
+    }
+    .legal-footer-brand img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .legal-footer-tagline {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .legal-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 22px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+    .legal-footer-links a {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .legal-footer-links a:hover {
+        color: #C2A26A;
+    }
+    .legal-footer-bottom {
+        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    @media (min-width: 640px) {
+        .legal-footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .legal-footer-bottom p {
+        margin: 0;
+    }
+    .legal-footer-legal {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .legal-footer-legal a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .legal-footer-legal a:hover {
+        color: #FFFFFF;
+    }
+    .legal-footer-sep {
+        color: rgba(255, 255, 255, 0.2);
+    }
+
     </style>
 
     <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 </head>
 
-<body class="wp-singular page-template bg-[#13212E] text-white selection:bg-[#C2A26A] selection:text-[#13212E]" data-barba="wrapper">
+<body class="wp-singular page-template" data-barba="wrapper">
 
 
 <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
@@ -218,8 +718,8 @@
     <!-- Responsive LUXiHOME Atelier Logo: Left on Mobile, Center on Desktop -->
     <div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
         <a href="/" data-target="menu-logo" data-theme="light" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-barba-prevent="self">
-            <div class="relative w-[160px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-100 visible will-change-[opacity]" data-target="logo-lottie" data-played="true" title="LUXiHOME">
-                <svg width="260" height="84" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[160px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto">
+            <div class="relative w-[150px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-100 visible will-change-[opacity]" data-target="logo-lottie" data-played="true" title="LUXiHOME">
+                <svg width="260" height="84" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto">
                     <g id="luxihome-logo" fill="#FFFFFF">
                         <path d="M714.684 136.564C752.869 131.691 787.729 158.809 792.387 197.007C797.044 235.206 769.72 269.9 731.482 274.339C693.55 278.742 659.181 251.694 654.561 213.8C649.941 175.906 676.804 141.397 714.684 136.564ZM726.235 261.08C756.778 259.528 780.349 233.638 779.028 203.096C777.708 172.553 751.989 148.793 721.426 149.881C690.533 150.981 666.452 177.03 667.787 207.903C669.122 238.776 695.363 262.65 726.235 261.08Z" fill="#FFFFFF"/>
                         <path d="M950.342 129.175C953.194 141.182 955.613 153.805 958.285 165.927L981.707 272.961L967.724 273.025C965.616 265.645 963.589 254.707 961.893 246.924C957.865 227.975 953.678 209.061 949.331 190.182C949.029 187.628 947.2 179.824 946.604 176.979C932.718 210.083 919.169 247.035 906.041 280.619C902.094 272.418 897.337 258.477 893.784 249.744C883.993 225.681 875.13 200.832 865.096 176.859C863.456 186.539 860.263 199.332 858.108 209.157L844.256 272.767C840.261 273.048 834.376 272.859 830.245 272.85C836.459 238.402 845.768 203.6 852.708 169.191C855.302 156.327 858.213 142.106 861.688 129.537C866.483 140.765 870.878 153.198 875.276 164.669C885.339 191.303 895.584 217.868 906.01 244.363C920.869 206.523 934.93 166.52 950.342 129.175Z" fill="#FFFFFF"/>
@@ -248,177 +748,232 @@
 </nav>
 
 
-<div id="page-wrap" data-barba="container" data-barba-namespace="privacy-policy">
-    <main id="main" class="pt-140 sm:pt-170 lg:pt-190 px-20 sm:px-30 lg:px-60 max-w-[1240px] mx-auto">
+<div id="legal-page-wrap" data-barba="container" data-barba-namespace="privacy-policy">
+    <main id="main" class="legal-page-container">
         
-        <!-- Header Section -->
-        <header class="mb-50 lg:mb-80 max-w-[900px]">
-            <div class="inline-flex items-center gap-10 legal-pill px-16 py-6 rounded-full text-11 tracking-1 uppercase mb-20">
-                <span class="size-6 rounded-full bg-[#C2A26A] animate-pulse"></span>
-                <span>Client Confidentiality • LUXiHOME Pvt. Ltd.</span>
+        <!-- Hero Card -->
+        <header class="legal-hero-card">
+            <div class="legal-badge">
+                <span class="legal-badge-dot"></span>
+                <span>CLIENT CONFIDENTIALITY • LUXiHOME</span>
             </div>
-            <h1 class="legal-serif-heading text-36 sm:text-54 lg:text-64 font-light uppercase leading-[1.08] text-white mb-20">
-                Privacy Policy
-            </h1>
-            <p class="font-body text-16 sm:text-18 text-white/70 leading-relaxed">
+            <h1 class="legal-hero-title">Privacy Policy</h1>
+            <p class="legal-hero-desc">
                 At LUXiHOME Pvt. Ltd., discretion is not merely a legal clause—it is the foundational pillar of our atelier practice. This Privacy Policy details how we collect, protect, and safeguard the spatial blueprints, contact records, and private estate details entrusted to us.
             </p>
-            <div class="mt-25 flex flex-wrap items-center gap-20 text-13 tracking-0.4 text-white/40">
-                <span>Effective Date: March 1, 2026</span>
-                <span>•</span>
-                <span>Zero Third-Party Data Monetization</span>
-                <span>•</span>
-                <span>Encrypted CAD Blueprints</span>
+            
+            <div class="legal-meta-grid">
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Effective</span>
+                    <span class="legal-meta-val">March 1, 2026</span>
+                </div>
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Data Sale</span>
+                    <span class="legal-meta-val">Zero / Strictly None</span>
+                </div>
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Security</span>
+                    <span class="legal-meta-val">AES-256 Encrypted</span>
+                </div>
             </div>
         </header>
 
-        <!-- Privacy Assurance Banner -->
-        <div class="legal-card p-24 sm:p-35 mb-60 border-l-4 border-l-[#C2A26A]">
-            <h3 class="legal-kicker text-13 uppercase text-[#C2A26A] tracking-1.2 mb-10">Our Discretion Guarantee</h3>
-            <p class="font-body text-14 sm:text-15 text-white/80 leading-relaxed mb-0">
-                LUXiHOME never sells, rents, licenses, or monetizes client data, telephone records, or architectural layouts. All technical drawings, site coordinates, and private estate specifications are encrypted and accessible strictly on a need-to-know basis by verified lead architects and project engineers.
+        <!-- Guarantee Banner -->
+        <div class="legal-overview-box">
+            <h3 class="legal-overview-tag">Our Discretion Guarantee</h3>
+            <p class="legal-overview-copy">
+                LUXiHOME never sells, rents, licenses, or monetizes client data, phone numbers, or architectural floor plans. All technical drawings, site coordinates, and private estate specifications are encrypted and accessible strictly on a need-to-know basis by verified lead architects and project engineers.
             </p>
         </div>
 
-        <!-- Privacy Sections List -->
-        <div class="space-y-40 sm:space-y-50">
+        <!-- Quick Jump Chips -->
+        <nav class="legal-chip-scroll" aria-label="Jump to section">
+            <a href="#privacy-01" class="legal-chip">01 Discretion</a>
+            <a href="#privacy-02" class="legal-chip">02 Data Collection</a>
+            <a href="#privacy-03" class="legal-chip">03 Data Usage</a>
+            <a href="#privacy-04" class="legal-chip">04 CAD Security</a>
+            <a href="#privacy-05" class="legal-chip">05 Photography</a>
+            <a href="#privacy-06" class="legal-chip">06 Cookies</a>
+            <a href="#privacy-07" class="legal-chip">07 Client Rights</a>
+        </nav>
 
-            <!-- 01. Discretion & High-Profile Privacy -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">01</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Client Discretion &amp; Estate Privacy</h2>
+        <!-- Privacy Clauses -->
+        <div class="legal-clause-list">
+
+            <!-- 01. Discretion -->
+            <article id="privacy-01" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 01</span>
+                    <h2 class="clause-title">Client Discretion &amp; Estate Privacy</h2>
                 </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        1.1. <strong class="text-white">High-Net-Worth Protection:</strong> Because our clientele includes leaders of industry, public figures, and estate owners, we apply enterprise-grade confidentiality. Every member of the LUXiHOME design team, site management division, and master artisan collective is bound by comprehensive non-disclosure agreements.
-                    </p>
-                    <p>
-                        1.2. <strong class="text-white">Spatial Anonymity:</strong> Architectural renderings, electrical schematics, and private sanctuary layouts are cataloged internally under encrypted project code names (such as "Commission-AP01") to decouple family identities from engineering files.
-                    </p>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">1.1 High-Net-Worth Protection</span>
+                        <p class="subclause-text">
+                            Because our clientele comprises industry leaders, esteemed families, and public figures, we enforce enterprise-level discretion. Every architect, engineer, and artisan is bound by comprehensive non-disclosure agreements.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">1.2 Spatial Anonymity</span>
+                        <p class="subclause-text">
+                            All technical blueprints, lighting schedules, and private master wing floor plans are cataloged internally under encrypted alphanumeric codes to ensure complete privacy across all site execution phases.
+                        </p>
+                    </div>
                 </div>
             </article>
 
-            <!-- 02. Information We Collect -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">02</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Information We Collect</h2>
+            <!-- 02. Data Collected -->
+            <article id="privacy-02" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 02</span>
+                    <h2 class="clause-title">Information We Collect</h2>
                 </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        2.1. <strong class="text-white">Direct Inquiries:</strong> When you initiate an inquiry through our concierge or schedule a design appraisal, we collect your name, direct telephone contact, email address, property location (e.g., Ballygunge, Alipore, New Town, Salt Lake, Dubai Marina), and spatial requirements.
-                    </p>
-                    <p>
-                        2.2. <strong class="text-white">Technical Site Data:</strong> During architectural site audits, we record physical structural dimensions, ceiling heights, MEP layout points, structural column locations, and ambient daylight exposure angles required for customized false ceiling and lighting design.
-                    </p>
-                    <p>
-                        2.3. <strong class="text-white">Digital Browsing:</strong> Our website collects minimal telemetry data (browser type, screen resolution, referrers, and page interaction timing) solely to optimize luxury visual performance, typography rendering, and responsive speed.
-                    </p>
-                </div>
-            </article>
-
-            <!-- 03. How Information Is Utilized -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">03</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">How We Utilize Project Data</h2>
-                </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        3.1. <strong class="text-white">Atelier Execution:</strong> Collected spatial data is utilized strictly for the engineering, procurement, and physical execution of your bespoke residence.
-                    </p>
-                    <p>
-                        3.2. <strong class="text-white">Direct Communication:</strong> We utilize your provided contact details exclusively for direct project status updates, 3D presentation approvals, milestone invoicing, and post-handover warranty servicing.
-                    </p>
-                    <p>
-                        3.3. <strong class="text-white">No Unsolicited Marketing:</strong> We never broadcast promotional spam or share your contact info with third-party real estate syndicates, furniture retailers, or marketing brokers.
-                    </p>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">2.1 Direct Inquiries</span>
+                        <p class="subclause-text">
+                            When initiating an atelier consultation, we record your primary contact details, residential address, architectural floor plans, family spatial briefs, and design preferences.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">2.2 Technical Site Measurements</span>
+                        <p class="subclause-text">
+                            During site feasibility inspections, we capture structural dimensions, load-bearing column placements, slab levels, and electrical ducting paths required for precision execution.
+                        </p>
+                    </div>
                 </div>
             </article>
 
-            <!-- 04. Blueprint Security & Digital Safeguards -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">04</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Data Security &amp; Blueprint Encryption</h2>
+            <!-- 03. Data Usage -->
+            <article id="privacy-03" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 03</span>
+                    <h2 class="clause-title">How We Utilize Project Data</h2>
                 </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        4.1. <strong class="text-white">Encrypted Digital Vault:</strong> All high-resolution 3D models, structural engineering CAD files, and client agreements are stored on dedicated cloud servers protected by multi-factor authentication and AES-256 bit encryption.
-                    </p>
-                    <p>
-                        4.2. <strong class="text-white">Physical Site Security:</strong> Printed architectural blueprints deployed on construction sites are strictly serialized and returned to the site supervisor upon completion of each tradeswork phase.
-                    </p>
-                </div>
-            </article>
-
-            <!-- 05. Photography & Portfolio Anonymity -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">05</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Architectural Photography &amp; Editorial Showcases</h2>
-                </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        5.1. <strong class="text-white">Consent-Driven Photography:</strong> LUXiHOME showcases curated architectural achievements within our design journal and international publications exclusively with prior written authorization from the property owner.
-                    </p>
-                    <p>
-                        5.2. <strong class="text-white">Absolute Anonymity:</strong> Published projects never disclose client names, family portraits, exterior street numbers, license plates, or specific security infrastructure. Sensitive private quarters (such as dressing room safes and private master study vaults) are strictly excluded from media documentation.
-                    </p>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">3.1 Turnkey Execution</span>
+                        <p class="subclause-text">
+                            Collected spatial measurements and architectural requirements are utilized exclusively for engineering, custom joinery drafting, and executing your residence.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">3.2 Direct Communication</span>
+                        <p class="subclause-text">
+                            Your contact details are used strictly for project progress reports, material approvals, milestone invoices, and post-handover warranty visits.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">3.3 Zero Promotional Monetization</span>
+                        <p class="subclause-text">
+                            We never broadcast marketing spam or sell your contact records to third-party brokers, material vendors, or real estate databases.
+                        </p>
+                    </div>
                 </div>
             </article>
 
-            <!-- 06. Cookies & Web Tracking -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">06</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Cookies &amp; Web Analytics</h2>
+            <!-- 04. CAD Security -->
+            <article id="privacy-04" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 04</span>
+                    <h2 class="clause-title">Data Security &amp; Blueprint Encryption</h2>
                 </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        6.1. <strong class="text-white">Essential Cookies:</strong> We utilize essential performance cookies to retain your site preferences, menu interactions, and display configurations across browsing sessions.
-                    </p>
-                    <p>
-                        6.2. <strong class="text-white">Aggregated Analytics:</strong> We employ Google Analytics (via anonymized IP addresses) strictly to measure website uptime, mobile navigation responsiveness, and reading habits across our design journal. You may block cookies through standard browser preferences without impacting core portfolio accessibility.
-                    </p>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">4.1 Digital Blueprint Vault</span>
+                        <p class="subclause-text">
+                            All 3D visualization files, CAD schematics, and structural calculations are archived on private cloud servers secured by multi-factor authentication and AES-256 bit encryption.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">4.2 On-Site Drawing Controls</span>
+                        <p class="subclause-text">
+                            Physical architectural drawing sets issued to site supervisors are strictly serialized and cataloged to prevent unauthorized distribution or duplication.
+                        </p>
+                    </div>
                 </div>
             </article>
 
-            <!-- 07. Your Rights & Archival Redaction -->
-            <article class="legal-card p-30 sm:p-45">
-                <div class="flex items-center gap-15 mb-20">
-                    <span class="text-24 sm:text-30 font-light text-[#C2A26A] font-sans">07</span>
-                    <h2 class="text-20 sm:text-26 font-normal uppercase tracking-0.8 text-white">Client Rights &amp; Data Erasure</h2>
+            <!-- 05. Photography -->
+            <article id="privacy-05" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 05</span>
+                    <h2 class="clause-title">Architectural Photography &amp; Journal Showcases</h2>
                 </div>
-                <div class="space-y-16 font-body text-15 sm:text-16 text-white/75 leading-relaxed">
-                    <p>
-                        7.1. <strong class="text-white">Access &amp; Review:</strong> You maintain the unconditional right to request an audit of the personal contact records and estate specifications held on file within our client management systems.
-                    </p>
-                    <p>
-                        7.2. <strong class="text-white">Archival Redaction:</strong> Following project completion and warranty expiration, you may formally request the archival purge or complete redaction of your personal identification from our operational databases.
-                    </p>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">5.1 Written Consent Prerequisite</span>
+                        <p class="subclause-text">
+                            LUXiHOME documents and showcases completed residences in our architectural journal exclusively with prior written consent from the client.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">5.2 Complete Client Anonymity</span>
+                        <p class="subclause-text">
+                            Published project features omit client names, specific street numbers, vehicle plates, and personal heirlooms. Private dressing rooms, security vaults, and personal safes are strictly excluded from media capture.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 06. Cookies -->
+            <article id="privacy-06" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 06</span>
+                    <h2 class="clause-title">Cookies &amp; Performance Analytics</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">6.1 Essential Navigation Cookies</span>
+                        <p class="subclause-text">
+                            We use essential session tokens to remember interactive navigation states and optimize layout rendering speed across your visits.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">6.2 Anonymized Telemetry</span>
+                        <p class="subclause-text">
+                            Aggregated analytics help us analyze mobile reading comfort and web performance without identifying individual visitors. You may disable cookies in your browser settings at any time.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 07. Client Rights -->
+            <article id="privacy-07" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 07</span>
+                    <h2 class="clause-title">Client Rights &amp; Archival Redaction</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">7.1 Access &amp; Audit</span>
+                        <p class="subclause-text">
+                            You may request a copy of all contact records and project specifications stored in our client registry at any time.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">7.2 Right to Erasure</span>
+                        <p class="subclause-text">
+                            Following the expiration of warranty and statutory compliance periods, you may formally request the permanent redaction or purge of your personal details from our archives.
+                        </p>
+                    </div>
                 </div>
             </article>
 
         </div>
 
-        <!-- Privacy Concierge Contact Box -->
-        <div class="mt-70 p-35 sm:p-50 rounded-24 bg-gradient-to-r from-[#172A3A] to-[#101C27] border border-[#C2A26A]/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-30">
+        <!-- Concierge Box -->
+        <div class="legal-concierge">
             <div>
-                <p class="legal-kicker text-12 text-[#C2A26A] uppercase mb-8">Data Protection Concierge</p>
-                <h3 class="text-22 sm:text-28 font-light text-white uppercase tracking-0.8 mb-10">Private Inquiries &amp; NDA Requests</h3>
-                <p class="text-14 text-white/60 max-w-[550px] mb-0">
-                    For private estate commissions requiring bespoke non-disclosure agreements or legal counsel review, please connect directly with our confidentiality officer.
+                <p class="concierge-kicker">Data Protection Desk</p>
+                <h3 class="concierge-heading">Private Inquiries &amp; NDA Execution</h3>
+                <p class="concierge-copy">
+                    For high-profile residential commissions requiring custom non-disclosure agreements or legal counsel review, please connect directly with our confidentiality desk.
                 </p>
             </div>
-            <div class="flex flex-col sm:flex-row items-center gap-15">
-                <a href="/contact/" class="inline-flex items-center justify-center px-30 py-14 rounded-full bg-[#C2A26A] text-[#13212E] font-medium text-13 tracking-1 uppercase hover:bg-white transition-colors duration-200">
-                    Submit Private Brief
-                </a>
-                <a href="mailto:privacy@luxihome.com" class="inline-flex items-center justify-center px-24 py-14 rounded-full border border-white/20 text-white font-normal text-13 tracking-1 uppercase hover:border-[#C2A26A] hover:text-[#C2A26A] transition-colors duration-200">
-                    privacy@luxihome.com
-                </a>
+            <div class="concierge-actions">
+                <a href="/contact/" class="btn-gold">Submit Private Brief</a>
+                <a href="mailto:privacy@luxihome.com" class="btn-outline">privacy@luxihome.com</a>
             </div>
         </div>
 
@@ -427,32 +982,32 @@
 
 
     <!-- Atelier Site Footer -->
-    <footer class="bg-[#0C151D] border-t border-white/10 pt-70 pb-50 px-24 sm:px-40 lg:px-70 text-white mt-100">
-        <div class="max-w-[1360px] mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-30 pb-50 border-b border-white/10">
+    <footer class="legal-footer">
+        <div class="legal-footer-inner">
+            <div class="legal-footer-top">
                 <div>
-                    <a href="/" class="block w-[150px] sm:w-[180px] mb-14" title="LUXiHOME">
-                        <img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME Atelier" class="w-full h-auto" />
+                    <a href="/" class="legal-footer-brand" title="LUXiHOME">
+                        <img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME Atelier" width="160" height="50" />
                     </a>
-                    <p class="font-body text-13 text-white/50 tracking-0.4 uppercase">
-                        Bespoke Luxury Architecture & Turnkey Interiors • Kolkata & Dubai
+                    <p class="legal-footer-tagline">
+                        Bespoke Luxury Architecture &amp; Turnkey Interiors • Kolkata &amp; Dubai
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-20 sm:gap-30 text-13 tracking-0.8 uppercase text-white/80">
-                    <a href="/" class="hover:text-[#C2A26A] transition-colors">Home</a>
-                    <a href="/about/" class="hover:text-[#C2A26A] transition-colors">About</a>
-                    <a href="/#projects" class="hover:text-[#C2A26A] transition-colors">Projects</a>
-                    <a href="/journal/" class="hover:text-[#C2A26A] transition-colors">Journal</a>
-                    <a href="/contact/" class="hover:text-[#C2A26A] transition-colors">Contact</a>
-                </div>
+                <nav class="legal-footer-links" aria-label="Main Navigation">
+                    <a href="/">Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/#projects">Projects</a>
+                    <a href="/journal/">Journal</a>
+                    <a href="/contact/">Contact</a>
+                </nav>
             </div>
 
-            <div class="pt-30 flex flex-col sm:flex-row justify-between items-center gap-20 text-12 tracking-0.4 text-white/40">
-                <p class="mb-0">© 2026 LUXiHOME Pvt. Ltd. All rights reserved.</p>
-                <div class="flex items-center gap-20 text-12">
-                    <a href="/terms-conditions/" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
-                    <span class="text-white/20">•</span>
-                    <a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a>
+            <div class="legal-footer-bottom">
+                <p>© 2026 LUXiHOME Pvt. Ltd. All rights reserved.</p>
+                <div class="legal-footer-legal">
+                    <a href="/terms-conditions/">Terms &amp; Conditions</a>
+                    <span class="legal-footer-sep">•</span>
+                    <a href="/privacy-policy/">Privacy Policy</a>
                 </div>
             </div>
         </div>
