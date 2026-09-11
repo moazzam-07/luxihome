@@ -315,29 +315,56 @@ var gf_legacy = {"is_legacy":""};
     }
 
     #block-3 > .container {
-        margin-top: 64px;
+        margin-top: 48px;
+        padding-inline: var(--pentagon-gutter);
     }
 
     #block-3 [class*="w-[105vw]"] {
         width: 100%;
         margin-left: 0;
-    }
-
-    #block-3 [class*="w-[calc(100vw-20px)]"] {
-        width: calc(100% - 24px);
-        margin-left: 12px;
-        margin-top: -52px;
-        padding: 28px 24px;
-    }
-
-    #block-3 [class*="w-[calc(100vw-20px)]"] p {
-        font-size: 19px;
-        line-height: 1.35;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     #block-3 [class*="absolute right-0 top-40"] {
-        top: 28px;
-        right: 12px;
+        top: 16px;
+        right: 16px;
+        z-index: 15;
+    }
+
+    #block-3 [class*="absolute right-0 top-40"] .aspect-\[180\/235\] {
+        width: 110px !important;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    #block-3 [class*="w-[calc(100vw-20px)]"] {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 24px;
+        padding: 0;
+    }
+
+    #block-3 [class*="w-[calc(100vw-20px)]"] > div {
+        padding: 26px 20px !important;
+        border-radius: 16px;
+        background-color: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+
+    #block-3 [class*="w-[calc(100vw-20px)]"] p {
+        font-size: 17px !important;
+        line-height: 1.45 !important;
+    }
+
+    #block-3 [class*="w-[calc(100vw-20px)]"] p:last-child {
+        font-size: 14px !important;
+        margin-top: 14px !important;
+        color: #BE7F64 !important;
+        letter-spacing: 0.05em;
     }
 
     #block-4 {
@@ -357,27 +384,66 @@ var gf_legacy = {"is_legacy":""};
     #block-5 {
         margin-inline: calc(var(--pentagon-gutter) * -1);
         padding-inline: 0;
+        position: relative;
     }
 
     #block-5 .swiper-image__slider {
         width: 100%;
-        height: min(80svh, 520px) !important;
+        height: min(75svh, 540px) !important;
         margin-top: 40px;
         margin-bottom: 24px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #block-5 .swiper-wrapper {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        position: relative !important;
+    }
+
+    #block-5 .swiper-slide {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        overflow: hidden !important;
+    }
+
+    #block-5 .swiper-slide [data-target="img-parallax"] {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        inset: 0 !important;
+    }
+
+    #block-5 .swiper-slide img.fill-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        position: absolute !important;
+        inset: 0 !important;
     }
 
     #block-5 .description {
-        bottom: 24px;
-        padding-inline: var(--pentagon-gutter);
+        position: absolute !important;
+        z-index: 20 !important;
+        bottom: 28px !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding-inline: var(--pentagon-gutter) !important;
     }
 
     #block-5 .description h2 {
-        font-size: clamp(30px, 9vw, 42px);
-        line-height: 1;
+        font-size: clamp(28px, 8.5vw, 40px) !important;
+        line-height: 1.05 !important;
     }
 
     #block-5 .slider-top {
-        top: 20px;
+        top: 20px !important;
+        z-index: 30 !important;
     }
 
     #block-5 .swiper-button-prev svg,
@@ -752,7 +818,7 @@ var gf_legacy = {"is_legacy":""};
                                     </div>
                                     <div class="order-1 md:order-2 col-span-11 md:col-span-5 md:col-start-8">
                                         <p class="font-sans md:font-body md:normal-case font-light text-20 leading-[1] max-md:mr-5 md:text-21 md:leading-27 text-white
-                                        text-pretty">Tucked away from the bustling heart of the city, LUXiHOME presents a masterpiece of modern Middle-Eastern living on Palm Jumeirah</p>
+                                        text-pretty">Tucked away in the serene greenery of Kolaghat, LUXiHOME presents Alam's Pentagon — a private architectural sanctuary of bespoke luxury living.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1011,7 +1077,7 @@ var gf_legacy = {"is_legacy":""};
 <div class="container">
     <div class="md:grid grid-cols-12 justify-center text-white mt-20 mb-50 md:mb-150 md:mt-120">
         <div class="col-span-10 col-start-2 font-sans font-light text-24 leading-24 pt-100 md:pt-0 md:text-44 md:leading-48">
-            Elaine breathes in golden hues and the idyllic lull of water. Cool marbles grace each step and gleam with the tales of times gone by.        </div>
+            Alam's Pentagon breathes in warm golden hues and timeless modern elegance. Handpicked marbles, bespoke craftsmanship, and grand proportions grace each step of this private estate in Kolaghat.        </div>
     </div>
 </div>
         </section>
@@ -1083,19 +1149,16 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
         </div>
         <div class="col-span-6 md:col-span-2">
             <div class="absolute right-0 top-40 xl:right-100 2xl:right-[8vw] md:top-[210px] lg:top-100 xl:top-[210px] 2xl:top-[100px]">
-                <div class="aspect-[180/235] w-[90px] md:w-[140px] lg:w-[180px]" data-target="img-parallax" parallax-amount="-20">
-                    <picture loading="lazy" role="presentation" class="absolute inset-0 w-full h-full object-cover children:absolute children:inset-0 children:w-full children:h-full children:object-cover">
-<source type="image/webp" srcset="/wp-content/uploads/2025/05/CHI4225-1.png.webp" sizes="(max-width: 356px) 100vw, 356px"/>
-<img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/CHI4225-1.png" alt="" srcset="" sizes="(max-width: 356px) 100vw, 356px"/>
-</picture>
+                <div class="aspect-[180/235] w-[90px] md:w-[140px] lg:w-[180px] rounded-12 overflow-hidden border border-white/30 shadow-2xl" data-target="img-parallax" parallax-amount="-20">
+                    <img loading="lazy" role="presentation" class="absolute inset-0 w-full h-full object-cover" src="/assets/img/pentagon/alams-pentagon-dining.jpg" alt="Alam's Pentagon Designer Dining Space" />
                 </div>
             </div>
         </div>
         
                 <div class="w-[calc(100vw-20px)] md:w-[unset] -ml-40 md:ml-0 col-span-6 md:col-span-7 lg:col-span-8 md:col-start-6 lg:col-start-5 md:pr-15 lg:pr-30 -mt-100 lg:-mt-[220px] z-10 relative">
-                    <div class="text-white py-40 lg:py-75 px-40 lg:px-90 bg-white/5 border-transparent backdrop-blur-20 md:border-[20px] ">
-                        <p class="font-body text-20 leading-[1.5rem] lg:text-28 lg:leading-32 xl:text-34 xl:leading-38">We design grand spaces to inspire, not intimidate. A flying bird, a universal symbol of hope, ensures that the grandeur of the spaces we have created is always balanced with a profound sense of belonging and comfort.</p>
-                                                    <p class="font-bold text-14 leading-[1rem] lg:text-20 tracking-0.88 mt-10 lg:mt-20">Hassan Ali, X & Y architects</p>
+                    <div class="text-white py-40 lg:py-75 px-40 lg:px-90 bg-white/5 border-transparent backdrop-blur-20 md:border-[20px] rounded-16">
+                        <p class="font-body text-20 leading-[1.5rem] lg:text-28 lg:leading-32 xl:text-34 xl:leading-38">We design grand spaces to inspire, not intimidate. At Alam's Pentagon, every architectural line and bespoke detail ensures that the grandeur of the estate is embraced with warmth, privacy, and absolute belonging.</p>
+                                                    <p class="font-bold text-14 leading-[1rem] lg:text-20 tracking-0.88 mt-10 lg:mt-20 text-sand">SJ Alam, Founder & Principal Designer, LUXiHOME</p>
                                             </div>
                 </div>
 
@@ -1112,13 +1175,13 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
             
 <div class="px-30 md:px-80 xl:container my-[30px] md:my-100 lg:my-[178px]">
     <div class="lg:w-10/12 mx-auto">
-                    <h2 class="text-white             font-body font-light text-26 leading-28 lg:text-44 lg:leading-48 tracking-0.42 lg:tracking-0.88                         mb-18">Designed to transform lives on Palm Jumeirah            </h2>
+                    <h2 class="text-white             font-body font-light text-26 leading-28 lg:text-44 lg:leading-48 tracking-0.42 lg:tracking-0.88                         mb-18">Designed to transform lives in Kolaghat            </h2>
                         <div class="grid   lg:grid-cols-2 gap-20 lg:gap-[48px]  *:font-body *:text-21 *:leading-26 *:lg:text-24 *:lg:leading-32">
             <div class="prose max-w-none text-white">
-                <p>At Alam's Pentagon, exquisitely enriching moments define an exceptional new way of life. From waking up to waves gently crashing on the shore to tranquility at every turn, this is sea-caressing living at its most ethereal.</p>
+                <p>At Alam's Pentagon, exquisitely enriching moments define an exceptional new way of life. From peaceful mornings greeted by fresh riverside breezes to absolute tranquility at every turn, this is bespoke estate living at its most refined.</p>
             </div>
                             <div class="prose  max-w-none text-white">
-                    <p>Elaine has been conceptualised to blur the line between art and architecture, from her façade to her interiors. Each seemingly endless yet intimate space is bathed in an unmistakable aura of calm.</p>
+                    <p>Alam's Pentagon has been conceptualised to blur the line between art and architecture, from its commanding contemporary façade to its curated interior sanctuaries. Each expansive yet intimate space is bathed in an unmistakable aura of calm.</p>
                 </div>
                     </div>
     </div>
@@ -1133,11 +1196,11 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
             data-next-block=key-features>
 
             
-<div class="swiper-image__slider overflow-hidden relative w-screen h-[400px] md:h-[600px] lg:h-[800px] xl:h-[900px] 2xl:h-[1080px] my-50 lg:my-100" data-target="image-slider">
-    <div class="swiper-wrapper">
-                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+<div class="swiper-image__slider overflow-hidden relative w-full h-[400px] md:h-[600px] lg:h-[800px] xl:h-[900px] 2xl:h-[1080px] my-50 lg:my-100" data-target="image-slider">
+    <div class="swiper-wrapper w-full h-full flex relative">
+                        <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg" alt="" srcset="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg 1980w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-640x275.jpg 640w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-400x172.jpg 400w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-1280x549.jpg 1280w" sizes="(max-width: 1980px) 100vw, 1980px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg" alt="Grand Foyer" srcset="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg 1980w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-640x275.jpg 640w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-400x172.jpg 400w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-1280x549.jpg 1280w" sizes="(max-width: 1980px) 100vw, 1980px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
@@ -1147,9 +1210,9 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
                         <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
                     </div>
                 </div>
-                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                        <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="lazy" role="presentation" src="/assets/img/pentagon/alams-pentagon-living-lounge.jpg" alt="Alam's Pentagon Living Lounge" srcset="/assets/img/pentagon/alams-pentagon-living-lounge-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-living-lounge-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-living-lounge-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-living-lounge.jpg" alt="Alam's Pentagon Living Lounge" srcset="/assets/img/pentagon/alams-pentagon-living-lounge-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-living-lounge-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-living-lounge-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
@@ -1159,9 +1222,9 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
                         <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
                     </div>
                 </div>
-                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                        <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-2100x973.jpg" alt="" srcset="/wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-2100x973.jpg 2100w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-640x296.jpg 640w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-400x185.jpg 400w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-1280x593.jpg 1280w" sizes="(max-width: 2100px) 100vw, 2100px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-2100x973.jpg" alt="Cinema Room" srcset="/wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-2100x973.jpg 2100w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-640x296.jpg 640w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-400x185.jpg 400w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-1280x593.jpg 1280w" sizes="(max-width: 2100px) 100vw, 2100px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
@@ -1171,9 +1234,9 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
                         <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
                     </div>
                 </div>
-                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                        <div class="swiper-slide w-full h-full relative overflow-hidden">
                     <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
-                        <img loading="lazy" role="presentation" src="/assets/img/pentagon/alams-pentagon-master-suite.jpg" alt="Alam's Pentagon Master Suite" srcset="/assets/img/pentagon/alams-pentagon-master-suite-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-master-suite-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-master-suite-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <img loading="eager" role="presentation" src="/assets/img/pentagon/alams-pentagon-master-suite.jpg" alt="Alam's Pentagon Master Suite" srcset="/assets/img/pentagon/alams-pentagon-master-suite-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-master-suite-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-master-suite-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
                     </div>
 
