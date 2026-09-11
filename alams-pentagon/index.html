@@ -386,9 +386,13 @@ var gf_legacy = {"is_legacy":""};
         height: 44px;
     }
 
+    #block-6 {
+        padding-bottom: 60px;
+    }
+
     #block-6 > .container {
         margin-block: 48px;
-        padding-block: 32px 36px;
+        padding-block: 32px 75px;
     }
 
     #block-6 h2 {
@@ -992,7 +996,7 @@ var gf_legacy = {"is_legacy":""};
                                     </div>
             </section>
 
-            <div class="relative -mt-[100vh]">
+            <div class="relative mt-0 md:-mt-[100vh] pt-40 md:pt-0">
                 <div class="absolute inset-0 bg-brown">
                     <img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/Serena-BG.png" alt="" srcset="/wp-content/uploads/2025/05/Serena-BG.png 2048w, /wp-content/uploads/2025/05/Serena-BG-640x1663.png 640w, /wp-content/uploads/2025/05/Serena-BG-400x1039.png 400w" sizes="(max-width: 2048px) 100vw, 2048px" class="fill-image"/>                </div>
 
@@ -1224,12 +1228,12 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
 
 
         <section id="block-6"
-            class="block block--key-features relative [&>div:first-of-type]:!mb-0"
+            class="block block--key-features relative pb-60 md:pb-80"
             data-block="key-features"
             >
 
             
-<div class="container text-white border-t border-b border-brown pt-40 pb-45 lg:py-70 my-[48px] lg:my-[117px]">
+<div class="container text-white border-t border-b border-brown pt-40 pb-75 lg:py-70 my-[48px] lg:my-[117px]">
     <div class="lg:grid lg:grid-cols-12">
         <div class="col-span-4">
             <h2 class="font-light text-42 leading-40 sm:text-[48px] sm:leading-40 lg:text-62 lg:leading-52 tracking-2.1 lg:tracking-3.7 uppercase">Key <br>features</h2>
@@ -1528,11 +1532,13 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 				if (!e.changedTouches || e.changedTouches.length === 0) return;
 				var deltaY = startY - e.changedTouches[0].clientY;
 				var deltaTime = Date.now() - startTime;
-				if (deltaY > 45 && deltaTime < 500) {
+				if (Math.abs(deltaY) > 45 && deltaTime < 500) {
 					var currentScroll = window.scrollY || window.pageYOffset;
 					var slideHeight = window.innerHeight;
-					var currentSlide = Math.floor(currentScroll / slideHeight);
-					var nextTarget = (currentSlide + 1) * slideHeight;
+					var currentSlide = Math.round(currentScroll / slideHeight);
+					var targetSlide = deltaY > 0 ? currentSlide + 1 : currentSlide - 1;
+					if (targetSlide < 0) targetSlide = 0;
+					var nextTarget = targetSlide * slideHeight;
 					if (window.lenis && typeof window.lenis.scrollTo === 'function') {
 						window.lenis.scrollTo(nextTarget, { duration: 0.8 });
 					} else {
