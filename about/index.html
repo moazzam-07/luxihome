@@ -118,7 +118,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel='stylesheet' id='gform_basic-css' href='/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=2.10.5' media='all' />
 <link rel='stylesheet' id='gform_theme_components-css' href='/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5' media='all' />
 <link rel='stylesheet' id='gform_theme-css' href='/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5' media='all' />
-<link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=1774457248' media='all' />
+<link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
 <link rel='stylesheet' id='estimate-modal-css' href='/assets/css/estimate-modal.css' media='all' />
 <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 <script id="gform_json-js" defer='defer' src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
@@ -143,27 +143,47 @@ var gf_legacy = {"is_legacy":""};
 <script id="gform_gravityforms_utils-js" defer='defer' src="/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=3f278756f0a3032bed328ff6a9f6c01d"></script>
 <link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/pages/483" /><link rel='shortlink' href='/?p=483' />
 <style id="wp-custom-css">
-/* Luxury Logo Responsive Sizing */
+/* Luxury Logo Responsive Sizing & Alignment */
+@media (max-width: 1023px) {
+	[data-target="header-menu"].order-2,
+	.luxi-header-logo {
+		left: 20px !important;
+		right: auto !important;
+		transform: none !important;
+		justify-content: flex-start !important;
+		text-align: left !important;
+	}
+}
 [data-target="logo-lottie"],
 [data-target="logo-lottie-dark"] {
-	width: 145px !important;
+	width: 160px !important;
+	max-width: 160px !important;
 	height: auto !important;
 }
 [data-target="logo-lottie"] svg,
 [data-target="logo-lottie-dark"] svg {
-	width: 100% !important;
+	width: 160px !important;
+	max-width: 160px !important;
 	height: auto !important;
+	margin: 0 !important;
 }
 @media (min-width: 640px) {
 	[data-target="logo-lottie"],
-	[data-target="logo-lottie-dark"] {
+	[data-target="logo-lottie-dark"],
+	[data-target="logo-lottie"] svg,
+	[data-target="logo-lottie-dark"] svg {
 		width: 210px !important;
+		max-width: 210px !important;
 	}
 }
 @media (min-width: 1024px) {
 	[data-target="logo-lottie"],
-	[data-target="logo-lottie-dark"] {
+	[data-target="logo-lottie-dark"],
+	[data-target="logo-lottie"] svg,
+	[data-target="logo-lottie-dark"] svg {
 		width: 260px !important;
+		max-width: 260px !important;
+		margin: 0 auto !important;
 	}
 }
 /* Location Heading */
@@ -354,7 +374,7 @@ var gf_legacy = {"is_legacy":""};
 </div>
 </div>
 </div>
-<div class="order-2 flex justify-center items-center absolute left-1/2 -translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
+<div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
 <a class="group pointer-events-auto block w-fit h-fit" data-target="menu-logo" data-theme="light" href="/" data-barba-prevent="self" title="LUXiHOME">
 <div class="relative w-[160px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=light]:opacity-100 group-data-[theme=light]:visible will-change-[opacity]" data-played="true" data-target="logo-lottie" title="LUXiHOME">
 <svg class="w-[160px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto" fill="none" height="84" viewbox="105 40 1010 325" width="260" xmlns="http://www.w3.org/2000/svg">

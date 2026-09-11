@@ -17720,8 +17720,9 @@ html.lenis {
   color: #FFFFFF !important;
 }
 
-/* LUXiHOME Mobile Header Logo Positioning: Left-aligned on mobile, Centered on desktop */
-@media (max-width: 1023px) {
+/* LUXiHOME Global Header Logo: Exact Mobile Size (160px) & Placement (left: 20px) Across All Pages */
+@media (max-width: 639px) {
+  div:has(> [data-target="menu-logo"]),
   [data-target="header-menu"].order-2,
   .luxi-header-logo {
     left: 20px !important;
@@ -17730,14 +17731,82 @@ html.lenis {
     justify-content: flex-start !important;
     text-align: left !important;
   }
+
+  [data-target="menu-logo"],
+  [data-target="logo-lottie"],
+  [data-target="logo-lottie-dark"] {
+    width: 160px !important;
+    max-width: 160px !important;
+    height: auto !important;
+  }
+
+  [data-target="logo-lottie"] svg,
+  [data-target="logo-lottie-dark"] svg,
+  [data-target="menu-logo"] svg {
+    width: 160px !important;
+    max-width: 160px !important;
+    height: auto !important;
+    margin: 0 !important;
+    display: block !important;
+  }
 }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  div:has(> [data-target="menu-logo"]),
+  [data-target="header-menu"].order-2,
+  .luxi-header-logo {
+    left: 24px !important;
+    right: auto !important;
+    transform: none !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  [data-target="menu-logo"],
+  [data-target="logo-lottie"],
+  [data-target="logo-lottie-dark"] {
+    width: 210px !important;
+    max-width: 210px !important;
+    height: auto !important;
+  }
+
+  [data-target="logo-lottie"] svg,
+  [data-target="logo-lottie-dark"] svg,
+  [data-target="menu-logo"] svg {
+    width: 210px !important;
+    max-width: 210px !important;
+    height: auto !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+}
+
 @media (min-width: 1024px) {
+  div:has(> [data-target="menu-logo"]),
   [data-target="header-menu"].order-2,
   .luxi-header-logo {
     left: 50% !important;
     right: auto !important;
     transform: translateX(-50%) !important;
     justify-content: center !important;
+  }
+
+  [data-target="menu-logo"],
+  [data-target="logo-lottie"],
+  [data-target="logo-lottie-dark"] {
+    width: 260px !important;
+    max-width: 260px !important;
+    height: auto !important;
+  }
+
+  [data-target="logo-lottie"] svg,
+  [data-target="logo-lottie-dark"] svg,
+  [data-target="menu-logo"] svg {
+    width: 260px !important;
+    max-width: 260px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 }
 
