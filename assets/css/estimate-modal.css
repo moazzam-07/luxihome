@@ -561,3 +561,25 @@ body.single-bespoke-villa #luxi-dock-estimate-btn div::before {
         font-size: 12px;
     }
 }
+
+/* Force white text on modal buttons across themes */
+.luxi-next-btn,
+.luxi-next-btn span,
+.luxi-submit-pill,
+.luxi-submit-pill span,
+#luxi-estimate-card button span,
+.single-bespoke-villa #luxi-estimate-card button span,
+.single-bespoke-villa .luxi-next-btn span,
+.single-bespoke-villa .luxi-submit-pill span,
+body.single-bespoke-villa #luxi-estimate-card button span,
+body.single-bespoke-villa .luxi-next-btn span,
+body.single-bespoke-villa .luxi-submit-pill span {
+    color: #FFFFFF !important;
+}
+
+.single-bespoke-villa #luxi-estimate-card button div::before,
+.single-bespoke-villa .luxi-next-btn div::before,
+.single-bespoke-villa .luxi-submit-pill div::before,
+body.single-bespoke-villa #luxi-estimate-card button div::before {
+    background-color: transparent !important;
+}
