@@ -199,7 +199,8 @@ var gf_legacy = {"is_legacy":""};
 
     html,
     body {
-        overflow-x: hidden;
+        overflow-x: clip;
+        -webkit-overflow-scrolling: touch;
     }
 
     #content-wrap,
@@ -212,7 +213,7 @@ var gf_legacy = {"is_legacy":""};
     [data-name="banner"] {
         height: 100svh;
         min-height: 560px;
-        max-height: 860px;
+        max-height: none;
     }
 
     [data-name="banner"] picture img,
@@ -292,7 +293,9 @@ var gf_legacy = {"is_legacy":""};
     }
 
     #block-1 .container,
-    #block-4 {
+    #block-4,
+    #block-5,
+    #block-6 > .container {
         padding-inline: var(--pentagon-gutter);
     }
 
@@ -349,6 +352,59 @@ var gf_legacy = {"is_legacy":""};
     #block-4 h2 {
         font-size: clamp(26px, 7.5vw, 36px);
         line-height: 1.08;
+    }
+
+    #block-5 {
+        margin-inline: calc(var(--pentagon-gutter) * -1);
+        padding-inline: 0;
+    }
+
+    #block-5 .swiper-image__slider {
+        width: 100%;
+        height: min(80svh, 520px) !important;
+        margin-top: 40px;
+        margin-bottom: 24px;
+    }
+
+    #block-5 .description {
+        bottom: 24px;
+        padding-inline: var(--pentagon-gutter);
+    }
+
+    #block-5 .description h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1;
+    }
+
+    #block-5 .slider-top {
+        top: 20px;
+    }
+
+    #block-5 .swiper-button-prev svg,
+    #block-5 .swiper-button-next svg {
+        width: 44px;
+        height: 44px;
+    }
+
+    #block-6 > .container {
+        margin-block: 48px;
+        padding-block: 32px 36px;
+    }
+
+    #block-6 h2 {
+        font-size: clamp(38px, 12vw, 52px);
+        line-height: .95;
+    }
+
+    #block-6 [data-target="zoom"] {
+        display: block;
+        width: 100%;
+    }
+
+    #block-6 [data-target="zoom"] img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .pin-spacer-footer-reveal {
@@ -663,7 +719,7 @@ var gf_legacy = {"is_legacy":""};
 		<div id="content-wrap">
 
         <main class="main-content relative rounded-b-40 overflow-hidden bg-brown">
-            <section data-name="banner" class="relative w-screen h-screen z-40 bg-black">
+            <section data-name="banner" class="relative w-screen h-screen z-40">
                 <div class="absolute inset-0 z-10 overflow-hidden" data-target="banner-loading-screen" data-index="0">
                     <div class="absolute inset-0 bg-black" data-target="banner-loading-image">
                         <picture loading="eager" role="presentation" class="fill-image opacity-70">
@@ -936,7 +992,7 @@ var gf_legacy = {"is_legacy":""};
                                     </div>
             </section>
 
-            <div class="relative pt-10 md:-mt-[100vh]">
+            <div class="relative -mt-[100vh]">
                 <div class="absolute inset-0 bg-brown">
                     <img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/Serena-BG.png" alt="" srcset="/wp-content/uploads/2025/05/Serena-BG.png 2048w, /wp-content/uploads/2025/05/Serena-BG-640x1663.png 640w, /wp-content/uploads/2025/05/Serena-BG-400x1039.png 400w" sizes="(max-width: 2048px) 100vw, 2048px" class="fill-image"/>                </div>
 
@@ -1050,7 +1106,7 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
             data-next-block=image-slider>
 
             
-<div class="px-30 md:px-80 xl:container mt-[30px] md:mt-100 lg:mt-[178px] mb-0 pb-[60px] md:pb-[100px] lg:pb-[140px]">
+<div class="px-30 md:px-80 xl:container my-[30px] md:my-100 lg:my-[178px]">
     <div class="lg:w-10/12 mx-auto">
                     <h2 class="text-white             font-body font-light text-26 leading-28 lg:text-44 lg:leading-48 tracking-0.42 lg:tracking-0.88                         mb-18">Designed to transform lives on Palm Jumeirah            </h2>
                         <div class="grid   lg:grid-cols-2 gap-20 lg:gap-[48px]  *:font-body *:text-21 *:leading-26 *:lg:text-24 *:lg:leading-32">
@@ -1064,6 +1120,245 @@ xl:text-80 xl:leading-[80px] xl:tracking-[3%] pl-25 xl:pl-0 xl:-translate-x-25 w
     </div>
 
 </div>
+        </section>
+
+
+        <section id="block-5"
+            class="block block--slider relative "
+            data-block="image-slider"
+            data-next-block=key-features>
+
+            
+<div class="swiper-image__slider overflow-hidden relative w-screen h-[400px] md:h-[600px] lg:h-[800px] xl:h-[900px] 2xl:h-[1080px] my-50 lg:my-100" data-target="image-slider">
+    <div class="swiper-wrapper">
+                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                    <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
+                        <img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg" alt="" srcset="/wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526.jpg 1980w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-640x275.jpg 640w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-400x172.jpg 400w, /wp-content/uploads/2025/05/Vill-72-l-Entrance-l-01-e1763040550526-1280x549.jpg 1280w" sizes="(max-width: 1980px) 100vw, 1980px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    </div>
+
+                    <div class="absolute w-full h-full bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    <div class="description w-full absolute z-20 bottom-20 left-0 md:bottom-40 lg:bottom-50 xl:bottom-70 px-30 md:px-50 xl:px-85 text-white break-words">
+                        <p class="font-sans font-light text-18 leading-24 tracking-0.9 uppercase mb-10">Living spaces</p>                        <h2 class="text-4xl font-light text-36 leading-32 md:text-50 md:leading-46 tracking-2.267 mb-8 uppercase">Grand Foyer</h2>
+                        <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
+                    </div>
+                </div>
+                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                    <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
+                        <img loading="lazy" role="presentation" src="/assets/img/pentagon/alams-pentagon-living-lounge.jpg" alt="Alam's Pentagon Living Lounge" srcset="/assets/img/pentagon/alams-pentagon-living-lounge-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-living-lounge-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-living-lounge-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    </div>
+
+                    <div class="absolute w-full h-full bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    <div class="description w-full absolute z-20 bottom-20 left-0 md:bottom-40 lg:bottom-50 xl:bottom-70 px-30 md:px-50 xl:px-85 text-white break-words">
+                        <p class="font-sans font-light text-18 leading-24 tracking-0.9 uppercase mb-10">Living spaces</p>                        <h2 class="text-4xl font-light text-36 leading-32 md:text-50 md:leading-46 tracking-2.267 mb-8 uppercase">Living Lounge</h2>
+                        <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
+                    </div>
+                </div>
+                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                    <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
+                        <img loading="lazy" role="presentation" src="/wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-2100x973.jpg" alt="" srcset="/wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-2100x973.jpg 2100w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-640x296.jpg 640w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-400x185.jpg 400w, /wp-content/uploads/2025/05/Villa-72-l-Cinema-l-02-e1763040532986-1280x593.jpg 1280w" sizes="(max-width: 2100px) 100vw, 2100px" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    </div>
+
+                    <div class="absolute w-full h-full bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    <div class="description w-full absolute z-20 bottom-20 left-0 md:bottom-40 lg:bottom-50 xl:bottom-70 px-30 md:px-50 xl:px-85 text-white break-words">
+                        <p class="font-sans font-light text-18 leading-24 tracking-0.9 uppercase mb-10">Living spaces</p>                        <h2 class="text-4xl font-light text-36 leading-32 md:text-50 md:leading-46 tracking-2.267 mb-8 uppercase">Cinema room</h2>
+                        <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
+                    </div>
+                </div>
+                        <div class="swiper-slide w-screen h-full relative overflow-hidden">
+                    <div class="relative w-full h-full will-change-transform" data-target="img-parallax" parallax-amount="20">
+                        <img loading="lazy" role="presentation" src="/assets/img/pentagon/alams-pentagon-master-suite.jpg" alt="Alam's Pentagon Master Suite" srcset="/assets/img/pentagon/alams-pentagon-master-suite-640w.jpg 640w, /assets/img/pentagon/alams-pentagon-master-suite-1280w.jpg 1280w, /assets/img/pentagon/alams-pentagon-master-suite-1920w.jpg 1920w" sizes="100vw" class="fill-image"/>                        <div class="absolute inset-0 bg-gradient-to-bl from-black to-transparent to-50% opacity-50 z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    </div>
+
+                    <div class="absolute w-full h-full bg-gradient-to-t from-black to-transparent opacity-50 z-10"></div>
+                    <div class="description w-full absolute z-20 bottom-20 left-0 md:bottom-40 lg:bottom-50 xl:bottom-70 px-30 md:px-50 xl:px-85 text-white break-words">
+                        <p class="font-sans font-light text-18 leading-24 tracking-0.9 uppercase mb-10">Living spaces</p>                        <h2 class="text-4xl font-light text-36 leading-32 md:text-50 md:leading-46 tracking-2.267 mb-8 uppercase">Master Suite</h2>
+                        <p class="text-lg text-24 leading-26 font-body w-[90%] md:w-5/6"></p>
+                    </div>
+                </div>
+            </div>
+    <div class="slider-top flex justify-center md:justify-between w-full absolute top-35 sm:top-20 md:top-75 left-0 z-20 md:px-85">
+        <div class="flex items-center text-white text-18 tracking-1.8 gap-10">
+            <div class="swiper-button-prev cursor-pointer md:hidden">
+                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25.5" cy="25.5" r="25" transform="matrix(-1 0 0 1 51 0)" stroke="white" />
+                    <path d="M27 20L21.0045 25.9955" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M27 31.7734L21.0045 25.778" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="current-slide pt-3"></div>
+            <div data-target="slider-line">
+                <div class="slider-line__fill"></div>
+            </div>
+            <div class="all-slides pt-3"></div>
+            <div class="swiper-button-next cursor-pointer md:hidden">
+                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25.5" cy="25.5" r="25" stroke="white" />
+                    <path d="M24 20L29.9955 25.9955" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M24 31.7734L29.9955 25.778" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+        <div class="gap-10 hidden md:flex">
+            <div class="swiper-button-prev cursor-pointer">
+                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25.5" cy="25.5" r="25" transform="matrix(-1 0 0 1 51 0)" stroke="white" />
+                    <path d="M27 20L21.0045 25.9955" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M27 31.7734L21.0045 25.778" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="swiper-button-next cursor-pointer">
+                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25.5" cy="25.5" r="25" stroke="white" />
+                    <path d="M24 20L29.9955 25.9955" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M24 31.7734L29.9955 25.778" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+
+
+        <section id="block-6"
+            class="block block--key-features relative [&>div:first-of-type]:!mb-0"
+            data-block="key-features"
+            >
+
+            
+<div class="container text-white border-t border-b border-brown pt-40 pb-45 lg:py-70 my-[48px] lg:my-[117px]">
+    <div class="lg:grid lg:grid-cols-12">
+        <div class="col-span-4">
+            <h2 class="font-light text-42 leading-40 sm:text-[48px] sm:leading-40 lg:text-62 lg:leading-52 tracking-2.1 lg:tracking-3.7 uppercase">Key <br>features</h2>
+            <p class="font-body text-21 leading-26 lg:text-24 lg:leading-36 tracking-1.2 mt-16">Catch a glimpse of what Alam's Pentagon has to offer.</p>
+
+            <a class="scrolldown group self-start inline-flex mx-auto items-center gap-20 text-white bg-white/10 hover:text-dark-blue transition-colors duration-500 py-9 pr-12 pl-[29px] rounded-60 backdrop-blur-24 mt-24 overflow-hidden" href="/contact/">
+                <span class="font-sans font-normal text-14 leading-none tracking-1.6 *:text-12 *:font-extralight z-10 pointer-events-none">Further details</span>
+                <div class="flex  justify-center items-center w-35 h-35 rounded-full &_svg]:rotate-180 [&_path]:stroke-dark-blue rotate-90 pointer-events-none before:absolute before:size-full before:bg-white before:rounded-full before:-z-10 before:pointer-events-none before:transition-transform before:duration-500 group-hover:before:scale-[20]">
+                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 209">
+<path id="Line 35" d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Line 36" d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>
+                </div>
+            </a>
+
+
+
+        </div>
+                    <ul class="col-span-7 col-start-7 sm:columns-2 gap-[32px] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-2 after:bg-sand mt-20 lg:mt-0">
+                
+                    <li class="py-16 border-b border-brown last:border-none">Home Cinema</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Majlis</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Grand Foyer</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Panoramic lift</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Kids Playroom</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Garage Parking</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Discrete Staff Areas</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Safe Room</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Spa And Treatment Rooms</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Outdoor Bar</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Indoor Gym</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Teppanyaki Table</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Infinity Pool</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Fire Pit</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Water Features</li>
+
+                
+                    <li class="py-16 border-b border-brown last:border-none">Terraces</li>
+
+                            </ul>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-28 mt-[48px] lg:mt-75">
+                            <a href="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-1.jpg" class="no-barba border border-white cursor-pointer" data-target="zoom" data-caption="Ground floor">
+                    <picture loading="eager" role="presentation" class="block  *:w-full">
+<source type="image/webp" srcset="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-1.jpg.webp 1859w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-1-640x611.jpg.webp 640w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-1-400x382.jpg.webp 400w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-1-1280x1223.jpg.webp 1280w" sizes="(max-width: 1859px) 100vw, 1859px"/>
+<img loading="eager" role="presentation" src="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-1.jpg" alt="" srcset="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-1.jpg 1859w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-1-640x611.jpg 640w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-1-400x382.jpg 400w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-1-1280x1223.jpg 1280w" sizes="(max-width: 1859px) 100vw, 1859px"/>
+</picture>
+                    <div class="flex justify-between items-center py-16 px-24 lg:p-24">
+                        <h3 class="uppercase text-16">Ground floor</h3>
+                        <div class="flex justify-center items-center w-28 h-28 bg-white rounded-full">
+                            <div class="w-16 h-auto children:w-full children:h-auto"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="5.32108" cy="4.60233" r="3.38808" stroke="#1A2026" stroke-width="0.616014"/>
+<path d="M3.07812 7.28125L1.0031 9.35627" stroke="#1A2026" stroke-width="0.616014" stroke-linecap="round"/>
+<path d="M5.40625 3.48438L5.40625 5.68527" stroke="#1A2026" stroke-width="0.733632" stroke-linecap="round"/>
+<path d="M6.50781 4.58594L4.30692 4.58594" stroke="#1A2026" stroke-width="0.733632" stroke-linecap="round"/>
+</svg>
+</div>
+                        </div>
+                    </div>
+                </a>
+                            <a href="/wp-content/uploads/2025/05/first-Floor-Plan-1-1.jpg" class="no-barba border border-white cursor-pointer" data-target="zoom" data-caption="Floor one">
+                    <picture loading="eager" role="presentation" class="block  *:w-full">
+<source type="image/webp" srcset="/wp-content/uploads/2025/05/first-Floor-Plan-1-1-2100x2006.jpg.webp 2100w, /wp-content/uploads/2025/05/first-Floor-Plan-1-1-640x611.jpg.webp 640w, /wp-content/uploads/2025/05/first-Floor-Plan-1-1-400x382.jpg.webp 400w, /wp-content/uploads/2025/05/first-Floor-Plan-1-1-1280x1223.jpg.webp 1280w" sizes="(max-width: 2100px) 100vw, 2100px"/>
+<img loading="eager" role="presentation" src="/wp-content/uploads/2025/05/first-Floor-Plan-1-1.jpg" alt="" srcset="/wp-content/uploads/2025/05/first-Floor-Plan-1-1.jpg 2100w, /wp-content/uploads/2025/05/first-Floor-Plan-1-1-640x611.jpg 640w, /wp-content/uploads/2025/05/first-Floor-Plan-1-1-400x382.jpg 400w, /wp-content/uploads/2025/05/first-Floor-Plan-1-1-1280x1223.jpg 1280w" sizes="(max-width: 2100px) 100vw, 2100px"/>
+</picture>
+                    <div class="flex justify-between items-center py-16 px-24 lg:p-24">
+                        <h3 class="uppercase text-16">Floor one</h3>
+                        <div class="flex justify-center items-center w-28 h-28 bg-white rounded-full">
+                            <div class="w-16 h-auto children:w-full children:h-auto"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="5.32108" cy="4.60233" r="3.38808" stroke="#1A2026" stroke-width="0.616014"/>
+<path d="M3.07812 7.28125L1.0031 9.35627" stroke="#1A2026" stroke-width="0.616014" stroke-linecap="round"/>
+<path d="M5.40625 3.48438L5.40625 5.68527" stroke="#1A2026" stroke-width="0.733632" stroke-linecap="round"/>
+<path d="M6.50781 4.58594L4.30692 4.58594" stroke="#1A2026" stroke-width="0.733632" stroke-linecap="round"/>
+</svg>
+</div>
+                        </div>
+                    </div>
+                </a>
+                            <a href="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-2.jpg" class="no-barba border border-white cursor-pointer" data-target="zoom" data-caption="Floor two">
+                    <picture loading="eager" role="presentation" class="block  *:w-full">
+<source type="image/webp" srcset="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-2100x2006.jpg.webp 2100w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-640x611.jpg.webp 640w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-400x382.jpg.webp 400w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-1280x1223.jpg.webp 1280w" sizes="(max-width: 2100px) 100vw, 2100px"/>
+<img loading="eager" role="presentation" src="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-2.jpg" alt="" srcset="/wp-content/uploads/2025/05/Ground-Floor-Plan-1-2.jpg 2100w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-640x611.jpg 640w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-400x382.jpg 400w, /wp-content/uploads/2025/05/Ground-Floor-Plan-1-2-1280x1223.jpg 1280w" sizes="(max-width: 2100px) 100vw, 2100px"/>
+</picture>
+                    <div class="flex justify-between items-center py-16 px-24 lg:p-24">
+                        <h3 class="uppercase text-16">Floor two</h3>
+                        <div class="flex justify-center items-center w-28 h-28 bg-white rounded-full">
+                            <div class="w-16 h-auto children:w-full children:h-auto"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="5.32108" cy="4.60233" r="3.38808" stroke="#1A2026" stroke-width="0.616014"/>
+<path d="M3.07812 7.28125L1.0031 9.35627" stroke="#1A2026" stroke-width="0.616014" stroke-linecap="round"/>
+<path d="M5.40625 3.48438L5.40625 5.68527" stroke="#1A2026" stroke-width="0.733632" stroke-linecap="round"/>
+<path d="M6.50781 4.58594L4.30692 4.58594" stroke="#1A2026" stroke-width="0.733632" stroke-linecap="round"/>
+</svg>
+</div>
+                        </div>
+                    </div>
+                </a>
+                    </div>
+    </div>
         </section>
 </div>
         </main>
@@ -1215,6 +1510,39 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 	<script src="/assets/js/estimate-modal.js" defer></script>
+	<script>
+	(function() {
+		if (window.innerWidth >= 768) return;
+		document.addEventListener('DOMContentLoaded', function() {
+			var banner = document.querySelector('[data-name="banner"]');
+			if (!banner) return;
+			var startY = 0;
+			var startTime = 0;
+			banner.addEventListener('touchstart', function(e) {
+				if (e.touches && e.touches.length === 1) {
+					startY = e.touches[0].clientY;
+					startTime = Date.now();
+				}
+			}, { passive: true });
+			banner.addEventListener('touchend', function(e) {
+				if (!e.changedTouches || e.changedTouches.length === 0) return;
+				var deltaY = startY - e.changedTouches[0].clientY;
+				var deltaTime = Date.now() - startTime;
+				if (deltaY > 45 && deltaTime < 500) {
+					var currentScroll = window.scrollY || window.pageYOffset;
+					var slideHeight = window.innerHeight;
+					var currentSlide = Math.floor(currentScroll / slideHeight);
+					var nextTarget = (currentSlide + 1) * slideHeight;
+					if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+						window.lenis.scrollTo(nextTarget, { duration: 0.8 });
+					} else {
+						window.scrollTo({ top: nextTarget, behavior: 'smooth' });
+					}
+				}
+			}, { passive: true });
+		});
+	})();
+	</script>
 </body>
 
 </html>
