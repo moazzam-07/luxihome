@@ -470,9 +470,13 @@ var gf_legacy = {"is_legacy":""};
 <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20" data-nav-fixed="">
 <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-active="false" data-target="menu-wrapper" data-theme="light">
 <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] group-data-[theme=light]/wrapper:bg-white/20 group-data-[theme=dark]/wrapper:bg-black/20 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-white/30 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
-<div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10" data-target="menu-trigger">
-<div class="w-16 h-auto transition-opacity duration-300 ease-linear" data-target="hamburger-lottie"></div>
-<!-- <div class="absolute top-10 w-16 h-auto transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=dark]/wrapper:opacity-100" data-target="hamburger-lottie-dark"></div> -->
+<div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10 flex items-center justify-center" data-target="menu-trigger">
+<div class="w-16 h-auto hidden" data-target="hamburger-lottie"></div>
+<div class="luxi-hamburger-bars" aria-label="Menu Toggle">
+<span class="luxi-bar bar-1"></span>
+<span class="luxi-bar bar-2"></span>
+<span class="luxi-bar bar-3"></span>
+</div>
 </div>
 <a class="group/button block relative size-30 md:size-40 lg:size-auto bg-sand text-12 leading-none tracking-1.2 uppercase text-dark-blue lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-dark-blue after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" href="/contact/">
 <span class="hidden lg:block relative text-dark-blue z-10 transition-colors duration-200 group-hover/button:text-white">Enquire</span>
@@ -496,60 +500,33 @@ var gf_legacy = {"is_legacy":""};
 <div>
 <!-- <p class="font-normal text-16 leading-none tracking-0.42 text-white/20 mb-20" data-target="menu-title">Developments</p> -->
 <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
-<li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap overflow-hidden" data-state="closed" data-target="menu-item-parent">
-<a class="no-barba flex justify-between items-center gap-50 transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/#projects">
+<li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
+<a class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/#projects">
 <span>Projects</span>
-<div class="relative aspect-square w-25">
-<div class="absolute top-1/2 left-1/2 w-full h-1 bg-white -translate-x-1/2 -translate-y-1/2"></div>
-<div class="absolute top-1/2 left-1/2 w-1 h-full bg-white -translate-x-1/2 -translate-y-1/2 transition-transform duration-[0.4s] ease-in-out group-data-[state=open]/li:rotate-90"></div>
-</div>
 </a>
-<div class="h-0 opacity-0 invisible" data-state="closed" data-target="sub-menu">
-<div class="pt-25 pb-15">
-<ul class="flex flex-col gap-y-10">
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" href="/alams-pentagon/">Alam's Pentagon</a>
+<div class="h-auto opacity-100 visible">
+<div class="pt-20 pb-12 sm:pt-25 sm:pb-15">
+<ul class="luxi-project-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 26px !important; row-gap: 26px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 14px !important; margin-bottom: 6px !important;">
+<li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+<a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/alams-pentagon/" style="display: inline-block; line-height: 1.35;">Alam's Pentagon</a>
 </li>
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" href="/projects/park-street/">Park Street Residence</a>
+<li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+<a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/park-street/" style="display: inline-block; line-height: 1.35;">Park Street Residence</a>
 </li>
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" href="/projects/salt-lake/">The Salt Lake Manor</a>
+<li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+<a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/salt-lake/" style="display: inline-block; line-height: 1.35;">The Salt Lake Manor</a>
 </li>
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" href="/projects/newtown/">New Town Estate</a>
+<li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+<a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/newtown/" style="display: inline-block; line-height: 1.35;">New Town Estate</a>
 </li>
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" href="/projects/rajarhat/">Rajarhat Villa</a>
+<li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+<a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/rajarhat/" style="display: inline-block; line-height: 1.35;">Rajarhat Villa</a>
 </li>
 </ul>
 </div>
 </div>
 </li>
-<li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap overflow-hidden" data-state="closed" data-target="menu-item-parent">
-<a class="no-barba flex justify-between items-center gap-50 transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="#architecture">
-<span>Residences</span>
-<div class="relative aspect-square w-25">
-<div class="absolute top-1/2 left-1/2 w-full h-1 bg-white -translate-x-1/2 -translate-y-1/2"></div>
-<div class="absolute top-1/2 left-1/2 w-1 h-full bg-white -translate-x-1/2 -translate-y-1/2 transition-transform duration-[0.4s] ease-in-out group-data-[state=open]/li:rotate-90"></div>
-</div>
-</a>
-<div class="h-0 opacity-0 invisible" data-state="closed" data-target="sub-menu">
-<div class="pt-25 pb-15">
-<ul class="flex flex-col gap-y-10">
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" data-target="menu-skip-link" href="#architecture">The Alam's Pentagon</a>
-</li>
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" data-target="menu-skip-link" href="#lifestyle">Curated Living</a>
-</li>
-<li class="font-normal text-16 leading-none tracking-0.42">
-<a class="relative after:absolute after:-bottom-4 after:left-0 after:right-0 after:w-full after:h-1 after:bg-white after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear active:after:opacity-100 focus:after:opacity-100 hover:after:opacity-100" data-target="menu-skip-link" href="#interiors">Bespoke Interiors</a>
-</li>
-</ul>
-</div>
-</div>
-</li>
+
 <div class="w-full h-1 bg-white/20 my-15" data-target="menu-divider"></div>
 <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
 <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
@@ -557,6 +534,11 @@ var gf_legacy = {"is_legacy":""};
 </li>
 <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
 <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
+<div data-target="sub-menu"></div>
+</li>
+
+<li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+<a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
 <div data-target="sub-menu"></div>
 </li>
 <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
@@ -689,20 +671,20 @@ var gf_legacy = {"is_legacy":""};
                     <div class="flex justify-center gap-30 sm:gap-45 mb-30">
                         <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
-                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp"/>
-                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.jpg" alt="Formal Dining Salon" class="fill-image object-cover"/>
+                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp"/>
+                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.jpg" alt="The Salt Lake Manor Exterior" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="2">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
-                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp"/>
-                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg" alt="Formal Living Room" class="fill-image object-cover"/>
+                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp"/>
+                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.jpg" alt="Primary Master Suite" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="1">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
-                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-01-exterior.webp"/>
-                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-01-exterior.jpg" alt="The Salt Lake Manor Exterior" class="fill-image object-cover"/>
+                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-08-living-room.webp"/>
+                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg" alt="Formal Living Room" class="fill-image object-cover"/>
                             </picture>
                         </div>
                         <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="2">
@@ -713,8 +695,8 @@ var gf_legacy = {"is_legacy":""};
                         </div>
                         <div class="flex-shrink-0 relative aspect-[305/395] w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw] overflow-hidden" data-target="banner-image" data-order="3">
                             <picture loading="lazy" role="presentation" class="fill-image scale-150">
-                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.webp"/>
-                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-02-master-bed.jpg" alt="Primary Master Suite" class="fill-image object-cover"/>
+                                <source type="image/webp" srcset="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.webp"/>
+                                <img loading="lazy" role="presentation" src="/wp-content/uploads/salt-lake/salt-lake-09-dining-room.jpg" alt="Formal Dining Salon" class="fill-image object-cover"/>
                             </picture>
                         </div>
                     </div>
@@ -1223,10 +1205,12 @@ var gf_legacy = {"is_legacy":""};
 
                             <!-- Project 1: Park Street -->
                             <div class="col-span-12 md:col-span-6">
-                                <a href="https://luxihome-tab-web.vercel.app/projects/park-street/">
+                                <a class="no-barba pointer-events-auto block" href="https://luxihome-tab-web.vercel.app/projects/park-street/" data-barba-prevent="self">
+                                <a class="no-barba pointer-events-auto block" href="/projects/park-street/" data-barba-prevent="self">
                                     <div class="group relative w-full cursor-pointer rounded-15 md:rounded-none overflow-hidden" data-target="page-teaser">
                                         <div class="relative aspect-[690/600] w-full overflow-hidden">
-                                            <img loading="lazy" role="presentation" src="/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg" alt="Park Street Luxury Residence Lounge" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 30%;" />
+                                            <img loading="lazy" role="presentation" src="/assets/img/projects/park-street-featured.jpg" alt="Park Street Luxury Residence Lounge" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 30%;" onerror="this.onerror=null;this.src='/pictures.testimonals/park.street.work/photo_1_2026-09-04_15-06-35.jpg';" />
+                                            <img loading="lazy" role="presentation" src="/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg" alt="Park Street Luxury Residence Lounge" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 30%;" onerror="this.onerror=null;this.src='/pictures.testimonals/park.street.work/photo_6_2026-09-04_15-06-35.jpg';" />
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
                                         <div class="absolute right-0 bottom-0 left-0 w-full text-white text-center pb-25 md:pb-75 px-15">
@@ -1239,10 +1223,12 @@ var gf_legacy = {"is_legacy":""};
 
                             <!-- Project 2: New Town -->
                             <div class="col-span-12 md:col-span-6">
-                                <a href="https://luxihome-tab-web.vercel.app/projects/new-town/">
+                                <a class="no-barba pointer-events-auto block" href="https://luxihome-tab-web.vercel.app/projects/new-town/" data-barba-prevent="self">
+                                <a class="no-barba pointer-events-auto block" href="/projects/newtown/" data-barba-prevent="self">
                                     <div class="group relative w-full cursor-pointer rounded-15 md:rounded-none overflow-hidden" data-target="page-teaser">
                                         <div class="relative aspect-[690/600] w-full overflow-hidden">
-                                            <img loading="lazy" role="presentation" src="/pictures.testimonals/new.town.work/photo_1_2026-09-04_15-49-33.jpg" alt="New Town Modern Luxury Villa Facade" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 25%;" />
+                                            <img loading="lazy" role="presentation" src="/assets/img/projects/new-town-featured.jpg" alt="New Town Modern Luxury Villa Facade" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 25%;" onerror="this.onerror=null;this.src='/pictures.testimonals/new.town.work/photo_1_2026-09-04_15-49-33.jpg';" />
+                                            <img loading="lazy" role="presentation" src="/assets/img/projects/newtown/photo_3_2026-09-04_15-49-33.jpg" alt="New Town Modern Luxury Villa Facade" class="fill-image transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" style="object-fit: cover; object-position: center 25%;" onerror="this.onerror=null;this.src='/pictures.testimonals/new.town.work/photo_3_2026-09-04_15-49-33.jpg';" />
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
                                         <div class="absolute right-0 bottom-0 left-0 w-full text-white text-center pb-25 md:pb-75 px-15">
@@ -1361,9 +1347,6 @@ interest</p>
 
 </div>
 <!-- JS ARE LOADED HERE WITH FUNCTION.PHP -->
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/assets/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
 <script id="wp-dom-ready-js" src="/wp-includes/js/dist/dom-ready.min.js?ver=a06281ae5cf5500e9317"></script>
 <script id="wp-hooks-js" src="/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d"></script>
 <script id="wp-i18n-js" src="/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec"></script>
