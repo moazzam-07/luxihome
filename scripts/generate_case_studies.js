@@ -221,8 +221,42 @@ function getWhiteSharedCss() {
         body { overflow-x: hidden; }
     }
 
-    .luxi-hamburger-dark .luxi-bar {
+    .luxi-hamburger-bars {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 18px !important;
+        height: 13px !important;
+        cursor: pointer !important;
+        pointer-events: none !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+    }
+    .luxi-hamburger-bars .luxi-bar {
+        display: block !important;
+        width: 100% !important;
+        height: 1.5px !important;
         background-color: #13212E !important;
+        border-radius: 2px !important;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background-color 0.25s ease !important;
+        transform-origin: center !important;
+    }
+    [data-active="true"] .luxi-hamburger-bars .luxi-bar,
+    [data-state="open"] .luxi-hamburger-bars .luxi-bar {
+        background-color: #FFFFFF !important;
+    }
+    [data-active="true"] .luxi-hamburger-bars .bar-1,
+    [data-state="open"] .luxi-hamburger-bars .bar-1 {
+        transform: translateY(5.75px) rotate(45deg) !important;
+    }
+    [data-active="true"] .luxi-hamburger-bars .bar-2,
+    [data-state="open"] .luxi-hamburger-bars .bar-2 {
+        opacity: 0 !important;
+        transform: scaleX(0) !important;
+    }
+    [data-active="true"] .luxi-hamburger-bars .bar-3,
+    [data-state="open"] .luxi-hamburger-bars .bar-3 {
+        transform: translateY(-5.75px) rotate(-45deg) !important;
     }
 
     .cs-page-container {
@@ -285,6 +319,7 @@ function getWhiteSharedCss() {
         }
     }
 
+    /* Minimalist Case Study Card */
     .cs-card {
         background: #FFFFFF;
         border: 1px solid rgba(19, 33, 46, 0.08);
@@ -320,24 +355,8 @@ function getWhiteSharedCss() {
         transform: scale(1.05);
     }
 
-    .cs-card-badge {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: rgba(19, 33, 46, 0.88);
-        backdrop-filter: blur(8px);
-        color: #E6CA9E;
-        font-size: 9.5px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        padding: 5px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(194, 162, 106, 0.3);
-    }
-
     .cs-card-body {
-        padding: 22px 20px 24px 20px;
+        padding: 24px 22px 26px 22px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
@@ -354,7 +373,7 @@ function getWhiteSharedCss() {
         font-weight: 600;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         display: block;
     }
 
@@ -365,7 +384,7 @@ function getWhiteSharedCss() {
         letter-spacing: 0.03em;
         text-transform: uppercase;
         color: #13212E;
-        margin: 0 0 10px 0;
+        margin: 0 0 16px 0;
     }
     .cs-card-title a {
         color: #13212E;
@@ -374,31 +393,6 @@ function getWhiteSharedCss() {
     }
     .cs-card-title a:hover {
         color: #C2A26A;
-    }
-
-    .cs-card-desc {
-        font-size: 13.5px;
-        line-height: 1.65;
-        color: #4A5B6C;
-        margin: 0 0 18px 0;
-        flex-grow: 1;
-    }
-
-    .cs-card-specs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px 18px;
-        padding: 14px 0;
-        border-top: 1px solid rgba(19, 33, 46, 0.08);
-        border-bottom: 1px solid rgba(19, 33, 46, 0.08);
-        margin-bottom: 18px;
-        font-size: 11.5px;
-        color: #13212E;
-    }
-    .cs-card-spec-item strong {
-        color: #8C6D38;
-        font-weight: 600;
-        margin-right: 4px;
     }
 
     .cs-card-link {
@@ -688,130 +682,126 @@ function getWhiteSharedCss() {
   `;
 }
 
-// Clean Header with Single Case Studies Link and Full Instagram Parity
+// Clean Header with Single Case Studies Link, Flawless SVG Logo, and Top-Right Mobile Menu Trigger
 function getWhiteHeaderHtml(currentPath) {
   const isCaseStudies = currentPath.startsWith('/case-studies');
 
   return `
-    <!-- Top Fixed Header -->
-    <div class="fixed top-0 left-0 w-full z-50 pointer-events-none" data-target="header">
-        <div class="luxi-header-inner flex justify-between items-center w-full px-20 sm:px-24 lg:px-40 py-20 lg:py-20 pointer-events-auto">
-            
-            <!-- Left: Dark Hamburger on White Background -->
-            <div class="order-1 flex items-center">
-                <div class="group/menu block w-fit h-fit -m-10 p-10 cursor-pointer pointer-events-auto" data-target="menu-wrapper" data-theme="dark">
-                    <button class="luxi-hamburger luxi-hamburger-dark flex flex-col justify-between w-26 sm:w-28 h-14 relative z-50 focus:outline-none" aria-label="Toggle Navigation" data-target="menu-button">
-                        <span class="luxi-bar bar-1 block w-full h-[1.5px] bg-[#13212E] transition-transform duration-300 origin-center"></span>
-                        <span class="luxi-bar bar-2 block w-full h-[1.5px] bg-[#13212E] transition-transform duration-300 origin-center"></span>
-                    </button>
-                </div>
-            </div>
+    <!-- Menu Backdrop Overlay -->
+    <div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
 
-            <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-[#13212E] text-12 leading-none tracking-1.2 uppercase text-white lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-[#C2A26A] after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
-                <span class="hidden lg:block relative text-white z-10 transition-colors duration-200 group-hover/button:text-[#13212E]">Enquire</span>
-                <div class="flex lg:hidden justify-center items-center w-full h-full">
-                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#FFFFFF"/>
-                    </svg>
-                </div>
-            </a>
-
-            <!-- Slideout Fullscreen Menu -->
-            <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
-                <span data-target="menu-title" class="sr-only">Menu</span>
-                <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
-                    <div>
-                        <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
-                            
-                            <!-- Projects Section -->
-                            <li class="group/li font-sans font-light text-26 sm:text-34 lg:text-36 xl:text-42 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
-                                <a href="/#projects" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">
-                                    <span>Projects</span>
-                                </a>
-                                <div class="h-auto opacity-100 visible">
-                                    <div class="pt-16 pb-10">
-                                        <ul class="luxi-project-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 18px !important; row-gap: 18px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 10px !important; margin-bottom: 4px !important;">
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/alams-pentagon/">Alam's Pentagon</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/park-street/">Park Street Residence</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/salt-lake/">The Salt Lake Manor</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/newtown/">New Town Estate</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/rajarhat/">Rajarhat Villa</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <div class="w-full h-1 bg-white/20 my-12" data-target="menu-divider"></div>
-                            
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ${isCaseStudies ? 'text-[#C2A26A]' : ''}" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/journal/">Journal</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/contact/" data-barba-prevent="self">Contact</a>
-                            </li>
-                        </ul>
+    <!-- Top Navigation Header -->
+    <nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-20 pr-20 sm:px-24 lg:px-40 pointer-events-none z-50" data-target="header-menu">
+        
+        <!-- Menu & Enquire: Top-Right on Mobile (Fixed), Left on Desktop -->
+        <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
+            <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="dark">
+                <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] bg-black/10 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-black/15 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
+                <div class="relative lg:h-full py-15 lg:py-10 pr-[20px] lg:pr-20 pl-[20px] lg:pl-24 cursor-pointer z-10 flex items-center justify-center" data-target="menu-trigger" aria-label="Toggle Menu">
+                    <div class="w-16 h-auto hidden" data-target="hamburger-lottie"></div>
+                    <div class="w-16 h-auto hidden" data-target="hamburger-lottie-dark"></div>
+                    <div class="luxi-hamburger-bars" aria-label="Menu Toggle">
+                        <span class="luxi-bar bar-1"></span>
+                        <span class="luxi-bar bar-2"></span>
+                        <span class="luxi-bar bar-3"></span>
                     </div>
+                </div>
 
-                    <!-- Menu Bottom: Exact Instagram SVG Icon + LUXiHOME Parity with Homepage -->
-                    <div data-target="menu-bottom">
-                        <a class="flex items-center gap-12 pb-20" href="https://www.instagram.com/luxihome_pvt._ltd" rel="noopener noreferrer" target="_blank">
-                            <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white">
-                                <svg height="40px" version="1.1" viewBox="0 0 40 40" width="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
-                                        <g id="Social-Media" transform="translate(-307.000000, -513.000000)">
-                                            <g id="Instagram_outline-White" transform="translate(307.000000, 513.000000)">
-                                                <circle cx="20" cy="20" id="Stoke" r="19.5" stroke="#FFFFFF"></circle>
-                                                <path d="M16.2826865,11.1104542 C14.8175922,11.1765596 13.5477244,11.5347797 12.5223374,12.5558408 C11.4933684,13.5822618 11.1396323,14.857025 11.0733627,16.3068782 C11.0321681,17.2118081 10.7912694,24.0483617 11.4897862,25.8412486 C11.9608374,27.0507996 12.888611,27.9807424 14.1092245,28.453307 C14.6787844,28.6748496 15.3289424,28.8249268 16.2826865,28.8686993 C24.2574207,29.2295993 27.2135799,29.0330696 28.4601638,25.8412486 C28.6813608,25.2730991 28.8336017,24.6236578 28.8756918,23.6722754 C29.2401743,15.6770898 28.8165865,13.9440552 27.4267171,12.5558408 C26.3243142,11.4561678 25.0275803,10.7075683 16.2826865,11.1104542 M16.3561204,27.260729 C15.4829743,27.2214231 15.0092366,27.0758125 14.6931129,26.953428 C13.8978783,26.6443404 13.3005569,26.0493914 12.9933886,25.258806 C12.4614411,23.8964979 12.6378614,17.4262041 12.6853247,16.3792368 C12.7318925,15.3537091 12.9396565,14.4166198 13.6632483,13.6930331 C14.5587828,12.7997163 15.7158132,12.3619911 23.5938297,12.7175312 C24.6219032,12.7639836 25.5613188,12.9712331 26.2867017,13.6930331 C27.1822362,14.58635 27.6264213,15.7521284 27.2646253,23.5999167 C27.2252218,24.4709006 27.0792497,24.9434652 26.9565615,25.258806 C26.1461028,27.3357676 24.2816001,27.624309 16.3561204,27.260729 M23.6806965,15.2206049 C23.6806965,15.8119806 24.1615985,16.2925851 24.7553379,16.2925851 C25.3490772,16.2925851 25.8308747,15.8119806 25.8308747,15.2206049 C25.8308747,14.6292292 25.3490772,14.1486247 24.7553379,14.1486247 C24.1615985,14.1486247 23.6806965,14.6292292 23.6806965,15.2206049 M15.3764057,19.9891301 C15.3764057,22.5225766 17.4352394,24.576312 19.974975,24.576312 C22.5147107,24.576312 24.5735444,22.5225766 24.5735444,19.9891301 C24.5735444,17.4556836 22.5147107,15.4028415 19.974975,15.4028415 C17.4352394,15.4028415 15.3764057,17.4556836 15.3764057,19.9891301 M16.9901588,19.9891301 C16.9901588,18.3454271 18.3262961,17.0117051 19.974975,17.0117051 C21.6236539,17.0117051 22.9597913,18.3454271 22.9597913,19.9891301 C22.9597913,21.6337264 21.6236539,22.9674484 19.974975,22.9674484 C18.3262961,22.9674484 16.9901588,21.6337264 16.9901588,19.9891301" fill="#FFFFFF" id="instagram"></path>
+                <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-[#13212E] text-12 leading-none tracking-1.2 uppercase text-white lg:py-12 lg:px-20 rounded-40 my-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-[#C2A26A] after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
+                    <span class="hidden lg:block relative text-white z-10 transition-colors duration-200 group-hover/button:text-[#13212E]">Enquire</span>
+                    <div class="flex lg:hidden justify-center items-center w-full h-full">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Slideout Fullscreen Drawer -->
+                <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
+                    <span data-target="menu-title" class="sr-only">Menu</span>
+                    <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
+                        <div>
+                            <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
+                                <!-- Projects Section -->
+                                <li class="group/li font-sans font-light text-26 sm:text-34 lg:text-36 xl:text-42 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
+                                    <a href="/#projects" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">
+                                        <span>Projects</span>
+                                    </a>
+                                    <div class="h-auto opacity-100 visible">
+                                        <div class="pt-16 pb-10">
+                                            <ul class="luxi-project-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 18px !important; row-gap: 18px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 10px !important; margin-bottom: 4px !important;">
+                                                <li class="font-normal text-15 leading-none tracking-0.42">
+                                                    <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/alams-pentagon/">Alam's Pentagon</a>
+                                                </li>
+                                                <li class="font-normal text-15 leading-none tracking-0.42">
+                                                    <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/park-street/">Park Street Residence</a>
+                                                </li>
+                                                <li class="font-normal text-15 leading-none tracking-0.42">
+                                                    <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/salt-lake/">The Salt Lake Manor</a>
+                                                </li>
+                                                <li class="font-normal text-15 leading-none tracking-0.42">
+                                                    <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/newtown/">New Town Estate</a>
+                                                </li>
+                                                <li class="font-normal text-15 leading-none tracking-0.42">
+                                                    <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/rajarhat/">Rajarhat Villa</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <div class="w-full h-1 bg-white/20 my-12" data-target="menu-divider"></div>
+                                
+                                <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                    <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
+                                </li>
+                                <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                    <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
+                                </li>
+                                <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                    <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ${isCaseStudies ? 'text-[#C2A26A]' : ''}" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
+                                </li>
+                                <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                    <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/journal/">Journal</a>
+                                </li>
+                                <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                    <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/contact/" data-barba-prevent="self">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Menu Bottom: Instagram SVG Icon + LUXiHOME Parity with Homepage -->
+                        <div data-target="menu-bottom">
+                            <a class="flex items-center gap-12 pb-20" href="https://www.instagram.com/luxihome_pvt._ltd" rel="noopener noreferrer" target="_blank">
+                                <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white">
+                                    <svg height="40px" version="1.1" viewBox="0 0 40 40" width="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+                                            <g id="Social-Media" transform="translate(-307.000000, -513.000000)">
+                                                <g id="Instagram_outline-White" transform="translate(307.000000, 513.000000)">
+                                                    <circle cx="20" cy="20" id="Stoke" r="19.5" stroke="#FFFFFF"></circle>
+                                                    <path d="M16.2826865,11.1104542 C14.8175922,11.1765596 13.5477244,11.5347797 12.5223374,12.5558408 C11.4933684,13.5822618 11.1396323,14.857025 11.0733627,16.3068782 C11.0321681,17.2118081 10.7912694,24.0483617 11.4897862,25.8412486 C11.9608374,27.0507996 12.888611,27.9807424 14.1092245,28.453307 C14.6787844,28.6748496 15.3289424,28.8249268 16.2826865,28.8686993 C24.2574207,29.2295993 27.2135799,29.0330696 28.4601638,25.8412486 C28.6813608,25.2730991 28.8336017,24.6236578 28.8756918,23.6722754 C29.2401743,15.6770898 28.8165865,13.9440552 27.4267171,12.5558408 C26.3243142,11.4561678 25.0275803,10.7075683 16.2826865,11.1104542 M16.3561204,27.260729 C15.4829743,27.2214231 15.0092366,27.0758125 14.6931129,26.953428 C13.8978783,26.6443404 13.3005569,26.0493914 12.9933886,25.258806 C12.4614411,23.8964979 12.6378614,17.4262041 12.6853247,16.3792368 C12.7318925,15.3537091 12.9396565,14.4166198 13.6632483,13.6930331 C14.5587828,12.7997163 15.7158132,12.3619911 23.5938297,12.7175312 C24.6219032,12.7639836 25.5613188,12.9712331 26.2867017,13.6930331 C27.1822362,14.58635 27.6264213,15.7521284 27.2646253,23.5999167 C27.2252218,24.4709006 27.0792497,24.9434652 26.9565615,25.258806 C26.1461028,27.3357676 24.2816001,27.624309 16.3561204,27.260729 M23.6806965,15.2206049 C23.6806965,15.8119806 24.1615985,16.2925851 24.7553379,16.2925851 C25.3490772,16.2925851 25.8308747,15.8119806 25.8308747,15.2206049 C25.8308747,14.6292292 25.3490772,14.1486247 24.7553379,14.1486247 C24.1615985,14.1486247 23.6806965,14.6292292 23.6806965,15.2206049 M15.3764057,19.9891301 C15.3764057,22.5225766 17.4352394,24.576312 19.974975,24.576312 C22.5147107,24.576312 24.5735444,22.5225766 24.5735444,19.9891301 C24.5735444,17.4556836 22.5147107,15.4028415 19.974975,15.4028415 C17.4352394,15.4028415 15.3764057,17.4556836 15.3764057,19.9891301 M16.9901588,19.9891301 C16.9901588,18.3454271 18.3262961,17.0117051 19.974975,17.0117051 C21.6236539,17.0117051 22.9597913,18.3454271 22.9597913,19.9891301 C22.9597913,21.6337264 21.6236539,22.9674484 19.974975,22.9674484 C18.3262961,22.9674484 16.9901588,21.6337264 16.9901588,19.9891301" fill="#FFFFFF" id="instagram"></path>
+                                                </g>
                                             </g>
                                         </g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <span class="font-sans font-normal text-15 leading-none tracking-0.4">LUXiHOME</span>
-                        </a>
+                                    </svg>
+                                </div>
+                                <span class="font-sans font-normal text-15 leading-none tracking-0.4">LUXiHOME</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Responsive Dark LUXiHOME Logo for White Background -->
-    <div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
-        <a href="/" data-target="menu-logo" data-theme="dark" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-barba-prevent="self">
-            <div class="relative w-[150px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-100 visible will-change-[opacity]" data-target="logo-lottie-dark" data-played="true" title="LUXiHOME">
-                <svg width="260" height="84" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto">
-                    <g id="luxihome-logo-dark" fill="#13212E">
-                        <path d="M714.684 136.564C752.869 131.691 787.729 158.809 792.387 197.007C797.044 235.206 769.72 269.9 731.482 274.339C693.55 278.742 659.181 251.694 654.561 213.8C649.941 175.906 676.804 141.397 714.684 136.564ZM726.235 261.08C756.778 259.528 780.349 233.638 779.028 203.096C777.708 172.553 751.989 148.793 721.426 149.881C690.533 150.981 666.452 177.03 667.787 207.903C669.122 238.776 695.363 262.65 726.235 261.08Z" fill="#13212E"/>
-                        <path d="M950.342 129.175C953.194 141.182 955.613 153.805 958.285 165.927L981.707 272.961L967.724 273.025C965.616 265.645 963.589 254.707 961.893 246.924C957.865 227.975 953.678 209.061 949.331 190.182C949.029 187.628 947.2 179.824 946.604 176.979C932.718 210.083 919.169 247.035 906.041 280.619C902.094 272.418 897.337 258.477 893.784 249.744C883.993 225.681 875.13 200.832 865.096 176.859C863.456 186.539 860.263 199.332 858.108 209.157L844.256 272.767C840.261 273.048 834.376 272.859 830.245 272.85C836.459 238.402 845.768 203.6 852.708 169.191C855.302 156.327 858.213 142.106 861.688 129.537C866.483 140.765 870.878 153.198 875.276 164.669C885.339 191.303 895.584 217.868 906.01 244.363C920.869 206.523 934.93 166.52 950.342 129.175Z" fill="#13212E"/>
-                        <path d="M589.295 138.088L602.62 138.089C603.432 167.14 602.311 196.743 602.841 225.85C603.115 240.887 603.125 256.736 602.723 271.767L602.191 272.661C599.16 273.239 592.531 272.972 589.185 272.936C588.747 253.418 589.066 232.569 589.058 212.956C569.665 212.346 547.353 212.849 527.74 212.849L527.576 272.738C523.383 272.898 518.442 272.756 514.192 272.742L514.254 138.191L527.623 138.117C527.852 158.4 527.459 178.727 527.807 199.051L589.091 198.967C589.026 178.674 589.094 158.38 589.295 138.088Z" fill="#13212E"/>
-                        <path d="M421.328 138.006C425.568 138.033 430.825 138.006 434.904 138.006C434.904 178.077 434.208 218.411 435.344 258.406C435.682 261.348 438.452 260.67 440.672 260.835C458.742 260.871 476.822 260.698 494.882 260.918C496.225 264.445 498.428 271.95 496.096 273.075C470.839 272.846 445.572 272.92 420.315 272.901L421.328 138.006Z" fill="#13212E"/>
-                        <path d="M165.748 138.024C170.067 138.033 175.244 138.033 179.398 138.006C179.398 178.141 178.694 218.529 179.845 258.58C180.201 261.275 182.724 260.716 184.872 260.844C202.942 260.881 221.031 260.67 239.091 260.918C240.38 264.482 242.455 272.078 240.169 273.066C215.048 272.846 189.918 272.938 164.796 272.91L165.748 138.024Z" fill="#13212E"/>
-                        <path d="M366.576 138.006C370.895 138.015 376.082 138.024 380.235 137.997C380.235 178.123 379.522 218.52 380.682 258.571C381.021 261.266 383.553 260.697 385.701 260.835C403.771 260.871 421.851 260.67 439.92 260.908C441.254 264.463 443.375 272.005 441.053 273.056C415.86 272.837 390.667 272.928 365.483 272.901L366.576 138.006Z" fill="#13212E"/>
-                        <path d="M260.404 138.024C264.723 138.024 269.91 138.033 274.064 138.006C274.064 178.104 273.359 218.493 274.511 258.544C274.849 261.238 277.381 260.68 279.529 260.817C297.599 260.854 315.679 260.652 333.748 260.89C335.083 264.445 337.203 271.986 334.882 273.038C309.689 272.818 284.495 272.91 259.311 272.882L260.404 138.024Z" fill="#13212E"/>
-                    </g>
-                </svg>
-            </div>
-        </a>
-    </div>
+        <!-- Responsive Dark LUXiHOME Logo: Left on Mobile, Center on Desktop -->
+        <div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40 pointer-events-auto">
+            <a href="/" data-target="menu-logo" data-theme="dark" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-barba-prevent="self">
+                <div class="relative w-[150px] sm:w-[210px] lg:w-[260px] h-auto opacity-100 visible" title="LUXiHOME">
+                    <img src="/assets/img/logos/luxihome-wordmark-dark.svg" alt="LUXiHOME" class="w-[150px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto" />
+                </div>
+            </a>
+        </div>
+    </nav>
   `;
 }
 
@@ -849,7 +839,7 @@ function getWhiteFooterHtml() {
   `;
 }
 
-// Hub Page Generator
+// Ultra-Minimalist Hub Page Generator (No badge, no long descriptions, no specs on cards)
 function generateCaseStudiesHubHtml() {
   const sharedCss = getWhiteSharedCss();
   const headerHtml = getWhiteHeaderHtml('/case-studies/');
@@ -859,24 +849,12 @@ function generateCaseStudiesHubHtml() {
     <article class="cs-card">
         <a href="/case-studies/${loc.slug}/" class="cs-card-media" aria-label="View ${loc.title}">
             <img src="${loc.coverImage}" alt="${loc.title} - ${loc.name}, Kolkata" class="cs-card-img" loading="lazy" />
-            <div class="cs-card-badge">${loc.name} • ${loc.specs[0].val}</div>
         </a>
         <div class="cs-card-body">
             <span class="cs-card-kicker">${loc.kicker}</span>
             <h2 class="cs-card-title">
                 <a href="/case-studies/${loc.slug}/">${loc.title}</a>
             </h2>
-            <p class="cs-card-desc">${loc.excerpt}</p>
-            
-            <div class="cs-card-specs">
-                <div class="cs-card-spec-item">
-                    <strong>Scope:</strong> ${loc.specs[3].val}
-                </div>
-                <div class="cs-card-spec-item">
-                    <strong>Materials:</strong> ${loc.specs[4].val}
-                </div>
-            </div>
-
             <div>
                 <a href="/case-studies/${loc.slug}/" class="cs-card-link">
                     <span>Read Case Study</span>
@@ -955,7 +933,7 @@ ${headerHtml}
             <h1 class="cs-minimal-title">CASE STUDIES</h1>
         </header>
 
-        <!-- Case Study Cards Grid -->
+        <!-- Minimalist Case Study Cards Grid -->
         <section class="cs-grid">
             ${cardsHtml}
         </section>
