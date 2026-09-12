@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>The Skyline Glass Atelier • New Town, Kolkata Case Study | LUXiHOME</title>
+    <title>The Skyline Glass Penthouse • New Town, Kolkata Case Study | LUXiHOME</title>
     <meta name="description" content="A minimalist glass penthouse with 360-degree sunset views, custom walnut joinery, and smart home automation overlooking Eco Park. - Bespoke architectural and turnkey interior case study by LUXiHOME Pvt. Ltd. in New Town, Kolkata.">
     <link rel="canonical" href="https://luxihome-tab-web.vercel.app/case-studies/new-town/">
     
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="The Skyline Glass Atelier • New Town Case Study | LUXiHOME">
+    <meta property="og:title" content="The Skyline Glass Penthouse • New Town Case Study | LUXiHOME">
     <meta property="og:description" content="A minimalist glass penthouse with 360-degree sunset views, custom walnut joinery, and smart home automation overlooking Eco Park.">
     <meta property="og:url" content="https://luxihome-tab-web.vercel.app/case-studies/new-town/">
     <meta property="og:site_name" content="LUXiHOME">
@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" id="luxihome-styles-css" href="/assets/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" id="luxi-custom-fonts-css" href="/assets/css/luxi-fonts.css" type="text/css" media="all">
+    <link rel="stylesheet" id="estimate-modal-css" href="/assets/css/estimate-modal.css" type="text/css" media="all">
 
     <style id="luxi-case-studies-detail-css">
 
@@ -85,6 +86,58 @@
     [data-active="true"] .luxi-hamburger-bars .bar-3,
     [data-state="open"] .luxi-hamburger-bars .bar-3 {
         transform: translateY(-5.75px) rotate(-45deg) !important;
+    }
+
+    /* Header Menu Pill on Mobile - Fix Squeezed Dimensions */
+    @media (max-width: 1023px) {
+        [data-nav-fixed] {
+            position: fixed !important;
+            top: 20px !important;
+            right: 15px !important;
+            left: auto !important;
+            width: 117px !important;
+            height: 50px !important;
+            max-width: 100% !important;
+            z-index: 50 !important;
+        }
+        [data-target="menu-wrapper"] {
+            width: 117px !important;
+            height: 50px !important;
+            display: flex !important;
+            flex-direction: row-reverse !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 0 8px 0 10px !important;
+            box-sizing: border-box !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        [data-target="menu-wrapper"]:not([data-active="true"]) [data-target="menu-background"] {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 117px !important;
+            height: 50px !important;
+            border-radius: 40px !important;
+            background-color: rgba(19, 33, 46, 0.08) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+        }
+        [data-target="menu-trigger"] {
+            padding: 12px 14px 12px 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            z-index: 10 !important;
+        }
+        [data-target="menu-contact-button"] {
+            margin: 0 !important;
+            flex-shrink: 0 !important;
+            z-index: 10 !important;
+        }
     }
 
     .cs-page-container {
@@ -243,13 +296,40 @@
 
     /* Detail Page Specific Styling */
     .cs-detail-hero {
-        padding: 130px 0 40px 0;
+        padding: 120px 0 40px 0;
     }
     @media (min-width: 768px) {
         .cs-detail-hero {
-            padding: 150px 0 50px 0;
+            padding: 145px 0 50px 0;
         }
     }
+    .cs-back-link-wrap {
+        margin-bottom: 24px;
+    }
+    .cs-back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'aviano-sans', sans-serif;
+        font-size: 11.5px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #556677;
+        text-decoration: none;
+        transition: color 0.2s ease, gap 0.2s ease;
+    }
+    .cs-back-link:hover {
+        color: #C2A26A;
+        gap: 12px;
+    }
+    .cs-back-link svg {
+        transition: transform 0.2s ease;
+    }
+    .cs-back-link:hover svg {
+        transform: translateX(-3px);
+    }
+
     .cs-detail-badge {
         display: inline-block;
         background: #F1F5F9;
@@ -515,7 +595,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ItemPage",
-      "name": "The Skyline Glass Atelier",
+      "name": "The Skyline Glass Penthouse",
       "description": "A minimalist glass penthouse with 360-degree sunset views, custom walnut joinery, and smart home automation overlooking Eco Park.",
       "provider": {
         "@type": "HomeAndConstructionBusiness",
@@ -653,22 +733,22 @@
 <div id="page-wrap" data-barba="container" data-barba-namespace="case-study-detail">
     <main id="main" class="cs-page-container">
         
-        <!-- Breadcrumb / Back Link -->
-        <div style="margin-bottom: 20px;">
-            <a href="/case-studies/" class="cs-card-link" style="color: #64748B;">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.16669 7H12.8334M12.8334 7L7.00002 1.16666M12.8334 7L7.00002 12.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>Back to All Case Studies</span>
-            </a>
-        </div>
-
-        <!-- Detail Hero Block -->
+        <!-- Detail Hero Block with Back Link Below Logo -->
         <header class="cs-detail-hero">
+            <!-- Breadcrumb / Back to Case Studies (Cleanly Below Fixed Header/Logo) -->
+            <div class="cs-back-link-wrap">
+                <a href="/case-studies/" class="cs-back-link">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.8333 7H1.16666M1.16666 7L6.99999 1.16666M1.16666 7L6.99999 12.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Back to All Case Studies</span>
+                </a>
+            </div>
+
             <div class="cs-detail-badge">
                 <span>Action Area II • New Town</span>
             </div>
-            <h1 class="cs-detail-title">The Skyline Glass Atelier</h1>
+            <h1 class="cs-detail-title">The Skyline Glass Penthouse</h1>
             <p class="cs-detail-copy">Perched on the 26th floor in New Town Action Area II, this panoramic penthouse was handed over as a bare concrete and glass shell. The tech-founder client wanted a clean, uncluttered sanctuary that maximized open sunset views while staying cool and private during Kolkata’s hot summers.</p>
             
             <!-- Specifications Grid -->
@@ -709,7 +789,7 @@
 
         <!-- Large Architectural Image -->
         <div class="cs-detail-image-wrap">
-            <img src="/assets/img/projects/newtown/photo_1_2026-09-04_15-49-33.jpg" alt="The Skyline Glass Atelier - Architectural View" />
+            <img src="/assets/img/projects/newtown/photo_1_2026-09-04_15-49-33.jpg" alt="The Skyline Glass Penthouse - Architectural View" />
         </div>
 
         <!-- Project Story: The Challenge & The Solution (The Whole Juice) -->
@@ -771,16 +851,16 @@
             </div>
         </section>
 
-        <!-- Commission CTA -->
+        <!-- Free Consultation CTA -->
         <section class="cs-cta-box">
             <div>
-                <h3 class="cs-cta-title">Commission a Project in New Town</h3>
+                <h3 class="cs-cta-title">Consult with LUXiHOME (Free Consultation)</h3>
                 <p class="cs-cta-desc">
-                    Ready to realize an exceptional residential commission in New Town? Schedule a confidential brief with our lead architectural studio.
+                    Planning a bespoke villa or luxury turnkey interior in New Town? Schedule a 100% free consultation with LUXiHOME to discuss your architectural floor plan, material finishes, and turnkey estimates.
                 </p>
             </div>
             <div>
-                <a href="/contact/" class="cs-cta-btn">Consult With Atelier</a>
+                <a href="/contact/" class="cs-cta-btn">Book Free Consultation</a>
             </div>
         </section>
 
@@ -822,6 +902,7 @@
 var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
 </script>
 <script id="script-js-js" src="/assets/js/bundle.js?ver=20260912_cs"></script>
+<script src="/assets/js/estimate-modal.js" defer></script>
 
 </body>
 </html>

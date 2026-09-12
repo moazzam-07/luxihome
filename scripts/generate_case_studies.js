@@ -36,7 +36,7 @@ const LOCATIONS = [
     slug: 'new-town',
     name: 'New Town',
     region: 'East Kolkata & IT Corridor',
-    title: 'The Skyline Glass Atelier',
+    title: 'The Skyline Glass Penthouse',
     kicker: 'Action Area II • New Town',
     typology: '5,400 Sq.Ft Contemporary Penthouse',
     coverImage: '/assets/img/projects/newtown/photo_1_2026-09-04_15-49-33.jpg',
@@ -259,6 +259,58 @@ function getWhiteSharedCss() {
         transform: translateY(-5.75px) rotate(-45deg) !important;
     }
 
+    /* Header Menu Pill on Mobile - Fix Squeezed Dimensions */
+    @media (max-width: 1023px) {
+        [data-nav-fixed] {
+            position: fixed !important;
+            top: 20px !important;
+            right: 15px !important;
+            left: auto !important;
+            width: 117px !important;
+            height: 50px !important;
+            max-width: 100% !important;
+            z-index: 50 !important;
+        }
+        [data-target="menu-wrapper"] {
+            width: 117px !important;
+            height: 50px !important;
+            display: flex !important;
+            flex-direction: row-reverse !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 0 8px 0 10px !important;
+            box-sizing: border-box !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        [data-target="menu-wrapper"]:not([data-active="true"]) [data-target="menu-background"] {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 117px !important;
+            height: 50px !important;
+            border-radius: 40px !important;
+            background-color: rgba(19, 33, 46, 0.08) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+        }
+        [data-target="menu-trigger"] {
+            padding: 12px 14px 12px 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            z-index: 10 !important;
+        }
+        [data-target="menu-contact-button"] {
+            margin: 0 !important;
+            flex-shrink: 0 !important;
+            z-index: 10 !important;
+        }
+    }
+
     .cs-page-container {
         width: 100%;
         max-width: 1320px;
@@ -415,13 +467,40 @@ function getWhiteSharedCss() {
 
     /* Detail Page Specific Styling */
     .cs-detail-hero {
-        padding: 130px 0 40px 0;
+        padding: 120px 0 40px 0;
     }
     @media (min-width: 768px) {
         .cs-detail-hero {
-            padding: 150px 0 50px 0;
+            padding: 145px 0 50px 0;
         }
     }
+    .cs-back-link-wrap {
+        margin-bottom: 24px;
+    }
+    .cs-back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'aviano-sans', sans-serif;
+        font-size: 11.5px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #556677;
+        text-decoration: none;
+        transition: color 0.2s ease, gap 0.2s ease;
+    }
+    .cs-back-link:hover {
+        color: #C2A26A;
+        gap: 12px;
+    }
+    .cs-back-link svg {
+        transition: transform 0.2s ease;
+    }
+    .cs-back-link:hover svg {
+        transform: translateX(-3px);
+    }
+
     .cs-detail-badge {
         display: inline-block;
         background: #F1F5F9;
@@ -892,6 +971,7 @@ function generateCaseStudiesHubHtml() {
 
     <link rel="stylesheet" id="luxihome-styles-css" href="/assets/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" id="luxi-custom-fonts-css" href="/assets/css/luxi-fonts.css" type="text/css" media="all">
+    <link rel="stylesheet" id="estimate-modal-css" href="/assets/css/estimate-modal.css" type="text/css" media="all">
 
     <style id="luxi-case-studies-css">
 ${sharedCss}
@@ -941,13 +1021,13 @@ ${headerHtml}
         <!-- Bottom Consultation Box -->
         <section class="cs-cta-box" style="margin-bottom: 70px;">
             <div>
-                <h3 class="cs-cta-title">Looking for Bespoke Execution in Kolkata?</h3>
+                <h3 class="cs-cta-title">Consult with LUXiHOME (Free Consultation)</h3>
                 <p class="cs-cta-desc">
-                    Whether an expansive duplex in Ballygunge or an architectural villa in Alipore, LUXiHOME provides complete turnkey design and build services.
+                    Whether an expansive duplex in Ballygunge or an architectural villa in Alipore, schedule a 100% free consultation with LUXiHOME to discuss your vision and receive turnkey project estimates.
                 </p>
             </div>
             <div>
-                <a href="/contact/" class="cs-cta-btn">Book Architectural Brief</a>
+                <a href="/contact/" class="cs-cta-btn">Book Free Consultation</a>
             </div>
         </section>
 
@@ -960,6 +1040,7 @@ ${footerHtml}
 var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
 </script>
 <script id="script-js-js" src="/assets/js/bundle.js?ver=20260912_cs"></script>
+<script src="/assets/js/estimate-modal.js" defer></script>
 
 </body>
 </html>
@@ -1012,6 +1093,7 @@ function generateLocationDetailHtml(loc) {
 
     <link rel="stylesheet" id="luxihome-styles-css" href="/assets/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" id="luxi-custom-fonts-css" href="/assets/css/luxi-fonts.css" type="text/css" media="all">
+    <link rel="stylesheet" id="estimate-modal-css" href="/assets/css/estimate-modal.css" type="text/css" media="all">
 
     <style id="luxi-case-studies-detail-css">
 ${sharedCss}
@@ -1044,18 +1126,18 @@ ${headerHtml}
 <div id="page-wrap" data-barba="container" data-barba-namespace="case-study-detail">
     <main id="main" class="cs-page-container">
         
-        <!-- Breadcrumb / Back Link -->
-        <div style="margin-bottom: 20px;">
-            <a href="/case-studies/" class="cs-card-link" style="color: #64748B;">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.16669 7H12.8334M12.8334 7L7.00002 1.16666M12.8334 7L7.00002 12.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>Back to All Case Studies</span>
-            </a>
-        </div>
-
-        <!-- Detail Hero Block -->
+        <!-- Detail Hero Block with Back Link Below Logo -->
         <header class="cs-detail-hero">
+            <!-- Breadcrumb / Back to Case Studies (Cleanly Below Fixed Header/Logo) -->
+            <div class="cs-back-link-wrap">
+                <a href="/case-studies/" class="cs-back-link">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.8333 7H1.16666M1.16666 7L6.99999 1.16666M1.16666 7L6.99999 12.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Back to All Case Studies</span>
+                </a>
+            </div>
+
             <div class="cs-detail-badge">
                 <span>${loc.kicker}</span>
             </div>
@@ -1112,16 +1194,16 @@ ${headerHtml}
             </div>
         </section>
 
-        <!-- Commission CTA -->
+        <!-- Free Consultation CTA -->
         <section class="cs-cta-box">
             <div>
-                <h3 class="cs-cta-title">Commission a Project in ${loc.name}</h3>
+                <h3 class="cs-cta-title">Consult with LUXiHOME (Free Consultation)</h3>
                 <p class="cs-cta-desc">
-                    Ready to realize an exceptional residential commission in ${loc.name}? Schedule a confidential brief with our lead architectural studio.
+                    Planning a bespoke villa or luxury turnkey interior in ${loc.name}? Schedule a 100% free consultation with LUXiHOME to discuss your architectural floor plan, material finishes, and turnkey estimates.
                 </p>
             </div>
             <div>
-                <a href="/contact/" class="cs-cta-btn">Consult With Atelier</a>
+                <a href="/contact/" class="cs-cta-btn">Book Free Consultation</a>
             </div>
         </section>
 
@@ -1134,6 +1216,7 @@ ${footerHtml}
 var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
 </script>
 <script id="script-js-js" src="/assets/js/bundle.js?ver=20260912_cs"></script>
+<script src="/assets/js/estimate-modal.js" defer></script>
 
 </body>
 </html>
