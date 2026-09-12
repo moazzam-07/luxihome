@@ -298,6 +298,15 @@
       background: var(--lux-sand) !important;
       color: var(--lux-dark) !important;
     }
+    body.journal-warm-theme main {
+      padding-top: 130px !important;
+      padding-bottom: 90px !important;
+    }
+    @media (max-width: 1023px) {
+      body.journal-warm-theme main {
+        padding-top: 100px !important;
+      }
+    }
     body.journal-warm-theme [data-target="logo-lottie"] {
       opacity: 0 !important;
       visibility: hidden !important;
@@ -311,14 +320,6 @@
       border: 1px solid rgba(255,255,255,.22);
       box-shadow: 0 16px 34px rgba(26,32,38,.18), inset 0 1px 0 rgba(255,255,255,.18);
     }
-    body.journal-warm-theme .journal-hero {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(34px, 6vw, 72px) clamp(22px, 7vw, 84px);
-      border-radius: 0 0 28px 28px;
-      background: var(--lux-brown) !important;
-      color: #F7F1E8 !important;
-      box-shadow: 0 22px 45px rgba(26,32,38,.14);
 
     /* Responsive Header & Navigation */
     @media (max-width: 1023px) {
@@ -329,12 +330,6 @@
         left: auto !important;
       }
     }
-    body.journal-warm-theme .journal-hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255,255,255,.11), transparent 42%, rgba(26,32,38,.12));
     @media (min-width: 1024px) {
       [data-nav-fixed] {
         position: fixed !important;
@@ -359,12 +354,6 @@
         -webkit-backdrop-filter: blur(20px) !important;
       }
     }
-    body.journal-warm-theme .journal-hero > * { position: relative; z-index: 1; }
-    body.journal-warm-theme .journal-hero h1,
-    body.journal-warm-theme .journal-hero p { color: #F7F1E8 !important; }
-    body.journal-warm-theme .journal-hero h1 span:last-child,
-    body.journal-warm-theme .text-gold { color: var(--lux-gold) !important; }
-    body.journal-warm-theme .journal-hero p { color: rgba(247,241,232,.78) !important; }
 
     /* Mobile Hero: preserved exactly as current */
     @media (max-width: 1023px) {
@@ -502,11 +491,14 @@
     body.journal-warm-theme .journal-footer-links a:hover,
     body.journal-warm-theme .journal-footer-copyright a:hover { color: var(--lux-gold); }
 
-    /* Article pages use the same palette, including tables and callouts. */
-    body.journal-warm-theme main {
     /* Constrain only article reading pages, while keeping journal hub at full editorial width */
     body.journal-warm-theme [data-barba-namespace="journal-article"] main {
       max-width: 820px !important;
+    }
+    body.journal-warm-theme [data-barba-namespace="journal"] main {
+      max-width: 1280px !important;
+    }
+
     /* GSAP Pin-Spacer Defusal: Eliminates 744px sand gap below dark footer */
     .pin-spacer-footer-reveal {
       position: relative !important;
@@ -517,8 +509,6 @@
       padding: 0 !important;
       margin: 0 !important;
     }
-    body.journal-warm-theme [data-barba-namespace="journal"] main {
-      max-width: 1280px !important;
     .pin-spacer-footer-reveal > footer,
     .journal-site-footer {
       position: relative !important;
@@ -1132,6 +1122,7 @@
                         </ul>
                     </div>
                     <div class="" data-target="menu-bottom">
+                        <a href="https://www.instagram.com/the_luxihome" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
                         <a href="https://www.instagram.com/luxihome_pvt._ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
                             <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white">
                                 <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -1150,6 +1141,7 @@
             </div>
         </div>
     </div>
+</div>
 <div class="order-2 flex sm:justify-center items-center absolute left-40 top-30 lg:left-1/2 lg:top-20 lg:-translate-x-1/2" data-target="header-menu">
     <a href="/" data-barba-prevent="self" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-target="menu-logo" data-theme="light">
         <div class="relative w-[160px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=light]:opacity-100 group-data-[theme=light]:visible will-change-[opacity]" data-target="logo-lottie" data-played="true" title="LUXiHOME">
@@ -1231,10 +1223,7 @@
 
 
 	<div id="page-wrap" data-barba="container" data-barba-namespace="journal-article">
-		<a class="skip-link sr-only" href="#content-wrap">Skip to content</a>
 		<div id="content-wrap">
-			<!-- MAIN ARTICLE WRAPPER (Guaranteed 240px top space) -->
-			<main style="padding-top: max(180px, 24vh); padding-bottom: 90px;" class="relative z-10 px-24 sm:px-40 max-w-4xl mx-auto w-full">
 			<!-- MAIN ARTICLE WRAPPER (Responsive padding via CSS) -->
 			<main class="relative z-10 px-24 sm:px-40 max-w-4xl mx-auto w-full">
 
