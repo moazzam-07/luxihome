@@ -117,7 +117,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel='stylesheet' id='gform_basic-css' href='/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=2.10.5' media='all' />
 <link rel='stylesheet' id='gform_theme_components-css' href='/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5' media='all' />
 <link rel='stylesheet' id='gform_theme-css' href='/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5' media='all' />
-<link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=1774457248' media='all' />
+<link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
 <script id="jquery-js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script id="gform_json-js" defer='defer' src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
 <script id="gform_gravityforms-js-extra">
@@ -526,6 +526,7 @@ var gf_legacy = {"is_legacy":""};
 </div>
 </div>
 </li>
+
 <div class="w-full h-1 bg-white/20 my-15" data-target="menu-divider"></div>
 <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
 <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
@@ -533,6 +534,11 @@ var gf_legacy = {"is_legacy":""};
 </li>
 <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
 <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
+<div data-target="sub-menu"></div>
+</li>
+
+<li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+<a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
 <div data-target="sub-menu"></div>
 </li>
 <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
@@ -565,7 +571,7 @@ var gf_legacy = {"is_legacy":""};
 </div>
 </div>
 </div>
-<div class="order-2 flex justify-center items-center absolute left-1/2 -translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
+<div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
 <a class="group pointer-events-auto block w-fit h-fit" data-target="menu-logo" data-theme="light" href="/" data-barba-prevent="self" title="LUXiHOME">
 <div class="relative w-[160px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-0 group-data-[theme=light]:opacity-100 group-data-[theme=light]:visible will-change-[opacity]" data-played="true" data-target="logo-lottie" title="LUXiHOME">
 <svg class="w-[160px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto" fill="none" height="84" viewbox="105 40 1010 325" width="260" xmlns="http://www.w3.org/2000/svg">
@@ -1302,13 +1308,11 @@ interest</p>
                     <div class="flex items-center gap-15 text-color text-center lg:text-left mb-20 lg:mb-0">
                         © LUXiHOME 2026. All rights reserved.
                     </div>
-                    <div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-20">
-                        <!-- <div class="text-right text-white">
-                        <p class="inline mb-0"><a href="https://www.thewebkitchen.co.uk/" target="_blank" rel="external" class="text-inherit">Web design</a></p>
-                        <p class="inline mb-0">by</p>
-                        <p class="inline mb-0"><a href="https://www.thewebkitchen.co.uk/" target="_blank" rel="external" class="text-inherit">TWK</a></p>
-                    </div> -->
-                        <a href="/terms-conditions/" target="_self" class="" >Terms &amp; Conditions</a><a href="/payment-terms/" target="_self" class="" >Payment Terms</a><a href="/privacy-policy/" target="_self" class="" >Privacy Policy</a><a href="/cookies-policy/" target="_self" class="" >Cookies Policy</a><a href="/credits/" target="_self" class="" >Credits</a>                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-12 sm:gap-20 text-13 tracking-0.4">
+                        <a href="/terms-conditions/" target="_self" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+                        <span class="text-white/20 hidden sm:inline">•</span>
+                        <a href="/privacy-policy/" target="_self" class="hover:text-white transition-colors">Privacy Policy</a>
+                    </div>
                 </div>
             </div>
         </footer>

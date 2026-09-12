@@ -1,0 +1,1413 @@
+// scripts/generate_legal_pages.js
+// Generates luxury atelier themed /terms-conditions/ and /privacy-policy/ pages with full navigation menu
+// Fully optimized for mobile screens (zero overlap, stacked clause headers, fluid typography, structured cards)
+
+const fs = require('fs');
+const path = require('path');
+
+const ROOT_DIR = path.resolve(__dirname, '..');
+
+// Helper for shared navigation header (matching about/index.html & journal/index.html)
+function getHeaderHtml(activePage = '') {
+  return `
+<div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
+<nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
+    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
+        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="light">
+            <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] bg-white/20 group-data-[theme=light]/wrapper:bg-white/20 group-data-[theme=dark]/wrapper:bg-black/20 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-white/30 group-data-[active=true]/wrapper:!bg-white/20" data-target="menu-background"></div>
+            <div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10 flex items-center justify-center" data-target="menu-trigger" style="position: relative; padding: 15px 22px; cursor: pointer; z-index: 10 !important;" aria-label="Toggle Menu">
+                <div class="w-16 h-auto hidden" data-target="hamburger-lottie"></div>
+                <div class="luxi-hamburger-bars" aria-label="Menu Toggle">
+                    <span class="luxi-bar bar-1"></span>
+                    <span class="luxi-bar bar-2"></span>
+                    <span class="luxi-bar bar-3"></span>
+                </div>
+            </div>
+
+            <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-sand text-12 leading-none tracking-1.2 uppercase text-dark-blue lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-dark-blue after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
+                <span class="hidden lg:block relative text-dark-blue z-10 transition-colors duration-200 group-hover/button:text-white">Enquire</span>
+                <div class="flex lg:hidden justify-center items-center w-full h-full">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3971_69)">
+                            <mask id="path-1-inside-1_3971_69" fill="white">
+                                <path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z"/>
+                            </mask>
+                            <path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#1A2026" stroke="#DAD0C1" stroke-width="0.765957" mask="url(#path-1-inside-1_3971_69)"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_3971_69">
+                                <rect width="15.3191" height="15.3191" fill="white" transform="translate(0.976562 0.703125)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+            </a>
+
+            <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
+                <span data-target="menu-title" class="sr-only">Menu</span>
+                <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
+                    <div>
+                        <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
+                            <li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
+                                <a href="/#projects" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">
+                                    <span>Projects</span>
+                                </a>
+                                <div class="h-auto opacity-100 visible">
+                                    <div class="pt-20 pb-12 sm:pt-25 sm:pb-15">
+                                        <ul class="luxi-project-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 26px !important; row-gap: 26px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 14px !important; margin-bottom: 6px !important;">
+                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+                                                <a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/alams-pentagon/" style="display: inline-block; line-height: 1.35;">Alam's Pentagon</a>
+                                            </li>
+                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+                                                <a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/park-street/" style="display: inline-block; line-height: 1.35;">Park Street Residence</a>
+                                            </li>
+                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+                                                <a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/salt-lake/" style="display: inline-block; line-height: 1.35;">The Salt Lake Manor</a>
+                                            </li>
+                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+                                                <a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/newtown/" style="display: inline-block; line-height: 1.35;">New Town Estate</a>
+                                            </li>
+                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
+                                                <a class="relative block py-2 text-white/90 hover:text-white transition-colors" href="/projects/rajarhat/" style="display: inline-block; line-height: 1.35;">Rajarhat Villa</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <div class="w-full h-1 bg-white/20 my-15" data-target="menu-divider"></div>
+                            <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
+                                <div data-target="sub-menu"></div>
+                            </li>
+                            <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
+                                <div data-target="sub-menu"></div>
+                            </li>
+                            <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
+                                <div data-target="sub-menu"></div>
+                            </li>
+                            <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/journal/">Journal</a>
+                                <div data-target="sub-menu"></div>
+                            </li>
+                            <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/contact/" data-barba-prevent="self">Contact</a>
+                                <div data-target="sub-menu"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-target="menu-bottom">
+                        <a href="https://www.instagram.com/luxihome_pvt._ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
+                            <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white">
+                                <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="Social-Media" transform="translate(-307.000000, -513.000000)">
+                                            <g id="Instagram_outline-White" transform="translate(307.000000, 513.000000)">
+                                                <circle id="Stoke" stroke="#FFFFFF" cx="20" cy="20" r="19.5"></circle>
+                                                <path d="M16.2826865,11.1104542 C14.8175922,11.1765596 13.5477244,11.5347797 12.5223374,12.5558408 C11.4933684,13.5822618 11.1396323,14.857025 11.0733627,16.3068782 C11.0321681,17.2118081 10.7912694,24.0483617 11.4897862,25.8412486 C11.9608374,27.0507996 12.888611,27.9807424 14.1092245,28.453307 C14.6787844,28.6748496 15.3289424,28.8249268 16.2826865,28.8686993 C24.2574207,29.2295993 27.2135799,29.0330696 28.4601638,25.8412486 C28.6813608,25.2730991 28.8336017,24.6236578 28.8756918,23.6722754 C29.2401743,15.6770898 28.8165865,13.9440552 27.4267171,12.5558408 C26.3243142,11.4561678 25.0275803,10.7075683 16.2826865,11.1104542 M16.3561204,27.260729 C15.4829743,27.2214231 15.0092366,27.0758125 14.6931129,26.953428 C13.8978783,26.6443404 13.3005569,26.0493914 12.9933886,25.258806 C12.4614411,23.8964979 12.6378614,17.4262041 12.6853247,16.3792368 C12.7318925,15.3537091 12.9396565,14.4166198 13.6632483,13.6930331 C14.5587828,12.7997163 15.7158132,12.3619911 23.5938297,12.7175312 C24.6219032,12.7639836 25.5613188,12.9712331 26.2867017,13.6930331 C27.1822362,14.58635 27.6264213,15.7521284 27.2646253,23.5999167 C27.2252218,24.4709006 27.0792497,24.9434652 26.9565615,25.258806 C26.1461028,27.3357676 24.2816001,27.624309 16.3561204,27.260729 M23.6806965,15.2206049 C23.6806965,15.8119806 24.1615985,16.2925851 24.7553379,16.2925851 C25.3490772,16.2925851 25.8308747,15.8119806 25.8308747,15.2206049 C25.8308747,14.6292292 25.3490772,14.1486247 24.7553379,14.1486247 C24.1615985,14.1486247 23.6806965,14.6292292 23.6806965,15.2206049 M15.3764057,19.9891301 C15.3764057,22.5225766 17.4352394,24.576312 19.974975,24.576312 C22.5147107,24.576312 24.5735444,22.5225766 24.5735444,19.9891301 C24.5735444,17.4556836 22.5147107,15.4028415 19.974975,15.4028415 C17.4352394,15.4028415 15.3764057,17.4556836 15.3764057,19.9891301 M16.9901588,19.9891301 C16.9901588,18.3454271 18.3262961,17.0117051 19.974975,17.0117051 C21.6236539,17.0117051 22.9597913,18.3454271 22.9597913,19.9891301 C22.9597913,21.6337264 21.6236539,22.9674484 19.974975,22.9674484 C18.3262961,22.9674484 16.9901588,21.6337264 16.9901588,19.9891301" fill="#FFFFFF" id="instagram"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="font-sans font-normal text-15 leading-none tracking-0.4">LUXiHOME</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive LUXiHOME Atelier Logo: Left on Mobile, Center on Desktop -->
+    <div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
+        <a href="/" data-target="menu-logo" data-theme="light" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-barba-prevent="self">
+            <div class="relative w-[150px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-100 visible will-change-[opacity]" data-target="logo-lottie" data-played="true" title="LUXiHOME">
+                <svg width="260" height="84" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto">
+                    <g id="luxihome-logo" fill="#FFFFFF">
+                        <path d="M714.684 136.564C752.869 131.691 787.729 158.809 792.387 197.007C797.044 235.206 769.72 269.9 731.482 274.339C693.55 278.742 659.181 251.694 654.561 213.8C649.941 175.906 676.804 141.397 714.684 136.564ZM726.235 261.08C756.778 259.528 780.349 233.638 779.028 203.096C777.708 172.553 751.989 148.793 721.426 149.881C690.533 150.981 666.452 177.03 667.787 207.903C669.122 238.776 695.363 262.65 726.235 261.08Z" fill="#FFFFFF"/>
+                        <path d="M950.342 129.175C953.194 141.182 955.613 153.805 958.285 165.927L981.707 272.961L967.724 273.025C965.616 265.645 963.589 254.707 961.893 246.924C957.865 227.975 953.678 209.061 949.331 190.182C949.029 187.628 947.2 179.824 946.604 176.979C932.718 210.083 919.169 247.035 906.041 280.619C902.094 272.418 897.337 258.477 893.784 249.744C883.993 225.681 875.13 200.832 865.096 176.859C863.456 186.539 860.263 199.332 858.108 209.157L844.256 272.767C840.261 273.048 834.376 272.859 830.245 272.85C836.459 238.402 845.768 203.6 852.708 169.191C855.302 156.327 858.213 142.106 861.688 129.537C866.483 140.765 870.878 153.198 875.276 164.669C885.339 191.303 895.584 217.868 906.01 244.363C920.869 206.523 934.93 166.52 950.342 129.175Z" fill="#FFFFFF"/>
+                        <path d="M589.295 138.088L602.62 138.089C603.432 167.14 602.311 196.743 602.841 225.85C603.115 240.887 603.125 256.736 602.723 271.767L602.191 272.661C599.16 273.239 592.531 272.972 589.185 272.936C588.747 253.418 589.066 232.569 589.058 212.956C569.665 212.346 547.353 212.849 527.74 212.849L527.576 272.738C523.383 272.898 518.442 272.756 514.192 272.742L514.254 138.191L527.623 138.117C527.852 158.4 527.459 178.727 527.807 199.051L589.091 198.967C589.026 178.674 589.094 158.38 589.295 138.088Z" fill="#FFFFFF"/>
+                        <path d="M1024.95 138.001C1050.98 138.611 1079.26 138.047 1105.47 138.041L1105.46 150.842L1038.89 150.947L1038.94 198.863C1059.91 199.379 1082.33 199.027 1103.41 199.027L1103.36 211.887C1083.26 212.285 1062.3 211.936 1042.08 212.034C1040.72 211.96 1040.36 211.884 1039.07 212.468C1038.08 223.345 1038.88 248.066 1038.9 259.956C1060.61 260.473 1083.73 260.098 1105.54 260.082L1105.54 272.999L1024.96 273.017C1024.35 228.488 1024.92 182.634 1024.95 138.001Z" fill="#FFFFFF"/>
+                        <path d="M302.981 139.858L316.628 140.106L316.835 153.996L316.941 202.519C316.946 213.362 317.497 234.968 315.028 244.754C313.297 251.649 309.734 257.948 304.716 262.984C281.104 286.825 225.027 280.497 217.609 243.668C215.112 231.27 215.904 217.582 215.992 204.899C216.071 192.639 216.084 180.378 216.032 168.118L216.078 140.105L229.758 140.149L229.727 203.697C229.721 215.063 229.358 227.492 230.605 238.666C234.065 270.82 296.959 271.447 301.933 240.324C303.641 229.636 302.969 213.848 302.95 202.547L302.981 139.858Z" fill="#FFFFFF"/>
+                        <path d="M461.57 139.242C465.716 138.999 472.263 139.211 476.589 139.224C462.105 158.696 447.357 180.435 433.221 200.331C448.356 223.285 468.561 249.124 484.828 271.943L445.889 271.903L423.58 239.917C420.611 235.572 417.408 231.179 414.347 226.881C403.878 241.801 393.504 256.787 383.227 271.839L369.128 271.88C377.656 258.432 389.764 242.048 398.981 228.838L461.57 139.242Z" fill="#FFFFFF"/>
+                        <path d="M354.006 139.15L389.762 139.24C396.746 148.122 407.411 165.129 414.549 175.305C422.079 163.488 430.903 150.907 438.788 139.174L452.584 139.216L392.366 225.584C383.49 239.57 369.803 257.934 359.973 271.909L345.807 271.877C350.428 264.412 357.204 255.329 362.408 247.927C373.577 232.187 384.651 216.38 395.628 200.506C382.867 180.235 367.307 159.456 354.006 139.15Z" fill="#FFFFFF"/>
+                        <path d="M456.459 47.7075C472.242 45.124 487.137 55.8047 489.748 71.5781C492.36 87.3515 481.7 102.26 465.926 104.897C450.114 107.54 435.157 96.8533 432.539 81.042C429.922 65.2307 440.637 50.2972 456.459 47.7075Z" fill="#FFFFFF"/>
+                        <path d="M117.897 139.456L125.683 139.606L125.804 261.137L174.412 261.241C174.328 264.51 175.412 272.168 173.569 274.57C173.378 274.818 171.487 274.83 170.955 274.862L112.068 274.863C112.485 236.543 111.872 198.128 112.07 159.802C112.103 153.432 111.792 146.526 112.334 140.228C113.545 139.207 116.178 139.47 117.897 139.456Z" fill="#FFFFFF"/>
+                        <path d="M113.478 345.849C143.595 344.885 436.453 345.514 437.373 346.054C437.716 346.256 437.911 347.805 438.014 348.258L182.341 348.304C164.61 348.304 134.058 348.466 115.219 348.156C114.276 348.141 113.915 346.805 113.478 345.849Z" fill="#FFFFFF"/>
+                        <path d="M694.127 332.094C704.759 332.054 720.674 329.668 721.384 344.716C721.663 350.63 721.155 353.348 717.177 357.91C711.467 361.991 701.131 360.927 694.113 360.862C693.92 351.542 694.106 341.469 694.127 332.094ZM711.002 352.644C713.922 344.312 713.048 339.118 703.241 338.885C703.149 345.614 700.333 358.222 711.002 352.644Z" fill="#FFFFFF"/>
+                        <path d="M775.618 348.787C779.007 347.941 798.434 348.247 802.773 348.253L860 348.309L1017.81 348.322C1043.35 348.136 1068.89 348.118 1094.42 348.269C1097.57 348.318 1098.89 347.954 1100.88 350.011C1097.57 350.812 1079.27 350.525 1074.87 350.521L1018.31 350.47L780.087 350.511C777.408 350.497 777.271 350.454 775.618 348.787Z" fill="#FFFFFF"/>
+                        <path d="M473.198 332.114C481.013 332.307 505.916 328.25 496.269 348.273C495.117 350.663 491.889 351.511 489.306 351.892L482.346 352.023L482.136 360.863L473.214 360.876C473.144 351.289 473.138 341.702 473.198 332.114ZM488.794 344.398C488.974 341.607 489.314 342.114 488.269 339.916C486.746 338.813 484.21 339.047 482.239 339.016C482.161 340.927 481.809 343.083 482.881 344.591C484.671 345.373 486.925 345.006 488.794 344.398Z" fill="#FFFFFF"/>
+                        <path d="M528.193 332.148L537.67 332.198L534.914 340.181L527.549 360.773C524.118 360.872 520.407 360.818 516.949 360.836C513.5 352.181 509.808 341.016 506.849 332.158L516.591 332.172C518.603 338.683 520.538 345.217 522.396 351.773L528.193 332.148Z" fill="#FFFFFF"/>
+                        <path d="M545.816 332.06L573.802 332.152L573.722 338.831L564.523 338.98L564.494 351.147L564.442 360.854L555.485 360.878C555.14 353.862 555.327 346.142 555.472 339.122C552.483 339.002 549.03 339.109 546.002 339.134L545.816 332.06Z" fill="#FFFFFF"/>
+                        <path d="M683.924 332.085L683.942 338.915L674.5 338.964L674.492 350.708L674.496 360.866L665.531 360.89C665.149 353.974 665.331 346.042 665.422 339.114L656.188 338.854L656.103 332.095L683.924 332.085Z" fill="#FFFFFF"/>
+                        <path d="M624.261 332.191L633.076 332.158C633.344 339.334 633.34 346.805 633.435 354.007C638.12 354.306 642.622 353.027 646.564 354.766C648.116 356.67 647.682 357.232 647.879 360.021L647.258 360.682C641.06 361.232 630.683 360.887 624.178 360.861C624.108 351.304 624.136 341.747 624.261 332.191Z" fill="#FFFFFF"/>
+                        <path d="M732.547 353.155L741.359 353.11L741.26 360.86L732.547 360.871L732.547 353.155Z" fill="#FFFFFF"/>
+                        <path d="M592.48 353.134L592.126 360.746L583.636 360.807L583.639 353.118L592.48 353.134Z" fill="#FFFFFF"/>
+                    </g>
+                </svg>
+            </div>
+        </a>
+    </div>
+</nav>
+`;
+}
+
+// Shared Footer for legal pages
+function getFooterHtml() {
+  return `
+    <!-- Atelier Site Footer -->
+    <footer class="legal-footer">
+        <div class="legal-footer-inner">
+            <div class="legal-footer-top">
+                <div>
+                    <a href="/" class="legal-footer-brand" title="LUXiHOME">
+                        <img src="/assets/img/logos/luxihome-stacked-light.svg" alt="LUXiHOME Atelier" width="160" height="50" />
+                    </a>
+                    <p class="legal-footer-tagline">
+                        Bespoke Luxury Architecture &amp; Turnkey Interiors • Kolkata &amp; Dubai
+                    </p>
+                </div>
+                <nav class="legal-footer-links" aria-label="Main Navigation">
+                    <a href="/">Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/#projects">Projects</a>
+                    <a href="/case-studies/">Case Studies</a>
+                    <a href="/journal/">Journal</a>
+                    <a href="/contact/">Contact</a>
+                </nav>
+            </div>
+
+            <div class="legal-footer-bottom">
+                <p>© 2026 LUXiHOME Pvt. Ltd. All rights reserved.</p>
+                <div class="legal-footer-legal">
+                    <a href="/terms-conditions/">Terms &amp; Conditions</a>
+                    <span class="legal-footer-sep">•</span>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+`;
+}
+
+// Shared CSS Rules for flawless mobile structure & desktop luxury polish
+function getLegalStyles() {
+  return `
+    @font-face {
+        font-family: 'aviano-sans';
+        src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'aviano-sans';
+        src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
+        font-weight: 700;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'DIN';
+        src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
+        font-weight: 300;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'DIN';
+        src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
+        font-weight: 600;
+        font-display: swap;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        margin: 0;
+        padding: 0;
+        background-color: #13212E !important;
+        overflow-x: visible;
+        overflow-y: visible;
+        width: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #13212E !important;
+        color: #E2E8F0;
+        font-family: 'DIN', sans-serif;
+        overflow-x: clip;
+        overflow-y: visible;
+        width: 100%;
+    }
+
+    /* Mobile Header & Responsive Logo Placement */
+    @media (max-width: 1023px) {
+        [data-target="header-menu"].order-2,
+        .luxi-header-logo {
+            position: absolute !important;
+            top: 20px !important;
+            left: 18px !important;
+            right: auto !important;
+            transform: none !important;
+            justify-content: flex-start !important;
+            text-align: left !important;
+            z-index: 40 !important;
+        }
+        [data-nav-fixed] {
+            position: fixed !important;
+            top: 20px !important;
+            right: 15px !important;
+            left: auto !important;
+            z-index: 50 !important;
+            width: fit-content !important;
+        }
+        [data-target="logo-lottie"],
+        [data-target="logo-lottie-dark"] {
+            width: 145px !important;
+            max-width: 145px !important;
+        }
+    }
+
+    /* Page Container with GUARANTEED Mobile Top Padding */
+    .legal-page-container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 125px 18px 60px 18px !important;
+    }
+    @media (min-width: 640px) {
+        .legal-page-container {
+            padding: 155px 28px 80px 28px !important;
+        }
+    }
+    @media (min-width: 1024px) {
+        .legal-page-container {
+            padding: 185px 36px 100px 36px !important;
+        }
+    }
+
+    /* Hero Section Card */
+    .legal-hero-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 22px;
+        padding: 24px 18px;
+        margin-bottom: 24px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    }
+    @media (min-width: 640px) {
+        .legal-hero-card {
+            padding: 38px 32px;
+            margin-bottom: 32px;
+            border-radius: 26px;
+        }
+    }
+
+    .legal-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: rgba(194, 162, 106, 0.12);
+        border: 1px solid rgba(194, 162, 106, 0.28);
+        color: #E6CA9E;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+    .legal-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #C2A26A;
+    }
+
+    .legal-hero-title {
+        font-family: 'aviano-sans', sans-serif;
+        font-size: clamp(24px, 6.8vw, 44px);
+        line-height: 1.16;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0 0 14px 0;
+        word-break: break-word;
+    }
+
+    .legal-hero-desc {
+        font-size: 14px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.72);
+        margin: 0 0 20px 0;
+    }
+    @media (min-width: 640px) {
+        .legal-hero-desc {
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+    }
+
+    /* Clean 2-column on mobile, 3-column on tablet/desktop Metadata Grid */
+    .legal-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    @media (min-width: 640px) {
+        .legal-meta-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+    }
+    .legal-meta-cell {
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+        padding: 9px 12px;
+    }
+    .legal-meta-tag {
+        display: block;
+        color: #C2A26A;
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+    }
+    .legal-meta-val {
+        display: block;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Overview Banner */
+    .legal-overview-box {
+        background: rgba(194, 162, 106, 0.07);
+        border: 1px solid rgba(194, 162, 106, 0.22);
+        border-left: 4px solid #C2A26A;
+        border-radius: 16px;
+        padding: 18px 16px;
+        margin-bottom: 24px;
+    }
+    @media (min-width: 640px) {
+        .legal-overview-box {
+            padding: 24px 28px;
+            margin-bottom: 32px;
+        }
+    }
+    .legal-overview-tag {
+        color: #E6CA9E;
+        font-family: 'aviano-sans', sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0 0 8px 0;
+        font-weight: 600;
+    }
+    .legal-overview-copy {
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+    }
+
+    /* Swipeable Quick Navigation Chips */
+    .legal-chip-scroll {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-bottom: 24px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .legal-chip-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    .legal-chip {
+        flex: 0 0 auto;
+        padding: 7px 13px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    .legal-chip:hover,
+    .legal-chip:active {
+        background: #C2A26A;
+        border-color: #C2A26A;
+        color: #13212E;
+    }
+
+    /* Clause Article Cards */
+    .legal-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 22px 18px;
+        margin-bottom: 20px;
+        transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    @media (min-width: 640px) {
+        .legal-card {
+            padding: 34px 30px;
+            margin-bottom: 28px;
+            border-radius: 22px;
+        }
+    }
+    .legal-card:hover {
+        border-color: rgba(194, 162, 106, 0.3);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* Stacked Clause Header: Guarantees 03 doesn't squeeze the heading into a narrow column */
+    .clause-header {
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .clause-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #C2A26A;
+        font-family: 'DIN', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+    .clause-title {
+        font-family: 'aviano-sans', sans-serif;
+        font-size: clamp(17px, 4.4vw, 22px);
+        line-height: 1.25;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0;
+    }
+
+    /* Sub-clauses */
+    .subclause {
+        margin-bottom: 16px;
+    }
+    .subclause:last-child {
+        margin-bottom: 0;
+    }
+    .subclause-tag {
+        display: inline-block;
+        font-family: 'DIN', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #E6CA9E;
+        letter-spacing: 0.02em;
+        margin-bottom: 3px;
+    }
+    .subclause-text {
+        font-family: 'DIN', sans-serif;
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.76);
+        margin: 0;
+    }
+    @media (min-width: 640px) {
+        .subclause-tag {
+            font-size: 15px;
+        }
+        .subclause-text {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+    }
+
+    /* Structured Milestone Steps (for Terms) */
+    .milestone-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 16px 0;
+    }
+    .milestone-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+    }
+    .milestone-badge {
+        flex: 0 0 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(194, 162, 106, 0.15);
+        color: #E6CA9E;
+        font-size: 11px;
+        font-weight: 600;
+        margin-top: 1px;
+    }
+    .milestone-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin-bottom: 2px;
+    }
+    .milestone-copy {
+        font-size: 12px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0;
+    }
+
+    /* Concierge Contact Card */
+    .legal-concierge {
+        background: linear-gradient(135deg, rgba(23, 42, 58, 0.95), rgba(16, 28, 39, 0.98));
+        border: 1px solid rgba(194, 162, 106, 0.35);
+        border-radius: 22px;
+        padding: 24px 18px;
+        margin-top: 36px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+    @media (min-width: 768px) {
+        .legal-concierge {
+            padding: 34px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+    }
+    .concierge-kicker {
+        color: #C2A26A;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin: 0 0 6px 0;
+    }
+    .concierge-heading {
+        font-family: 'aviano-sans', sans-serif;
+        font-size: clamp(18px, 4.5vw, 24px);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0 0 8px 0;
+    }
+    .concierge-copy {
+        font-size: 13px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0 0 20px 0;
+        max-width: 520px;
+    }
+    @media (min-width: 768px) {
+        .concierge-copy {
+            margin-bottom: 0;
+        }
+    }
+    .concierge-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    @media (min-width: 640px) {
+        .concierge-actions {
+            flex-direction: row;
+            width: auto;
+        }
+    }
+    .btn-gold {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 22px;
+        border-radius: 999px;
+        background: #C2A26A;
+        color: #13212E;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        text-align: center;
+    }
+    .btn-gold:hover {
+        background-color: #FFFFFF;
+    }
+    .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 20px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #FFFFFF;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        text-align: center;
+    }
+    .btn-outline:hover {
+        border-color: #C2A26A;
+        color: #C2A26A;
+    }
+
+    /* Custom Mobile-Refined Legal Footer */
+    .legal-footer {
+        background-color: #0C151D;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 50px 18px 40px 18px;
+        margin-top: 60px;
+        color: #FFFFFF;
+    }
+    @media (min-width: 640px) {
+        .legal-footer {
+            padding: 65px 36px 45px 36px;
+            margin-top: 80px;
+        }
+    }
+    .legal-footer-inner {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    .legal-footer-top {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    @media (min-width: 768px) {
+        .legal-footer-top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .legal-footer-brand {
+        display: block;
+        width: 140px;
+        margin-bottom: 10px;
+    }
+    .legal-footer-brand img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .legal-footer-tagline {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .legal-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 22px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+    .legal-footer-links a {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .legal-footer-links a:hover {
+        color: #C2A26A;
+    }
+    .legal-footer-bottom {
+        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    @media (min-width: 640px) {
+        .legal-footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .legal-footer-bottom p {
+        margin: 0;
+    }
+    .legal-footer-legal {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .legal-footer-legal a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .legal-footer-legal a:hover {
+        color: #FFFFFF;
+    }
+    .legal-footer-sep {
+        color: rgba(255, 255, 255, 0.2);
+    }
+`;
+}
+
+// Generate Terms & Conditions Page
+function generateTermsConditionsHtml() {
+  return `<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Terms &amp; Conditions | LUXiHOME - Luxury Architecture &amp; Interiors</title>
+    <meta name="description" content="Terms and Conditions governing the bespoke architectural commissions, turnkey interior execution, and atelier services of LUXiHOME Pvt. Ltd." />
+    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/terms-conditions/" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <!-- Open Graph & Social -->
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Terms &amp; Conditions | LUXiHOME Luxury Architecture &amp; Interiors" />
+    <meta property="og:description" content="Terms and Conditions governing bespoke architectural and interior design services by LUXiHOME Pvt. Ltd." />
+    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/terms-conditions/" />
+    <meta property="og:site_name" content="LUXiHOME" />
+    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+
+    <!-- Fonts & Core Styles -->
+    <link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
+    
+    <style id="luxi-legal-custom-css">
+        ${getLegalStyles()}
+    </style>
+
+    <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
+</head>
+
+<body class="wp-singular page-template" data-barba="wrapper">
+
+${getHeaderHtml('/terms-conditions/')}
+
+<div id="legal-page-wrap" data-barba="container" data-barba-namespace="terms-conditions">
+    <main id="main" class="legal-page-container">
+        
+        <!-- Hero Card -->
+        <header class="legal-hero-card">
+            <div class="legal-badge">
+                <span class="legal-badge-dot"></span>
+                <span>LEGAL ATELIER • LUXiHOME</span>
+            </div>
+            <h1 class="legal-hero-title">Terms &amp; Conditions</h1>
+            <p class="legal-hero-desc">
+                Welcome to LUXiHOME Pvt. Ltd. These Terms and Conditions govern all bespoke architectural commissions, turnkey interior executions, procurement workflows, and interactive consultations conducted under the LUXiHOME atelier.
+            </p>
+            
+            <div class="legal-meta-grid">
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Effective</span>
+                    <span class="legal-meta-val">March 1, 2026</span>
+                </div>
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Jurisdiction</span>
+                    <span class="legal-meta-val">Kolkata &amp; Dubai</span>
+                </div>
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Accountability</span>
+                    <span class="legal-meta-val">Turnkey Atelier</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overview Box -->
+        <div class="legal-overview-box">
+            <h3 class="legal-overview-tag">Atelier Engagement Summary</h3>
+            <p class="legal-overview-copy">
+                At LUXiHOME, every residential and penthouse project is a bespoke architectural journey. By scheduling site consultations or signing an execution agreement, you enter into a binding covenant with LUXiHOME Pvt. Ltd. Our obligations guarantee complete turnkey accountability, strict non-disclosure of private residences, and uncompromising material integrity backed by an industry-leading 10-year craftsmanship warranty.
+            </p>
+        </div>
+
+        <!-- Quick Jump Chips -->
+        <nav class="legal-chip-scroll" aria-label="Jump to clause">
+            <a href="#clause-01" class="legal-chip">01 Scope</a>
+            <a href="#clause-02" class="legal-chip">02 Blueprints</a>
+            <a href="#clause-03" class="legal-chip">03 Milestones</a>
+            <a href="#clause-04" class="legal-chip">04 Sourcing</a>
+            <a href="#clause-05" class="legal-chip">05 Warranty</a>
+            <a href="#clause-06" class="legal-chip">06 Security &amp; NDA</a>
+            <a href="#clause-07" class="legal-chip">07 Jurisdiction</a>
+        </nav>
+
+        <!-- Terms Clauses -->
+        <div class="legal-clause-list">
+
+            <!-- 01. Scope -->
+            <article id="clause-01" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 01</span>
+                    <h2 class="clause-title">Atelier Scope &amp; Bespoke Commissions</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">1.1 Turnkey Mandate</span>
+                        <p class="subclause-text">
+                            LUXiHOME Pvt. Ltd. operates as a full-spectrum architecture and interior atelier. All commissions encompass architectural space planning, photorealistic 3D visualizations, structural modifications, custom joinery, curated lighting schemes, and white-glove furniture staging.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">1.2 Consultation &amp; Site Feasibility</span>
+                        <p class="subclause-text">
+                            Initial architectural appraisals across Kolkata (Ballygunge, Alipore, New Town, Salt Lake, Park Street) or Dubai verify structural load limits, MEP ceiling channels, and ambient light orientations.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">1.3 Binding Agreement</span>
+                        <p class="subclause-text">
+                            Detailed architectural drawings, itemized Bills of Quantities (BOQ), and execution timelines become binding upon joint execution of the Project Charter and receipt of the initial mobilization deposit.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 02. Intellectual Property -->
+            <article id="clause-02" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 02</span>
+                    <h2 class="clause-title">Intellectual Property &amp; Blueprint Rights</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">2.1 Proprietary Blueprints</span>
+                        <p class="subclause-text">
+                            All conceptual layouts, 3D structural renders, CAD schematics, and custom furniture joinery drawings conceived by LUXiHOME Pvt. Ltd. remain the exclusive intellectual property of LUXiHOME Atelier.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">2.2 Exclusive Habitation License</span>
+                        <p class="subclause-text">
+                            Clients receive a perpetual, irrevocable license for the physical enjoyment and private utilization of the completed estate. Blueprints may not be duplicated, sold, or transferred to third-party contractors without our written authorization.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 03. Milestone Disbursements -->
+            <article id="clause-03" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 03</span>
+                    <h2 class="clause-title">Turnkey Milestone Payment Framework</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">3.1 Milestone Sequence</span>
+                        <p class="subclause-text">
+                            To maintain complete transparency and eliminate ambiguity, payments are tied strictly to tangible on-site milestones:
+                        </p>
+                    </div>
+
+                    <div class="milestone-stack">
+                        <div class="milestone-item">
+                            <span class="milestone-badge">1</span>
+                            <div>
+                                <div class="milestone-title">Stage 1: Mobilization &amp; 3D Modeling</div>
+                                <p class="milestone-desc">Site laser survey, complete 3D renders, material moodboard sign-offs, and procurement scheduling.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-item">
+                            <span class="milestone-badge">2</span>
+                            <div>
+                                <div class="milestone-title">Stage 2: Civil &amp; MEP Shell Framing</div>
+                                <p class="milestone-desc">Concealed electrical lines, plumbing realignment, HVAC duct framing, and gypsum ceiling grid.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-item">
+                            <span class="milestone-badge">3</span>
+                            <div>
+                                <div class="milestone-title">Stage 3: Millwork &amp; Carcass Joinery</div>
+                                <p class="milestone-desc">BWP marine-grade plywood fabrication, natural veneer pressing, and modular carcasses.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-item">
+                            <span class="milestone-badge">4</span>
+                            <div>
+                                <div class="milestone-title">Stage 4: Italian Marble &amp; Finishings</div>
+                                <p class="milestone-desc">Stone laying, diamond polishing, PU finish coats, architectural lighting, and sanitary fitments.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-item">
+                            <span class="milestone-badge">5</span>
+                            <div>
+                                <div class="milestone-title">Stage 5: White-Glove Handover</div>
+                                <p class="milestone-desc">Deep cleaning, furniture staging, comprehensive quality walkthrough, and key delivery.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subclause">
+                        <span class="subclause-tag">3.2 Procurement Assurance</span>
+                        <p class="subclause-text">
+                            Materials are purchased and booked upon confirmation of each milestone, guaranteeing authentic grade-A materials with zero project delays.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 04. Materials & Sourcing -->
+            <article id="clause-04" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 04</span>
+                    <h2 class="clause-title">Material Specifications &amp; Sourcing</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">4.1 Quarry-Direct Procurement</span>
+                        <p class="subclause-text">
+                            Imported Italian marbles, seasoned teak timbers, marine-grade substrates, and custom architectural brass hardware are inspected directly at origin quarries and master mills.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">4.2 Natural Characteristics</span>
+                        <p class="subclause-text">
+                            Natural stone veining, timber grain patterns, and hand-rubbed metallic patinas exhibit unique organic variations. These are hallmarks of luxury craftsmanship and natural material authenticity.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 05. Warranty -->
+            <article id="clause-05" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 05</span>
+                    <h2 class="clause-title">10-Year Craftsmanship Warranty</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">5.1 Coverage Details</span>
+                        <p class="subclause-text">
+                            LUXiHOME provides a 10-year warranty covering custom joinery structural integrity, termite-resistant marine carcasses, concealed MEP plumbing lines, and precision hardware mechanisms.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">5.2 Care &amp; Complimentary Audits</span>
+                        <p class="subclause-text">
+                            Our concierge team provides complimentary bi-annual inspection visits during the first 24 months of occupancy to ensure all hardware mechanisms and surfaces maintain showroom perfection.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 06. Confidentiality & NDA -->
+            <article id="clause-06" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 06</span>
+                    <h2 class="clause-title">Client Discretion, Site Security &amp; NDAs</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">6.1 Strict Non-Disclosure</span>
+                        <p class="subclause-text">
+                            LUXiHOME enforces rigorous Non-Disclosure Agreements across all architects, contractors, and artisans. Client names, personal contact records, and estate locations are strictly safeguarded.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">6.2 Vault &amp; Sanctuary Discretion</span>
+                        <p class="subclause-text">
+                            Blueprints containing private vaults, biometric safe rooms, or sensitive home automation hubs are encrypted with AES-256 standards and never distributed to external parties.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 07. Jurisdiction -->
+            <article id="clause-07" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 07</span>
+                    <h2 class="clause-title">Governing Law &amp; Jurisdiction</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">7.1 Indian Commissions</span>
+                        <p class="subclause-text">
+                            These terms and all architectural works executed in India are governed by the laws of India, with exclusive legal jurisdiction vested in the competent courts of Kolkata, West Bengal.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">7.2 International Commissions</span>
+                        <p class="subclause-text">
+                            For commissions commissioned through our Dubai liaison desk, Dubai International Arbitration Centre (DIAC) provisions apply as stipulated in the bespoke project contract.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Concierge Box -->
+        <div class="legal-concierge">
+            <div>
+                <p class="concierge-kicker">Direct Legal Concierge</p>
+                <h3 class="concierge-heading">Have Questions Regarding Our Terms?</h3>
+                <p class="concierge-copy">
+                    Our lead architectural partners and legal counsel are at your disposal to customize project contract addendums or arrange private non-disclosure agreements.
+                </p>
+            </div>
+            <div class="concierge-actions">
+                <a href="/contact/" class="btn-gold">Consult Concierge</a>
+                <a href="mailto:concierge@luxihome.com" class="btn-outline">concierge@luxihome.com</a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+${getFooterHtml()}
+
+<script id="script-js-js-extra">
+var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
+</script>
+<script id="script-js-js" src="/assets/js/bundle.js?ver=20260911_v3"></script>
+
+</body>
+</html>
+`;
+}
+
+// Generate Privacy Policy Page
+function generatePrivacyPolicyHtml() {
+  return `<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Privacy Policy | LUXiHOME - Luxury Architecture &amp; Interiors</title>
+    <meta name="description" content="Privacy Policy and client confidentiality standards for LUXiHOME Pvt. Ltd. Discover how we protect high-net-worth client spatial data, blueprints, and personal discretion." />
+    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/privacy-policy/" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <!-- Open Graph & Social -->
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Privacy Policy | LUXiHOME Luxury Architecture &amp; Interiors" />
+    <meta property="og:description" content="Discover how LUXiHOME Pvt. Ltd. safeguards client confidentiality, architectural blueprints, and estate spatial security." />
+    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/privacy-policy/" />
+    <meta property="og:site_name" content="LUXiHOME" />
+    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+
+    <!-- Fonts & Core Styles -->
+    <link rel='stylesheet' id='screen-css-css' href='/assets/css/styles.css?ver=20260911_v3' media='all' />
+    
+    <style id="luxi-privacy-custom-css">
+        ${getLegalStyles()}
+    </style>
+
+    <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
+</head>
+
+<body class="wp-singular page-template" data-barba="wrapper">
+
+${getHeaderHtml('/privacy-policy/')}
+
+<div id="legal-page-wrap" data-barba="container" data-barba-namespace="privacy-policy">
+    <main id="main" class="legal-page-container">
+        
+        <!-- Hero Card -->
+        <header class="legal-hero-card">
+            <div class="legal-badge">
+                <span class="legal-badge-dot"></span>
+                <span>CLIENT CONFIDENTIALITY • LUXiHOME</span>
+            </div>
+            <h1 class="legal-hero-title">Privacy Policy</h1>
+            <p class="legal-hero-desc">
+                At LUXiHOME Pvt. Ltd., discretion is not merely a legal clause—it is the foundational pillar of our atelier practice. This Privacy Policy details how we collect, protect, and safeguard the spatial blueprints, contact records, and private estate details entrusted to us.
+            </p>
+            
+            <div class="legal-meta-grid">
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Effective</span>
+                    <span class="legal-meta-val">March 1, 2026</span>
+                </div>
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Data Sale</span>
+                    <span class="legal-meta-val">Zero / Strictly None</span>
+                </div>
+                <div class="legal-meta-cell">
+                    <span class="legal-meta-tag">Security</span>
+                    <span class="legal-meta-val">AES-256 Encrypted</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Guarantee Banner -->
+        <div class="legal-overview-box">
+            <h3 class="legal-overview-tag">Our Discretion Guarantee</h3>
+            <p class="legal-overview-copy">
+                LUXiHOME never sells, rents, licenses, or monetizes client data, phone numbers, or architectural floor plans. All technical drawings, site coordinates, and private estate specifications are encrypted and accessible strictly on a need-to-know basis by verified lead architects and project engineers.
+            </p>
+        </div>
+
+        <!-- Quick Jump Chips -->
+        <nav class="legal-chip-scroll" aria-label="Jump to section">
+            <a href="#privacy-01" class="legal-chip">01 Discretion</a>
+            <a href="#privacy-02" class="legal-chip">02 Data Collection</a>
+            <a href="#privacy-03" class="legal-chip">03 Data Usage</a>
+            <a href="#privacy-04" class="legal-chip">04 CAD Security</a>
+            <a href="#privacy-05" class="legal-chip">05 Photography</a>
+            <a href="#privacy-06" class="legal-chip">06 Cookies</a>
+            <a href="#privacy-07" class="legal-chip">07 Client Rights</a>
+        </nav>
+
+        <!-- Privacy Clauses -->
+        <div class="legal-clause-list">
+
+            <!-- 01. Discretion -->
+            <article id="privacy-01" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 01</span>
+                    <h2 class="clause-title">Client Discretion &amp; Estate Privacy</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">1.1 High-Net-Worth Protection</span>
+                        <p class="subclause-text">
+                            Because our clientele comprises industry leaders, esteemed families, and public figures, we enforce enterprise-level discretion. Every architect, engineer, and artisan is bound by comprehensive non-disclosure agreements.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">1.2 Spatial Anonymity</span>
+                        <p class="subclause-text">
+                            All technical blueprints, lighting schedules, and private master wing floor plans are cataloged internally under encrypted alphanumeric codes to ensure complete privacy across all site execution phases.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 02. Data Collected -->
+            <article id="privacy-02" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 02</span>
+                    <h2 class="clause-title">Information We Collect</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">2.1 Direct Inquiries</span>
+                        <p class="subclause-text">
+                            When initiating an atelier consultation, we record your primary contact details, residential address, architectural floor plans, family spatial briefs, and design preferences.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">2.2 Technical Site Measurements</span>
+                        <p class="subclause-text">
+                            During site feasibility inspections, we capture structural dimensions, load-bearing column placements, slab levels, and electrical ducting paths required for precision execution.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 03. Data Usage -->
+            <article id="privacy-03" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 03</span>
+                    <h2 class="clause-title">How We Utilize Project Data</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">3.1 Turnkey Execution</span>
+                        <p class="subclause-text">
+                            Collected spatial measurements and architectural requirements are utilized exclusively for engineering, custom joinery drafting, and executing your residence.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">3.2 Direct Communication</span>
+                        <p class="subclause-text">
+                            Your contact details are used strictly for project progress reports, material approvals, milestone invoices, and post-handover warranty visits.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">3.3 Zero Promotional Monetization</span>
+                        <p class="subclause-text">
+                            We never broadcast marketing spam or sell your contact records to third-party brokers, material vendors, or real estate databases.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 04. CAD Security -->
+            <article id="privacy-04" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 04</span>
+                    <h2 class="clause-title">Data Security &amp; Blueprint Encryption</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">4.1 Digital Blueprint Vault</span>
+                        <p class="subclause-text">
+                            All 3D visualization files, CAD schematics, and structural calculations are archived on private cloud servers secured by multi-factor authentication and AES-256 bit encryption.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">4.2 On-Site Drawing Controls</span>
+                        <p class="subclause-text">
+                            Physical architectural drawing sets issued to site supervisors are strictly serialized and cataloged to prevent unauthorized distribution or duplication.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 05. Photography -->
+            <article id="privacy-05" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 05</span>
+                    <h2 class="clause-title">Architectural Photography &amp; Journal Showcases</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">5.1 Written Consent Prerequisite</span>
+                        <p class="subclause-text">
+                            LUXiHOME documents and showcases completed residences in our architectural journal exclusively with prior written consent from the client.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">5.2 Complete Client Anonymity</span>
+                        <p class="subclause-text">
+                            Published project features omit client names, specific street numbers, vehicle plates, and personal heirlooms. Private dressing rooms, security vaults, and personal safes are strictly excluded from media capture.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 06. Cookies -->
+            <article id="privacy-06" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 06</span>
+                    <h2 class="clause-title">Cookies &amp; Performance Analytics</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">6.1 Essential Navigation Cookies</span>
+                        <p class="subclause-text">
+                            We use essential session tokens to remember interactive navigation states and optimize layout rendering speed across your visits.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">6.2 Anonymized Telemetry</span>
+                        <p class="subclause-text">
+                            Aggregated analytics help us analyze mobile reading comfort and web performance without identifying individual visitors. You may disable cookies in your browser settings at any time.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 07. Client Rights -->
+            <article id="privacy-07" class="legal-card">
+                <div class="clause-header">
+                    <span class="clause-kicker">CLAUSE 07</span>
+                    <h2 class="clause-title">Client Rights &amp; Archival Redaction</h2>
+                </div>
+                <div class="clause-content">
+                    <div class="subclause">
+                        <span class="subclause-tag">7.1 Access &amp; Audit</span>
+                        <p class="subclause-text">
+                            You may request a copy of all contact records and project specifications stored in our client registry at any time.
+                        </p>
+                    </div>
+                    <div class="subclause">
+                        <span class="subclause-tag">7.2 Right to Erasure</span>
+                        <p class="subclause-text">
+                            Following the expiration of warranty and statutory compliance periods, you may formally request the permanent redaction or purge of your personal details from our archives.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Concierge Box -->
+        <div class="legal-concierge">
+            <div>
+                <p class="concierge-kicker">Data Protection Desk</p>
+                <h3 class="concierge-heading">Private Inquiries &amp; NDA Execution</h3>
+                <p class="concierge-copy">
+                    For high-profile residential commissions requiring custom non-disclosure agreements or legal counsel review, please connect directly with our confidentiality desk.
+                </p>
+            </div>
+            <div class="concierge-actions">
+                <a href="/contact/" class="btn-gold">Submit Private Brief</a>
+                <a href="mailto:privacy@luxihome.com" class="btn-outline">privacy@luxihome.com</a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+${getFooterHtml()}
+
+<script id="script-js-js-extra">
+var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin-ajax.php"};
+</script>
+<script id="script-js-js" src="/assets/js/bundle.js?ver=20260911_v3"></script>
+
+</body>
+</html>
+`;
+}
+
+// Main Execution
+function run() {
+  console.log('Generating mobile-optimized Terms & Conditions page...');
+  const termsHtml = generateTermsConditionsHtml();
+  const termsDir = path.join(ROOT_DIR, 'terms-conditions');
+  if (!fs.existsSync(termsDir)) fs.mkdirSync(termsDir, { recursive: true });
+  fs.writeFileSync(path.join(termsDir, 'index.html'), termsHtml, 'utf-8');
+  console.log('✓ terms-conditions/index.html generated.');
+
+  console.log('Generating mobile-optimized Privacy Policy page...');
+  const privacyHtml = generatePrivacyPolicyHtml();
+  const privacyDir = path.join(ROOT_DIR, 'privacy-policy');
+  if (!fs.existsSync(privacyDir)) fs.mkdirSync(privacyDir, { recursive: true });
+  fs.writeFileSync(path.join(privacyDir, 'index.html'), privacyHtml, 'utf-8');
+  console.log('✓ privacy-policy/index.html generated.');
+}
+
+run();
