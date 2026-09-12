@@ -12,7 +12,7 @@ function setupRedirect(folderName, targetPath, title) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=${targetPath}">
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app${targetPath}" />
+    <link rel="canonical" href="https://luxihome.in${targetPath}" />
     <title>Redirecting to ${title} | LUXiHOME</title>
     <script>window.location.replace('${targetPath}');</script>
 </head>

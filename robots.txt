@@ -37,5 +37,5 @@ Disallow: /backups/
 Disallow: /*.bak$
 
 # Host & XML Sitemap
-Sitemap: https://luxihome-tab-web.vercel.app/sitemap.xml
-Host: https://luxihome-tab-web.vercel.app
+Sitemap: https://luxihome.in/sitemap.xml
+Host: https://luxihome.in

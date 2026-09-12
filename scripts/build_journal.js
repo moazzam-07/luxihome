@@ -939,13 +939,13 @@ function generateArticleHtml(art) {
     <title>${art.title} | LUXiHOME Journal Kolkata</title>
     <meta name="description" content="${art.metaDescription}">
     <meta name="keywords" content="${art.keywords}">
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/journal/${art.slug}/">
+    <link rel="canonical" href="https://luxihome.in/journal/${art.slug}/">
     
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="article">
     <meta property="og:title" content="${art.title} | LUXiHOME">
     <meta property="og:description" content="${art.metaDescription}">
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/journal/${art.slug}/">
+    <meta property="og:url" content="https://luxihome.in/journal/${art.slug}/">
     <meta property="og:site_name" content="LUXiHOME">
     <meta property="og:image" content="${art.image}">
     <meta name="twitter:card" content="summary_large_image">
@@ -1097,13 +1097,13 @@ function generateHubHtml() {
     
     <title>The Journal • Luxury Residences &amp; Interiors Kolkata | LUXiHOME</title>
     <meta name="description" content="Explore bespoke architecture, turnkey craftsmanship, and luxury residential interior design insights across Kolkata by LUXiHOME Pvt. Ltd.">
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/journal/">
+    <link rel="canonical" href="https://luxihome.in/journal/">
     
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Journal • Luxury Residences &amp; Interiors Kolkata | LUXiHOME">
     <meta property="og:description" content="Explore bespoke architecture, turnkey craftsmanship, and luxury residential interior design insights across Kolkata by LUXiHOME Pvt. Ltd.">
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/journal/">
+    <meta property="og:url" content="https://luxihome.in/journal/">
     <meta property="og:site_name" content="LUXiHOME">
     <meta name="twitter:card" content="summary_large_image">
 

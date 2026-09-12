@@ -789,7 +789,7 @@ function generateTermsConditionsHtml() {
     
     <title>Terms &amp; Conditions | LUXiHOME - Luxury Architecture &amp; Interiors</title>
     <meta name="description" content="Terms and Conditions governing the bespoke architectural commissions, turnkey interior execution, and atelier services of LUXiHOME Pvt. Ltd." />
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/terms-conditions/" />
+    <link rel="canonical" href="https://luxihome.in/terms-conditions/" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
     <!-- Open Graph & Social -->
@@ -797,9 +797,9 @@ function generateTermsConditionsHtml() {
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Terms &amp; Conditions | LUXiHOME Luxury Architecture &amp; Interiors" />
     <meta property="og:description" content="Terms and Conditions governing bespoke architectural and interior design services by LUXiHOME Pvt. Ltd." />
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/terms-conditions/" />
+    <meta property="og:url" content="https://luxihome.in/terms-conditions/" />
     <meta property="og:site_name" content="LUXiHOME" />
-    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
+    <meta property="og:image" content="https://luxihome.in/assets/img/projects/park-street-featured.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicons -->
@@ -1116,7 +1116,7 @@ function generatePrivacyPolicyHtml() {
     
     <title>Privacy Policy | LUXiHOME - Luxury Architecture &amp; Interiors</title>
     <meta name="description" content="Privacy Policy and client confidentiality standards for LUXiHOME Pvt. Ltd. Discover how we protect high-net-worth client spatial data, blueprints, and personal discretion." />
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/privacy-policy/" />
+    <link rel="canonical" href="https://luxihome.in/privacy-policy/" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
     <!-- Open Graph & Social -->
@@ -1124,9 +1124,9 @@ function generatePrivacyPolicyHtml() {
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Privacy Policy | LUXiHOME Luxury Architecture &amp; Interiors" />
     <meta property="og:description" content="Discover how LUXiHOME Pvt. Ltd. safeguards client confidentiality, architectural blueprints, and estate spatial security." />
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/privacy-policy/" />
+    <meta property="og:url" content="https://luxihome.in/privacy-policy/" />
     <meta property="og:site_name" content="LUXiHOME" />
-    <meta property="og:image" content="https://luxihome-tab-web.vercel.app/assets/img/projects/park-street-featured.jpg" />
+    <meta property="og:image" content="https://luxihome.in/assets/img/projects/park-street-featured.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicons -->

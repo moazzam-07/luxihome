@@ -955,13 +955,13 @@ function generateCaseStudiesHubHtml() {
     
     <title>Case Studies • Kolkata Bespoke Architecture &amp; Interiors | LUXiHOME</title>
     <meta name="description" content="Explore bespoke architectural and luxury interior design case studies across Kolkata by LUXiHOME Pvt. Ltd. Featuring Ballygunge, New Town, Alipore, Salt Lake, Topsia, and Rajarhat.">
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/case-studies/">
+    <link rel="canonical" href="https://luxihome.in/case-studies/">
     
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Case Studies • Kolkata Bespoke Architecture &amp; Interiors | LUXiHOME">
     <meta property="og:description" content="Explore bespoke architectural and luxury interior design case studies across Kolkata by LUXiHOME Pvt. Ltd.">
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/case-studies/">
+    <meta property="og:url" content="https://luxihome.in/case-studies/">
     <meta property="og:site_name" content="LUXiHOME">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -1076,15 +1076,15 @@ function generateLocationDetailHtml(loc) {
     
     <title>${loc.title} • ${loc.name}, Kolkata Case Study | LUXiHOME</title>
     <meta name="description" content="${loc.excerpt} - Bespoke architectural and turnkey interior case study by LUXiHOME Pvt. Ltd. in ${loc.name}, Kolkata.">
-    <link rel="canonical" href="https://luxihome-tab-web.vercel.app/case-studies/${loc.slug}/">
+    <link rel="canonical" href="https://luxihome.in/case-studies/${loc.slug}/">
     
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="article">
     <meta property="og:title" content="${loc.title} • ${loc.name} Case Study | LUXiHOME">
     <meta property="og:description" content="${loc.excerpt}">
-    <meta property="og:url" content="https://luxihome-tab-web.vercel.app/case-studies/${loc.slug}/">
+    <meta property="og:url" content="https://luxihome.in/case-studies/${loc.slug}/">
     <meta property="og:site_name" content="LUXiHOME">
-    <meta property="og:image" content="https://luxihome-tab-web.vercel.app${loc.coverImage}">
+    <meta property="og:image" content="https://luxihome.in${loc.coverImage}">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
