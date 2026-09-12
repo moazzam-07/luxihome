@@ -30,6 +30,7 @@ Disallow: /about-msquare/
 Disallow: /residences/
 Disallow: /wp-admin/
 Disallow: /wp-includes/
+Allow: /wp-content/uploads/
 Disallow: /wp-content/
 Disallow: /wp-json/
 Disallow: /backups/
