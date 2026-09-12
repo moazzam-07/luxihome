@@ -75,40 +75,6 @@ function getHeaderHtml(activePage = '') {
                                 </div>
                             </li>
 
-                            <!-- Case Studies Section -->
-                            <li class="group/li font-sans font-light text-28 sm:text-38 lg:text-40 xl:text-50 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
-                                <a href="/case-studies/" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">
-                                    <span>Case Studies</span>
-                                </a>
-                                <div class="h-auto opacity-100 visible">
-                                    <div class="pt-16 pb-10">
-                                        <ul class="luxi-case-studies-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 18px !important; row-gap: 18px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 10px !important; margin-bottom: 4px !important;">
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/ballygunge/">Ballygunge Duplex</a>
-                                            </li>
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/new-town/">New Town Penthouse</a>
-                                            </li>
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/alipore/">Alipore Heritage Villa</a>
-                                            </li>
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/salt-lake/">Salt Lake Modernist Manor</a>
-                                            </li>
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/topsia/">Topsia Sky Villa</a>
-                                            </li>
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/rajarhat/">Rajarhat Villa Sanctuary</a>
-                                            </li>
-                                            <li class="font-normal text-16 sm:text-17 leading-none tracking-0.42" style="margin: 0 !important; padding: 0 !important;">
-                                                <a class="relative block py-1 text-white/90 hover:text-[#C2A26A] transition-colors" href="/case-studies/dum-dum/">Dum Dum Private Estate</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
                             <div class="w-full h-1 bg-white/20 my-15" data-target="menu-divider"></div>
                             <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
                                 <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
@@ -116,6 +82,10 @@ function getHeaderHtml(activePage = '') {
                             </li>
                             <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
                                 <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
+                                <div data-target="sub-menu"></div>
+                            </li>
+                            <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
                                 <div data-target="sub-menu"></div>
                             </li>
                             <li class="font-sans font-light text-28 lg:text-28 xl:text-36 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.04 uppercase whitespace-normal lg:whitespace-nowrap" data-state="closed">

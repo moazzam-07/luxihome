@@ -3,7 +3,7 @@ const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 
-// 7 Elite Kolkata Locations
+// 7 Elite Kolkata Locations with High-Value Stories and Contextual Imagery
 const LOCATIONS = [
   {
     slug: 'ballygunge',
@@ -11,23 +11,25 @@ const LOCATIONS = [
     region: 'South Kolkata',
     title: 'The Circular Road Penthouse',
     kicker: 'Ballygunge • South Kolkata',
-    typology: '6,800 Sq.Ft Duplex & Sky Terrace',
-    coverImage: '/assets/img/pentagon/alams-pentagon-living-lounge.jpg',
-    excerpt: 'An expansive double-height residence blending Calcutta heritage proportions with minimalist Italian Statuario marble joinery and private terrace gardens.',
-    overview: 'Located in the premier old-money enclave of Ballygunge Circular Road, this 6,800 sq.ft duplex commission required structural spatial reconfiguration, ceiling-height maximization, and bespoke acoustic isolation. LUXiHOME orchestrated the entire turnkey execution—from reinforced cantilever balconies to imported Italian marble wall claddings and bespoke brass lighting fixtures.',
+    typology: '6,800 Sq.Ft Duplex Penthouse',
+    coverImage: '/wp-content/uploads/about-interiors/grand_crystal_chandelier_drawing_room.jpg',
+    excerpt: 'A grand double-height duplex combining imported Italian Statuario marble with warm teak woodwork and acoustic noise isolation.',
+    overview: 'Located on prestigious Ballygunge Circular Road, this 6,800 sq.ft duplex had immense volume but suffered from dark internal corridors, awkward builder walls, and heavy street traffic noise. LUXiHOME completely re-engineered the floor plan, brought in natural daylight from floor to ceiling, and handed over a tranquil, turnkey luxury home in 14 months.',
+    challenge: 'The homeowner bought two combined floors with high ceilings, but the interior felt cut off. Narrow hallways blocked natural sunlight, heavy support columns broke the room flow, and constant traffic noise from Circular Road entered the living area. The family wanted a spacious, museum-quality home where they could host guests in complete silence and privacy.',
+    solution: 'We removed five non-structural partition walls to create an open 24-foot double-height central living salon. We installed Saint-Gobain acoustic double-glazed curtain walls to silence outside road noise by 85%. Book-matched Italian Statuario marble slabs were hand-selected and laid with razor-thin brass joints, paired with warm Burmese teak wall paneling and concealed shadow-gap LED lighting.',
     specs: [
       { tag: 'Area', val: '6,800 Sq.Ft' },
-      { tag: 'Typology', val: 'Penthouse Duplex' },
+      { tag: 'Typology', val: 'Duplex Penthouse' },
       { tag: 'Location', val: 'Ballygunge Circular Rd' },
-      { tag: 'Scope', val: 'Turnkey Architecture & Interiors' },
-      { tag: 'Materials', val: 'Statuario Marble & Fluted Teak' },
-      { tag: 'Timeline', val: '14 Months Handcrafted Execution' }
+      { tag: 'Scope', val: 'Turnkey Design & Build' },
+      { tag: 'Materials', val: 'Statuario Marble & Teak' },
+      { tag: 'Timeline', val: '14 Months Delivery' }
     ],
     features: [
-      { title: 'Double-Height Atrium Living', desc: 'A 24-foot soaring ceiling lounge with floor-to-ceiling acoustic glass framing Kolkata’s lush canopy.' },
-      { title: 'Imported Marble Precision', desc: 'Book-matched Italian Statuario slabs with concealed brass transition profiles.' },
-      { title: 'Private Sky Terrace', desc: 'An irrigated botanical terrace featuring weatherproof teak decking and custom bronze water features.' },
-      { title: 'Acoustic Sound Architecture', desc: 'Integrated architectural baffling and multi-zone discrete audio engineered into seamless architectural plaster.' }
+      { title: 'Double-Height Living Salon', desc: 'A 24-foot soaring ceiling lounge bathed in natural sunlight through soundproof acoustic glass.' },
+      { title: 'Precision Italian Marble', desc: 'Continuous vein-matched Statuario marble flooring across all formal entertaining spaces.' },
+      { title: 'Private Terrace Sanctuary', desc: 'Waterproof teak decking with custom ambient brass garden lighting and lush greenery.' },
+      { title: 'Smart Climate & Sound', desc: 'Concealed Daikin VRV air conditioning with multi-room discrete architectural audio.' }
     ]
   },
   {
@@ -35,24 +37,26 @@ const LOCATIONS = [
     name: 'New Town',
     region: 'East Kolkata & IT Corridor',
     title: 'The Skyline Glass Atelier',
-    kicker: 'Action Area I & II • New Town',
+    kicker: 'Action Area II • New Town',
     typology: '5,400 Sq.Ft Contemporary Penthouse',
-    coverImage: '/assets/img/projects/new-town/photo_1_2026-09-04_15-49-33.jpg',
-    excerpt: 'A clean-lined glass sanctuary designed for high-profile tech founders and entrepreneurs overlooking the New Town skyline and Eco Park.',
-    overview: 'Perched high above New Town Action Area II, this panoramic penthouse was engineered with fluid curves, concealed architectural HVAC, and complete Lutron smart home integration. LUXiHOME delivered a serene, gallery-inspired retreat featuring floor-to-ceiling glass, custom walnut cabinetry, and a sculpted marble kitchen island.',
+    coverImage: '/assets/img/projects/newtown/photo_1_2026-09-04_15-49-33.jpg',
+    excerpt: 'A minimalist glass penthouse with 360-degree sunset views, custom walnut joinery, and smart home automation overlooking Eco Park.',
+    overview: 'Perched on the 26th floor in New Town Action Area II, this panoramic penthouse was handed over as a bare concrete and glass shell. The tech-founder client wanted a clean, uncluttered sanctuary that maximized open sunset views while staying cool and private during Kolkata’s hot summers.',
+    challenge: 'The raw flat had harsh afternoon solar glare, echoey acoustics due to large bare glass walls, and an uninspiring standard builder kitchen. The client needed effective thermal insulation, seamless storage that hid all clutter, and an open layout tailored for both quiet remote work and evening entertaining.',
+    solution: 'We applied solar-reflective UV films and motorized sheer drop screens that block heat without losing the view. Acoustic plaster on ceilings absorbed reverberations. In the kitchen, we engineered a monolithic Calacatta quartz island with hidden induction cooktops and motorized push-to-open cabinets. Full Lutron lighting allows one-touch scene changes from work mode to evening lounge.',
     specs: [
       { tag: 'Area', val: '5,400 Sq.Ft' },
-      { tag: 'Typology', val: 'Skyline Penthouse' },
+      { tag: 'Typology', val: 'High-Rise Penthouse' },
       { tag: 'Location', val: 'Action Area II, New Town' },
-      { tag: 'Scope', val: 'Architectural Remodeling & Interiors' },
-      { tag: 'Materials', val: 'Smoked Walnut & Neolith Calacatta' },
-      { tag: 'Timeline', val: '11 Months Turnkey Handover' }
+      { tag: 'Scope', val: 'Turnkey Interior Architecture' },
+      { tag: 'Materials', val: 'Smoked Walnut & Quartz' },
+      { tag: 'Timeline', val: '11 Months Delivery' }
     ],
     features: [
-      { title: 'Panoramic Curtain Wall Glazing', desc: 'UV-filtered acoustic glass walls capturing sunset vistas over New Town and Eco Park.' },
-      { title: 'Monolithic Kitchen Atelier', desc: 'Bespoke island with concealed induction cooktop, touch-release motorized joinery, and Miele integrated appliances.' },
-      { title: 'Smart Atmospheric Lighting', desc: 'Architectural recessed linears and circadian dimming programmed for evening entertainment.' },
-      { title: 'Minimalist Master Suite', desc: 'Walk-in open wardrobe with Italian bronze-framed glass doors and integrated leather valet dressers.' }
+      { title: 'Sunset Glass Wall', desc: 'UV-filtered panoramic glazing framing unobstructed vistas over New Town and Eco Park.' },
+      { title: 'Concealed Chef’s Island', desc: 'Minimalist kitchen island with hidden induction, built-in Miele appliances, and zero visible clutter.' },
+      { title: 'Circadian Lighting Scenes', desc: 'Warm automated lighting that transitions naturally from bright morning daylight to cozy 2700K evening warmth.' },
+      { title: 'Minimalist Suite & Valet', desc: 'Bronze-tinted walk-in wardrobe with soft-closing fluted glass doors and integrated leather organizers.' }
     ]
   },
   {
@@ -63,21 +67,23 @@ const LOCATIONS = [
     kicker: 'Alipore • Billionaires Row',
     typology: '8,500 Sq.Ft Palatial Private Residence',
     coverImage: '/assets/img/about/architectural-villa-facade.jpg',
-    excerpt: 'Grand colonnaded private residence integrating private courtyard gardens, museum-grade art illumination, and bespoke classical millwork.',
-    overview: 'In Kolkata’s most prestigious residential row, LUXiHOME was commissioned for a complete interior transformation of a multi-generational estate. The project honors high-ceiling colonial grandeur while introducing state-of-the-art climate control, bespoke champagne brass screens, and hand-finished European oak parquetry.',
+    excerpt: 'A palatial private residence combining classic colonial proportions with private courtyard gardens and museum-grade art illumination.',
+    overview: 'Located on exclusive Alipore Park Place, this standalone 8,500 sq.ft private estate is home to a multi-generational Kolkata business family. LUXiHOME undertook a complete turnkey transformation—restoring structural strength, integrating an internal green courtyard, and outfitting every room with handcrafted millwork.',
+    challenge: 'The home had rich heritage character, but suffered from outdated electrical lines, damp corners, heavy ceiling beams that felt oppressive, and dark rooms with poor ventilation. The family wanted to preserve their legacy while upgrading to international luxury standards with complete climate control, fresh air circulation, and display walls for their art collection.',
+    solution: 'We reinforced the foundation and installed modern waterproof insulation barriers throughout. We opened up a central light well to create a lush, indoor landscaped courtyard that brings daylight and fresh air directly into the dining and family rooms. Museum-grade 98+ CRI spotlights were calibrated specifically for their oil paintings, and all flooring was renewed with French white oak and Botticino marble.',
     specs: [
       { tag: 'Area', val: '8,500 Sq.Ft' },
-      { tag: 'Typology', val: 'Multi-Level Private Residence' },
+      { tag: 'Typology', val: 'Multi-Level Estate Villa' },
       { tag: 'Location', val: 'Alipore Park Place' },
-      { tag: 'Scope', val: 'Complete Turnkey Architecture & Decor' },
-      { tag: 'Materials', val: 'French White Oak & Botticino Marble' },
-      { tag: 'Timeline', val: '16 Months Bespoke Delivery' }
+      { tag: 'Scope', val: 'Complete Rebuild & Turnkey Interiors' },
+      { tag: 'Materials', val: 'French Oak & Botticino Marble' },
+      { tag: 'Timeline', val: '16 Months Delivery' }
     ],
     features: [
-      { title: 'Courtyard Reflection Sanctuary', desc: 'Internal light well bringing natural daylit greenery into the core dining and salon zones.' },
-      { title: 'Private Art Gallery Salon', desc: 'Museum-calibrated 98+ CRI directional lighting specifically engineered for historic South Asian art.' },
-      { title: 'Master Spa Suite', desc: 'Freestanding solid stone soaking tub, steam cabin, and bookmatched onyx feature wall.' },
-      { title: 'Custom Vaulted Wine Cellar', desc: 'Dual-temperature tasting room lined with thermo-treated European white oak and tempered glass.' }
+      { title: 'Central Light Court', desc: 'An internal landscaped garden well that channels natural daylight into the dining and living wings.' },
+      { title: 'Museum-Grade Art Gallery', desc: 'Specialized high-CRI illumination that highlights art textures without fading delicate pigments.' },
+      { title: 'Private Spa Suite', desc: 'Master bathroom with a solid stone soaking tub, steam cabin, and book-matched onyx accent wall.' },
+      { title: 'Controlled Tasting Lounge', desc: 'Dual-zone climate room lined with solid European oak for family gatherings.' }
     ]
   },
   {
@@ -85,24 +91,26 @@ const LOCATIONS = [
     name: 'Salt Lake',
     region: 'Bidhannagar',
     title: 'The Salt Lake Modernist Manor',
-    kicker: 'Sector II & III • Salt Lake',
+    kicker: 'Sector III • Salt Lake',
     typology: '6,100 Sq.Ft Bespoke Bungalow',
-    coverImage: '/assets/img/about/luxury-living-lounge.jpg',
-    excerpt: 'A brutalist-inspired modernist bungalow transformation with floating stairways, cantilevered balconies, and seamless indoor-outdoor water features.',
-    overview: 'This independent bungalow on a prime corner plot in Salt Lake Sector III underwent a comprehensive structural upgrade. LUXiHOME unified previously disconnected floors with a central double-height light atrium, glass bridge walkway, and minimalist landscape integration.',
+    coverImage: '/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg',
+    excerpt: 'A brutalist-inspired modernist bungalow transformation with a cantilevered floating staircase, reflecting pond, and rooftop terrace.',
+    overview: 'Sitting on a prime corner plot in Salt Lake Sector III, this 6,100 sq.ft independent bungalow was transformed from an old boxed-in 1980s structure into an airy, architectural masterpiece. LUXiHOME redesigned the exterior façade and created continuous flowing living spaces inside.',
+    challenge: 'The original bungalow was divided into tiny, dark rooms with low ceilings, narrow concrete staircases, and no connection between the ground floor and the garden. Moisture from Kolkata monsoons had damaged old walls, and the layout lacked modern entertaining areas or privacy for the owners.',
+    solution: 'We cut through the center of the building to introduce a double-height skylit atrium with an architectural floating staircase made of steel and solid walnut. Large sliding glass panels open the living lounge directly to a ground-level reflecting pond. We replaced all exterior plaster with breathable, weatherproof textured concrete and travertine stone.',
     specs: [
       { tag: 'Area', val: '6,100 Sq.Ft' },
       { tag: 'Typology', val: 'Independent Corner Bungalow' },
       { tag: 'Location', val: 'Sector III, Salt Lake' },
-      { tag: 'Scope', val: 'Façade Modernization & Turnkey Interiors' },
-      { tag: 'Materials', val: 'Exposed Concrete, Teak & Travertine' },
-      { tag: 'Timeline', val: '13 Months Execution' }
+      { tag: 'Scope', val: 'Façade Redesign & Turnkey Interiors' },
+      { tag: 'Materials', val: 'Textured Concrete, Walnut & Travertine' },
+      { tag: 'Timeline', val: '13 Months Delivery' }
     ],
     features: [
-      { title: 'Architectural Floating Staircase', desc: 'Cantilevered steel treads wrapped in solid American walnut with frameless structural glass balustrades.' },
-      { title: 'Biophilic Water Court', desc: 'Ground-level reflecting pond visible through recessed glass partitions from the formal living lounge.' },
-      { title: 'Executive Penthouse Study', desc: 'Sound-dampened private library and workspace with bespoke brass-inlaid bookcases.' },
-      { title: 'Solar-Shaded Terraces', desc: 'Architectural pergolas with motorized louvers providing natural shade and ambient rain protection.' }
+      { title: 'Floating Walnut Staircase', desc: 'Cantilevered steps suspended from a structural steel spine with seamless glass balustrades.' },
+      { title: 'Ground-Level Water Court', desc: 'A calm reflecting pond that cools the living area naturally and creates serene water reflections indoors.' },
+      { title: 'Private Executive Library', desc: 'Soundproof home office lined with custom brass-accented walnut bookshelves.' },
+      { title: 'All-Weather Sky Terrace', desc: 'Rooftop entertainment deck with motorized louvers for shade and monsoon rain protection.' }
     ]
   },
   {
@@ -112,22 +120,24 @@ const LOCATIONS = [
     title: 'The Sky Villa at EM Bypass',
     kicker: 'Topsia • Atmosphere Corridor',
     typology: '5,900 Sq.Ft Sky Duplex',
-    coverImage: '/assets/img/pentagon/alams-pentagon-curved-lounge.jpg',
-    excerpt: 'Sky villa perched 30 floors above the city with 360-degree panoramic wetland vistas, bespoke curved lounges, and velvet dressing suites.',
-    overview: 'Designed for a prominent luxury collector, this sky villa in the iconic high-rise corridor along the EM Bypass was treated as an aerodynamic, sculpted work of art. Soft curvilinear plasterwork, custom curved seating banquettes, and concealed ambient cove lighting produce a weightless, floating sensation.',
+    coverImage: '/wp-content/uploads/about-interiors/curved_sofa_designer_lounge.jpg',
+    excerpt: 'A high-floor sky duplex with curved floor-to-ceiling glass, custom curved designer seating, and unobstructed wetland sunsets.',
+    overview: 'Perched 30 floors above the EM Bypass in Topsia, this 5,900 sq.ft sky duplex offers breathtaking views across Kolkata and the East Wetlands. LUXiHOME designed every corner to match the building’s curved architecture, delivering a weightless, hotel-style living experience.',
+    challenge: 'The apartment’s curved exterior walls made standard rectangular furniture look awkward, creating wasted dead corners. Harsh western sun made the upper floor very hot in the late afternoon, and the raw high-ceiling living room felt hollow and impersonal.',
+    solution: 'We custom-designed curved banquettes, curved marble credenzas, and soft bouclé seating that hug the glass perimeter seamlessly. Motorized thermal solar blinds lower automatically during peak sunlight hours. Soft Venetian plaster walls and warm curved cove lighting turned the tall space into an intimate, luxurious retreat.',
     specs: [
       { tag: 'Area', val: '5,900 Sq.Ft' },
-      { tag: 'Typology', val: 'High-Rise Sky Villa' },
+      { tag: 'Typology', val: 'High-Rise Sky Duplex' },
       { tag: 'Location', val: 'EM Bypass / Topsia' },
-      { tag: 'Scope', val: 'Turnkey Space Transformation' },
-      { tag: 'Materials', val: 'Silver Portoro Marble & Bouclé' },
-      { tag: 'Timeline', val: '12 Months Commission' }
+      { tag: 'Scope', val: 'Bespoke Space Transformation' },
+      { tag: 'Materials', val: 'Portoro Marble, Bouclé & Venetian Plaster' },
+      { tag: 'Timeline', val: '12 Months Delivery' }
     ],
     features: [
-      { title: 'Sculptural Curved Lounge', desc: 'Custom banquette joinery engineered to hug the building’s aerodynamic glazing with zero view obstruction.' },
-      { title: 'Sky Sunset Dining Room', desc: 'Custom 12-seater dining table sculpted from single-slab Italian marble under a bespoke chandelier.' },
-      { title: 'Velvet-Lined Dressing Suite', desc: 'Climate-monitored boutique dressing room with illuminated watch vitrines and backlit tinted glass.' },
-      { title: '360° Wet-Edge Plunge Spa', desc: 'Private cantilevered plunge tub overlooking Kolkata’s East Wetlands.' }
+      { title: 'Sculpted Curved Lounge', desc: 'Custom furniture built to follow the building’s contours, ensuring zero blocked views.' },
+      { title: 'Sunset Dining Room', desc: 'One-piece Italian marble dining table seating 12 beneath a sculptural chandelier.' },
+      { title: 'Boutique Dressing Suite', desc: 'Walk-in dressing room with humidity control, backlit glass wardrobes, and velvet accessories drawers.' },
+      { title: 'Sky View Plunge Tub', desc: 'Freestanding soaking tub positioned directly against the skyline glass for evening relaxation.' }
     ]
   },
   {
@@ -135,24 +145,26 @@ const LOCATIONS = [
     name: 'Rajarhat',
     region: 'Vedic Village Enclave',
     title: 'The Vedic Villa Sanctuary',
-    kicker: 'Rajarhat • Eco Enclave',
+    kicker: 'Rajarhat • Vedic Enclave',
     typology: '7,400 Sq.Ft Country Villa & Pool Pavilion',
     coverImage: '/assets/img/pentagon/alams-pentagon-sunset-pool.jpg',
-    excerpt: 'An idyllic weekend sanctuary featuring an infinity reflection pool, sustainable teak pavilions, and tranquil courtyard verandas.',
-    overview: 'Commissioned as a multi-acre retreat just minutes from the city center, the Vedic Villa combines earthy, organic textures with ultra-crisp modern luxury. LUXiHOME executed everything from the structural pool pavilion to the open-concept living pavilion and custom stone fireplaces.',
+    excerpt: 'A serene country retreat featuring an infinity reflection pool, open-air living pavilions, and lush tropical gardens.',
+    overview: 'Built on a private multi-acre plot near Vedic Village in Rajarhat, this 7,400 sq.ft sanctuary was designed as a weekend escape from Kolkata’s fast-paced city life. LUXiHOME handled everything from the structural pool pavilion to the open-concept interiors and landscape architecture.',
+    challenge: 'The client wanted a resort-like holiday home that felt completely integrated with nature, but demanded materials that could handle heavy monsoon rainfall without constant maintenance. They also wanted open entertainment spaces for large family gatherings that could easily transition between indoor air conditioning and outdoor breezes.',
+    solution: 'We designed wide, sheltered verandas with motorized glass walls that slide completely into hidden wall pockets, merging the indoor living room with the poolside deck in seconds. We used reclaimed Burmese teak, non-slip rough-hewn basalt stone around the pool, and installed a smart bioethanol sunken fire lounge for cool winter evenings.',
     specs: [
       { tag: 'Area', val: '7,400 Sq.Ft' },
       { tag: 'Typology', val: 'Sprawling Country Villa' },
       { tag: 'Location', val: 'Rajarhat / Vedic Enclave' },
-      { tag: 'Scope', val: 'Architectural Design & Turnkey Build' },
-      { tag: 'Materials', val: 'Reclaimed Teak & Rough-Hewn Basalt' },
-      { tag: 'Timeline', val: '15 Months Full Delivery' }
+      { tag: 'Scope', val: 'Architecture, Turnkey Build & Landscape' },
+      { tag: 'Materials', val: 'Basalt Stone, Reclaimed Teak & Glass' },
+      { tag: 'Timeline', val: '15 Months Delivery' }
     ],
     features: [
-      { title: 'Black Basalt Infinity Pool', desc: 'Zero-edge pool seamlessly reflecting the evening sky and surrounded by sustainable teak decking.' },
-      { title: 'Open Pavilion Entertaining', desc: 'Motorized glass walls that slide completely into hidden pockets, blending interior salon with garden.' },
-      { title: 'Sunken Fire Lounge', desc: 'Architectural outdoor conversation pit carved into the landscape with bioethanol flame features.' },
-      { title: 'Lush Botanical Courtyards', desc: 'Private outdoor stone shower and botanical meditation court attached to the master suite.' }
+      { title: 'Black Basalt Reflection Pool', desc: 'Zero-edge infinity pool reflecting the sunset sky, lined with natural basalt and surrounded by teak.' },
+      { title: 'Pocket Sliding Glass Walls', desc: 'Glass walls that disappear entirely into wall cavities to create a seamless open garden pavilion.' },
+      { title: 'Sunken Evening Fire Pit', desc: 'Outdoor conversation lounge recessed into the garden lawn with a smokeless bioethanol fireplace.' },
+      { title: 'Tropical Master Garden', desc: 'Master bedroom suite with a private outdoor shower and botanical meditation courtyard.' }
     ]
   },
   {
@@ -161,341 +173,109 @@ const LOCATIONS = [
     region: 'North Kolkata & Airport',
     title: 'The Jessore Road Private Estate',
     kicker: 'Dum Dum • North Kolkata',
-    typology: '4,800 Sq.Ft Independent Modern Residence',
+    typology: '4,800 Sq.Ft Independent Family Estate',
     coverImage: '/assets/img/about/grand-duplex-lobby.jpg',
-    excerpt: 'A multi-story private family residence combining triple acoustic glazing, sunlit central atrium, and handcrafted Italian travertine cladding.',
-    overview: 'Built for an international business family requiring easy airport connectivity alongside peaceful residential privacy, this residence represents modern North Kolkata luxury at its finest. LUXiHOME solved sound dampening with triple-glazed laminated acoustic systems and created a serene internal atrium bathed in natural light.',
+    excerpt: 'A quiet multi-level family compound with acoustic soundproofing, triple-height light atrium, and Italian travertine finishes.',
+    overview: 'Located off Jessore Road in Dum Dum, this 4,800 sq.ft residence was commissioned by an international business family who needed quick 10-minute connectivity to the Kolkata airport, but required total peace, quiet, and privacy inside their home.',
+    challenge: 'Heavy vehicular noise along Jessore Road and flight-path aircraft overhead disrupted daily calm. In addition, the long rectangular plot meant the center of the house was originally dark and lacked natural cross-ventilation.',
+    solution: 'We engineered triple-sealed acoustic laminated glass and sound-dampened exterior walls, dropping ambient indoor noise down to library levels. We carved a triple-story central skylight through the core of the house that pours soft natural light onto a grand travertine-clad lobby, illuminating all three floors naturally.',
     specs: [
       { tag: 'Area', val: '4,800 Sq.Ft' },
-      { tag: 'Typology', val: 'Independent Family Estate' },
+      { tag: 'Typology', val: 'Multi-Level Family Residence' },
       { tag: 'Location', val: 'Jessore Road, Dum Dum' },
-      { tag: 'Scope', val: 'Complete Turnkey Architecture' },
+      { tag: 'Scope', val: 'Turnkey Architectural Overhaul & Interiors' },
       { tag: 'Materials', val: 'Roman Travertine & Smoked Brass' },
       { tag: 'Timeline', val: '10 Months Delivery' }
     ],
     features: [
-      { title: 'Acoustic Barrier Engineering', desc: 'Triple-seal thermal and acoustic glazing eliminating ambient city and aviation decibels completely.' },
-      { title: 'Vertical Light Atrium', desc: 'Triple-story skylit light shaft washing the internal marble lobby in soft natural illumination.' },
-      { title: 'Automated Entertainment Lounge', desc: 'Bespoke 4K projection theater with calibrated velvet acoustic wall paneling.' },
-      { title: 'Executive Rooftop Conservatory', desc: 'Glass-enclosed rooftop lounge with panoramic views, cocktail bar, and open sky terrace.' }
+      { title: 'Complete Acoustic Isolation', desc: 'Specialized triple-glazed acoustic windows and insulated wall cavities that silence airport and highway decibels.' },
+      { title: 'Triple-Height Light Shaft', desc: 'Central vertical atrium with motorized skylights providing daylight and natural chimney-effect ventilation.' },
+      { title: 'Private Cinema Lounge', desc: 'Acoustically tuned home theater with 4K laser projection and plush velvet sound-dampening wall panels.' },
+      { title: 'Enclosed Rooftop Conservatory', desc: 'Glass-covered terrace lounge with a cocktail bar for entertaining guests year-round.' }
     ]
   }
 ];
 
-// Generate Common Navigation Header for White Theme
-function getWhiteHeaderHtml(currentPath) {
-  const isCaseStudies = currentPath.startsWith('/case-studies');
-  return `
-<div class="fixed inset-0 bg-black/70 backdrop-blur-[5px] z-50 opacity-0 invisible" data-target="menu-backdrop"></div>
-<nav class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1fr_auto_1fr] items-center absolute top-0 right-0 left-0 pt-20 lg:pt-40 pl-40 pr-20 sm:px-20 lg:px-40 pointer-events-none z-50" data-target="header-menu">
-    <div class="z-50 order-3 lg:order-1 flex justify-end lg:justify-start fixed right-10 lg:right-[unset] lg:left-40 h-50 top-20 lg:bottom-auto lg:top-20 pointer-events-auto" data-nav-fixed>
-        <div class="group/wrapper flex flex-row-reverse lg:flex-row items-center relative lg:py-9 lg:pr-9 pointer-events-auto" data-target="menu-wrapper" data-active="false" data-theme="dark">
-            <div class="absolute top-0 right-0 bottom-0 left-auto lg:inset-0 w-full max-h-[calc(100vh_-_80px)] bg-black/15 group-data-[theme=dark]/wrapper:bg-black/25 rounded-40 backdrop-blur-20 transition-colors duration-300 xl:group-hover/wrapper:bg-black/35 group-data-[active=true]/wrapper:!bg-black/20" data-target="menu-background"></div>
-            <div class="relative lg:h-full py-15 lg:py-10 pr-[29px] lg:pr-20 pl-[22px] lg:pl-24 cursor-pointer z-10 flex items-center justify-center" data-target="menu-trigger" style="position: relative; padding: 15px 22px; cursor: pointer; z-index: 10 !important;" aria-label="Toggle Menu">
-                <div class="w-16 h-auto hidden" data-target="hamburger-lottie"></div>
-                <div class="luxi-hamburger-bars luxi-hamburger-dark" aria-label="Menu Toggle">
-                    <span class="luxi-bar bar-1"></span>
-                    <span class="luxi-bar bar-2"></span>
-                    <span class="luxi-bar bar-3"></span>
-                </div>
-            </div>
-
-            <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-[#13212E] text-12 leading-none tracking-1.2 uppercase text-white lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-[#C2A26A] after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
-                <span class="hidden lg:block relative text-white z-10 transition-colors duration-200 group-hover/button:text-[#13212E]">Enquire</span>
-                <div class="flex lg:hidden justify-center items-center w-full h-full">
-                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#FFFFFF"/>
-                    </svg>
-                </div>
-            </a>
-
-            <!-- Slideout Fullscreen Menu -->
-            <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
-                <span data-target="menu-title" class="sr-only">Menu</span>
-                <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
-                    <div>
-                        <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
-                            
-                            <!-- Projects Section -->
-                            <li class="group/li font-sans font-light text-26 sm:text-34 lg:text-36 xl:text-42 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
-                                <a href="/#projects" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">
-                                    <span>Projects</span>
-                                </a>
-                                <div class="h-auto opacity-100 visible">
-                                    <div class="pt-16 pb-10">
-                                        <ul class="luxi-project-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 18px !important; row-gap: 18px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 10px !important; margin-bottom: 4px !important;">
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/alams-pentagon/">Alam's Pentagon</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/park-street/">Park Street Residence</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/salt-lake/">The Salt Lake Manor</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/newtown/">New Town Estate</a>
-                                            </li>
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/rajarhat/">Rajarhat Villa</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- Case Studies Section (NEW) -->
-                            <li class="group/li font-sans font-light text-26 sm:text-34 lg:text-36 xl:text-42 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
-                                <a href="/case-studies/" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ${isCaseStudies ? 'text-[#C2A26A]' : ''}">
-                                    <span>Case Studies</span>
-                                </a>
-                                <div class="h-auto opacity-100 visible">
-                                    <div class="pt-16 pb-10">
-                                        <ul class="luxi-case-studies-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 18px !important; row-gap: 18px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 10px !important; margin-bottom: 4px !important;">
-                                            ${LOCATIONS.map(loc => `
-                                            <li class="font-normal text-15 leading-none tracking-0.42">
-                                                <a class="relative block py-1 text-white/80 hover:text-[#C2A26A] transition-colors" href="/case-studies/${loc.slug}/">${loc.name} • ${loc.title.split(' ')[1] || 'Estate'}</a>
-                                            </li>
-                                            `).join('')}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <div class="w-full h-1 bg-white/20 my-12" data-target="menu-divider"></div>
-                            
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/journal/">Journal</a>
-                            </li>
-                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
-                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/contact/" data-barba-prevent="self">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div data-target="menu-bottom">
-                        <a href="https://www.instagram.com/luxihome_pvt._ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-12 pb-20">
-                            <span class="font-sans font-normal text-15 leading-none tracking-0.4">LUXiHOME ATELIER</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Responsive Dark LUXiHOME Logo for White Background -->
-    <div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
-        <a href="/" data-target="menu-logo" data-theme="dark" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-barba-prevent="self">
-            <div class="relative w-[150px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-100 visible will-change-[opacity]" data-target="logo-lottie-dark" data-played="true" title="LUXiHOME">
-                <svg width="260" height="84" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto">
-                    <g id="luxihome-logo-dark" fill="#13212E">
-                        <path d="M714.684 136.564C752.869 131.691 787.729 158.809 792.387 197.007C797.044 235.206 769.72 269.9 731.482 274.339C693.55 278.742 659.181 251.694 654.561 213.8C649.941 175.906 676.804 141.397 714.684 136.564ZM726.235 261.08C756.778 259.528 780.349 233.638 779.028 203.096C777.708 172.553 751.989 148.793 721.426 149.881C690.533 150.981 666.452 177.03 667.787 207.903C669.122 238.776 695.363 262.65 726.235 261.08Z" fill="#13212E"/>
-                        <path d="M950.342 129.175C953.194 141.182 955.613 153.805 958.285 165.927L981.707 272.961L967.724 273.025C965.616 265.645 963.589 254.707 961.893 246.924C957.865 227.975 953.678 209.061 949.331 190.182C949.029 187.628 947.2 179.824 946.604 176.979C932.718 210.083 919.169 247.035 906.041 280.619C902.094 272.418 897.337 258.477 893.784 249.744C883.993 225.681 875.13 200.832 865.096 176.859C863.456 186.539 860.263 199.332 858.108 209.157L844.256 272.767C840.261 273.048 834.376 272.859 830.245 272.85C836.459 238.402 845.768 203.6 852.708 169.191C855.302 156.327 858.213 142.106 861.688 129.537C866.483 140.765 870.878 153.198 875.276 164.669C885.339 191.303 895.584 217.868 906.01 244.363C920.869 206.523 934.93 166.52 950.342 129.175Z" fill="#13212E"/>
-                        <path d="M589.295 138.088L602.62 138.089C603.432 167.14 602.311 196.743 602.841 225.85C603.115 240.887 603.125 256.736 602.723 271.767L602.191 272.661C599.16 273.239 592.531 272.972 589.185 272.936C588.747 253.418 589.066 232.569 589.058 212.956C569.665 212.346 547.353 212.849 527.74 212.849L527.576 272.738C523.383 272.898 518.442 272.756 514.192 272.742L514.254 138.191L527.623 138.117C527.852 158.4 527.459 178.727 527.807 199.051L589.091 198.967C589.026 178.674 589.094 158.38 589.295 138.088Z" fill="#13212E"/>
-                        <path d="M1024.95 138.001C1050.98 138.611 1079.26 138.047 1105.47 138.041L1105.46 150.842L1038.89 150.947L1038.94 198.863C1059.91 199.379 1082.33 199.027 1103.41 199.027L1103.36 211.887C1083.26 212.285 1062.3 211.936 1042.08 212.034C1040.72 211.96 1040.36 211.884 1039.07 212.468C1038.08 223.345 1038.88 248.066 1038.9 259.956C1060.61 260.473 1083.73 260.098 1105.54 260.082L1105.54 272.999L1024.96 273.017C1024.35 228.488 1024.92 182.634 1024.95 138.001Z" fill="#13212E"/>
-                        <path d="M302.981 139.858L316.628 140.106L316.835 153.996L316.941 202.519C316.946 213.362 317.497 234.968 315.028 244.754C313.297 251.649 309.734 257.948 304.716 262.984C281.104 286.825 225.027 280.497 217.609 243.668C215.112 231.27 215.904 217.582 215.992 204.899C216.071 192.639 216.084 180.378 216.032 168.118L216.078 140.105L229.758 140.149L229.727 203.697C229.721 215.063 229.358 227.492 230.605 238.666C234.065 270.82 296.959 271.447 301.933 240.324C303.641 229.636 302.969 213.848 302.95 202.547L302.981 139.858Z" fill="#13212E"/>
-                        <path d="M461.57 139.242C465.716 138.999 472.263 139.211 476.589 139.224C462.105 158.696 447.357 180.435 433.221 200.331C448.356 223.285 468.561 249.124 484.828 271.943L445.889 271.903L423.58 239.917C420.611 235.572 417.408 231.179 414.347 226.881C403.878 241.801 393.504 256.787 383.227 271.839L369.128 271.88C377.656 258.432 389.764 242.048 398.981 228.838L461.57 139.242Z" fill="#13212E"/>
-                        <path d="M354.006 139.15L389.762 139.24C396.746 148.122 407.411 165.129 414.549 175.305C422.079 163.488 430.903 150.907 438.788 139.174L452.584 139.216L392.366 225.584C383.49 239.57 369.803 257.934 359.973 271.909L345.807 271.877C350.428 264.412 357.204 255.329 362.408 247.927C373.577 232.187 384.651 216.38 395.628 200.506C382.867 180.235 367.307 159.456 354.006 139.15Z" fill="#13212E"/>
-                        <path d="M456.459 47.7075C472.242 45.124 487.137 55.8047 489.748 71.5781C492.36 87.3515 481.7 102.26 465.926 104.897C450.114 107.54 435.157 96.8533 432.539 81.042C429.922 65.2307 440.637 50.2972 456.459 47.7075Z" fill="#13212E"/>
-                        <path d="M117.897 139.456L125.683 139.606L125.804 261.137L174.412 261.241C174.328 264.51 175.412 272.168 173.569 274.57C173.378 274.818 171.487 274.83 170.955 274.862L112.068 274.863C112.485 236.543 111.872 198.128 112.07 159.802C112.103 153.432 111.792 146.526 112.334 140.228C113.545 139.207 116.178 139.47 117.897 139.456Z" fill="#13212E"/>
-                        <path d="M113.478 345.849C143.595 344.885 436.453 345.514 437.373 346.054C437.716 346.256 437.911 347.805 438.014 348.258L182.341 348.304C164.61 348.304 134.058 348.466 115.219 348.156C114.276 348.141 113.915 346.805 113.478 345.849Z" fill="#13212E"/>
-                        <path d="M694.127 332.094C704.759 332.054 720.674 329.668 721.384 344.716C721.663 350.63 721.155 353.348 717.177 357.91C711.467 361.991 701.131 360.927 694.113 360.862C693.92 351.542 694.106 341.469 694.127 332.094ZM711.002 352.644C713.922 344.312 713.048 339.118 703.241 338.885C703.149 345.614 700.333 358.222 711.002 352.644Z" fill="#13212E"/>
-                        <path d="M775.618 348.787C779.007 347.941 798.434 348.247 802.773 348.253L860 348.309L1017.81 348.322C1043.35 348.136 1068.89 348.118 1094.42 348.269C1097.57 348.318 1098.89 347.954 1100.88 350.011C1097.57 350.812 1079.27 350.525 1074.87 350.521L1018.31 350.47L780.087 350.511C777.408 350.497 777.271 350.454 775.618 348.787Z" fill="#13212E"/>
-                        <path d="M473.198 332.114C481.013 332.307 505.916 328.25 496.269 348.273C495.117 350.663 491.889 351.511 489.306 351.892L482.346 352.023L482.136 360.863L473.214 360.876C473.144 351.289 473.138 341.702 473.198 332.114ZM488.794 344.398C488.974 341.607 489.314 342.114 488.269 339.916C486.746 338.813 484.21 339.047 482.239 339.016C482.161 340.927 481.809 343.083 482.881 344.591C484.671 345.373 486.925 345.006 488.794 344.398Z" fill="#13212E"/>
-                        <path d="M528.193 332.148L537.67 332.198L534.914 340.181L527.549 360.773C524.118 360.872 520.407 360.818 516.949 360.836C513.5 352.181 509.808 341.016 506.849 332.158L516.591 332.172C518.603 338.683 520.538 345.217 522.396 351.773L528.193 332.148Z" fill="#13212E"/>
-                        <path d="M545.816 332.06L573.802 332.152L573.722 338.831L564.523 338.98L564.494 351.147L564.442 360.854L555.485 360.878C555.14 353.862 555.327 346.142 555.472 339.122C552.483 339.002 549.03 339.109 546.002 339.134L545.816 332.06Z" fill="#13212E"/>
-                        <path d="M683.924 332.085L683.942 338.915L674.5 338.964L674.492 350.708L674.496 360.866L665.531 360.89C665.149 353.974 665.331 346.042 665.422 339.114L656.188 338.854L656.103 332.095L683.924 332.085Z" fill="#13212E"/>
-                        <path d="M624.261 332.191L633.076 332.158C633.344 339.334 633.34 346.805 633.435 354.007C638.12 354.306 642.622 353.027 646.564 354.766C648.116 356.67 647.682 357.232 647.879 360.021L647.258 360.682C641.06 361.232 630.683 360.887 624.178 360.861C624.108 351.304 624.136 341.747 624.261 332.191Z" fill="#13212E"/>
-                        <path d="M732.547 353.155L741.359 353.11L741.26 360.86L732.547 360.871L732.547 353.155Z" fill="#13212E"/>
-                        <path d="M592.48 353.134L592.126 360.746L583.636 360.807L583.639 353.118L592.48 353.134Z" fill="#13212E"/>
-                    </g>
-                </svg>
-            </div>
-        </a>
-    </div>
-</nav>
-`;
-}
-
-// Generate Minimalist White Footer
-function getWhiteFooterHtml() {
-  return `
-    <footer class="cs-footer">
-        <div class="cs-footer-inner">
-            <div class="cs-footer-top">
-                <div>
-                    <a href="/" class="cs-footer-brand" title="LUXiHOME">
-                        <svg width="180" height="58" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use href="#luxihome-logo-dark" fill="#13212E"/>
-                        </svg>
-                    </a>
-                    <p class="cs-footer-tagline">
-                        Bespoke Luxury Architecture &amp; Turnkey Interiors • Kolkata &amp; Dubai
-                    </p>
-                </div>
-                <nav class="cs-footer-links" aria-label="Main Navigation">
-                    <a href="/">Home</a>
-                    <a href="/about/">About</a>
-                    <a href="/#projects">Projects</a>
-                    <a href="/case-studies/">Case Studies</a>
-                    <a href="/journal/">Journal</a>
-                    <a href="/contact/">Contact</a>
-                </nav>
-            </div>
-
-            <div class="cs-footer-bottom">
-                <p>© 2026 LUXiHOME Pvt. Ltd. All rights reserved.</p>
-                <div class="cs-footer-legal">
-                    <a href="/terms-conditions/">Terms &amp; Conditions</a>
-                    <span class="cs-footer-sep">•</span>
-                    <a href="/privacy-policy/">Privacy Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-`;
-}
-
-// Core Shared CSS for White Luxury Pages
+// White Shared CSS
 function getWhiteSharedCss() {
   return `
-    @font-face {
-        font-family: 'aviano-sans';
-        src: url('/assets/fonts/AvianoSans-Reg.otf') format('opentype');
-        font-weight: 400;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'aviano-sans';
-        src: url('/assets/fonts/AvianoSans-Bol.otf') format('opentype');
-        font-weight: 700;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'DIN';
-        src: url('/assets/fonts/din-2014_light.woff2') format('woff2');
-        font-weight: 300;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'DIN';
-        src: url('/assets/fonts/din-2014_demi.woff2') format('woff2');
-        font-weight: 600;
-        font-display: swap;
-    }
-
-    *, *::before, *::after {
-        box-sizing: border-box;
-    }
-
     html {
-        margin: 0;
-        padding: 0;
-        background-color: #FFFFFF !important;
-        overflow-x: visible;
-        overflow-y: visible;
-        width: 100%;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #FFFFFF !important;
-        color: #13212E;
-        font-family: 'DIN', sans-serif;
         overflow-x: clip;
-        overflow-y: visible;
-        width: 100%;
-        -webkit-font-smoothing: antialiased;
+        overflow-y: visible !important;
+        scroll-behavior: smooth;
+    }
+    body {
+        background-color: #FFFFFF !important;
+        color: #13212E !important;
+        overflow-x: clip;
+        overflow-y: visible !important;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y pinch-zoom;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'aviano-sans', sans-serif;
+    }
+    @supports not (overflow-x: clip) {
+        html { overflow-x: hidden; }
+        body { overflow-x: hidden; }
     }
 
-    /* Dark Hamburger Bars on White Background */
     .luxi-hamburger-dark .luxi-bar {
         background-color: #13212E !important;
     }
 
-    /* Responsive Mobile Header Logo Placement */
-    @media (max-width: 1023px) {
-        [data-target="header-menu"].order-2,
-        .luxi-header-logo {
-            position: absolute !important;
-            top: 20px !important;
-            left: 18px !important;
-            right: auto !important;
-            transform: none !important;
-            justify-content: flex-start !important;
-            text-align: left !important;
-            z-index: 40 !important;
-        }
-        [data-nav-fixed] {
-            position: fixed !important;
-            top: 20px !important;
-            right: 15px !important;
-            left: auto !important;
-            z-index: 50 !important;
-            width: fit-content !important;
-        }
-        [data-target="logo-lottie-dark"] {
-            width: 145px !important;
-            max-width: 145px !important;
-        }
-    }
-
-    /* Page Wrapper with Guaranteed Safe Mobile Top Padding */
     .cs-page-container {
         width: 100%;
-        max-width: 1240px;
+        max-width: 1320px;
         margin: 0 auto;
-        padding: 125px 20px 80px 20px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
     }
     @media (min-width: 640px) {
         .cs-page-container {
-            padding: 155px 32px 100px 32px !important;
+            padding-left: 32px;
+            padding-right: 32px;
         }
     }
     @media (min-width: 1024px) {
         .cs-page-container {
-            padding: 180px 40px 120px 40px !important;
+            padding-left: 48px;
+            padding-right: 48px;
         }
     }
 
-    /* Minimalist Hero: "CASE STUDIES" Written and Nothing Else */
     .cs-hero-minimal {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 10px 0 36px 0;
-    }
-    @media (min-width: 640px) {
-        .cs-hero-minimal {
-            padding: 20px 0 54px 0;
-        }
+        padding: 140px 20px 60px 20px;
+        box-sizing: border-box;
     }
     .cs-minimal-title {
         font-family: 'aviano-sans', sans-serif;
-        font-size: clamp(30px, 7vw, 64px);
+        font-size: clamp(34px, 7.5vw, 84px);
         font-weight: 400;
-        line-height: 1.08;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: #13212E;
         margin: 0;
+        line-height: 1.05;
     }
 
-    /* Grid of Case Study Cards */
     .cs-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 28px;
+        margin-bottom: 70px;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 720px) {
         .cs-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 36px;
+            gap: 32px;
         }
     }
     @media (min-width: 1100px) {
@@ -505,7 +285,6 @@ function getWhiteSharedCss() {
         }
     }
 
-    /* Case Study Card Structure */
     .cs-card {
         background: #FFFFFF;
         border: 1px solid rgba(19, 33, 46, 0.08);
@@ -599,104 +378,112 @@ function getWhiteSharedCss() {
 
     .cs-card-desc {
         font-size: 13.5px;
-        line-height: 1.62;
-        color: #556677;
-        margin: 0 0 20px 0;
+        line-height: 1.65;
+        color: #4A5B6C;
+        margin: 0 0 18px 0;
         flex-grow: 1;
     }
 
-    .cs-card-action {
-        padding-top: 14px;
-        border-top: 1px solid rgba(19, 33, 46, 0.07);
+    .cs-card-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+        padding: 14px 0;
+        border-top: 1px solid rgba(19, 33, 46, 0.08);
+        border-bottom: 1px solid rgba(19, 33, 46, 0.08);
+        margin-bottom: 18px;
+        font-size: 11.5px;
+        color: #13212E;
     }
+    .cs-card-spec-item strong {
+        color: #8C6D38;
+        font-weight: 600;
+        margin-right: 4px;
+    }
+
     .cs-card-link {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        color: #13212E;
-        font-size: 12px;
+        font-size: 11.5px;
         font-weight: 600;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
+        color: #13212E;
         text-decoration: none;
-        transition: color 0.2s ease, transform 0.2s ease;
+        transition: gap 0.2s ease, color 0.2s ease;
+        margin-top: auto;
     }
     .cs-card-link:hover {
         color: #C2A26A;
-        transform: translateX(4px);
+        gap: 12px;
     }
 
     /* Detail Page Specific Styling */
     .cs-detail-hero {
-        background: #F8FAFC;
-        border: 1px solid rgba(19, 33, 46, 0.08);
-        border-radius: 22px;
-        padding: 24px 20px;
-        margin-bottom: 30px;
+        padding: 130px 0 40px 0;
     }
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
         .cs-detail-hero {
-            padding: 38px 34px;
-            margin-bottom: 40px;
-            border-radius: 26px;
+            padding: 150px 0 50px 0;
         }
     }
     .cs-detail-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 12px;
-        border-radius: 999px;
-        background: rgba(194, 162, 106, 0.12);
-        border: 1px solid rgba(194, 162, 106, 0.35);
+        display: inline-block;
+        background: #F1F5F9;
         color: #8C6D38;
-        font-size: 10px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
+        border: 1px solid rgba(194, 162, 106, 0.35);
+        font-size: 11px;
         font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border-radius: 999px;
         margin-bottom: 14px;
     }
     .cs-detail-title {
         font-family: 'aviano-sans', sans-serif;
-        font-size: clamp(24px, 6.5vw, 44px);
-        line-height: 1.15;
+        font-size: clamp(26px, 5.5vw, 52px);
+        line-height: 1.12;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: #13212E;
-        margin: 0 0 14px 0;
+        margin: 0 0 16px 0;
     }
     .cs-detail-copy {
-        font-size: 14px;
+        font-size: clamp(14px, 2.2vw, 17px);
         line-height: 1.7;
-        color: #4A5568;
-        margin: 0 0 24px 0;
-        max-width: 820px;
-    }
-    @media (min-width: 640px) {
-        .cs-detail-copy {
-            font-size: 16px;
-        }
+        color: #4A5B6C;
+        max-width: 860px;
+        margin: 0 0 30px 0;
     }
 
-    /* Specs Grid */
     .cs-specs-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(19, 33, 46, 0.08);
+        margin-top: 24px;
+        background: #F8FAFC;
+        padding: 18px 20px;
+        border-radius: 16px;
+        border: 1px solid rgba(19, 33, 46, 0.06);
     }
-    @media (min-width: 768px) {
+    @media (min-width: 640px) {
         .cs-specs-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            padding: 22px 28px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .cs-specs-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 16px;
         }
     }
     .cs-spec-cell {
-        background: #FFFFFF;
-        border: 1px solid rgba(19, 33, 46, 0.07);
-        border-radius: 12px;
-        padding: 10px 14px;
+        display: flex;
+        flex-direction: column;
     }
     .cs-spec-tag {
         display: block;
@@ -717,7 +504,6 @@ function getWhiteSharedCss() {
         text-overflow: ellipsis;
     }
 
-    /* Detail Main Visual */
     .cs-detail-image-wrap {
         border-radius: 20px;
         overflow: hidden;
@@ -730,7 +516,6 @@ function getWhiteSharedCss() {
         display: block;
     }
 
-    /* Architectural Features */
     .cs-features-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -765,7 +550,6 @@ function getWhiteSharedCss() {
         margin: 0;
     }
 
-    /* Location CTA Banner */
     .cs-cta-box {
         background: #13212E;
         border-radius: 22px;
@@ -820,7 +604,6 @@ function getWhiteSharedCss() {
         transform: translateY(-2px);
     }
 
-    /* White Theme Footer */
     .cs-footer {
         background-color: #F8FAFC;
         border-top: 1px solid rgba(19, 33, 46, 0.08);
@@ -852,70 +635,221 @@ function getWhiteSharedCss() {
         }
     }
     .cs-footer-brand {
-        display: block;
-        width: 160px;
-        margin-bottom: 8px;
+        font-family: 'aviano-sans', sans-serif;
+        font-size: 18px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #13212E;
+        text-decoration: none;
     }
-    .cs-footer-tagline {
-        color: #64748B;
-        font-size: 12.5px;
-        margin: 0;
-    }
-    .cs-footer-links {
+    .cs-footer-nav {
         display: flex;
         flex-wrap: wrap;
         gap: 18px 24px;
-        font-size: 13px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
     }
-    .cs-footer-links a {
-        color: #13212E;
+    .cs-footer-link {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #4A5B6C;
         text-decoration: none;
-        font-weight: 500;
         transition: color 0.2s ease;
     }
-    .cs-footer-links a:hover {
+    .cs-footer-link:hover {
         color: #C2A26A;
     }
     .cs-footer-bottom {
-        padding-top: 24px;
         display: flex;
         flex-direction: column;
         gap: 12px;
-        font-size: 12px;
-        color: #94A3B8;
+        padding-top: 24px;
+        font-size: 11px;
+        color: #8C9BAE;
     }
     @media (min-width: 640px) {
         .cs-footer-bottom {
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
         }
     }
-    .cs-footer-bottom p {
-        margin: 0;
-    }
-    .cs-footer-legal {
+    .cs-footer-legal-links {
         display: flex;
-        align-items: center;
-        gap: 12px;
+        gap: 16px;
     }
-    .cs-footer-legal a {
-        color: #64748B;
+    .cs-footer-legal-links a {
+        color: #8C9BAE;
         text-decoration: none;
         transition: color 0.2s ease;
     }
-    .cs-footer-legal a:hover {
+    .cs-footer-legal-links a:hover {
         color: #13212E;
     }
-    .cs-footer-sep {
-        color: #CBD5E1;
-    }
-`;
+  `;
 }
 
-// 1. Generate Hub HTML (/case-studies/index.html)
+// Clean Header with Single Case Studies Link and Full Instagram Parity
+function getWhiteHeaderHtml(currentPath) {
+  const isCaseStudies = currentPath.startsWith('/case-studies');
+
+  return `
+    <!-- Top Fixed Header -->
+    <div class="fixed top-0 left-0 w-full z-50 pointer-events-none" data-target="header">
+        <div class="luxi-header-inner flex justify-between items-center w-full px-20 sm:px-24 lg:px-40 py-20 lg:py-20 pointer-events-auto">
+            
+            <!-- Left: Dark Hamburger on White Background -->
+            <div class="order-1 flex items-center">
+                <div class="group/menu block w-fit h-fit -m-10 p-10 cursor-pointer pointer-events-auto" data-target="menu-wrapper" data-theme="dark">
+                    <button class="luxi-hamburger luxi-hamburger-dark flex flex-col justify-between w-26 sm:w-28 h-14 relative z-50 focus:outline-none" aria-label="Toggle Navigation" data-target="menu-button">
+                        <span class="luxi-bar bar-1 block w-full h-[1.5px] bg-[#13212E] transition-transform duration-300 origin-center"></span>
+                        <span class="luxi-bar bar-2 block w-full h-[1.5px] bg-[#13212E] transition-transform duration-300 origin-center"></span>
+                    </button>
+                </div>
+            </div>
+
+            <a href="/contact/" class="group/button block relative size-30 md:size-40 lg:size-auto bg-[#13212E] text-12 leading-none tracking-1.2 uppercase text-white lg:py-12 lg:px-20 rounded-40 mt-10 mb-10 ml-10 lg:m-0 z-10 overflow-hidden after:hidden after:lg:block after:absolute after:top-1/2 after:left-1/2 after:size-[1px] after:bg-[#C2A26A] after:rounded-full after:-translate-x-1/2 after:-translate-y-1/2" data-target="menu-contact-button">
+                <span class="hidden lg:block relative text-white z-10 transition-colors duration-200 group-hover/button:text-[#13212E]">Enquire</span>
+                <div class="flex lg:hidden justify-center items-center w-full h-full">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#FFFFFF"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Slideout Fullscreen Menu -->
+            <div class="absolute top-0 right-0 lg:right-auto lg:left-0 w-[calc(100vw_-_40px)] lg:w-auto h-[calc(100dvh_-_80px)] sm:h-[calc(100vh_-_80px)] pt-100 px-25 lg:pr-65 pb-60 lg:pl-65 opacity-0 invisible pointer-events-none overflow-auto" data-target="menu" data-state="closed" data-animating="false" data-lenis-prevent>
+                <span data-target="menu-title" class="sr-only">Menu</span>
+                <div class="flex flex-col justify-between gap-40 lg:gap-50 h-full text-white">
+                    <div>
+                        <ul class="group/menu-items flex flex-col gap-20 sm:gap-25 lg:gap-20 whitespace-nowrap" data-target="menu-items">
+                            
+                            <!-- Projects Section -->
+                            <li class="group/li font-sans font-light text-26 sm:text-34 lg:text-36 xl:text-42 leading-[0.85] lg:leading-none tracking-1.14 lg:tracking-1.5 uppercase whitespace-normal lg:whitespace-nowrap">
+                                <a href="/#projects" class="no-barba block transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100">
+                                    <span>Projects</span>
+                                </a>
+                                <div class="h-auto opacity-100 visible">
+                                    <div class="pt-16 pb-10">
+                                        <ul class="luxi-project-list flex flex-col pl-20 border-l border-white/20" style="display: flex !important; flex-direction: column !important; gap: 18px !important; row-gap: 18px !important; padding-left: 20px !important; border-left: 1px solid rgba(255,255,255,0.2) !important; margin-top: 10px !important; margin-bottom: 4px !important;">
+                                            <li class="font-normal text-15 leading-none tracking-0.42">
+                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/alams-pentagon/">Alam's Pentagon</a>
+                                            </li>
+                                            <li class="font-normal text-15 leading-none tracking-0.42">
+                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/park-street/">Park Street Residence</a>
+                                            </li>
+                                            <li class="font-normal text-15 leading-none tracking-0.42">
+                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/salt-lake/">The Salt Lake Manor</a>
+                                            </li>
+                                            <li class="font-normal text-15 leading-none tracking-0.42">
+                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/newtown/">New Town Estate</a>
+                                            </li>
+                                            <li class="font-normal text-15 leading-none tracking-0.42">
+                                                <a class="relative block py-1 text-white/80 hover:text-white transition-colors" href="/projects/rajarhat/">Rajarhat Villa</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <div class="w-full h-1 bg-white/20 my-12" data-target="menu-divider"></div>
+                            
+                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/" data-barba-prevent="self">Home</a>
+                            </li>
+                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/about/">About Us</a>
+                            </li>
+                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100 ${isCaseStudies ? 'text-[#C2A26A]' : ''}" data-barba-prevent="self" href="/case-studies/">Case Studies</a>
+                            </li>
+                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" data-barba-prevent="self" href="/journal/">Journal</a>
+                            </li>
+                            <li class="font-sans font-light text-24 sm:text-28 leading-none tracking-1 uppercase">
+                                <a class="transition-opacity duration-200 xl:group-hover/menu-items:opacity-20 hover:!opacity-100" href="/contact/" data-barba-prevent="self">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Menu Bottom: Exact Instagram SVG Icon + LUXiHOME Parity with Homepage -->
+                    <div data-target="menu-bottom">
+                        <a class="flex items-center gap-12 pb-20" href="https://www.instagram.com/luxihome_pvt._ltd" rel="noopener noreferrer" target="_blank">
+                            <div class="group/insta w-30 h-auto children:w-full children:h-auto [&_path]:transition-all [&_circle]:transition-all hover:[&_path]:fill-dark-blue hover:[&_circle]:fill-white">
+                                <svg height="40px" version="1.1" viewBox="0 0 40 40" width="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+                                        <g id="Social-Media" transform="translate(-307.000000, -513.000000)">
+                                            <g id="Instagram_outline-White" transform="translate(307.000000, 513.000000)">
+                                                <circle cx="20" cy="20" id="Stoke" r="19.5" stroke="#FFFFFF"></circle>
+                                                <path d="M16.2826865,11.1104542 C14.8175922,11.1765596 13.5477244,11.5347797 12.5223374,12.5558408 C11.4933684,13.5822618 11.1396323,14.857025 11.0733627,16.3068782 C11.0321681,17.2118081 10.7912694,24.0483617 11.4897862,25.8412486 C11.9608374,27.0507996 12.888611,27.9807424 14.1092245,28.453307 C14.6787844,28.6748496 15.3289424,28.8249268 16.2826865,28.8686993 C24.2574207,29.2295993 27.2135799,29.0330696 28.4601638,25.8412486 C28.6813608,25.2730991 28.8336017,24.6236578 28.8756918,23.6722754 C29.2401743,15.6770898 28.8165865,13.9440552 27.4267171,12.5558408 C26.3243142,11.4561678 25.0275803,10.7075683 16.2826865,11.1104542 M16.3561204,27.260729 C15.4829743,27.2214231 15.0092366,27.0758125 14.6931129,26.953428 C13.8978783,26.6443404 13.3005569,26.0493914 12.9933886,25.258806 C12.4614411,23.8964979 12.6378614,17.4262041 12.6853247,16.3792368 C12.7318925,15.3537091 12.9396565,14.4166198 13.6632483,13.6930331 C14.5587828,12.7997163 15.7158132,12.3619911 23.5938297,12.7175312 C24.6219032,12.7639836 25.5613188,12.9712331 26.2867017,13.6930331 C27.1822362,14.58635 27.6264213,15.7521284 27.2646253,23.5999167 C27.2252218,24.4709006 27.0792497,24.9434652 26.9565615,25.258806 C26.1461028,27.3357676 24.2816001,27.624309 16.3561204,27.260729 M23.6806965,15.2206049 C23.6806965,15.8119806 24.1615985,16.2925851 24.7553379,16.2925851 C25.3490772,16.2925851 25.8308747,15.8119806 25.8308747,15.2206049 C25.8308747,14.6292292 25.3490772,14.1486247 24.7553379,14.1486247 C24.1615985,14.1486247 23.6806965,14.6292292 23.6806965,15.2206049 M15.3764057,19.9891301 C15.3764057,22.5225766 17.4352394,24.576312 19.974975,24.576312 C22.5147107,24.576312 24.5735444,22.5225766 24.5735444,19.9891301 C24.5735444,17.4556836 22.5147107,15.4028415 19.974975,15.4028415 C17.4352394,15.4028415 15.3764057,17.4556836 15.3764057,19.9891301 M16.9901588,19.9891301 C16.9901588,18.3454271 18.3262961,17.0117051 19.974975,17.0117051 C21.6236539,17.0117051 22.9597913,18.3454271 22.9597913,19.9891301 C22.9597913,21.6337264 21.6236539,22.9674484 19.974975,22.9674484 C18.3262961,22.9674484 16.9901588,21.6337264 16.9901588,19.9891301" fill="#FFFFFF" id="instagram"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="font-sans font-normal text-15 leading-none tracking-0.4">LUXiHOME</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Dark LUXiHOME Logo for White Background -->
+    <div class="order-2 luxi-header-logo flex justify-start lg:justify-center items-center absolute left-20 sm:left-24 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 top-20 lg:top-20 z-40" data-target="header-menu">
+        <a href="/" data-target="menu-logo" data-theme="dark" class="group pointer-events-auto block w-fit h-fit" title="LUXiHOME" data-barba-prevent="self">
+            <div class="relative w-[150px] sm:w-[210px] lg:w-[260px] h-auto transition-opacity duration-300 ease-linear opacity-100 visible will-change-[opacity]" data-target="logo-lottie-dark" data-played="true" title="LUXiHOME">
+                <svg width="260" height="84" viewBox="105 40 1010 325" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px] sm:w-[210px] lg:w-[260px] h-auto block mx-auto">
+                    <g id="luxihome-logo-dark" fill="#13212E">
+                        <path d="M714.684 136.564C752.869 131.691 787.729 158.809 792.387 197.007C797.044 235.206 769.72 269.9 731.482 274.339C693.55 278.742 659.181 251.694 654.561 213.8C649.941 175.906 676.804 141.397 714.684 136.564ZM726.235 261.08C756.778 259.528 780.349 233.638 779.028 203.096C777.708 172.553 751.989 148.793 721.426 149.881C690.533 150.981 666.452 177.03 667.787 207.903C669.122 238.776 695.363 262.65 726.235 261.08Z" fill="#13212E"/>
+                        <path d="M950.342 129.175C953.194 141.182 955.613 153.805 958.285 165.927L981.707 272.961L967.724 273.025C965.616 265.645 963.589 254.707 961.893 246.924C957.865 227.975 953.678 209.061 949.331 190.182C949.029 187.628 947.2 179.824 946.604 176.979C932.718 210.083 919.169 247.035 906.041 280.619C902.094 272.418 897.337 258.477 893.784 249.744C883.993 225.681 875.13 200.832 865.096 176.859C863.456 186.539 860.263 199.332 858.108 209.157L844.256 272.767C840.261 273.048 834.376 272.859 830.245 272.85C836.459 238.402 845.768 203.6 852.708 169.191C855.302 156.327 858.213 142.106 861.688 129.537C866.483 140.765 870.878 153.198 875.276 164.669C885.339 191.303 895.584 217.868 906.01 244.363C920.869 206.523 934.93 166.52 950.342 129.175Z" fill="#13212E"/>
+                        <path d="M589.295 138.088L602.62 138.089C603.432 167.14 602.311 196.743 602.841 225.85C603.115 240.887 603.125 256.736 602.723 271.767L602.191 272.661C599.16 273.239 592.531 272.972 589.185 272.936C588.747 253.418 589.066 232.569 589.058 212.956C569.665 212.346 547.353 212.849 527.74 212.849L527.576 272.738C523.383 272.898 518.442 272.756 514.192 272.742L514.254 138.191L527.623 138.117C527.852 158.4 527.459 178.727 527.807 199.051L589.091 198.967C589.026 178.674 589.094 158.38 589.295 138.088Z" fill="#13212E"/>
+                        <path d="M421.328 138.006C425.568 138.033 430.825 138.006 434.904 138.006C434.904 178.077 434.208 218.411 435.344 258.406C435.682 261.348 438.452 260.67 440.672 260.835C458.742 260.871 476.822 260.698 494.882 260.918C496.225 264.445 498.428 271.95 496.096 273.075C470.839 272.846 445.572 272.92 420.315 272.901L421.328 138.006Z" fill="#13212E"/>
+                        <path d="M165.748 138.024C170.067 138.033 175.244 138.033 179.398 138.006C179.398 178.141 178.694 218.529 179.845 258.58C180.201 261.275 182.724 260.716 184.872 260.844C202.942 260.881 221.031 260.67 239.091 260.918C240.38 264.482 242.455 272.078 240.169 273.066C215.048 272.846 189.918 272.938 164.796 272.91L165.748 138.024Z" fill="#13212E"/>
+                        <path d="M366.576 138.006C370.895 138.015 376.082 138.024 380.235 137.997C380.235 178.123 379.522 218.52 380.682 258.571C381.021 261.266 383.553 260.697 385.701 260.835C403.771 260.871 421.851 260.67 439.92 260.908C441.254 264.463 443.375 272.005 441.053 273.056C415.86 272.837 390.667 272.928 365.483 272.901L366.576 138.006Z" fill="#13212E"/>
+                        <path d="M260.404 138.024C264.723 138.024 269.91 138.033 274.064 138.006C274.064 178.104 273.359 218.493 274.511 258.544C274.849 261.238 277.381 260.68 279.529 260.817C297.599 260.854 315.679 260.652 333.748 260.89C335.083 264.445 337.203 271.986 334.882 273.038C309.689 272.818 284.495 272.91 259.311 272.882L260.404 138.024Z" fill="#13212E"/>
+                    </g>
+                </svg>
+            </div>
+        </a>
+    </div>
+  `;
+}
+
+// White Theme Footer
+function getWhiteFooterHtml() {
+  return `
+    <footer class="cs-footer">
+        <div class="cs-footer-inner">
+            <div class="cs-footer-top">
+                <div>
+                    <a href="/" class="cs-footer-brand">LUXiHOME</a>
+                    <p style="font-size: 13px; color: #556677; margin: 8px 0 0 0; max-width: 420px; line-height: 1.6;">
+                        Kolkata’s premier bespoke residential architecture, turn-key build, and luxury interior design firm.
+                    </p>
+                </div>
+                <nav class="cs-footer-nav">
+                    <a href="/" class="cs-footer-link">Home</a>
+                    <a href="/about/" class="cs-footer-link">About Us</a>
+                    <a href="/case-studies/" class="cs-footer-link" style="color: #C2A26A;">Case Studies</a>
+                    <a href="/journal/" class="cs-footer-link">Journal</a>
+                    <a href="/contact/" class="cs-footer-link">Contact</a>
+                </nav>
+            </div>
+            <div class="cs-footer-bottom">
+                <div>
+                    &copy; ${new Date().getFullYear()} LUXiHOME Pvt. Ltd. All rights reserved. Handcrafted in Kolkata.
+                </div>
+                <div class="cs-footer-legal-links">
+                    <a href="/terms-conditions/">Terms &amp; Conditions</a>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+  `;
+}
+
+// Hub Page Generator
 function generateCaseStudiesHubHtml() {
   const sharedCss = getWhiteSharedCss();
   const headerHtml = getWhiteHeaderHtml('/case-studies/');
@@ -923,19 +857,29 @@ function generateCaseStudiesHubHtml() {
 
   const cardsHtml = LOCATIONS.map(loc => `
     <article class="cs-card">
-        <a href="/case-studies/${loc.slug}/" class="cs-card-media" title="${loc.title}">
-            <img src="${loc.coverImage}" alt="${loc.title} - ${loc.name}" class="cs-card-img" loading="lazy" />
-            <span class="cs-card-badge">${loc.region}</span>
+        <a href="/case-studies/${loc.slug}/" class="cs-card-media" aria-label="View ${loc.title}">
+            <img src="${loc.coverImage}" alt="${loc.title} - ${loc.name}, Kolkata" class="cs-card-img" loading="lazy" />
+            <div class="cs-card-badge">${loc.name} • ${loc.specs[0].val}</div>
         </a>
         <div class="cs-card-body">
-            <span class="cs-card-kicker">${loc.typology}</span>
+            <span class="cs-card-kicker">${loc.kicker}</span>
             <h2 class="cs-card-title">
-                <a href="/case-studies/${loc.slug}/">${loc.name} • ${loc.title}</a>
+                <a href="/case-studies/${loc.slug}/">${loc.title}</a>
             </h2>
             <p class="cs-card-desc">${loc.excerpt}</p>
-            <div class="cs-card-action">
+            
+            <div class="cs-card-specs">
+                <div class="cs-card-spec-item">
+                    <strong>Scope:</strong> ${loc.specs[3].val}
+                </div>
+                <div class="cs-card-spec-item">
+                    <strong>Materials:</strong> ${loc.specs[4].val}
+                </div>
+            </div>
+
+            <div>
                 <a href="/case-studies/${loc.slug}/" class="cs-card-link">
-                    <span>View Case Study</span>
+                    <span>Read Case Study</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.16669 7H12.8334M12.8334 7L7.00002 1.16666M12.8334 7L7.00002 12.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -971,7 +915,6 @@ function generateCaseStudiesHubHtml() {
     <link rel="stylesheet" id="luxihome-styles-css" href="/assets/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" id="luxi-custom-fonts-css" href="/assets/css/luxi-fonts.css" type="text/css" media="all">
 
-    <!-- Scoped White Luxury Case Studies Styling -->
     <style id="luxi-case-studies-css">
 ${sharedCss}
     </style>
@@ -1018,15 +961,15 @@ ${headerHtml}
         </section>
 
         <!-- Bottom Consultation Box -->
-        <section class="cs-cta-box">
+        <section class="cs-cta-box" style="margin-bottom: 70px;">
             <div>
-                <h3 class="cs-cta-title">Plan Your Commission in Kolkata</h3>
+                <h3 class="cs-cta-title">Looking for Bespoke Execution in Kolkata?</h3>
                 <p class="cs-cta-desc">
-                    Whether an expansive penthouse in New Town or a heritage restoration in Ballygunge, our lead partners provide turnkey architectural oversight.
+                    Whether an expansive duplex in Ballygunge or an architectural villa in Alipore, LUXiHOME provides complete turnkey design and build services.
                 </p>
             </div>
             <div>
-                <a href="/contact/" class="cs-cta-btn">Book Consultation</a>
+                <a href="/contact/" class="cs-cta-btn">Book Architectural Brief</a>
             </div>
         </section>
 
@@ -1045,7 +988,7 @@ var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin
 `;
 }
 
-// 2. Generate Individual Case Study Page
+// Location Detail Page Generator with High-Value Problem/Solution Sections
 function generateLocationDetailHtml(loc) {
   const sharedCss = getWhiteSharedCss();
   const headerHtml = getWhiteHeaderHtml(`/case-studies/${loc.slug}/`);
@@ -1151,6 +1094,32 @@ ${headerHtml}
         <div class="cs-detail-image-wrap">
             <img src="${loc.coverImage}" alt="${loc.title} - Architectural View" />
         </div>
+
+        <!-- Project Story: The Challenge & The Solution (The Whole Juice) -->
+        <section style="margin-top: 40px; margin-bottom: 40px;">
+            <div style="margin-bottom: 22px;">
+                <span class="cs-card-kicker">THE FULL PROJECT BRIEF</span>
+                <h3 style="font-family: 'aviano-sans', sans-serif; font-size: 22px; text-transform: uppercase; color: #13212E; margin: 0;">
+                    The Challenge &amp; How We Solved It
+                </h3>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <div style="background: #F8FAFC; border: 1px solid rgba(19, 33, 46, 0.08); border-radius: 18px; padding: 26px 24px;">
+                    <div style="display: inline-block; background: rgba(194, 162, 106, 0.15); color: #8C6D38; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;">
+                        THE CLIENT'S PROBLEM
+                    </div>
+                    <h4 style="font-family: 'aviano-sans', sans-serif; font-size: 16px; text-transform: uppercase; color: #13212E; margin: 0 0 10px 0;">What Needed Fixing</h4>
+                    <p style="font-size: 13.5px; line-height: 1.7; color: #475569; margin: 0;">${loc.challenge}</p>
+                </div>
+                <div style="background: #F8FAFC; border: 1px solid rgba(19, 33, 46, 0.08); border-radius: 18px; padding: 26px 24px;">
+                    <div style="display: inline-block; background: rgba(19, 33, 46, 0.08); color: #13212E; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;">
+                        THE LUXIHOME SOLUTION
+                    </div>
+                    <h4 style="font-family: 'aviano-sans', sans-serif; font-size: 16px; text-transform: uppercase; color: #13212E; margin: 0 0 10px 0;">How We Delivered</h4>
+                    <p style="font-size: 13.5px; line-height: 1.7; color: #475569; margin: 0;">${loc.solution}</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Architectural Highlights -->
         <section style="margin-top: 40px;">
