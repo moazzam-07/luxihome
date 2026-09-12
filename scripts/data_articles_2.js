@@ -1,4 +1,4 @@
-// data_articles_2.js - Comprehensive structured dataset for Articles 16-30 (Simple English)
+// data_articles_2.js - Comprehensive structured dataset
 module.exports = [
   {
     "id": 16,
@@ -82,7 +82,7 @@ module.exports = [
     "title": "Italian Marble vs Large-Format Vitrified Tiles (GVT) in Kolkata: The Real Maintenance Truth",
     "metaDescription": "Honest durability comparison between Italian Marble and Glazed Vitrified Porcelain Tiles for Kolkata residences. Polish lifespan, scratch resistance, and cost.",
     "keywords": "italian marble vs tiles kolkata, gvt porcelain slab price kolkata, marble polishing cost, best flooring for flat kolkata",
-    "image": "/pictures.testimonals/curated/italian_marble_flooring_dining.jpeg",
+    "image": "/wp-content/uploads/about-interiors/royal_marble_dining_room.jpg",
     "lead": "Few decisions evoke as much debate between homeowners and designers as flooring. Italian marble offers unmatched prestige and organic beauty, but glazed vitrified porcelain tiles (GVT) provide nearly indestructible daily durability.",
     "takeaways": [
       "Italian marble is a soft limestone (Mohs hardness 3) that stains from acidic liquids and scratches easily under street dust.",
@@ -159,7 +159,7 @@ module.exports = [
     "title": "Architectural Lighting: Why 90% of Kolkata Homes Ruin Interiors with the Wrong Kelvin",
     "metaDescription": "Master the 3-tier luxury lighting formula for Kolkata homes. Understand Kelvin color temperatures (3000K vs 4000K vs 6500K), CRI ratings, and anti-glare COB optics.",
     "keywords": "architectural lighting kolkata, 3000k vs 4000k lighting, cob vs led strip interior, magnetic track light cost",
-    "image": "/pictures.testimonals/salt.lake.work/photo_10_2026-09-04_15-01-37.jpg",
+    "image": "/wp-content/uploads/about-interiors/grand_crystal_chandelier_drawing_room.jpg",
     "lead": "You can spend ₹25 lakhs on Italian marble and bespoke teak joinery, but if you light the space with 6500K harsh white lights, your home will feel like a pharmacy or hospital waiting room.",
     "takeaways": [
       "6500K \"Cool Day Light\" washes out wood textures; residential luxury is built on 3000K Warm White.",
@@ -308,7 +308,7 @@ module.exports = [
     "title": "Acoustic Soundproofing for Busy Kolkata Streets: Soundproof Windows & Wall Baffling",
     "metaDescription": "How to soundproof your bedroom from Kolkata street traffic, bus horns, and tram noise. DGU acoustic laminated glass, UPVC frames, and wall acoustic treatments.",
     "keywords": "soundproof windows kolkata, acoustic glass upvc kolkata, traffic noise reduction bedroom, dgu glass soundproofing",
-    "image": "/pictures.testimonals/salt.lake.work2/photo_3_2026-09-04_15-17-45.jpg",
+    "image": "/wp-content/uploads/salt-lake/salt-lake-10-atrium-view.jpg",
     "lead": "Living near major Kolkata roads like Rashbehari Avenue, VIP Road, Gariahat, or Diamond Harbour Road means enduring high ambient noise from constant bus horns, motorcycle exhausts, and festival speakers.",
     "takeaways": [
       "Standard aluminum sliding windows have gaps that leak 90% of external road noise into bedrooms.",
@@ -378,7 +378,7 @@ module.exports = [
     "title": "10 Critical Questions to Ask an Interior Designer in Kolkata Before Paying a Token",
     "metaDescription": "Essential due diligence checklist before hiring an interior designer in Kolkata. Expose hidden markups, verify subcontractor pedigree, and protect your budget.",
     "keywords": "questions to ask interior designer kolkata, how to hire interior designer, interior contract checklist, avoid interior scam kolkata",
-    "image": "/pictures.testimonals/park.street.work/photo_5_2026-09-04_15-06-35.jpg",
+    "image": "/assets/img/projects/park-street-featured.jpg",
     "lead": "Hiring an interior designer is one of the most substantial financial and emotional investments you will make in your home. Asking the right questions during the initial consultation separates true architectural craftsmen from commission agents.",
     "takeaways": [
       "Demand an Itemized Bill of Quantities (BOQ) with explicit brand names, ply grades, and hardware model numbers.",
@@ -763,7 +763,7 @@ module.exports = [
     "title": "Modern Vastu for Kolkata Apartments: Scientific Energy Alignment Without Ruining Aesthetics",
     "metaDescription": "Practical, contemporary Vastu Shastra guide for Kolkata flats. Balance kitchen fire zones, master bedroom directions, and mandirs without breaking walls.",
     "keywords": "vastu for flats kolkata, contemporary vastu interior design, kitchen vastu southeast, north east mandir flat kolkata",
-    "image": "/pictures.testimonals/salt.lake.work/photo_7_2026-09-04_15-01-37.jpg",
+    "image": "/wp-content/uploads/about-interiors/luxury_feature_wall_seating_lounge.jpg",
     "lead": "Over 70% of Kolkata homeowners desire Vastu alignment for peace, prosperity, and harmony. However, advice that demands breaking structural concrete beams or demolishing bathrooms is neither practical nor architecturally sound.",
     "takeaways": [
       "Vastu in modern apartment towers is about optimizing airflow, solar trajectories, and magnetic spatial balance.",
@@ -836,7 +836,7 @@ module.exports = [
     "title": "Smart Home Automation in Kolkata: What’s Truly Useful vs What’s a Waste of Money",
     "metaDescription": "Honest evaluation of home automation for Kolkata apartments. Discover why retrofitted Matter/Zigbee modules beat expensive proprietary control panels.",
     "keywords": "smart home automation kolkata, motorized curtains price kolkata, smart switches worth it, zigbee home automation",
-    "image": "/pictures.testimonals/real.residential.pic/photo_1_2026-09-06_14-27-28.jpg",
+    "image": "/wp-content/uploads/about-interiors/living_room_tv_lounge.jpg",
     "lead": "Home automation salespeople will eagerly pitch ₹5 lakh proprietary wall touch panels. But what features actually enhance luxury living in Kolkata, and what ends up as frustrating technical clutter?",
     "takeaways": [
       "Avoid locked proprietary wired systems; choose open-standard Matter and Zigbee wireless modules.",
@@ -985,7 +985,7 @@ module.exports = [
     "title": "Small Balcony Garden & Sit-Out Design for Kolkata High-Rises: Surviving Heat & Monsoons",
     "metaDescription": "Transform compact high-rise balconies in New Town and Rajarhat into all-weather luxury retreats. WPC decking, drainage slopes, invisible grills, and tropical plants.",
     "keywords": "balcony garden design kolkata, high rise balcony makeover, wpc decking balcony price, invisible grill installation kolkata",
-    "image": "/pictures.testimonals/salt.lake.work/photo_13_2026-09-04_15-01-37.jpg",
+    "image": "/wp-content/uploads/salt-lake/salt-lake-13-sky-terrace.jpg",
     "lead": "A private balcony is your personal connection to the outdoors in high-density Kolkata. Yet, exposed to scorching 42°C summer heat, ferocious monsoon downpours, and pigeon visits, most balconies end up as neglected storage spaces.",
     "takeaways": [
       "Interlocking Wood-Plastic Composite (WPC) deck tiles over existing flooring drain rainwater instantly without water pooling.",

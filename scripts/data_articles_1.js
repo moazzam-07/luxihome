@@ -1,4 +1,4 @@
-// data_articles_1.js - Comprehensive structured dataset for Articles 1-15 (Simple English)
+// data_articles_1.js - Comprehensive structured dataset
 module.exports = [
   {
     "id": 1,
@@ -88,7 +88,7 @@ module.exports = [
     "title": "Turnkey Interior Package vs Local Thekedar in Kolkata: Where Margins Hide",
     "metaDescription": "Should you hire a turnkey design firm or local contractors in Kolkata? A transparent breakdown of 30% hidden costs, sub-contractor markups, and timeline delays.",
     "keywords": "turnkey interior design kolkata, thekedar vs designer kolkata, hidden interior costs, interior contractor scam kolkata",
-    "image": "/pictures.testimonals/salt.lake.work/photo_8_2026-09-04_15-01-37.jpg",
+    "image": "/wp-content/uploads/about-interiors/contemporary_gold_accent_living.jpg",
     "lead": "Every Kolkata homeowner faces the same choice: choose the convenience of a unified turnkey design studio, or hire independent carpenters, electricians, and painters to try to save money.",
     "takeaways": [
       "Direct carpenter-labor models appear 20% cheaper on paper, but material wastage averages 35% higher final costs.",
@@ -160,7 +160,7 @@ module.exports = [
     "title": "Modular Kitchen Cost in Kolkata: Acrylic vs PU Finish vs Laminate Price Sheet",
     "metaDescription": "Complete Kolkata modular kitchen pricing guide. Comparison of BWP 710 marine ply carcasses, acrylic shutters, PU lacquer finishes, and hardware choices.",
     "keywords": "modular kitchen cost kolkata, acrylic kitchen shutters price, pu finish kitchen kolkata, bwp plywood modular kitchen",
-    "image": "/pictures.testimonals/curated/modular_kitchen_island_quartz.jpeg",
+    "image": "/wp-content/uploads/about-interiors/modular_island_kitchen.jpg",
     "lead": "The kitchen is the hardest-working space in any Kolkata home. Navigating materials that survive intense spice frying, high-heat cooking, and relentless monsoon humidity requires solid, reliable planning.",
     "takeaways": [
       "Never use MDF or particle board for base cabinets in Kolkata—only BWP 710 Marine Plywood.",
@@ -237,7 +237,7 @@ module.exports = [
     "title": "False Ceiling Price per Sq Ft in Kolkata: Gypsum vs POP vs PVC Cost Analysis",
     "metaDescription": "Honest false ceiling costs in Kolkata per square foot. Gypsum vs POP comparison, channel gauge specifications, and hidden cove lighting wiring costs.",
     "keywords": "false ceiling cost kolkata, gypsum ceiling rate per sq ft, pop false ceiling price kolkata, cove lighting cost",
-    "image": "/pictures.testimonals/real.residential.pic/photo_11_2026-09-06_14-27-28.jpg",
+    "image": "/assets/img/projects/newtown/photo_1_2026-09-04_15-49-33.jpg",
     "lead": "A false ceiling does far more than look decorative: it conceals unaligned structural beams, houses architectural recessed lighting, and reduces heat on top-floor Kolkata apartments.",
     "takeaways": [
       "Standard Gypsum ceiling costs ₹95 to ₹135 per sq.ft including framing and jointing.",
@@ -314,7 +314,7 @@ module.exports = [
     "title": "Interior Designer Fees in Kolkata: Per Sq Ft Rate vs Percentage of Project",
     "metaDescription": "Understanding interior designer fee structures in Kolkata. Compare per-sq-ft design fees, 12-18% project percentages, and turnkey markups transparently.",
     "keywords": "interior designer fee kolkata, how much interior designers charge, interior design consultation rate, design fee vs turnkey",
-    "image": "/pictures.testimonals/park.street.work/photo_1_2026-09-04_15-06-35.jpg",
+    "image": "/wp-content/uploads/about-interiors/curved_sofa_designer_lounge.jpg",
     "lead": "Before engaging an interior designer in Kolkata, understanding fee structures prevents misunderstandings and aligns expectations with deliverables.",
     "takeaways": [
       "Design-only consultations range from ₹40 to ₹150 per sq.ft based on architect experience.",
@@ -386,7 +386,7 @@ module.exports = [
     "title": "The Monsoon Defense: Why 80% of Kolkata Plywood Warps and What to Buy Instead",
     "metaDescription": "Essential plywood selection guide for Kolkata’s humid monsoons. Learn the difference between MR, BWR, and BWP 710 Marine Plywood with real testing tips.",
     "keywords": "bwp marine plywood kolkata, best plywood for interiors kolkata, plywood warping monsoons, is 710 plywood test",
-    "image": "/pictures.testimonals/real.residential.pic/photo_27_2026-09-06_14-27-28.jpg",
+    "image": "/pictures.testimonals/salt.lake.work/photo_8_2026-09-04_15-01-37.jpg",
     "lead": "With relative humidity hovering above 80% for five straight months, Kolkata’s atmospheric moisture is the greatest enemy of interior woodwork. Choosing the wrong grade will turn your luxury wardrobe into a warped, mold-covered headache.",
     "takeaways": [
       "Commercial MR (Moisture Resistant) plywood uses urea-formaldehyde resin, which breaks down in humidity.",
@@ -463,7 +463,7 @@ module.exports = [
     "title": "Tackling Kolkata’s Wall Dampness (Nona) Before Painting: The Permanent 3-Step Fix",
     "metaDescription": "Permanent cure for wall dampness and nona (salt efflorescence) in Kolkata flats. Learn why cheap putty fails and discover the chemical barrier method.",
     "keywords": "wall dampness treatment kolkata, nona treatment in walls, paint peeling salt kolkata, waterproofing interior walls",
-    "image": "/pictures.testimonals/new.town.work/photo_18_2026-09-04_15-49-33.jpg",
+    "image": "/pictures.testimonals/real.residential.pic/photo_27_2026-09-06_14-27-28.jpg",
     "lead": "Nothing breaks a homeowner’s heart faster than watching ₹50,000 worth of luxury paint bubble, crack, and turn to white salt powder within three months of moving in. In Kolkata, salt efflorescence—locally known as nona—is a widespread issue.",
     "takeaways": [
       "Nona is caused by dissolved mineral salts travelling through porous brickwork and crystallizing as moisture evaporates.",
@@ -608,7 +608,7 @@ module.exports = [
     "title": "Best Kitchen Countertop for Kolkata Cooking: Quartz vs Granite vs Nano White",
     "metaDescription": "Which kitchen countertop withstands mustard oil, turmeric, and high-heat pans in Kolkata? Real test comparison between Quartz, Black Granite, and Nano Glass.",
     "keywords": "kitchen countertop kolkata, quartz vs granite india, nano white countertop stains, best kitchen slab material",
-    "image": "/pictures.testimonals/real.residential.pic/photo_52_2026-09-06_14-27-28.jpg",
+    "image": "/wp-content/uploads/salt-lake/salt-lake-06-kitchen.jpg",
     "lead": "From hot mustard oil splatters to raw haldi and acidic tamarind, Indian cooking puts kitchen countertops through tough daily use. Beautiful marble looks stunning on Pinterest, but turns into a stained headache in an active Kolkata kitchen.",
     "takeaways": [
       "Italian marble is strictly unsuitable for Indian cooking due to porous calcium carbonate that dissolves in citrus acids.",
@@ -768,7 +768,7 @@ module.exports = [
     "title": "2BHK/3BHK Interior Design for High-Rise Apartments in New Town & Rajarhat",
     "metaDescription": "Space-saving luxury interior design guide for modern New Town and Rajarhat high-rises. Maximize compact floor plans, galley kitchens, and utility balconies.",
     "keywords": "new town flat interior design, rajarhat apartment interior designer, space saving furniture kolkata, action area 2 flat interior",
-    "image": "/pictures.testimonals/new.town.work/photo_3_2026-09-04_15-49-33.jpg",
+    "image": "/assets/img/projects/new-town-featured.jpg",
     "lead": "Modern towers across New Town Action Area I, II, III and Rajarhat boast stunning high-rise skyline views and expansive clubhouses, but interior floor plans often suffer from narrow galley kitchens, dead corner corridors, and boxy bedrooms.",
     "takeaways": [
       "Use continuous 800x1600mm floor tiles without visual grout breaks to make compact rooms appear 25% larger.",
@@ -989,7 +989,7 @@ module.exports = [
     "title": "South Kolkata 3BHK Flat Makeovers: Gariahat, Jodhpur Park & Lake Gardens",
     "metaDescription": "How to overhaul 15 to 25 year old apartments in South Kolkata. Bathroom enlargements, electrical rewiring, road noise dampening, and layout transformations.",
     "keywords": "south kolkata flat interior design, renovation jodhpur park lake gardens, gariahat apartment interior, old flat remodel kolkata",
-    "image": "/pictures.testimonals/real.residential.pic/photo_67_2026-09-06_14-27-28.jpg",
+    "image": "/wp-content/uploads/salt-lake/salt-lake-08-living-room.jpg",
     "lead": "Apartments built in the late 1990s and early 2000s across Gariahat, Southern Avenue, Jodhpur Park, and Lake Gardens boast generous carpet footprints and prime connectivity, but their interiors feel dated, dark, and acoustically compromised.",
     "takeaways": [
       "Upgrade obsolete 2.5 sq.mm aluminum/copper wiring to fire-resistant low-smoke (FRLS) 4 sq.mm electrical cabling for modern appliances.",
@@ -1066,7 +1066,7 @@ module.exports = [
     "title": "Duplex & Penthouse Interior Architecture in Kolkata: Vertical Zoning & High Ceilings",
     "metaDescription": "Interior architecture for luxury duplexes and penthouses in Kolkata (Urbana, South City, Trump Tower). Double-height acoustics, custom stairs, and terrace landscaping.",
     "keywords": "duplex interior design kolkata, penthouse interior architect, urbana kolkata flat interior, double height ceiling lighting",
-    "image": "/pictures.testimonals/salt.lake.work2/photo_13_2026-09-04_15-17-45.jpg",
+    "image": "/wp-content/uploads/about-interiors/executive_black_marble_living_hall.jpg",
     "lead": "Occupying the upper levels of Kolkata’s skyline—from Urbana on the EM Bypass to Trump Tower and South City—penthouses and duplex residences demand architectural mastery. When ceiling heights scale to 22 feet, standard interior rules no longer apply.",
     "takeaways": [
       "Double-height living rooms require specialized acoustic wall paneling to eliminate cavernous sound echo.",

@@ -338,10 +338,12 @@ function getWhiteSharedCss() {
         margin: 0 0 16px 0;
     }
     .cs-detail-copy {
-        font-size: clamp(15px, 2vw, 17.5px);
-        line-height: 1.7;
+        font-family: 'aviano-sans', sans-serif !important;
+        font-size: clamp(14px, 1.8vw, 16px);
+        line-height: 1.75;
         color: #4A5B6C;
         margin: 0 0 30px 0;
+        letter-spacing: 0.02em;
     }
 
     .cs-detail-image-wrap {
@@ -407,9 +409,11 @@ function getWhiteSharedCss() {
         display: flex;
         align-items: flex-start;
         gap: 10px;
-        font-size: 14.5px;
-        line-height: 1.6;
+        font-family: 'aviano-sans', sans-serif !important;
+        font-size: 13.5px;
+        line-height: 1.65;
         color: #334155;
+        letter-spacing: 0.02em;
     }
     .journal-takeaways-list li span.bullet {
         color: #C2A26A;
@@ -430,11 +434,12 @@ function getWhiteSharedCss() {
         margin: 0 0 14px 0;
     }
     .article-content p {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.8;
+        font-family: 'aviano-sans', sans-serif !important;
+        font-size: 15px;
+        line-height: 1.85;
         color: #334155;
         margin: 0 0 18px 0;
+        letter-spacing: 0.02em;
     }
 
     .journal-table-section {
@@ -491,10 +496,13 @@ function getWhiteSharedCss() {
         white-space: nowrap;
     }
     .journal-comparison-table td {
+        font-family: 'aviano-sans', sans-serif !important;
         padding: 14px 18px;
         border-bottom: 1px solid rgba(19, 33, 46, 0.06);
         color: #4A5B6C;
         vertical-align: top;
+        font-size: 13.5px;
+        letter-spacing: 0.02em;
     }
     .journal-comparison-table tr:hover td {
         background: #F8FAFC;
@@ -532,10 +540,12 @@ function getWhiteSharedCss() {
         margin: 0 0 8px 0;
     }
     .journal-secret-sauce-desc {
-        font-size: 14.5px;
+        font-family: 'aviano-sans', sans-serif !important;
+        font-size: 13.5px;
         line-height: 1.7;
         color: #4A5B6C;
         margin: 0;
+        letter-spacing: 0.02em;
     }
 
     .cs-cta-box {
