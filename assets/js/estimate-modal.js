@@ -233,12 +233,20 @@
 
     function openModal() {
         var overlay = document.getElementById('luxi-estimate-overlay');
+        if (!overlay) {
+            injectDOM();
+            bindEvents();
+            overlay = document.getElementById('luxi-estimate-overlay');
+        }
         if (overlay) {
             overlay.classList.add('is-active');
             overlay.setAttribute('aria-hidden', 'false');
             setStep(1);
         }
     }
+
+    // Expose globally immediately
+    window.luxiOpenEstimateModal = openModal;
 
     function closeModal() {
         var overlay = document.getElementById('luxi-estimate-overlay');
@@ -280,13 +288,19 @@
         }
     }
 
+    var eventsBound = false;
     function bindEvents() {
+        if (eventsBound) return;
+        eventsBound = true;
         window.luxiOpenEstimateModal = openModal;
-        document.querySelectorAll('[data-action="open-estimate"]').forEach(function (el) {
-            el.addEventListener('click', function (e) {
+
+        // Document-level delegated click listener for any open-estimate trigger
+        document.addEventListener('click', function (e) {
+            var btn = e.target && e.target.closest ? e.target.closest('[data-action="open-estimate"]') : null;
+            if (btn) {
                 e.preventDefault();
                 openModal();
-            });
+            }
         });
 
         // Open via floating Free Estimate pill

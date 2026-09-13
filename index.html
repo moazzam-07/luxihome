@@ -157,7 +157,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5" id="gform_theme_components-css" media="all" rel="stylesheet"/>
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5" id="gform_theme-css" media="all" rel="stylesheet"/>
 <link href="/assets/css/styles.css" id="screen-css-css" media="all" rel="stylesheet"/>
-<link href="/assets/css/estimate-modal.css" id="estimate-modal-css" media="all" rel="stylesheet"/>
+<link href="/assets/css/estimate-modal.css?v=luxi_est_v3" id="estimate-modal-css" media="all" rel="stylesheet"/>
 <link href="/assets/video/luxihome-hero-video.mp4" rel="prefetch" type="video/mp4"/>
 <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 <script defer="defer" id="gform_json-js" src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
@@ -2011,15 +2011,15 @@ living</p>
 <div class="absolute inset-0 backdrop-blur-0 pointer-events-none" data-target="interiors-blur"></div>
 </div>
 </div>
-<div class="relative sm:absolute sm:right-0 sm:bottom-0 sm:left-0 w-screen sm:h-[50vh] lg:h-dvh pointer-events-auto mt-25 sm:mt-0" data-target="interiors-content">
+<div class="relative sm:absolute sm:right-0 sm:bottom-0 sm:left-0 w-screen sm:h-[50vh] lg:h-dvh pointer-events-auto mt-25 sm:mt-0 z-30" data-target="interiors-content">
 <div class="container h-full">
 <div class="flex flex-col justify-center gap-12 sm:gap-150 w-full h-full lg:px-100">
-<div class="md:self-end"><button type="button" data-action="open-estimate" onclick="window.luxiOpenEstimateModal&&window.luxiOpenEstimateModal()" class="flex-row-reverse group flex items-center gap-20 bg-black/10 lg:bg-white/10 py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden w-full pl-35 pr-12 border-0"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/50 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
+<div class="md:self-end relative z-30"><button type="button" data-action="open-estimate" onclick="(window.triggerEstimateModal ? window.triggerEstimateModal(event) : (window.luxiOpenEstimateModal ? window.luxiOpenEstimateModal() : (document.getElementById('luxi-dock-estimate-btn') ? document.getElementById('luxi-dock-estimate-btn').click() : (function(){ var o=document.getElementById('luxi-estimate-overlay'); if(o){ o.classList.add('is-active'); o.setAttribute('aria-hidden','false'); } })())))" class="flex-row-reverse group flex items-center gap-20 bg-black/10 lg:bg-white/10 py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden w-full pl-35 pr-12 border-0 text-left outline-none relative z-30 pointer-events-auto" aria-label="Open Free Estimate Form"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/50 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20] pointer-events-none">
 <svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.75781 1.74609L8.75781 15.7813" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
 <path d="M15.7812 8.76562L1.74608 8.76562" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
 </svg>
-</div><span class="font-sans font-normal text-16 leading-none tracking-1.6 text-dark-blue sm:text-white transition-colors duration-200 group-hover:text-dark-blue">Free Estimate</span></button></div>
+</div><span class="font-sans font-normal text-16 leading-none tracking-1.6 text-dark-blue sm:text-white transition-colors duration-200 group-hover:text-dark-blue pointer-events-none">Free Estimate</span></button></div>
 <div class="md:self-start"><a href="/about/" class="flex-row group flex items-center gap-20 bg-black/10 lg:bg-white/10 py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden w-full pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/50 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
 <svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.75781 1.74609L8.75781 15.7813" stroke="#1A2026" stroke-linecap="round" stroke-width="1.74545"></path>
@@ -2496,7 +2496,28 @@ var php_vars = {"themeDirUrl":"/assets","homeUrl":"/","ajaxUrl":"/wp-admin/admin
 /*! This file is auto-generated */
 var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
+<script>
+window.triggerEstimateModal = function (e) {
+    if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+    }
+    if (typeof window.luxiOpenEstimateModal === 'function') {
+        window.luxiOpenEstimateModal();
+        return;
+    }
+    var dock = document.getElementById('luxi-dock-estimate-btn');
+    if (dock) {
+        dock.click();
+        return;
+    }
+    var overlay = document.getElementById('luxi-estimate-overlay');
+    if (overlay) {
+        overlay.classList.add('is-active');
+        overlay.setAttribute('aria-hidden', 'false');
+    }
+};
 </script>
-<script src="/assets/js/estimate-modal.js" defer></script>
+<script src="/assets/js/estimate-modal.js?v=luxi_est_v3" defer></script>
 </body>
 </html>
