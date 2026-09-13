@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LUXiHOME - Executive Photoshoot Directive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  @page {
+    size: A4;
+    margin: 10mm 13mm 10mm 13mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #13212E;
+    background-color: #FFFFFF;
+    line-height: 1.35;
+    font-size: 8.5pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #13212E;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  .brand-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 21pt;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #13212E;
+    text-transform: uppercase;
+  }
+
+  .brand-subtitle {
+    font-size: 7pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C2A26A;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  .doc-meta {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #616F7D;
+    line-height: 1.25;
+  }
+
+  .doc-badge {
+    display: inline-block;
+    background: #13212E;
+    color: #FFFFFF;
+    font-size: 6.5pt;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .banner-box {
+    background: #F8F9FA;
+    border-left: 3.5px solid #C2A26A;
+    padding: 7px 11px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 10px;
+  }
+
+  .banner-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11.5pt;
+    color: #13212E;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .banner-box p {
+    font-size: 7.8pt;
+    color: #4A5568;
+    line-height: 1.35;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 11.5pt;
+    color: #13212E;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #E2E8F0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+    padding: 7px 9px;
+    background: #FFFFFF;
+    page-break-inside: avoid;
+    position: relative;
+  }
+
+  .card.priority-critical {
+    border-color: #C2A26A;
+    background: #FCFAF7;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+
+  .card-rank {
+    font-size: 6.5pt;
+    font-weight: 700;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .rank-1 { background: #13212E; color: #FFFFFF; }
+  .rank-2 { background: #C2A26A; color: #FFFFFF; }
+  .rank-3 { background: #E2E8F0; color: #13212E; }
+
+  .stars {
+    color: #D97706;
+    font-size: 7pt;
+    letter-spacing: 0.5px;
+  }
+
+  .card-title {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #13212E;
+    margin-bottom: 2px;
+  }
+
+  .card-rule {
+    font-size: 7.8pt;
+    font-weight: 600;
+    color: #1E293B;
+    margin-bottom: 2px;
+    line-height: 1.25;
+  }
+
+  .card-why {
+    font-size: 7.2pt;
+    color: #64748B;
+    line-height: 1.25;
+  }
+
+  .card-why strong {
+    color: #334155;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    font-size: 7.5pt;
+  }
+
+  .summary-table th {
+    background: #13212E;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 4px 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 7pt;
+  }
+
+  .summary-table td {
+    padding: 4.5px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.25;
+  }
+
+  .summary-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+
+  .summary-table td strong {
+    color: #13212E;
+  }
+
+  .footer-note {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 6.8pt;
+    color: #94A3B8;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="brand-title">LUXiHOME</div>
+    <div class="brand-subtitle">Architectural Interiors • Kolkata</div>
+  </div>
+  <div class="doc-meta">
+    <div class="doc-badge">Production Directive</div>
+    <div><strong>Doc:</strong> About Section Photoshoot Standards</div>
+    <div><strong>Target:</strong> 5-Person Leadership Scrollytelling</div>
+    <div><strong>Date:</strong> September 2026</div>
+  </div>
+</div>
+
+<div class="banner-box">
+  <h2>Interactive "Deep-Zoom" Scrollytelling Concept</h2>
+  <p>
+    This photo is <strong>not a standard static team picture</strong>. On the live website, the section will lock in place as the user scrolls. The camera will dynamically <strong>zoom in (300% to 400%)</strong> onto the <strong>Owner's face</strong> with animated bio details, then pan smoothly across the luxury cafe/restaurant to each of the other <strong>4 leadership members</strong> sequentially. The technical specs below guarantee zero pixelation, no edge-clipping, and immaculate luxury editorial quality.
+  </p>
+</div>
+
+<div class="section-title">Priority Checklist (Ranked by Critical Impact)</div>
+
+<div class="grid">
+
+  <div class="card priority-critical">
+    <div class="card-header">
+      <span class="card-rank rank-1">Priority #1</span>
+      <span class="stars">★★★★★ MOST CRITICAL</span>
+    </div>
+    <div class="card-title">High-Resolution Camera Body (45MP–60MP+)</div>
+    <div class="card-rule">Shoot in RAW on a professional full-frame camera (Sony A7R IV/V, Canon R5, Nikon Z8/Z9). Zero smartphones.</div>
+    <div class="card-why"><strong>Why:</strong> The website code crops/zooms up to 400% into individual faces on 4K retina displays. A smartphone photo will turn into blurry pixelated noise. High-res RAW ensures crisp eyelashes and tailored suit fabrics.</div>
+  </div>
+
+  <div class="card priority-critical">
+    <div class="card-header">
+      <span class="card-rank rank-1">Priority #2</span>
+      <span class="stars">★★★★★ CRITICAL</span>
+    </div>
+    <div class="card-title">25% Environmental "Breathing Room"</div>
+    <div class="card-rule">Frame the shot wide. Leave at least 20% to 25% empty background around the top, bottom, left, and right.</div>
+    <div class="card-why"><strong>Why:</strong> When the camera zooms into the person on the far left or far right, if their body touches the photo edge, the viewport runs out of picture and reveals empty black space. Generous padding allows infinite smooth pan & zoom.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-rank rank-2">Priority #3</span>
+      <span class="stars">★★★★ HIGH</span>
+    </div>
+    <div class="card-title">Universal Sharp Focus (f/5.6 – f/8)</div>
+    <div class="card-rule">Stop down aperture to f/5.6 or f/8. Shutter speed at 1/250s or faster on a heavy tripod. Zero motion blur.</div>
+    <div class="card-why"><strong>Why:</strong> Photographers love shallow bokeh (f/1.8), but with 5 people, shallow focus blurs people on the sides or slightly behind. Every single face must be tack-sharp when zoomed in.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-rank rank-2">Priority #4</span>
+      <span class="stars">★★★★ HIGH</span>
+    </div>
+    <div class="card-title">Staggered Luxury Spacing (No Clumping)</div>
+    <div class="card-rule">Arrange the 5 people in a layered, natural composition (e.g. 2–3 seated at a marble table/lounge, 2 standing naturally).</div>
+    <div class="card-why"><strong>Why:</strong> Avoid flat straight-line mugshots. Crucially, leave breathing room between heads so when the camera zooms into one person, their text bio card has room to slide in without covering another face.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-rank rank-3">Priority #5</span>
+      <span class="stars">★★★ MEDIUM</span>
+    </div>
+    <div class="card-title">16:9 Landscape Aspect Ratio</div>
+    <div class="card-rule">Shoot horizontally in 16:9 (or 3:2 full sensor). Keep camera at eye-level to seated subjects.</div>
+    <div class="card-why"><strong>Why:</strong> 16:9 widescreen naturally matches modern desktop viewports. On mobile screens (9:16), our code dynamically centers and crops onto the active zoomed subject.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-rank rank-3">Priority #6</span>
+      <span class="stars">★★ AESTHETIC</span>
+    </div>
+    <div class="card-title">Warm Architectural Lighting & Wardrobe</div>
+    <div class="card-rule">Warm ambient cafe glow (2700K–3000K). Coordinated luxury palette: Deep Navy, Charcoal, Black, Cream, Beige.</div>
+    <div class="card-why"><strong>Why:</strong> Avoid harsh direct overhead ceiling spotlights that cast dark shadows under eyes. Neutral tailored luxury tones seamlessly match LUXiHOME's pure white and navy brand aesthetic.</div>
+  </div>
+
+</div>
+
+<div class="section-title">Photographer Quick-Reference Card</div>
+
+<table class="summary-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Required Setting</th>
+      <th>Field Impact / Key Objective</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Camera Type</strong></td>
+      <td>Full-Frame Mirrorless (45MP to 60MP+)</td>
+      <td>Enables 4x lossless digital zoom during interactive scroll</td>
+    </tr>
+    <tr>
+      <td><strong>Lens & Focal Length</strong></td>
+      <td>35mm or 50mm Prime / Sharp F/2.8 Zoom</td>
+      <td>Natural human perspective without wide-angle facial distortion</td>
+    </tr>
+    <tr>
+      <td><strong>Aperture</strong></td>
+      <td>f/5.6 – f/8 (Deep Depth of Field)</td>
+      <td>Ensures all 5 faces remain crisp and in focus across the plane</td>
+    </tr>
+    <tr>
+      <td><strong>Shutter & Support</strong></td>
+      <td>1/250s+ on Sturdy Tripod (ISO 100–400)</td>
+      <td>Zero camera shake, zero micro-blur on facial details</td>
+    </tr>
+    <tr>
+      <td><strong>Framing / Edges</strong></td>
+      <td>Wide 16:9 with 25% boundary clearance</td>
+      <td>Prevents camera clipping edges when panning to side members</td>
+    </tr>
+    <tr>
+      <td><strong>Delivery Format</strong></td>
+      <td>Uncompressed RAW + Full-Res Maximum Quality JPEG</td>
+      <td>Full dynamic range preserved for web compression & color grading</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-note">
+  <div>LUXiHOME Pvt. Ltd. • Bespoke Luxury Interiors & Architecture • Syed Ismail Ln, Kolkata 700016</div>
+  <div>Confidential Production Specification • For Photographer & Creative Direction Use</div>
+</div>
+
+</body>
+</html>

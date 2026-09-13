@@ -281,6 +281,14 @@
     }
 
     function bindEvents() {
+        window.luxiOpenEstimateModal = openModal;
+        document.querySelectorAll('[data-action="open-estimate"]').forEach(function (el) {
+            el.addEventListener('click', function (e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
         // Open via floating Free Estimate pill
         var estimateBtn = document.getElementById('luxi-dock-estimate-btn');
         if (estimateBtn) {
