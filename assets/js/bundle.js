@@ -4223,6 +4223,7 @@ function banner() {
   var bannerContentFixed = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-content-fixed"]');
   var bannerText1 = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-text-1"]');
   var bannerScroll = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-scroll"]');
+  var bannerPentagonCta = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="banner-pentagon-cta"]');
   var horizontalScroll = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-name="horizontal-scroll"]');
   var horizontalScrollText1 = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-text-1"]');
   var horizontalScrollImage1Blur = (0,_js_utils_querySelector__WEBPACK_IMPORTED_MODULE_0__.$qs)('[data-target="horizontal-scroll-image-1-blur"]');
@@ -4288,7 +4289,7 @@ function banner() {
         autoAlpha: 1,
         duration: 1,
         ease: 'none'
-      }, 'start').to([bannerText1, bannerScroll], {
+      }, 'start').to([bannerText1, bannerScroll, bannerPentagonCta], {
         autoAlpha: 0,
         duration: 0.25,
         ease: 'none'
@@ -4355,7 +4356,7 @@ function banner() {
       backdropFilter: 'blur(0px)',
       duration: imageDuration,
       ease: 'power3.in'
-    }, 'image').to([bannerText1, bannerScroll, menuWrapper, audioIcon], {
+    }, 'image').to([bannerText1, bannerScroll, menuWrapper, audioIcon, bannerPentagonCta], {
       autoAlpha: 1,
       duration: 0.5,
       ease: 'none'
@@ -4376,7 +4377,7 @@ function banner() {
       backdropFilter: 'blur(0px)',
       duration: 0.5,
       ease: 'none'
-    }, 'start').to([bannerText1, bannerScroll, menuWrapper, audioIcon], {
+    }, 'start').to([bannerText1, bannerScroll, menuWrapper, audioIcon, bannerPentagonCta], {
       autoAlpha: 1,
       duration: 0.5,
       ease: 'none'
