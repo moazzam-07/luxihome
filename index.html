@@ -67,6 +67,119 @@
     touch-action: none !important;
     overscroll-behavior: none !important;
   }
+  .luxi-pentagon-cta-wrap {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: clamp(120px, 18vh, 160px) !important;
+    z-index: 45 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    pointer-events: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-cta-wrap {
+      bottom: clamp(85px, 12vh, 115px) !important;
+    }
+  }
+  .luxi-pentagon-pill-btn {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    background: rgba(22, 26, 32, 0.68) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: 9999px !important;
+    padding: 5px 6px 5px 16px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: 0 12px 35px -6px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    max-width: calc(100vw - 32px) !important;
+    box-sizing: border-box !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-pill-btn {
+      gap: 14px !important;
+      padding: 6px 8px 6px 22px !important;
+    }
+  }
+  .luxi-pentagon-pill-btn:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 16px 45px -4px rgba(0, 0, 0, 0.65) !important;
+  }
+  .luxi-pentagon-pill-text {
+    font-family: 'Aviano Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 10.5px !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    color: #ffffff !important;
+    transition: color 0.3s ease !important;
+    line-height: 1 !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-pill-text {
+      font-size: 12.5px !important;
+      letter-spacing: 0.18em !important;
+    }
+  }
+  .luxi-pentagon-pill-btn:hover .luxi-pentagon-pill-text {
+    color: #1A2026 !important;
+  }
+  .luxi-pentagon-plus-disk {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 9999px !important;
+    background: rgba(240, 235, 225, 0.9) !important;
+    color: #1A2026 !important;
+    flex-shrink: 0 !important;
+    transition: all 0.35s ease !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-plus-disk {
+      width: 36px !important;
+      height: 36px !important;
+    }
+  }
+  .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk {
+    background: #1A2026 !important;
+    color: #ffffff !important;
+    transform: rotate(90deg) !important;
+  }
+  .luxi-pentagon-plus-disk svg {
+    width: 13px !important;
+    height: 13px !important;
+    transition: stroke 0.3s ease !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-plus-disk svg {
+      width: 15px !important;
+      height: 15px !important;
+    }
+  }
+  .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk svg path {
+    stroke: #ffffff !important;
+  }
 </style>
 <script>
 var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
@@ -545,18 +658,14 @@ IN KOLKATA
 </div>
 </div>
 
-<!-- Minimal & Premium Flagship Project CTA Badge -->
-<div class="absolute bottom-[75px] sm:bottom-[90px] left-1/2 -translate-x-1/2 z-40 flex justify-center w-full px-15 pointer-events-auto opacity-0 invisible" data-target="banner-pentagon-cta">
-<a href="/alams-pentagon/" class="group inline-flex items-center gap-10 sm:gap-14 bg-black/45 hover:bg-white text-white hover:text-dark-blue px-18 sm:px-24 py-9 sm:py-11 rounded-60 backdrop-blur-24 border border-white/25 hover:border-white transition-all duration-300 shadow-2xl scale-100 hover:scale-[1.03]" data-barba-prevent="self">
-<span class="relative flex size-8 sm:size-9">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CBB26A] opacity-75"></span>
-<span class="relative inline-flex rounded-full size-8 sm:size-9 bg-[#CBB26A]"></span>
-</span>
-<span class="font-sans font-normal text-11 sm:text-13 tracking-1.5 sm:tracking-2 uppercase">The Alam's Pentagon • Ongoing Project</span>
-<div class="flex justify-center items-center relative size-22 sm:size-24 rounded-full bg-white/20 group-hover:bg-dark-blue group-hover:text-white transition-colors duration-300">
-<svg fill="none" height="8" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L4.9264 4.9264" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
-<path d="M1 8.71094L4.9264 4.78453" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- Flagship Project CTA (Amali Signature (+) Button) -->
+<div class="luxi-pentagon-cta-wrap opacity-0 invisible" data-target="banner-pentagon-cta">
+<a href="/alams-pentagon/" class="luxi-pentagon-pill-btn group" data-barba-prevent="self" title="Discover The Alam's Pentagon • Ongoing Project">
+<span class="luxi-pentagon-pill-text">The Alam's Pentagon • Ongoing Project</span>
+<div class="luxi-pentagon-plus-disk">
+<svg fill="none" height="14" viewBox="0 0 17 17" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 2L8.5 15" stroke="#1A2026" stroke-linecap="round" stroke-width="2"></path>
+<path d="M15 8.5L2 8.5" stroke="#1A2026" stroke-linecap="round" stroke-width="2"></path>
 </svg>
 </div>
 </a>
