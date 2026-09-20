@@ -180,6 +180,9 @@
   .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk svg path {
     stroke: #ffffff !important;
   }
+  .luxi-pentagon-pill-btn * {
+    pointer-events: none !important;
+  }
 </style>
 <script>
 var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
@@ -660,10 +663,10 @@ IN KOLKATA
 
 <!-- Flagship Project CTA (Amali Signature (+) Button) -->
 <div class="luxi-pentagon-cta-wrap opacity-0 invisible" data-target="banner-pentagon-cta">
-<a href="/alams-pentagon/" class="luxi-pentagon-pill-btn group" data-barba-prevent="self" title="Discover The Alam's Pentagon • Ongoing Project">
-<span class="luxi-pentagon-pill-text">The Alam's Pentagon • Ongoing Project</span>
-<div class="luxi-pentagon-plus-disk">
-<svg fill="none" height="14" viewBox="0 0 17 17" width="14" xmlns="http://www.w3.org/2000/svg">
+<a href="/alams-pentagon/" class="luxi-pentagon-pill-btn group" data-barba-prevent="self" title="Discover The Alam's Pentagon • Ongoing Project" onclick="window.location.href='/alams-pentagon/';">
+<span class="luxi-pentagon-pill-text pointer-events-none">The Alam's Pentagon • Ongoing Project</span>
+<div class="luxi-pentagon-plus-disk pointer-events-none">
+<svg fill="none" height="14" viewBox="0 0 17 17" width="14" xmlns="http://www.w3.org/2000/svg" class="pointer-events-none">
 <path d="M8.5 2L8.5 15" stroke="#1A2026" stroke-linecap="round" stroke-width="2"></path>
 <path d="M15 8.5L2 8.5" stroke="#1A2026" stroke-linecap="round" stroke-width="2"></path>
 </svg>
@@ -702,21 +705,44 @@ IN KOLKATA
 </div>
 </div>
 </section>
+<style id="luxi-vision-styles">
+  .luxi-vision-scrim {
+    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 80%);
+  }
+  @media (max-width: 639px) {
+    .luxi-vision-mobile-card {
+      background: rgba(10, 15, 22, 0.62) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      border-radius: 22px !important;
+      padding: 22px 18px !important;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55) !important;
+      margin: 0 12px !important;
+    }
+    .luxi-vision-title {
+      font-size: 26px !important;
+      line-height: 1.15 !important;
+      letter-spacing: 0.12em !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.95) !important;
+    }
+  }
+</style>
 <div class="relative">
 <div class="absolute top-120 sm:top-320 lg:top-230 right-0 left-0 w-full text-white z-[41] opacity-0 pointer-events-auto" data-target="popup-links-text">
 <div class="container">
-<div class="sm:px-80">
-<p class="font-sans font-light text-34 sm:text-54 lg:text-54 xl:text-64 leading-30 sm:leading-46 lg:leading-none tracking-1.7 sm:tracking-1.9 lg:tracking-1.28 uppercase [&amp;_br]:hidden xl:[&amp;_br]:inline">Where vision transforms<br/>
+<div class="sm:px-80 luxi-vision-mobile-card">
+<p class="font-sans font-light text-30 sm:text-54 lg:text-54 xl:text-64 leading-30 sm:leading-46 lg:leading-none tracking-1.7 sm:tracking-1.9 lg:tracking-1.28 uppercase [&amp;_br]:hidden xl:[&amp;_br]:inline luxi-vision-title [text-shadow:0_2px_10px_rgba(0,0,0,0.95),0_4px_24px_rgba(0,0,0,0.85)]">Where vision transforms<br/>
 into luxury <br/>
 living</p>
-<div class="flex sm:hidden flex-col flex-end justify-start gap-10 mt-20">
-<div class="self-start sm:self-end"><a href="/alams-pentagon/" class="flex-row group flex items-center gap-20 bg-[#13212E]/85 border border-white/20 shadow-xl py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/90 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
+<div class="flex sm:hidden flex-col flex-end justify-start gap-10 mt-15">
+<div class="self-start sm:self-end"><a href="/alams-pentagon/" class="flex-row group flex items-center gap-20 bg-[#13212E]/95 border border-white/20 shadow-xl py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/90 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
 <svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.75781 1.74609L8.75781 15.7813" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 <path d="M15.7812 8.76562L1.74608 8.76562" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 </svg>
 </div><span class="font-sans font-medium letter:text-14 letter:tracking-1.2 text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 group-hover:text-[#C2A26A]">Explore Alam's Pentagon</span></a></div>
-<div class="self-start"><a href="/contact/" class="flex-row group flex items-center gap-20 bg-[#13212E]/85 border border-white/20 shadow-xl py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/90 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
+<div class="self-start"><a href="/contact/" class="flex-row group flex items-center gap-20 bg-[#13212E]/95 border border-white/20 shadow-xl py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/90 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
 <svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.75781 1.74609L8.75781 15.7813" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 <path d="M15.7812 8.76562L1.74608 8.76562" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
@@ -729,17 +755,19 @@ living</p>
 <section class="relative opacity-0 z-40 -mt-[100vh] lg:-mt-[100vh] pointer-events-auto" data-name="popup-links">
 <div class="relative w-screen h-[1300px] sm:h-[1500px] lg:h-[1700px]" data-target="popup-links-image">
 <picture class="hidden lg:block relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover">
-<source srcset="/assets/img/the-architects-concept-hero.webp?v=luxi_hero2" type="image/webp">
-<img src="/assets/img/the-architects-concept-hero.jpg?v=luxi_hero2" alt="Bespoke Architecture & Design - LUXiHOME"/>
+<source srcset="/assets/img/luxihome-penthouse-vision-desktop.webp?v=luxi_v4" type="image/webp">
+<img src="/assets/img/luxihome-penthouse-vision-desktop.jpg?v=luxi_v4" alt="Bespoke Luxury Penthouse Suite - LUXiHOME" class="relative w-full h-full object-cover" style="object-position: center center;"/>
 </picture>
 <picture class="sm:hidden relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source srcset="/assets/img/the-architects-concept-hero.webp?v=luxi_hero2" type="image/webp"/>
-<img alt="Bespoke Architecture & Design - LUXiHOME" loading="eager" role="presentation" src="/assets/img/the-architects-concept-hero.jpg?v=luxi_hero2"/>
+<source srcset="/assets/img/luxihome-penthouse-vision-mobile.webp?v=luxi_v4" type="image/webp"/>
+<img alt="Bespoke Luxury Penthouse Suite - LUXiHOME" loading="eager" role="presentation" src="/assets/img/luxihome-penthouse-vision-mobile.jpg?v=luxi_v4" class="relative w-full h-full object-cover" style="object-position: center top;"/>
 </picture>
 <picture class="hidden sm:block lg:hidden relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source srcset="/assets/img/the-architects-concept-hero.webp?v=luxi_hero2" type="image/webp"/>
-<img alt="Bespoke Architecture & Design - LUXiHOME" loading="eager" role="presentation" src="/assets/img/the-architects-concept-hero.jpg?v=luxi_hero2"/>
+<source srcset="/assets/img/luxihome-penthouse-vision-desktop.webp?v=luxi_v4" type="image/webp"/>
+<img alt="Bespoke Luxury Penthouse Suite - LUXiHOME" loading="eager" role="presentation" src="/assets/img/luxihome-penthouse-vision-desktop.jpg?v=luxi_v4" class="relative w-full h-full object-cover" style="object-position: center center;"/>
 </picture>
+<!-- Ambient Vignette & Text Scrim for Pristine Contrast -->
+<div class="absolute inset-0 luxi-vision-scrim pointer-events-none z-[5]"></div>
 <div class="absolute inset-0 backdrop-blur-15 pointer-events-none" data-target="popup-links-image-blur"></div>
 </div>
 <div class="absolute right-0 bottom-0 left-0 w-screen h-dvh" data-target="popup-links-content">
