@@ -17832,12 +17832,10 @@ html.luxi-intro-pending [data-target="logo-lottie-dark"] {
   position: absolute !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  /* Mobile: positioned in lower lawn/steps area matching client orange guideline */
-  bottom: clamp(120px, 18vh, 160px) !important;
+  bottom: clamp(100px, 15vh, 145px) !important;
   z-index: 45 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 0 16px !important;
+  width: auto !important;
+  max-width: calc(100vw - 40px) !important;
   pointer-events: auto !important;
   display: flex !important;
   justify-content: center !important;
@@ -17845,114 +17843,74 @@ html.luxi-intro-pending [data-target="logo-lottie-dark"] {
   box-sizing: border-box !important;
 }
 
-@media (min-width: 640px) {
-  .luxi-pentagon-cta-wrap {
-    /* Desktop: positioned cleanly above the bottom Scroll cue */
-    bottom: clamp(85px, 12vh, 115px) !important;
-  }
-}
-
 .luxi-pentagon-pill-btn {
   display: inline-flex !important;
-  flex-direction: row !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 10px !important;
-  background: rgba(22, 26, 32, 0.68) !important;
+  gap: 14px !important;
+  background: rgba(225, 218, 205, 0.32) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.42) !important;
   border-radius: 9999px !important;
-  padding: 5px 6px 5px 16px !important;
+  padding: 6px 7px 6px 22px !important;
   color: #ffffff !important;
   text-decoration: none !important;
-  box-shadow: 0 12px 35px -6px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
   user-select: none !important;
-  overflow: hidden !important;
-  position: relative !important;
-  max-width: calc(100vw - 32px) !important;
-  box-sizing: border-box !important;
-}
-
-@media (min-width: 640px) {
-  .luxi-pentagon-pill-btn {
-    gap: 14px !important;
-    padding: 6px 8px 6px 22px !important;
-  }
 }
 
 .luxi-pentagon-pill-btn:hover {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-color: rgba(255, 255, 255, 1) !important;
+  background: rgba(245, 240, 232, 0.48) !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
   transform: scale(1.03) !important;
-  box-shadow: 0 16px 45px -4px rgba(0, 0, 0, 0.65) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
 }
 
 .luxi-pentagon-pill-text {
-  font-family: 'Aviano Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 10.5px !important;
-  letter-spacing: 0.14em !important;
+  font-family: aviano-sans, sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 11px !important;
+  letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
   color: #ffffff !important;
-  transition: color 0.3s ease !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6) !important;
   line-height: 1 !important;
 }
 
 @media (min-width: 640px) {
   .luxi-pentagon-pill-text {
     font-size: 12.5px !important;
-    letter-spacing: 0.18em !important;
+    letter-spacing: 1.9px !important;
+  }
+  .luxi-pentagon-pill-btn {
+    padding: 7px 8px 7px 24px !important;
+    gap: 16px !important;
   }
 }
 
-.luxi-pentagon-pill-btn:hover .luxi-pentagon-pill-text {
-  color: #1A2026 !important;
-}
-
 .luxi-pentagon-plus-disk {
-  position: relative !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: 34px !important;
+  height: 34px !important;
   border-radius: 9999px !important;
-  background: rgba(240, 235, 225, 0.9) !important;
-  color: #1A2026 !important;
+  background: rgba(248, 245, 239, 0.92) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
   flex-shrink: 0 !important;
   transition: all 0.35s ease !important;
 }
 
-@media (min-width: 640px) {
-  .luxi-pentagon-plus-disk {
-    width: 36px !important;
-    height: 36px !important;
-  }
-}
-
 .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk {
-  background: #1A2026 !important;
-  color: #ffffff !important;
-  transform: rotate(90deg) !important;
+  background: #ffffff !important;
+  transform: rotate(90deg) scale(1.06) !important;
 }
 
 .luxi-pentagon-plus-disk svg {
-  width: 13px !important;
-  height: 13px !important;
-  transition: stroke 0.3s ease !important;
-}
-
-@media (min-width: 640px) {
-  .luxi-pentagon-plus-disk svg {
-    width: 15px !important;
-    height: 15px !important;
-  }
-}
-
-.luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk svg path {
-  stroke: #ffffff !important;
+  width: 14px !important;
+  height: 14px !important;
 }
