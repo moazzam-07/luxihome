@@ -67,122 +67,6 @@
     touch-action: none !important;
     overscroll-behavior: none !important;
   }
-  .luxi-pentagon-cta-wrap {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    bottom: clamp(120px, 18vh, 160px) !important;
-    z-index: 45 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 16px !important;
-    pointer-events: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-  }
-  @media (min-width: 640px) {
-    .luxi-pentagon-cta-wrap {
-      bottom: clamp(85px, 12vh, 115px) !important;
-    }
-  }
-  .luxi-pentagon-pill-btn {
-    display: inline-flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 10px !important;
-    background: rgba(22, 26, 32, 0.68) !important;
-    backdrop-filter: blur(24px) !important;
-    -webkit-backdrop-filter: blur(24px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.22) !important;
-    border-radius: 9999px !important;
-    padding: 5px 6px 5px 16px !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    box-shadow: 0 12px 35px -6px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    cursor: pointer !important;
-    user-select: none !important;
-    overflow: hidden !important;
-    position: relative !important;
-    max-width: calc(100vw - 32px) !important;
-    box-sizing: border-box !important;
-  }
-  @media (min-width: 640px) {
-    .luxi-pentagon-pill-btn {
-      gap: 14px !important;
-      padding: 6px 8px 6px 22px !important;
-    }
-  }
-  .luxi-pentagon-pill-btn:hover {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: rgba(255, 255, 255, 1) !important;
-    transform: scale(1.03) !important;
-    box-shadow: 0 16px 45px -4px rgba(0, 0, 0, 0.65) !important;
-  }
-  .luxi-pentagon-pill-text {
-    font-family: 'Aviano Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-    font-weight: 400 !important;
-    font-size: 10.5px !important;
-    letter-spacing: 0.14em !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-    color: #ffffff !important;
-    transition: color 0.3s ease !important;
-    line-height: 1 !important;
-  }
-  @media (min-width: 640px) {
-    .luxi-pentagon-pill-text {
-      font-size: 12.5px !important;
-      letter-spacing: 0.18em !important;
-    }
-  }
-  .luxi-pentagon-pill-btn:hover .luxi-pentagon-pill-text {
-    color: #1A2026 !important;
-  }
-  .luxi-pentagon-plus-disk {
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 9999px !important;
-    background: rgba(240, 235, 225, 0.9) !important;
-    color: #1A2026 !important;
-    flex-shrink: 0 !important;
-    transition: all 0.35s ease !important;
-  }
-  @media (min-width: 640px) {
-    .luxi-pentagon-plus-disk {
-      width: 36px !important;
-      height: 36px !important;
-    }
-  }
-  .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk {
-    background: #1A2026 !important;
-    color: #ffffff !important;
-    transform: rotate(90deg) !important;
-  }
-  .luxi-pentagon-plus-disk svg {
-    width: 13px !important;
-    height: 13px !important;
-    transition: stroke 0.3s ease !important;
-  }
-  @media (min-width: 640px) {
-    .luxi-pentagon-plus-disk svg {
-      width: 15px !important;
-      height: 15px !important;
-    }
-  }
-  .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk svg path {
-    stroke: #ffffff !important;
-  }
-  .luxi-pentagon-pill-btn * {
-    pointer-events: none !important;
-  }
 </style>
 <script>
 var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
@@ -191,16 +75,17 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
 <!-- SETUP AND AUTHENTICATE WITH TWK CLIENTS USER http://google.com/webmasters -->
 <meta content="" name="google-site-verification"/>
-<!-- GENERATE FAVICON USING https://realfavicongenerator.net/ -->
-<link rel="shortcut icon" href="/favicon.ico?v=luxi4" type="image/x-icon"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=luxi4"/>
-<link href="/assets/img/favicon/apple-touch-icon.png?v=luxi4" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/assets/img/favicon/favicon-32x32.png?v=luxi4" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/assets/img/favicon/favicon-16x16.png?v=luxi4" rel="icon" sizes="16x16" type="image/png"/>
+<!-- LUXiHOME Favicon Suite -->
+<link rel="shortcut icon" href="/favicon.ico?v=luxi5" type="image/x-icon"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=luxi5"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon/favicon-48x48.png?v=luxi5"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png?v=luxi5"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png?v=luxi5"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png?v=luxi5"/>
 <!-- <link href="/assets/img/favicon/site.webmanifest" rel="manifest"/> -->
-<link color="#000000" href="/assets/img/favicon/safari-pinned-tab.svg" rel="mask-icon"/>
-<meta content="#ffffff" name="msapplication-TileColor"/>
-<meta content="#ffffff" name="theme-color"/>
+<link color="#13212E" href="/assets/img/favicon/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#13212E" name="msapplication-TileColor"/>
+<meta content="#13212E" name="theme-color"/>
 <!-- TEMP emoji favicon -->
 <!-- <link rel="icon" href="https://fav.farm/🏝️" /> -->
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
@@ -661,18 +546,7 @@ IN KOLKATA
 </div>
 </div>
 
-<!-- Flagship Project CTA (Amali Signature (+) Button) -->
-<div class="luxi-pentagon-cta-wrap opacity-0 invisible" data-target="banner-pentagon-cta">
-<a href="/alams-pentagon/" class="luxi-pentagon-pill-btn group" data-barba-prevent="self" title="Discover The Alam's Pentagon • Ongoing Project" onclick="window.location.href='/alams-pentagon/';">
-<span class="luxi-pentagon-pill-text pointer-events-none">The Alam's Pentagon • Ongoing Project</span>
-<div class="luxi-pentagon-plus-disk pointer-events-none">
-<svg fill="none" height="14" viewBox="0 0 17 17" width="14" xmlns="http://www.w3.org/2000/svg" class="pointer-events-none">
-<path d="M8.5 2L8.5 15" stroke="#1A2026" stroke-linecap="round" stroke-width="2"></path>
-<path d="M15 8.5L2 8.5" stroke="#1A2026" stroke-linecap="round" stroke-width="2"></path>
-</svg>
-</div>
-</a>
-</div>
+<div data-target="banner-pentagon-cta" style="display: none !important;"></div>
 
 <div class="absolute top-[185px] sm:top-200 lg:top-[250px] right-0 left-0 w-full text-center text-white z-40 opacity-0" data-target="horizontal-scroll-text-1">
 <div class="container">
@@ -729,18 +603,31 @@ living</p>
 </div>
 <section class="relative opacity-0 z-40 -mt-[100vh] lg:-mt-[100vh] pointer-events-auto" data-name="popup-links">
 <div class="relative w-screen h-[1300px] sm:h-[1500px] lg:h-[1700px]" data-target="popup-links-image">
-<picture class="hidden lg:block relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover">
-<source srcset="/assets/img/luxihome-penthouse-vision-desktop.webp?v=luxi_v4" type="image/webp">
-<img src="/assets/img/luxihome-penthouse-vision-desktop.jpg?v=luxi_v4" alt="Bespoke Luxury Penthouse Suite - LUXiHOME" class="relative w-full h-full object-cover" style="object-position: center center;"/>
-</picture>
-<picture class="sm:hidden relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source srcset="/assets/img/luxihome-penthouse-vision-mobile.webp?v=luxi_v4" type="image/webp"/>
-<img alt="Bespoke Luxury Penthouse Suite - LUXiHOME" loading="eager" role="presentation" src="/assets/img/luxihome-penthouse-vision-mobile.jpg?v=luxi_v4" class="relative w-full h-full object-cover" style="object-position: center top;"/>
-</picture>
-<picture class="hidden sm:block lg:hidden relative w-full h-full object-cover children:relative children:w-full children:h-full children:object-cover" loading="eager" role="presentation">
-<source srcset="/assets/img/luxihome-penthouse-vision-desktop.webp?v=luxi_v4" type="image/webp"/>
-<img alt="Bespoke Luxury Penthouse Suite - LUXiHOME" loading="eager" role="presentation" src="/assets/img/luxihome-penthouse-vision-desktop.jpg?v=luxi_v4" class="relative w-full h-full object-cover" style="object-position: center center;"/>
-</picture>
+<video autoplay="" class="relative w-full h-full object-cover pointer-events-none" defaultmuted="" id="luxihome-pentagon-vision-video" loop="" muted="" playsinline="" poster="/assets/video/luxihome-pentagon-vision-poster.jpg" preload="auto">
+<source src="/assets/video/luxihome-pentagon-vision.mp4" type="video/mp4"/>
+</video>
+<script>
+(function() {
+    var v = document.getElementById('luxihome-pentagon-vision-video');
+    if (v) {
+        v.muted = true;
+        v.defaultMuted = true;
+        v.playsInline = true;
+        var p = v.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                var unlock = function() {
+                    v.play();
+                    window.removeEventListener('touchstart', unlock);
+                    window.removeEventListener('click', unlock);
+                };
+                window.addEventListener('touchstart', unlock, { once: true });
+                window.addEventListener('click', unlock, { once: true });
+            });
+        }
+    }
+})();
+</script>
 <!-- Ambient Vignette & Text Scrim for Pristine Contrast -->
 <div class="absolute inset-0 luxi-vision-scrim pointer-events-none z-[5]"></div>
 <div class="absolute inset-0 backdrop-blur-15 pointer-events-none" data-target="popup-links-image-blur"></div>
