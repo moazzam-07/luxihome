@@ -66,6 +66,84 @@
     height: 100vh !important;
     touch-action: none !important;
     overscroll-behavior: none !important;
+  .luxi-pentagon-cta-wrap {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: clamp(100px, 15vh, 145px) !important;
+    z-index: 45 !important;
+    width: auto !important;
+    max-width: calc(100vw - 40px) !important;
+    pointer-events: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+  .luxi-pentagon-pill-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+    background: rgba(225, 218, 205, 0.32) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.42) !important;
+    border-radius: 9999px !important;
+    padding: 6px 7px 6px 22px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+  .luxi-pentagon-pill-btn:hover {
+    background: rgba(245, 240, 232, 0.48) !important;
+    border-color: rgba(255, 255, 255, 0.85) !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+  }
+  .luxi-pentagon-pill-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+    line-height: 1 !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-pill-text {
+      font-size: 13px !important;
+      letter-spacing: 0.18em !important;
+    }
+    .luxi-pentagon-pill-btn {
+      padding: 7px 8px 7px 24px !important;
+      gap: 16px !important;
+    }
+  }
+  .luxi-pentagon-plus-disk {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 9999px !important;
+    background: rgba(248, 245, 239, 0.92) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+    flex-shrink: 0 !important;
+    transition: all 0.35s ease !important;
+  }
+  .luxi-pentagon-pill-btn:hover .luxi-pentagon-plus-disk {
+    background: #ffffff !important;
+    transform: rotate(90deg) scale(1.06) !important;
+  }
+  .luxi-pentagon-plus-disk svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 </style>
 <script>
@@ -546,7 +624,17 @@ IN KOLKATA
 </div>
 </div>
 
-<div data-target="banner-pentagon-cta" style="display: none !important;"></div>
+<div class="luxi-pentagon-cta-wrap opacity-0 invisible" data-target="banner-pentagon-cta">
+<a class="luxi-pentagon-pill-btn group" data-barba-prevent="self" href="/alams-pentagon/" title="Explore Alam's Pentagon">
+<span class="luxi-pentagon-pill-text">Explore Alam's Pentagon</span>
+<div class="luxi-pentagon-plus-disk">
+<svg fill="none" height="14" viewBox="0 0 17 17" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 2.5L8.5 14.5" stroke="#13212E" stroke-linecap="round" stroke-width="2"></path>
+<path d="M14.5 8.5L2.5 8.5" stroke="#13212E" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</a>
+</div>
 
 <div class="absolute top-[185px] sm:top-200 lg:top-[250px] right-0 left-0 w-full text-center text-white z-40 opacity-0" data-target="horizontal-scroll-text-1">
 <div class="container">
