@@ -4231,7 +4231,7 @@ function banner() {
 
   // window.lenis.stop();
 
-  var imageDuration = 2.5;
+  var imageDuration = 1.2;
   // const imageEase = CustomEase.create('imageEase', 'M0,0 C0.173,0 0.226,0.054 0.306,0.148 0.385,0.241 0.415,0.439 0.468,0.578 0.512,0.694 0.538,0.786 0.644,0.878 0.717,0.942 0.869,1 1,1');
   gsap_CustomEase__WEBPACK_IMPORTED_MODULE_6__["default"].create('imageEase', 'M0,0 C0.173,0 0.217,0.107 0.283,0.213 0.359,0.335 0.403,0.455 0.456,0.594 0.5,0.71 0.509,0.79 0.608,0.891 0.675,0.959 0.737,1 1,1 ');
 
@@ -4358,9 +4358,9 @@ function banner() {
       ease: 'power3.in'
     }, 'image').to([bannerText1, bannerScroll, menuWrapper, audioIcon, bannerPentagonCta], {
       autoAlpha: 1,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'none'
-    }, 'image+=1.75');
+    }, 'image+=0.5');
   } else {
     timeline.addLabel('start').add(function () {
       if (logoLottieWrapper.dataset.played == 'false') {
@@ -4375,11 +4375,11 @@ function banner() {
       ease: 'none'
     }, 'start').to(bannerBlur, {
       backdropFilter: 'blur(0px)',
-      duration: 0.5,
+      duration: 0.4,
       ease: 'none'
     }, 'start').to([bannerText1, bannerScroll, menuWrapper, audioIcon, bannerPentagonCta], {
       autoAlpha: 1,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'none'
     }, 'start');
   }
@@ -4389,6 +4389,19 @@ function banner() {
   if (heroVideoEl) {
     heroVideoEl.play()["catch"](function () {});
   }
+
+  // 1-Click Instant Video & Animation Reveal
+  var completeIntroInstantly = function completeIntroInstantly() {
+    if (timeline && timeline.progress() < 1) {
+      timeline.progress(1);
+    }
+    if (heroVideoEl && heroVideoEl.paused) {
+      heroVideoEl.play()["catch"](function () {});
+    }
+  };
+  window.__luxiCompleteIntro = completeIntroInstantly;
+  window.addEventListener('click', completeIntroInstantly, { once: true });
+  window.addEventListener('touchstart', completeIntroInstantly, { once: true, passive: true });
 
   // Audio toggle interaction
   if (audioIcon && heroVideoEl) {
