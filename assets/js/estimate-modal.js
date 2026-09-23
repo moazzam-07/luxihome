@@ -47,7 +47,15 @@
                 '</svg>' +
             '</a>';
 
-        // 2. Full Right Free Estimate Button (Dark Navy Pill)
+        // 2. Full Left WhatsApp Button (Signature Green Circle with Official WhatsApp Icon)
+        var whatsappBtnHTML = 
+            '<a href="https://wa.me/917063571108?text=Hello%20LUXiHOME%20Studio%2C%20I%20would%20like%20to%20inquire%20about%20interior%20design%20services." id="luxi-dock-whatsapp-btn" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">' +
+                '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                    '<path fill-rule="evenodd" clip-rule="evenodd" d="M20.4054 3.5946C18.1654 1.3546 15.1854 0.12 12.0154 0.12C5.4654 0.12 0.1354 5.45 0.1354 12C0.1354 14.09 0.6854 16.13 1.7254 17.94L0.0354004 24.12L6.3554 22.46C8.1054 23.41 10.0454 23.91 12.0154 23.91H12.0254C18.5754 23.91 23.9054 18.58 23.9054 12.03C23.9054 8.86 22.6554 5.85 20.4054 3.5946ZM12.0254 21.88C10.2554 21.88 8.5254 21.4 7.0154 20.5L6.6554 20.29L2.9154 21.27L3.9154 17.62L3.6854 17.25C2.6954 15.68 2.1754 13.87 2.1754 12C2.1754 6.58 6.5954 2.16 12.0254 2.16C14.6554 2.16 17.1254 3.19 18.9854 5.05C20.8454 6.91 21.8654 9.38 21.8654 12.01C21.8654 17.43 17.4454 21.88 12.0254 21.88ZM17.4154 14.52C17.1254 14.38 15.6954 13.67 15.4354 13.57C15.1754 13.48 14.9854 13.43 14.7954 13.72C14.6054 14.01 14.0654 14.65 13.9054 14.84C13.7454 15.03 13.5854 15.06 13.2954 14.91C13.0054 14.77 12.0754 14.46 10.9754 13.48C10.1254 12.72 9.5454 11.78 9.3854 11.5C9.2254 11.21 9.3754 11.06 9.5154 10.92C9.6454 10.79 9.8054 10.58 9.9554 10.41C10.1054 10.24 10.1554 10.12 10.2554 9.92C10.3554 9.73 10.3054 9.56 10.2354 9.42C10.1554 9.27 9.5754 7.84 9.3454 7.27C9.1154 6.72 8.8854 6.8 8.7154 6.79C8.5554 6.78 8.3654 6.78 8.1754 6.78C7.9854 6.78 7.6654 6.85 7.4054 7.14C7.1454 7.43 6.4154 8.11 6.4154 9.5C6.4154 10.89 7.4254 12.23 7.5754 12.42C7.7254 12.61 9.5754 15.46 12.3954 16.68C13.0654 16.97 13.5954 17.15 14.0054 17.28C14.6854 17.5 15.3054 17.47 15.7954 17.39C16.3454 17.31 17.4854 16.7 17.7254 16.03C17.9654 15.36 17.9654 14.79 17.8954 14.67C17.8254 14.55 17.7054 14.66 17.4154 14.52Z" fill="#FFFFFF"/>' +
+                '</svg>' +
+            '</a>';
+
+        // 3. Full Right Free Estimate Button (Dark Navy Pill)
         var estimateBtnHTML = 
             '<button type="button" id="luxi-dock-estimate-btn" aria-label="Open Free Estimate Form">' +
                 '<span>Free Estimate</span>' +
@@ -196,7 +204,7 @@
                 '</div>' +
             '</div>';
 
-        document.body.insertAdjacentHTML('beforeend', callBtnHTML + estimateBtnHTML + modalHTML);
+        document.body.insertAdjacentHTML('beforeend', callBtnHTML + whatsappBtnHTML + estimateBtnHTML + modalHTML);
     }
 
     function setStep(stepNum) {

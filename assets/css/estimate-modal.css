@@ -38,6 +38,41 @@
     fill: #FFFFFF;
 }
 
+
+/* --- Full Left WhatsApp Button: Signature WhatsApp Green Circle --- */
+#luxi-dock-whatsapp-btn {
+    position: fixed;
+    bottom: 84px;
+    left: 24px;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #25D366;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.45), 0 0 18px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    flex-shrink: 0;
+}
+
+#luxi-dock-whatsapp-btn:hover {
+    transform: translateY(-2px) scale(1.08);
+    background-color: #20BA5A;
+    box-shadow: 0 14px 30px -4px rgba(37, 211, 102, 0.65);
+}
+
+#luxi-dock-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+    fill: #FFFFFF;
+}
+
 /* --- Full Right Free Estimate Button: Dark Navy Pill matching Contact Theme --- */
 #luxi-dock-estimate-btn {
     position: fixed;
@@ -512,8 +547,21 @@ body.single-bespoke-villa #luxi-dock-estimate-btn div::before {
         height: 46px;
     }
 
+    #luxi-dock-whatsapp-btn {
+        bottom: 72px;
+        left: 16px;
+        width: 46px;
+        height: 46px;
+    }
+
+    #luxi-dock-whatsapp-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Free Estimate Pill: elevated above bottom scroll tab to prevent overlap */
     #luxi-dock-estimate-btn {
-        bottom: 16px;
+        bottom: 72px;
         right: 16px;
         height: 46px;
         padding: 3px 5px 3px 18px;

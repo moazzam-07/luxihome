@@ -84,7 +84,7 @@
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    bottom: clamp(100px, 15vh, 145px) !important;
+    bottom: clamp(130px, 18vh, 160px) !important;
     z-index: 45 !important;
     width: auto !important;
     max-width: calc(100vw - 40px) !important;
@@ -93,6 +93,21 @@
     justify-content: center !important;
     align-items: center !important;
     box-sizing: border-box !important;
+    transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: left, transform;
+  }
+  .luxi-pentagon-cta-wrap.is-slid-left {
+    left: 16px !important;
+    transform: translateX(0) !important;
+  }
+  @media (min-width: 640px) {
+    .luxi-pentagon-cta-wrap {
+      bottom: clamp(100px, 14vh, 145px) !important;
+    }
+    .luxi-pentagon-cta-wrap.is-slid-left {
+      left: 36px !important;
+      transform: translateX(0) !important;
+    }
   }
   .luxi-pentagon-pill-btn {
     display: inline-flex !important;
@@ -2670,5 +2685,28 @@ window.triggerEstimateModal = function (e) {
 };
 </script>
 <script src="/assets/js/estimate-modal.js?v=luxi_est_v3" defer></script>
+
+<script id="luxi-pentagon-slide-trigger">
+  (function() {
+    function triggerSlide() {
+      var cta = document.querySelector('[data-target="banner-pentagon-cta"]');
+      if (cta) {
+        setTimeout(function() {
+          cta.classList.add('is-slid-left');
+        }, 2200);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', triggerSlide);
+    } else {
+      triggerSlide();
+    }
+    window.__luxiSlidePentagonLeft = function() {
+      var cta = document.querySelector('[data-target="banner-pentagon-cta"]');
+      if (cta) cta.classList.add('is-slid-left');
+    };
+  })();
+</script>
+
 </body>
 </html>
