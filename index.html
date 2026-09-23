@@ -805,42 +805,38 @@ living</p>
             <section id="sanctuary-bath" data-name="sanctuary-bath" class="relative w-full bg-black text-white pointer-events-auto overflow-hidden p-0 m-0 select-none z-[42]">
                 <style>
                     #sanctuary-bath {
-                        background-color: #000000;
-                    }
-                    #sanctuary-bath picture {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
                         width: 100%;
+                        background-color: #000000;
+                        overflow: hidden;
                     }
-                    #sanctuary-bath img {
+                    #sanctuary-bath .luxi-sanctuary-img {
                         width: 100%;
                         height: auto;
-                        aspect-ratio: 9/16;
+                        aspect-ratio: 9 / 16;
                         object-fit: cover;
                         display: block;
                     }
                     @media (min-width: 641px) {
-                        #sanctuary-bath img {
-                            width: auto;
-                            max-width: 100vw;
-                            max-height: 100vh;
-                            aspect-ratio: auto;
-                            object-fit: contain;
-                            margin: 0 auto;
+                        #sanctuary-bath .luxi-sanctuary-img {
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16 / 9;
+                            object-fit: cover;
+                            display: block;
                         }
                     }
                 </style>
-                <div class="relative w-full overflow-hidden bg-black flex items-center justify-center">
-                    <picture>
-                        <!-- Mobile 9:16 portrait view -->
+                <div class="relative w-full overflow-hidden bg-black">
+                    <picture class="w-full block">
+                        <!-- Mobile: 9:16 portrait -->
                         <source media="(max-width: 640px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-mobile.webp" type="image/webp">
                         <source media="(max-width: 640px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-mobile.jpg" type="image/jpeg">
-                        <!-- Desktop / Tablet full view -->
-                        <source media="(min-width: 641px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-full.webp" type="image/webp">
-                        <source media="(min-width: 641px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-full.jpg" type="image/jpeg">
-                        <img src="/assets/img/interiors/luxihome-sanctuary-bath-full.jpg" 
+                        <!-- PC / Desktop: 16:9 widescreen -->
+                        <source media="(min-width: 641px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-desktop.webp" type="image/webp">
+                        <source media="(min-width: 641px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-desktop.jpg" type="image/jpeg">
+                        <img src="/assets/img/interiors/luxihome-sanctuary-bath-desktop.jpg" 
                              alt="LUXiHOME Bespoke Luxury Bath Sanctuary" 
+                             class="luxi-sanctuary-img"
                              loading="lazy"
                              decoding="async">
                     </picture>
