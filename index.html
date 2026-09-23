@@ -801,6 +801,51 @@ living</p>
 <div class="absolute inset-0 backdrop-blur-0 pointer-events-none" data-target="popup-links-blur"></div>
 </section>
 </div>
+            <!-- ================= SECTION: BESPOKE SANCTUARY BATH ================= -->
+            <section id="sanctuary-bath" data-name="sanctuary-bath" class="relative w-full bg-black text-white pointer-events-auto overflow-hidden p-0 m-0 select-none z-[42]">
+                <style>
+                    #sanctuary-bath {
+                        background-color: #000000;
+                    }
+                    #sanctuary-bath picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                    }
+                    #sanctuary-bath img {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 9/16;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    @media (min-width: 641px) {
+                        #sanctuary-bath img {
+                            width: auto;
+                            max-width: 100vw;
+                            max-height: 100vh;
+                            aspect-ratio: auto;
+                            object-fit: contain;
+                            margin: 0 auto;
+                        }
+                    }
+                </style>
+                <div class="relative w-full overflow-hidden bg-black flex items-center justify-center">
+                    <picture>
+                        <!-- Mobile 9:16 portrait view -->
+                        <source media="(max-width: 640px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-mobile.webp" type="image/webp">
+                        <source media="(max-width: 640px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-mobile.jpg" type="image/jpeg">
+                        <!-- Desktop / Tablet full view -->
+                        <source media="(min-width: 641px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-full.webp" type="image/webp">
+                        <source media="(min-width: 641px)" srcset="/assets/img/interiors/luxihome-sanctuary-bath-full.jpg" type="image/jpeg">
+                        <img src="/assets/img/interiors/luxihome-sanctuary-bath-full.jpg" 
+                             alt="LUXiHOME Bespoke Luxury Bath Sanctuary" 
+                             loading="lazy"
+                             decoding="async">
+                    </picture>
+                </div>
+            </section>
             <!-- ================= SECTION: THE ART (VIDEO SHOWCASE) ================= -->
             <section id="the-art" data-name="the-art" class="relative w-full bg-black text-white pointer-events-auto overflow-hidden p-0 m-0 select-none z-[42]">
                 <!-- Full Width Video Container (Zero side margins, edge-to-edge) -->
