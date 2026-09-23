@@ -864,6 +864,42 @@ living</p>
                     </video>
                 </div>
             </section>
+            <!-- ================= SECTION: CRAFTSMANSHIP TOUR (VIDEO SHOWCASE) ================= -->
+            <section id="craftsmanship-tour" data-name="craftsmanship-tour" class="relative w-full bg-black text-white pointer-events-auto overflow-hidden p-0 m-0 select-none z-[42]">
+                <style>
+                    #craftsmanship-tour {
+                        width: 100%;
+                        background-color: #000000;
+                        overflow: hidden;
+                    }
+                    #craftsmanship-tour video {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 9 / 16;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    @media (min-width: 641px) {
+                        #craftsmanship-tour video {
+                            width: auto;
+                            max-width: 100vw;
+                            max-height: 100vh;
+                            aspect-ratio: 9 / 16;
+                            margin: 0 auto;
+                            object-fit: contain;
+                        }
+                    }
+                </style>
+                <div class="relative w-full overflow-hidden bg-black flex items-center justify-center">
+                    <!-- Edge-to-Edge Ongoing Video (Muted, Autoplay, Loop) -->
+                    <video autoplay loop muted playsinline
+                           poster="/assets/video/luxihome-craftsmanship-tour-poster.jpg"
+                           preload="metadata">
+                        <source src="/assets/video/luxihome-craftsmanship-tour.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
             <!-- LUXiHOME 3D PARALLAX UNFURLING INTERIOR ARCHIVE (LUXiHOME Design System Theme) -->
             <section id="lux-unfurling-gallery" class="relative w-screen bg-sand text-[#1A2026] z-[35] pointer-events-auto select-none" style="background-color: #DAD0C1;" data-name="interiors-unfurling-gallery">
                 <style>
