@@ -780,21 +780,151 @@ living</p>
 <div class="absolute inset-0 luxi-vision-scrim pointer-events-none z-[5]"></div>
 <div class="absolute inset-0 backdrop-blur-15 pointer-events-none" data-target="popup-links-image-blur"></div>
 </div>
-<div class="absolute right-0 bottom-0 left-0 w-screen h-dvh" data-target="popup-links-content">
-<div class="container h-full">
-<div class="hidden sm:flex flex-col flex-end justify-start sm:justify-center gap-20 sm:gap-200 lg:gap-150 w-full h-full sm:pt-[500px] lg:pt-0 sm:px-100 pb-0">
-<div class="self-start sm:self-end"><a href="/alams-pentagon/" class="flex-row group flex items-center gap-20 bg-[#13212E]/85 border border-white/20 shadow-xl py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/90 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
-<svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
+<div class="absolute right-0 bottom-0 left-0 w-screen h-dvh pointer-events-none z-[43]" data-target="popup-links-content">
+<style id="luxi-popup-buttons-styles">
+  .luxi-popup-buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 640px) {
+    .luxi-popup-buttons-container {
+      justify-content: center;
+      align-items: center;
+      padding-top: 240px;
+      padding-bottom: 100px;
+      gap: 16px;
+    }
+    .luxi-popup-btn-wrap-right,
+    .luxi-popup-btn-wrap-left {
+      align-self: center;
+    }
+    .luxi-popup-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      background: rgba(19, 33, 46, 0.92) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6) !important;
+      padding: 8px 22px 8px 8px !important;
+      border-radius: 9999px !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      text-decoration: none !important;
+      transition: transform 0.2s ease, background 0.2s ease !important;
+      max-width: calc(100vw - 40px) !important;
+    }
+    .luxi-popup-btn:active {
+      transform: scale(0.96) !important;
+    }
+    .luxi-popup-btn-icon {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      border-radius: 50% !important;
+      background: #FFFFFF !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .luxi-popup-btn-icon svg {
+      width: 14px !important;
+      height: 14px !important;
+    }
+    .luxi-popup-btn-text {
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+    }
+  }
+  @media (min-width: 641px) {
+    .luxi-popup-buttons-container {
+      justify-content: center;
+      gap: 200px;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .luxi-popup-btn-wrap-right {
+      align-self: flex-end;
+    }
+    .luxi-popup-btn-wrap-left {
+      align-self: flex-start;
+    }
+    .luxi-popup-btn {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(19, 33, 46, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      padding: 9px 35px 9px 12px;
+      border-radius: 60px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      cursor: pointer;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    .luxi-popup-btn-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .luxi-popup-btn-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+    .luxi-popup-btn-text {
+      font-family: 'AvianoSans', 'DIN', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+    .luxi-popup-btn:hover .luxi-popup-btn-text {
+      color: #C2A26A;
+    }
+  }
+</style>
+<div class="container h-full pointer-events-none">
+<div class="luxi-popup-buttons-container">
+<div class="luxi-popup-btn-wrap-right pointer-events-auto">
+<a href="/alams-pentagon/" class="luxi-popup-btn group">
+<div class="luxi-popup-btn-icon">
+<svg fill="none" height="17" viewBox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.75781 1.74609L8.75781 15.7813" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 <path d="M15.7812 8.76562L1.74608 8.76562" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 </svg>
-</div><span class="font-sans font-medium letter:text-14 letter:tracking-1.2 text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 group-hover:text-[#C2A26A]">Explore Alam's Pentagon</span></a></div>
-<div class="self-start"><a href="/contact/" class="flex-row group flex items-center gap-20 bg-[#13212E]/85 border border-white/20 shadow-xl py-9 rounded-60 backdrop-blur-24 cursor-pointer overflow-hidden pl-12 pr-35"><div class="flex justify-center items-center relative aspect-square size-[42px] rounded-full before:absolute before:size-full before:bg-white/90 before:rounded-full before:-z-10 before:transition-transform before:duration-500 group-hover:before:scale-[20]">
-<svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
+</div>
+<span class="luxi-popup-btn-text">Explore Alam's Pentagon</span>
+</a>
+</div>
+<div class="luxi-popup-btn-wrap-left pointer-events-auto">
+<a href="/contact/" class="luxi-popup-btn group">
+<div class="luxi-popup-btn-icon">
+<svg fill="none" height="17" viewBox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.75781 1.74609L8.75781 15.7813" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 <path d="M15.7812 8.76562L1.74608 8.76562" stroke="#13212E" stroke-linecap="round" stroke-width="1.74545"></path>
 </svg>
-</div><span class="font-sans font-medium letter:text-14 letter:tracking-1.2 text-16 leading-none tracking-1.6 uppercase text-white transition-colors duration-200 group-hover:text-[#C2A26A]">Book Interior Consultation</span></a></div>
+</div>
+<span class="luxi-popup-btn-text">Book Interior Consultation</span>
+</a>
+</div>
 </div>
 </div>
 </div>
