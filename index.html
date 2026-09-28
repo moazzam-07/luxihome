@@ -82,16 +82,16 @@
 
   /* ================= LUXI PENTAGON COLLAPSIBLE FLOATING WIDGET ================= */
   .luxi-pentagon-widget {
-    position: fixed !important;
+    position: absolute !important;
     z-index: 50 !important;
     box-sizing: border-box !important;
     pointer-events: auto !important;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease !important;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease !important;
   }
 
   /* STATE 1: Hero Centered Expanded */
   .luxi-pentagon-widget.is-hero-expanded {
-    position: fixed !important;
+    position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     bottom: clamp(120px, 16vh, 150px) !important;
@@ -136,9 +136,9 @@
     pointer-events: none !important;
   }
 
-  /* STATE 2: Docked Minimized (Floating Left Edge Drawer) */
+  /* STATE 2: Docked Minimized (Floating Left Edge Drawer on Hero) */
   .luxi-pentagon-widget.is-docked-minimized {
-    position: fixed !important;
+    position: absolute !important;
     left: 0 !important;
     bottom: clamp(140px, 20vh, 180px) !important;
     transform: translateX(0) !important;
@@ -157,9 +157,9 @@
     animation: luxiDockSlideIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards, luxiPulseDock 4s infinite ease-in-out !important;
   }
 
-  /* STATE 3: Docked Expanded (Floating out from Left Edge) */
+  /* STATE 3: Docked Expanded (Floating out from Left Edge on Hero) */
   .luxi-pentagon-widget.is-docked-expanded {
-    position: fixed !important;
+    position: absolute !important;
     left: 12px !important;
     bottom: clamp(140px, 20vh, 180px) !important;
     transform: translateX(0) !important;
@@ -3191,16 +3191,10 @@ window.triggerEstimateModal = function (e) {
       var widget = document.getElementById('luxi-pentagon-floating-widget');
       if (!widget) return;
 
-      // Teleport to document.body so position:fixed stays permanently docked on viewport and is never pulled up by pinned containers
-      if (widget.parentElement !== document.body) {
-        document.body.appendChild(widget);
-      }
-
       var minimizeBtn = document.getElementById('luxi-pentagon-minimize-trigger');
       var expandBtn = document.getElementById('luxi-pentagon-expand-trigger');
       var autoCollapseTimer = null;
       var isGliding = false;
-      var scrollTimeout = null;
 
       function minimizeWidget(fromHero) {
         if (!widget) return;
@@ -3254,20 +3248,23 @@ window.triggerEstimateModal = function (e) {
         }
       });
 
-      // Move down / collapse immediately when user scrolls
+      // Scroll listener:
+      // 1. If at top and user scrolls down slightly (> 15px), dock immediately in hero.
+      // 2. If user scrolls away from hero (> 35% of viewport height), fade out cleanly with the hero banner.
+      // 3. If user scrolls back up into hero, restore visibility.
       function onScroll() {
         var currentY = window.pageYOffset || document.documentElement.scrollTop || 0;
-        if (currentY > 15 && widget.classList.contains('is-hero-expanded')) {
-          minimizeWidget(true);
-        }
+        var heroThreshold = (window.innerHeight || 800) * 0.35;
 
-        // Minimal classy inertial scroll feedback
-        if (widget.classList.contains('is-docked-minimized')) {
-          widget.classList.add('is-scrolling');
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(function() {
-            widget.classList.remove('is-scrolling');
-          }, 140);
+        if (currentY > heroThreshold) {
+          widget.style.setProperty('opacity', '0', 'important');
+          widget.style.setProperty('pointer-events', 'none', 'important');
+        } else {
+          widget.style.removeProperty('opacity');
+          widget.style.removeProperty('pointer-events');
+          if (currentY > 15 && widget.classList.contains('is-hero-expanded')) {
+            minimizeWidget(true);
+          }
         }
       }
 
