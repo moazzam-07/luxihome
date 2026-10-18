@@ -41,28 +41,28 @@
 
         // 1. Full Left Call Button (Dark Navy Circle with Pure White Handset Icon)
         var callBtnHTML = 
-            '<a href="tel:+917063571108" id="luxi-dock-call-btn" title="Call LUXiHOME Studio" aria-label="Call LUXiHOME Studio">' +
-                '<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '<a href="tel:+917063571108" id="luxi-dock-call-btn" style="position:fixed;bottom:24px;left:24px;z-index:9998;width:50px !important;height:50px !important;min-width:50px;min-height:50px;max-width:50px;max-height:50px;border-radius:50%;background-color:#1A2026;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px -4px rgba(0,0,0,0.5);text-decoration:none;overflow:hidden;" title="Call LUXiHOME Studio" aria-label="Call LUXiHOME Studio">' +
+                '<svg width="17" height="17" viewBox="0 0 17 17" fill="none" style="width:17px !important;height:17px !important;min-width:17px;min-height:17px;max-width:17px;max-height:17px;display:block;" xmlns="http://www.w3.org/2000/svg">' +
                     '<path d="M12.3533 16.0187C11.6994 15.9578 11.0697 15.7921 10.4554 15.5651C8.84567 14.9704 7.43479 14.0447 6.13375 12.941C4.83356 11.8381 3.7092 10.5764 2.77174 9.15191C2.03692 8.03541 1.44856 6.85033 1.13224 5.54342C1.07221 5.29635 1.03219 5.04417 0.98962 4.79284C0.94875 4.55258 1.00622 4.33363 1.12841 4.12192C1.58778 3.32618 2.15485 2.61181 2.76578 1.93067C3.10679 1.55027 3.46441 1.18605 3.89014 0.89894C4.361 0.581584 4.88635 0.648463 5.22354 1.11065C5.9724 2.13684 6.67443 3.19456 7.19127 4.3626C7.20192 4.38688 7.21213 4.41158 7.22193 4.43629C7.4697 5.06291 7.38711 5.4037 6.87793 5.84799C6.64208 6.05417 6.40792 6.2629 6.1644 6.4597C6.05584 6.54746 6.03668 6.62711 6.08692 6.75832C6.7566 8.50995 7.92524 9.80622 9.60603 10.6386C9.82528 10.7472 10.0522 10.8367 10.2804 10.924C10.3732 10.9598 10.4375 10.9436 10.5022 10.8669C10.718 10.6113 10.9381 10.3591 11.1587 10.1078C11.2144 10.0439 11.2766 9.98555 11.3383 9.92719C11.6295 9.65158 11.9599 9.56383 12.349 9.69589C12.8199 9.8552 13.2563 10.0848 13.6846 10.3302C14.404 10.7425 15.0946 11.2 15.7689 11.6814C15.8907 11.7683 16.0001 11.8675 16.0878 11.9902C16.3505 12.3583 16.3667 12.6748 16.1227 13.0539C15.8358 13.4999 15.4594 13.8684 15.0686 14.2211C14.3849 14.8379 13.6688 15.4117 12.865 15.8675C12.7075 15.957 12.5457 16.04 12.3533 16.0183V16.0187Z" fill="#FFFFFF"/>' +
                 '</svg>' +
             '</a>';
 
         // 2. Full Left WhatsApp Button (Signature Green Circle with Official WhatsApp Icon)
         var whatsappBtnHTML = 
-            '<a href="https://wa.me/917063571108?text=Hello%20LUXiHOME%20Studio%2C%20I%20would%20like%20to%20inquire%20about%20interior%20design%20services." id="luxi-dock-whatsapp-btn" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">' +
-                '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '<a href="https://wa.me/917063571108?text=Hello%20LUXiHOME%20Studio%2C%20I%20would%20like%20to%20inquire%20about%20interior%20design%20services." id="luxi-dock-whatsapp-btn" style="position:fixed;bottom:84px;left:24px;z-index:9998;width:50px !important;height:50px !important;min-width:50px;min-height:50px;max-width:50px;max-height:50px;border-radius:50%;background-color:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px -4px rgba(37,211,102,0.45);text-decoration:none;overflow:hidden;" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">' +
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="width:26px !important;height:26px !important;min-width:26px;min-height:26px;max-width:26px;max-height:26px;display:block;" xmlns="http://www.w3.org/2000/svg">' +
                     '<path fill-rule="evenodd" clip-rule="evenodd" d="M20.4054 3.5946C18.1654 1.3546 15.1854 0.12 12.0154 0.12C5.4654 0.12 0.1354 5.45 0.1354 12C0.1354 14.09 0.6854 16.13 1.7254 17.94L0.0354004 24.12L6.3554 22.46C8.1054 23.41 10.0454 23.91 12.0154 23.91H12.0254C18.5754 23.91 23.9054 18.58 23.9054 12.03C23.9054 8.86 22.6554 5.85 20.4054 3.5946ZM12.0254 21.88C10.2554 21.88 8.5254 21.4 7.0154 20.5L6.6554 20.29L2.9154 21.27L3.9154 17.62L3.6854 17.25C2.6954 15.68 2.1754 13.87 2.1754 12C2.1754 6.58 6.5954 2.16 12.0254 2.16C14.6554 2.16 17.1254 3.19 18.9854 5.05C20.8454 6.91 21.8654 9.38 21.8654 12.01C21.8654 17.43 17.4454 21.88 12.0254 21.88ZM17.4154 14.52C17.1254 14.38 15.6954 13.67 15.4354 13.57C15.1754 13.48 14.9854 13.43 14.7954 13.72C14.6054 14.01 14.0654 14.65 13.9054 14.84C13.7454 15.03 13.5854 15.06 13.2954 14.91C13.0054 14.77 12.0754 14.46 10.9754 13.48C10.1254 12.72 9.5454 11.78 9.3854 11.5C9.2254 11.21 9.3754 11.06 9.5154 10.92C9.6454 10.79 9.8054 10.58 9.9554 10.41C10.1054 10.24 10.1554 10.12 10.2554 9.92C10.3554 9.73 10.3054 9.56 10.2354 9.42C10.1554 9.27 9.5754 7.84 9.3454 7.27C9.1154 6.72 8.8854 6.8 8.7154 6.79C8.5554 6.78 8.3654 6.78 8.1754 6.78C7.9854 6.78 7.6654 6.85 7.4054 7.14C7.1454 7.43 6.4154 8.11 6.4154 9.5C6.4154 10.89 7.4254 12.23 7.5754 12.42C7.7254 12.61 9.5754 15.46 12.3954 16.68C13.0654 16.97 13.5954 17.15 14.0054 17.28C14.6854 17.5 15.3054 17.47 15.7954 17.39C16.3454 17.31 17.4854 16.7 17.7254 16.03C17.9654 15.36 17.9654 14.79 17.8954 14.67C17.8254 14.55 17.7054 14.66 17.4154 14.52Z" fill="#FFFFFF"/>' +
                 '</svg>' +
             '</a>';
 
         // 3. Full Right Free Estimate Button (Dark Navy Pill)
         var estimateBtnHTML = 
-            '<button type="button" id="luxi-dock-estimate-btn" aria-label="Open Free Estimate Form">' +
+            '<button type="button" id="luxi-dock-estimate-btn" style="position:fixed;bottom:24px;right:24px;z-index:9998;display:inline-flex;align-items:center;justify-content:space-between;gap:16px;height:50px !important;padding:4px 6px 4px 24px;background-color:#1A2026;border:1px solid rgba(255,255,255,0.16);border-radius:60px;color:#FFFFFF !important;box-shadow:0 10px 28px -4px rgba(0,0,0,0.55);cursor:pointer;" aria-label="Open Free Estimate Form">' +
                 '<span>Free Estimate</span>' +
-                '<div class="luxi-arrow-circle">' +
-                    '<svg viewBox="0 0 6 10" fill="none">' +
-                        '<path d="M1 1L4.9264 4.9264" stroke="white" stroke-width="1.2" stroke-linecap="round"/>' +
-                        '<path d="M1 8.71094L4.9264 4.78453" stroke="white" stroke-width="1.2" stroke-linecap="round"/>' +
+                '<div class="luxi-arrow-circle" style="width:40px;height:40px;border-radius:50%;background:#ffffff;display:flex;align-items:center;justify-content:center;">' +
+                    '<svg width="6" height="10" viewBox="0 0 6 10" fill="none" style="width:6px;height:10px;display:block;">' +
+                        '<path d="M1 1L4.9264 4.9264" stroke="#1A2026" stroke-width="1.2" stroke-linecap="round"/>' +
+                        '<path d="M1 8.71094L4.9264 4.78453" stroke="#1A2026" stroke-width="1.2" stroke-linecap="round"/>' +
                     '</svg>' +
                 '</div>' +
             '</button>';

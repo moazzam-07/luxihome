@@ -501,7 +501,45 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.5" id="gform_theme_components-css" media="all" rel="stylesheet"/>
 <link href="/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.5" id="gform_theme-css" media="all" rel="stylesheet"/>
 <link href="/assets/css/styles.css" id="screen-css-css" media="all" rel="stylesheet"/>
-<link href="/assets/css/estimate-modal.css?v=luxi_est_v4" id="estimate-modal-css" media="all" rel="stylesheet"/>
+<link href="/assets/css/estimate-modal.css?v=luxi_est_v5" id="estimate-modal-css" media="all" rel="stylesheet"/>
+<style id="luxi-dock-safety-styles">
+#luxi-dock-call-btn, #luxi-dock-whatsapp-btn {
+    position: fixed !important;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    z-index: 9998 !important;
+}
+#luxi-dock-whatsapp-btn svg {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    min-height: 26px !important;
+    max-width: 26px !important;
+    max-height: 26px !important;
+    display: block !important;
+}
+#luxi-dock-call-btn svg {
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+    min-height: 17px !important;
+    max-width: 17px !important;
+    max-height: 17px !important;
+    display: block !important;
+}
+#luxi-dock-estimate-btn {
+    position: fixed !important;
+    height: 50px !important;
+    max-height: 50px !important;
+    z-index: 9998 !important;
+}
+</style>
 <link href="/assets/video/luxihome-hero-video.mp4" rel="prefetch" type="video/mp4"/>
 <script id="jquery-js" src="/assets/js/jquery.min.js"></script>
 <script defer="defer" id="gform_json-js" src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5"></script>
@@ -1260,13 +1298,22 @@ living</p>
                     </picture>
                 </div>
             </section>
-            <!-- ================= SECTION: THE ART (VERTICAL VIDEO CAROUSEL) ================= -->
-            <section id="the-art" data-name="the-art" class="relative w-full bg-[#DAD0C1] text-[#13212E] py-16 sm:py-24 overflow-hidden select-none z-[42]">
+            <!-- ================= SECTION: THE ART (VERTICAL VIDEO CAROUSEL & MARQUEE) ================= -->
+            <section id="the-art" data-name="the-art" class="relative w-full bg-[#DAD0C1] text-[#13212E] overflow-hidden select-none z-[46]">
                 <style>
                     #the-art {
                         background-color: #DAD0C1;
-                        padding-top: 5rem;
-                        padding-bottom: 6rem;
+                        position: relative;
+                        z-index: 46;
+                        padding-top: 8rem;
+                        padding-bottom: 7.5rem;
+                        scroll-margin-top: 100px;
+                    }
+                    @media (max-width: 767px) {
+                        #the-art {
+                            padding-top: 7rem;
+                            padding-bottom: 7rem;
+                        }
                     }
                     .luxi-reel-eyebrow {
                         font-family: aviano-sans, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1276,35 +1323,46 @@ living</p>
                         text-transform: uppercase;
                         color: #726152;
                         display: block;
-                        margin-bottom: 20px;
+                        margin-bottom: 96px;
                     }
                     .luxi-reel-heading {
                         font-family: Romantically, cursive, sans-serif;
-                        font-size: clamp(46px, 5.8vw, 76px);
-                        line-height: 1.25;
+                        font-size: clamp(36px, 4.5vw, 56px);
+                        line-height: 1.15;
                         color: #13212E;
-                        margin: 16px 0 16px 0;
+                        margin: 0;
+                        margin-bottom: 32px;
                         display: block;
-                        padding-top: 24px;
+                        padding-top: 8px;
+                    }
+                    @media (min-width: 768px) {
+                        .luxi-reel-eyebrow {
+                            margin-bottom: 90px;
+                        }
+                        .luxi-reel-heading {
+                            margin-bottom: 24px;
+                        }
                     }
                     .luxi-reel-sub {
                         font-family: 'DIN', -apple-system, BlinkMacSystemFont, sans-serif;
                         font-size: clamp(14px, 1.35vw, 15px);
-                        line-height: 1.65;
+                        line-height: 1.6;
                         color: #3D4854;
                         margin: 0;
-                        padding-top: 12px;
+                        padding-top: 6px;
                     }
                     .luxi-reel-track {
                         display: flex;
-                        gap: 18px;
+                        gap: 16px;
                         overflow-x: auto;
-                        scroll-snap-type: x mandatory;
-                        scroll-behavior: smooth;
+                        scroll-snap-type: none;
                         -webkit-overflow-scrolling: touch;
-                        padding: 16px 24px 28px 24px;
+                        padding: 14px 20px 24px 20px;
                         scrollbar-width: none;
                         -ms-overflow-style: none;
+                        will-change: scroll-position;
+                        user-select: none;
+                        -webkit-user-select: none;
                     }
                     @media (min-width: 768px) {
                         .luxi-reel-track {
@@ -1322,18 +1380,24 @@ living</p>
                         display: none;
                     }
                     .luxi-reel-card {
-                        flex: 0 0 clamp(230px, 20vw, 290px);
+                        flex: 0 0 clamp(205px, 64vw, 255px);
                         aspect-ratio: 9 / 16;
-                        border-radius: 22px;
+                        border-radius: 20px;
                         overflow: hidden;
                         position: relative;
                         background-color: #13212E;
                         box-shadow: 0 16px 36px -10px rgba(19, 33, 46, 0.22), 0 4px 12px rgba(0, 0, 0, 0.08);
-                        border: 1px solid rgba(255, 255, 255, 0.35);
-                        scroll-snap-align: start;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
                         cursor: pointer;
+                        flex-shrink: 0;
                         transform: translateY(0);
-                        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+                        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+                    }
+                    @media (min-width: 768px) {
+                        .luxi-reel-card {
+                            flex: 0 0 clamp(240px, 20vw, 290px);
+                            border-radius: 24px;
+                        }
                     }
                     .luxi-reel-card:hover {
                         transform: translateY(-8px) scale(1.015);
@@ -1350,24 +1414,24 @@ living</p>
                     .luxi-card-overlay {
                         position: absolute;
                         inset: 0;
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.0) 40%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.95) 100%);
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.0) 40%, rgba(0, 0, 0, 0.45) 70%, rgba(0, 0, 0, 0.94) 100%);
                         pointer-events: none;
                         z-index: 5;
-                        border-radius: 22px;
+                        border-radius: inherit;
                     }
                     .luxi-card-content {
                         position: absolute;
                         bottom: 0;
                         left: 0;
                         right: 0;
-                        padding: 24px 20px;
+                        padding: 22px 18px;
                         pointer-events: none;
                         z-index: 10;
                     }
                     .luxi-card-badge {
                         font-family: aviano-sans, sans-serif;
-                        font-size: 10px;
-                        letter-spacing: 2.2px;
+                        font-size: 9.5px;
+                        letter-spacing: 2px;
                         text-transform: uppercase;
                         color: #E5D7C2;
                         font-weight: 600;
@@ -1446,13 +1510,9 @@ living</p>
                     .luxi-reel-nav-btn:active {
                         transform: translateY(-50%) scale(0.94);
                     }
-                    .luxi-reel-prev {
-                        left: 20px;
-                    }
-                    .luxi-reel-next {
-                        right: 20px;
-                    }
-                    @media (max-width: 640px) {
+                    .luxi-reel-prev { left: 20px; }
+                    .luxi-reel-next { right: 20px; }
+                    @media (max-width: 767px) {
                         .luxi-reel-nav-btn {
                             display: none !important;
                         }
@@ -1467,6 +1527,8 @@ living</p>
                         position: fixed;
                         top: 0;
                         left: 0;
+                        right: 0;
+                        bottom: 0;
                         width: 100vw;
                         height: 100vh;
                         height: 100dvh;
@@ -1477,13 +1539,72 @@ living</p>
                         align-items: center;
                         justify-content: center;
                         padding: 24px;
+                        box-sizing: border-box;
                     }
                     #luxi-reel-modal.active {
+                        display: flex !important;
+                    }
+                    .luxi-modal-card {
+                        position: relative;
+                        width: 100%;
+                        max-width: 420px;
+                        height: 82vh;
+                        max-height: 720px;
+                        border-radius: 24px;
+                        overflow: hidden;
+                        background: #000000;
+                        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+                        border: 1px solid rgba(255, 255, 255, 0.22);
                         display: flex;
+                        flex-direction: column;
+                    }
+                    .luxi-modal-card video {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    .luxi-modal-close-btn {
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: rgba(0, 0, 0, 0.65);
+                        backdrop-filter: blur(8px);
+                        -webkit-backdrop-filter: blur(8px);
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        z-index: 50;
+                        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .luxi-modal-close-btn:hover {
+                        background: rgba(0, 0, 0, 0.95);
+                        transform: scale(1.08);
+                    }
+                    .luxi-modal-close-btn svg {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                    }
+                    .luxi-modal-meta {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 24px 20px;
+                        background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+                        pointer-events: none;
+                        z-index: 40;
                     }
                 </style>
 
-                <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-10 sm:mb-14">
+                <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-8 sm:mb-12">
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
                             <span class="luxi-reel-eyebrow">
@@ -1493,7 +1614,7 @@ living</p>
                                 The art
                             </h2>
                         </div>
-                        <div class="max-w-md pb-2">
+                        <div class="max-w-md pb-1">
                             <p class="luxi-reel-sub">
                                 Intimate vertical walkthroughs across our signature estates, bespoke master suites, and precision architectural craftsmanship.
                             </p>
@@ -1503,7 +1624,7 @@ living</p>
 
                 <!-- Carousel Stage -->
                 <div class="relative w-full overflow-hidden">
-                    <!-- Navigation Buttons -->
+                    <!-- Navigation Buttons (Desktop) -->
                     <button type="button" class="luxi-reel-nav-btn luxi-reel-prev" id="luxi-reel-prev-btn" aria-label="Previous Reel">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -1515,7 +1636,7 @@ living</p>
                         </svg>
                     </button>
 
-                    <!-- Scroll Track -->
+                    <!-- Scroll & Marquee Track -->
                     <div class="luxi-reel-track" id="luxi-reel-track">
                         <!-- Card 1 -->
                         <div class="luxi-reel-card group" data-video="/assets/video/luxihome-craftsmanship-tour.mp4" data-title="Bespoke Master Suite" data-sub="Salt Lake Manor">
@@ -1532,34 +1653,20 @@ living</p>
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-interior-tour.mp4" data-title="Executive Study &amp; Library" data-sub="Park Street Residence">
-                            <video src="/assets/video/luxihome-interior-tour.mp4" poster="/assets/video/reel-interior-poster.jpg" loop muted playsinline preload="metadata"></video>
+                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-presidential-suite.mp4" data-title="Presidential Suite &amp; Lounge" data-sub="The Grand Alipore">
+                            <video src="/assets/video/luxihome-presidential-suite.mp4" poster="/assets/video/reel-presidential-poster.jpg" loop muted playsinline preload="metadata"></video>
                             <div class="luxi-card-overlay"></div>
                             <button type="button" class="reel-sound-btn" aria-label="Toggle Sound">
                                 <svg class="reel-icon-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
                                 <svg class="reel-icon-unmuted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
                             </button>
                             <div class="luxi-card-content">
-                                <span class="luxi-card-badge">Park Street Residence</span>
-                                <h3 class="luxi-card-title">Executive Study &amp; Library</h3>
+                                <span class="luxi-card-badge">The Grand Alipore</span>
+                                <h3 class="luxi-card-title">Presidential Suite &amp; Lounge</h3>
                             </div>
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-kitchen-reveal.mp4" data-title="Modernist Kitchen &amp; Foyer" data-sub="New Town Villa">
-                            <video src="/assets/video/luxihome-kitchen-reveal.mp4" poster="/assets/video/reel-kitchen-poster.jpg" loop muted playsinline preload="metadata"></video>
-                            <div class="luxi-card-overlay"></div>
-                            <button type="button" class="reel-sound-btn" aria-label="Toggle Sound">
-                                <svg class="reel-icon-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
-                                <svg class="reel-icon-unmuted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
-                            </button>
-                            <div class="luxi-card-content">
-                                <span class="luxi-card-badge">New Town Villa</span>
-                                <h3 class="luxi-card-title">Modernist Kitchen &amp; Foyer</h3>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
                         <div class="luxi-reel-card group" data-video="/assets/video/luxihome-pentagon-vision.mp4" data-title="Double-Height Living Void" data-sub="Alam's Pentagon">
                             <video src="/assets/video/luxihome-pentagon-vision.mp4" poster="/assets/video/reel-pentagon-poster.jpg" loop muted playsinline preload="metadata"></video>
                             <div class="luxi-card-overlay"></div>
@@ -1573,8 +1680,22 @@ living</p>
                             </div>
                         </div>
 
+                        <!-- Card 4 -->
+                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-marble-bath.mp4" data-title="Italian Fluted Marble &amp; Spa" data-sub="Park Street Sanctuary">
+                            <video src="/assets/video/luxihome-marble-bath.mp4" poster="/assets/video/reel-marble-poster.jpg" loop muted playsinline preload="metadata"></video>
+                            <div class="luxi-card-overlay"></div>
+                            <button type="button" class="reel-sound-btn" aria-label="Toggle Sound">
+                                <svg class="reel-icon-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                                <svg class="reel-icon-unmuted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                            </button>
+                            <div class="luxi-card-content">
+                                <span class="luxi-card-badge">Park Street Sanctuary</span>
+                                <h3 class="luxi-card-title">Italian Fluted Marble &amp; Spa</h3>
+                            </div>
+                        </div>
+
                         <!-- Card 5 -->
-                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-italian-suite.mp4" data-title="Italian Joinery &amp; Bath" data-sub="Rajarhat Sanctuary">
+                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-italian-suite.mp4" data-title="Italian Joinery &amp; Architecture" data-sub="Rajarhat Estate">
                             <video src="/assets/video/luxihome-italian-suite.mp4" poster="/assets/video/reel-italian-poster.jpg" loop muted playsinline preload="metadata"></video>
                             <div class="luxi-card-overlay"></div>
                             <button type="button" class="reel-sound-btn" aria-label="Toggle Sound">
@@ -1582,13 +1703,13 @@ living</p>
                                 <svg class="reel-icon-unmuted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
                             </button>
                             <div class="luxi-card-content">
-                                <span class="luxi-card-badge">Rajarhat Sanctuary</span>
-                                <h3 class="luxi-card-title">Italian Joinery &amp; Bath</h3>
+                                <span class="luxi-card-badge">Rajarhat Estate</span>
+                                <h3 class="luxi-card-title">Italian Joinery &amp; Architecture</h3>
                             </div>
                         </div>
 
                         <!-- Card 6 -->
-                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-living-elegance.mp4" data-title="Sunlit Living Lounge" data-sub="Alipore Estate">
+                        <div class="luxi-reel-card group" data-video="/assets/video/luxihome-living-elegance.mp4" data-title="Sunlit Living Pavilion" data-sub="New Town Villa">
                             <video src="/assets/video/luxihome-living-elegance.mp4" poster="/assets/video/reel-living-poster.jpg" loop muted playsinline preload="metadata"></video>
                             <div class="luxi-card-overlay"></div>
                             <button type="button" class="reel-sound-btn" aria-label="Toggle Sound">
@@ -1596,8 +1717,8 @@ living</p>
                                 <svg class="reel-icon-unmuted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
                             </button>
                             <div class="luxi-card-content">
-                                <span class="luxi-card-badge">Alipore Estate</span>
-                                <h3 class="luxi-card-title">Sunlit Living Lounge</h3>
+                                <span class="luxi-card-badge">New Town Villa</span>
+                                <h3 class="luxi-card-title">Sunlit Living Pavilion</h3>
                             </div>
                         </div>
 
@@ -1619,12 +1740,12 @@ living</p>
 
                 <!-- Lightbox Reel Modal -->
                 <div id="luxi-reel-modal">
-                    <div class="relative w-full max-w-[420px] aspect-[9/16] max-h-[88vh] rounded-[24px] overflow-hidden bg-black shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/20">
-                        <video id="luxi-modal-video" class="w-full h-full object-cover" controls autoplay playsinline></video>
-                        <button type="button" id="luxi-modal-close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-black transition-all cursor-pointer z-30" aria-label="Close Modal">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    <div class="luxi-modal-card">
+                        <video id="luxi-modal-video" controls autoplay playsinline></video>
+                        <button type="button" id="luxi-modal-close" class="luxi-modal-close-btn" aria-label="Close Modal">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
-                        <div class="absolute bottom-4 left-4 right-4 pointer-events-none z-20">
+                        <div class="luxi-modal-meta">
                             <span id="luxi-modal-sub" class="luxi-card-badge"></span>
                             <h4 id="luxi-modal-title" class="luxi-card-title" style="font-size: 19px;"></h4>
                         </div>
@@ -1649,68 +1770,188 @@ living</p>
                             document.body.appendChild(modal);
                         }
 
-                        // Scroll Navigation
-                        const getScrollDistance = () => {
-                            const firstCard = track.querySelector('.luxi-reel-card');
-                            return firstCard ? firstCard.offsetWidth + 22 : 300;
-                        };
+                        // Duplicate cards once to create an infinite seamless loop
+                        const originalCards = Array.from(track.querySelectorAll('.luxi-reel-card'));
+                        originalCards.forEach(card => {
+                            const clone = card.cloneNode(true);
+                            clone.setAttribute('data-clone', 'true');
+                            track.appendChild(clone);
+                        });
+
+                        // Marquee Auto-Rotation & Touch/Drag State
+                        let isUserInteracting = false;
+                        let isHovered = false;
+                        let resumeTimer = null;
+                        let lastTime = performance.now();
+
+                        // Speed in pixels/second:
+                        // Mobile: 36px/s steady, silky marquee
+                        // Desktop: 22px/s gentle drift when not hovered
+                        const MOBILE_SPEED = 36;
+                        const DESKTOP_SPEED = 22;
+
+                        function getLoopThreshold() {
+                            return track.scrollWidth / 2;
+                        }
+
+                        function marqueeLoop(now) {
+                            const dt = Math.min((now - lastTime) / 1000, 0.1);
+                            lastTime = now;
+
+                            const isMobile = window.innerWidth < 768;
+                            const shouldAutoScroll = isMobile 
+                                ? !isUserInteracting 
+                                : (!isUserInteracting && !isHovered);
+
+                            if (shouldAutoScroll) {
+                                const speed = isMobile ? MOBILE_SPEED : DESKTOP_SPEED;
+                                track.scrollLeft += speed * dt;
+
+                                const loopWidth = getLoopThreshold();
+                                if (loopWidth > 0) {
+                                    if (track.scrollLeft >= loopWidth) {
+                                        track.scrollLeft -= loopWidth;
+                                    } else if (track.scrollLeft <= 0) {
+                                        track.scrollLeft += loopWidth;
+                                    }
+                                }
+                            }
+
+                            requestAnimationFrame(marqueeLoop);
+                        }
+                        requestAnimationFrame(marqueeLoop);
+
+                        // Mobile Touch Interaction (Pause on touch, resume smoothly after release)
+                        track.addEventListener('touchstart', () => {
+                            isUserInteracting = true;
+                            clearTimeout(resumeTimer);
+                        }, { passive: true });
+
+                        track.addEventListener('touchmove', () => {
+                            isUserInteracting = true;
+                            clearTimeout(resumeTimer);
+                        }, { passive: true });
+
+                        track.addEventListener('touchend', () => {
+                            clearTimeout(resumeTimer);
+                            resumeTimer = setTimeout(() => {
+                                const loopWidth = getLoopThreshold();
+                                if (loopWidth > 0) {
+                                    if (track.scrollLeft >= loopWidth) {
+                                        track.scrollLeft -= loopWidth;
+                                    } else if (track.scrollLeft <= 0) {
+                                        track.scrollLeft += loopWidth;
+                                    }
+                                }
+                                isUserInteracting = false;
+                            }, 1800);
+                        }, { passive: true });
+
+                        // Desktop Mouse Hover & Drag-to-Scroll
+                        track.addEventListener('mouseenter', () => {
+                            isHovered = true;
+                        });
+                        track.addEventListener('mouseleave', () => {
+                            isHovered = false;
+                        });
+
+                        let isMouseDown = false;
+                        let startX = 0;
+                        let startScrollLeft = 0;
+                        let hasDragged = false;
+
+                        track.addEventListener('mousedown', (e) => {
+                            isMouseDown = true;
+                            isUserInteracting = true;
+                            hasDragged = false;
+                            startX = e.pageX - track.offsetLeft;
+                            startScrollLeft = track.scrollLeft;
+                        });
+
+                        window.addEventListener('mouseup', () => {
+                            if (isMouseDown) {
+                                isMouseDown = false;
+                                isUserInteracting = false;
+                                setTimeout(() => { hasDragged = false; }, 80);
+                            }
+                        });
+
+                        track.addEventListener('mousemove', (e) => {
+                            if (!isMouseDown) return;
+                            e.preventDefault();
+                            const x = e.pageX - track.offsetLeft;
+                            const walk = (x - startX) * 1.35;
+                            if (Math.abs(walk) > 5) hasDragged = true;
+                            track.scrollLeft = startScrollLeft - walk;
+
+                            const loopWidth = getLoopThreshold();
+                            if (loopWidth > 0) {
+                                if (track.scrollLeft >= loopWidth) {
+                                    track.scrollLeft -= loopWidth;
+                                    startScrollLeft -= loopWidth;
+                                } else if (track.scrollLeft <= 0) {
+                                    track.scrollLeft += loopWidth;
+                                    startScrollLeft += loopWidth;
+                                }
+                            }
+                        });
+
+                        // Desktop Navigation Arrows
+                        function pauseForNav() {
+                            isUserInteracting = true;
+                            clearTimeout(resumeTimer);
+                            resumeTimer = setTimeout(() => {
+                                isUserInteracting = false;
+                            }, 2400);
+                        }
 
                         if (prevBtn) {
                             prevBtn.addEventListener('click', () => {
-                                track.scrollBy({ left: -getScrollDistance() * 1.5, behavior: 'smooth' });
+                                pauseForNav();
+                                const firstCard = track.querySelector('.luxi-reel-card');
+                                const dist = firstCard ? firstCard.offsetWidth + 22 : 280;
+                                track.scrollBy({ left: -dist * 1.4, behavior: 'smooth' });
                             });
                         }
                         if (nextBtn) {
                             nextBtn.addEventListener('click', () => {
-                                track.scrollBy({ left: getScrollDistance() * 1.5, behavior: 'smooth' });
+                                pauseForNav();
+                                const firstCard = track.querySelector('.luxi-reel-card');
+                                const dist = firstCard ? firstCard.offsetWidth + 22 : 280;
+                                track.scrollBy({ left: dist * 1.4, behavior: 'smooth' });
                             });
                         }
 
-                        // Drag to Scroll on Desktop
-                        let isDown = false;
-                        let startX;
-                        let scrollLeft;
+                        // Event Delegation for Sound Toggle & Lightbox Modal (Works on all cards & clones)
+                        track.addEventListener('click', (e) => {
+                            if (hasDragged) return;
 
-                        track.addEventListener('mousedown', (e) => {
-                            isDown = true;
-                            startX = e.pageX - track.offsetLeft;
-                            scrollLeft = track.scrollLeft;
-                        });
-                        track.addEventListener('mouseleave', () => { isDown = false; });
-                        track.addEventListener('mouseup', () => { isDown = false; });
-                        track.addEventListener('mousemove', (e) => {
-                            if (!isDown) return;
-                            e.preventDefault();
-                            const x = e.pageX - track.offsetLeft;
-                            const walk = (x - startX) * 1.5;
-                            track.scrollLeft = scrollLeft - walk;
-                        });
-
-                        // Sound Toggle & Card Click Handling
-                        const cards = track.querySelectorAll('.luxi-reel-card');
-                        cards.forEach(card => {
-                            const video = card.querySelector('video');
-                            const soundBtn = card.querySelector('.reel-sound-btn');
-                            const iconMuted = card.querySelector('.reel-icon-muted');
-                            const iconUnmuted = card.querySelector('.reel-icon-unmuted');
-
-                            if (soundBtn && video) {
-                                soundBtn.addEventListener('click', (e) => {
-                                    e.stopPropagation();
+                            // Sound button click
+                            const soundBtn = e.target.closest('.reel-sound-btn');
+                            if (soundBtn) {
+                                e.stopPropagation();
+                                const card = soundBtn.closest('.luxi-reel-card');
+                                if (!card) return;
+                                const video = card.querySelector('video');
+                                const iconMuted = card.querySelector('.reel-icon-muted');
+                                const iconUnmuted = card.querySelector('.reel-icon-unmuted');
+                                if (video) {
                                     video.muted = !video.muted;
                                     if (video.muted) {
-                                        iconMuted.classList.remove('hidden');
-                                        iconUnmuted.classList.add('hidden');
+                                        iconMuted?.classList.remove('hidden');
+                                        iconUnmuted?.classList.add('hidden');
                                     } else {
-                                        iconMuted.classList.add('hidden');
-                                        iconUnmuted.classList.remove('hidden');
+                                        iconMuted?.classList.add('hidden');
+                                        iconUnmuted?.classList.remove('hidden');
                                         video.play().catch(() => {});
                                     }
-                                });
+                                }
+                                return;
                             }
 
-                            // Click card to open in lightbox modal
-                            card.addEventListener('click', () => {
+                            // Card click -> Open Lightbox Modal
+                            const card = e.target.closest('.luxi-reel-card');
+                            if (card) {
                                 const videoSrc = card.getAttribute('data-video');
                                 const title = card.getAttribute('data-title');
                                 const sub = card.getAttribute('data-sub');
@@ -1722,21 +1963,23 @@ living</p>
                                     modalSub.textContent = sub || '';
                                     modal.classList.add('active');
                                     document.body.style.overflow = 'hidden';
+                                    isUserInteracting = true;
                                     modalVideo.play().catch(() => {
                                         modalVideo.muted = true;
                                         modalVideo.play();
                                     });
                                 }
-                            });
+                            }
                         });
 
-                        // Modal Close
+                        // Modal Close Handling
                         if (modalClose && modal && modalVideo) {
                             const closeModal = () => {
                                 modal.classList.remove('active');
                                 modalVideo.pause();
                                 modalVideo.src = '';
                                 document.body.style.overflow = '';
+                                isUserInteracting = false;
                             };
                             modalClose.addEventListener('click', closeModal);
                             modal.addEventListener('click', (e) => {
@@ -1747,23 +1990,33 @@ living</p>
                             });
                         }
 
-                        // Viewport Auto-Play / Pause via IntersectionObserver
+                        // Viewport Performance: Only play videos that are in viewport
                         if ('IntersectionObserver' in window) {
-                            const observer = new IntersectionObserver((entries) => {
+                            const cardObserver = new IntersectionObserver((entries) => {
                                 entries.forEach(entry => {
-                                    const vids = track.querySelectorAll('video');
+                                    const v = entry.target.querySelector('video');
+                                    if (!v) return;
                                     if (entry.isIntersecting) {
-                                        vids.forEach(v => {
-                                            if (v.paused) v.play().catch(() => {});
-                                        });
+                                        if (v.paused) v.play().catch(() => {});
                                     } else {
-                                        vids.forEach(v => {
+                                        if (!v.paused) v.pause();
+                                    }
+                                });
+                            }, { threshold: 0.15 });
+
+                            track.querySelectorAll('.luxi-reel-card').forEach(card => cardObserver.observe(card));
+
+                            // Pause all videos if entire section leaves viewport
+                            const sectionObserver = new IntersectionObserver((entries) => {
+                                entries.forEach(entry => {
+                                    if (!entry.isIntersecting) {
+                                        track.querySelectorAll('video').forEach(v => {
                                             if (!v.paused) v.pause();
                                         });
                                     }
                                 });
-                            }, { threshold: 0.1 });
-                            observer.observe(track);
+                            }, { threshold: 0 });
+                            sectionObserver.observe(track);
                         }
                     })();
                 </script>
@@ -3627,7 +3880,7 @@ window.triggerEstimateModal = function (e) {
     }
 };
 </script>
-<script src="/assets/js/estimate-modal.js?v=luxi_est_v4" defer></script>
+<script src="/assets/js/estimate-modal.js?v=luxi_est_v5" defer></script>
 
 <script id="luxi-pentagon-widget-controller">
   (function() {
